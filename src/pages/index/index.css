@@ -1,0 +1,16 @@
+.banner-slide-item {
+  display: block;
+  height: 480px;
+}
+
+.win-list-wrap {
+  width: 800px;
+  margin: 0 auto;    
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+}
+
+.win-list {
+  white-space: nowrap;
+}

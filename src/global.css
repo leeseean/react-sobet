@@ -1,0 +1,7 @@
+.center {
+  text-align: center;
+}
+
+.animation-paused {
+  animation-play-state: paused!important;
+}

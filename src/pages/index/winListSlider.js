@@ -1,6 +1,6 @@
 import React from 'react';
 import $http from '../../utils/ajax';
-import createMarqueeStyle from '../../utils/marqueeLeft';
+import Marquee from '../../components/marquee';
 
 const WinItem = ({item}) => {
     let time = Date.now() - item.winTime;
@@ -30,7 +30,6 @@ const WinItem = ({item}) => {
 };
 
 class WinListSlider extends React.Component {
-    winListRef = null
     state = {
         list: []
     }
@@ -38,9 +37,6 @@ class WinListSlider extends React.Component {
         $http({url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10', method: 'GET'}).then(res => {
             if (res.data.code === 1) {
                 this.setState({list: res.data.result});
-                if (this.winListRef.offsetWidth < this.winListRef.scrollWidth) {
-                  createMarqueeStyle(this.winListRef.scrollWidth - this.winListRef.offsetWidth);
-                }
             }
         });
     }
@@ -49,13 +45,10 @@ class WinListSlider extends React.Component {
             .state
             .list
             .map((item, index) => <WinItem key={index} item={item}/>);
-
         return (
-            <div className="win-list-wrap">
-                <div className="win-list marqueeLeft" ref={(ref) => { this.winListRef = ref; }} onMouseEnter={() => this.winListRef.classList.add('animation-paused')} onMouseLeave={() => this.winListRef.classList.remove('animation-paused')}>
-                    <Items/>
-                </div>
-            </div>
+            <Marquee>
+                <Items/>
+            </Marquee>
         );
     }
 }

@@ -11,13 +11,13 @@ const Live = () => {
                     <div className="clearfix live-cards">
                         <div className="fr live-et">
                             <div className="live-et-wrapper">
-                                <img src={require("../../images/live/entwinetech_logo.png")}/>
+                                <img alt="" src={require("../../images/live/entwinetech_logo.png")}/>
                                 <p>即将上线 敬请期待</p>
                             </div>
                         </div>
                         <div className="fr live-mg">
                             <div className="live-mg-wrapper">
-                                <img src={require("../../images/live/microgaming_logo.png")}/>
+                                <img alt="" src={require("../../images/live/microgaming_logo.png")}/>
                                 <p>即将上线 敬请期待</p>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ const Live = () => {
                                     <i className="ag-pc-divider"></i>
                                     <i className="fl ag-pc-download">PC客户端下载</i> 
                                     <i className="fr ag-app-download">
-                                        <Popover placement="bottom" content={<div><img src={require("../../images/live/qrcode_a.png")} width="130"/><div style={{width: '100%', textAlign: 'center'}}>AG手机端</div></div>} trigger="hover">
+                                        <Popover placement="bottom" content={<div><img alt="扫描下载" src={require("../../images/live/qrcode_a.png")} width="130"/><div style={{width: '100%', textAlign: 'center'}}>AG手机端</div></div>} trigger="hover">
                                             手机APP下载
                                         </Popover>
                                     </i>

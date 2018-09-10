@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom_icon_5app</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M30,6 L16,6 C14.3451518,6.00485279 13.004833,7.35066469 13,9.01229508 L13,35.1188525 C13.004833,36.7804829 14.3451518,38.1262947 16,38.1311475 L30,38.1311475 C31.6548482,38.1262947 32.995167,36.7804829 33,35.1188525 L33,9.01229508 C32.995167,7.35066469 31.6548482,6.00485279 30,6 Z M23,36.1229508 C21.8954305,36.1229508 21,35.2238505 21,34.1147541 C21,33.0056577 21.8954305,32.1065574 23,32.1065574 C24.1045695,32.1065574 25,33.0056577 25,34.1147541 C25,35.2238505 24.1045695,36.1229508 23,36.1229508 Z M31,30.0983607 L15,30.0983607 L15,10.0163934 L31,10.0163934 L31,30.0983607 Z" id="path-3"></path>
+        <filter x="-2.5%" y="-1.6%" width="105.0%" height="106.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="新首页（2018尊享版)-" transform="translate(-1150.000000, -1145.000000)">
+            <g id="bottom" transform="translate(0.000000, 1131.000000)">
+                <g id="Group-4" transform="translate(1149.000000, 15.000000)">
+                    <g id="bottom_icon_5app" transform="translate(2.000000, 0.000000)">
+                        <circle id="Oval-12" stroke="url(#linearGradient-1)" cx="22.5" cy="22.5" r="22.5"></circle>
+                        <g id="Shape" fill-rule="nonzero">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

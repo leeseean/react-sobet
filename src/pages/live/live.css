@@ -195,30 +195,40 @@
     overflow: hidden;
     color: #fff;
     font-size: 14px;
-    background: #202020;
+    background-color: #202020;
   }
 
   .live-baccarat-wrapper {
     height: 204px;
     width: 100%;
     margin-top: 20px;
-    background: url(../../images/live/bg_01.png) right no-repeat;
+    background-image: url(../../images/live/bg_01.png);
+    background-repeat: no-repeat;
+    background-position: right;
   }
   
   .live-roulette-wrapper {
-    background: url(../../images/live/bg_02.png) right no-repeat;
+    background-image: url(../../images/live/bg_02.png);
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .live-blackjack-wrapper {
-    background: url(../../images/live/bg_04.png) right no-repeat;
+    background-image: url(../../images/live/bg_04.png);
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .live-sicbo-wrapper {
-    background: url(../../images/live/bg_03.png) right no-repeat;
+    background-image: url(../../images/live/bg_03.png);
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .live-texas-wrapper {
-    background: url(../../images/live/bg_05.png) right no-repeat;
+    background-image: url(../../images/live/bg_05.png);
+    background-repeat: no-repeat;
+    background-position: right;
   }
 
   .live-roulette-wrapper,

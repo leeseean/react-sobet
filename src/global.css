@@ -1,4 +1,5 @@
-body {
+body,
+#root {
   background-color: #000;
 }
 
@@ -8,4 +9,8 @@ body {
 
 .animation-paused {
   animation-play-state: paused!important;
+}
+
+.fixed {
+  position: fixed;
 }

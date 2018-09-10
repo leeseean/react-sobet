@@ -9,16 +9,16 @@ const BannerSwiper = () => {
     return (
         <Carousel autoplay effect="fade">
             <div>
-                <a className="banner-slide-item" style={{background: `url('${AppBanner}') no-repeat center`}}></a>
+                <a href="/poker" className="banner-slide-item" style={{background: `url('${AppBanner}') no-repeat center`}}></a>
             </div>
             <div>
-                <a className="banner-slide-item" style={{background: `url('${CyqBanner}') no-repeat center`}}></a>
+                <a href="/poker" className="banner-slide-item" style={{background: `url('${CyqBanner}') no-repeat center`}}></a>
             </div>
             <div>
-                <a className="banner-slide-item" style={{background: `url('${GuajiBanner}') no-repeat center`}}></a>
+                <a href="/poker" className="banner-slide-item" style={{background: `url('${GuajiBanner}') no-repeat center`}}></a>
             </div>
             <div>
-                <a className="banner-slide-item" style={{background: `url('${QqssmBanner}') no-repeat center`}}></a>
+                <a href="/poker" className="banner-slide-item" style={{background: `url('${QqssmBanner}') no-repeat center`}}></a>
             </div>
         </Carousel>
     );

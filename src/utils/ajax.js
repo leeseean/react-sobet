@@ -26,6 +26,9 @@ axios.interceptors.response.use(response => {
             redirect: router.currentRoute.fullPath
           }
         }) */
+        break;
+      default:
+        break;
     }
   }
   return Promise.reject(error);

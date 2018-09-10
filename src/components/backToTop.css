@@ -1,0 +1,29 @@
+
+.right-fixed .back-to-top {
+  width: 60px;
+  height: 50px;
+  padding: 10px;
+  background-color: #3a3a3a;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.right-fixed .back-to-top.show {
+  display: block;
+}
+
+.right-fixed .back-to-top.hide {
+  display: none;
+}
+
+.right-fixed .back-to-top i {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  background: url(../images/all-icon.png) -144px -241px no-repeat
+}
+
+.right-fixed .back-to-top:hover {
+  background: rgba(30,30,30,.95)
+}

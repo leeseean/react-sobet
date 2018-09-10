@@ -150,7 +150,7 @@ class Home extends React.Component {
             });
         };
         return (
-            <div className="Home">
+            <div className="home-wrapper" style={{minHeight: '800px'}}>
                 <Switch>
                     <Routes/>
                     <Redirect to={"/"}/>

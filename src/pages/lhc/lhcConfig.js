@@ -1,142 +1,118 @@
-export default {
-    "names": {
-        "XGLHC": "香港六合彩"
+export default [
+    {
+        tab: '特码',
+        sub: [{
+            title: '特码',
+            list: [
+                {
+                    method: 'tm_tm_zx',
+                    cnMethod: '特码直选'
+                },
+                {
+                    method: 'tm_tm_sx',
+                    cnMethod: '特码生肖'
+                },
+                {
+                    method: 'tm_tm_sb',
+                    cnMethod: '特码色波'
+                },
+                {
+                    method: 'tm_tm_dxds',
+                    cnMethod: '大小单双'
+                },
+                {
+                    method: 'tm_tm_ws',
+                    cnMethod: '特码尾数'
+                }
+            ]
+        }]
     },
-    "XGLHC": {
-        "ltTab": {
-            "tm": "特码",
-            "zt1m": "正特一码",
-            "zt1x": "正特一肖",   
-            "ztws": "正特尾数",            
-            "lx": "连肖",
-            "lm": "连码",
-            "hzdxds": "总和大小单双",                     
-        },
-        "ltMethod": {
-            "tm": {
-                "tm": {
-                    "title": "特码",
-                    "method": {
-                        "zx": {
-                            "desc": "特码直选",
-                            "num": "tm_zx||",
-                            "name": "特码直选"
-                        },
-                        "sx": {
-                            "desc": "特码生肖",
-                            "num": "tm_sx||",
-                            "name": "特码生肖"
-                        },
-                        "sb": {
-                            "desc": "特码色波",
-                            "num": "tm_sb||",
-                            "name": "特码色波"
-                        },
-                        "dxds": {
-                            "desc": "大小单双",
-                            "num": "tm_dxds||",
-                            "name": "特码大小单双"
-                        },
-                        "ws": {
-                            "desc": "特码尾数",
-                            "num": "tm_ws||",
-                            "name": "特码尾数"
-                        }
-                    }
+    {
+        tab: '正特一码',
+        sub: [{
+            title: '正特一码',
+            list: [
+                {
+                    method: 'zt1m_zt1m_zt1m',
+                    cnMethod: '正特一码'
                 }
-            },
-            "zt1m": {
-                "zt1m": {
-                    "title": "正特一码",
-                    "method": {
-                        "zt1m": {
-                            "desc": "正特一码",
-                            "num": "zt1m_zt1m||",
-                            "name": "正特一码"
-                        }
-                    }
+            ]
+        }]
+    },
+    {
+        tab: '正特一肖',
+        sub: [{
+            title: '正特一肖',
+            list: [
+                {
+                    method: 'zt1x_zt1x_zt1x',
+                    cnMethod: '正特一肖'
                 }
-            },
-            "zt1x": {
-                "zt1x": {
-                    "title": "正特一肖",
-                    "method": {
-                        "zt1x": {
-                            "desc": "正特一肖",
-                            "num": "zt1x_zt1x||",
-                            "name": "正特一肖"
-                        }
-                    }
+            ]
+        }]
+    },
+    {
+        tab: '正特尾数',
+        sub: [{
+            title: '正特尾数',
+            list: [
+                {
+                    method: 'ztws_ztws_ztws',
+                    cnMethod: '正特尾数'
                 }
-            },
-            "ztws": {
-                "ztws": {
-                    "title": "正特尾数",
-                    "method": {
-                        "ztws": {
-                            "desc": "正特尾数",
-                            "num": "ztws_ztws||",
-                            "name": "正特尾数"
-                        }
-                    }
+            ]
+        }]
+    },
+    {
+        tab: '连肖',
+        sub: [{
+            title: '连肖',
+            list: [
+                {
+                    method: 'lx_lx_2lx',
+                    cnMethod: '二连肖'
+                },
+                {
+                    method: 'lx_lx_3lx',
+                    cnMethod: '三连肖'
+                },
+                {
+                    method: 'lx_lx_4lx',
+                    cnMethod: '四连肖'
                 }
-            },
-            "lx": {
-                "lx": {
-                    "title": "连肖",
-                    "method": {
-                        "2lx": {
-                            "desc": "二连肖",
-                            "num": "lx_2lx||",
-                            "name": "二连肖"
-                        },
-                        "3lx": {
-                            "desc": "三连肖",
-                            "num": "lx_3lx||",
-                            "name": "三连肖"
-                        },
-                        "4lx": {
-                            "desc": "四连肖",
-                            "num": "lx_4lx||",
-                            "name": "四连肖"
-                        }
-                    }
+            ]
+        }]
+    },
+    {
+        tab: '连码',
+        sub: [{
+            title: '连码',
+            list: [
+                {
+                    method: 'lm_lm_2z2',
+                    cnMethod: '二中二'
+                },
+                {
+                    method: 'lm_lm_3z2',
+                    cnMethod: '三中二'
+                },
+                {
+                    method: 'lm_lm_3z3',
+                    cnMethod: '三中三'
                 }
-            },
-            "lm": {
-                "lm": {
-                    "title": "连码",
-                    "method": {
-                        "2z2": {
-                            "desc": "二中二",
-                            "num": "lm_2z2||",
-                            "name": "二中二"
-                        },
-                        "3z2": {
-                            "desc": "三中二",
-                            "num": "lm_3z2||",
-                            "name": "三中二"
-                        },
-                        "3z3": {
-                            "desc": "三中三",
-                            "num": "lm_3z3||",
-                            "name": "三中三"
-                        }
-                    }
+            ]
+        }]
+    },
+    {
+        tab: '总和大小单双',
+        sub: [{
+            title: '总和大小单双',
+            list: [
+                {
+                    method: 'hzdxds_hzdxds_hzdxds',
+                    cnMethod: '总和大小单双'
                 }
-            },
-            "hzdxds": {
-                "hzdxds": {
-                    "title": "总和大小单双",
-                    "method": {
-                        "hzdxds": {
-                            "desc": "总和大小单双",
-                            "num": "hzdxds_hzdxds||",
-                            "name": "总和大小单双"
-                        }
-                    }
-                }
-            }
-        }
-    }
-};
+            ]
+        }]
+    },
+];

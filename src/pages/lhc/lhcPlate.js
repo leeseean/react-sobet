@@ -1,34 +1,50 @@
 import React from 'react';
-import {Tabs} from 'antd';
+import {Tabs, Icon, Radio} from 'antd';
 import config from './lhcConfig';
 
 const TabPane = Tabs.TabPane;
 
-const tabObj = config['XGLHC']['ltTab'];
-const keysOfTabObj = Object.keys(tabObj);
-const methodObj = config['XGLHC']['ltMethod'];
+
+class SwitchOdd extends React.Component {
+    changeOdd = (event) => {
+        console.log(event);
+    }
+    render() {
+        return (
+            <div className="switch-odd-wrapper">
+                <Icon type="question-circle" theme="filled" style={{color: 'orange'}} />
+                <span className="switch-odd-title">玩法说明</span>
+                <Radio.Group className="switch-odd-tabs" defaultValue="A" buttonStyle="solid" onChange={this.changeOdd}>
+                    <Radio.Button value="A">A面</Radio.Button>
+                    <Radio.Button value="B">B面</Radio.Button>
+                </Radio.Group>
+                <span className="switch-odd-detail">（A面：高奖金，投注返点0%；B面：正常奖金，投注返点4%）</span>
+            </div>
+        );
+    }
+}
 
 class SubTabs extends React.Component {
     subTabChange = (key) => {
         console.log(key);
     }
     render() {
-        const subObj = methodObj[this.props.field];
-        const subKeys =  Object.keys(subObj);
+        const subConfig = this.props.subConfig;
         return (
             <div className="sub-tabs">
                 {
-                    subKeys.map(key => {
-                        const InnerMethodObj = subObj[key];
-                        const methodFields = Object.keys(InnerMethodObj['method']);
+                    subConfig.map((subItem, index) => {
+                        const list = subItem.list;
                         return (
-                            <div className="clearfix sub-tab-wrapper">
-                                <div className="fl sub-tab-title">{InnerMethodObj['title']}</div>
+                            <div className="clearfix sub-tab-wrapper" key={index}>
+                                <div className="fl sub-tab-title">{subItem['title']}</div>
                                 <div className="fl">
-                                    <Tabs defaultActiveKey={methodFields[0]} onChange={this.subTabChange}>
-                                        {methodFields.map(fld => {
+                                    <Tabs defaultActiveKey={list[0]['method']} animated={false} onChange={this.subTabChange}>
+                                        {list.map(item => {
                                             return (
-                                                <TabPane tab={InnerMethodObj['method'][fld]['name']} field={fld} key={fld}>{InnerMethodObj['method'][fld]['name']}</TabPane>
+                                                <TabPane tab={item['cnMethod']} field={item['method']} key={item['method']}>
+                                                    <SwitchOdd/>
+                                                </TabPane>
                                             );
                                         })}
                                     </Tabs>
@@ -48,19 +64,18 @@ class PlateTabs extends React.Component {
     }
     render() {
         return (
-            <Tabs defaultActiveKey={keysOfTabObj[0]} onChange={this.tabChange}>
-                {keysOfTabObj.map(key => {
+            <Tabs defaultActiveKey="0" animated={false} onChange={this.tabChange}>
+                {config.map((item, index) => {
                     return (
-                        <TabPane tab={tabObj[key]} field={key} key={key}>
-                            <SubTabs field={key}/>
-                            {/* <TabContent field={key}/> */}
+                        <TabPane tab={item.tab} key={index}>
+                            <SubTabs subConfig={item.sub}/>
                         </TabPane>
                     );
                 })}
             </Tabs>
         );
     }
-};
+}
 
 class LhcPlate extends React.Component {
     render() {

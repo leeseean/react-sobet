@@ -235,6 +235,41 @@
 
 .lhc-plate-wrapper {}
 
+.sub-tab-wrapper .ant-tabs {
+    overflow: visible;
+}
+
+.sub-tab-wrapper .ant-tabs-content {
+    position: relative;
+    left: -105px;
+}
+
+.switch-odd-wrapper {
+    padding-left: 24px;
+}
+
+.switch-odd-title {
+    margin-left: 8px;
+}
+
+.switch-odd-tabs {
+    margin-left: 24px;
+}
+
+.switch-odd-tabs .ant-radio-button-wrapper {
+    height: 23px;
+    line-height: 21px;
+    padding: 0 24px;
+    border-radius: 2px;
+}
+
+.ant-radio-group-solid.switch-odd-tabs .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background-color: #a80e1b;
+    color: #fff;
+    border: 1px solid #a80e1b;
+    box-shadow: -1px 0 0 0 #a80e1b;
+}
+
 .lhc-plate-tabs .sub-tab-wrapper .ant-tabs-nav .ant-tabs-tab {
     padding: 0px 16px;
     border-radius: 2px;

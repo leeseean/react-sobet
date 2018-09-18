@@ -1,5 +1,5 @@
 import React from 'react';
-import $http from '../../utils/ajax';
+import {getIdnUrl, getKGAccessToken, getKGGameUrl} from '../../utils/ajax';
 import {message} from 'antd';
 
 class GameList extends React.Component {
@@ -103,21 +103,14 @@ class GameList extends React.Component {
         this.register();
     }
     register() { //先调接口注册下。不然一开始转账的时候会报错
-        $http({url: "/api/sobet/idn/getIdnUrl", method: 'GET'}).then((res) => {}).catch((res) => {});
-        $http({url: "/api/sobet/KG/getKGAccessToken", method: 'GET'}).then((res) => {
+        getIdnUrl(res => {});
+        getKGAccessToken(res => {
             //获取accessToken
             const accessToken = res.accessToken;
-            $http({
-                url: "/api/sobet/KG/getKGGameUrl",
-                method: 'GET',
-                params: {
-                    appId: '1234567890abcdef',
-                    accessToken
-                },
-                dataType: 'json'
-            }).then((res) => {}).catch((res) => {});
-        }).catch((res) => {
-            this.register();
+            getKGGameUrl({
+                appId: '1234567890abcdef',
+                accessToken
+            }, resp => {});
         });
     }
     playGame({
@@ -125,15 +118,11 @@ class GameList extends React.Component {
         type
     }, event) {
         const proxyElem = event.target.nextElementSibling;
-        event.persist();//如果您想以异步的方式访问事件的属性值，你必须在事件回调中调用event.persist()方法，这样会在池中删除合成事件，并且在用户代码中保留对事件的引用。
-        message.config({
-            top: '40%',
-            duration: 2,
-            maxCount: 3,
-        });
+        event.persist(); //如果您想以异步的方式访问事件的属性值，你必须在事件回调中调用event.persist()方法，这样会在池中删除合成事件，并且在用户代码中保留对事件的引用。
+        message.config({top: '40%', duration: 2, maxCount: 3});
         switch (type) {
             case 'idn':
-                $http({url: "/api/sobet/idn/getIdnUrl", method: 'GET'}).then((res) => {
+                getIdnUrl(res => {
                     const url = res.url;
                     if (!url) {
                         message.error('服务异常');
@@ -141,38 +130,27 @@ class GameList extends React.Component {
                     }
                     proxyElem.setAttribute('href', `${url}&game=${param}`);
                     proxyElem.click();
-                }).catch((res) => {
-                    message.error('服务异常');
                 });
                 break;
             case 'kgame':
-                $http({url: "/api/sobet/KG/getKGAccessToken", method: 'GET'}).then((res) => {
-                    //获取accessToken
+                getKGAccessToken(res => {
                     const accessToken = res.accessToken;
                     if (!accessToken) {
                         message.error('服务异常');
                         return;
                     }
-                    $http({
-                        url: "/api/sobet/KG/getKGGameUrl",
-                        method: 'GET',
-                        params: {
-                            appId: param,
-                            accessToken
-                        }
-                    }).then((res) => {
-                        const url = res.gameUrl;
+                    getKGGameUrl({
+                        appId: param,
+                        accessToken
+                    }, resp => {
+                        const url = resp.gameUrl;
                         if (!url) {
                             message.error('服务异常');
                             return;
                         }
                         proxyElem.setAttribute('href', url);
                         proxyElem.click();
-                    }).catch((res) => {
-                        message.error('服务异常');
                     });
-                }).catch((res) => {
-                    message.error('服务异常');
                 });
                 break;
             default:

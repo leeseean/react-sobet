@@ -26,6 +26,7 @@ class GlobalNav extends React.Component {
                 <NavLink exact to="/slot" isActive={active} activeClassName="global-nav-on">老虎机</NavLink>
                 <NavLink exact to="/sport" isActive={active} activeClassName="global-nav-on">体育</NavLink>
                 <NavLink exact to="/poker" isActive={active} activeClassName="global-nav-on">棋牌</NavLink>
+                <NavLink exact to="/lhc" isActive={active} activeClassName="global-nav-on">六合彩</NavLink>
                 <NavLink exact to="/activity" isActive={active} activeClassName="global-nav-on">VIP招待</NavLink>
                 <Logout/>
             </div>

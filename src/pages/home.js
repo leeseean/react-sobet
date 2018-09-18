@@ -126,9 +126,61 @@ const RouteConfig = [
 @observer
 class Home extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         // 没有super(props), 后面使用回报错 定义state bind方法 其他初始化工作
-        this.props.routerStore.history = this.props.history
+        this.props.routerStore.history = this.props.history;
+        this
+            .props
+            .history
+            .listen((location) => {
+                switch (location.pathname) {
+                    case '/':
+                    case '/login':
+                        document.title = '登陆';
+                        break;
+                    case '/index':
+                        document.title = '首页';
+                        break;
+                    case '/lottery':
+                        document.title = '彩票';
+                        break;
+                    case '/activity':
+                        document.title = 'Vip活动';
+                        break;
+                    case '/agent':
+                        document.title = '代理中心';
+                        break;
+                    case '/fish':
+                        document.title = '捕鱼王';
+                        break;
+                    case '/slot':
+                        document.title = '老虎机';
+                        break;
+                    case '/lhc':
+                        document.title = '六合彩';
+                        break;
+                    case '/live':
+                        document.title = '真人娱乐';
+                        break;
+                    case '/personal':
+                        document.title = '个人中心';
+                        break;
+                    case '/poker':
+                        document.title = '棋牌';
+                        break;
+                    case '/sport':
+                        document.title = '体育';
+                        break;
+                    case '/login':
+                        document.title = '登陆';
+                        break;
+                    case '/register':
+                        document.title = '注册';
+                        break;
+                    default:
+                        break;
+                }
+            });
     }
 
     componentWillMount() {
@@ -150,7 +202,11 @@ class Home extends React.Component {
             });
         };
         return (
-            <div className="home-wrapper" style={{minHeight: '800px'}}>
+            <div
+                className="home-wrapper"
+                style={{
+                minHeight: '800px'
+            }}>
                 <Switch>
                     <Routes/>
                     <Redirect to={"/"}/>

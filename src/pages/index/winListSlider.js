@@ -1,5 +1,5 @@
 import React from 'react';
-import $http from '../../utils/ajax';
+import {getLotteryWinTop10} from '../../utils/ajax';
 import Marquee from '../../components/marquee';
 
 const WinItem = ({item}) => {
@@ -34,7 +34,7 @@ class WinListSlider extends React.Component {
         list: []
     }
     componentDidMount() {
-        $http({url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10', method: 'GET'}).then(res => {
+        getLotteryWinTop10(res => {
             if (res.data.code === 1) {
                 this.setState({list: res.data.result});
             }

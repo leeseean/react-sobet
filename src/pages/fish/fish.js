@@ -1,6 +1,6 @@
 import React from 'react';
 import FishContent from './fishContent';
-import $http from '../../utils/ajax';
+import {getAGHURUrl, getPlayerBalance} from '../../utils/ajax';
 import './fish.css';
 
 class Fish extends React.Component {
@@ -8,17 +8,11 @@ class Fish extends React.Component {
         fishMoney: 0
     }
     getFishMoney = () => {
-        $http({
-            url: '/api/sobet/pay/getPlayerBalance',
-            method: 'GET',
-            params: {
-                cbId: 'ag_01'
-            }
-        }).then(res => {
+        getPlayerBalance({
+            cbId: 'ag_01'
+        }, res => {
             if (res.data.cash) {
-                this.setState({
-                    fishMoney: res.data.cash  
-                });
+                this.setState({fishMoney: res.data.cash});
             }
         });
     }
@@ -26,10 +20,7 @@ class Fish extends React.Component {
         this.getFishMoney();
     }
     playFish = () => {
-        $http({
-            url: '/api/sobet/ag/getAGHURUrl',
-            method: 'GET'
-        }).then(res => {
+        getAGHURUrl(res => {
             if (res.data.agForwardGameUrl.agForwardGameUrl) {
                 window.open(res.data.agForwardGameUrl.agForwardGameUrl);
             }

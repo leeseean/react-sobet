@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from '../../components/marquee';
-import $http from '../../utils/ajax';
+import {queryTopBetData} from '../../utils/ajax';
 
 class MiddleMarquee extends React.Component {
     state = {
@@ -89,17 +89,13 @@ class MiddleMarquee extends React.Component {
         ]
     }
     getList = () => {
-        $http({
-            url: '/api/lottery/api/u/v1/ag/queryTopBetData',
-            method: 'GET',
-            params: {
-                num: 20
-            }
-        }).then(res => {
+        queryTopBetData({
+            num: 20
+        }, res => {
             if (res.data.code === 1) {
                 this.setState({list: res.data.result});
             }
-        });
+        })
     }
     componentDidMount() {
         // this.getList();

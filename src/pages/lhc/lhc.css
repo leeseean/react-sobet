@@ -1,0 +1,275 @@
+.lhc-wrapper {
+    background-image: linear-gradient(135deg, #be504a, #7a2828);
+}
+
+.lhc-wrapper .ant-tabs-ink-bar {
+    display: none !important;
+}
+
+/* 头部开始 */
+
+.lhc-top-wrapper {
+    width: 1200px;
+    height: 88px;
+    line-height: 88px;
+    margin: 0 auto;
+}
+
+.lhc-top-countdown-wrapper,
+.lhc-top-opencode-wrapper {
+    height: 88px;
+    line-height: 88px;
+    margin-left: 60px;
+}
+
+.lhc-top-countdown-title,
+.lhc-top-opencode-title {
+    color: #fff;
+    font-size: 12px;
+    height: 36px;
+    line-height: 1;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lhc-coming-issue,
+.lhc-opened-issue {
+    font-weight: 700;
+}
+
+.lhc-top-countdown {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    text-shadow: 0 1px 0 #c5c5c5;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 60px;
+}
+
+.lhc-top-countdown .count-down-wrapper {
+    width: 155px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background: url(../../images/xglhc/clock.png) center no-repeat;
+
+}
+
+.lhc-top-countdown .count-down-symbol {
+    opacity: 0;
+    margin: 0 12px;
+}
+
+.lhc-top-opencode {
+    height: 36px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 60px;
+}
+
+.lhc-top-opencode .opencode-item,
+.lhc-top-opencode .opencode-item-tm {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.lhc-top-opencode .opencode-item[code="01"],
+.lhc-top-opencode .opencode-item[code="02"],
+.lhc-top-opencode .opencode-item[code="07"],
+.lhc-top-opencode .opencode-item[code="08"],
+.lhc-top-opencode .opencode-item[code="12"],
+.lhc-top-opencode .opencode-item[code="13"],
+.lhc-top-opencode .opencode-item[code="18"],
+.lhc-top-opencode .opencode-item[code="19"],
+.lhc-top-opencode .opencode-item[code="23"],
+.lhc-top-opencode .opencode-item[code="24"],
+.lhc-top-opencode .opencode-item[code="29"],
+.lhc-top-opencode .opencode-item[code="30"],
+.lhc-top-opencode .opencode-item[code="34"],
+.lhc-top-opencode .opencode-item[code="35"],
+.lhc-top-opencode .opencode-item[code="40"],
+.lhc-top-opencode .opencode-item[code="45"],
+.lhc-top-opencode .opencode-item[code="46"] {
+    background: url(../../images/xglhc/kjq_red.png) no-repeat
+}
+
+.lhc-top-opencode .opencode-item-tm[code="01"],
+.lhc-top-opencode .opencode-item-tm[code="02"],
+.lhc-top-opencode .opencode-item-tm[code="07"],
+.lhc-top-opencode .opencode-item-tm[code="08"],
+.lhc-top-opencode .opencode-item-tm[code="12"],
+.lhc-top-opencode .opencode-item-tm[code="13"],
+.lhc-top-opencode .opencode-item-tm[code="18"],
+.lhc-top-opencode .opencode-item-tm[code="19"],
+.lhc-top-opencode .opencode-item-tm[code="23"],
+.lhc-top-opencode .opencode-item-tm[code="24"],
+.lhc-top-opencode .opencode-item-tm[code="29"],
+.lhc-top-opencode .opencode-item-tm[code="30"],
+.lhc-top-opencode .opencode-item-tm[code="34"],
+.lhc-top-opencode .opencode-item-tm[code="35"],
+.lhc-top-opencode .opencode-item-tm[code="40"],
+.lhc-top-opencode .opencode-item-tm[code="45"],
+.lhc-top-opencode .opencode-item-tm[code="46"] {
+    background: url(../../images/xglhc/tm_red.png) no-repeat
+}
+
+.lhc-top-opencode .opencode-item[code="03"],
+.lhc-top-opencode .opencode-item[code="04"],
+.lhc-top-opencode .opencode-item[code="09"],
+.lhc-top-opencode .opencode-item[code="10"],
+.lhc-top-opencode .opencode-item[code="14"],
+.lhc-top-opencode .opencode-item[code="15"],
+.lhc-top-opencode .opencode-item[code="20"],
+.lhc-top-opencode .opencode-item[code="25"],
+.lhc-top-opencode .opencode-item[code="26"],
+.lhc-top-opencode .opencode-item[code="31"],
+.lhc-top-opencode .opencode-item[code="36"],
+.lhc-top-opencode .opencode-item[code="37"],
+.lhc-top-opencode .opencode-item[code="41"],
+.lhc-top-opencode .opencode-item[code="42"],
+.lhc-top-opencode .opencode-item[code="47"],
+.lhc-top-opencode .opencode-item[code="48"] {
+    background: url(../../images/xglhc/kjq_blue.png) no-repeat
+}
+
+.lhc-top-opencode .opencode-item-tm[code="03"],
+.lhc-top-opencode .opencode-item-tm[code="04"],
+.lhc-top-opencode .opencode-item-tm[code="09"],
+.lhc-top-opencode .opencode-item-tm[code="10"],
+.lhc-top-opencode .opencode-item-tm[code="14"],
+.lhc-top-opencode .opencode-item-tm[code="15"],
+.lhc-top-opencode .opencode-item-tm[code="20"],
+.lhc-top-opencode .opencode-item-tm[code="25"],
+.lhc-top-opencode .opencode-item-tm[code="26"],
+.lhc-top-opencode .opencode-item-tm[code="31"],
+.lhc-top-opencode .opencode-item-tm[code="36"],
+.lhc-top-opencode .opencode-item-tm[code="37"],
+.lhc-top-opencode .opencode-item-tm[code="41"],
+.lhc-top-opencode .opencode-item-tm[code="42"],
+.lhc-top-opencode .opencode-item-tm[code="47"],
+.lhc-top-opencode .opencode-item-tm[code="48"] {
+    background: url(../../images/xglhc/tm_blue.png) no-repeat
+}
+
+.lhc-top-opencode .opencode-item[code="05"],
+.lhc-top-opencode .opencode-item[code="06"],
+.lhc-top-opencode .opencode-item[code="11"],
+.lhc-top-opencode .opencode-item[code="16"],
+.lhc-top-opencode .opencode-item[code="17"],
+.lhc-top-opencode .opencode-item[code="21"],
+.lhc-top-opencode .opencode-item[code="22"],
+.lhc-top-opencode .opencode-item[code="27"],
+.lhc-top-opencode .opencode-item[code="28"],
+.lhc-top-opencode .opencode-item[code="32"],
+.lhc-top-opencode .opencode-item[code="33"],
+.lhc-top-opencode .opencode-item[code="38"],
+.lhc-top-opencode .opencode-item[code="39"],
+.lhc-top-opencode .opencode-item[code="43"],
+.lhc-top-opencode .opencode-item[code="44"],
+.lhc-top-opencode .opencode-item[code="49"] {
+    background: url(../../images/xglhc/kjq_green.png) no-repeat
+}
+
+.lhc-top-opencode .opencode-item-tm[code="05"],
+.lhc-top-opencode .opencode-item-tm[code="06"],
+.lhc-top-opencode .opencode-item-tm[code="11"],
+.lhc-top-opencode .opencode-item-tm[code="16"],
+.lhc-top-opencode .opencode-item-tm[code="17"],
+.lhc-top-opencode .opencode-item-tm[code="21"],
+.lhc-top-opencode .opencode-item-tm[code="22"],
+.lhc-top-opencode .opencode-item-tm[code="27"],
+.lhc-top-opencode .opencode-item-tm[code="28"],
+.lhc-top-opencode .opencode-item-tm[code="32"],
+.lhc-top-opencode .opencode-item-tm[code="33"],
+.lhc-top-opencode .opencode-item-tm[code="38"],
+.lhc-top-opencode .opencode-item-tm[code="39"],
+.lhc-top-opencode .opencode-item-tm[code="43"],
+.lhc-top-opencode .opencode-item-tm[code="44"],
+.lhc-top-opencode .opencode-item-tm[code="49"] {
+    background: url(../../images/xglhc/tm_green.png) no-repeat
+}
+
+.lhc-top-trend {
+    color: #fff;
+    font-size: 12px;
+}
+
+.lhc-top-trend img {
+    position: relative;
+    bottom: 2px;
+}
+
+.lhc-top-trend a {
+    color: #fff;
+}
+
+.lhc-top-trend:hover a {
+    text-decoration: underline;
+}
+
+/* 头部结束 */
+/* 选号盘部分开始 */
+.lhc-plate-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.lhc-plate-wrapper .sub-tab-title {
+    height: 23px;
+    line-height: 23px;
+    width: 105px;
+    text-align: center;
+    color: #727272;
+}
+
+.lhc-plate-wrapper {}
+
+.lhc-plate-tabs .sub-tab-wrapper .ant-tabs-nav .ant-tabs-tab {
+    padding: 0px 16px;
+    border-radius: 2px;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+}
+
+.lhc-plate-tabs .sub-tab-wrapper .ant-tabs-nav .ant-tabs-tab.ant-tabs-tab-active {
+    background-color: #a80e1b;
+    color: #fff;
+}
+
+.lhc-plate-tabs .ant-tabs-bar,
+.sub-tab-wrapper .ant-tabs-bar {
+    border-bottom: none;
+}
+
+.lhc-plate-tabs .ant-tabs-nav .ant-tabs-tab {
+    background-color: #f5f5f5;
+    margin: 0 1px 0 0;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.lhc-plate-tabs .ant-tabs-nav .ant-tabs-tab.ant-tabs-tab-active {
+    color: #c93231;
+    background-color: #fff;
+}
+
+.lhc-plate-tabs .ant-tabs-bar {
+    background: #e0e0e0;
+}
+
+.lhc-plate-tabs .sub-tab-wrapper .ant-tabs-bar {
+    background-color: #fff;
+}
+
+/* 选号盘部分结束 */

@@ -4,11 +4,23 @@ import './rightFixed.css';
 import BackToTop from './backToTop';
 
 @withRouter
-class RightFixed extends React.PureComponent {
-    render() {
+class RightFixed extends React.Component {
+    state = {
+        show: false
+    }
+    componentDidMount() {
         const {history} = this.props;
-        if (['/', '/login', '/register'].indexOf(history.location.pathname) !== -1) {
-          return null;
+        history.listen(location => {
+            if (['/', '/login', '/register'].indexOf(location.pathname) !== -1) {
+                this.setState({show: false});
+                return;
+            }
+            this.setState({show: true});
+        });
+    }
+    render() {
+        if (!this.state.show) {
+            return null;
         }
         return (
             <div className="right-fixed" ref={this.props.rightFixedRef}>
@@ -32,8 +44,7 @@ class RightFixed extends React.PureComponent {
                     <div className="customer-service">
                         <a
                             href="https://v88.live800.com/live800/chatClient/chatbox.jsp?companyID=566686&amp;configID=3127&amp;jid=5379036822&amp;s=1"
-                            target="_blank"
-                            >
+                            target="_blank">
                             <div className="customer-service-icon"></div>
                             <div className="customer-service-title">
                                 客服

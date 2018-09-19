@@ -1,7 +1,7 @@
 import React from 'react';
 import {Tabs, Icon, Radio} from 'antd';
 import config from './lhcConfig';
-import calcSxArr from '../../utils/calcSxArr';
+import {calcSxArr} from '../../utils/algorithm';
 import {inject, observer} from 'mobx-react';
 
 const TabPane = Tabs.TabPane;
@@ -102,7 +102,7 @@ class SwitchOdd extends React.Component {
 @observer
 class PlateHtml extends React.Component {
     render() {
-        const {oddsObj, method, AorB} = this.props.xglhcStore;
+        const {oddsObj, method, AorB, filteredNums, inputValuesObj} = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -124,18 +124,18 @@ class PlateHtml extends React.Component {
                 return zxArr.map((arr, index) => {
                     const Itemhtml = () => arr.map(item => {
                         return (
-                            <div className="clearfix plate-item" key={item.en}>
+                            <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on': ''}`} key={item.en}>
                                 <div className="fl plate-item-num" en={item.en} cn={item.cn}>{item.cn}</div>
                                 <div className="fl plate-item-odd" en={item.en} cn={item.cn}>x&nbsp;<em>{oddsObj[method] && oddsObj[method][`bonus${AorB}`]}</em></div>
-                                <input className="fr plate-item-input" type="number" min="1" max="999999"/>
+                                <input className="fr plate-item-input" type="number" min="1" max="999999" value={inputValuesObj[item.en]} onChange={(event) => inputValuesObj[item.en] = event.target.value}/>
                             </div>
                         );
                     });
                     return (
                         <div className="fl plate-item-wrapper" method={method} key={index}>
                             <div className="clearfix plate-item-title">
-                                <div className="plate-item-title-left fl">选号</div>
-                                <div className="plate-item-title-right fr">投注金额</div>
+                                <div className="fl plate-item-title-left">选号</div>
+                                <div className="fr plate-item-title-right">投注金额</div>
                             </div>
                             <Itemhtml/>
                         </div>
@@ -160,7 +160,7 @@ class SxFilterHtml extends React.Component {
                     <div className="filter-num-zodiac clearfix">
                         {
                             filterSxArr.map((item, index) => {
-                                return  <div key={index} className={`fl filter-num-zodiac-${item['en']}`} onClick={() => filterNum(item['cn'], event)} filter={item['code']}>{item['cn']}</div>
+                                return  <div key={index} className={`fl filter-num-zodiac-${item['en']}`} onClick={(event) => filterNum(item['cn'], event)} filter={item['code']}>{item['cn']}</div>
                             })
                         }
                     </div>
@@ -175,7 +175,7 @@ class SxFilterHtml extends React.Component {
 @observer
 class FilterHtml extends React.Component {
     render() {
-        const {method, filterNum} = this.props.xglhcStore;
+        const {method, filterNum, filterInputValue, fillFilteredInput} = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -183,27 +183,27 @@ class FilterHtml extends React.Component {
                     <div className={`filter-num-wrap-${method} fr`}>
                         <div className={`filter-num-title-${method}`}>快速筛号</div>
                         <div className="filter-num-red clearfix">
-                            <div className="filter-num-red-da fl" onClick={() => filterNum('红大', event)}>红大</div>
-                            <div className="filter-num-red-xiao fl" onClick={() => filterNum('红小', event)}>红小</div>
-                            <div className="filter-num-red-dan fl" onClick={() => filterNum('红单', event)}>红单</div>
-                            <div className="filter-num-red-shuang fl" onClick={() => filterNum('红双', event)}>红双</div>
+                            <div className="filter-num-red-da fl" onClick={(event) => filterNum('红大', event)}>红大</div>
+                            <div className="filter-num-red-xiao fl" onClick={(event) => filterNum('红小', event)}>红小</div>
+                            <div className="filter-num-red-dan fl" onClick={(event) => filterNum('红单', event)}>红单</div>
+                            <div className="filter-num-red-shuang fl" onClick={(event) => filterNum('红双', event)}>红双</div>
                         </div>
                         <div className="filter-num-blue clearfix">
-                            <div className="filter-num-blue-da fl" onClick={() => filterNum('蓝大', event)}>蓝大</div>
-                            <div className="filter-num-blue-xiao fl" onClick={() => filterNum('蓝小', event)}>蓝小</div>
-                            <div className="filter-num-blue-dan fl" onClick={() => filterNum('蓝单', event)}>蓝单</div>
-                            <div className="filter-num-blue-shuang fl" onClick={() => filterNum('蓝双', event)}>蓝双</div>    
+                            <div className="filter-num-blue-da fl" onClick={(event) => filterNum('蓝大', event)}>蓝大</div>
+                            <div className="filter-num-blue-xiao fl" onClick={(event) => filterNum('蓝小', event)}>蓝小</div>
+                            <div className="filter-num-blue-dan fl" onClick={(event) => filterNum('蓝单', event)}>蓝单</div>
+                            <div className="filter-num-blue-shuang fl" onClick={(event) => filterNum('蓝双', event)}>蓝双</div>    
                         </div>
                         <div className="filter-num-green clearfix">
-                            <div className="filter-num-green-da fl" onClick={() => filterNum('绿大', event)}>绿大</div>
-                            <div className="filter-num-green-xiao fl" onClick={() => filterNum('绿小', event)}>绿小</div>
-                            <div className="filter-num-green-dan fl" onClick={() => filterNum('绿单', event)}>绿单</div>
-                            <div className="filter-num-green-shuang fl" onClick={() => filterNum('绿双', event)}>绿双</div>    
+                            <div className="filter-num-green-da fl" onClick={(event) => filterNum('绿大', event)}>绿大</div>
+                            <div className="filter-num-green-xiao fl" onClick={(event) => filterNum('绿小', event)}>绿小</div>
+                            <div className="filter-num-green-dan fl" onClick={(event) => filterNum('绿单', event)}>绿单</div>
+                            <div className="filter-num-green-shuang fl" onClick={(event) => filterNum('绿双', event)}>绿双</div>    
                         </div>
                         <SxFilterHtml/>
                         <div className="filter-num-input-wrap">
                             <div className="filter-num-input-title">单注金额：</div>
-                            <input className="filter-num-input" type="number" min="1" max="999999"/>   
+                            <input className="filter-num-input" type="number" min="1" max="999999" value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)}/>   
                         </div>
                         <div className="filter-num-reset">
                             <i className="filter-num-reset-icon"></i>重置

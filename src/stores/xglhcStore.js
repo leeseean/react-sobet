@@ -1,10 +1,16 @@
 import {
     observable,
     action,
-    runInAction
+    runInAction,
+    computed
 } from 'mobx';
 import $http from '../utils/ajax';
-import {toggleClass} from '../utils/cssClass';
+import {
+    calcSxFilterConfig
+} from '../utils/algorithm';
+import {
+    toggleClass
+} from '../utils/cssClass';
 
 class XglhcStore {
 
@@ -38,21 +44,40 @@ class XglhcStore {
 
     @observable bmnsx = '狗'
 
+    @observable inputValuesObj = {}
+
     @observable filterArr = []
 
-    @observable filterConfig = {
-        '红大': ['29','30','34','35','40','45','46'],
-        '红小': ['01','02','07','08','12','13','18','19','23','24'],
-        '红单': ['01','07','13','19','23','29','35','45'],
-        '红双': ['02','08','12','18','24','30','34','40','46'],
-        '蓝大': ['25','26','31','36','37','41','42','47','48'],
-        '蓝小': ['03','04','09','10','14','15','20'],
-        '蓝单': ['03','09','15','25','31','37','41','47'],
-        '蓝双': ['04','10','14','20','26','36','42','48'],
-        '绿大': ['27','28','32','33','38','39','43','44','49'],
-        '绿小': ['05','06','11','16','17','21','22'],
-        '绿单': ['05','11','17','21','27','33','39','43','49'],
-        '绿双': ['06','16','22','28','32','38','44']
+    @observable filterInputValue = ''
+
+    @computed get sxFilterConfig() {
+        return calcSxFilterConfig(this.bmnsx);
+    }
+
+    @computed get filterConfig() {
+        return {
+            ...this.sxFilterConfig,
+            '红大': ['29', '30', '34', '35', '40', '45', '46'],
+            '红小': ['01', '02', '07', '08', '12', '13', '18', '19', '23', '24'],
+            '红单': ['01', '07', '13', '19', '23', '29', '35', '45'],
+            '红双': ['02', '08', '12', '18', '24', '30', '34', '40', '46'],
+            '蓝大': ['25', '26', '31', '36', '37', '41', '42', '47', '48'],
+            '蓝小': ['03', '04', '09', '10', '14', '15', '20'],
+            '蓝单': ['03', '09', '15', '25', '31', '37', '41', '47'],
+            '蓝双': ['04', '10', '14', '20', '26', '36', '42', '48'],
+            '绿大': ['27', '28', '32', '33', '38', '39', '43', '44', '49'],
+            '绿小': ['05', '06', '11', '16', '17', '21', '22'],
+            '绿单': ['05', '11', '17', '21', '27', '33', '39', '43', '49'],
+            '绿双': ['06', '16', '22', '28', '32', '38', '44']
+        };
+    }
+
+    @computed get filteredNums() {
+        const result = [];
+        this.filterArr.forEach(item => {
+            result.push(...this.filterConfig[item]);
+        });
+        return [...new Set(result)];
     }
 
     @action
@@ -82,12 +107,14 @@ class XglhcStore {
         this.method = this.tabRefMethod[key];
         this.AorB = this.tabRefAorB[key];
         this.filterArr = [];
+        this.filterInputValue = '';
     }
 
     @action changeMethod = (key) => {
         this.method = key;
         this.setTabRefMethod(this.tab, key);
         this.filterArr = [];
+        this.filterInputValue = '';
     }
 
     @action setTabRefMethod(tab, method) {
@@ -96,7 +123,6 @@ class XglhcStore {
 
     //快速筛号
     @action filterNum = (filterType, event) => {
-        console.log(event);
         const _index = this.filterArr.indexOf(filterType);
         if (_index === -1) {
             this.filterArr.push(filterType);
@@ -104,6 +130,21 @@ class XglhcStore {
             this.filterArr.splice(_index, 1);
         }
         toggleClass(event.target, 'on');
+        if (this.filterInputValue && this.filteredNums.length > 0) {
+            this.filteredNums.forEach(num => {
+                this.inputValuesObj[num] = this.filterInputValue;
+            });
+        }
+    }
+
+    //快速筛号输入框
+    @action fillFilteredInput = value => {
+        this.filterInputValue = value;
+        if (this.filterInputValue && this.filteredNums.length > 0) {
+            this.filteredNums.forEach(num => {
+                this.inputValuesObj[num] = this.filterInputValue;
+            });
+        }
     }
 }
 

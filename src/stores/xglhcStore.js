@@ -130,20 +130,24 @@ class XglhcStore {
             this.filterArr.splice(_index, 1);
         }
         toggleClass(event.target, 'on');
-        if (this.filterInputValue && this.filteredNums.length > 0) {
+        const reflectObj = {};
+        if (this.filterInputValue && this.filterArr.length > 0) {
             this.filteredNums.forEach(num => {
-                this.inputValuesObj[num] = this.filterInputValue;
+                reflectObj[num] = this.filterInputValue;
             });
+            this.inputValuesObj = reflectObj;
         }
     }
 
     //快速筛号输入框
     @action fillFilteredInput = value => {
         this.filterInputValue = value;
-        if (this.filterInputValue && this.filteredNums.length > 0) {
+        const reflectObj = {};
+        if (this.filterInputValue && this.filterArr.length > 0) {
             this.filteredNums.forEach(num => {
-                this.inputValuesObj[num] = this.filterInputValue;
+                reflectObj[num] = this.filterInputValue;
             });
+            this.inputValuesObj = reflectObj;//这样做的目的是更新引用才会引起视图更新
         }
     }
 }

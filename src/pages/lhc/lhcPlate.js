@@ -1,8 +1,8 @@
 import React from 'react';
-import {Tabs, Icon, Radio} from 'antd';
+import { Tabs, Icon, Radio, Button } from 'antd';
 import config from './lhcConfig';
-import {calcSxArr} from '../../utils/algorithm';
-import {inject, observer} from 'mobx-react';
+import { calcSxArr } from '../../utils/algorithm';
+import { inject, observer } from 'mobx-react';
 
 const TabPane = Tabs.TabPane;
 
@@ -10,8 +10,8 @@ const TabPane = Tabs.TabPane;
 @observer
 class SwitchOddDetail extends React.Component {
     render() {
-        const {xglhcStore} = this.props;
-        const {method} = xglhcStore;
+        const { xglhcStore } = this.props;
+        const { method } = xglhcStore;
         switch (method) {
             case 'tm_tm_sx':
             case 'zt1x_zt1x_zt1x':
@@ -42,8 +42,8 @@ class SwitchOddDetail extends React.Component {
             case 'hzdxds_hzdxds_hzdxds':
                 const genText = (arr, AOrB) => {
                     return arr.map((obj) => {
-                        const {cn, m_method} = obj;
-                        return `${cn}${xglhcStore.oddsObj[m_method][`bonus${AOrB}`]}~${ (xglhcStore.oddsObj[m_method][`rate${AOrB}`] * 100).toFixed(2)}%`;
+                        const { cn, m_method } = obj;
+                        return `${cn}${xglhcStore.oddsObj[m_method][`bonus${AOrB}`]}~${(xglhcStore.oddsObj[m_method][`rate${AOrB}`] * 100).toFixed(2)}%`;
                     }).join('，');
                 }
                 const _config = [
@@ -74,15 +74,15 @@ class SwitchOddDetail extends React.Component {
 @observer
 class SwitchOdd extends React.Component {
     render() {
-        const {xglhcStore} = this.props;
+        const { xglhcStore } = this.props;
         return (
             <div className="switch-odd-wrapper">
                 <Icon
                     type="question-circle"
                     theme="filled"
                     style={{
-                    color: 'orange'
-                }}/>
+                        color: 'orange'
+                    }} />
                 <span className="switch-odd-title">玩法说明</span>
                 <Radio.Group
                     className="switch-odd-tabs"
@@ -92,7 +92,7 @@ class SwitchOdd extends React.Component {
                     <Radio.Button value="A">A面</Radio.Button>
                     <Radio.Button value="B">B面</Radio.Button>
                 </Radio.Group>
-                <SwitchOddDetail/>
+                <SwitchOddDetail />
             </div>
         );
     }
@@ -102,7 +102,7 @@ class SwitchOdd extends React.Component {
 @observer
 class PlateHtml extends React.Component {
     render() {
-        const {oddsObj, method, AorB, filteredNums, inputValuesObj} = this.props.xglhcStore;
+        const { oddsObj, method, AorB, filteredNums, inputValuesObj } = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -124,10 +124,10 @@ class PlateHtml extends React.Component {
                 return zxArr.map((arr, index) => {
                     const Itemhtml = () => arr.map(item => {
                         return (
-                            <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on': ''}`} key={item.en}>
+                            <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on' : ''}`} key={item.en}>
                                 <div className="fl plate-item-num" en={item.en} cn={item.cn}>{item.cn}</div>
                                 <div className="fl plate-item-odd" en={item.en} cn={item.cn}>x&nbsp;<em>{oddsObj[method] && oddsObj[method][`bonus${AorB}`]}</em></div>
-                                <input className="fr plate-item-input" type="number" min="1" max="999999" value={inputValuesObj[item.en]} onChange={(event) => inputValuesObj[item.en] = event.target.value}/>
+                                <input className="fr plate-item-input" type="number" min="1" max="999999" value={inputValuesObj[item.en]} onChange={(event) => inputValuesObj[item.en] = event.target.value} />
                             </div>
                         );
                     });
@@ -137,10 +137,15 @@ class PlateHtml extends React.Component {
                                 <div className="fl plate-item-title-left">选号</div>
                                 <div className="fr plate-item-title-right">投注金额</div>
                             </div>
-                            <Itemhtml/>
+                            <Itemhtml />
                         </div>
                     );
                 });
+            case 'tm_tm_sx':
+            case 'zt1x_zt1x_zt1x':
+                const sxArr = [calcSxArr(bmnsx).slice(0, 6), calcSxArr(bmnsx).slice(6, 12)];
+
+                return null;
             default:
                 return null;
         }
@@ -151,7 +156,7 @@ class PlateHtml extends React.Component {
 @observer
 class SxFilterHtml extends React.Component {
     render() {
-        const {method, filterNum, bmnsx} = this.props.xglhcStore;
+        const { method, filterNum, filterArr, bmnsx } = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -160,7 +165,7 @@ class SxFilterHtml extends React.Component {
                     <div className="filter-num-zodiac clearfix">
                         {
                             filterSxArr.map((item, index) => {
-                                return  <div key={index} className={`fl filter-num-zodiac-${item['en']}`} onClick={(event) => filterNum(item['cn'], event)} filter={item['code']}>{item['cn']}</div>
+                                return <div key={index} className={`fl filter-num-zodiac-${item['en']} ${filterArr.includes(item['cn']) ? 'on' : ''}`} onClick={(event) => filterNum(item['cn'], event)} filter={item['code']}>{item['cn']}</div>
                             })
                         }
                     </div>
@@ -175,7 +180,7 @@ class SxFilterHtml extends React.Component {
 @observer
 class FilterHtml extends React.Component {
     render() {
-        const {method, filterNum, filterInputValue, fillFilteredInput} = this.props.xglhcStore;
+        const { method, filterNum, filterArr, filterInputValue, fillFilteredInput, resetPlate, resetButtonClicked } = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -183,31 +188,41 @@ class FilterHtml extends React.Component {
                     <div className={`filter-num-wrap-${method} fr`}>
                         <div className={`filter-num-title-${method}`}>快速筛号</div>
                         <div className="filter-num-red clearfix">
-                            <div className="filter-num-red-da fl" onClick={(event) => filterNum('红大', event)}>红大</div>
-                            <div className="filter-num-red-xiao fl" onClick={(event) => filterNum('红小', event)}>红小</div>
-                            <div className="filter-num-red-dan fl" onClick={(event) => filterNum('红单', event)}>红单</div>
-                            <div className="filter-num-red-shuang fl" onClick={(event) => filterNum('红双', event)}>红双</div>
+                            <div className={`filter-num-red-da fl ${filterArr.includes('红大') ? 'on' : ''}`} onClick={(event) => filterNum('红大', event)}>红大</div>
+                            <div className={`filter-num-red-xiao fl ${filterArr.includes('红小') ? 'on' : ''}`} onClick={(event) => filterNum('红小', event)}>红小</div>
+                            <div className={`filter-num-red-dan fl ${filterArr.includes('红单') ? 'on' : ''}`} onClick={(event) => filterNum('红单', event)}>红单</div>
+                            <div className={`filter-num-red-shuang fl ${filterArr.includes('红双') ? 'on' : ''}`} onClick={(event) => filterNum('红双', event)}>红双</div>
                         </div>
                         <div className="filter-num-blue clearfix">
-                            <div className="filter-num-blue-da fl" onClick={(event) => filterNum('蓝大', event)}>蓝大</div>
-                            <div className="filter-num-blue-xiao fl" onClick={(event) => filterNum('蓝小', event)}>蓝小</div>
-                            <div className="filter-num-blue-dan fl" onClick={(event) => filterNum('蓝单', event)}>蓝单</div>
-                            <div className="filter-num-blue-shuang fl" onClick={(event) => filterNum('蓝双', event)}>蓝双</div>    
+                            <div className={`filter-num-blue-da fl ${filterArr.includes('蓝大') ? 'on' : ''}`} onClick={(event) => filterNum('蓝大', event)}>蓝大</div>
+                            <div className={`filter-num-blue-xiao fl ${filterArr.includes('蓝小') ? 'on' : ''}`} onClick={(event) => filterNum('蓝小', event)}>蓝小</div>
+                            <div className={`filter-num-blue-dan fl ${filterArr.includes('蓝单') ? 'on' : ''}`} onClick={(event) => filterNum('蓝单', event)}>蓝单</div>
+                            <div className={`filter-num-blue-shuang fl ${filterArr.includes('蓝双') ? 'on' : ''}`} onClick={(event) => filterNum('蓝双', event)}>蓝双</div>
                         </div>
                         <div className="filter-num-green clearfix">
-                            <div className="filter-num-green-da fl" onClick={(event) => filterNum('绿大', event)}>绿大</div>
-                            <div className="filter-num-green-xiao fl" onClick={(event) => filterNum('绿小', event)}>绿小</div>
-                            <div className="filter-num-green-dan fl" onClick={(event) => filterNum('绿单', event)}>绿单</div>
-                            <div className="filter-num-green-shuang fl" onClick={(event) => filterNum('绿双', event)}>绿双</div>    
+                            <div className={`filter-num-green-da fl ${filterArr.includes('绿大') ? 'on' : ''}`} onClick={(event) => filterNum('绿大', event)}>绿大</div>
+                            <div className={`filter-num-green-xiao fl ${filterArr.includes('绿小') ? 'on' : ''}`} onClick={(event) => filterNum('绿小', event)}>绿小</div>
+                            <div className={`filter-num-green-dan fl ${filterArr.includes('绿单') ? 'on' : ''}`} onClick={(event) => filterNum('绿单', event)}>绿单</div>
+                            <div className={`filter-num-green-shuang fl ${filterArr.includes('绿双') ? 'on' : ''}`} onClick={(event) => filterNum('绿双', event)}>绿双</div>
                         </div>
-                        <SxFilterHtml/>
+                        <SxFilterHtml />
                         <div className="filter-num-input-wrap">
                             <div className="filter-num-input-title">单注金额：</div>
-                            <input className="filter-num-input" type="number" min="1" max="999999" value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)}/>   
+                            <input className="filter-num-input" type="number" min="1" max="999999" value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)} />
                         </div>
-                        <div className="filter-num-reset">
-                            <i className="filter-num-reset-icon"></i>重置
+                        <div className="filter-num-reset" onClick={resetPlate}>
+                            <i className={`filter-num-reset-icon ${resetButtonClicked ? 'rotate360' : ''}`}></i>重置
                         </div>
+                    </div>
+                );
+            case 'tm_tm_sx':
+            case 'zt1x_zt1x_zt1x':
+                return (
+                    <div className="filter-num-wrap fl clearfix" method={method}>
+                        <div className="fl filter-zodiac-tab filter-poultry-zodiac">家禽家畜</div>
+                        <div className="fl filter-zodiac-tab filter-wild-zodiac">野外兽类</div>
+                        <div className="fl filter-num-input-title">单注金额：</div>
+                        <input className="fl filter-num-input" type="number" min="1" max="999999"/>   
                     </div>
                 );
             default:
@@ -218,12 +233,34 @@ class FilterHtml extends React.Component {
 
 @inject('xglhcStore')
 @observer
+class PlateBottom extends React.Component {
+    render() {
+        const { totalBetCount, totalBetMoney, addOrder } = this.props.xglhcStore;
+        return (
+            <div className="clearfix plate-bottom-wrapper">
+                <div className="fl plate-bottom-text">
+                    您选择了<em className="total-bet-count">{totalBetCount}</em>注，
+                    共计<em className="total-bet-money">{totalBetMoney}</em>元
+                </div>
+                <div className="fl quick-submit-button">
+                    <Button disabled={totalBetMoney <= 0} size="large">快速投注</Button>
+                </div>
+                <div className="fl add-num-button">
+                    <Button disabled={totalBetMoney <= 0} size="large" onClick={addOrder}>添加选号</Button>
+                </div>
+            </div>
+        );
+    }
+}
+
+@inject('xglhcStore')
+@observer
 class PlateContent extends React.Component {
     render() {
         return (
             <div className="clearfix plate-list-wrapper">
-                <PlateHtml/>
-                <FilterHtml/>
+                <PlateHtml />
+                <FilterHtml />
             </div>
         );
     }
@@ -233,7 +270,7 @@ class PlateContent extends React.Component {
 @observer
 class SubTabs extends React.Component {
     render() {
-        const {xglhcStore} = this.props;
+        const { xglhcStore } = this.props;
         const subConfig = this.props.subConfig;
         return (
             <div className="sub-tabs">
@@ -250,8 +287,9 @@ class SubTabs extends React.Component {
                                 {list.map(item => {
                                     return (
                                         <TabPane tab={item['cnMethod']} key={item['method']}>
-                                            <SwitchOdd method={item['method']}/>
-                                            <PlateContent method={item['method']}/>
+                                            <SwitchOdd />
+                                            <PlateContent />
+                                            <PlateBottom />
                                         </TabPane>
                                     );
                                 })}
@@ -268,13 +306,13 @@ class SubTabs extends React.Component {
 @observer
 class PlateTabs extends React.Component {
     render() {
-        const {xglhcStore} = this.props;
+        const { xglhcStore } = this.props;
         return (
             <Tabs defaultActiveKey="0" animated={false} onChange={xglhcStore.tabChange}>
                 {config.map((item, index) => {
                     return (
                         <TabPane tab={item.tab} key={index}>
-                            <SubTabs subConfig={item.sub}/>
+                            <SubTabs subConfig={item.sub} />
                         </TabPane>
                     );
                 })}
@@ -296,7 +334,7 @@ class LhcPlate extends React.Component {
         return (
             <div className="lhc-plate-wrapper">
                 <div className="lhc-plate-tabs">
-                    <PlateTabs/>
+                    <PlateTabs />
                 </div>
             </div>
         );

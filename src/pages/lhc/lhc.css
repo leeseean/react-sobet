@@ -1,5 +1,6 @@
 .lhc-wrapper {
     background-image: linear-gradient(135deg, #be504a, #7a2828);
+    min-height: 1240px;
 }
 
 .lhc-wrapper .ant-tabs-ink-bar {
@@ -224,6 +225,8 @@
     width: 1200px;
     margin: 0 auto;
     background-color: #fff;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .lhc-plate-wrapper .sub-tab-title {
@@ -233,8 +236,6 @@
     text-align: center;
     color: #727272;
 }
-
-.lhc-plate-wrapper {}
 
 .switch-odd-wrapper {
     padding-left: 24px;
@@ -688,6 +689,7 @@ input::-webkit-inner-spin-button {
     background: url(../../images/xglhc/reset-logo.png) no-repeat;
     vertical-align: middle;
     margin-right: 4px;
+    margin-bottom: 2px;
 }
 
 .rotate360 {
@@ -718,4 +720,121 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
+.plate-bottom-wrapper {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.plate-bottom-wrapper .total-bet-count, 
+.plate-bottom-wrapper .total-bet-money {
+    font-size: 16px;
+    color: #d24454;
+    margin: 0 6px;
+    font-weight: 700;
+}
+
+.plate-bottom-wrapper .plate-bottom-text {
+    margin-left: 240px;
+}
+
+.plate-bottom-wrapper .quick-submit-button,
+.plate-bottom-wrapper .add-num-button {
+    margin-left: 20px;
+}
+
 /* 选号盘部分结束 */
+/* 订单盘部分结束 */
+.lhc-order-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.4);
+    background-color: #f9f9f9;
+}
+
+.lhc-order-table {
+    width: 800px;
+    height: 256px;
+    background: #fff;
+    border-color: #d4d4dd;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+}
+
+.lhc-order-total {
+    width: 340px;
+    height: 130px;
+    background-color: #fff;
+    border-color: #d4d4dd;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    text-align: right;
+    padding: 10px;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.lhc-order-countdown {
+    width: 340px;
+    text-align: center;
+    margin: 18px 0;
+}
+
+.lhc-order-countdown .count-down-wrapper {
+    display: inline;
+}
+
+.lhc-order-bet {
+    width: 256px;
+    margin: 0 auto;
+}
+
+.order-modal-list {
+    margin-top: 0;
+    border-bottom: none;
+    width: 100%;
+    margin-bottom: 10px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-modal-issue {
+    padding: 0;
+    line-height: 30px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+}
+
+.order-modal-item {
+    width: 100%;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.order-modal-item-method {
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #c7484a;
+}
+
+.order-modal-item-num {
+    max-height: 200px;
+    overflow: auto;
+    font-size: 12px;
+    padding: 0;
+    color: #333;
+}
+/* 订单盘部分结束 */

@@ -8,15 +8,34 @@ import $http from '../utils/ajax';
 import {
     calcSxFilterConfig
 } from '../utils/algorithm';
-import {
-    toggleClass
-} from '../utils/cssClass';
 
 class XglhcStore {
 
     @observable oddsObj = {}
 
     @observable method = 'tm_tm_zx'
+
+    methodToCnObj = {
+        tm_tm_zx: '特码直选',
+        tm_tm_sx: '特码生肖',
+        tm_tm_sb: '特码色波',
+        tm_tm_dxds: '大小单双',
+        tm_tm_ws: '特码尾数',
+        zt1m_zt1m_zt1m: '正特一码',
+        zt1x_zt1x_zt1x: '正特一肖',
+        ztws_ztws_ztws: '正特尾数',
+        lx_lx_2lx: '二连肖',
+        lx_lx_3lx: '三连肖',
+        lx_lx_4lx: '四连肖',
+        lm_lm_2z2: '二中二',
+        lm_lm_3z2: '三中二',
+        lm_lm_3z3: '三中三',
+        hzdxds_hzdxds_hzdxds: '总和大小单双'
+    }
+
+    @computed get cnMethod() {
+        return this.methodToCnObj[this.method];
+    }
 
     @observable tab = '0'
     //默认展示tab
@@ -68,7 +87,9 @@ class XglhcStore {
             '绿大': ['27', '28', '32', '33', '38', '39', '43', '44', '49'],
             '绿小': ['05', '06', '11', '16', '17', '21', '22'],
             '绿单': ['05', '11', '17', '21', '27', '33', '39', '43', '49'],
-            '绿双': ['06', '16', '22', '28', '32', '38', '44']
+            '绿双': ['06', '16', '22', '28', '32', '38', '44'],
+            '家禽家畜': ['niu','ma','yang','ji','gou','zhu'],
+            '野外兽类': ['shu','hu','tu','long','she','hou']
         };
     }
 
@@ -129,7 +150,7 @@ class XglhcStore {
         } else {
             this.filterArr.splice(_index, 1);
         }
-        toggleClass(event.target, 'on');
+
         const reflectObj = {};
         if (this.filterInputValue && this.filterArr.length > 0) {
             this.filteredNums.forEach(num => {
@@ -147,7 +168,98 @@ class XglhcStore {
             this.filteredNums.forEach(num => {
                 reflectObj[num] = this.filterInputValue;
             });
-            this.inputValuesObj = reflectObj;//这样做的目的是更新引用才会引起视图更新
+            this.inputValuesObj = reflectObj; //这样做的目的是更新引用才会引起视图更新
+        }
+    }
+
+    @observable resetButtonClicked = false;
+
+    //重置
+    @action resetPlate = () => {
+        this.resetButtonClicked = !this.resetButtonClicked;
+        this.filterArr = [];
+        this.filterInputValue = '';
+        this.inputValuesObj = {};
+    }
+
+    @computed get totalBetCount() {
+        let count = 0;
+        for (let key in this.inputValuesObj) {
+            if (this.inputValuesObj[key]) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @computed get totalBetMoney() {
+        let money = 0;
+        for (let key in this.inputValuesObj) {
+            if (this.inputValuesObj[key]) {
+                money += Number(this.inputValuesObj[key]);
+            }
+        }
+        return money;
+    }
+
+    @action addOrder = () => {
+        const arr = [];
+        for (let key in this.inputValuesObj) {
+            const value = this.inputValuesObj[key];
+            arr.push({
+                cnMethod: this.cnMethod,
+                num: key,
+                detail: `${this.cnMethod}  ${key}`,
+                odd: this.oddsObj[this.method][`bonus${this.AorB}`],
+                money: value
+            });
+        }
+        this.orderData = [...this.orderData, ...arr];
+        this.orderData = this.orderData.map((v, i) => {
+            v.key = i;
+            return v;
+        });
+        this.resetPlate();
+    }
+
+    @action deleteOrderItem = (key) => {
+        this.orderData = this.orderData.filter(v => v.key !== key);
+    }
+
+    @observable orderData = []
+
+    @computed get orderTotalCount() {
+        return this.orderData.length;
+    }
+
+    @computed get orderTotalMoney() {
+        return this.orderData.reduce((a, b) => a + Number(b.money), 0);
+    }
+
+    @action showBetModal = () => {
+        if (!this.betModalShowed) {
+            this.betModalShowed = true;
+        }
+    }
+
+    @action closeBetModal = () => {
+        this.betModalShowed = false;
+    }
+
+    @action bet = () => {
+
+    }
+
+    @observable betModalShowed = false
+
+    @observable printOrderFlag = Boolean(localStorage.getItem('printOrderFlag'))
+
+    @action setPrintOrderFlag = (event) => {
+        this.printOrderFlag = event.target.checked;
+        if (this.printOrderFlag) {
+            localStorage.setItem('printOrderFlag', '1');
+        } else {
+            localStorage.removeItem('printOrderFlag');
         }
     }
 }

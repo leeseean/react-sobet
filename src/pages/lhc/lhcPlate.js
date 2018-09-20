@@ -103,6 +103,26 @@ class SwitchOdd extends React.Component {
 class PlateHtml extends React.Component {
     render() {
         const { oddsObj, method, AorB, filteredNums, inputValuesObj } = this.props.xglhcStore;
+        const Itemhtml = ({ item }) => {
+            return (
+                <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on' : ''}`}>
+                    <div className="fl plate-item-num" en={item.en} cn={item.cn}>{item.cn}</div>
+                    <div className="fl plate-item-odd" en={item.en} cn={item.cn}>x&nbsp;<em>{oddsObj[method] && oddsObj[method][`bonus${AorB}`]}</em></div>
+                    <input className="fr plate-item-input" type="number" min="1" max="999999" value={inputValuesObj[item.en]} onChange={(event) => inputValuesObj[item.en] = event.target.value} />
+                </div>
+            );
+        };
+        const Listhtml = ({ arr }) => arr.map(item => {
+            return <Itemhtml item={item} key={item.en} />;
+        });
+        const TitleHtml = () => {
+            return (
+                <div className="clearfix plate-item-title">
+                    <div className="fl plate-item-title-left">选号</div>
+                    <div className="fr plate-item-title-right">投注金额</div>
+                </div>
+            );
+        };
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
@@ -122,22 +142,10 @@ class PlateHtml extends React.Component {
                     zxArr.slice(40, 49)
                 ];
                 return zxArr.map((arr, index) => {
-                    const Itemhtml = () => arr.map(item => {
-                        return (
-                            <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on' : ''}`} key={item.en}>
-                                <div className="fl plate-item-num" en={item.en} cn={item.cn}>{item.cn}</div>
-                                <div className="fl plate-item-odd" en={item.en} cn={item.cn}>x&nbsp;<em>{oddsObj[method] && oddsObj[method][`bonus${AorB}`]}</em></div>
-                                <input className="fr plate-item-input" type="number" min="1" max="999999" value={inputValuesObj[item.en]} onChange={(event) => inputValuesObj[item.en] = event.target.value} />
-                            </div>
-                        );
-                    });
                     return (
                         <div className="fl plate-item-wrapper" method={method} key={index}>
-                            <div className="clearfix plate-item-title">
-                                <div className="fl plate-item-title-left">选号</div>
-                                <div className="fr plate-item-title-right">投注金额</div>
-                            </div>
-                            <Itemhtml />
+                            <TitleHtml />
+                            <Listhtml arr={arr}/>
                         </div>
                     );
                 });
@@ -222,7 +230,7 @@ class FilterHtml extends React.Component {
                         <div className="fl filter-zodiac-tab filter-poultry-zodiac">家禽家畜</div>
                         <div className="fl filter-zodiac-tab filter-wild-zodiac">野外兽类</div>
                         <div className="fl filter-num-input-title">单注金额：</div>
-                        <input className="fl filter-num-input" type="number" min="1" max="999999"/>   
+                        <input className="fl filter-num-input" type="number" min="1" max="999999" />
                     </div>
                 );
             default:

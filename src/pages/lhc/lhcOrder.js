@@ -112,7 +112,7 @@ class LhcOrder extends React.Component {
                             return (
                                 <dd className="order-modal-item" key={index}>
                                     <div className="order-modal-item-method">{item.cnMethod}</div>
-                                    <div className="order-modal-item-num">{item.num}</div>
+                                    <div className="order-modal-item-num">{item.cnNum}</div>
                                     <span
                                         style={{
                                             color: '#666'

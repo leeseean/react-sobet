@@ -8,30 +8,24 @@ import $http from '../utils/ajax';
 import {
     calcSxFilterConfig
 } from '../utils/algorithm';
+import methodToCnObj from '../pages/lhc/methodToCnObj';
+import numToCnObj from '../pages/lhc/numToCnObj';
 
 class XglhcStore {
+
+    @observable lotteryType = 'lhc'
+
+    @observable lottery = 'XGLHC'
+
+    pattern = /^\d+(\.(\d|\d{2}))?$/ //输入框校验
 
     @observable oddsObj = {}
 
     @observable method = 'tm_tm_zx'
 
-    methodToCnObj = {
-        tm_tm_zx: '特码直选',
-        tm_tm_sx: '特码生肖',
-        tm_tm_sb: '特码色波',
-        tm_tm_dxds: '大小单双',
-        tm_tm_ws: '特码尾数',
-        zt1m_zt1m_zt1m: '正特一码',
-        zt1x_zt1x_zt1x: '正特一肖',
-        ztws_ztws_ztws: '正特尾数',
-        lx_lx_2lx: '二连肖',
-        lx_lx_3lx: '三连肖',
-        lx_lx_4lx: '四连肖',
-        lm_lm_2z2: '二中二',
-        lm_lm_3z2: '三中二',
-        lm_lm_3z3: '三中三',
-        hzdxds_hzdxds_hzdxds: '总和大小单双'
-    }
+    methodToCnObj = methodToCnObj 
+
+    numToCnObj = numToCnObj
 
     @computed get cnMethod() {
         return this.methodToCnObj[this.method];
@@ -61,7 +55,24 @@ class XglhcStore {
 
     @observable AorB = 'A'
 
-    @observable bmnsx = '狗'
+    @observable cnBmnsx = '狗'
+
+    @computed get bmnsx() {
+        return {
+            '猪': 'zhu',
+            '狗': 'gou',
+            '鸡': 'ji',
+            '猴': 'hou',
+            '羊': 'yang',
+            '马': 'ma',
+            '蛇': 'she',
+            '龙': 'long',
+            '兔': 'tu',
+            '虎': 'hu',
+            '牛': 'niu',
+            '鼠': 'shu'
+        } [this.cnBmnsx];
+    }
 
     @observable inputValuesObj = {}
 
@@ -88,8 +99,8 @@ class XglhcStore {
             '绿小': ['05', '06', '11', '16', '17', '21', '22'],
             '绿单': ['05', '11', '17', '21', '27', '33', '39', '43', '49'],
             '绿双': ['06', '16', '22', '28', '32', '38', '44'],
-            '家禽家畜': ['niu','ma','yang','ji','gou','zhu'],
-            '野外兽类': ['shu','hu','tu','long','she','hou']
+            '家禽家畜': ['niu', 'ma', 'yang', 'ji', 'gou', 'zhu'],
+            '野外兽类': ['shu', 'hu', 'tu', 'long', 'she', 'hou']
         };
     }
 
@@ -129,6 +140,7 @@ class XglhcStore {
         this.AorB = this.tabRefAorB[key];
         this.filterArr = [];
         this.filterInputValue = '';
+        this.inputValuesObj = {};
     }
 
     @action changeMethod = (key) => {
@@ -136,6 +148,7 @@ class XglhcStore {
         this.setTabRefMethod(this.tab, key);
         this.filterArr = [];
         this.filterInputValue = '';
+        this.inputValuesObj = {};
     }
 
     @action setTabRefMethod(tab, method) {
@@ -145,30 +158,50 @@ class XglhcStore {
     //快速筛号
     @action filterNum = (filterType, event) => {
         const _index = this.filterArr.indexOf(filterType);
+        let deletedArr = [];
         if (_index === -1) {
             this.filterArr.push(filterType);
         } else {
-            this.filterArr.splice(_index, 1);
+            deletedArr = this.filterArr.splice(_index, 1);
+            this.filterConfig[deletedArr[0]].forEach(num => {
+                this.inputValuesObj[num] = '';
+            });
         }
 
-        const reflectObj = {};
         if (this.filterInputValue && this.filterArr.length > 0) {
             this.filteredNums.forEach(num => {
-                reflectObj[num] = this.filterInputValue;
+                this.inputValuesObj[num] = this.filterInputValue;
             });
-            this.inputValuesObj = reflectObj;
         }
+        this.inputValuesObj = {
+            ...this.inputValuesObj
+        };
+    }
+
+    @action fillPlateInput = (en, event) => {
+        let value = event.target.value;
+        if (value !== '' && !this.pattern.test(value)) {
+            const valueArr = value.split('.');
+            value = valueArr[0] + '.' + valueArr[1].slice(0, 2);
+            event.nativeEvent.target.value = value;
+        };
+        this.inputValuesObj[en] = value;
+        /* this.inputValuesObj = {//这样更新界面会卡顿，只好用event.nativeEvent.target.value = value;
+            ...this.inputValuesObj
+        }; */
     }
 
     //快速筛号输入框
     @action fillFilteredInput = value => {
+        if (value !== '' && !this.pattern.test(value)) return;
         this.filterInputValue = value;
-        const reflectObj = {};
         if (this.filterInputValue && this.filterArr.length > 0) {
             this.filteredNums.forEach(num => {
-                reflectObj[num] = this.filterInputValue;
+                this.inputValuesObj[num] = this.filterInputValue;
             });
-            this.inputValuesObj = reflectObj; //这样做的目的是更新引用才会引起视图更新
+            this.inputValuesObj = {
+                ...this.inputValuesObj
+            }; //这样做的目的是更新引用才会引起视图更新
         }
     }
 
@@ -199,18 +232,59 @@ class XglhcStore {
                 money += Number(this.inputValuesObj[key]);
             }
         }
+        if (String(money).includes('.')) {
+            return money.toFixed(2);
+        }
         return money;
+    }
+
+    @action calcOdd = (oddsObj, method, en, AorB) => {
+        switch (method) {
+            case 'tm_tm_zx':
+            case 'zt1m_zt1m_zt1m':
+            case 'lm_lm_2z2':
+            case 'lm_lm_3z2': 
+            case 'lm_lm_3z3': 
+                return oddsObj[method] && oddsObj[method][`bonus${AorB}`];
+            case 'tm_tm_sx':
+                if (en === this.bmnsx) {
+                    return oddsObj[method + '_bnsx'] && oddsObj[method + '_bnsx'][`bonus${AorB}`];
+                }
+                return oddsObj[method + '_fbnsx'] && oddsObj[method + '_fbnsx'][`bonus${AorB}`];
+            case 'zt1x_zt1x_zt1x':
+            case 'lx_lx_2lx':
+            case 'lx_lx_3lx':
+            case 'lx_lx_4lx':
+                if (en === this.bmnsx) {
+                    return oddsObj[method + '_bnsx'] && oddsObj[method + '_bnsx'][`bonus${AorB}`];
+                }
+                return oddsObj[method] && oddsObj[method][`bonus${AorB}`];
+            case 'tm_tm_sb':
+            case 'tm_tm_dxds':
+            case 'hzdxds_hzdxds_hzdxds':
+                return oddsObj[method + `_${en}`] && oddsObj[method + `_${en}`][`bonus${AorB}`];
+            case 'tm_tm_ws':
+            case 'ztws_ztws_ztws':
+                if (en === '0w') {
+                    return oddsObj[method + '_0w'] && oddsObj[method + '_0w'][`bonus${AorB}`];
+                }
+                return oddsObj[method + '_f0w'] && oddsObj[method + '_f0w'][`bonus${AorB}`];
+            default:
+                return oddsObj[method] && oddsObj[method][`bonus${AorB}`];
+        }
     }
 
     @action addOrder = () => {
         const arr = [];
         for (let key in this.inputValuesObj) {
             const value = this.inputValuesObj[key];
+            const cnNum = this.numToCnObj[key];
             arr.push({
                 cnMethod: this.cnMethod,
                 num: key,
-                detail: `${this.cnMethod}  ${key}`,
-                odd: this.oddsObj[this.method][`bonus${this.AorB}`],
+                cnNum,
+                detail: `${this.cnMethod}    ${cnNum}`,
+                odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
                 money: value
             });
         }

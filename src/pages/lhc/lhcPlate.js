@@ -4,6 +4,7 @@ import config from './lhcConfig';
 import tipConfig from './lhcTip';
 import { calcSxArr } from '../../utils/algorithm';
 import { inject, observer } from 'mobx-react';
+import BetModal from './betModal';
 
 const TabPane = Tabs.TabPane;
 
@@ -105,7 +106,7 @@ class SwitchOdd extends React.Component {
 @observer
 class PlateHtml extends React.Component {
     render() {
-        const { pattern, oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd } = this.props.xglhcStore;
+        const { pattern, oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd, clickToSelectNum, clickToSelectedObj } = this.props.xglhcStore;
         const NumHtml = ({ numArr }) => {
             if (!numArr) return null;
             return numArr.map((num, index) => {
@@ -120,7 +121,7 @@ class PlateHtml extends React.Component {
                 <div className="fl plate-item-hint">{hint}</div>
             );
         };
-       
+
         const Itemhtml = ({ item }) => {
             return (
                 <div className={`clearfix plate-item  ${filteredNums.includes(item.en) ? 'on' : ''}`}>
@@ -128,7 +129,7 @@ class PlateHtml extends React.Component {
                     <div className="fl plate-item-odd" en={item.en} cn={item.cn}>x&nbsp;<em>{calcOdd(oddsObj, method, item.en, AorB)}</em></div>
                     <HintHtml hint={item.hint} />
                     <NumHtml numArr={item.code} />
-                    <input className="fr plate-item-input" type="number" min="1" max="999999" pattern={pattern} value={inputValuesObj[item.en]} onChange={(event) => fillPlateInput(item.en, event)} />
+                    <input className="fr plate-item-input" value={inputValuesObj[item.en]} onChange={(event) => fillPlateInput(item.en, event)} />
                 </div>
             );
         };
@@ -352,7 +353,7 @@ class PlateHtml extends React.Component {
                     } = item;
 
                     return (
-                        <div key={index} className="fl click-num-item" method={method} m_method={`${method}_${en}`} en={en} cn={cn} bnsx={cn === cnBmnsx ? 'yes' : ''}>
+                        <div key={index} onClick={() => clickToSelectNum(en)} className={`fl click-num-item ${clickToSelectedObj[en] ? 'on' : ''}`} method={method} m_method={`${method}_${en}`} en={en} cn={cn} bnsx={cn === cnBmnsx ? 'yes' : ''}>
                             <span className={`click-num-item-text plate-item-num-${en}`}>{cn}</span>
                             {code.map((num, index) => {
                                 return (
@@ -384,7 +385,7 @@ class PlateHtml extends React.Component {
                         cn,
                     } = numObj;
                     return (
-                        <div className="click-num-item" method={method} en={en} cn={cn}>
+                        <div onClick={() => clickToSelectNum(en)} className={`click-num-item ${clickToSelectedObj[en] ? 'on' : ''}`} method={method} en={en} cn={cn}>
                             <span className={`click-num-item-text plate-item-num-${en}`}>{cn}</span>
                         </div>
                     );
@@ -419,7 +420,7 @@ class PlateHtml extends React.Component {
                     } = item;
 
                     return (
-                        <div key={index} className="fl click-num-item" method={method} m_method={`${method}_${en}`} en={en} cn={cn}>
+                        <div key={index} onClick={() => clickToSelectNum(en)} className={`fl click-num-item ${clickToSelectedObj[en] ? 'on' : ''}`} method={method} m_method={`${method}_${en}`} en={en} cn={cn}>
                             <span className={`click-num-item-text plate-item-num-${en}`}>{cn}</span>
                         </div>
                     );
@@ -492,7 +493,7 @@ class FilterHtml extends React.Component {
                         <SxFilterHtml />
                         {['lm_lm_2z2', 'lm_lm_3z2', 'lm_lm_3z3'].includes(method) ? '' : <div className="filter-num-input-wrap">
                             <div className="filter-num-input-title">单注金额：</div>
-                            <input className="filter-num-input" type="number" min="1" max="999999" pattern={pattern} value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)} />
+                            <input className="filter-num-input" value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)} />
                         </div>}
                         <div className="filter-num-reset" onClick={resetPlate}>
                             <i className={`filter-num-reset-icon ${resetButtonClicked ? 'rotate360' : ''}`}></i>重置
@@ -506,7 +507,7 @@ class FilterHtml extends React.Component {
                         <div className={`fl filter-zodiac-tab filter-poultry-zodiac ${filterArr.includes('家禽家畜') ? 'on' : ''}`} onClick={(event) => filterNum('家禽家畜', event)}>家禽家畜</div>
                         <div className={`fl filter-zodiac-tab filter-wild-zodiac ${filterArr.includes('野外兽类') ? 'on' : ''}`} onClick={(event) => filterNum('野外兽类', event)}>野外兽类</div>
                         <div className="fl filter-num-input-title">单注金额：</div>
-                        <input className="fl filter-num-input" type="number" min="1" max="999999" pattern={pattern} value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)} />
+                        <input className="fl filter-num-input" value={filterInputValue} onChange={event => fillFilteredInput(event.target.value)} />
                     </div>
                 );
             default:
@@ -519,19 +520,35 @@ class FilterHtml extends React.Component {
 @observer
 class PlateBottom extends React.Component {
     render() {
-        const { totalBetCount, totalBetMoney, addOrder } = this.props.xglhcStore;
+        const { plateType, clickPerInputValue, fillClickPerInputValue, totalBetCount, totalBetMoney, addOrder, showQuickBetModal, closeQuickBetModal, quickBet, quickBetModalShowed, quickOrderData, printOrderFlag, setPrintOrderFlag } = this.props.xglhcStore;
         return (
             <div className="clearfix plate-bottom-wrapper">
                 <div className="fl plate-bottom-text">
+                    {
+                        plateType === 'click' ? (<span>单注金额：<input className="clickType-per-input" value={clickPerInputValue} onChange={fillClickPerInputValue} /></span>) : null
+                    }
                     您选择了<em className="total-bet-count">{totalBetCount}</em>注，
                     共计<em className="total-bet-money">{totalBetMoney}</em>元
                 </div>
                 <div className="fl quick-submit-button">
-                    <Button disabled={totalBetMoney <= 0} size="large">快速投注</Button>
+                    <Button disabled={totalBetMoney <= 0} size="large" onClick={showQuickBetModal}>快速投注</Button>
                 </div>
                 <div className="fl add-num-button">
                     <Button disabled={totalBetMoney <= 0} size="large" onClick={addOrder}>添加选号</Button>
                 </div>
+                <BetModal
+                    title="请确认投注香港六合彩"
+                    centered={true}
+                    visible={quickBetModalShowed}
+                    okText="确定"
+                    cancelText="取消"
+                    onOk={quickBet}
+                    onCancel={closeQuickBetModal}
+                    orderData={quickOrderData}
+                    orderTotalMoney={totalBetMoney}
+                    printOrderFlag={printOrderFlag}
+                    setPrintOrderFlag={setPrintOrderFlag}        
+                />
             </div>
         );
     }

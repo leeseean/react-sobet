@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, Icon, Button, Modal, Checkbox } from 'antd';
+import { Table, Icon, Button } from 'antd';
 import Countdown from '../../components/countdown';
+import BetModal from './betModal';
 import { inject, observer } from 'mobx-react';
 
 @inject('xglhcStore')
@@ -96,52 +97,19 @@ class LhcOrder extends React.Component {
                             }}>立即投注</Button>
                     </div>
                 </div>
-                <Modal
+                <BetModal
                     title="请确认投注香港六合彩"
-                    centered
+                    centered={true}
                     visible={betModalShowed}
                     okText="确定"
                     cancelText="取消"
                     onOk={bet}
-                    onCancel={closeBetModal}>
-                    <dl className="order-modal-list">
-                        <dt className="order-modal-issue">
-                            <em>期号2018107</em>
-                        </dt>
-                        {orderData.map((item, index) => {
-                            return (
-                                <dd className="order-modal-item" key={index}>
-                                    <div className="order-modal-item-method">{item.cnMethod}</div>
-                                    <div className="order-modal-item-num">{item.cnNum}</div>
-                                    <span
-                                        style={{
-                                            color: '#666'
-                                        }}>投注金额:<i
-                                            style={{
-                                                color: '#c7484a'
-                                            }}>{item.money}</i>
-                                    </span>
-                                </dd>
-                            );
-                        })
-                        }
-                    </dl>
-                    <div className="clearfix order-modal-list-bottom">
-                        <div
-                            className="fl"
-                            style={{
-                                fontSize: '14px',
-                                color: '#666'
-                            }}>投注总金额：<em
-                                style={{
-                                    color: '#c7484a',
-                                    fontWeight: 700
-                                }}>180</em>元</div>
-                        <div className="fr">
-                            <Checkbox checked={printOrderFlag} onChange={setPrintOrderFlag}>打印注单</Checkbox>
-                        </div>
-                    </div>
-                </Modal>
+                    onCancel={closeBetModal}
+                    orderData={orderData}
+                    orderTotalMoney={orderTotalMoney}
+                    printOrderFlag={printOrderFlag}
+                    setPrintOrderFlag={setPrintOrderFlag}        
+                />
             </div>
         );
     }

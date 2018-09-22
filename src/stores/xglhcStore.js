@@ -17,7 +17,31 @@ class XglhcStore {
 
     @observable lottery = 'XGLHC'
 
-    pattern = /^\d+(\.(\d|\d{2}))?$/ //输入框校验
+    @computed get plateType() {//选好盘类型，输入框型或者点击型
+        switch (this.method) {
+            case 'tm_tm_zx':
+            case 'tm_tm_sx':
+            case 'tm_tm_sb':
+            case 'tm_tm_dxds':
+            case 'tm_tm_ws':
+            case 'zt1m_zt1m_zt1m':
+            case 'zt1x_zt1x_zt1x':
+            case 'ztws_ztws_ztws':
+                return 'input';
+            case 'lx_lx_2lx':
+            case 'lx_lx_3lx':
+            case 'lx_lx_4lx':
+            case 'lm_lm_2z2':
+            case 'lm_lm_3z2':
+            case 'lm_lm_3z3':
+            case 'hzdxds_hzdxds_hzdxds':
+                return 'click';
+            default:
+                return 'input';
+        }
+    }
+
+    pattern = /^[1-9]+(\.(\d|\d{2})?)?$/ //输入框校验
 
     @observable oddsObj = {}
 
@@ -79,6 +103,23 @@ class XglhcStore {
     @observable filterArr = []
 
     @observable filterInputValue = ''
+
+    @observable clickPerInputValue = ''
+
+    @action fillClickPerInputValue = (event) => {
+        const value = event.target.value;
+        if (value !== '' && !this.pattern.test(value)) return;
+        this.clickPerInputValue = event.target.value;
+    }
+
+    @observable clickToSelectedObj = {}
+
+    @action clickToSelectNum = (en) => {
+        this.clickToSelectedObj[en] = !this.clickToSelectedObj[en];
+        this.clickToSelectedObj = {
+            ...this.clickToSelectedObj
+        };
+    }
 
     @computed get sxFilterConfig() {
         return calcSxFilterConfig(this.bmnsx);
@@ -213,13 +254,23 @@ class XglhcStore {
         this.filterArr = [];
         this.filterInputValue = '';
         this.inputValuesObj = {};
+        this.clickPerInputValue = '';
+        this.clickToSelectedObj = {};
     }
 
     @computed get totalBetCount() {
         let count = 0;
-        for (let key in this.inputValuesObj) {
-            if (this.inputValuesObj[key]) {
-                count++;
+        if (this.plateType === 'input') {
+            for (let key in this.inputValuesObj) {
+                if (this.inputValuesObj[key]) {
+                    count++;
+                }
+            }
+        } else if (this.plateType === 'click') {
+            for (let key in this.clickToSelectedObj) {
+                if (this.clickToSelectedObj[key]) {
+                    count++;
+                }
             }
         }
         return count;
@@ -227,12 +278,17 @@ class XglhcStore {
 
     @computed get totalBetMoney() {
         let money = 0;
-        for (let key in this.inputValuesObj) {
-            if (this.inputValuesObj[key]) {
-                money += Number(this.inputValuesObj[key]);
+        if (this.plateType === 'input') {
+            for (let key in this.inputValuesObj) {
+                if (this.inputValuesObj[key]) {
+                    money += Number(this.inputValuesObj[key]);
+                }
             }
+        } else if (this.plateType === 'click') {
+            money += this.totalBetCount * Number(this.clickPerInputValue);
         }
-        if (String(money).includes('.')) {
+
+        if (!Number.isInteger(money)) {
             return money.toFixed(2);
         }
         return money;
@@ -276,17 +332,34 @@ class XglhcStore {
 
     @action addOrder = () => {
         const arr = [];
-        for (let key in this.inputValuesObj) {
-            const value = this.inputValuesObj[key];
-            const cnNum = this.numToCnObj[key];
-            arr.push({
-                cnMethod: this.cnMethod,
-                num: key,
-                cnNum,
-                detail: `${this.cnMethod}    ${cnNum}`,
-                odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
-                money: value
-            });
+        if (this.plateType === 'input') {
+            for (let key in this.inputValuesObj) {
+                const value = this.inputValuesObj[key];
+                if (!value) continue;
+                const cnNum = this.numToCnObj[key];
+                arr.push({
+                    cnMethod: this.cnMethod,
+                    num: key,
+                    cnNum,
+                    detail: `${this.cnMethod}    ${cnNum}`,
+                    odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    money: value
+                });
+            }
+        } else if (this.plateType === 'click') {
+            for (let key in this.clickToSelectedObj) {
+                const value = this.clickPerInputValue;
+                if (!this.clickToSelectedObj[key]) continue;
+                const cnNum = this.numToCnObj[key];
+                arr.push({
+                    cnMethod: this.cnMethod,
+                    num: key,
+                    cnNum,
+                    detail: `${this.cnMethod}    ${cnNum}`,
+                    odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    money: value
+                });
+            }
         }
         this.orderData = [...this.orderData, ...arr];
         this.orderData = this.orderData.map((v, i) => {
@@ -296,18 +369,64 @@ class XglhcStore {
         this.resetPlate();
     }
 
+    @action quickBet = () => {
+
+    }
+
     @action deleteOrderItem = (key) => {
         this.orderData = this.orderData.filter(v => v.key !== key);
     }
 
     @observable orderData = []
 
+    @computed get quickOrderData() {
+        let arr = [];
+        if (this.plateType === 'input') {
+            for (let key in this.inputValuesObj) {
+                const value = this.inputValuesObj[key];
+                if (!value) continue;
+                const cnNum = this.numToCnObj[key];
+                arr.push({
+                    cnMethod: this.cnMethod,
+                    num: key,
+                    cnNum,
+                    detail: `${this.cnMethod}    ${cnNum}`,
+                    odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    money: value
+                });
+            }
+        } else if (this.plateType === 'click') {
+            for (let key in this.clickToSelectedObj) {
+                const value = this.clickPerInputValue;
+                if (!this.clickToSelectedObj[key]) continue;
+                const cnNum = this.numToCnObj[key];
+                arr.push({
+                    cnMethod: this.cnMethod,
+                    num: key,
+                    cnNum,
+                    detail: `${this.cnMethod}    ${cnNum}`,
+                    odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    money: value
+                });
+            }
+        }
+        arr = arr.map((v, i) => {
+            v.key = i;
+            return v;
+        });
+        return arr;
+    }
+
     @computed get orderTotalCount() {
         return this.orderData.length;
     }
 
     @computed get orderTotalMoney() {
-        return this.orderData.reduce((a, b) => a + Number(b.money), 0);
+        const result = this.orderData.reduce((a, b) => a + Number(b.money), 0);
+        if(!Number.isInteger(result)) {
+            return result.toFixed(2);
+        }
+        return result;
     }
 
     @action showBetModal = () => {
@@ -320,11 +439,23 @@ class XglhcStore {
         this.betModalShowed = false;
     }
 
+    @action showQuickBetModal = () => {
+        if (!this.quickBetModalShowed) {
+            this.quickBetModalShowed = true;
+        }
+    }
+
+    @action closeQuickBetModal = () => {
+        this.quickBetModalShowed = false;
+    }
+
     @action bet = () => {
 
     }
 
     @observable betModalShowed = false
+
+    @observable quickBetModalShowed = false
 
     @observable printOrderFlag = Boolean(localStorage.getItem('printOrderFlag'))
 

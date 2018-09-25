@@ -217,7 +217,9 @@ module.exports = {
               },
               {
                 loader: 'stylus-loader',
-                sourceMap: true
+                options: {
+                  sourceMap: true,
+                }
               },
             ],
           },

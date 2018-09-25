@@ -1,7 +1,7 @@
 import React from 'react';
 import FishContent from './fishContent';
 import { getAGHURUrl, getPlayerBalance } from '../../utils/ajax';
-import './fish.css';
+import './fish.styl';
 
 class Fish extends React.Component {
     state = {

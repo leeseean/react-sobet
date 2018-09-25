@@ -106,7 +106,7 @@ class SwitchOdd extends React.Component {
 @observer
 class PlateHtml extends React.Component {
     render() {
-        const { pattern, oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd, clickToSelectNum, clickToSelectedObj } = this.props.xglhcStore;
+        const { oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd, clickToSelectNum, clickToSelectedObj } = this.props.xglhcStore;
         const NumHtml = ({ numArr }) => {
             if (!numArr) return null;
             return numArr.map((num, index) => {
@@ -462,7 +462,7 @@ class SxFilterHtml extends React.Component {
 @observer
 class FilterHtml extends React.Component {
     render() {
-        const { pattern, method, filterNum, filterArr, filterInputValue, fillFilteredInput, resetPlate, resetButtonClicked } = this.props.xglhcStore;
+        const { method, filterNum, filterArr, filterInputValue, fillFilteredInput, resetPlate, resetButtonClicked } = this.props.xglhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':

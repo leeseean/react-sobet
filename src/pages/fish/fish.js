@@ -1,6 +1,6 @@
 import React from 'react';
 import FishContent from './fishContent';
-import {getAGHURUrl, getPlayerBalance} from '../../utils/ajax';
+import { getAGHURUrl, getPlayerBalance } from '../../utils/ajax';
 import './fish.css';
 
 class Fish extends React.Component {
@@ -10,21 +10,21 @@ class Fish extends React.Component {
     getFishMoney = () => {
         getPlayerBalance({
             cbId: 'ag_01'
-        }, res => {
-            if (res.data.cash) {
-                this.setState({fishMoney: res.data.cash});
+        }).then(res => {
+            if (res.data && res.data.cash) {
+                this.setState({ fishMoney: res.data.cash });
             }
-        });
+        }).catch(error => { });
     }
     componentDidMount() {
         this.getFishMoney();
     }
     playFish = () => {
-        getAGHURUrl(res => {
-            if (res.data.agForwardGameUrl.agForwardGameUrl) {
-                window.open(res.data.agForwardGameUrl.agForwardGameUrl);
+        getAGHURUrl().then(res => {
+            if (res.data && res.data.agForwardGameUrl) {
+                window.open(res.data.agForwardGameUrl);
             }
-        });
+        }).catch(error => { });
     }
     render() {
         return (
@@ -49,7 +49,7 @@ class Fish extends React.Component {
                     <div className="content-bg"></div>
                     <div className="content-fish-bg"></div>
                     <div className="content-main">
-                        <FishContent/>
+                        <FishContent />
                     </div>
                 </div>
             </div>

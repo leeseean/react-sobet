@@ -34,11 +34,11 @@ class WinListSlider extends React.Component {
         list: []
     }
     componentDidMount() {
-        getLotteryWinTop10(res => {
+        getLotteryWinTop10().then(res => {
             if (res.data.code === 1) {
                 this.setState({list: res.data.result});
             }
-        });
+        }).catch(error => {});
     }
     render() {
         const Items = () => this

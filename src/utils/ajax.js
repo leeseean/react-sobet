@@ -52,44 +52,54 @@ const $http = (config) => {
 
 export default $http;
 //中奖喜报
-export function getLotteryWinTop10(callback) {
-    $http({url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10', method: 'GET'})
-        .then(res => callback(res))
-        .catch(error => callback(error));
+export function getLotteryWinTop10() {
+    return $http({
+        url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10',
+        method: 'GET'
+    });
 }
 //获取余额
-export function getPlayerBalance(dataOrParams, callback) {
-  $http({url: '/api/sobet/pay/getPlayerBalance', method: 'GET', params: dataOrParams})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function getPlayerBalance(dataOrParams) {
+    return $http({
+        url: '/api/sobet/pay/getPlayerBalance',
+        method: 'GET',
+        params: dataOrParams
+    });
 }
 //获取捕鱼王游戏链接
-export function getAGHURUrl(callback) {
-  $http({url: '/api/sobet/ag/getAGHURUrl', method: 'GET'})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function getAGHURUrl() {
+    return $http({
+        url: '/api/sobet/ag/getAGHURUrl',
+        method: 'GET'
+    });
 }
 //获取IDN棋牌游戏链接
-export function getIdnUrl(callback) {
-  $http({url: '/api/sobet/idn/getIdnUrl', method: 'GET'})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function getIdnUrl() {
+    return $http({
+        url: '/api/sobet/idn/getIdnUrl',
+        method: 'GET'
+    });
 }
 //获取kgame棋牌accesstoken
-export function getKGAccessToken(callback) {
-  $http({url: '/api/sobet/KG/getKGAccessToken', method: 'GET'})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function getKGAccessToken() {
+    return $http({
+        url: '/api/sobet/KG/getKGAccessToken',
+        method: 'GET'
+    });
 }
 //获取kgame棋牌游戏链接
-export function getKGGameUrl(dataOrParams, callback) {
-  $http({url: '/api/sobet/KG/getKGGameUrl', method: 'GET', params: dataOrParams})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function getKGGameUrl(dataOrParams) {
+    return $http({
+        url: '/api/sobet/KG/getKGGameUrl',
+        method: 'GET',
+        params: dataOrParams
+    });
 }
 //真人娱乐页面中间滚动数据
-export function queryTopBetData(dataOrParams, callback) {
-  $http({url: '/api/lottery/api/u/v1/ag/queryTopBetData', method: 'GET', params: dataOrParams})
-      .then(res => callback(res))
-      .catch(error => callback(error));
+export function queryTopBetData(dataOrParams) {
+    return $http({
+        url: '/api/lottery/api/u/v1/ag/queryTopBetData',
+        method: 'GET',
+        params: dataOrParams
+    });
 }

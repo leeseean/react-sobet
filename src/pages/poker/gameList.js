@@ -1,6 +1,6 @@
 import React from 'react';
-import {getIdnUrl, getKGAccessToken, getKGGameUrl} from '../../utils/ajax';
-import {message} from 'antd';
+import { getIdnUrl, getKGAccessToken, getKGGameUrl } from '../../utils/ajax';
+import { message } from 'antd';
 
 class GameList extends React.Component {
     idnListsData = [
@@ -103,14 +103,11 @@ class GameList extends React.Component {
         this.register();
     }
     register() { //先调接口注册下。不然一开始转账的时候会报错
-        getIdnUrl(res => {});
-        getKGAccessToken(res => {
+        getIdnUrl().then(res => { });
+        getKGAccessToken().then(res => {
             //获取accessToken
-            const accessToken = res.accessToken;
-            getKGGameUrl({
-                appId: '1234567890abcdef',
-                accessToken
-            }, resp => {});
+            const accessToken = res.data && res.data.accessToken;
+            getKGGameUrl({ appId: '1234567890abcdef', accessToken }).then(resp => { });
         });
     }
     playGame({
@@ -119,10 +116,10 @@ class GameList extends React.Component {
     }, event) {
         const proxyElem = event.target.nextElementSibling;
         event.persist(); //如果您想以异步的方式访问事件的属性值，你必须在事件回调中调用event.persist()方法，这样会在池中删除合成事件，并且在用户代码中保留对事件的引用。
-        message.config({top: '40%', duration: 2, maxCount: 3});
+        message.config({ top: '40%', duration: 2, maxCount: 3 });
         switch (type) {
             case 'idn':
-                getIdnUrl(res => {
+                getIdnUrl().then(res => {
                     const url = res.url;
                     if (!url) {
                         message.error('服务异常');
@@ -130,11 +127,11 @@ class GameList extends React.Component {
                     }
                     proxyElem.setAttribute('href', `${url}&game=${param}`);
                     proxyElem.click();
-                });
+                }).catch(error => { });
                 break;
             case 'kgame':
-                getKGAccessToken(res => {
-                    const accessToken = res.accessToken;
+                getKGAccessToken().then(res => {
+                    const accessToken = res.data && res.data.accessToken;
                     if (!accessToken) {
                         message.error('服务异常');
                         return;
@@ -142,16 +139,16 @@ class GameList extends React.Component {
                     getKGGameUrl({
                         appId: param,
                         accessToken
-                    }, resp => {
-                        const url = resp.gameUrl;
+                    }).then(resp => {
+                        const url = resp.data && resp.data.gameUrl;
                         if (!url) {
                             message.error('服务异常');
                             return;
                         }
                         proxyElem.setAttribute('href', url);
                         proxyElem.click();
-                    });
-                });
+                    }).catch(error => { });
+                }).catch(error => { });
                 break;
             default:
                 break;
@@ -160,26 +157,26 @@ class GameList extends React.Component {
     }
     renderList(listsData) {
         return listsData.map((item, index) => {
-            const {imgSrc, param, title, type} = item;
+            const { imgSrc, param, title, type } = item;
             return (
                 <li className="qipai-item" key={index}>
-                    <img alt="" src={imgSrc} width="373" height="160"/>
+                    <img alt="" src={imgSrc} width="373" height="160" />
                     <a
                         className="play-btn"
                         href="javascript:void(0)"
                         game={param}
                         type={type}
                         onClick={(event) => this.playGame({
-                        param,
-                        type
-                    }, event)}>开始游戏</a>
+                            param,
+                            type
+                        }, event)}>开始游戏</a>
                     <a
                         className="hide-btn"
                         href="javascript:void(0)"
                         rel="noopener noreferrer"
                         style={{
-                        display: 'none'
-                    }}
+                            display: 'none'
+                        }}
                         target="_blank"></a>
                     <div className="qipai-item-bottom">
                         <i className={`mini-icon mini-${type}-icon`}></i>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from '../../components/marquee';
-import {queryTopBetData} from '../../utils/ajax';
+import { queryTopBetData } from '../../utils/ajax';
 
 class MiddleMarquee extends React.Component {
     state = {
@@ -91,11 +91,11 @@ class MiddleMarquee extends React.Component {
     getList = () => {
         queryTopBetData({
             num: 20
-        }, res => {
+        }).then(res => {
             if (res.data.code === 1) {
-                this.setState({list: res.data.result});
+                this.setState({ list: res.data.result });
             }
-        })
+        }).catch(error => console.log(error));
     }
     componentDidMount() {
         // this.getList();
@@ -104,9 +104,9 @@ class MiddleMarquee extends React.Component {
         const ListHtml = () => this
             .state
             .list
-            .map((item,index) => {
+            .map((item, index) => {
                 return (
-                    <span className="marquee-item" style={{color: 'white', marginRight: '36px'}} key={index}>
+                    <span className="marquee-item" style={{ color: 'white', marginRight: '36px' }} key={index}>
                         恭喜
                         <i className="marquee-item-name">
                             {item.playerName}
@@ -126,8 +126,8 @@ class MiddleMarquee extends React.Component {
             <div className="clearfix middle-marquee-wrapper">
                 <div className="fl center middle-marquee-title">最新中奖名单</div>
                 <div className="fr middle-marquee-list">
-                    <Marquee style={{width: '1032px',height: '40px', 'lineHeight': '40px'}}>
-                        <ListHtml/>
+                    <Marquee style={{ width: '1032px', height: '40px', 'lineHeight': '40px' }}>
+                        <ListHtml />
                     </Marquee>
                 </div>
             </div>

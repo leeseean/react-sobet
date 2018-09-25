@@ -2,19 +2,29 @@
 ###### npm install
 ###### npm start
 ## 项目总体结构
-###### 使用react-router-dom管理前端页面跳转，应用为单页面应用
-###### 使用react-loadable实现按需加载
-###### 使用ant-design作为第三方UI组件库
-###### 使用axios发送ajax请求
-###### 使用mobx作为全局状态管理工具,用法可参考[https://www.jianshu.com/p/6a12b3121379](https://www.jianshu.com/p/6a12b3121379)
 ###### pages目录放页面
 ###### components目录放公共组件
 ###### global.css放公共样式
 ###### utils目录放工具函数
 ###### stores目录存放状态管理数据
 
-## 编码规范
+## 开发工具
 
-###### jsx编码规范，参考[https://github.com/JasonBoy/javascript/tree/master/react](https://github.com/JasonBoy/javascript/tree/master/react)
-
-###### css编码规范，参考[http://amazeui.org/getting-started/html-css](http://amazeui.org/getting-started/html-css)
+| 编辑器      | vscode          |
+|----------|-----------------|
+| node版本   | 10+             |
+| 代码格式化    | vscode自带格式化功能   |
+| ajax库    | axios           |
+| jsonp库   | easy-jsonp      |
+| 第三方UI库   | ant-design      |
+| 状态管理    | mobx          |
+| 奖池数字滚动库     | react-countup   |
+| 轮播图库      | react-id-swiper |
+| lazyload库 | react-lazy-load |
+| 按需加载库     | react-loadable  |
+| 工具函数库    | lodash          |
+| 加密库    | md5,des.js          |
+| cookie    | js-cookie          |
+| 二维码生成    | qrcode          |
+| 打印    | react-to-print          |
+| 聊天    | socket.io-client          |

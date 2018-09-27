@@ -3,8 +3,10 @@ import { Spin } from 'antd';
 
 const GlobalLoading = () => {
   return (
-    <div className="absolute-center">
-      <Spin/>
+    <div style={{ position: "relative", height: "600px" }}>
+      <div className="absolute-center">
+        <Spin />
+      </div>
     </div>
   );
 };

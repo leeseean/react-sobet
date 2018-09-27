@@ -1,5 +1,5 @@
 import React from 'react';
-import FishContent from './fishContent.jsx';
+import FishContent from './FishContent';
 import { getAGHURUrl, getPlayerBalance } from '../../utils/ajax';
 import './fish.styl';
 

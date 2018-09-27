@@ -1,5 +1,5 @@
 import React from 'react';
-import Marquee from '../../components/marquee.jsx';
+import Marquee from '../../components/Marquee';
 import { queryTopBetData } from '../../utils/ajax';
 
 class MiddleMarquee extends React.Component {

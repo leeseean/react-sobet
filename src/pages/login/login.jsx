@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.styl';
-import WrappedNormalLoginForm from './loginForm.jsx';
+import WrappedNormalLoginForm from './LoginForm';
 
 const Login = () => {
     return (

@@ -1,14 +1,14 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react';
 import Loadable from 'react-loadable';
-import GlobalLoading from '../components/globalLoading.jsx';
+import GlobalLoading from '../components/GlobalLoading';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 
 const RouteConfig = [
     {
         path: '/',
         component: Loadable({
-            loader: () => import ('./login/login.jsx'),
+            loader: () => import ('./login/Login'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -17,7 +17,7 @@ const RouteConfig = [
     }, {
         path: '/index',
         component: Loadable({
-            loader: () => import ('./index/index.jsx'),
+            loader: () => import ('./index/Index'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -25,7 +25,7 @@ const RouteConfig = [
     }, {
         path: '/lottery',
         component: Loadable({
-            loader: () => import ('./lottery/lottery.jsx'),
+            loader: () => import ('./lottery/Lottery'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -33,7 +33,7 @@ const RouteConfig = [
     }, {
         path: '/activity',
         component: Loadable({
-            loader: () => import ('./activity/activity.jsx'),
+            loader: () => import ('./activity/Activity'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -41,7 +41,7 @@ const RouteConfig = [
     }, {
         path: '/agent',
         component: Loadable({
-            loader: () => import ('./agent/agent.jsx'),
+            loader: () => import ('./agent/Agent'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -49,7 +49,7 @@ const RouteConfig = [
     }, {
         path: '/fish',
         component: Loadable({
-            loader: () => import ('./fish/fish.jsx'),
+            loader: () => import ('./fish/Fish'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -57,7 +57,7 @@ const RouteConfig = [
     }, {
         path: '/slot',
         component: Loadable({
-            loader: () => import ('./slot/slot.jsx'),
+            loader: () => import ('./slot/Slot'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -65,7 +65,7 @@ const RouteConfig = [
     }, {
         path: '/lhc',
         component: Loadable({
-            loader: () => import ('./lhc/lhc.jsx'),
+            loader: () => import ('./lhc/Lhc'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -73,7 +73,7 @@ const RouteConfig = [
     }, {
         path: '/live',
         component: Loadable({
-            loader: () => import ('./live/live.jsx'),
+            loader: () => import ('./live/Live'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -81,7 +81,7 @@ const RouteConfig = [
     }, {
         path: '/personal',
         component: Loadable({
-            loader: () => import ('./personal/personal.jsx'),
+            loader: () => import ('./personal/Personal'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -89,7 +89,7 @@ const RouteConfig = [
     }, {
         path: '/poker',
         component: Loadable({
-            loader: () => import ('./poker/poker.jsx'),
+            loader: () => import ('./poker/Poker'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -97,7 +97,7 @@ const RouteConfig = [
     }, {
         path: '/sport',
         component: Loadable({
-            loader: () => import ('./sport/sport.jsx'),
+            loader: () => import ('./sport/Sport'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -105,7 +105,7 @@ const RouteConfig = [
     }, {
         path: '/login',
         component: Loadable({
-            loader: () => import ('./login/login.jsx'),
+            loader: () => import ('./login/Login'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -113,7 +113,7 @@ const RouteConfig = [
     }, {
         path: '/register',
         component: Loadable({
-            loader: () => import ('./register/register.jsx'),
+            loader: () => import ('./register/Register'),
             loading: GlobalLoading,
             delay: 500
         }),

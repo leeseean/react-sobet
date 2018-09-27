@@ -1,6 +1,6 @@
 import React from 'react';
 import {getLotteryWinTop10} from '../../utils/ajax';
-import Marquee from '../../components/marquee.jsx';
+import Marquee from '../../components/Marquee';
 
 const WinItem = ({item}) => {
     let time = Date.now() - item.winTime;

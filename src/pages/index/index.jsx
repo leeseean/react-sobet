@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.styl';
-import BannerSwiper from './bannerSwiper.jsx';
-import WinListSlider from './winListSlider.jsx';
+import BannerSwiper from './BannerSwiper';
+import WinListSlider from './WinListSlider';
 
 const Index = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import GameList from './gameList.jsx';
+import GameList from './GameList';
 import './poker.styl';
 
 class Poker extends React.Component {

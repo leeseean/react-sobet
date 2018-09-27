@@ -1,6 +1,6 @@
 import React from 'react';
-import CountDown from '../../components/countdown.jsx';
-import OpenCodes from './openCodes.jsx';
+import CountDown from '../../components/Countdown';
+import OpenCodes from './OpenCodes';
 
 class LhcTop extends React.Component {
     render() {

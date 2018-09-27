@@ -1,10 +1,17 @@
+@import './_variables.styl';
+@import './_mixins.styl';
+
 body,
 #root {
-  background-color: #000;
+  background-color: $body-background-color;
 }
 
 .center {
   text-align: center;
+}
+
+.absolute-center {
+  absolute-center();
 }
 
 .animation-paused {

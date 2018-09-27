@@ -1,6 +1,6 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
-import Countdown from './countdown';
+import Countdown from './Countdown';
 
 @inject('loginStore')
 @observer

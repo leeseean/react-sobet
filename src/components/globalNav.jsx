@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import './globalNav.styl';
-import Logout from './logout';
+import Logout from './Logout';
 
 @withRouter
 class GlobalNav extends React.Component {

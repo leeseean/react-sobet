@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import './rightFixed.styl';
-import BackToTop from './backToTop';
+import BackToTop from './BackToTop';
 
 @withRouter
 class RightFixed extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover } from 'antd';
-import MiddleMarquee from './middleMarquee.jsx';
+import MiddleMarquee from './MiddleMarquee';
 import './live.styl';
 
 const Live = () => {

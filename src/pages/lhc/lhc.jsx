@@ -1,7 +1,7 @@
 import React from 'react';
-import LhcTop from './lhcTop.jsx';
-import LhcOrder from './lhcOrder.jsx';
-import LhcPlate from './lhcPlate.jsx';
+import LhcTop from './LhcTop';
+import LhcOrder from './LhcOrder';
+import LhcPlate from './LhcPlate';
 import './lhc.styl';
 
 const Lhc = () => {

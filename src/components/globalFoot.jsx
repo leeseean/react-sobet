@@ -1,6 +1,6 @@
 import React from 'react';
 import './globalFoot.styl';
-import RightFixed from './rightFixed';
+import RightFixed from './RightFixed';
 import offsetDis from '../utils/offsetDis';
 import setStyle from '../utils/setStyle';
 

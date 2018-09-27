@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Icon, Button } from 'antd';
-import Countdown from '../../components/countdown.jsx';
-import BetModal from './betModal.jsx';
+import Countdown from '../../components/Countdown';
+import BetModal from './BetModal';
 import { inject, observer } from 'mobx-react';
 
 @inject('xglhcStore')

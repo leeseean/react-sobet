@@ -8,10 +8,17 @@ import $http from '../utils/ajax';
 import {
     calcSxFilterConfig
 } from '../utils/algorithm';
+import config from '../pages/lhc/lhcConfig';
 import methodToCnObj from '../pages/lhc/methodToCnObj';
 import numToCnObj from '../pages/lhc/numToCnObj';
 
 class XglhcStore {
+
+    config = config
+
+    methodToCnObj = methodToCnObj 
+
+    numToCnObj = numToCnObj
 
     @observable lotteryType = 'lhc'
 
@@ -46,10 +53,6 @@ class XglhcStore {
     @observable oddsObj = {}
 
     @observable method = 'tm_tm_zx'
-
-    methodToCnObj = methodToCnObj 
-
-    numToCnObj = numToCnObj
 
     @computed get cnMethod() {
         return this.methodToCnObj[this.method];

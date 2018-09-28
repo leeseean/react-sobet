@@ -185,6 +185,8 @@ class XglhcStore {
         this.filterArr = [];
         this.filterInputValue = '';
         this.inputValuesObj = {};
+        this.clickToSelectedObj = {};
+        this.clickPerInputValue = '';
     }
 
     @action changeMethod = (key) => {
@@ -193,6 +195,8 @@ class XglhcStore {
         this.filterArr = [];
         this.filterInputValue = '';
         this.inputValuesObj = {};
+        this.clickToSelectedObj = {};
+        this.clickPerInputValue = '';
     }
 
     @action setTabRefMethod(tab, method) {
@@ -209,16 +213,28 @@ class XglhcStore {
             deletedArr = this.filterArr.splice(_index, 1);
             this.filterConfig[deletedArr[0]].forEach(num => {
                 this.inputValuesObj[num] = '';
+                this.clickToSelectedObj[num] = false;
             });
         }
-
-        if (this.filterInputValue && this.filterArr.length > 0) {
-            this.filteredNums.forEach(num => {
-                this.inputValuesObj[num] = this.filterInputValue;
-            });
+        if (this.plateType === 'input') {
+            if (this.filterInputValue && this.filterArr.length > 0) {
+                this.filteredNums.forEach(num => {
+                    this.inputValuesObj[num] = this.filterInputValue;
+                });
+            }
+        }
+        if (this.plateType === 'click') {
+            if (this.filterArr.length > 0) {
+                this.filteredNums.forEach(num => {
+                    this.clickToSelectedObj[num] = true;
+                });
+            }
         }
         this.inputValuesObj = {
             ...this.inputValuesObj
+        };
+        this.clickToSelectedObj = {
+            ...this.clickToSelectedObj
         };
     }
 

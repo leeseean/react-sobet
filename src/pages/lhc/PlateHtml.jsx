@@ -285,14 +285,14 @@ class PlateHtml extends React.Component {
                         cn,
                     } = numObj;
                     return (
-                        <div onClick={() => clickToSelectNum(en)} className={`click-num-item ${clickToSelectedObj[en] ? 'on' : ''}`} method={method} en={en} cn={cn}>
+                        <div key={en} onClick={() => clickToSelectNum(en)} className={`click-num-item ${clickToSelectedObj[en] ? 'on' : ''}`} method={method} en={en} cn={cn}>
                             <span className={`click-num-item-text plate-item-num-${en}`}>{cn}</span>
                         </div>
                     );
                 });
-                return lmArr.map(numArr => {
+                return lmArr.map((numArr, index) => {
                     return (
-                        <div className="fl plate-item-wrapper" method={method}>
+                        <div key={index} className="fl plate-item-wrapper" method={method}>
                             <LmItemHtml numArr={numArr} />
                         </div>
                     );

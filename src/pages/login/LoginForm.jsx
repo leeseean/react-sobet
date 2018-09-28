@@ -1,7 +1,13 @@
 import React from 'react';
-import {Form, Icon, Input, Button, Checkbox} from 'antd';
-import {inject, observer} from 'mobx-react';
-import {withRouter} from 'react-router-dom';
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { inject, observer } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
+import {
+    getLoginState
+} from '../../utils/jsonp';
+
+//jsonp请求示例
+getLoginState().then(res => console.log(res)).catch(error => console.log(error));
 
 const FormItem = Form.Item;
 
@@ -11,7 +17,7 @@ const FormItem = Form.Item;
 class NormalLoginForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
-        const {loginStore, history} = this.props;
+        const { loginStore, history } = this.props;
         this
             .props
             .form
@@ -24,13 +30,13 @@ class NormalLoginForm extends React.Component {
             });
     }
     componentDidMount() {
-        const {loginStore, history} = this.props;
+        const { loginStore, history } = this.props;
         if (loginStore.logined) { //如果登陆状态为true。直接跳到首页
             history.push('/index');
         }
     }
     render() {
-        const {getFieldDecorator} = this.props.form;
+        const { getFieldDecorator } = this.props.form;
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
@@ -43,8 +49,8 @@ class NormalLoginForm extends React.Component {
                         ]
                     })(
                         <Input
-                            prefix={< Icon type = "user" style = {{ color: 'rgba(0,0,0,.25)' }}/>}
-                            placeholder="Username"/>
+                            prefix={< Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="Username" />
                     )}
                 </FormItem>
                 <FormItem>
@@ -57,9 +63,9 @@ class NormalLoginForm extends React.Component {
                         ]
                     })(
                         <Input
-                            prefix={< Icon type = "lock" style = {{ color: 'rgba(0,0,0,.25)' }}/>}
+                            prefix={< Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             type="password"
-                            placeholder="Password"/>
+                            placeholder="Password" />
                     )}
                 </FormItem>
                 <FormItem>

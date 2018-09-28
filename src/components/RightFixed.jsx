@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './rightFixed.styl';
 import BackToTop from './BackToTop';
 
@@ -8,15 +8,19 @@ class RightFixed extends React.Component {
     state = {
         show: false
     }
+    initShow(path) {
+        if (['/', '/login', '/register'].includes(path)) {
+            this.setState({ show: false });
+            return;
+        }
+        this.setState({ show: true });
+    }
     componentDidMount() {
-        const {history} = this.props;
+        const { history } = this.props;
         history.listen(location => {
-            if (['/', '/login', '/register'].indexOf(location.pathname) !== -1) {
-                this.setState({show: false});
-                return;
-            }
-            this.setState({show: true});
+            this.initShow(location.pathname);
         });
+        this.initShow(history.location.pathname);
     }
     render() {
         if (!this.state.show) {
@@ -71,7 +75,7 @@ class RightFixed extends React.Component {
                         </a>
                     </div>
                 </div>
-                <BackToTop/>
+                <BackToTop />
             </div>
         );
     }

@@ -1,0 +1,137 @@
+$head-background = #252525;
+
+.head--height 
+    height: 36px;
+    line-height: 36px;
+
+.head-wrapper 
+    background: $head-background;
+    z-index: 999999;
+
+.head-wrapper__main 
+    width: 1200px;
+    margin: 0 auto;
+
+
+.head__to-index
+    margin-right: 44px;
+
+.head__to-index-icon 
+    display: inline-block;
+    width: 14px;
+    height: 15px;
+    background: url(../images/all-icon.png) 0 0 no-repeat;
+    vertical-align: middle;
+.head__to-index-text,
+.head__all-game-text,
+.head__greet-text,
+.head__agent-text,
+.head__balance-text 
+    color: #fff;
+    font-size: 12px;
+    vertical-align: middle;
+.head__to-index-text,
+.head__all-game-text 
+    margin-left: 5px;
+.head__greet-text,
+.head__agent-text,
+.head__balance-text
+    margin-left: 15px;
+.head__greet,
+.head__agent,
+.head__balance,
+.head__money
+    position relative
+.head__greet::after,
+.head__agent::after,
+.head__balance::after,
+.head__money::after
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    width: 1px;
+    height: 36px;
+    background: url(../images/all-icon.png) 0 -22px no-repeat;
+.head__all-game-icon 
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../images/all-icon.png) -24px 0 no-repeat;
+    vertical-align: middle;
+.head__greet-icon,
+.head__agent-icon 
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    margin: 0 12px 0 8px;
+    background: url(../images/all-icon.png) -74px 0 no-repeat;
+    vertical-align: middle;
+.head__balance-count 
+    color: #f4d775;
+    margin: 0 6px;
+
+.head__balance-icon 
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 6px;
+    background: url(../images/all-icon.png) -48px 0 no-repeat;
+    vertical-align: middle;
+    cursor: pointer;
+
+
+.head__balance-display
+    font-size: 12px;
+    background-color: #4a2890;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 10px;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 15px;
+.head__balance-display:hover
+    background: rgba(255,255,255,.2);
+.head__money-charge,
+.head__money-transfer,
+.head__money-withdraw 
+    font-size: 12px;
+    color: #f4d775;
+    cursor: pointer;
+    padding: 2px 10px;
+    margin: 0 15px;
+.head__money-transfer {
+    margin: 0;
+}
+
+
+.head__money-charge:hover,
+.head__money-transfer:hover,
+.head__money-withdraw:hover 
+    background: rgba(255,255,255,.2);
+    border-radius: 4px;
+
+
+.head__download-wrapper 
+    background-image: linear-gradient(to bottom,#ffe988,#dcab4c);
+    border-radius: 11px;
+    text-align: center;
+    margin-left: 15px;
+    padding: 2px 10px 2px 4px;
+
+.head__download-wrapper:hover
+    background-image: linear-gradient(to bottom,#dcab4c,#ffe988);
+
+
+.head__download-icon
+    vertical-align: middle;
+    width: 18px;
+    height: 20px;
+    background: url(../images/all-icon.png) 0 -65px no-repeat;
+    display: inline-block;
+.head__download-text
+    color: #5a400a;
+    font-size: 12px;
+
+.head__balance-count .ant-spin-dot i 
+    background-color: #fff;

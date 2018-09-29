@@ -1,12 +1,11 @@
 import React from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './globalNav.styl';
-import Logout from './Logout';
 
 @withRouter
 class GlobalNav extends React.Component {
     render() {
-        const {history} = this.props;
+        const { history } = this.props;
         if (['/login', '/'].indexOf(history.location.pathname) !== -1) {
             return null;
         }
@@ -28,7 +27,6 @@ class GlobalNav extends React.Component {
                 <NavLink exact to="/poker" isActive={active} activeClassName="global-nav-on">棋牌</NavLink>
                 <NavLink exact to="/lhc" isActive={active} activeClassName="global-nav-on">六合彩</NavLink>
                 <NavLink exact to="/activity" isActive={active} activeClassName="global-nav-on">VIP招待</NavLink>
-                <Logout/>
             </div>
         );
     }

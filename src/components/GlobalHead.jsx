@@ -3,6 +3,9 @@ import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { Spin } from 'antd';
 import './globalHead.styl';
+import AllGameList from './AllGameList';
+import AgentCenterList from './AgentCenterList';
+import PersonalCenterList from './PersonalCenterList';
 
 @withRouter
 @inject('loginStore', 'globalStore')
@@ -97,6 +100,7 @@ class GlobalHead extends React.Component {
                     <div className="fl head--height head__all-game">
                         <i className="head__all-game-icon"></i>
                         <span className="head__all-game-text" href="/index">全部游戏</span>
+                        <AllGameList />
                     </div>
                     <div className="fr head--height head__download">
                         <a className="head__download-wrapper" href="https://download.volocn.com" target="_blank">
@@ -113,10 +117,12 @@ class GlobalHead extends React.Component {
                     <div className="fr head--height head__agent">
                         <span className="head__agent-text">代理中心</span>
                         <i className="head__agent-icon"></i>
+                        <AgentCenterList />
                     </div>
                     <div className="fr head--height head__greet">
                         <span className="head__greet-text">您好，{username}</span>
                         <i className="head__greet-icon"></i>
+                        <PersonalCenterList />
                     </div>
                 </div>
             </div>

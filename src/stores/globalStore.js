@@ -6,6 +6,8 @@ import {
 
 class globalStore {
 
+    @observable loginTime = '2018-09-29 17:56:24';
+
     @observable username = '张三的歌';
 
     @observable balance = '10000';

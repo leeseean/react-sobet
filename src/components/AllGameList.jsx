@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import './allGameList.styl';
 
 class AllGameList extends React.Component {
     LotteryListData = [
@@ -339,8 +340,8 @@ class AllGameList extends React.Component {
             return (
                 <a className="fl" href={path}>
                     <span>{cn}</span>
-                    {isNew ? <i></i> : null}
-                    {isHot ? <i></i> : null}
+                    {isNew ? <i className="all-game__new-icon"></i> : null}
+                    {isHot ? <i className="all-game__hot-icon"></i> : null}
                 </a>
             );
         };
@@ -353,9 +354,9 @@ class AllGameList extends React.Component {
         const LotteryList = ({ listObj }) => {
             const { title, list } = listObj;
             return (
-                <div className="all-game__lottery-list">
-                    <div className="fl">{title}</div>
-                    <div className="fl clearfix">
+                <div className="clearfix all-game__lottery-list">
+                    <div className="fl all-game__lottery-list-title">{title}</div>
+                    <div className="fr clearfix all-game__lottery-list-items">
                         <LotteryItems listArr={list} />
                     </div>
                 </div>
@@ -385,8 +386,8 @@ class AllGameList extends React.Component {
             const { title, list } = listObj;
             return (
                 <div className="all-game__other-list">
-                    <div className="fl">{title}</div>
-                    <div className="fl clearfix">
+                    <div className="fl all-game__other-list-title">{title}</div>
+                    <div className="fr clearfix all-game__other-list-items">
                         <OtherItems listArr={list} />
                     </div>
                 </div>

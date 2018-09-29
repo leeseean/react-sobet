@@ -1,0 +1,49 @@
+@import '../_variables.styl';
+@import '../_mixins.styl';
+
+.head__agent {
+    position: relative;
+    z-index: 999;
+}
+
+.head__agent-list {
+    display: none;
+    width: 130px;
+    position: absolute;
+    top: $head-height;
+    margin-top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #515151;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+}
+
+.head__agent-list::before {
+    arrow-top-triangle(8px, #515151);
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8 * 2px;
+}
+
+.head__agent:hover .head__agent-list {
+    display: block;
+}
+
+.head__agent-item {
+    border-radius: 3px;
+    padding: 0;
+    border: 1px solid #636363;
+    font-size: 12px;
+    cursor: pointer;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+.head__agent-item:hover {
+    background-color: #333;
+}

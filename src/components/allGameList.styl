@@ -1,0 +1,120 @@
+@import '../_variables.styl';
+@import '../_mixins.styl';
+
+.head__all-game {
+    position: relative;
+    z-index: 999;
+}
+
+.all-game-wrapper::before {
+    arrow-top-triangle(8px, #515151);
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8 * 2px;
+}
+
+.all-game-wrapper {
+    display: none;
+    background-color: #515151;
+    border-radius: 5px;
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.61);
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: $head-height;
+    margin-top: -2px;
+    width: 800px;
+}
+
+.head__all-game:hover .all-game-wrapper {
+    display: block;
+}
+
+.all-game__lottery-list-title, .all-game__other-list-title {
+    font-size: 18px;
+    color: #e5cb87;
+    font-weight: 700;
+}
+
+.all-game__lottery-list-items, .all-game__other-list-items {
+    width: 640px;
+}
+
+.all-game__lottery-list-items a {
+    margin: 0 10px 5px 0;
+    color: #ddd;
+    font-size: 12px;
+    width: 94px;
+}
+
+.all-game__lottery-list-items a:hover {
+    color: #e5cb87;
+}
+
+.all-game__other-list-title {
+    height: 48px;
+    line-height: 48px;
+}
+
+.all-game__other-list-items a {
+    width: 124px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #636363;
+    border-radius: 10px;
+    margin-right: 4px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.all-game__other-list-items a:hover {
+    background: linear-gradient(to top,rgba(3,0,0,.1),rgba(255,255,255,.1));
+} 
+
+.all-game__other-list-items span {
+    width: 82px;
+    display: inline-block;
+    text-align: center;
+}
+
+.all-game__other-list-items a:hover {
+}
+
+.all-game__divider {
+    width: 100%;
+    height: 1px;
+    background: transparent;
+    border-bottom: 1px dashed #9b8e6c;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.all-game__hot-icon, .all-game__new-icon {
+    width: 24px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url('../images/lotteryList.png');
+    background-repeat: no-repeat;
+}
+
+.all-game__hot-icon {
+    background-position: 0 0;
+}
+
+.all-game__new-icon {
+    background-position: -30px 0;
+}
+
+.all-game__other-live-icon, .all-game__other-fish-icon, .all-game__other-slot-icon, .all-game__other-sport-icon, .all-game__other-poker-icon {
+    background: url('../images/nav-icons.png') no-repeat;
+    width: 40px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.all-game__other-live-icon, .all-game__other-fish-icon, .all-game__other-slot-icon, .all-game__other-sport-icon, .all-game__other-poker-icon {
+    background-position: -40px 0;
+}

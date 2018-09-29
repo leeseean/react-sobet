@@ -89,9 +89,17 @@ class PersonalCenterList extends React.Component {
         }
     ]
     render() {
-        const { loginTime } = this.props.globalStore;
+        const { loginTime, letterCount } = this.props.globalStore;
         const Item = ({ itemObj }) => {
             const { cn, path } = itemObj;
+            if (cn === '站内信' && letterCount !== 0) {//要加上右上角站内信数量提示
+                return (
+                    <a className="fl" style={{ position: 'relative' }} href={path}>
+                        <i className="personal-center__letter-count">{letterCount}</i>
+                        {cn}
+                    </a>
+                );
+            }
             return <a className="fl" href={path}>{cn}</a>
         };
         const Items = ({ listArr }) => {

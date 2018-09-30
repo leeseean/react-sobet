@@ -3,28 +3,6 @@
     "pageNumber": -1,
     "pageCount": -6,
     "items": [{
-        "id": 638,
-        "title": "摩臣娱乐平台正常运营公告",
-        "type": "1",
-        "scroll": "2",
-        "content": "\u003cp\u003e尊敬的客户：\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e近期，有部分地区客户登录网站时出现域名被劫持的情况。导致登录后，界面上出现其他平台网站，或者原平台进行重组的信息，都是诈骗信息。或充值时跳转到其他界面。在此，摩臣娱乐平台郑重声明：本平台目前运行一切正常，如果出现被劫持的情况，请及时联系在线客服，或者通过上级联系平台。\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e并且，收到部分客户反馈，经确认发现市面大量打着“摩臣”品牌或针对“摩臣”制作的山寨钓鱼网站来诱导客户进行充值（如微信、QQ、招商网站、在线客服等）。为了您的资金安全，请以平台“充值”界面，根据充值流程操作。\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e\u003cp\u003e摩臣娱乐运营部\u003c/p\u003e\u003cp\u003e\u003cbr/\u003e\u003c/p\u003e",
-        "createTime": "2018-07-16 15:43:19.0",
-        "activityLink": "",
-        "starttime": "2018-07-16 15:40:07.0",
-        "endtime": "2019-07-01 15:40:09.0",
-        "isJumpView": "1"
-    }, {
-        "id": 636,
-        "title": "关于腾讯分分彩开奖公告",
-        "type": "1",
-        "scroll": "2",
-        "content": "\u003cp\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style\u003d\"font-family: \u0026quot;Microsoft Yahei\u0026quot;; font-size: medium; text-indent: 19px;\"\u003e尊敬的客户：\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cspan style\u003d\"font-family: \u0026quot;Microsoft Yahei\u0026quot;; font-size: medium; text-indent: 19px;\"\u003e\u003cbr/\u003e\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003c/p\u003e\u003cp\u003e腾讯分分彩开奖后如果有连续多期的开奖号码相同，系统将会对开出相同号码的奖期进行撤单处理。追号投注会自动过滤掉相同开奖号码，继续追号。\u003c/p\u003e",
-        "createTime": "2018-07-13 16:08:31.0",
-        "activityLink": "",
-        "starttime": "2018-07-13 16:08:20.0",
-        "endtime": "2018-11-01 16:08:22.0",
-        "isJumpView": "0"
-    }, {
         "id": 582,
         "title": "关于腾讯分分彩开奖与玩法",
         "type": "1",
@@ -36,7 +14,7 @@
         "endtime": "2018-12-31 23:49:33.0",
         "isJumpView": "1"
     }, {
-        "id": 579,
+        "id": 5793,
         "title": "谨防诈骗，认准“摩臣”品牌",
         "type": "1",
         "scroll": "2",
@@ -58,7 +36,7 @@
         "endtime": "2020-11-30 14:18:14.0",
         "isJumpView": "0"
     }, {
-        "id": 552,
+        "id": 5522,
         "title": "“河南快赢481”重磅来袭",
         "type": "1",
         "scroll": "2",

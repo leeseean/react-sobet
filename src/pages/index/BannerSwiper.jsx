@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel, Icon } from 'antd';
-import AppBanner from '../../images/banner/banner-app.jpg';
-import CyqBanner from '../../images/banner/banner-cyq.jpg';
-import GuajiBanner from '../../images/banner/banner-guaji.jpg';
-import QqssmBanner from '../../images/banner/banner-qqssm.jpg';
+import Banner1 from '../../images/banner/banner_cyq.jpg';
+import Banner2 from '../../images/banner/banner_fjc.jpg';
+import Banner3 from '../../images/banner/banner_ksdlq.jpg';
+import Banner4 from '../../images/banner/banner_vip.jpg';
 import './bannerSwiper.styl';
 
 class BannerSwiper extends React.Component {
@@ -23,19 +23,19 @@ class BannerSwiper extends React.Component {
         return (
             <Carousel autoplay effect="fade" dots={false} pauseOnHover={true} ref={ref => this.swiperRef = ref}>
                 <div>
-                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${AppBanner}') no-repeat center` }}></a>
+                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${Banner1}') no-repeat center` }}></a>
                     <CustomPaging i={1} onPrev={() => this.swiperRef.slick.slickPrev()} onNext={() => this.swiperRef.slick.slickNext()} />
                 </div>
                 <div>
-                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${CyqBanner}') no-repeat center` }}></a>
+                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${Banner2}') no-repeat center` }}></a>
                     <CustomPaging i={2} onPrev={() => this.swiperRef.slick.slickPrev()} onNext={() => this.swiperRef.slick.slickNext()} />
                 </div>
                 <div>
-                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${GuajiBanner}') no-repeat center` }}></a>
+                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${Banner3}') no-repeat center` }}></a>
                     <CustomPaging i={3} onPrev={() => this.swiperRef.slick.slickPrev()} onNext={() => this.swiperRef.slick.slickNext()} />
                 </div>
                 <div>
-                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${QqssmBanner}') no-repeat center` }}></a>
+                    <a href="/poker" className="banner-slide-item" style={{ background: `url('${Banner4}') no-repeat center` }}></a>
                     <CustomPaging i={4} onPrev={() => this.swiperRef.slick.slickPrev()} onNext={() => this.swiperRef.slick.slickNext()} />
                 </div>
             </Carousel>

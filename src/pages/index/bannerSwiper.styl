@@ -1,34 +1,36 @@
 .index-wrapper {
     .banner-slide-item {
         display: block;
-        height: 480px;
+        height: 600px;
     }
+
     .carousel-custom-page {
-        font-size: 24px;
-        color: #fff;
+        width: 140px;
+        height: 30px;
+        line-height: @height;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.5);
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 30px;
-        vertical-align: middle;
+        bottom: 240px;
+        font-size: 0;
     }
 
     .carousel-custom-page--icon {
-        font-size: 30px;
+        font-size: 28px;
         cursor: pointer;
         vertical-align: middle;
-
-        &:hover {
-            color: #333;
-        }
     }
 
     .carousel-custom-page--current, .carousel-custom-page--total {
         margin: 0 8px 0 4px;
-        vertical-align: middle;
     }
 
-    .carousel-custom-page--slash {
+    .carousel-custom-page--current, .carousel-custom-page--total, .carousel-custom-page--slash {
         vertical-align: middle;
+        font-size: 24px;
     }
 }

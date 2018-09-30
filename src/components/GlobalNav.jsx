@@ -17,16 +17,80 @@ class GlobalNav extends React.Component {
             return match.url === location.pathname;
         };
         return (
-            <div className="global-nav">
-                <NavLink exact to="/index" isActive={active} activeClassName="global-nav-on">首页</NavLink>
-                <NavLink exact to="/lottery" isActive={active} activeClassName="global-nav-on">彩票</NavLink>
-                <NavLink exact to="/live" isActive={active} activeClassName="global-nav-on">真人娱乐</NavLink>
-                <NavLink exact to="/fish" isActive={active} activeClassName="global-nav-on">捕鱼王</NavLink>
-                <NavLink exact to="/slot" isActive={active} activeClassName="global-nav-on">老虎机</NavLink>
-                <NavLink exact to="/sport" isActive={active} activeClassName="global-nav-on">体育</NavLink>
-                <NavLink exact to="/poker" isActive={active} activeClassName="global-nav-on">棋牌</NavLink>
-                <NavLink exact to="/lhc" isActive={active} activeClassName="global-nav-on">六合彩</NavLink>
-                <NavLink exact to="/activity" isActive={active} activeClassName="global-nav-on">VIP招待</NavLink>
+            <div className="nav global-nav">
+                <div className="menu-wrap clearfix">
+                    <div className="menu-icon fl">
+                        <img src={require("../images/logo.png")} alt="logo" height="40" className="menu-icon-logo" />
+                    </div>
+                    <nav className="menu-nav fr">
+                        <ul className="menu-ul clearfix">
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/index" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-index-icon"></i>
+                                    <span className="menu-index-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/lottery" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-lottery-icon"></i>
+                                    <span className="menu-lottery-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/live" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-live-icon"></i>
+                                    <span className="menu-live-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/fish" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-fish-icon"></i>
+                                    <span className="menu-fish-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/slot" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-slots-icon"></i>
+                                    <span className="menu-slots-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/sport" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-sport-icon"></i>
+                                    <span className="menu-sport-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/poker" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-poker-icon"></i>
+                                    <span className="menu-poker-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/lhc" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-xglhc-icon"></i>
+                                    <span className="menu-xglhc-title"></span>
+                                </NavLink>
+                            </li>
+
+                            <li className="menu-li fl">
+                                <NavLink exact to="/activity" isActive={active} activeClassName="global-nav-on">
+                                    <i className="menu-entertain-icon"></i>
+                                    <span className="menu-entertain-title"></span>
+                                </NavLink>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
             </div>
         );
     }

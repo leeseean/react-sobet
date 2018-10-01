@@ -1,6 +1,7 @@
 import React from 'react';
 import {getLotteryWinTop10} from '../../utils/ajax';
 import Marquee from '../../components/Marquee';
+import './winListSlider.styl';
 
 const WinItem = ({item}) => {
     let time = Date.now() - item.winTime;
@@ -14,14 +15,14 @@ const WinItem = ({item}) => {
         </span>;
     };
     return (
-        <span>
+        <span className="good-news-item">
             <span>{item.winUserName}
                 <em>投注</em>
             </span>
-            <span>{item.winLotteryName}
+            <span className="good-news-lottery">{item.winLotteryName}
                 <em>中奖</em>
             </span>
-            <span>{item.winMoney}
+            <span className="good-news-money">{item.winMoney}
                 <em>元</em>
             </span>
             <TimeHtml time={time}/>
@@ -46,7 +47,7 @@ class WinListSlider extends React.Component {
             .list
             .map((item, index) => <WinItem key={index} item={item}/>);
         return (
-            <Marquee>
+            <Marquee className="win-list-wrapper">
                 <Items/>
             </Marquee>
         );

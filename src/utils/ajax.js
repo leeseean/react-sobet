@@ -54,7 +54,8 @@ export default $http;
 //中奖喜报
 export function getLotteryWinTop10() {
     return $http({
-        url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10',
+        // url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10',
+        url: '/win-list.json',
         method: 'GET'
     });
 }

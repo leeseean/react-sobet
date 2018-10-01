@@ -12,7 +12,7 @@ const Index = () => {
     return (
         <div className="index-wrapper">
             <BannerSwiper />
-            <WinListSlider />
+            
             <div className="index-main">
                 <div className="index-activity">
                     <div className="index-top clearfix">
@@ -30,7 +30,7 @@ const Index = () => {
                         <div className="hot clearfix">
                             <div className="title fl"><span className="icon-hot"></span> <span className="txt-hot"></span></div>
                             <div className="bonus fr">
-                                <div className="bonus-content"><span className="marquee-html-wrap marqueeLeft"></span></div>
+                                <WinListSlider />
                             </div>
                         </div>
                         <HotLotteries />

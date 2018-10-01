@@ -17,7 +17,7 @@ class Marquee extends React.Component {
   }
   render() {
     return (
-      <div className="marquee-list-wrap" style={this.props.style}>
+      <div className={`marquee-list-wrap ${this.props.className}`} style={this.props.style}>
           <div className="marquee-list marqueeLeft" ref={(ref) => { this.marqueeDom = ref; }} onMouseEnter={() => this.marqueeDom.classList.add('animation-paused')} onMouseLeave={() => this.marqueeDom.classList.remove('animation-paused')}>
               {this.props.children}
               {this.props.children}

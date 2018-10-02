@@ -107,14 +107,37 @@ export function queryTopBetData(dataOrParams) {
 //老虎机热们游戏
 export function getHotSlotGamesData({
     currPage = 1,
-    pageSize = 6
+    pageSize = 6,
 }) {
     return $http({
         url: '/hot-game.json',
         method: 'GET',
         params: {
             currPage,
-            pageSize
+            pageSize,
+        }
+    });
+}
+
+//老虎机热们游戏
+export function getSlotGamesData({
+    currPage = 1,
+    pageSize = 6,
+    typeId = '',
+    chsName = '',
+    isProgressive = '',
+    payLine = ''
+}) {
+    return $http({
+        url: '/slot-game.json',
+        method: 'GET',
+        params: {
+            currPage,
+            pageSize,
+            typeId,
+            chsName,
+            isProgressive,
+            payLine
         }
     });
 }

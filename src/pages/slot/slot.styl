@@ -160,7 +160,7 @@
         display: inline-block;
         content: '';
         width: 17px;
-        height: 18px;
+        height: 20px;
         margin-right: 6px;
         background: url('../../images/slot/qrcode-icon.png') no-repeat;
         vertical-align: middle;
@@ -171,6 +171,7 @@ $main-min-height = 628px;
 
 .slot-bottom-wrapper {
     position: relative;
+    background-color: #fff;
     min-height: $main-min-height;
 
     .slot-bottom-wrapper-img {
@@ -184,7 +185,7 @@ $main-min-height = 628px;
         background: #f1f1f1;
         width: 1200px;
         min-height: $main-min-height;
-        position: absolute;
+        position: relative;
         left: 50%;
         transform: translateX(-50%);
         top: -10px;
@@ -216,20 +217,21 @@ $main-min-height = 628px;
         .slot-hot-games-center {
             height: 100%;
             width: 867px;
-            overflow: hidden;
+            position: relative;
+            border-right: 1px solid #dadada;
         }
         .hot-games-list {
             .game-item {
                 float: left;
                 width: 122px;
                 height: 90px;
-                margin-left: 22px;
+                margin-left: 20px;
                 margin-bottom: 22px;
                 position: relative;
                 &:hover {
                     .game-item-bg {
                         background: #000;                    
-                        transform: scale(1.2);
+                        transform: scale(1.1);
                         opacity: .8;
                     }
                     .game-item-hover {
@@ -241,6 +243,7 @@ $main-min-height = 628px;
                 }
             }
             .game-item-bg {
+                border-radius: 5px;
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -251,15 +254,16 @@ $main-min-height = 628px;
             .game-item-img {
                 position: absolute;
                 width: 100%;
+                border-radius: 5px;
             }
             .game-item-hover {
                 opacity: 0;
                 text-align: center;
                 .play-game {
                     width: 72px;
-                    height: 20px;
-                    border-radius: 4px;
-                    background: green;
+                    height: 22px;
+                    border-radius: 5px;
+                    background: #359C75;
                     margin: 9px auto;
                     cursor: pointer;
                     text-align: center;
@@ -283,6 +287,23 @@ $main-min-height = 628px;
                 color: #c86400;
                 background: #fff;
             }
+        }
+        .hot-games-list-mask {
+            transition: all .5s ease-in-out;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            background: #fff;       
+        }
+        .hot-games-list-mask.hide {
+            height: 100%;
+        }
+        .slot-hot-games-right {
+            text-align: center;
+            margin: auto;
+            width: 86px;
+            margin-top: 20px;
         }
     }
 }

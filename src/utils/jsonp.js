@@ -12,16 +12,17 @@ export function getLoginState() {
 }
 
 //登录
-export function ssoLogin(username, password) {
+export function ssoLogin(username, password, capchaCode) {
   return jsonp({
     url: 'http://www.mochen111.net/sso/u/getUserLoginState',
     callback: 'jsonp1',
     params: {
+      capchaCode,
+      password,
       way: 'pwd',
       from: 'portal',
       cn: username,
       appId: 5,
-      password: password
     }
   });
 }

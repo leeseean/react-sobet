@@ -30,7 +30,7 @@ class NormalLoginForm extends React.Component {
             .form
             .validateFields((err, formData) => {
                 if (!err) {
-                    ssoLogin(formData.userName, md5(formData.password)).then(res => {
+                    ssoLogin(formData.userName, md5(formData.password), formData.capchaCode).then(res => {
                         if (res.server && res.server === 'maintenance') { //系统维护提示
                             message.warning(`${res.tipinfo || `系统维护中，预计${res.time}结束！`}`);
                             return;

@@ -14,7 +14,7 @@ export function getLoginState() {
 //登录
 export function ssoLogin(username, password, capchaCode) {
   return jsonp({
-    url: 'http://www.mochen111.net/sso/u/getUserLoginState',
+    url: 'http://www.mochen111.net/sso/login',
     callback: 'jsonp1',
     params: {
       capchaCode,
@@ -27,6 +27,18 @@ export function ssoLogin(username, password, capchaCode) {
   });
 }
 
+//登出
+export function ssoLogout(username, noRedirect = true) {
+  return jsonp({
+    url: 'http://www.mochen111.net/sso/logout',
+    callback: 'jsonp1',
+    params: {
+      noRedirect,
+      cn: username,
+    }
+  });
+}
+//lastLoginTime和站内信数量PlatformId，username，roleType，userType放到userInfoAjax接口里面
 
 /* 
 jsonp({

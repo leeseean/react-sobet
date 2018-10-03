@@ -3,13 +3,16 @@ import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 
 @withRouter
-@inject('loginStore')
+@inject('globalStore')
 @observer
 class Logout extends React.Component {
   logout = () => {
-    const { loginStore, history } = this.props;
-    loginStore.logout();
-    history.push('/login');
+    const { globalStore, history } = this.props;
+    globalStore.logout().then((res) => {
+      if (res.code === 0) {
+        history.push('/login');
+      }
+    });
   }
   render() {
     const {

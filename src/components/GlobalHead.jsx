@@ -8,7 +8,7 @@ import AgentCenterList from './AgentCenterList';
 import PersonalCenterList from './PersonalCenterList';
 
 @withRouter
-@inject('loginStore', 'globalStore')
+@inject('globalStore')
 @observer
 class GlobalHead extends React.Component {
     state = {
@@ -49,7 +49,7 @@ class GlobalHead extends React.Component {
         this.initBackToIndex(history.location.pathname);
     }
     render() {
-        const { logined } = this.props.loginStore;
+        const { logined } = this.props.globalStore;
         const { username, balance, refreshBalance } = this.props.globalStore;
         if (!logined) {
             return null;

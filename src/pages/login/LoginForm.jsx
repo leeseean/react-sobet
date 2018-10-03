@@ -10,7 +10,7 @@ import md5 from 'md5';
 const FormItem = Form.Item;
 
 @withRouter
-@inject('loginStore', 'globalStore')
+@inject('globalStore')
 @observer
 class NormalLoginForm extends React.Component {
     state = {
@@ -22,9 +22,21 @@ class NormalLoginForm extends React.Component {
             capchaUrl: `http://www.mochen111.net/sso/imageCode?date=${new Date()}`
         });
     }
+    jumpByUserType = (type) => {
+        const { history } = this.props;
+        switch (type) {
+            case 0:
+            case 1:
+                history.push('/index');
+                break;
+            default:
+                history.push('/index');
+                break;
+        }
+    }
     handleSubmit = (e) => {
         e.preventDefault();
-        const { loginStore, globalStore, history } = this.props;
+        const { globalStore } = this.props;
         this
             .props
             .form
@@ -36,10 +48,13 @@ class NormalLoginForm extends React.Component {
                             return;
                         }
                         if (res.code === 0) {
-                            loginStore.login();
-                            globalStore.setUserName(res.result.name);
-                            globalStore.setUserType(res.result.type);
-                            history.push('/index');
+                            globalStore.login();
+                            globalStore.setUserName(res.user.cn);
+                            globalStore.setUserType(res.user.userType);
+                            globalStore.setRoleType(res.user.roleType);
+                            globalStore.setLoginTime(new Date(Number(res.user.createTimeStr)).toLocaleString());
+                            globalStore.setPlatformId(res.user.platformId);
+                            this.jumpByUserType(res.user.userType);
                         } else {
                             if (res.code === 2) {
                                 if (res.loginFailCount === 1) {
@@ -71,9 +86,9 @@ class NormalLoginForm extends React.Component {
             });
     }
     componentDidMount() {
-        const { loginStore, history } = this.props;
-        if (loginStore.logined) { //如果登陆状态为true。直接跳到首页
-            history.push('/index');
+        const { globalStore } = this.props;
+        if (globalStore.logined) { //如果登陆状态为true。直接跳到首页
+            this.jumpByUserType(globalStore.userType);
         }
     }
     render() {
@@ -131,10 +146,10 @@ class NormalLoginForm extends React.Component {
                                     <Input
                                         className="capcha-input"
                                         prefix={< Icon type="check" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                        type="password"
+                                        type="text"
                                         placeholder="验证码" size="large" />
                                 )}
-                                <img className="capcha-img" src={this.state.capchaUrl} alt="点击刷新验证码" onClick={this.refreshCapcha} refreshCapcha />
+                                <img className="capcha-img" src={this.state.capchaUrl} alt="点击刷新验证码" onClick={this.refreshCapcha} />
                                 <Button type="primary" htmlType="submit" className="login-form-button" size="large">登录</Button>
                             </div>
                         ) : (<Button type="primary" htmlType="submit" className="login-form-button" size="large">登录</Button>)

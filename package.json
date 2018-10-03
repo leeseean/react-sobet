@@ -137,16 +137,8 @@
       "secure": false,
       "changeOrigin": true
     },
-    "/dev/jsonp": {
-      "target": "http://www.mochen111.net/sso",
-      "pathRewrite": {
-        "^/dev/jsonp": ""
-      },
-      "secure": false,
-      "changeOrigin": true
-    },
     "/online": {
-      "target": "http://www.modeng188.com/",
+      "target": "http://www.mc188.com/",
       "pathRewrite": {
         "^/online": ""
       },

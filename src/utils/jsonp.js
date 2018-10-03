@@ -3,7 +3,7 @@ import jsonp from 'easy-jsonp';
 //获取登录状态
 export function getLoginState() {
   return jsonp({
-    url: '/dev/jsonp/u/getUserLoginState',
+    url: 'http://www.mochen111.net/sso/getUserLoginState',
     callback: 'jsonp1',
     params: {
       appId: 5

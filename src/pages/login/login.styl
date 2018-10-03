@@ -1,13 +1,412 @@
 .login-wrap {
-  display: flex;
-  justify-content: center;
-}
-.login-wrap .login-form {
-  max-width: 300px;
-}
-.login-wrap .login-form-forgot {
-  float: right;
-}
-.login-wrap .login-form-button {
   width: 100%;
+  height: 800px;
+  font-family: 'PingFang SC', 'Microsoft Yahei', '微软雅黑', Arial, Helvetica, sans-serif;
+  user-select: none;
+  background: url('../../images/login/login-bg.jpg') center no-repeat;
+  background-size: cover;
+
+  .login-form {
+    max-width: 337px;
+  }
+
+  .login-form-forgot {
+    float: right;
+    color: #bac0d8;
+  }
+
+  .login-remember-me {
+    color: #bac0d8;
+  }
+
+  .login-form-button {
+    width: 100%;
+    background-color: #531194;
+    background-image: linear-gradient(to bottom, #531194, #8d26e5);
+    border: none;
+    color: #fff;
+  }
+
+  .login-with-capcha {
+    position: relative;
+  }
+
+  .login-with-capcha .login-form-button {
+    width: 96px;
+  }
+
+  .login-with-capcha .capcha-input {
+    width: 237px;
+    margin-right: 3px;
+  }
+
+  .login-with-capcha .capcha-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 112px;
+    cursor: pointer;
+  }
+
+  .login-form-button:hover, .login-form-button:active, .login-form-button:focus {
+    background: #4b1083;
+    color: #fff;
+  }
+
+  .wrap {
+    width: 955px;
+    margin: 0 auto;
+  }
+
+  header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #1a223a;
+  }
+
+  header .icon-logo {
+    display: inline-block;
+    width: 166px;
+    height: 34px;
+    background: url('../../images/menu-icon-logo.png') center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+  }
+
+  header .icon-logo2018 {
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    margin-left: 10px;
+    background: url('../../images/menu-icon-logo2018.svg') center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+  }
+
+  header ul {
+    height: 100%;
+  }
+
+  header ul li {
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  header ul li a {
+    color: #fff;
+  }
+
+  header ul li:hover {
+    background-color: #0b0f19;
+  }
+
+  #main {
+    padding-top: 55px;
+  }
+
+  #main .content {
+    width: 955px;
+    height: 340px;
+    margin: 0 auto 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .content .banner {
+    padding: 15px 10px;
+    background-color: #0d111e;
+  }
+
+  .content .banner .gallery .swiper-container {
+    width: 516px;
+    height: 310px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .gallery .slide-li {
+    position: relative;
+    height: 310px;
+  }
+
+  .gallery .slide-li .swiper-lazy {
+    height: 100%;
+    background-size: 516px 310px;
+  }
+
+  .gallery .slide-li .slide-title-type {
+    position: absolute;
+    left: 16px;
+    bottom: 40px;
+    z-index: 2;
+  }
+
+  .gallery .slide-li .slide-title {
+    font-size: 16px;
+    color: #fff25d;
+    margin-right: 10px;
+  }
+
+  .gallery .slide-li .slide-type {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #7a64d9;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .gallery .slide-li .slide-sub-title {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 2;
+  }
+
+  .gallery .slide-li .slide-li-mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 516px;
+    height: 100px;
+    background-image: linear-gradient(-180deg, rgba(6, 6, 6, 0), rgba(0, 0, 0, 1));
+  }
+
+  .content .login {
+    width: 419px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #445b9f, #1a2649 70%);
+  }
+
+  .login .login-content {
+    width: 337px;
+    margin: 0 auto;
+  }
+
+  .login h3 {
+    line-height: 72px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .login .input-user {
+    position: relative;
+    display: block;
+  }
+
+  .login .icon {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .login .icon.user-icon {
+    background-image: url('../../images/login/icon-user.png');
+  }
+
+  .login .icon.password-icon {
+    background-image: url('../../images/login/icon-password.png');
+  }
+
+  .login .input-user .text {
+    width: 295px;
+    height: 46px;
+    padding-left: 40px;
+    background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+    border: 1px solid #222b3b;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: #607079;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+
+  .login .input-user .text:-webkit-autofill {
+    background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+  }
+
+  .login .input-user .text:-webkit-autofill, .login .input-user .text:-webkit-autofill:hover, .login .input-user .text:-webkit-autofill:focus {
+    box-shadow: 0 0 0 46px #e7f1f5 inset;
+    -webkit-text-fill-color: #333;
+  }
+
+  .login .input-user .text:focus {
+    border-color: #5de9fe;
+    box-shadow: 0 0 3px 0 rgba(93, 233, 254, 0.7);
+  }
+
+  #user-name {
+    margin-bottom: 20px;
+  }
+
+  .login .forget-pwd {
+    display: inline-block;
+    line-height: 40px;
+    margin: 0 6px;
+    font-size: 14px;
+    color: #bac0d8;
+  }
+
+  .login .login-btn .input-code {
+    display: none;
+    position: relative;
+  }
+
+  .login .login-btn .input-code .text {
+    width: 195px;
+    height: 46px;
+    padding-left: 40px;
+    background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+    border: 1px solid #222b3b;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: #607079;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+
+  .login .login-btn .input-code .text:focus {
+    border-color: #5de9fe;
+    box-shadow: 0 0 3px 0 rgba(93, 233, 254, 0.7);
+  }
+
+  .login .icon.code-icon {
+    background-image: url('../../images/login/icon-valicode.png');
+  }
+
+  .login .verifycode {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    width: 100px;
+    height: 36px;
+    cursor: pointer;
+  }
+
+  .login .login-btn.login-code .input-code {
+    display: block;
+  }
+
+  .login .login-btn .btn {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #9a38ff, #8f25e6);
+    border-radius: 4px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .login .login-btn.login-code .btn {
+    width: 96px;
+  }
+
+  .login .login-btn .btn:hover {
+    background-image: linear-gradient(to bottom, #531194, #8d26e5);
+  }
+
+  .login .login-btn .btn:active {
+    background: #4b1083;
+  }
+
+  .login .login-msg {
+    display: none;
+    position: relative;
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+    color: #ff6363;
+  }
+
+  .login .login-msg i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 1px 4px;
+    background: url('../../images/login/icon-tip.png') center no-repeat;
+  }
+
+  .login .login-msg span {
+    word-break: break-all;
+  }
+
+  #main .download {
+    width: 955px;
+    margin: 0 auto 50px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .download li {
+    width: 238px;
+    height: 100px;
+    line-height: 100px;
+    border-left: 1px solid #0d111e;
+    background-color: #192138;
+  }
+
+  .download li:first-child {
+    border-left: none;
+  }
+
+  .download li:hover {
+    background-color: #212b48;
+  }
+
+  .download li img {
+    margin-left: 40px;
+    vertical-align: middle;
+  }
+
+  .download li span {
+    display: inline-block;
+    width: 84px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 6px;
+    color: #fff;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+
+  .download li span a {
+    display: inline-block;
+    width: 78px;
+    height: 24px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #6589e9;
+    color: #6589e9;
+    cursor: default;
+  }
+
+  .download li span a.download-icon {
+    background: url('../../images/login/download-btn.png') 3px center no-repeat;
+    text-indent: 15px;
+    cursor: pointer;
+  }
+
+  .download li span a.download-icon:hover {
+    background-color: #0c3091;
+  }
 }

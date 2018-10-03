@@ -118,6 +118,14 @@ const RouteConfig = [
             delay: 500
         }),
         name: '注册'
+    }, {
+        path: '/forget',
+        component: Loadable({
+            loader: () => import('./forget/Forget'),
+            loading: GlobalLoading,
+            delay: 500
+        }),
+        name: '忘记密码'
     }
 ];
 
@@ -182,6 +190,8 @@ class Home extends React.Component {
                 break;
             case '/register':
                 document.title = '注册';
+            case '/forget':
+                document.title = '找回密码';
                 break;
             default:
                 break;

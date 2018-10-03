@@ -26,12 +26,12 @@ axios
                 case 401:
                     // 返回 401 清除token信息并跳转到登录页面
                     /*  store.commit(types.LOGOUT);
-        router.replace({
-          path: 'login',
-          query: {
-            redirect: router.currentRoute.fullPath
-          }
-        }) */
+                        router.replace({
+                        path: 'login',
+                        query: {
+                            redirect: router.currentRoute.fullPath
+                        }
+                        }) */
                     break;
                 default:
                     break;
@@ -62,7 +62,7 @@ export function getLotteryWinTop10() {
 //获取余额
 export function getPlayerBalance(dataOrParams) {
     return $http({
-        url: '/api/sobet/pay/getPlayerBalance',
+        url: '/dev/sobet/pay/getPlayerBalance',
         method: 'GET',
         params: dataOrParams
     });
@@ -70,28 +70,28 @@ export function getPlayerBalance(dataOrParams) {
 //获取捕鱼王游戏链接
 export function getAGHURUrl() {
     return $http({
-        url: '/api/sobet/ag/getAGHURUrl',
+        url: '/dev/sobet/ag/getAGHURUrl',
         method: 'GET'
     });
 }
 //获取IDN棋牌游戏链接
 export function getIdnUrl() {
     return $http({
-        url: '/api/sobet/idn/getIdnUrl',
+        url: '/dev/sobet/idn/getIdnUrl',
         method: 'GET'
     });
 }
 //获取kgame棋牌accesstoken
 export function getKGAccessToken() {
     return $http({
-        url: '/api/sobet/KG/getKGAccessToken',
+        url: '/dev/sobet/KG/getKGAccessToken',
         method: 'GET'
     });
 }
 //获取kgame棋牌游戏链接
 export function getKGGameUrl(dataOrParams) {
     return $http({
-        url: '/api/sobet/KG/getKGGameUrl',
+        url: '/dev/sobet/KG/getKGGameUrl',
         method: 'GET',
         params: dataOrParams
     });
@@ -99,7 +99,7 @@ export function getKGGameUrl(dataOrParams) {
 //真人娱乐页面中间滚动数据
 export function queryTopBetData(dataOrParams) {
     return $http({
-        url: '/api/lottery/api/u/v1/ag/queryTopBetData',
+        url: '/dev/lottery/api/u/v1/ag/queryTopBetData',
         method: 'GET',
         params: dataOrParams
     });
@@ -153,6 +153,13 @@ export function getSlotGamesData({
 export function getSlotReward() {
     return $http({
         url: '/slot-reward.json',
+        method: 'GET'
+    });
+}
+//活动 /sobet/api/i/anon/activity/queryCurrentActivity
+export function queryCurrentActivity() {
+    return $http({
+        url: '/dev/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });
 }

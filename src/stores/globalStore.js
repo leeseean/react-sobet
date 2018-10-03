@@ -12,6 +12,16 @@ class globalStore {
 
     @observable username = '张三的歌';
 
+    @action setUserName = (name) => {
+        this.username = name;
+    }
+
+    @observable userType = '张三的歌';
+
+    @action setUserType = (type) => {
+        this.userType = type;
+    }
+
     @observable balance = '10000';
 
     @action refreshBalance = () => {

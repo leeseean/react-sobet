@@ -1,14 +1,31 @@
 import jsonp from 'easy-jsonp';
 
+//获取登录状态
 export function getLoginState() {
-    return jsonp({
-        url: 'http://www.mc188.com/sso/u/getUserLoginState',
-        callback: 'jsonp1',
-        params: {
-            appId: 5
-        }
-    });
+  return jsonp({
+    url: '/dev/jsonp/u/getUserLoginState',
+    callback: 'jsonp1',
+    params: {
+      appId: 5
+    }
+  });
 }
+
+//登录
+export function ssoLogin(username, password) {
+  return jsonp({
+    url: 'http://www.mochen111.net/sso/u/getUserLoginState',
+    callback: 'jsonp1',
+    params: {
+      way: 'pwd',
+      from: 'portal',
+      cn: username,
+      appId: 5,
+      password: password
+    }
+  });
+}
+
 
 /* 
 jsonp({

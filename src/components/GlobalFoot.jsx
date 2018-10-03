@@ -1,10 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './globalFoot.styl';
 import RightFixed from './RightFixed';
 import offsetDis from '../utils/offsetDis';
 import setStyle from '../utils/setStyle';
 
+@withRouter
 class GlobalFoot extends React.PureComponent {
+    state = {
+        isLoginPage: false
+    }
     rightFixed = null
     copyright = null
     fixedBeside = () => {
@@ -13,11 +18,31 @@ class GlobalFoot extends React.PureComponent {
         rightFixedLeft = (rightFixedLeft + 80) > window.innerWidth
             ? (window.innerWidth - 80)
             : rightFixedLeft;
-        this.rightFixed && setStyle(this.rightFixed, {left: rightFixedLeft});
+        this.rightFixed && setStyle(this.rightFixed, { left: rightFixedLeft });
     }
     componentDidMount() {
         this.fixedBeside();
         window.addEventListener('resize', this.fixedBeside);
+        this.props.history.listen(location => {
+            if (['/login', '/'].indexOf(location.pathname) !== -1) {
+                this.setState({
+                    isLoginPage: true
+                });
+            } else {
+                this.setState({
+                    isLoginPage: false
+                });
+            }
+        });
+        if (['/login', '/'].indexOf(this.props.history.location.pathname) !== -1) {
+            this.setState({
+                isLoginPage: true
+            });
+        } else {
+            this.setState({
+                isLoginPage: false
+            });
+        }
     }
     render() {
         return (
@@ -26,55 +51,59 @@ class GlobalFoot extends React.PureComponent {
                     <div className="footer-img-wrap">
                         <div className="footer-img"></div>
                     </div>
-                    <div className="footer-about-wrap">
-                        <div className="footer-about">
-                            <div className="logo-bottom"></div>
-                            <ul className="footer-contract-ul clearfix">
-                                <li className="fl">
-                                    <a href="tel:00639054515666">
-                                        <span>
-                                            <i className="icon-tel"></i>
-                                            &nbsp;+63&nbsp;9054515666
+                    {
+                        this.state.isLoginPage ? null : (
+                            <div className="footer-about-wrap">
+                                <div className="footer-about">
+                                    <div className="logo-bottom"></div>
+                                    <ul className="footer-contract-ul clearfix">
+                                        <li className="fl">
+                                            <a href="tel:00639054515666">
+                                                <span>
+                                                    <i className="icon-tel"></i>
+                                                    &nbsp;+63&nbsp;9054515666
                                         </span>
-                                    </a>
-                                </li>
-                                <li className="fl">
-                                    <a href="mailto:cs@mc188.com">
-                                        <span>
-                                            <i className="icon-email"></i>
-                                            &nbsp;cs@mc188.com
+                                            </a>
+                                        </li>
+                                        <li className="fl">
+                                            <a href="mailto:cs@mc188.com">
+                                                <span>
+                                                    <i className="icon-email"></i>
+                                                    &nbsp;cs@mc188.com
                                         </span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul className="footer-link-ul clearfix fr">
-                                <li className="fl">
-                                    <a
-                                        href="/static/sobet/helper-center.html?type=about"
-                                        target="_blank"
-                                        rel="noopener noreferrer">关于摩臣</a>
-                                </li>
-                                <li className="fl">
-                                    <a
-                                        href="/static/sobet/helper-center.html?type=player"
-                                        target="_blank"
-                                        rel="noopener noreferrer">玩法介绍</a>
-                                </li>
-                                <li className="fl">
-                                    <a
-                                        href="/static/sobet/helper-center.html"
-                                        target="_blank"
-                                        rel="noopener noreferrer">帮助中心</a>
-                                </li>
-                                <li className="fl">
-                                    <a
-                                        href="/static/sobet/helper-center.html?type=rules"
-                                        target="_blank"
-                                        rel="noopener noreferrer">规则条款</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul className="footer-link-ul clearfix fr">
+                                        <li className="fl">
+                                            <a
+                                                href="/static/sobet/helper-center.html?type=about"
+                                                target="_blank"
+                                                rel="noopener noreferrer">关于摩臣</a>
+                                        </li>
+                                        <li className="fl">
+                                            <a
+                                                href="/static/sobet/helper-center.html?type=player"
+                                                target="_blank"
+                                                rel="noopener noreferrer">玩法介绍</a>
+                                        </li>
+                                        <li className="fl">
+                                            <a
+                                                href="/static/sobet/helper-center.html"
+                                                target="_blank"
+                                                rel="noopener noreferrer">帮助中心</a>
+                                        </li>
+                                        <li className="fl">
+                                            <a
+                                                href="/static/sobet/helper-center.html?type=rules"
+                                                target="_blank"
+                                                rel="noopener noreferrer">规则条款</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        )
+                    }
                     <div className="footer-copyright-wrap">
                         <div ref={ref => this.copyright = ref} className="footer-copyright clearfix">
                             <div className="footer-copyright-right fl">
@@ -88,7 +117,7 @@ class GlobalFoot extends React.PureComponent {
                         </div>
                     </div>
                 </footer>
-                <RightFixed rightFixedRef={ref => this.rightFixed = ref}/>
+                <RightFixed rightFixedRef={ref => this.rightFixed = ref} />
             </div>
         );
     }

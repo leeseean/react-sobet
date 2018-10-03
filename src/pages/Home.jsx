@@ -1,14 +1,14 @@
 import React from 'react';
-import {observer, inject} from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import Loadable from 'react-loadable';
 import GlobalLoading from '../components/GlobalLoading';
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 const RouteConfig = [
     {
         path: '/',
         component: Loadable({
-            loader: () => import ('./login/Login'),
+            loader: () => import('./login/Login'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -17,7 +17,7 @@ const RouteConfig = [
     }, {
         path: '/index',
         component: Loadable({
-            loader: () => import ('./index/Index'),
+            loader: () => import('./index/Index'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -25,7 +25,7 @@ const RouteConfig = [
     }, {
         path: '/lottery',
         component: Loadable({
-            loader: () => import ('./lottery/Lottery'),
+            loader: () => import('./lottery/Lottery'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -33,7 +33,7 @@ const RouteConfig = [
     }, {
         path: '/activity',
         component: Loadable({
-            loader: () => import ('./activity/Activity'),
+            loader: () => import('./activity/Activity'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -41,7 +41,7 @@ const RouteConfig = [
     }, {
         path: '/agent',
         component: Loadable({
-            loader: () => import ('./agent/Agent'),
+            loader: () => import('./agent/Agent'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -49,7 +49,7 @@ const RouteConfig = [
     }, {
         path: '/fish',
         component: Loadable({
-            loader: () => import ('./fish/Fish'),
+            loader: () => import('./fish/Fish'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -57,7 +57,7 @@ const RouteConfig = [
     }, {
         path: '/slot',
         component: Loadable({
-            loader: () => import ('./slot/Slot'),
+            loader: () => import('./slot/Slot'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -65,7 +65,7 @@ const RouteConfig = [
     }, {
         path: '/lhc',
         component: Loadable({
-            loader: () => import ('./lhc/Lhc'),
+            loader: () => import('./lhc/Lhc'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -73,7 +73,7 @@ const RouteConfig = [
     }, {
         path: '/live',
         component: Loadable({
-            loader: () => import ('./live/Live'),
+            loader: () => import('./live/Live'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -81,7 +81,7 @@ const RouteConfig = [
     }, {
         path: '/personal',
         component: Loadable({
-            loader: () => import ('./personal/Personal'),
+            loader: () => import('./personal/Personal'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -89,7 +89,7 @@ const RouteConfig = [
     }, {
         path: '/poker',
         component: Loadable({
-            loader: () => import ('./poker/Poker'),
+            loader: () => import('./poker/Poker'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -97,7 +97,7 @@ const RouteConfig = [
     }, {
         path: '/sport',
         component: Loadable({
-            loader: () => import ('./sport/Sport'),
+            loader: () => import('./sport/Sport'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -105,7 +105,7 @@ const RouteConfig = [
     }, {
         path: '/login',
         component: Loadable({
-            loader: () => import ('./login/Login'),
+            loader: () => import('./login/Login'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -113,7 +113,7 @@ const RouteConfig = [
     }, {
         path: '/register',
         component: Loadable({
-            loader: () => import ('./register/Register'),
+            loader: () => import('./register/Register'),
             loading: GlobalLoading,
             delay: 500
         }),
@@ -129,58 +129,63 @@ class Home extends React.Component {
         super(props);
         // 没有super(props), 后面使用回报错 定义state bind方法 其他初始化工作
         this.props.routerStore.history = this.props.history;
+        this.initTitle(this.props.history.location.pathname);
         this
             .props
             .history
             .listen((location) => {
-                switch (location.pathname) {
-                    case '/':
-                    case '/login':
-                        document.title = '登陆';
-                        break;
-                    case '/index':
-                        document.title = '首页';
-                        break;
-                    case '/lottery':
-                        document.title = '彩票';
-                        break;
-                    case '/activity':
-                        document.title = 'Vip活动';
-                        break;
-                    case '/agent':
-                        document.title = '代理中心';
-                        break;
-                    case '/fish':
-                        document.title = '捕鱼王';
-                        break;
-                    case '/slot':
-                        document.title = '老虎机';
-                        break;
-                    case '/lhc':
-                        document.title = '六合彩';
-                        break;
-                    case '/live':
-                        document.title = '真人娱乐';
-                        break;
-                    case '/personal':
-                        document.title = '个人中心';
-                        break;
-                    case '/poker':
-                        document.title = '棋牌';
-                        break;
-                    case '/sport':
-                        document.title = '体育';
-                        break;
-                    case '/login':
-                        document.title = '登陆';
-                        break;
-                    case '/register':
-                        document.title = '注册';
-                        break;
-                    default:
-                        break;
-                }
+                this.initTitle(location.pathname);
             });
+    }
+
+    initTitle(path) {
+        switch (path) {
+            case '/':
+            case '/login':
+                document.title = '登陆';
+                break;
+            case '/index':
+                document.title = '首页';
+                break;
+            case '/lottery':
+                document.title = '彩票';
+                break;
+            case '/activity':
+                document.title = 'Vip活动';
+                break;
+            case '/agent':
+                document.title = '代理中心';
+                break;
+            case '/fish':
+                document.title = '捕鱼王';
+                break;
+            case '/slot':
+                document.title = '老虎机';
+                break;
+            case '/lhc':
+                document.title = '六合彩';
+                break;
+            case '/live':
+                document.title = '真人娱乐';
+                break;
+            case '/personal':
+                document.title = '个人中心';
+                break;
+            case '/poker':
+                document.title = '棋牌';
+                break;
+            case '/sport':
+                document.title = '体育';
+                break;
+            case '/login':
+                document.title = '登陆';
+                break;
+            case '/register':
+                document.title = '注册';
+                break;
+            default:
+                break;
+        }
     }
 
     componentWillMount() {
@@ -198,18 +203,18 @@ class Home extends React.Component {
                     key={index}
                     path={route.path}
                     component={route.component}
-                    exact={route.exact}/>)
+                    exact={route.exact} />)
             });
         };
         return (
             <div
                 className="home-wrapper"
                 style={{
-                minHeight: '800px'
-            }}>
+                    minHeight: '800px'
+                }}>
                 <Switch>
-                    <Routes/>
-                    <Redirect to={"/"}/>
+                    <Routes />
+                    <Redirect to={"/"} />
                 </Switch>
             </div>
         );

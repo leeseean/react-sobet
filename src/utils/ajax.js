@@ -104,6 +104,13 @@ export function queryTopBetData(dataOrParams) {
         params: dataOrParams
     });
 }
+//获取沙巴体育cookie
+export function getSportCookie() {
+    return $http({
+        url: '/dev/sobet/userInfo/getIbcLoginSessionToken',
+        method: 'GET'
+    });
+}
 //老虎机热们游戏
 export function getHotSlotGamesData({
     currPage = 1,
@@ -139,5 +146,13 @@ export function getSlotGamesData({
             isProgressive,
             payLine
         }
+    });
+}
+
+//老虎机中奖喜报
+export function getSlotReward() {
+    return $http({
+        url: '/slot-reward.json',
+        method: 'GET'
     });
 }

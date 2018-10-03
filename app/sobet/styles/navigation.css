@@ -1,0 +1,2179 @@
+﻿@charset "UTF-8";
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+em {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+
+#mc_header .top_bg {
+    height: 32px;
+    width: 100%;
+    background-color: #191919;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+}
+
+#mc_header .top_bg.ding {
+    position: fixed;
+    z-index: 500;
+}
+
+#mc_header .top {
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 32px;
+    position: relative;
+}
+
+#mc_header .top .navSet {
+    position: absolute;
+    right: -40px;
+    bottom: -60px;
+    color: #000;
+    cursor: pointer;
+}
+
+#mc_header .top .topHome {
+    float: left;
+    height: 100%;
+    padding: 0 15px;
+    width: 225px;
+    font-size: 12px;
+    border-right: 1px solid #252525;
+    overflow: hidden;
+}
+
+#mc_header .top .topHome>a,
+#mc_header .top .topHome .allGame {
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+    text-align: right;
+    color: #a6a6a6;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#mc_header .top .topHome>a>i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url(/static/sobet/images/gameIcon.png) no-repeat;
+    margin-right: 5px;
+}
+
+#mc_header .top .topHome a.home i {
+    background-position: -4px -3px;
+}
+
+#mc_header .top .topHome .allGame>i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url(/static/sobet/images/gameIcon.png) no-repeat -38px -3px;
+    margin-right: 5px;
+}
+
+#mc_header .top .userInfo {
+    height: 100%;
+}
+
+#mc_header .top .userInfo a {
+    cursor: pointer;
+}
+
+#mc_header .top .userInfo>li {
+    float: right;
+    padding: 0 10px;
+    height: 100%;
+    position: relative;
+    font-size: 12px;
+    color: #a6a6a6;
+    border-right: 1px solid #2b2b2b;
+}
+
+#mc_header .top .userInfo>li.agent>a:hover {
+    color: #a6a6a6;
+}
+
+#mc_header .top .userInfo>li.welcome {
+    padding-left: 14px;
+    font-size: 12px;
+    border: none;
+}
+
+#mc_header .top .userInfo>li.service {
+    border: none;
+    padding-right: 0;
+}
+
+#mc_header .top .userInfo .username {
+    color: #ffa31f;
+    cursor: pointer;
+    display: inline-block;
+    height: 28px;
+}
+
+#mc_header .userInfo>li i {
+    display: inline-block;
+    background: url(/static/sobet/images/topIcon.png) no-repeat;
+    vertical-align: top;
+}
+
+#mc_header .top .userInfo .drop i {
+    height: 14px;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 9px;
+    background-position: -150px -99px;
+}
+
+#mc_header .top .userInfo>li.logout {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #2c2c2c;
+    border-radius: 3px;
+    color: #a6a6a6;
+    margin: 6px 20px 0 0px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+#mc_header .userInfo>li.service a {
+    color: #a6a6a6;
+    font-size: 12px;
+}
+
+#mc_header .userInfo>li.service i {
+    height: 21px;
+    margin-top: 7px;
+    width: 21px;
+    background-position: -116px -93px;
+    margin-right: 5px;
+}
+
+#mc_header .userInfo>li.message {
+    position: relative;
+}
+
+#mc_header .userInfo>li.message a {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    color: #a6a6a6;
+}
+
+#mc_header .userInfo>li.message i.msg {
+    height: 12px;
+    margin-top: 11px;
+    margin-right: 5px;
+    width: 16px;
+    background-position: -82px -101px;
+}
+
+#mc_header .userInfo>li.message .msgpop {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #ff9600;
+    position: absolute;
+    top: 7px;
+    left: 23px;
+    display: none;
+}
+
+#mc_header .userInfo .money a {
+    margin: 6px 2px;
+    color: #ffa31f;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+#mc_header .userInfo .money a:hover {
+    color: #ede7f6;
+    background: #ef8400;
+    background: linear-gradient(to bottom, #ef8400, #ea5d00);
+}
+
+#mc_header .userInfo>li.balance i.hideMoney {
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    font-style: normal;
+    cursor: pointer;
+    background: #2c2c2c;
+    color: #a6a6a6;
+    margin: 6px 2px;
+}
+
+#mc_header .userInfo>li.balance i.refresh {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin: 7px 5px;
+    background: url('/static/sobet/images/topIcon.png') no-repeat -46px -96px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+#mc_header .userInfo>li.balance i.reloading {
+    display: inline-block;
+    vertical-align: top;
+    background: none;
+}
+
+#mc_header .userInfo>li.balance span em {
+    margin-left: 8px;
+}
+
+#mc_header .top .userInfo li:hover .header_menu {
+    display: block;
+}
+
+#mc_header .top .userInfo li.balance:hover .header_menu {
+    display: none;
+}
+
+
+/*#mc_header .top .userInfo li.balance span:hover .header_menu{
+    display:block;
+}*/
+
+.header_menu {
+    position: absolute;
+    display: none;
+    top: 25px;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    padding-top: 8px;
+}
+
+#mc_header .top .userInfo li.balance .header_menu {
+    width: 200px;
+}
+
+.header_menu ul:after {
+    border: 10px solid transparent;
+    border-bottom: 10px solid #515151;
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: 47%;
+    margin-left: -5px;
+}
+
+.header_menu ul {
+    padding: 5px 0;
+    background-color: #515151;
+    border-radius: 6px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#mc_header .top .userInfo li.balance .header_menu ul {
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.header_menu ul a:hover {
+    background-color: #333;
+}
+
+.header_menu ul a,
+.header_menu ul span {
+    color: #ddd;
+    padding: 2px 0px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header_menu ul li.logout {
+    cursor: pointer;
+}
+
+.header_menu ul li.logout em,
+.header_menu ul li.logout span {
+    display: inline;
+}
+
+.header_menu ul li.logout em {
+    margin-right: 5px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu {
+    width: 460px;
+    left: -165px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul {
+    width: 460px;
+    padding: 0;
+    background: #515151;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul:after {
+    border: 10px solid transparent;
+    border-bottom: 10px solid #515151;
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: 47%;
+    margin-left: -5px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul>div {
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #565656;
+}
+
+#mc_header .userInfo>li.welcome .header_menu_ul>div.last {
+    padding: 0;
+    border-bottom: none;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu_ul .last em {
+    margin: 0 10px;
+    font-style: normal;
+}
+
+#mc_header .userInfo>li.welcome .header_menu_ul .last .logout {
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    background: #707070;
+    background: linear-gradient(to bottom, #707070, #6e6e6e);
+    color: #151515;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul .headL {
+    float: left;
+    width: 100px;
+    text-align: center;
+    color: #e5cb87;
+    font-size: 14px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul .headR {
+    float: right;
+    width: 360px;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul .headR a {
+    display: inline-block;
+    width: 78px;
+    height: 22px;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid #636363;
+    border-radius: 3px;
+    color: #ddd;
+    margin-right: 5px;
+    position: relative;
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul .headR a:hover {
+    background: #333;
+    /*background: linear-gradient(to bottom,#696969,#5e5e5e);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.40);*/
+}
+
+#mc_header .userInfo>li.welcome .header_menu .header_menu_ul .headR a i {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff5353;
+    text-align: center;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+    font-style: normal;
+    display: none;
+}
+
+#mc_header .userInfo>li.agent .header_menu ul {
+    width: 130px;
+    left: -39%;
+    padding: 10px 15px 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+#mc_header .userInfo>li.agent .header_menu ul li {
+    margin: 10px 0 0;
+}
+
+#mc_header .userInfo>li.agent .header_menu ul li a {
+    border-radius: 3px;
+    padding: 0;
+    border: 1px solid #636363;
+    font-size: 12px;
+}
+
+#mc_header .userInfo>li.balance .header_menu_ul li {
+    width: 90%;
+    margin: 0 auto 10px;
+    height: 60px;
+    background: #000;
+    border-radius: 3px;
+}
+
+#mc_header .userInfo>li.balance span em {
+    text-align: left;
+    font-size: 12px;
+    color: #ffa31f;
+    margin-right: 5px;
+}
+
+#mc_header .userInfo>li.balance .header_menu_ul li.transfer {
+    height: 30px;
+    background: #ff922a;
+    background: linear-gradient(to bottom, #ff922a, #ff810a);
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#mc_header .userInfo>li.balance .header_menu_ul li h4 {
+    font-size: 12px;
+    color: #A29F9F;
+    line-height: 30px;
+}
+
+#mc_header .userInfo>li.balance .header_menu_ul li h3 {
+    font-size: 16px;
+    color: #fff;
+    line-height: 25px;
+    height: 25px;
+    width: 90%;
+    margin: 0 auto;
+    background: #404040;
+    background: linear-gradient(to bottom, #404040, #383737);
+    font-weight: normal;
+}
+
+#mc_header .menu_bg {
+    height: 72px;
+    width: 100%;
+    background: url(/static/sobet/images/navBg.png);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, .9) inset;
+}
+
+#mc_header .menu {
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#mc_header .menu .logo {
+    width: 250px;
+    height: 100%;
+    background: url(/static/sobet/images/logo.png) no-repeat -7px 16px;
+    float: left;
+}
+
+#mc_header .menu .logo>div {
+    padding-left: 170px;
+    margin-top: 18px;
+}
+
+#mc_header .menu .logo>div h6 {
+    font-size: 12px;
+    color: #ffb425;
+    font-weight: 400;
+}
+
+#mc_header .menu .logo>div p {
+    font-size: 12px;
+    color: #fff;
+}
+
+#mc_header .menu ul {
+    height: 100%;
+    float: right;
+}
+
+#mc_header .menu>ul>li {
+    height: 100%;
+    float: left;
+    width: 90px;
+    text-align: center;
+}
+
+#mc_header .menu li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    cursor: pointer;
+    color: #dfded9;
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+#mc_header .menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#mc_header .menu li.on a {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#mc_header .menu li>a i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#mc_header .menu li.menu_index i {
+    background: url(/static/sobet/images/home.svg) no-repeat center;
+    background-size: 30px;
+}
+
+#mc_header .menu li.menu_lottery>a i {
+    background: url(/static/sobet/images/lottery.svg) no-repeat center;
+    background-size: 36px;
+}
+
+#mc_header .menu li.menu_slot i {
+    background: url(/static/sobet/images/slot.svg) no-repeat center;
+    background-size: 40px;
+}
+
+#mc_header .menu li.menu_ag i {
+    background: url(/static/sobet/images/ag-icon.png) no-repeat center;
+    background-size: 35px;
+}
+
+#mc_header .menu li.menu_sb_sport i {
+    background: url(/static/sobet/images/sb-sport.png) no-repeat center;
+    background-size: 35px;
+}
+
+#mc_header .menu li.menu_qipai i {
+    background: url(/static/sobet/images/qipai-icon.png) no-repeat center;
+    background-size: 30px;
+}
+
+#mc_header .menu li.menu_by i {
+    background: url(/static/sobet/images/by.svg) no-repeat center;
+    background-size: 40px;
+}
+
+#mc_header .menu li.menu_activity i {
+    background: url(/static/sobet/images/activity.svg) no-repeat center;
+    background-size: 30px;
+}
+
+#mc_header .menu li.menu_download i {
+    background: url(/static/sobet/images/download.svg) no-repeat center;
+    background-size: 45px;
+}
+
+#mc_header .menu li.menu_vipevent i {
+    background: url(/static/sobet/images/vipevent.png) no-repeat center;
+    background-size: 40px;
+}
+
+#mc_footer .footer_icon {
+    width: 100%;
+    height: 100px;
+}
+
+#mc_footer .footer_icon div {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    background: url(/static/sobet/images/mc3.png) no-repeat center;
+}
+
+#mc_footer .footer_info {
+    width: 100%;
+    height: 134px;
+    background-color: #191919;
+    background: linear-gradient(to bottom, #191919, #141414);
+}
+
+#mc_footer .info {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+#mc_footer .info .left {
+    width: 804px;
+    float: left;
+}
+
+#mc_footer .info .nav {
+    margin-left: 10px;
+}
+
+#mc_footer .info .nav a {
+    color: #9c9c9c;
+    margin-right: 50px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+#mc_footer .info .contactUs {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 25px;
+    padding-left: 146px;
+    color: #ccc;
+    font-size: 13px;
+    background: url(/static/sobet/images/footer_logo.png) no-repeat left top;
+}
+
+#mc_footer .info .contactUs i.phone {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(/static/sobet/images/footerIcon.png) no-repeat -3px -2px;
+    vertical-align: text-top;
+}
+
+#mc_footer .info .contactUs i.mail {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(/static/sobet/images/footerIcon.png) no-repeat -22px -2px;
+    vertical-align: text-top;
+}
+
+#mc_footer .info .contactUs a {
+    margin-left: 30px;
+    cursor: pointer;
+    color: #ccc;
+    padding-left: 21px;
+    background: url(/static/sobet/images/footerIcon.png) no-repeat -40px -2px;
+}
+
+#mc_footer .info .copyright {
+    color: #4b4b4b;
+    margin-top: 24px;
+    font-size: 12px;
+}
+
+#mc_footer .info .right {
+    float: right;
+    width: 320px;
+    height: 105px;
+}
+
+#mc_footer .info .right .app {
+    float: left;
+    width: 105px;
+    color: #dcdcdc;
+    margin-right: 15px;
+}
+
+#mc_footer .info .right .app h6 {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#mc_footer .info .right .app span {
+    display: inline-block;
+    width: 39px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#mc_footer .info .right .app span.ios {
+    margin-right: 27px;
+}
+
+#mc_footer .info .right .app span em {
+    font-style: normal;
+    font-size: 13px;
+    display: block;
+    margin-top: 10px;
+}
+
+#mc_footer .info .right .appImg {
+    float: left;
+    width: 92px;
+    height: 80px;
+    padding-right: 12px;
+    border-right: 1px solid #262626;
+}
+
+#mc_footer .info .right .appImg img {
+    width: 80px;
+    height: 80px;
+}
+
+#mc_footer .info .right .pc {
+    float: right;
+    width: 90px;
+    height: 80px;
+    background: #3e259b;
+    background: linear-gradient(to bottom, #3e259b, #2b1885);
+    position: relative;
+}
+
+#mc_footer .info .right .pc>a {
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#mc_footer .info .right .pc:after {
+    content: '';
+    width: 80px;
+    height: 26px;
+    background: url(/static/sobet/images/footerIcon.png) no-repeat -2px -44px;
+    position: absolute;
+    bottom: 0px;
+    left: 6px;
+}
+
+#mc_footer .info .right .pc h6 {
+    color: #755cf6;
+    line-height: 24px;
+    text-align: center;
+    font-weight: normal;
+}
+
+#mc_footer .info .right .pc p {
+    color: #dcdcdc;
+    width: 78px;
+    height: 21px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 21px;
+    border: 1px solid #5139bc;
+    font-size: 12px;
+    text-shadow: none;
+}
+
+#mc_footer .copy_info .copy {
+    color: #444;
+    font-size: 12px;
+    line-height: 40px;
+    float: left;
+}
+
+#mc_footer .copy_info .pm,
+#mc_footer .copy_info .env {
+    color: #ccc;
+    font-size: 12px;
+    line-height: 40px;
+    float: right;
+}
+
+#mc_footer .copy_info .env {
+    margin-left: 20px;
+}
+
+#mc_footer .copy_info .env i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(/static/sobet/images/footerIcon.png) no-repeat;
+    vertical-align: text-top;
+    margin-left: 7px;
+}
+
+#mc_footer .copy_info .env i.google {
+    background-position: -2px -21px;
+}
+
+#mc_footer .copy_info .env i.ie {
+    background-position: -23px -22px;
+}
+
+#mc_footer .copy_info .env i.firefox {
+    background-position: -45px -22px;
+}
+
+#mc_footer .copy_info .env i.sll {
+    background-position: -67px -23px;
+}
+
+#mc_footer .footer_float {
+    position: fixed;
+    top: 33%;
+    right: 0;
+    width: 65px;
+    margin-left: 637px;
+    z-index: 50;
+}
+
+#mc_footer .footer_float .leftnav {
+    width: 60px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px 0 #000, 0 2px 5px 0 rgba(4, 0, 0, 0.2), -7px 7px 20px 0 rgba(4, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#mc_footer .footer_float .leftnav p {
+    width: 60px;
+    height: 10px;
+    background: #432f98;
+    background: linear-gradient(to bottom, #432f98, #321e87);
+}
+
+#mc_footer .footer_float .leftnav p:first-child {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.72);
+}
+
+#mc_footer .footer_float a {
+    display: block;
+    cursor: pointer;
+    color: #7b5dff;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid #110b27;
+}
+
+#mc_footer .footer_float .lineText {
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/linetext.png") no-repeat center 12px #1f1258;
+    padding-top: 45px;
+}
+
+#mc_footer .footer_float .float_service {
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/service.png") no-repeat center 12px #1f1258;
+    padding-top: 45px;
+    border-top: 1px solid #110b27;
+}
+
+#mc_footer .footer_float .help {
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/help.png") no-repeat center 12px #1f1258;
+    padding-top: 45px;
+}
+
+#mc_footer .footer_float .goTop {
+    height: 32px;
+    width: 32px;
+    margin: 0 14px;
+    border-radius: 50%;
+    background: url("/static/sobet/images/gotop.svg") no-repeat;
+    background-size: 32px;
+    box-shadow: 0 0 2px 0 #000, 0 2px 5px 0 rgba(4, 0, 0, 0.2), -7px 7px 20px 0 rgba(4, 0, 0, 0.4);
+    cursor: pointer;
+    display: none;
+}
+
+#mc_footer .footer_float .theme {
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/change.png") no-repeat center 12px #1f1258;
+    cursor: pointer;
+    padding-top: 45px;
+    color: #7b5dff;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #110b27;
+    display: none;
+}
+
+#mc_footer .footer_float .newGuide {
+    display: none;
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/newguide.png") no-repeat center 12px #1f1258;
+    cursor: pointer;
+    padding-top: 45px;
+    color: #7b5dff;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #110b27;
+}
+
+#mc_footer .footer_float .toChat {
+    position: relative;
+    height: 68px;
+    width: 60px;
+    background: url("/static/sobet/images/chat/icon-chat.svg") no-repeat center 12px #1f1258;
+    cursor: pointer;
+    padding-top: 45px;
+    color: #7b5dff;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #110b27;
+}
+
+#mc_footer .footer_float .toChat.unread:after {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    display: inline-block;
+    content: ' ';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #f55349;
+}
+
+#mc_footer .footer_float .leftnav a:hover,
+#mc_footer .footer_float .leftnav div:hover {
+    background-color: #110b27;
+}
+
+#mc_footer .footer_copy {
+    width: 100%;
+    height: 40px;
+    background: #090909;
+    background: linear-gradient(to bottom, #090909, #080808);
+}
+
+#mc_footer .copy_info {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.transferMoney {
+    border-radius: 15px;
+}
+
+.transferMoney .ui-dialog-body {
+    padding: 15px;
+}
+
+.ag_back {
+    cursor: pointer;
+    display: block;
+    color: black;
+    min-width: 115px;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.ioc_back {
+    width: 23px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../../sport/images/ag/back.png") no-repeat;
+}
+
+.ioc_p {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 15px
+}
+
+.transferMoney .ui-dialog-content div.zzdivon {
+    width: 180px;
+    height: 34px;
+    margin-left: 118px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 12px;
+    position: relative;
+    text-align: center;
+}
+
+.transferMoney .funds_money {
+    display: inline-block;
+    font-style: normal;
+    height: 34px;
+    line-height: 34px;
+    width: 200px;
+    font-size: 14px;
+    margin-left: 213px;
+    color: #bcbcbc;
+}
+
+.transferMoney .qbBalance,
+.transferMoney .inBalance {
+    font-style: normal;
+}
+
+.transferMoney .ui-dialog-content div span {
+    position: absolute;
+    line-height: 36px;
+    font-family: "微软雅黑";
+    z-index: 99;
+    left: 7px;
+}
+
+.transferMoney .ui-dialog-content div:nth-child(3) span {
+    color: #d99e49;
+}
+
+.transferMoney .ui-dialog-content div:nth-child(4) span {
+    color: #3c8fdd;
+}
+
+.turnOutBag {
+    color: #d99e49;
+}
+
+.turnInBag {
+    color: #3c8fdd;
+}
+
+.transferMoney .ui-dialog-content div select {
+    min-width: 128px;
+    position: absolute;
+    left: 50px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    height: 32px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    line-height: 36px;
+    z-index: 99;
+}
+
+div.ag_change {
+    margin: 47px auto;
+    width: 360px;
+    height: 36px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    position: relative;
+    text-align: left;
+}
+
+div.ag_change input {
+    margin: 0;
+    width: 237px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    height: 34px;
+    padding-left: 6px;
+}
+
+div.ag_change a {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0px;
+    display: block;
+    width: 116px;
+    height: 34px;
+    border-radius: 4px;
+    ;
+    background: url("../../sport/images/ag/ag_button.png") #9e73ff;
+    color: #ffffff;
+    text-align: center;
+    line-height: 34px;
+    font-family: "微软雅黑";
+}
+
+div.ag_change p {
+    margin: 0;
+    padding: 2px 0 0 2px;
+    text-align: left;
+    color: #ff7d7d;
+    font-size: 14px;
+}
+
+.transferMoney .ui-dialog-content .ag_error {
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    color: red;
+    height: 12px;
+    margin: 0;
+}
+
+.transferMoney .ui-dialog-content a.ag_loading {
+    position: absolute;
+    display: none;
+    right: 113px;
+    bottom: 46px;
+    width: 65px;
+    height: 37px;
+    background: url("../../sport/images/ag/BrowserPreview.gif") no-repeat center;
+}
+
+.transferMoney .ui-dialog-content .ag_btn {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    color: #fff;
+    background: #9e73ff;
+    outline: none;
+    background: url("../../sport/images/ag/button_02.png");
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 220px;
+    height: 40px;
+    line-height: 40px;
+    font-family: "微软雅黑";
+    font-weight: 600;
+}
+
+.transferMoney .ui-dialog-content .tip {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+}
+
+.none {
+    display: none;
+}
+
+
+/*成功后*/
+
+.transferMoney .ui-dialog-content .ag_success {
+    display: none;
+    font-family: '微软雅黑';
+    width: 600px;
+    position: absolute;
+    height: 374px;
+    background: #fff;
+    opacity: 1;
+    z-index: 101;
+    margin: 3.5% 34%;
+    border-radius: 15px;
+}
+
+.transferMoney .ui-dialog-content .success_top {
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.ui-dialog-content .success_top .top_logo {
+    width: 75px;
+    float: left;
+    height: 100%;
+    margin-left: 12px;
+    background: url("../../sport/images/ag/ag_logo.png");
+}
+
+.transferMoney .ui-dialog-content .success_top .top_close {
+    width: 20px;
+    height: 20px;
+    background: url("../../sport/images/ag/close.png");
+    float: right;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 19px;
+}
+
+.transferMoney .ui-dialog-content .success_center {
+    width: 248px;
+    height: 175px;
+    margin: 47px auto;
+}
+
+.transferMoney .ui-dialog-content .success_center .center {
+    overflow: hidden;
+}
+
+.transferMoney .ui-dialog-content .success_center .center div {
+    float: left;
+    width: 55px;
+    height: 70px;
+    margin-right: 41px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.transferMoney .ui-dialog-content .success_center .center div:nth-child(3) {
+    margin-right: 0;
+}
+
+.transferMoney .ui-dialog-content .success_center .center div:nth-child(2) {
+    padding-top: 20px
+}
+
+.transferMoney .ui-dialog-content .success_center .center_check {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.transferMoney .ui-dialog-content .success_center .center_check i,
+em {
+    font-style: normal;
+}
+
+.ui-dialog-content .success_center .center_check img {
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+
+.transferMoney .ui-dialog-content .success_center .center_check i:last-child {
+    padding-left: 4px;
+    color: #3db39e;
+}
+
+.transferMoney .ui-dialog-content .success_center .center_check .check_money {
+    padding-left: 4px;
+}
+
+.transferMoney .ui-dialog-content .success_center .foot,
+.ui-dialog-content .success_center .foot em {
+    font-style: normal;
+    margin-top: 45px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.transferMoney .ui-dialog-content .success_center .foot i,
+.success_center .foot a {
+    color: red;
+}
+
+.transferMoney .ui-dialog-content .success_center .foot a,
+#follow {
+    cursor: pointer;
+}
+
+.marqueeAlert .ui-dialog-header {
+    border-bottom: 1px solid #c2cfd8;
+}
+
+.marqueeAlert .ui-dialog-title {
+    line-height: 36px;
+}
+
+.marqueeAlert .ui-dialog-title {
+    line-height: 36px;
+}
+
+.marqueeAlert .ui-dialog-body {
+    padding: 20px;
+}
+
+.marqueeAlert .ui-dialog-footer {
+    padding: 0 20px 20px;
+}
+
+
+/**********************************lottery_list**************************************/
+
+.lotList {
+    position: absolute;
+    left: 85px;
+    top: 23px;
+    z-index: 500;
+    padding-top: 10px;
+    display: none;
+}
+
+.lotteryUl {
+    width: 800px;
+    padding: 25px 15px 0;
+    background-color: #515151;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 4px 4px 18px -2px rgba(0, 0, 0, 0.61);
+}
+
+.lotteryUl:after {
+    content: '';
+    border: 8px solid transparent;
+    border-bottom: 8px solid #515151;
+    position: absolute;
+    top: -15px;
+    left: 42px;
+}
+
+.lotteryUl>div {
+    min-height: 40px;
+}
+
+.lotteryUl .title {
+    width: 100px;
+    text-align: left;
+    font-size: 18px;
+    color: #e5cb87;
+    font-weight: bold;
+}
+
+.lotteryUl .content {
+    width: 670px;
+    text-align: left;
+}
+
+.lotteryUl .lotteryList {
+    display: inline-block;
+    width: 94px;
+    line-height: 26px;
+    margin: 0 13px 5px 0;
+    text-align: left;
+    color: #ddd;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.lotteryUl .lotteryList:hover {
+    color: #e5cb87;
+}
+
+.lotteryUl .lotteryList i.hot {
+    display: inline-block;
+    width: 24px;
+    height: 15px;
+    background: url("/static/sobet/images/lotteryList.png") no-repeat;
+    vertical-align: middle;
+}
+
+.lotteryUl .lotteryList i.new {
+    display: inline-block;
+    width: 24px;
+    height: 15px;
+    background: url("/static/sobet/images/lotteryList.png") no-repeat -30px 0;
+    vertical-align: middle;
+}
+
+.lotteryUl .gameUl {
+    margin-top: 26px;
+    height: 80px;
+    line-height: 80px;
+    border-top: 1px dashed #9b8e6c;
+}
+
+.lotteryUl .gameUl .title {
+    line-height: 80px;
+    font-size: 20px;
+}
+
+.lotteryUl .gameUl .content a {
+    display: inline-block;
+    width: 125px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #636363;
+    border-radius: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.lotteryUl .gameUl .content a i {
+    float: left;
+    margin: 0;
+    background: url("/static/sobet/images/lotteryList.png") no-repeat;
+}
+
+.lotteryUl .gameUl .content a span {
+    float: right;
+}
+
+.lotteryUl .gameUl .content a span.agGame-title {
+    margin-right: 2px;
+}
+
+.lotteryUl .gameUl .content a span.sbGame-title {
+    margin-right: 16px;
+}
+
+.lotteryUl .gameUl .content a span.qpGame-title {
+    margin-right: 16px;
+}
+
+.lotteryUl .gameUl .content a span.byGame-title {
+    margin-right: 9px;
+}
+
+.lotteryUl .gameUl .content a span.ptGame-title {
+    margin-right: 10px;
+}
+
+.lotteryUl .gameUl .content a.agGame i {
+    width: 40px;
+    height: 48px;
+    background-position: -5px -16px;
+}
+
+.lotteryUl .gameUl .content a.ptGame i {
+    width: 53px;
+    height: 48px;
+    background-position: -52px -16px;
+}
+
+.lotteryUl .gameUl .content a.qpGame i {
+    width: 53px;
+    height: 48px;
+    background-position: -165px -16px;
+}
+
+.lotteryUl .gameUl .content a.sbGame i {
+    width: 53px;
+    height: 48px;
+    background: url(/static/sobet/images/allgame-sb-sport.png) no-repeat;
+    background-size: 60px;
+}
+
+.lotteryUl .gameUl .content a.byGame i {
+    width: 54px;
+    height: 48px;
+    background-position: -112px -20px;
+}
+
+.lotteryUl .gameUl .content a:hover {
+    background: rgba(3, 0, 0, 0.1);
+    background: linear-gradient(to top, rgba(3, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+#mc_notice .content .newsContent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#mc_notice .content .newsContent::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+#mc_notice .content .newsContent::-webkit-scrollbar {
+    width: 7px;
+    height: 13px;
+}
+
+#mc_notice .content .newsContent::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-clip: padding-box;
+    border: 1px solid #141414;
+    background-color: rgba(255, 255, 255, .1);
+    min-height: 28px;
+}
+
+#mc_notice .content .newsContent::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+
+/******************************chat*******************************/
+
+.layui-layer.chat-layer {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chat-layer .layui-layer-setwin .layui-layer-ico,
+.chat-layer .layui-layer-setwin .layui-layer-ico:hover {
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url(/static/sobet/images/chat/icon-close.svg) no-repeat center;
+    background-size: 20px;
+}
+
+#chat {
+    display: none;
+    overflow: hidden;
+}
+
+#chat .user-list {
+    position: relative;
+    width: 265px;
+    height: 645px;
+    background-color: #281935;
+}
+
+.user-list .chat-search {
+    width: 244px;
+    height: 40px;
+    margin: 16px auto 17px;
+    font-size: 0;
+}
+
+.chat-search .user-search {
+    position: relative;
+    display: inline-block;
+    width: 195px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #31213d;
+    border-radius: 20px;
+}
+
+.user-search label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(/static/sobet/images/chat/icon-search.svg) no-repeat center;
+    background-size: 22px;
+}
+
+.user-search input {
+    width: 155px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    text-indent: 3px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    vertical-align: top;
+}
+
+.user-search .icon-delete {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    background: url(/static/sobet/images/chat/icon-close.svg) no-repeat center;
+    background-size: 15px;
+    cursor: pointer;
+}
+
+.chat-search .btn-search {
+    display: inline-block;
+    width: 44px;
+    height: 20px;
+    margin: 10px 0 0 5px;
+    background: url(/static/sobet/images/chat/btn-search.svg) no-repeat center;
+    background-size: 40px 20px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.user-list .user-item {
+    position: relative;
+    height: 66px;
+    line-height: 66px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-list li.user-item {
+    font-size: 0;
+}
+
+.user-list .user-item.on,
+.user-list .user-item:hover {
+    background-color: #412e50;
+}
+
+.user-list .user-item .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 66px;
+    margin: 0 21px 0 16px;
+    background-size: 24px;
+    border-radius: 50%;
+    color: #fff;
+    vertical-align: middle;
+}
+
+.user-list .user-item .icon-admin {
+    background: url(/static/sobet/images/chat/icon-manager.svg) no-repeat center;
+}
+
+.user-list .user-item .icon-agent {
+    background: url(/static/sobet/images/chat/icon-agent.svg) no-repeat center;
+}
+
+.user-list .user-item .icon-allLower {
+    background: url(/static/sobet/images/chat/icon-allLower.svg) no-repeat center;
+}
+
+.user-list .user-item .icon-lower {
+    position: relative;
+    background: url(/static/sobet/images/chat/icon-offline.svg) no-repeat center;
+    background-size: 24px;
+}
+
+.user-list .user-item.online .icon-lower {
+    background: url(/static/sobet/images/chat/icon-lower.svg) no-repeat center;
+}
+
+.user-list .user-item.unread:after {
+    position: absolute;
+    right: 28px;
+    top: 26px;
+    content: ' ';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f55349;
+}
+
+.user-list .user-item span {
+    display: inline-block;
+    width: 130px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.lower-list .title {
+    position: relative;
+    height: 66px;
+    line-height: 66px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.recent-list.unread.off .title:after {
+    position: absolute;
+    right: 28px;
+    top: 26px;
+    content: ' ';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f55349;
+}
+
+.lower-list .title .icon-dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px 0 16px;
+    background-color: #4990e2;
+    vertical-align: middle;
+}
+
+.lower-list .title .icon-arrow {
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    margin: 0 8px 0 16px;
+    background: url(/static/sobet/images/chat/icon-arrow.svg) no-repeat center;
+    background-size: 6px 10px;
+    vertical-align: middle;
+}
+
+.lower-list .title.on .icon-arrow {
+    transform: rotate(90deg);
+}
+
+.lower-list ul {
+    display: none;
+    max-height: 368px;
+    overflow-y: auto;
+}
+
+.lower-list .user-item.unread:after {
+    position: absolute;
+    right: 28px;
+    top: 26px;
+    content: ' ';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: #f55349;
+}
+
+.zd-lower .lower-list ul {
+    max-height: 334px;
+}
+
+.user-list .msg-voice {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: url(/static/sobet/images/chat/voice.png) 10px 8px no-repeat #463A67;
+    font-size: 12px;
+    color: #B6D7FF;
+    text-indent: 48px;
+    cursor: pointer;
+}
+
+.user-list .msg-voice.off {
+    background-image: url(/static/sobet/images/chat/silence.png);
+    color: #AE9ED7;
+}
+
+.user-list .msg-voice:hover {
+    background-image: url(/static/sobet/images/chat/voice_hover.png);
+}
+
+.user-list .msg-voice.off:hover {
+    background-image: url(/static/sobet/images/chat/silence_hover.png);
+}
+
+.user-list .setting {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 77px;
+    line-height: 77px;
+    background-color: #463a67;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user-list .setting .icon-setting {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    margin: 0 27px 0 13px;
+    background: url(/static/sobet/images/chat/icon-setting.svg) no-repeat center;
+    background-size: 21px;
+    vertical-align: middle;
+}
+
+#chat .chat-list {
+    width: 615px;
+    height: 645px;
+    background-color: #fff;
+}
+
+.chat-title {
+    height: 70px;
+    line-height: 70px;
+    background-color: #a498c3;
+    color: #fff;
+}
+
+.chat-title i.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    margin: 0 15px;
+    vertical-align: text-top;
+}
+
+.chat-title i.icon-admin {
+    background: url(/static/sobet/images/chat/icon-manager.svg) no-repeat center;
+}
+
+.chat-title i.icon-agent {
+    background: url(/static/sobet/images/chat/icon-agent.svg) no-repeat center;
+}
+
+.chat-title i.icon-allLower {
+    background: url(/static/sobet/images/chat/icon-allLower.svg) no-repeat center;
+}
+
+.chat-title i.icon-lower {
+    background: url(/static/sobet/images/chat/icon-lower.svg) no-repeat center;
+}
+
+.chat-content {
+    height: 498px;
+    padding: 0 25px;
+    background-color: #f7f2f8;
+    overflow-y: auto;
+}
+
+.chat-content.no-input {
+    height: 575px;
+}
+
+.chat-content .more {
+    width: 120px;
+    margin: 18px auto;
+    text-align: center;
+    color: #706198;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.chat-content .more .loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-left-color: #666;
+    animation: chatLoad 1s infinite linear;
+    vertical-align: middle;
+}
+
+.msg-lists {
+    margin-top: 28px;
+}
+
+.msg-lists dd {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.msg-lists dd.myself {
+    padding-right: 10px;
+    text-align: right;
+}
+
+.msg-lists dd .avatar {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    margin-right: 23px;
+    vertical-align: top;
+}
+
+.chat-content[data-type=admin] .msg-lists dd .avatar {
+    background: url(/static/sobet/images/chat/icon-manager.svg) no-repeat center;
+    background-size: 44px;
+}
+
+.chat-content[data-type=agent] .msg-lists dd .avatar {
+    background: url(/static/sobet/images/chat/icon-agent.svg) no-repeat center;
+    background-size: 44px;
+}
+
+.chat-content[data-type=lower] .msg-lists dd .avatar {
+    background: url(/static/sobet/images/chat/icon-lower-b.svg) no-repeat center;
+    background-size: 44px;
+}
+
+.msg-lists dd .msg-content {
+    position: relative;
+    display: inline-block;
+    width: 325px;
+    min-height: 40px;
+    line-height: 20px;
+    padding: 11px 28px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px #a9b3ba;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #281935;
+    word-wrap: break-word;
+}
+
+.msg-lists dd .msg-time {
+    display: inline-block;
+    height: 40px;
+    margin: 0 10px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #948598;
+    vertical-align: top;
+}
+
+.msg-lists dd .msg-time .chat-loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-left-color: #666;
+    animation: chatLoad 1s infinite linear;
+}
+
+@keyframes chatLoad {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.msg-lists dd.another .msg-content:before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 14px;
+    border: 6px solid transparent;
+    border-right: 6px solid #fff;
+}
+
+.msg-lists dd.myself .msg-content {
+    background-color: #706198;
+    color: #fff;
+}
+
+.msg-lists dd.myself .msg-content:before {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 14px;
+    border: 6px solid transparent;
+    border-left: 6px solid #706198;
+}
+
+.chat-enter {
+    height: 77px;
+    padding: 5px;
+}
+
+.chat-enter .msg {
+    resize: none;
+    width: 500px;
+    height: 67px;
+    font-size: 14px;
+    padding: 10px 0 10px 25px;
+    border: none;
+    outline: none;
+}
+
+.chat-enter .send {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 12px 0 0 40px;
+    background: url(/static/sobet/images/chat/icon-send.svg) no-repeat center;
+    background-size: 42px;
+    vertical-align: top;
+}
+
+
+/******************************chat-set*******************************/
+
+.layui-layer.chat-set {
+    background-color: #fff;
+}
+
+.layui-layer.chat-set .layui-layer-btn {
+    padding: 23px 0;
+}
+
+.chat-set .layui-layer-btn a {
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 18px;
+    border-radius: 6px;
+}
+
+.chat-set .layui-layer-btn .layui-layer-btn0 {
+    border: 1px solid #972626;
+    background-image: linear-gradient(to bottom, #e2423b, #c63030 53%, #ac1b1b);
+}
+
+.chat-set .layui-layer-btn .layui-layer-btn1 {
+    border: 1px solid #e4e4e4;
+    background-image: linear-gradient(to bottom, #fff, #eaeef1);
+}
+
+.chat-set .set-top {
+    height: 70px;
+    line-height: 70px;
+    background-color: #463a67;
+    color: #fff;
+}
+
+.set-top i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.set-top .icon-setting {
+    width: 21px;
+    height: 21px;
+    margin: 0 22px 0 25px;
+    background: url(/static/sobet/images/chat/icon-setting.svg) no-repeat center;
+    background-size: 21px;
+}
+
+.set-top .icon-switch {
+    width: 58px;
+    height: 22px;
+    margin-left: 10px;
+    background: url(/static/sobet/images/chat/icon-switch.svg) no-repeat center;
+    background-size: 58px 22px;
+    cursor: pointer;
+}
+
+.set-top .icon-switchOpen {
+    width: 58px;
+    height: 22px;
+    margin-left: 10px;
+    background: url(/static/sobet/images/chat/icon-switchopen.svg) no-repeat center;
+    background-size: 58px 22px;
+}
+
+.chat-set .set-main {
+    height: 497px;
+    padding: 20px;
+    background-color: #f7f2f8;
+}
+
+.set-main .setMsg {
+    height: 100%;
+    padding-top: 120px;
+    text-align: center;
+}
+
+.set-main .icon-setMsg {
+    display: inline-block;
+    width: 192px;
+    height: 192px;
+    background: url(/static/sobet/images/chat/icon-setMsg.svg) no-repeat center;
+    background-size: 192px;
+}
+
+.set-main .set-content {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: none;
+    font-size: 18px;
+    color: #000;
+    resize: none;
+    outline: none;
+}
+
+.lower-list ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lower-list ul::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+.lower-list ul::-webkit-scrollbar {
+    width: 11px;
+}
+
+.lower-list ul::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-clip: padding-box;
+    background-color: #56477e;
+}
+
+.chat-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-content::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+.chat-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-content::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-clip: padding-box;
+    background-color: #777;
+}
+
+.chat-enter .msg::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-enter .msg::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+.chat-enter .msg::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-enter .msg::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-clip: padding-box;
+    background-color: #777;
+}
+
+.layui-layer.layui-layer-lan {
+    background-color: #fff;
+}

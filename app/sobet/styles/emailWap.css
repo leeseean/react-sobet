@@ -1,0 +1,76 @@
+/***********************bindEmail****************************/
+#mc_header,#mc_footer{
+    display: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+    background: #35363a;
+}
+#feedContainer{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#container-feed{
+    width: 100%;
+    height: 100%;
+}
+#main-success{
+    width: 95%;
+    margin: 200px auto;
+    padding: 0;
+}
+.success p{
+    width: 96%;
+    text-align: center;
+}
+#gohome a.emailWap{
+   display: inline-block;
+}
+#gohome a.emailWeb{
+   display: none;
+}
+
+
+/**********************emailResetPassword************************/
+body .loginMenu_bg,body .login_footer_bg{
+    display: none;
+}
+.main_bg{
+    height:100%;
+    background: #35363a;
+}
+#findpwd{
+    width: 100%;
+    height: 100%;
+}
+#findpwd #userInfo{
+    width: 90%;
+    height: 100%;
+    float: none;
+    padding: 0;
+    margin: 0px auto;
+    padding-top: 40px;
+}
+#findpwd h1{
+    display: inline-block;
+    font-size: 36px;
+    color: #ff9a00;
+}
+#findpwd span {
+    font-size: 36px;
+    color: silver;
+    margin-left: 15px;
+}
+#findpwd #userInfo h4 label {
+    color: #fff;
+}
+#findpwd #userInfo .row input[type=password]{
+    width: 100%;
+    height: 40px;
+}
+#findpwd #userInfo .row input.btn{
+    width: 100%;
+    border: none;
+}

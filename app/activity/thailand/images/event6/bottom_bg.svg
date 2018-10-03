@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="260px" viewBox="0 0 1920 260" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom_bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首屏" transform="translate(0.000000, -820.000000)">
+            <g id="bottom_bg" transform="translate(0.000000, 820.000000)">
+                <g>
+                    <path d="M0,0 C0,0 480.475248,68.863138 960.500261,68.863138 C1440.47525,68.863138 1920,0 1920,0 L1920,260 L0,260 L0,0 Z" id="Rectangle_1_copy_2-Copy-2" fill="#FFFFFF"></path>
+                    <path d="M1920,12 C1920,12 1440.47525,81 960.500261,81 C480.475248,81 0,12 0,12" id="Rectangle_1_copy_2-Copy-3" stroke="#B47E47" stroke-width="2" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,805 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    outline: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: "PingFang SC", "Microsoft Yahei", Arial, Helvetica, sans-serif;
+    margin: auto 0;
+    background: url(../images/event6/bg.jpg) center top no-repeat;
+    -webkit-font-smoothing: antialiased;
+}
+img{
+    border:none;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.clearfix {
+    clear:both;
+}
+.clearfix:after{content:"";display:block;height:0;visibility:hidden; clear:both;}
+
+.wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    width: 155px;
+    height: 35px;
+    margin-top: 20px;
+    background: url(../images/event6/logo.svg) center no-repeat;
+}
+
+.nav {
+    width: 168px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.nav.open {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.nav dt {
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav dd {
+    display: none;
+}
+
+.nav.open dd {
+    display: block;
+}
+
+.nav dd a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #9b9b9b;
+}
+
+.nav dd a:hover {
+    color: #f5a623;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.page li {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+.swiper-container-vertical>.swiper-pagination-bullets {
+    right: 60px;
+}
+
+.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 10px 0;
+}
+
+.page li:first-child {
+    background-image: url(../images/event6/right-icon-play.svg);
+}
+
+.page li:first-child.my-bullet-active,
+.page li:first-child:hover {
+    background-image: url(../images/event6/right-iconhover-play.svg);
+}
+
+.page li:nth-child(2){
+    background-image: url(../images/event6/right-icon-photo.svg);
+}
+
+.page li:nth-child(2).my-bullet-active,
+.page li:nth-child(2):hover {
+    background-image: url(../images/event6/right-iconhover-photo.svg);
+}
+
+.page li:nth-child(3){
+    background-image: url(../images/event6/right-icon-content.svg);
+}
+
+.page li:nth-child(3).my-bullet-active,
+.page li:nth-child(3):hover {
+    background-image: url(../images/event6/right-iconhover-content.svg);
+}
+
+.page a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: url(../images/event6/right-icon-home.svg) center no-repeat;
+}
+
+.page a:hover {
+    background: url(../images/event6/right-iconhover-home.svg) center no-repeat;
+}
+
+
+.swiper-slide {
+    position: relative;
+    text-align: center;
+}
+
+.swiper-slide-active {
+    z-index: 10;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 260px;
+    text-align: center;
+    background: url(../images/event6/bottom_bg.svg) center top no-repeat;
+    background-size: cover;
+}
+
+.bottom p {
+    margin: 100px 0 15px;
+    font-size: 12px;
+    color: #000;
+}
+
+.bottom .scroll-btn {
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 10px;
+    background: url(../images/event6/scroll-btn.svg) center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.bottom .scroll-btn:before {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: -100px;
+    display: inline-block;
+    width: 100px;
+    border-top: 2px solid #000;
+}
+
+.bottom .scroll-btn:after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    right: -100px;
+    display: inline-block;
+    width: 100px;
+    border-top: 2px solid #000;
+}
+
+.bottom h6 {
+    font-size: 18px;
+    color: #000;
+    font-weight: normal;
+    letter-spacing: 10px;
+}
+
+.bottom .road {
+    position: absolute;
+    bottom: 170px;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    background: url(../images/event6/road-1.png) center top no-repeat;
+    z-index: -1;
+}
+
+.slide-1 .title {
+    width: 946px;
+    margin: 10px auto 0;
+}
+
+.slide-1 h1 {
+    line-height: 84px;
+    margin-top: -42px;
+    font-size: 60px;
+    color: #DC7D00;
+    font-weight: normal;
+}
+
+.video-controller {
+    position: relative;
+    width: 960px;
+    height: 602px;
+    margin: 5px auto 0;
+    background: url(../images/event6/girls3.png) center no-repeat;
+    background-size: cover;
+    text-align: center;
+    cursor: pointer;
+}
+
+.play {
+    display: inline-block;
+    width: 90px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.play i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: 64px;
+    border-top: 25px solid transparent;
+    border-left: 40px solid #f3c168;
+    border-bottom: 25px solid transparent;
+}
+
+.support {
+    position: absolute;
+    left: 30px;
+    top: 300px;
+    width: 903px;
+    z-index: -1;
+}
+
+.support p {
+    font-size: 18px;
+    color: #fff;
+    margin: 5px 0 0;
+    text-align: left;
+    letter-spacing: 10px;
+}
+
+.ribbon {
+    position: absolute;
+    z-index: -1;
+}
+
+.ribbon-fl {
+    bottom: 0;
+    left: -300px;
+}
+
+.ribbon-fr {
+    bottom: 0;
+    right: -160px;
+}
+
+.left-ribbon {
+    position: absolute;
+    left: -490px;
+    top: 100px;
+}
+
+.right-ribbon {
+    position: absolute;
+    right: -400px;
+    top: 88px;
+}
+
+.title-s {
+    position: relative;
+    height: 117px;
+    margin-top: 14px;
+}
+
+.title-s::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: inline-block;
+    width: 325px;
+    height: 4px;
+    background-color: #000;
+    z-index: -2;
+}
+
+.title-s::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: inline-block;
+    width: 325px;
+    height: 4px;
+    background-color: #000;
+    z-index: -2;
+}
+
+.title-s img {
+    height: 100%;
+}
+
+.photo {
+    position: relative;
+}
+
+.photo .girls-l {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    z-index: 0;
+}
+
+.photo .girls-r {
+    position: absolute;
+    top: 115px;
+    right: 0;
+    z-index: 0;
+}
+
+.main-photo {
+    position: relative;
+    width: 836px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.title-img {
+    position: absolute;
+    left: 15px;
+    top: 55px;
+}
+
+.photo-title {
+    padding: 0 46px;
+    line-height: 84px;
+    font-size: 60px;
+    color: #fff;
+}
+
+.photo-title img {
+    margin-top: 45px;
+}
+
+.photo-info {
+    position: relative;
+    margin-top: 22px;
+    z-index: 100;
+}
+
+.photo-info .inner {
+    width: 760px;
+}
+
+.photo-info .swiper-slide {
+    width: 760px;
+}
+
+.photo-slide td {
+    position: relative;
+    cursor: pointer;
+}
+
+.photo-slide img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.photo-slide td::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/event6/zoom.svg) center no-repeat #000;
+    opacity: 0;
+    z-index: -1;
+    transform: scale(0);
+    transition: all 0.18s ease-in;
+    pointer-events: none;
+}
+
+.photo-slide td.mark::before {
+    opacity: 0.8;
+    z-index: 1;
+    transform: scale(1);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    z-index: 20;
+}
+
+.slide-3 .bottom .scroll-btn {
+    transform: rotate(180deg);
+    margin: 0 0 10px;
+}
+
+.slide-3 .bottom .scroll-btn:before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: -100px;
+    display: inline-block;
+    width: 100px;
+    border-top: 2px solid #000;
+}
+
+.slide-3 .bottom .scroll-btn:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: -100px;
+    display: inline-block;
+    width: 100px;
+    border-top: 2px solid #000;
+}
+
+.slide-3 .bottom h6 {
+    letter-spacing: 0;
+}
+
+.contact {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.contact img {
+    display: block;
+    vertical-align: top;
+}
+
+.contact .top {
+    margin: 0 22px 9px;
+}
+
+.contact-f {
+    width: 316px;
+}
+
+.contact-m {
+    width: 233px;
+    margin-left: -40px;
+}
+
+.contact-r {
+    width: 233px;
+}
+
+.way {
+    width: 300px;
+}
+
+.way-b {
+    margin-bottom: 25px;
+}
+
+.way p {
+    padding-left: 46px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #fff;
+}
+
+.way p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.way p img {
+    display: inline-block;
+    width: 18px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin: 30px 0 0 -30px;
+}
+
+.car {
+    position: relative;
+    width: 1320px;
+    margin: 82px auto 0;
+    z-index: 10;
+}
+
+.layui-layer .layui-layer-setwin .layui-layer-close2 {
+    right: -90px;
+    top: -15px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/event6/close.svg);
+    background-position: center;
+}
+.layui-layer .layui-layer-setwin .layui-layer-close2:hover {
+    background-position: center;
+}
+
+
+.video-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 200;
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#activity-tw {
+    width: 1280px;
+    height: 720px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: -90px;
+    width: 24px;
+    height: 24px;
+    background: url(../images/event6/close.svg) center no-repeat;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-height: 900px) and (min-height: 769px) {
+    .slide-1 .title {
+        width: 700px;
+    }
+    .slide-1 h1 {
+        line-height: 64px;
+        font-size: 40px;
+    }
+    .video-controller {
+        width: 778px;
+        height: 488px;
+    }
+    .play i {
+        margin-top: 40px;
+    }
+    .support {
+        left: 0;
+        top: 230px;
+        width: 100%;
+    }
+    .support p {
+        font-size: 14px;
+    }
+    .ribbon-fl {
+        width: 450px;
+        left: -205px;
+    }
+    .ribbon-fr {
+        width: 450px;
+        right: -75px;
+    }
+    .bottom {
+        height: 160px;
+    }
+    .bottom p {
+        margin: 70px 0 0;
+    }
+    .bottom .scroll-btn {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+    }
+
+    .slide-3 .bottom .scroll-btn {
+        margin: 0;
+    }
+
+    .bottom .road {
+        bottom: 30px;
+    }
+
+    .title-s {
+        height: 100px;
+    }
+
+    .contact {
+        width: 980px;
+    }
+
+    .contact-f {
+        width: 250px;
+    }
+
+    .contact-m {
+        width: 196px;
+        margin-left: -20px;
+    }
+
+    .contact-r {
+        width: 196px;
+        margin-left: 20px;
+    }
+
+    .way {
+        width: 230px;
+    }
+    .way p {
+        padding-left: 20px;
+    }
+
+    .car {
+        width: 900px;
+        margin: 50px auto 0;
+    }
+}
+
+@media screen and (max-height: 768px) {
+    .wrap {
+        width: 1000px;
+    }
+    .slide-1 .title {
+        width: 500px;
+    }
+    .slide-1 h1 {
+        line-height: 64px;
+        font-size: 30px;
+    }
+    .video-controller {
+        width: 700px;
+        height: 439px;
+    }
+    .play i {
+        margin-top: 25px;
+    }
+    .support {
+        left: 0;
+        top: 215px;
+        width: 100%;
+    }
+    .support p {
+        font-size: 12px;
+    }
+    .ribbon-fl {
+        width: 400px;
+        left: -180px;
+    }
+    .ribbon-fr {
+        width: 400px;
+        right: -55px;
+    }
+    .bottom {
+        height: 160px;
+    }
+    .bottom p {
+        margin: 70px 0 0;
+    }
+    .bottom .scroll-btn {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+    }
+
+    .main-photo {
+        width: 680px;
+    }
+
+    .title-img {
+        width: 7px;
+    }
+
+    .photo-title {
+        line-height: 40px;
+        font-size: 40px;
+    }
+    .photo-title img {
+        margin-top: 12px;
+    }
+
+    .photo-info {
+        margin-top: 0;
+    }
+
+    .photo-info .inner {
+        width: 88%;
+    }
+
+    .slide-3 .bottom .scroll-btn {
+        margin: 0;
+    }
+
+    .bottom .road {
+        bottom: 30px;
+    }
+
+    .title-s {
+        height: 100px;
+    }
+
+    .contact {
+        width: 800px;
+    }
+
+    .contact-f {
+        width: 200px;
+    }
+
+    .contact-m {
+        width: 150px;
+        margin-left: -20px;
+    }
+
+    .contact-r {
+        width: 150px;
+        margin-left: 20px;
+    }
+
+    .way {
+        width: 200px;
+    }
+    .way p {
+        padding-left: 10px;
+        margin-bottom: 5px;
+    }
+
+    .way-b {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+
+    .car {
+        width: 850px;
+        margin: 30px auto 0;
+    }
+
+    #activity-tw {
+        width: 900px;
+        height: 506px;
+    }
+}
+
+
+

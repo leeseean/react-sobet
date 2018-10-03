@@ -1,0 +1,395 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    min-width:1320px;
+}
+body{
+    font-family:"Microsoft Yahei",Arial,Helvetica,sans-serif;
+    margin: auto 0;
+}
+img{
+    border:none;
+}
+@font-face{
+    font-family: Pingfang;
+    src:url("../font/PINGFANG MEDIUM.TTF");
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+.float-clear{
+    clear:both;
+}
+.clearfix:after{content:"";display:block;height:0;visibility:hidden; clear:both;}
+.header_bg{
+    width:100%;
+    min-width:1320px;
+}
+.header_bg .top{
+    height:60px;
+    width:100%;
+    background-color: #1c1d20;
+}
+.header_bg .top .m{
+    width:1200px;
+    margin:0 auto;
+    height:100%;
+}
+.header_bg .bottom .m{
+    position: relative;
+    width:1200px;
+    margin:0 auto;
+    height: 642px;
+    padding-top: 362px;
+    text-align: center;
+}
+.header_bg .top .logo{
+    cursor:pointer;
+    display:inline-block;
+    width:170px;
+    height:100%;
+    margin-right: 160px;
+    background:url(../images/Vietnam/top_logo.png) no-repeat left center;
+}
+.header_bg .top .history{
+    display:inline-block;
+    height:60px;
+    line-height: 60px;
+    color: #fff;
+    vertical-align: top;
+}
+.header_bg .top .history span.arrow_l{
+    display: inline-block;
+    width: 44px;
+    height: 60px;
+    background:url(../images/Vietnam/arrow2.svg) no-repeat left center;
+    color: #fff;
+    vertical-align: top;
+}
+.header_bg .top .history span.arrow_r{
+    display: inline-block;
+    width: 44px;
+    height: 60px;
+    background:url(../images/Vietnam/arrow1.svg) no-repeat left center;
+    color: #fff;
+    vertical-align: top;
+}
+.header_bg .top .history a{
+    margin: 0 20px;
+    color: #fff;
+    font-size: 16px;
+}
+.header_bg .top .history a.on,
+.header_bg .top .history a:hover {
+    color: #f2c968;
+}
+.header_bg .top .service{
+    display:inline-block;
+    width: 124px;
+    padding-top: 12px;
+}
+.header_bg .top .service a{
+    display:inline-block;
+    width: 48px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+.header_bg .top .service a i.mail{
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    background:url(../images/Vietnam/top_mail_icon.png) no-repeat center;
+}
+.header_bg .top .service a i.kf{
+    display:inline-block;
+    width: 23px;
+    height: 20px;
+    background:url(../images/Vietnam/top_kf_icon.png) no-repeat center;
+}
+.header_bg .bottom{
+    height:642px;
+    width:100%;
+    background:url(../images/Vietnam/bg_t.jpg) no-repeat center;
+    background-size: cover;
+}
+.header_bg .bottom .m h4{
+    font-size: 30px;
+    color: #fff0e2;
+    font-weight: normal;
+    letter-spacing: 5px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .6), 0 2px 5px rgba(0, 0, 0, .4);
+}
+.header_bg .bottom .m .video-btn{
+    width: 184px;
+    height: 184px;
+    margin: 0 auto;
+    background: url(../images/Vietnam/playlogo.png) no-repeat center;
+    cursor: pointer;
+}
+.header_bg .bottom .m .video-btn:hover{
+    background: url(../images/Vietnam/playlogo2.png) no-repeat center;
+}
+.video-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    width: 900px;
+    background-color: #333;
+    box-shadow: 0 5px 18px 2px rgba(0, 0, 0, .4);
+}
+.video-content .top{
+    height: 30px;
+    background-color: #1c1d20;
+}
+.video-content .top .close{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.activeVideo .video{
+    background:transparent;
+}
+.activeVideo h2{
+    color:white;
+    position: absolute;
+    width:604px; 
+    margin-top:240px;
+    text-align: center;
+}
+.activeVideo .btn-play{
+    margin-top:135px;
+}
+.activeVideo .video{
+    margin-top: 35px;
+    border-radius: 2px;
+}
+.main_bg{
+    width:100%;
+    min-width:1320px;
+    background-color: #f2e3eb;
+}
+.main_bg .nav{
+    position: relative;
+    top: -48px;
+    width:1200px;
+    height:48px;
+    z-index: 11;
+}
+.nav .nav-ul{
+    width:1200px;
+    height:48px;
+    padding:0 100px;
+    color:#fff;
+}
+.nav .nav-ul li{
+    float:left;
+    width:190px;
+    height:48px;
+    line-height: 46px;
+    margin: 0 30px;
+    text-align: center;
+    font-size: 18px;
+    color:#fff;
+    cursor: pointer;
+}
+.nav-ul li:hover, .nav-ul li.nav-li-active{
+    position: relative;
+    line-height: 40px;
+    font-size: 24px;
+}
+.nav-ul li:hover:before, .nav-ul li.nav-li-active:before{
+    content: ' ';
+    position: absolute;
+    bottom: 6px;
+    left: 5px;
+    display: inline-block;
+    width: 180px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #ec81b9;
+}
+.main_bg .m{
+    width:1200px;
+    margin:0 auto;
+}
+.main_bg .m .activePic{
+    position: relative;
+    top: -30px;
+    width:1200px;
+    padding: 0 16px;
+}
+.main_bg .m .activePic .pic ul{
+    float: left;
+    width:280px;
+    margin: 0 6px;
+}
+.main_bg .m .activePic .pic li{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 13px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+.main_bg .m .activePic .pic li.picHover:before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/Vietnam/detail.png) no-repeat center rgba(0, 0, 0, .6);
+    z-index: 10;
+    pointer-events: none;
+}
+.pic img{
+    position: relative;
+    width:260px;
+    height:167px;
+}
+.pic .bimg img{
+    height:400px;
+}
+#myvideo{
+    cursor: pointer;
+}
+.main_bg .m .activePic>img{
+    margin: 25px auto;
+}
+.main_bg .m .activePic h3{
+    position: absolute;
+    left: 386px;
+    top: 24px;
+    font-size: 28px;
+    color: #f52222;
+    font-weight: 600;
+}
+.main_bg .m .activePic h3 span{
+    font-size: 22px;
+    color: #f52222;
+    margin-right: 20px;
+}
+.contact{
+    text-align: center;
+    width:100%;
+    height:220px;
+    background: url(../images/Vietnam/bg_b.jpg) no-repeat center;
+    background-size: cover;
+}
+.contact .m {
+    width: 1200px;
+    margin: 0 auto;
+}
+.contact p{
+    color: #000;
+    line-height: 110px;
+    font-size:24px;
+}
+.contact a{
+    display: inline-block;
+    width: 218px;
+    height: 78px;
+    text-align: center;
+    line-height: 70px;
+    background: url(../images/Vietnam/bottom_btn_normal.png) no-repeat center;
+    color: #fff;
+    font-size: 24px;
+}
+.contact a:hover {
+    display: inline-block;
+    width: 218px;
+    height: 78px;
+    text-align: center;
+    line-height: 70px;
+    background: url(../images/Vietnam/bottom_btn_hover.png) no-repeat center;
+    color: #fff;
+    font-size: 24px;
+}
+.clear{
+    clear: both;
+}
+.func{
+    width: 90px;
+    position: fixed;
+    left: 50%;
+    margin-left: 580px;
+    top: 50%;
+    margin-top: -120px;
+    z-index:9999;
+}
+.func a{
+    display: inline-block;
+    width: 90px;
+    height: 38px;
+    line-height: 28px;
+    background:url(../images/Vietnam/right_navicon.png) no-repeat;
+    color: #fff;
+    font-size: 14px;
+    padding-top: 4px;
+    margin-bottom: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+.func a:hover {
+    background:url(../images/Vietnam/right_navicon_hover.png) no-repeat;
+}
+.func a span{
+    display:block;
+    font-size: 12px;
+    line-height: 14px;
+}
+.footer{
+    height:40px;
+    background-color: #1c1d20;
+    font-size: 14px;
+    line-height: 40px;
+    color:#fff;
+}
+.footer .m{
+    width:1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.show{
+    display:block;
+}
+.hidden{
+    display: none;
+}
+#video-layer {
+    background-color: #333;
+    border-radius: 10px;
+}
+.layui-layer.video-layer{
+    border-radius: 10px;
+}
+.video-layer .top {
+    height: 30px;
+    background-color: #1c1d20;
+}
+.vjs-paused .vjs-big-play-button,
+.vjs-paused.vjs-has-started .vjs-big-play-button {
+    display: block;
+}

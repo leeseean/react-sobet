@@ -1,0 +1,1233 @@
+@font-face {
+  font-family: 'sobet';
+  src: url('../fonts/sobet.eot?#iefix') format('embedded-opentype'),  url('../fonts/sobet.woff') format('woff'), url('../fonts/sobet.ttf')  format('truetype'), url('../fonts/sobet.svg#sobet') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.report-pop .ui-dialog-title{
+  display:none;
+}
+
+.report-pop h1{
+  height:60px;
+  width: 120px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+  color: white;
+  padding: 0px 10px;
+  letter-spacing: 1px;
+}
+
+.report-pop .title{
+    height:35px;
+    font-size:14px;
+    font-family:'Microsoft Yahei';
+    font-weight: 300;
+    background-color:#eeeeee;
+}
+.report-pop .title ul {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 55px;
+    text-align: center;
+    cursor: pointer;
+}
+.report-pop .title li a{
+    display: inline-block;
+    min-width: 60px;
+    line-height:30px;
+    color:#ffffff;
+    background-color:#737bf8;
+    padding: 0px 22px;
+}
+.report-pop .title li:first-child a{
+    border-top-left-radius:5px;
+}
+.report-pop .title li:last-child a{
+    border-top-right-radius:5px;
+}
+.report-pop .title li{
+    float: left;
+    min-width: 60px;
+    line-height:30px;
+    border-right:1px solid #eeeeee;
+}
+.report-pop .title li a.on{
+    color:#303030;
+    background-color:#ffffff;
+}
+
+.report-pop .title li.noright{
+  display:none;
+}
+
+.report-pop .fr ul{
+  margin-right: 10px;
+}
+.report-pop .fr li{
+	color: white;
+	margin-left: 15px;
+	line-height: 60px;
+	background-color: transparent;
+}
+
+.report-pop .fr em{
+	color: #afafaf;
+}
+
+.report-pop .panel{
+  position: relative;
+	height: 70px;
+	padding-top: 18px;
+	padding-bottom: 27px;
+}
+
+.dupnick{
+  color: #f40;
+  padding: 0px 10px;
+}
+
+.report-pop .panel-fright{
+  float: right;
+  line-height: 35px;
+  margin-right: 15px;
+}
+.report-pop .panel-middle{
+	width:50%;
+  margin:0px auto;
+}
+
+.report-pop .panel-fixedin{
+  display:block;
+  width:413px;
+  height:40px;
+  line-height: 38px;
+  margin-left:105px;
+}
+
+.panel-middle label{
+  width: 80px;
+  text-align: right;
+}
+
+.report-pop .panel-submit{
+  text-align:center;
+}
+
+.report-pop .panel-white{
+  background-color: #FFF;
+}
+
+.report-pop .panel-change{
+	padding-top: 25px;
+	padding-bottom:10px;
+	height: 70px;
+}
+
+.report-pop .panel-change-sec{
+	padding-top: 10px;
+	padding-bottom: 27px;
+}
+
+.report-pop .panel-narrow{
+	padding-top: 10px;padding-bottom: 13px;
+}
+.report-pop .panel-nobottom{
+	padding-bottom:30px;
+}
+.report-pop .panel-help{
+	padding-top:10px;
+}
+.report-pop .panel-power{
+	display:none;
+  height:195px;
+}
+.report-pop .panel-rate{
+  height:85px;
+}
+.panel-power .panel-middle{
+	border:1px solid #ccc;
+  background-color:#efefef;
+}
+.report-pop .panel-notop{
+	padding-top:40px;
+}
+.report-pop .panel-reg-error{
+	height:32px;
+	padding:0px;
+}
+.report-pop .panel-center{
+	padding-left:125px;
+	padding-right:125px;
+	background-color: #ecf0f1;
+	box-shadow:0px 3px 2px #ddd inset;
+}
+.report-pop .panel-center div{
+	border: 1px solid #ccc;
+	position: relative;
+	height: 30px;
+}
+.report-pop .panel select{
+	padding: 8px 0;
+  border-radius: 3px;
+}
+
+.report-pop .panel select.panel-reg-point{
+	width: 98px;
+	height: 33px;
+	height: auto\0;
+}
+
+.report-pop .panel label{
+	margin-right: 15px;
+	margin-left: 15px;
+	font-size: 14px;
+}
+.report-pop .panel label,.report-pop .panel select{
+	line-height: 35px;float: left;font-size: 14px;
+}
+
+.report-pop .panel-reg-error label{
+	font-size:12px;line-height: 21px;
+	color:red;
+}
+
+.report-pop .panel select{
+    padding: 7px 0px\0;
+}
+
+.report-pop .panel-tab.linkRate .panel label,
+.report-pop .panel-tab.linkRate .panel select{
+    height: 28px;
+    line-height: 28px;
+    padding: 0;
+}
+#admin_report .panel-tab.linkRate .panel a{
+    margin-top: 0;
+}
+#admin_report .panel-tab.linkRate .panel a.addLink{
+    background: #ff9600;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.report-pop .panel .ltPoint {
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  color: #666;
+  font-size: 12px;
+}
+.copyToClip, .qrCode{
+  background-color: #ff5243;
+  color: #fff;
+  float: right;
+  height: 20px;
+    text-align: center;
+  line-height: 20px;
+  margin-top: 5px;
+  margin-right: 8px;
+  width: 40px;
+}
+.green-http {
+    width: 50px;
+}
+.copyToClip:hover {
+  color: #fff;
+}
+.qrCode{
+    position: relative;
+}
+.qrCode .code{
+    position: absolute;
+    left: -150px;
+    top: 0;
+    display: none;
+}
+.qrCode:hover .code{
+    display: block;
+}
+.report-pop .list .data.linkList li.split8 span.last.deletelink {
+  font-weight: 700;
+  font-size: 24px;
+  color: #c8c8c8;
+  cursor: pointer;
+  width: 40px;
+}
+.report-pop .list li span.deletelink:before {
+  content: '×';
+  filter: alpha(opacity=50);
+  opacity: .8;
+}
+.report-pop .list li span.deletelink:hover:before {
+  color: #e74c3c;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.report-pop .list li span.disabled, .report-pop .list li span.disabled:hover {
+  text-shadow: 0 1px 0 #dadada;
+  color: #999;
+  filter: alpha(opacity=50);
+  opacity: .5;
+  cursor: default;
+}
+
+.report-pop .panel a{
+	background-color: #ff5243;
+	width: 88px;
+	line-height: 35px;margin-left: 0px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	display: inline-block;
+}
+
+.report-pop .panel a.sureCombine{
+	display: none;
+}
+
+.report-pop .panel i{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0px 10px;
+	background-color: #ecf0f1;
+	height: 30px;
+	line-height: 30px;
+}
+
+.report-pop .panel input{
+	height: 31px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  font-size: 14px;
+  float: left;
+}
+
+.report-pop .panel-reg input{
+	width:12%;
+	line-height: 33px;
+	float: left;
+	margin-left: 0px;
+	border: 1px solid #c8c8c8;
+	padding:0px 5px;
+	height:33px;
+}
+
+.report-pop .panel-middle input{
+  width: 75%;
+  float: left;
+}
+
+.panel-power h5{padding:10px 40px;}
+.report-pop .panel-middle input.powerchk{
+  width: auto;
+  display:inline-block;
+  line-height: 15px;
+  height: 15px;
+  margin: 5px 5px 0px;
+}
+.report-pop .panel-reg input.chk{
+	width:20px;
+	margin-top: 11px;
+}
+
+.report-pop .panel-reg label{
+	margin-left: 10px;
+}
+.report-pop .panel-reg label.firstlb{
+	margin-left: 166px;
+}
+.report-pop .panel-team label.firstlb{
+	margin-left: 80px;
+}
+.report-pop .panel-change label{
+	margin: 0;
+  margin-left: 8px;
+  margin-right: 5px;
+}
+.report-pop .panel-change input {
+  width: 80px;
+}
+.report-pop .panel-change a {
+  margin-left: 15px;
+}
+.report-pop .panel-user label.firstlb{
+	margin-left: 146px;
+}
+.report-pop .panel-user label,.report-pop .panel-user input{
+	float:none;
+}
+.report-pop .panel-user input{
+	width:120px;
+	padding:0px;
+	font-size:18px;
+}
+.report-pop .panel-user input.withpadding{
+	padding:0px 8px;
+}
+#admin_report .panel-tab .panel a.createlink{
+    width: 80px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+    background: url(../images/userinfo1.png) -795px -247px no-repeat;
+}
+#admin_report .panel-tab .panel a.disabled{
+    background-position: -893px -292px;
+}
+/*#admin_report .panel-tab .panel a.green{*/
+	/*background-color: #2dcc70;float: left;width: 140px;line-height: 35px;margin-left: 30px;*/
+    /*background-position: -893px -292px;*/
+/*}*/
+.report-pop .panel-reg a{
+	line-height: 35px;
+	margin-left: 26px;
+}
+.report-pop .panel-reg a.fl{
+	float:left;
+}
+.report-pop .panel-center a{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.report-pop .list ul.linkList,
+.report-pop .list ul.linkList li{
+  overflow: visible;
+}
+.report-pop .list ul.linkList li span{
+  height: 32px;
+  line-height: 32px;
+}
+.report-pop .list ul.linkList li span.big{
+    text-align: left;
+    padding-left: 5px;
+}
+.report-pop .list ul.linkList li span.big em{
+    display: inline-block;
+    width: 275px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.report-pop .linkRate .list p{
+    line-height: 30px;
+    color: #999;
+    font-size: 12px;
+}
+
+.report-pop .panel-center a#copyToClip{
+  line-height:30px;
+}
+
+.report-pop .panel-tab{
+	display: none;
+}
+
+.panel-tab div.list-hidden{
+  display: none;
+}
+
+.panel-sectab{
+	height: auto;
+}
+.report-pop .itemlist ul{
+  width:88%;
+  margin:30px auto;
+
+} 
+
+.report-pop .itemlist label i{
+  width: 52px;
+  display: inline-block;
+  float: left;
+  font-size: 22px;
+  line-height: 32px;
+  vertical-align: bottom;
+  margin-top: 8px;
+  color: #9a9595;
+}
+.report-pop .itemlist label em{
+  font-size: 14px;
+  display: block;
+  line-height: 20px;
+  float: left;
+  width: 64px;
+  font-family: "Microsoft Yahei";
+}
+.report-pop .itemlist li{
+  float: left;
+  width:23.5%;
+  height:48px;
+  height: 74px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin:0px 5px 10px 5px;
+}
+.report-pop .itemlist li span{
+  float: left;
+  line-height:74px;
+  margin-left:5px;
+  width: 60%;
+  text-align: center;
+  color: #ff5243;
+  display:block;
+  overflow:hidden;
+  height:74px;
+}
+.report-pop .itemlist li span a{
+  display: inline-block;
+  width: 60px;
+  line-height: 21px;
+  margin-top: 15px;
+}
+.report-pop .itemlist li span em.money{
+  font-size: 12px;
+}
+/*data grid table start*/
+.report-pop .list li>span{
+	/*height: 35px;*/
+	/*line-height: 35px;*/
+	/*background-color: #e3e5e4;*/
+	border-bottom: 1px solid #d3c9c8;
+	border-right: 1px solid #d3c9c8;
+	/*text-align: center;*/
+	/*font-size: 12px;*/
+  /*float: left;*/
+}
+.report-pop .list li>span.linkName {
+    width: 85px;
+}
+.report-pop .list li>span.small {
+  width: 60px;
+}
+
+.report-pop .list li>span.higher{
+	height: 50px;
+	line-height: 50px;
+}
+
+.report-pop ul.data span.autohide{
+	overflow: hidden;
+}
+.report-pop  ul.data span.last a.hand{
+	margin-left: 9px;
+}
+
+.panel-sec h2{
+  height:40px;
+  line-height: 40px;
+  font-size: 16px;
+  display: block;
+  padding-left: 35px;
+}
+.panel-sec h3{
+  height:40px;
+  line-height: 40px;
+  font-size: 16px;
+  padding:0px 15px;
+  font-weight: bold;
+  float:left;
+}
+.panel-sec h3.on{
+  background-color: #ffdead;
+}
+
+.panel-sectab ul.sectab {
+  overflow: hidden;
+}
+
+.panel-sec ul.sectab li,.panel-sectab ul.sectab li{
+  float:left;
+  height:40px;
+  line-height: 40px;
+  font-size: 14px;
+  padding:0px 8px;
+  background-color: #f7f9f8;
+  cursor: pointer;
+}
+
+.panel-sec ul.sectab li:hover{
+	background-color: #FFEBCD;
+  color: #ff5243;
+}
+
+.panel-sec ul.sectab li.on{
+	background-color: #ffdead;
+}
+
+.panel-sec ul.data span.last a.gotolnk{
+	background-color: #ff5243;
+	width: 110px;
+	line-height: 35px;
+	margin-left: 0px;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	display: inline-block;
+}
+
+.panel-sec input.money{
+	width: 90px;
+	line-height: 21px;
+	height: 21px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 14px;
+}
+
+/* 1/4 width */
+.report-pop .split4 span{
+	width:266px;
+}
+
+.report-pop .split4 span.last{
+	width:251px;
+	border-right:none;
+}
+
+.report-pop ul.withoutscroll .split4 span.last{
+	width:266px;
+}
+
+
+.report-pop .listhead span.last{
+	width:268px;
+}
+
+/*.report-pop .listhead span.last{
+	width:357px;
+}*/
+/* 1/2 width */
+.report-pop .split2 span{
+	width:499px;
+}
+.report-pop .split2 span.last{
+	width:499px;
+}
+
+ul.withoutscroll .split2 span.s2last{
+	width:499px;
+}
+.report-pop .split2 span.s2last{
+	width:483px;
+	border-right:none;
+}
+/* 1/3 width */
+.report-pop .split3 span{
+	width:355px;
+}
+.report-pop .split3 span.last{
+	width:340px;
+	border-right:none;
+}
+
+.report-pop .withoutscroll span.last{
+	width:288px;
+}
+
+/* 1/5 width */
+.report-pop .split5 span,.report-pop .head-tab .listhead span.last{
+	width:205px;
+}
+.report-pop ul.pointrate .split5 span.last {
+  width: 159px;
+  border-right: none;
+}
+.report-pop .withoutscroll .split5 span.last,.report-pop .data .split5 span.last{
+  width: 176px;
+  border-right: none;
+}
+
+/* 1/6 width */
+.report-pop .split6 span,.report-pop .head-tab .listhead span.last{
+	width:175px;
+}
+.report-pop .split6 span{
+	width:110px;
+}
+.report-pop .split6 span.last1 {
+  	width: 277px;
+}
+
+.report-pop ul.pointrate .split6 span.last {
+  width: 277px;
+  border-right: none;
+}
+.report-pop .withoutscroll .split6 span.last{
+  width: 277px;
+  border-right: none;
+}
+.report-pop .split6 span .number-spin-btn{
+  top:22px;
+}
+.report-pop .split6 span a.hand{
+  margin-left: 9px;
+  display: inline-block;
+  background-color: #f40;
+  height: 26px;
+  line-height: 26px;
+  color: white;
+  padding: 0px 10px;
+}
+
+/* 1/8 width */
+.report-pop .split8 span{
+	width:70px;
+}
+.report-pop .split8 span.small{
+	width:50px;
+}
+.report-pop .split8 span.middle{
+  width:130px;
+}
+.report-pop .split8 span.big{
+	width:435px;
+  font-size: 12px;
+}
+.report-pop .split8 span.last {
+  width:40px;
+  border-right: none;
+}
+
+/* 1/8 width type B */
+.report-pop .split8b span{
+	width:130px;
+}
+.report-pop .split8b span.small{
+	width:70px;
+}
+.report-pop .split8b span.middle{
+  width:145px;
+}
+.report-pop .split8b span.big{
+	width:437px;
+  font-size: 12px;
+}
+.report-pop .split8b span.last {
+  width:153px;
+  border-right: none;
+}
+.report-pop .split8b span input{
+  width:32px;
+  height:21px;
+}
+
+/* 4+1 width */
+.report-pop .split41 span{
+	/*width:176px;*/
+	width:235px;
+}
+.report-pop .split41 span.last{
+	width:291px;
+}
+/* 1w+1n width */
+.report-pop li.split11>span{
+	width:213px;
+	background-color: #e3e5e4;
+}
+.report-pop .split11>span.last{
+	width:760px;
+	text-align: left;
+	padding-left: 25px;
+	background-color: white;
+	color: #333;
+}
+/* 11c width */
+.report-pop li.splitmulti{
+	height:51px;
+}
+.report-pop li.splitmulti span{
+	width:95px;overflow: hidden;
+}
+
+.report-pop li.splitmulti span.mini{
+	width:66px;overflow: hidden;
+}
+
+.report-pop div.combinerptlst ul li.splitmulti span{
+	width:114px;
+}
+
+.report-pop div.combinerptlst ul li.splitmulti span.mini{
+	width:66px;
+}
+
+.report-pop div.list ul li.splitmulti span.large{
+	width:140px;overflow: hidden;
+}
+
+.report-pop div.list ul li.splitmulti span.last{
+	width:115px;
+}
+
+.report-pop div.combinerptlst ul li.splitmulti span.last{
+	width:104px;
+}
+
+
+.report-pop div.list ul li.splitmulti span.inlast{
+	width:82px;
+	border-right:none;
+}
+
+ul.withoutscroll div.list ul li.splitmulti span.inlast{
+	width:99px;
+}
+
+.report-pop div.combinerptlst ul li.splitmulti span.inlast{
+	width:85px;
+}
+
+.report-pop div.combinerptlst ul.withoutscroll li.splitmulti span.inlast{
+	width:105px;
+}
+.report-pop ul.head-tab,ul.pointrate{
+	display: none;
+}
+.report-pop ul.pointrate {
+  display:block;
+}
+.report-pop ul.changeList{
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.report-pop ul.combineList{
+	height:260px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.report-pop ul.regRateList{
+	height:325px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.report-pop ul.regAdminList{
+  height:auto;
+  display:block;
+  margin:10px 40px;
+}
+.report-pop ul.regAdminList li{
+  width:48%;
+  float:left;
+  line-height: 24px;
+}
+.report-pop .list ul.regAdminList li{
+  width:auto;
+  float:none;
+}
+
+.report-pop .list ul.regAdminList{
+  height:auto;
+  display:block;
+  margin:0px;
+}
+
+ul.settingList{
+	height:280px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+ul.rateList{
+	height:270px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.panel-sec h4{
+	padding:5px 10px;
+	font-size:14px;
+}
+
+.report-pop .list ul,.panel-tab div.panel-sectab,.panel-tab ul.head-tab{
+	overflow: auto;
+	zoom: 1;
+	clear: both;
+}
+
+.report-pop .list li{
+	zoom: 1;
+	display:block;
+	content:"";
+	height:auto;
+	clear:both;
+	overflow:hidden;
+}
+.report-pop ul.listform{
+  width:50%;
+  margin:0px auto;
+  margin-top:0px;
+}
+.report-pop ul.listform li{
+  display:block;
+  clear: initial;
+  width:auto;
+  height:40px;
+  font-size:16px;
+  vertical-align: top;
+  padding-top:15px;
+  margin-right:25px;
+  padding-left:30px;
+  
+}
+.report-pop ul.listform li input{
+  height:22px;
+  line-height:22px;
+  font-size:14px;
+  float:left;
+  width:115px;
+  margin-top:1px;
+}
+
+.report-pop ul.listform li label{
+  width:180px;
+  display:inline-block;
+  text-align:right;
+  float:left;
+  margin-top:6px;
+}
+.report-pop ul.listform li em{
+  float:left;
+  margin-top:5px;
+  margin-left:6px;
+}
+.report-pop ul.listform li i{
+  color:red;
+  float:left;
+  margin-top:6px;
+}
+
+.report-pop .list ul.head li.listheadhide{
+	display:none;
+}
+
+.report-pop .list ul.regRateList li,.report-pop .list ul.regAdminList li{height:36px;}
+
+.report-pop .list li.rateabnormal{
+	display:none;
+}
+
+.report-pop .list ul.userTip{
+	height:66px;
+}
+
+.report-pop li.bloading{
+	position: relative;
+}
+
+
+.report-pop .page-break{margin-right:3px;}
+.report-pop div.blankplace{text-align:center;line-height:150px;}
+body.lockscroll{overflow: hidden;}
+.report-pop .panel a.disabled{
+  background-color: #ccc;
+  color: #999;
+  cursor: default;
+}
+
+.report-pop .panel a.loading {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  -webkit-background-size: 30px 30px;
+  background-size: 30px 30px;
+  -webkit-animation: loading 0.7s linear infinite;
+  -o-animation: loading 0.7s linear infinite;
+  animation: loading 0.7s linear infinite;
+}
+
+ul.panel-regtype{
+  height:40px;
+}
+
+ul.panel-regtype li:hover{background-color: #FFEBCD;}
+
+ul.panel-regtype li.on{
+	background-color: #ffdead;
+}
+/*COLORS:38*/
+ul.regAdminList{
+  display:none;
+}
+
+input.hand{cursor:pointer;}
+
+.panel-sec p{
+  text-align:center;
+  padding:20px 0px;
+}
+
+.report-pop ul.listform li em.alert{
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #ff0000;
+  border-radius: 18px;
+  text-align: center;
+  display:inline-block;
+  margin-right:10px;
+  margin-top:0px;
+  font-size:30px;
+}
+
+.report-pop ul.listform li p{
+  line-height: 20px;
+  font-size: 13px;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+.report-pop ul.listform h5{
+  height: 40px;
+  line-height: 35px;
+  font-size: 32px;
+  display: block;
+  padding-left: 35px;
+}
+
+.report-pop ul.listform select{
+  height: 35px;
+  line-height: 37px;
+  width: 200px;
+}
+
+.report-pop ul.listform div.borderinput{
+  border:1px solid #A9A9A9;
+  position: relative;
+  float: left;
+  border-radius: 1px;
+  height:35px;
+  line-height:35px;
+  width:200px;
+}
+
+.report-pop ul.listform div.borderinput input{
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 5px;
+  width: 80%;
+}
+
+.report-pop ul.listform div.borderinput em{
+  margin:0px;
+  margin-right:10px;
+}
+.report-pop .panel a.disabled.switchbtn{
+	cursor:pointer;
+}
+
+.report-pop .summary em .ui-dialog-loading{
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.dupnick .ui-dialog-loading{
+  display: inline-block;
+  margin-top: -40px;
+}
+
+
+#admin_report .panel label{
+	width:auto;
+	padding:0px;
+    margin-top: 0;
+}
+
+#admin_report .panel-middle label{
+  width: 80px;
+  text-align: right;
+    margin-right: 20px;
+}
+#admin_report .panel-nobottom.panel-userType{
+    height: 60px;
+    padding-bottom: 0;
+    margin-top: 50px;
+}
+#admin_report .panel-middle label.userType{
+    width: 60px;
+    margin-left: 0;
+    margin-right: 60px;
+}
+#admin_report .panel-middle label.userType input{
+    width: 25px;
+    margin: 2px auto;
+    border: none;
+}
+
+#admin_report label i {
+  font-family: 'sobet';
+  color: #9a9595;
+}
+
+
+#admin_report .itemlist label{
+  font-family: 'sobet';
+  display:inline-block;
+  width:64px;
+  float: left;
+  height:64px;
+  text-align:center;
+  background-color: #efefef;
+  padding: 5px;
+  color: #9a9595;
+}
+
+/* HTML5 Number polyfill | Jonathan Stipe | https://github.com/jonstipe/number-polyfill*/
+input.spinner {
+  width: 30px;
+  height: 21px;
+  line-height: 21px; 
+  border: 1px solid #ddd;
+  padding: 0 16px;
+}
+div.number-spin-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position: absolute;
+  background-color: #ececec;
+  width: 12px;
+  top: 0px; }
+div.number-spin-btn:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+div.number-spin-btn:active {
+  background-color: #ccc;
+}
+div.number-spin-btn-up:before,
+div.number-spin-btn-down:before {
+  position: absolute;
+  width: 12px;
+  height: 21px;
+  line-height: 21px;
+  padding: 0;
+  left: 0;
+  top: 50%;
+  font-size: 14px;
+  font-family: "Simsun";
+  text-align: center;
+  color: #929292;
+  margin-top:-11px;
+}
+
+div.number-spin-btn-up {
+  right: 1px;
+}
+div.number-spin-btn-up:before {
+  content: "+";
+}
+div.number-spin-btn-down {
+  left: 1px;
+}
+div.number-spin-btn-down:before {
+  content: "-";
+}
+input:disabled + div.number-spin-btn-up:active, input:disabled + div.number-spin-btn-down:active {
+  color: #000; }
+
+.report-pop .register .panel-middle{
+	width:600px;
+}
+.report-pop .register .panel-reg input.panel-reg-user,.report-pop .register .panel-reg input.panel-reg-pwd{
+	width:316px;
+}
+#admin_report .register .panel-middle label.errorTip{
+	display:none;
+	width: 130px;
+    text-align: left;
+    font-size: 14px;
+    color: #ff6052;
+    margin-left: 10px;
+}
+
+
+.report-pop .panel-tab.linkSet{
+    padding-top: 20px;
+}
+.report-pop .panel-tab.linkSet .title{
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    border-bottom: 1px dashed #ccc;
+}
+.report-pop .panel-tab.linkSet .title button{
+    float: right;
+    width: 72px;
+    height: 30px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+.report-pop .panel-tab.linkSet .title button:hover{
+    background-color: #737bf8;
+    color: #fff;
+}
+.report-pop .panel-tab.linkSet .detail{
+    width: 600px;
+    margin: 0 0 20px 260px;
+}
+.report-pop .panel-tab.linkSet .detail>div{
+    margin: 10px 0;
+}
+.report-pop .panel-tab.linkSet .detail span{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+.report-pop .panel-tab.linkSet .detail input,
+.report-pop .panel-tab.linkSet .detail select{
+    width: 250px;
+    height: 30px;
+    border: 1px solid #bbb;
+}
+.report-pop .panel-tab.linkSet .detail select{
+    margin-left: 4px;
+}
+.report-pop .panel-tab.linkSet .detail .userType{
+    margin-right: 20px;
+}
+.report-pop .panel-tab.linkSet .detail .userType input{
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 4px;
+    vertical-align: middle;
+    border: none;
+}
+.report-pop .panel-tab.linkSet>a{
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: 0 auto 10px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #337ab7;
+    color: #fff;
+}
+.report-pop .panel-tab.linkSet .detail em{
+    color: red;
+}
+.report-pop .panel-tab.linkSet .linkContract .detail em{
+    display: none;
+}
+.report-pop .panel-tab.linkSet p{
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+.report-pop .panel-tab.linkSet p em{
+    display: inline-block;
+    width: 15px;
+}

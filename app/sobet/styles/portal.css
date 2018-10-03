@@ -1,0 +1,414 @@
+#mc_main{
+	background:url(/static/sobet/images/bg.jpg) top left no-repeat;
+}
+.main{
+	width:1200px;
+	margin:0 auto;
+}
+.main .banner{
+	height:380px;
+}
+.main .banner .gallery{
+	height:100%;
+	width:889px;
+	float:left;
+}
+.main .banner .infos{
+	width:286px;
+	height:356px;
+	margin-top:20px;
+	border-radius:4px;
+	float:right;
+	background-color:#2c2c2c;
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.6);
+}
+
+.main .banner .infos .top{
+	padding:24px;
+}
+.main .banner .infos .top .t{
+	color:#a6a6a6;
+	font-size:14px;
+}
+.main .banner .infos .name{
+	color:#8664D5;
+	font-size:18px;
+	word-break:break-all;
+	margin-top:5px;
+}
+.main .banner .infos .name span{
+	display:inline-block;
+	width:160px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	vertical-align:top;
+	margin-left:5px;
+}
+.main .banner .infos .vip{
+	display:inline-block;
+	width:49px;
+	height:24px;
+	vertical-align:middle;
+	background:url(/static/sobet/images/vip.png) no-repeat left top;
+}
+.main .banner .infos .lastDate{
+	margin-top:20px;
+	font-size:12px;
+	color:#a6a6a6;
+}
+.main .banner .infos .lastDate i{
+	display:inline-block;
+	width:11px;
+	height:11px;
+	border-radius:50%;
+	background-color:#ffcb10;
+	margin-right:5px;
+	vartical-align:middle;
+	background:linear-gradient(to bottom,#ffcb10, efbd06);
+}
+.main .banner .infos .m{
+	padding:25px 12px;
+	height:201px;
+}
+.main .banner .infos .m_b{
+	padding:0 15px;
+	background-color:#3d3d3d;
+	background:linear-gradient(to bottom,#3d3d3d,#323232);
+	border-radius:5px;
+	box-shadow:0px 1px 2px 0px rgba(0,0,0,0.2);
+}
+.main .banner .infos .m .t{
+	height:50px;
+	line-height:50px;
+	font-size:13px;
+	color:#a6a6a6;
+}
+.main .banner .infos .refresh{
+	display:inline-block;
+	width:21px;
+	height:21px;
+	float:right;
+	position:relative;
+	top:15px;
+	cursor:pointer;
+	background:url(/static/sobet/images/little_logos.png) no-repeat -173px -25px;
+}
+.main .banner .infos .eye{
+	display:inline-block;
+	width:25px;
+	height:20px;
+	float:left;
+	position:relative;
+	top:15px;
+	cursor:pointer;
+	background:url(/static/sobet/images/eye.png) no-repeat left top;
+}
+.main .banner .infos .balance{
+	text-align:right;
+	height:50px;
+	line-height:50px;
+	color:#D24949;
+	font-size:14px;
+	padding-right:12px;
+	background-color:#2c2c2c;
+	margin-bottom:10px;
+}
+.main .banner .infos .balance span{
+	font-weight:bold;
+	margin-left:5px;
+	font-size:24px;
+}
+.main .banner .infos .btnDiv a{
+	height:40px;
+	color:#fff;
+	border:none;
+	padding:0px 15px;
+	border-radius:4px;
+	margin:0 1px;
+	cursor:pointer;
+    font-family: "Microsoft Yahei",Arial,Helvetica,sans-serif;
+    font-size:15px;
+    display:inline-block;
+    line-height:38px;
+}
+.main .banner .infos a.charge{
+	background-color:#ff9600;
+	border-bottom:3px solid #ff7c00;
+}
+.main .banner .infos a.transfer{
+	background-color:#00c8ff;
+	border-bottom:3px solid #00baff;
+}
+.main .banner .infos a.withdraw{
+	background-color:#00c896;
+	border-bottom:3px solid #00ba7c;
+}
+.main .banner .infos .btnDiv{
+	padding-top:12px;
+	height:68px;
+	text-align:center;
+	border-top:1px solid #2C2C2C;
+}
+.main .infoDiv{
+	height:298px;
+	width:100%;
+	margin-top:22px;
+	padding-top:20px;
+	border-top:1px solid #eee;
+	border-top:1px solid rgba(255,255,255,0.15);
+}
+.main .notice{
+	width:380px;
+	float:left;
+	border-radius:4px;
+	overflow:hidden;
+	height:100%;
+}
+.main .notice .title{
+	background-color:#2c2c2c;
+	height:40px;
+	line-height:40px;
+	color:#fff;
+	padding-left:14px;
+    font-size: 15px;
+	position:relative;
+	border-top-right-radius:4px;
+	border-top-left-radius:4px;
+}
+.main .notice .title label{
+	font-size:12px;
+	margin-left:10px;
+	color:#808080;
+}
+.main .notice .title a{
+	position:absolute;
+	right:15px;
+	font-size:12px;
+}
+.main .notice ul{
+	padding:10px 15px;
+	color:#fff;
+	height:236px;
+	background-color:#3d3d3d;
+}
+.main .notice ul li{
+	border-top:1px solid #212121;
+	height:36px;
+	line-height:36px;
+	font-size:14px;
+	cursor:pointer;
+}
+.main .notice ul li:first-child{
+	border-top:none;
+}
+
+.main .notice ul li .new{
+	color:#ff3d00;
+	font-size:12px;
+	float:right;
+}
+.main .notice ul li .date{
+	color:#bcbcbc;
+	font-size:12px;
+	float:right;
+}
+.main .quicklink{
+	height:100%;
+	width:800px;
+	float:right;
+}
+.main .quicklink .lt{
+	border:5px solid #212121;
+	background-color:#2c2c2c;
+	border-radius:5px;
+	height:222px;
+	width:100%;
+	margin-bottom:10px;
+}
+.main .quicklink .LT{
+	cursor:pointer;
+}
+.main .quicklink .cqssc{
+	width:237px;
+	height:100%;
+	border-right:7px solid #212121;
+	background:url(/static/sobet/images/CQSSC.png) no-repeat;
+	position:relative;
+	float:left;
+}
+.main .quicklink .cqssc span{
+	color:#f9f9f9;
+	font-size:12px;
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	margin-top:94px;
+}
+.main .quicklink .clock{
+	width: 158px;
+	position:absolute;    
+    left: 35px;
+    top: 142px;
+}
+.main .quicklink .clock b{
+	font-size:23px;
+	color:#71219a;
+}
+.main .quicklink .clock b.b1{
+	margin-left:10px;
+}
+.main .quicklink .clock b.b2{
+	margin-left:24px;
+}
+.main .quicklink .clock b.b3{
+	margin-left:24px;
+}
+.main .quicklink .clock .countMsg{
+ 	display: none;
+    position: absolute;
+    width: 159px;
+    height: 47px;
+    line-height:47px;
+    text-align:center;
+    left: -1px;
+    font-size:22px;
+    background-color: #fff;
+    top: -8px;
+    border-radius:4px;
+    color:#71219a;
+}
+.main .quicklink .clock.showMsg .countMsg{
+	display:block;
+}
+.main .quicklink .ad{
+	height:44px;
+	width:100%;
+	background:url(/static/sobet/images/ad.png)
+}
+.main .quicklink .lt-list{
+	background-color:#2c2c2c;
+	float:left;
+	height:100%;
+	width:553px;
+	position:relative;
+	padding:30px;
+}
+.main .quicklink .arrow{
+	position:absolute;
+	top:96px;
+	height:22px;
+	width:22px;
+	border-radius:50%;
+	cursor:pointer;
+}
+.main .quicklink .arrowLeft{
+	background:url('/static/sobet/images/arrowLeft.png') center no-repeat;
+	background-color:#25222c;
+	background-position:3px 3px;
+	left:15px;
+}
+.main .quicklink .arrowRight{
+	background:url('/static/sobet/images/arrowRight.png') center no-repeat;
+	background-color:#25222c;
+	background-position:5px 5px;
+	right:15px;
+}
+.main .quicklink .list{
+	height:100%;
+	width:100%;
+}
+.main .quicklink .list div{
+	width:33%;
+	height:50%;
+	float:left;
+}
+.main .quicklink .list .WBGFFC{
+	background:url(/static/sobet/images/lt/WBGFFC.png) no-repeat center;
+}
+.main .quicklink .list .WBGMMC{
+	background:url(/static/sobet/images/lt/WBGMMC.png) no-repeat center;
+}
+.main .quicklink .list .HG1F5{
+	background:url(/static/sobet/images/lt/HG1F5.png) no-repeat center;
+}
+.main .quicklink .list .GD11Y{
+	background:url(/static/sobet/images/lt/GD11Y.png) no-repeat center;
+}
+.main .quicklink .list .BJPK10{
+	background:url(/static/sobet/images/lt/BJPK10.png) no-repeat center;
+}
+.main .quicklink .list .FC3D{
+	background:url(/static/sobet/images/lt/3DFC.png) no-repeat center;
+}
+.main .quicklink .list .l1,.main .quicklink .list .l2,.main .quicklink .list .l4,.main .quicklink .list .l5{
+	border-right:3px solid #25222c;
+}
+.main .quicklink .list .l2,.main .quicklink .list .l3,.main .quicklink .list .l5,.main .quicklink .list .l6{
+	border-left:3px solid #25222c;
+}
+.main .quicklink .list .l1,.main .quicklink .list .l2,.main .quicklink .list .l3{
+	border-bottom:3px solid #25222c;
+}
+.main .quicklink .list .l4,.main .quicklink .list .l5,.main .quicklink .list .l6{
+	border-top:3px solid #25222c;
+}
+.main .bottom{
+	width:100%;
+	height:398px;
+	margin-top:50px;
+	background:url(/static/sobet/images/bottom.png) no-repeat left top;
+}
+.limitheight{
+	max-height:500px;
+	max-width:1000px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

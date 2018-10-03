@@ -1,0 +1,167 @@
+{
+    "code": 0,
+    "message": "OK",
+    "timestamp": 1538534250979,
+    "data": [{
+        "betAmount": 45,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "maomao999",
+        "rewardAmount": 100040,
+        "rewardTime": "2018-01-11 20:41:13.0",
+        "description": ""
+    }, {
+        "betAmount": 45,
+        "gameName": "高速公路之王",
+        "imgUrl": "/static/sport/images/pt/game_icon/hk.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 50605,
+        "rewardTime": "2017-06-02 04:03:55.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 32320,
+        "rewardTime": "2017-11-23 20:55:47.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 32240,
+        "rewardTime": "2017-07-09 05:03:21.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 29184,
+        "rewardTime": "2017-11-16 02:15:01.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 28928,
+        "rewardTime": "2017-11-26 02:30:20.0",
+        "description": ""
+    }, {
+        "betAmount": 120,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 24000,
+        "rewardTime": "2017-06-14 06:13:54.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "maomao999",
+        "rewardAmount": 21312,
+        "rewardTime": "2018-01-06 17:52:52.0",
+        "description": ""
+    }, {
+        "betAmount": 120,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "tenshin00",
+        "rewardAmount": 20000,
+        "rewardTime": "2017-06-04 15:05:09.0",
+        "description": ""
+    }, {
+        "betAmount": 120,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 20000,
+        "rewardTime": "2017-06-14 23:16:04.0",
+        "description": ""
+    }, {
+        "betAmount": 288,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 19968,
+        "rewardTime": "2017-11-27 03:20:15.0",
+        "description": ""
+    }, {
+        "betAmount": 10000,
+        "gameName": "真人百家乐（7座）",
+        "imgUrl": "/static/sport/images/pt/game_icon/7bal.jpg",
+        "playerCode": "lvchao1987",
+        "rewardAmount": 19500,
+        "rewardTime": "2017-07-31 15:24:19.0",
+        "description": ""
+    }, {
+        "betAmount": 16,
+        "gameName": "吉祥8",
+        "imgUrl": "/static/sport/images/pt/game_icon/gtsjxb.jpg",
+        "playerCode": "gongzuo00336699",
+        "rewardAmount": 17776,
+        "rewardTime": "2018-02-27 13:27:19.0",
+        "description": ""
+    }, {
+        "betAmount": 16,
+        "gameName": "吉祥8",
+        "imgUrl": "/static/sport/images/pt/game_icon/gtsjxb.jpg",
+        "playerCode": "gongzuo00336688",
+        "rewardAmount": 17776,
+        "rewardTime": "2017-09-24 20:29:51.0",
+        "description": ""
+    }, {
+        "betAmount": 16,
+        "gameName": "吉祥8",
+        "imgUrl": "/static/sport/images/pt/game_icon/gtsjxb.jpg",
+        "playerCode": "gongzuo00336688",
+        "rewardAmount": 17776,
+        "rewardTime": "2017-09-21 21:03:06.0",
+        "description": ""
+    }, {
+        "betAmount": 144,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "hao998",
+        "rewardAmount": 17312,
+        "rewardTime": "2017-11-22 02:06:08.0",
+        "description": ""
+    }, {
+        "betAmount": 240,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 15000,
+        "rewardTime": "2017-06-15 06:47:28.0",
+        "description": ""
+    }, {
+        "betAmount": 480,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 15000,
+        "rewardTime": "2017-06-15 05:55:07.0",
+        "description": ""
+    }, {
+        "betAmount": 900,
+        "gameName": "年年有余",
+        "imgUrl": "/static/sport/images/pt/game_icon/nian_k.jpg",
+        "playerCode": "yuquiping",
+        "rewardAmount": 12100,
+        "rewardTime": "2017-11-13 19:25:52.0",
+        "description": ""
+    }, {
+        "betAmount": 240,
+        "gameName": "开心假期",
+        "imgUrl": "/static/sport/images/pt/game_icon/er.jpg",
+        "playerCode": "xiaosa365",
+        "rewardAmount": 12000,
+        "rewardTime": "2017-06-15 06:01:39.0",
+        "description": ""
+    }],
+    "identifier": null
+}

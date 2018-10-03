@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>top_icon_xz</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#AE85FF" offset="0%"></stop>
+            <stop stop-color="#714BBE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D4D4D4" offset="100%"></stop>
+        </linearGradient>
+        <path d="M5.15002087,8.03374859 L8.48978351,11.1578332 C8.70303995,11.3566343 9.05966579,11.3566343 9.27290107,11.1578332 L12.6126849,8.03374859 C12.9403894,7.72651636 12.6970273,7.21928814 12.2211208,7.21928814 L11.1476162,7.21928814 C10.8488225,7.21928814 10.6066553,7.00362072 10.6066553,6.73736477 L10.6066553,3.48193395 C10.6066553,3.21566743 10.3644987,3 10.0657049,3 L7.68978901,3 C7.39099525,3 7.14882806,3.21566743 7.14882806,3.48193395 L7.14882806,6.73735419 C7.14882806,7.00361014 6.90666088,7.21927757 6.60786711,7.21927757 L5.54159551,7.21927757 C5.06690511,7.21928814 4.82231636,7.72651636 5.15002087,8.03374859 Z" id="path-3"></path>
+        <filter x="-25.8%" y="-12.0%" width="151.5%" height="148.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.225118886 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M12.6144613,13 L5.38554716,13 C5.17253394,13 5,13.215678 5,13.481934 L5,13.6409748 C5,13.9072413 5.17253394,14.1228982 5.38554716,14.1228982 L12.6144613,14.1228982 C12.8274745,14.1228982 13,13.9072308 13,13.6409748 L13,13.481934 C13,13.215678 12.8274745,13 12.6144613,13 Z" id="path-5"></path>
+        <filter x="-25.0%" y="-89.1%" width="150.0%" height="456.2%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.225118886 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="新首页（默认效果)-" transform="translate(-1401.000000, -8.000000)">
+            <g id="top" transform="translate(0.000000, -2.000000)">
+                <g id="Group-19" transform="translate(1399.000000, 8.000000)">
+                    <g id="top_icon_xz" transform="translate(2.000000, 2.000000)">
+                        <circle id="Oval-4" fill="url(#linearGradient-1)" cx="9" cy="9" r="9"></circle>
+                        <g id="Shape" fill-rule="nonzero">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                        <g id="Path">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

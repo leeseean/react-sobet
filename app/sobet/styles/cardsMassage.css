@@ -1,0 +1,45 @@
+.input-wrap {
+    text-align: center;
+}
+
+#password1-error {
+    position: absolute;
+    top: 59px;
+    left: 147px;
+}
+
+.ui-dialog-content #account .row label {
+    width: 115px;
+}
+
+.ui-dialog-content #account .row .input-wrap {
+    width: 220px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.ui-dialog-content #account .row .disabled-select {
+    width: 220px;
+}
+
+.cards .disabled-select {
+    left: -21px;
+}
+
+.ui-dialog-content #account .row #city, .ui-dialog-content #account .row #province {
+    width: 100px;
+}
+
+.ui-dialog-content #account .row input {
+    text-indent: 0px;
+    width: 100%;
+}
+
+.section {
+    position: relative;
+}
+
+.cards .section .cardName {
+    right: 0;
+    top: 0;
+}

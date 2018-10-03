@@ -1,0 +1,841 @@
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+em {
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+	background: url(/static/sobet/images/znqbg.jpg) no-repeat center fixed;
+}
+
+.loginMenu_bg {
+	height: 50px;
+	width: 100%;
+	background-color: #191919;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+}
+
+.loginMenu {
+	height: 100%;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 232px;
+	height: 100%;
+	float: left;
+	background: url(/static/sobet/images/login_logo.png) no-repeat center;
+}
+
+.loginMenu ul {
+	height: 100%;
+	float: right;
+}
+
+.loginMenu li {
+	height: 100%;
+	float: left;
+	width: 120px;
+	color: #eeeeee;
+	line-height: 50px;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.loginMenu li a {
+	color: #eee;
+}
+
+.loginMenu li:hover {
+	background-color: #000;
+}
+
+.loginMenu li:hover .detail {
+	display: block;
+}
+
+.loginMenu li .detail {
+	display: none;
+	background-color: #000;
+	width: 100%;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	font-size: 14px;
+	height: 160px;
+	cursor: default;
+}
+
+.loginMenu li.about .detail .about_div {
+	width: 1037px;
+	margin: 0 auto;
+	height: 160px;
+	text-align: left;
+	padding-top: 33px;
+}
+
+.loginMenu li.about .detail i {
+	display: block;
+	float: left;
+	width: 132px;
+	height: 94px;
+	background: url('/static/sobet/images/ab_d_icon.jpg');
+}
+
+.loginMenu li.about .detail p {
+	padding-left: 170px;
+	line-height: 30px;
+}
+
+.loginMenu li.about .detail p em {
+	color: #a5843d;
+}
+
+.loginMenu li.line .detail .line_div {
+	width: 1200px;
+	margin: 0 auto;
+	line-height: 160px;
+	height: 160px;
+}
+
+.loginMenu li.line .detail .line_div a {
+	display: inline-block;
+	width: 122px;
+	height: 122px;
+	background: url('/static/sobet/images/l_d_icon.png') no-repeat;
+	margin: 20px 30px;
+	vertical-align: top;
+	cursor: pointer;
+	border-radius: 50%;
+	padding-top: 38px;
+	line-height: 20px;
+	color: #333;
+}
+
+.loginMenu li.line .detail .line_div a.error {
+	background-position: -185px 0;
+}
+
+.loginMenu li.app .detail .app_div {
+	width: 1200px;
+	margin: 0 auto;
+	height: 160px;
+	position: relative;
+	background: url('/static/sobet/images/ap_d_icon.jpg');
+}
+
+.loginMenu li.app .ios_qr,
+.loginMenu li.app .android_qr {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 29px;
+}
+
+.loginMenu li.app .ios_btn,
+.loginMenu li.app .android_btn {
+	position: absolute;
+	width: 120px;
+	height: 28px;
+	top: 103px;
+	background-color: #343638;
+	color: #ffffff;
+	text-align: center;
+	line-height: 28px;
+	font-size: 12px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.loginMenu li.app .ios_qr {
+	background: url('/static/sobet/images/ios_qr.jpg');
+	left: 200px;
+}
+
+.loginMenu li.app .android_qr {
+	background: url('/static/sobet/images/ios_qr.jpg');
+	left: 516px;
+}
+
+.loginMenu li.app .ios_btn {
+	left: 320px;
+}
+
+.loginMenu li.app .android_btn {
+	left: 636px;
+}
+
+.loginMenu li.contact .detail {
+	line-height: 160px;
+	text-align: center;
+}
+
+.loginMenu li.contact .detail i {
+	display: inline-block;
+	width: 67px;
+	height: 25px;
+	background: url('/static/sobet/images/co_d_icon.jpg') no-repeat;
+	vertical-align: top;
+	margin-top: 66px;
+	margin-right: 10px;
+}
+
+.loginMenu li.contact .detail a {
+	color: #ffffff;
+	margin-left: 20px;
+}
+
+.loginMenu li.contact .detail a:hover {
+	text-decoration: underline;
+}
+
+.login_footer_bg {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #212121;
+}
+
+.login_footer {
+	width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+	background: url('/static/sobet/images/login_footer.png') 80px 0 no-repeat;
+	font-size: 12px;
+	color: #eee;
+}
+
+.login_footer span {
+	display: inline-block;
+	line-height: 50px;
+	float: left;
+}
+
+.login_footer .copyright {
+	float: right;
+}
+
+.login_footer .copyright p {
+	text-align: right;
+	line-height: 25px;
+}
+
+.main_bg {
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	min-height: 600px;
+	/*background:url(/static/sobet/images/login_bg.jpg) center no-repeat;*/
+	z-index: 10;
+}
+
+.main {
+	width: 1138px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 75px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+	float: none;
+}
+
+.main .banner {
+	width: 604px;
+	float: left;
+	height: 100%;
+	background-color: #242424;
+}
+
+.main .banner .gallery {
+	padding: 30px 36px 0px;
+	height: 357px;
+	width: 100%;
+}
+
+.main .banner .browser {
+	height: 42px;
+	width: 100%;
+	background: url(/static/sobet/images/login_browser.jpg) no-repeat center;
+}
+
+.main .login-div {
+	width: 400px;
+	padding: 50px;
+	float: left;
+	height: 100%;
+	background-color: #343638;
+}
+
+.main .login-form {
+	background-color: #212121;
+	padding: 20px 30px;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.main .login-form.show-code .code-input {
+	display: block;
+}
+
+.main .login-form .code-input {
+	display: none;
+}
+
+.main .login-form .t {
+	color: #ff9600;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.main .login-form.show-code .t {
+	margin-bottom: 0;
+}
+
+.main .inputline {
+	border: 1px solid #666;
+	border-radius: 4px;
+	height: 38px;
+	margin-top: 10px;
+	display: inline-block;
+	width: 100%;
+}
+
+.main .inputline input {
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #2a2a2a;
+	background-color: #343638;
+	line-height: 34px;
+	font-size: 14px;
+	color: #b3b3b3;
+	font-family: 'Microsoft Yahei';
+	padding: 0 10px;
+	outline: none;
+}
+
+.main .login-form .halfinput {
+	width: 138px;
+	float: left;
+}
+
+.main .login-form .verifycode {
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100%;
+	cursor: pointer;
+}
+
+.main .login-form .login-msg {
+	font-size: 14px;
+	margin: 5px 0;
+	height: 20px;
+	color: #999;
+}
+
+.main .login-form .forget-pwd {
+	color: #999;
+	vertical-align: top;
+	float: right;
+	cursor: pointer;
+}
+
+.main .login-form .login-btn {
+	display: block;
+	background-color: #ff8900;
+	background: linear-gradient(to bottom, #ffc675, #ff8900);
+	border-radius: 4px;
+	color: #FFF;
+	font-size: 18px;
+	width: 100%;
+	height: 42px;
+	line-height: 40px;
+	border-radius: 5px;
+	border: none;
+	border-bottom: 2px solid #ec6200;
+	cursor: pointer;
+}
+
+.main .menus {
+	float: left;
+	width: 134px;
+	height: 100%;
+	background-color: #1f1f1f;
+}
+
+.main .menus div {
+	height: 133px;
+	width: 100%;
+	cursor: pointer;
+	color: #bfc0c0;
+	text-align: center;
+}
+
+.main .menus div.bestLine {
+	height: 134px;
+}
+
+.main .menus div.bestLine {
+	background: url(/static/sobet/images/menu_1.png) no-repeat center 26px;
+}
+
+.main .menus div.bestLine a {
+	padding-top: 98px;
+}
+
+.main .menus div.downApp {
+	background: url(/static/sobet/images/menu_2.png) no-repeat center 19px;
+}
+
+.main .menus div.downClient {
+	background: url(/static/sobet/images/menu_3.png) no-repeat center 17px;
+}
+
+.main .menus div.service {
+	background: url(/static/sobet/images/customer.png) no-repeat center 2px;
+}
+
+.main .menus div.downClient a {
+	padding-top: 81px;
+}
+
+.main .menus div.service a {
+	padding-top: 84px;
+}
+
+.main .menus div:hover {
+	background-color: #37393b;
+}
+
+.main .menus a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #f1f1f1;
+	font-size: 14px;
+}
+
+.flickity-page-dots {
+	bottom: 40px;
+	left: 0px;
+}
+
+
+/*修改昵称弹窗样式开始*/
+
+.nicknameContent,
+.nicknameContent * {
+	box-sizing: border-box;
+}
+
+.nicknameContent i {
+	font-style: normal;
+}
+
+.nicknameContent {
+	font-size: 0;
+	width: 520px;
+	height: 500px;
+	/*margin-bottom: 72px;*/
+	padding: 26px 34px 0 27px;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nicknameContent .setNickname {
+	margin-bottom: 31px;
+	font-size: 0;
+}
+
+.nicknameContent .setNickname>span:nth-child(1) {
+	width: 73px;
+	height: 25px;
+	font-family: PingFangHK;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: left;
+	color: #f6a623;
+	margin-right: 10px;
+}
+
+.nicknameContent .setNickname>span:nth-child(2) {
+	width: 56px;
+	height: 17px;
+	font-family: PingFangHK;
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.nicknameContent .username {
+	font-size: 0;
+	margin-left: 75px;
+	margin-bottom: 24px;
+}
+
+.nicknameContent .username>span:nth-child(1) {
+	width: 64px;
+	height: 22px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	text-align: left;
+	color: #ffffff;
+	margin-right: 22px;
+}
+
+.nicknameContent .username>span:nth-child(2) {
+	width: 84px;
+	height: 22px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color: #f6a623;
+}
+
+.nicknameContent .nickname {
+	margin-left: 85px;
+	margin-bottom: 26px;
+	font-size: 0;
+}
+
+.nicknameContent .nickname>span:nth-child(2) {
+	width: 54px;
+	height: 22px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	text-align: left;
+	color: #ffffff;
+	margin-right: 22px;
+}
+
+.nicknameContent .nickname>span:nth-child(3)>input {
+	width: 278px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.nicknameContent .nickname>i.nicknameTip {
+	width: 278px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.6);
+	display: block;
+	margin-left: 75px;
+}
+
+.nicknameContent .dotLine {
+	width: 440px;
+	height: 2px;
+	opacity: 0.2;
+	border-bottom: solid 1px #979797;
+	margin-bottom: 26px;
+}
+
+.nicknameContent .modifyPwd {
+	font-size: 0;
+	margin-bottom: 43px;
+}
+
+.nicknameContent .modifyPwd>span:nth-child(1) {
+	width: 73px;
+	height: 25px;
+	font-family: PingFangHK;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: left;
+	color: #f6a623;
+	margin-right: 10px;
+}
+
+.nicknameContent .modifyPwd>span:nth-child(2) {
+	width: 356px;
+	height: 17px;
+	font-family: PingFangHK;
+	font-size: 12px;
+	font-weight: 600;
+	color: #ffee64;
+}
+
+.nicknameContent .oldPwd {
+	font-size: 0;
+	margin-bottom: 24px;
+	margin-left: 27px;
+}
+
+.nicknameContent .oldPwd>span:nth-child(1) {
+	width: 112px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	line-height: 1.13;
+	text-align: left;
+	color: #ffffff;
+	margin-right: 22px;
+}
+
+.nicknameContent .oldPwd>span:nth-child(2)>input {
+	width: 278px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.nicknameContent .newPwd {
+	font-size: 0;
+	margin-bottom: 12px;
+	margin-left: 43px;
+}
+
+.nicknameContent .newPwd>span:nth-child(1) {
+	width: 96px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	line-height: 1.13;
+	text-align: left;
+	color: #ffffff;
+	margin-right: 22px;
+}
+
+.nicknameContent .newPwd>span:nth-child(2)>input {
+	width: 278px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.nicknameContent .newPwd>i.newPwdTip {
+	width: 207px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.6);
+	margin-left: 118px;
+}
+
+.nicknameContent .confirmPwd {
+	font-size: 0;
+	margin-left: 43px;
+}
+
+.nicknameContent .confirmPwd>span:nth-child(1) {
+	width: 96px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 16px;
+	line-height: 1.13;
+	text-align: left;
+	color: #ffffff;
+	margin-right: 22px;
+}
+
+.nicknameContent .confirmPwd>span:nth-child(2)>input {
+	width: 280px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: #ffffff;
+}
+
+.nicknameContent .confirmPwd>i.confirmPwdTip {
+	width: 72px;
+	height: 18px;
+	font-family: PingFangHK;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.6);
+	margin-left: 118px;
+}
+
+.ui-dialog.nickname {
+	background: none;
+	box-shadow: none;
+}
+
+.ui-dialog.nickname .ui-dialog-body {
+	padding: 0;
+}
+
+.nickname .nickButtons {
+	margin-top: 20px;
+}
+
+#saveNickname {
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	background-image: linear-gradient(to bottom, #ffbe00, #ff8900);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	font-family: PingFangHK;
+	margin-left: 150px;
+	cursor: pointer;
+}
+
+#saveNickname:hover {
+	transition: all 0.5s ease;
+	background-image: linear-gradient(to top, #ffbe00, #ff8900);
+	color: rosybrown;
+}
+
+#skipNickname {
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	font-family: PingFangHK;
+	cursor: pointer;
+}
+
+#skipNickname:hover {
+	transition: color 0.2s ease;
+	color: rosybrown;
+}
+
+.nickButtons .nickExplain {
+	color: #fff;
+	font-family: PingFangHK;
+	font-size: 14px;
+	margin: 30px 0 0 10px;
+}
+
+.nickButtons .nickExplain>span:nth-child(1) {
+	display: inline-block;
+}
+
+.nickButtons .nickExplain>span:nth-child(2) {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.nicknameContent .newPwd .passwordLevel {
+	background: #858585;
+	width: 150px;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 0;
+	margin-top: 0px;
+	margin-left: 118px;
+	text-indent: 0;
+}
+
+.nicknameContent .newPwd .passwordLevel span {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	width: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.nicknameContent .newPwd .passwordLevel span:nth-child(3) {
+	border-right: none;
+}
+
+.nicknameContent .newPwd .passwordLevel span.pswWeak {}
+
+.nicknameContent .newPwd .passwordLevel span.pswWeakColor {
+	background-color: #FF4545;
+}
+
+.nicknameContent .newPwd .passwordLevel span.pswMidium {
+	/*color: #858585;*/
+	color: white;
+	font-weight: bold;
+}
+
+.nicknameContent .newPwd .passwordLevel span.pswMidiumColor {
+	background-color: #FFD35E;
+	border-right: 1px solid #E9AE10;
+}
+
+.nicknameContent .newPwd .passwordLevel span.pswStrong {}
+
+.nicknameContent .newPwd .passwordLevel span.pswStrongColor {
+	background-color: green;
+}
+
+.ui-dialog-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width:24px;
+    height:24px;
+    border-radius: 50%;
+    padding:0;
+    line-height:24px;
+    border:none;
+    text-align:center;
+    font-size: 20px;
+    color: #fff;
+    background-color:#c5c5c5;
+    text-shadow: none;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 110;
+    cursor:pointer;
+}
+.ui-dialog-close::-moz-focus-inner{
+	border:none;
+	padding:0;
+}
+.ui-dialog-close:hover,
+.ui-dialog-close:focus {
+    outline: 0;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    background-color: #f24944;
+}
+
+/*修改昵称弹窗样式结束*/

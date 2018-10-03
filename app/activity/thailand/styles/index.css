@@ -1,0 +1,453 @@
+*,*:before,*:after{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+html,body{
+	min-width:1320px;
+}
+body{
+	font-family:"Microsoft Yahei",Arial,Helvetica,sans-serif;
+}
+.header_bg{
+	width:100%;
+	min-width:1320px;
+}
+.header_bg .top{
+	height:35px;
+	background-color:#0f0c0c;
+	width:100%;
+}
+.header_bg .top .m{
+	width:1200px;
+	margin:0 auto;
+	height:100%;
+}
+.header_bg .bottom .m{
+	width:1300px;
+	margin:0 auto;
+	height:100%;
+}
+.header_bg .top .logo{
+	cursor:pointer;
+	display:inline-block;
+	width:150px;
+	height:36px;
+	background:url(/static/activity/thailand/images/logo.png) no-repeat left center;
+}
+.header_bg .top ul{
+	float:right;
+}
+.header_bg .top ul li{
+	float: left;
+	margin-left: 60px;
+}
+.header_bg .top ul li a{
+	color:#fff;
+	display: inline-block;
+	line-height: 35px;
+	font-size:14px;
+}
+.header_bg .bottom{
+	height:150px;
+	background:url(/static/activity/thailand/images/b.png) repeat left center;
+	width:100%;
+}
+.header_bg .bottom .title{
+	width:240px;
+	height:134px;
+	background-color:#483474;
+	padding:20px;
+	position:relative;
+	top:27px;
+	float:left;
+}
+.header_bg .bottom .title span{
+	font-size: 47px;
+    color: #fedc74;
+    line-height: 45px;
+    height: 60px;
+    display: block;
+    width:100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #8351b7;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom:10px;
+}
+.header_bg .bottom .title label{
+	font-size:20px;
+	color:#fcfcfc;
+}
+.header_bg .bottom .title i{
+	display:inline-block;
+	width:11px;
+	height:11px;
+	position:absolute;
+	right:-11px;
+	bottom:0;
+	background:url(/static/activity/thailand/images/triangle.png) no-repeat left center;
+}
+.header_bg .bottom .topic{
+	font-size:18px;
+	color:#636363;
+	float:left;
+	padding-left:90px;
+	margin-top:35px;
+}
+.header_bg .bottom .topic label{
+	color:#dfdfdf;
+	font-size:14px;
+	margin-left:18px;
+}
+.header_bg .bottom .topic a{
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #2d1a5a;
+	color: #fff;
+	margin-left: 20px;
+	font-size: 14px;
+}
+.header_bg .bottom .p{
+	width:732px;
+	height:68px;
+	line-height:68px;
+	background-color:#000;
+	float:left;
+	margin-left:66px;
+	margin-top:6px;
+	padding-left:24px;
+}
+.header_bg .bottom .p label{
+	font-size: 24px;
+    color: #fff;
+    display: inline-block;
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+    height: 18px;
+    line-height: 15px;
+    vertical-align:middle;
+}
+.header_bg .bottom .p span{
+	color: #fedc74;
+    font-size: 36px;
+    font-weight: bold;
+    display: inline-block;
+    height: 36px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.main_bg{
+	width:100%;
+	min-width:1320px;
+	background:url(/static/activity/thailand/images/main.jpg) no-repeat top;
+	background-size: cover;
+	padding-bottom: 20px;
+}
+.main_bg .m{
+	width:1200px;
+	margin:0 auto;
+	padding-top:24px;
+	position: relative;
+}
+.main_bg .m>img{
+	position: absolute;
+	right: 14px;
+	top: -141px;
+	width:225px;
+}
+.main_bg .tabs{
+	height:78px;
+	width:100%;
+	background-color:#000;
+	color:#636363;
+	padding-left:20px;
+}
+.main_bg .tabs label{
+	display:inline-block;
+	width:180px;
+	height:40px;
+	line-height:40px;
+	color:#d0b45e;
+	text-align:center;
+	font-size:18px;
+	background-color:#181818;
+	margin:19px;
+	cursor:pointer;
+	position:relative;
+}
+.main_bg .tabs label.on{
+	background-color:#483474;
+	color:#fff;
+}
+.main_bg .tabs label.on:after{
+  	border: 10px solid transparent;
+  	border-top: 10px solid #483474;
+  	position: absolute;
+  	bottom:-20px;
+  	left: 50%;
+  	margin-left:-5px;
+  	content: '';
+}
+
+.main_bg .g{
+	background-color:#191919;
+	height:54px;
+	width:100%;
+}
+.main_bg .d{
+	padding:0 0 20px;
+	background-color:#080808;
+}
+.main_bg .d .act{
+	border-radius:5px;
+	overflow:hidden;
+	margin-top:28px;
+	height:83px;
+}
+.main_bg .d .act.open{
+	height:auto;
+}
+.main_bg .d .act:first-child{
+	margin-top:0;
+}
+.main_bg .d .title{
+	height:83px;
+	margin: 0 30px;
+	padding-left:30px;
+	line-height:83px;
+	position:relative;
+	cursor:pointer;
+	border-radius: 3px;
+}
+.main_bg .d .act:first-child .title{
+	background: url("/static/activity/thailand/images/thaivideo.png") no-repeat right #fff;
+}
+.main_bg .d .act:nth-child(2) .title{
+	background: url("/static/activity/thailand/images/105.png") no-repeat right #fff;
+}
+.main_bg .d .act:nth-child(3) .title{
+	background: url("/static/activity/thailand/images/106.png") no-repeat right #fff;
+}
+.main_bg .d .act:nth-child(4) .title{
+	background: url("/static/activity/thailand/images/107.png") no-repeat right #fff;
+}
+.main_bg .d .act .title.on{
+	background: transparent;
+}
+.main_bg .d .title label{
+	vertical-align:top;
+}
+.main_bg .d .title i{
+	display: inline-block;
+	width:84px;
+	height:34px;
+	background: url("/static/activity/thailand/images/live.png") no-repeat;
+	margin:30px 0 0 100px;
+}
+.main_bg .d .title i.video{
+	background: url("/static/activity/thailand/images/live2.png") no-repeat;
+}
+.main_bg .d .title .date{
+	border-radius:3px;
+	background-color:#ff00ac;
+	background:linear-gradient(to bottom,#ff00ac,#ff005b);
+	font-size:14px;
+	color:#fff;
+	padding:5px 10px;
+}
+.main_bg .d .title .date-video{
+	background-color:#380de7;
+	background:linear-gradient(to bottom,#380de7,#7000ff);
+}
+.main_bg .d .title .content{
+	font-size:24px;
+	color:#ff0078;
+	margin-left:20px;
+}
+.main_bg .d .title .content-video{
+	color: #8600f7;
+}
+.main_bg .d .title .checkMore{
+	position:absolute;
+	height:34px;
+	width:84px;
+	top:50%;
+	left:50%;
+	margin-top:-5px;
+	margin-left:-42px;
+	background:url("/static/activity/thailand/images/checkMore.png") no-repeat center;
+}
+.main_bg .act .detail{
+	height:570px;
+	background-color:#f4f4f4;
+	margin:0 30px;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+.main_bg .act .detail-video{
+	height:693px;
+	background: url("/static/activity/thailand/images/video_bg.jpg");
+	position: relative;
+	margin: 0;
+}
+.main_bg .act .detail-video video{
+	position: absolute;
+	left: 200px;
+	top: 190px;
+	cursor: pointer;
+}
+.main_bg .act .detail .l{
+	float:left;	
+	width:720px;
+}
+.main_bg .act .detail .r{
+	float:left;
+	width:370px;	
+}
+.main_bg .act .bigPic{
+	height:480px;
+	width:720px;
+	font-size:0;
+	line-height:480px;
+	text-align:center;
+}
+.main_bg .act .bigPic img{
+	max-height:100%;
+	max-width:100%;
+}
+.main_bg .act .text{
+	margin-top:20px;
+}
+.main_bg .act .text .themeName{
+	font-size:18px;
+	color:#df1b1b;
+}
+.main_bg .act .text .picTitle{
+	font-size:14px;
+	color:#858585;
+	border-left:1px solid #ccc;
+	padding-left:15px;
+	margin-left:15px;
+}
+.main_bg .act .smallPics{
+	width:360px;
+	height:480px;
+	font-size:0;
+	margin-left:10px;
+	overflow:hidden;
+}
+.main_bg .act .smallPics div{
+	float:left;
+	width:50%;
+	text-align:center;
+	float:left;
+	opacity:0.7;
+	cursor:pointer;
+	filter:alpha(opacity=50);
+}
+.main_bg .act .smallPics div.large{
+	width:100%;
+}
+.main_bg .act .smallPics div.on{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.main_bg .act .smallPics img{
+	max-width:100%;
+	max-height:100%;
+}
+.main_bg .act .themeChange{
+	width:360px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+	background-color:#ff0078;
+	color:#f4f4f4;
+	font-size:18px;
+	margin-top:8px;
+	margin-left:10px;
+}
+.main_bg .act .themeChange span{
+	vertical-align:middle;
+}
+.main_bg .act .themeChange i{
+	display:inline-block;
+	width:26px;
+	height:18px;
+	vertical-align:middle;
+	margin:0 10px;
+	cursor:pointer;
+	background:url("/static/activity/thailand/images/arrow.png") no-repeat;
+}
+.main_bg .act .themeChange i.next{
+	background-position:-26px 0;
+}
+.main_bg .contact{
+	margin:40px 0 0;
+}
+.main_bg .contact p{
+	color:#fff;
+	text-align:center;
+}
+.main_bg .contact a{
+	display:block;
+	width:300px;
+	height:60px;
+	text-align: center;
+	line-height: 60px;
+	background-color: #ff0078;
+	color:#fff;
+	font-size: 24px;
+	margin:29px auto 0;
+}
+.func{
+	width: 50px;
+    position: fixed;
+    left: 50%;
+    margin-left: 610px;
+    top: 50%;
+    margin-top: -120px;
+}
+.func a{
+	display: inline-block;
+	width: 45px;
+	height: 50px;
+	background-color: #191919;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+	margin-bottom: 10px;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+}
+.footer{
+	height:75px;
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 75px;
+	color:#787878;
+}
+.footer .m{
+	width:1100px;
+	margin: 0 auto;
+}
+.footer .m .contactUs{
+	float: left;
+}
+.footer .m .contactUs a{
+	color:#787878;
+}
+.footer .m .copyright{
+	float: right;
+}

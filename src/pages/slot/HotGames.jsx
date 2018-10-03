@@ -5,12 +5,13 @@ import CountUp from 'react-countup';
 class HotGames extends React.Component {
     state = {
         hotGamesData: [],
-        hideHotGames: false
+        hideHotGames: false,
+        isLastPage: false
     }
     totalPage = null
     currPage = 1
     showNextHotGames = () => {
-        if (this.currPage === this.totalPage) {
+        if (this.state.isLastPage) {
             this.currPage = 1
         } else {
             this.currPage += 1;
@@ -28,6 +29,7 @@ class HotGames extends React.Component {
             if (res.data.code === 0) {
                 this.totalPage = res.data.data.total;
                 this.setState({
+                    isLastPage: res.data.data.isLastPage,
                     hotGamesData: res.data.data.list
                 });
                 setTimeout(() => {

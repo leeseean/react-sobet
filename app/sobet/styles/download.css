@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    pading: 0;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+#header {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: #363636;
+}
+.logo {
+    display: inline-block;
+    width: 166px;
+    height: 34px;
+    background: url("/static/sobet/images/new/images/head/menu-icon-logo.png") center center no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+#header .text {
+    margin: 30px 0 0 10px;
+    color: #ffb425;
+    font-size: 18px;
+    vertical-align: sub;
+}
+
+#download {
+    height: 800px;
+    background: url("../images/downloadbg.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.inner {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#download .tab {
+    height: 78px;
+}
+
+#download .tab li {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 1px;
+    height: 72px;
+    background: url("../images/downtab.png");
+    cursor: pointer;
+}
+
+#download .tab li.pc {
+    width: 180px;
+    background-position: 0 -78px;
+}
+
+#download .tab li.pc.on {
+    background-position: 0 0;
+}
+
+#download .tab li.phone {
+    width: 188px;
+    background-position: -182px -78px;
+}
+
+#download .tab li.phone.on {
+    background-position: -182px 0;
+}
+
+#download .tab li.guaji {
+    width: 208px;
+    background-position: -372px -78px;
+}
+
+#download .tab li.guaji.on {
+    background-position: -372px 0;
+}
+
+#download .tab li.kuaidengqi {
+    width: 208px;
+    background-position: -580px -78px;
+}
+
+#download .tab li.kuaidengqi.on {
+    background-position: -580px 0;
+}
+
+#download .main>div>img {
+    margin-top: 90px;
+    float: left;
+}
+
+#download .main .right {
+    float: right;
+}
+
+#download .main .right img {
+    margin-top: 90px;
+}
+
+#download .main .right a {
+    display: block;
+    width: 330px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 80px auto 5px;
+    background: #0196ff;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+#download .main .right p {
+    color: #fff;
+    padding-left: 50px;
+    font-size: 14px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#download .main .pc_down .right p {
+    padding: 0px;
+    text-align: center;
+}
+
+#footer .footer-t{
+    padding: 10px 0;
+    background-color: #242d47;
+}
+#footer .footer-t .footer-img {
+    height: 60px;
+    background: url("/static/sobet/images/new/images/foot/bottom-icons.png") center center no-repeat;
+}
+#footer .footer-b{
+    line-height: 40px;
+    background-color: #1a223a;
+}
+#footer .footer-b .fl img{
+    margin-right: 17px;
+    vertical-align: middle;
+}
+#footer .footer-b .fl span{
+    font-size: 12px;
+    color: #A3a3a3;
+}
+#footer .footer-b .fr span{
+    font-size: 12px;
+    color: #fff;
+}
+#footer .footer-b .fr img{
+    margin-left: 10px;
+    vertical-align: middle;
+}

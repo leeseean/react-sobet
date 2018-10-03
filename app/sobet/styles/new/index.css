@@ -1,0 +1,822 @@
+body {
+    background-color: #140a2e;
+}
+
+.index-banner-wrap .index-banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.index-banner .swiper-slide {
+    background-color: #140a2e;
+    background-position: top center;
+    background-size: cover;
+}
+
+.page-banner {
+    position: absolute;
+    left: 0;
+    bottom: 240px;
+    width: 100%;
+    z-index: 100;
+}
+
+.page {
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 10px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, .5);
+    vertical-align: top;
+}
+
+.page-banner .prev,
+.page-banner .next {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    background-image: url(/static/sobet/images/new/all-icon.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.page-banner .prev {
+    margin-left: 5px;
+    background-position: 4px -210px;
+
+}
+
+.page-banner .next {
+    margin-right: 5px;
+    background-position: -16px -210px;
+}
+
+.page .count {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    text-align: center;
+}
+
+.index-main {
+    position: relative;
+    margin-top: -230px;
+    z-index: 100;
+}
+
+.index-activity {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.index-top {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.index-main .activity {
+    width: 945px;
+}
+
+.index-main .qr-code {
+    width: 255px;
+    height: 230px;
+    background: url(/static/sobet/images/new/app_QR.png) center no-repeat;
+}
+
+.index-main .index-main-announcement {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    background-image: linear-gradient(to bottom, #2b2b2b, #1c1c1c);
+    font-size: 12px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.index-main .index-main-announcement .main-announcement-title {
+    display: inline-block;
+    width: 60px;
+    height: 18px;
+    margin: 0 18px 0 15px;
+    background: url(/static/sobet/images/new/all-icon.png) 0 -155px no-repeat;
+    vertical-align: text-top;
+}
+
+.index-main .index-main-announcement .main-announcement-more {
+    margin-right: 16px;
+    position: absolute;
+    right: 6px;
+    color: #868686;
+}
+
+.index-main .index-main-announcement .main-announcement-wrap .main-announcement-item {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    padding-right: 30px;
+    margin-right: 30px;
+    border-right: 1px solid #6b617f;
+}
+
+.index-main .index-main-announcement .main-announcement-wrap .main-announcement-item:last-child {
+    border-right: none;
+}
+
+.index-main .index-main-announcement .main-announcement-wrap .main-announcement-item:hover {
+    color: #fde685;
+}
+
+.index-main .index-main-announcement span:not(:first-child) {
+    cursor: pointer;
+}
+
+.index-main .index-main-slide-wrap {
+    position: relative;
+    height: 190px;
+}
+
+.index-main .index-main-slide {
+    height: 190px;
+    overflow: hidden;
+}
+
+.index-main .swiper-button-prev {
+    left: 0;
+    width: 25px;
+    height: 35px;
+    background: url(/static/sobet/images/new/all-icon.png) 7px -174px no-repeat rgba(35, 15, 84, .9);
+    outline: none;
+}
+
+.index-main .swiper-button-prev:hover {
+    background-color: #6A3BDE;
+}
+
+.index-main .swiper-button-next {
+    right: 0;
+    width: 25px;
+    height: 35px;
+    background: url(/static/sobet/images/new/all-icon.png) -12px -174px no-repeat rgba(35, 15, 84, .9);
+    outline: none;
+}
+
+.index-main .swiper-button-next:hover {
+    background-color: #6A3BDE;
+}
+
+.index-main .index-main-slide ul>li.slide-li {
+    width: 315px;
+    height: 190px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.index-main .index-main-slide ul>li.slide-li img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+.index-main .index-main-slide ul>li.slide-li:hover img {
+    transition: 0.3s all ease-in-out;
+    transform: scale(1.1);
+}
+
+.index-main .index-lottery {
+    width: 1200px;
+    margin: 0 auto 20px;
+    box-sizing: border-box;
+}
+
+.index-lottery .lottery-hot {
+    width: 945px;
+}
+
+.lottery-hot .hot {
+    height: 40px;
+    background-image: linear-gradient(to bottom, #2b2b2b, #1c1c1c);
+}
+
+.lottery-hot .title {
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    padding: 5px;
+    background-image: linear-gradient(to bottom, #4f495e, #3a324b);
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+
+.lottery-hot .title .icon-hot {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    margin-left: 10px;
+    background: url(/static/sobet/images/new/all-icon.png) 0 -272px no-repeat;
+}
+
+.lottery-hot .title .txt-hot {
+    display: inline-block;
+    width: 66px;
+    height: 30px;
+    margin-left: 10px;
+    background: url(/static/sobet/images/new/all-icon.png) 0 -300px no-repeat;
+}
+
+.lottery-hot .bonus {
+    display: inline-block;
+    width: 814px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.lottery-hot .bonus .bonus-content {
+    display: inline-block;
+    width: 99999999999999px;
+    height: 100%;
+}
+
+.lottery-hot .bonus .marquee-html-wrap {
+    display: inline-block;
+}
+
+.lottery-hot .bonus .good-news-item {
+    margin: 0 15px;
+    color: #fff;
+}
+
+.lottery-hot .bonus .good-news-lottery {
+    color: #ffa900;
+}
+
+.lottery-hot .bonus .good-news-money {
+    color: #ffa900;
+}
+
+
+.lottery-hot .lottery li {
+    width: 189px;
+    height: 55px;
+    line-height: 54px;
+    background-color: #39314a;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    box-sizing: border-box;
+}
+
+.lottery-hot .lottery li:hover {
+    background-color: #4f495e;
+}
+
+.lottery-hot .lottery li a {
+    display: block;
+}
+
+.lottery li .lottery-logo {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0 18px 0 25px;
+    background-image: url(/static/sobet/images/new/all-icon.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.logo-cqssc {
+    background-position: 0 -453px;
+}
+.logo-3dfc {
+    background-position: -44px -453px;
+}
+.logo-shssl {
+    background-position: -88px -453px;
+}
+.logo-wbgmmc {
+    background-position: -134px -453px;
+}
+.logo-sckl12 {
+    background-position: -178px -453px;
+}
+.logo-bjpk10 {
+    background-position: -223px -453px;
+}
+.logo-mck3 {
+    background-position: -267px -453px;
+}
+.logo-mc11y {
+    background-position: -311px -453px;
+}
+.logo-txffc {
+    background-position: -356px -453px;
+}
+.logo-xglhc {
+    background-position: -401px -453px;
+}
+.logo-rbssm {
+    background-position: -446px -453px;
+}
+.logo-rdffc {
+    background-position: -491px -453px;
+}
+.logo-rdlfc {
+    background-position: -536px -453px;
+}
+.logo-mcpk10 {
+    background-position: -581px -453px;
+}
+.logo-hnky481 {
+    background-position: -626px -453px;
+}
+
+
+.lottery li .lottery-txt {
+    font-size: 14px;
+    color: #fff;
+}
+
+
+.index-lottery .download {
+    width: 254px;
+}
+
+.index-lottery .download li {
+    height: 67px;
+    background: url(/static/sobet/images/new/down_soft_bg.png) center no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid;
+    box-sizing: content-box;
+}
+
+.index-lottery .download li:last-child {
+    height: 67px;
+    border-bottom: none;
+}
+
+.index-lottery .download li:hover {
+    background: url(/static/sobet/images/new/down_soft_hover_bg.png) center no-repeat;
+}
+
+.index-lottery .download a {
+    display: block;
+    height: 100%;
+}
+
+.index-lottery .download a .down-logo {
+    width: 120px;
+    height: 100%;
+}
+.guaji .down-logo {
+    background: url(/static/sobet/images/new/guaji_icon.png) 30px 12px no-repeat;
+}
+.weixin .down-logo {
+    background: url(/static/sobet/images/new/wxtz_icon.png) 30px 12px no-repeat;
+}
+.ksdlq .down-logo {
+    background: url(/static/sobet/images/new/ksdlq_icon.png) 30px 2px no-repeat;
+}
+
+.index-lottery .download .text-icon {
+    height: 30px;
+    margin-top: 5px;
+    background-image: url(/static/sobet/images/new/all-icon.png);
+    background-repeat: no-repeat;
+}
+
+.guaji .text-icon {
+    width: 80px;
+    background-position: 0 -326px;
+}
+
+.weixin .text-icon {
+    width: 80px;
+    background-position: -81px -326px;
+}
+
+.ksdlq .text-icon {
+    width: 90px;
+    background-position: -164px -326px;
+}
+
+.index-lottery .download .down-icon {
+    width: 80px;
+    display: inline-block;
+    height: 20px;
+    line-height: 18px;
+    padding-left: 25px;
+    background: url(/static/sobet/images/new/all-icon.png) -25px -65px no-repeat #1a1526;
+    font-size: 12px;
+    border-radius: 10px;
+    color: #645f70;
+}
+
+.index-game {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.index-game li {
+    display: inline-block;
+    width: 238px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 0;
+    vertical-align: top;
+}
+
+.index-game li:first-child {
+    margin-right: 3px;
+}
+.index-game li:nth-child(2),
+.index-game li:nth-child(3) {
+    margin-right: 2px;
+}
+.index-game li:last-child {
+    margin-left: 3px;
+}
+
+
+.index-game li.game-by {
+    background: url(/static/sobet/images/new/byw_bg.png) center no-repeat;
+    background-size: cover;
+}
+.index-game li.game-zryl {
+    background: url(/static/sobet/images/new/zryl_bg.png) center no-repeat;
+    background-size: cover;
+}
+.index-game li.game-ty {
+    background: url(/static/sobet/images/new/ty_bg.png) center no-repeat;
+    background-size: cover;
+}
+.index-game li.game-lhj {
+    background: url(/static/sobet/images/new/lhj_bg.png) center no-repeat;
+    background-size: cover;
+}
+.index-game li.game-lhc {
+    background: url(/static/sobet/images/new/lhc_bg.png) center no-repeat;
+    background-size: cover;
+}
+
+.index-game li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.index-game li a img {
+    transition: all 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+.index-game li.game-zryl img {
+    margin-top: -20px;
+}
+
+.index-game li:hover a img {
+    margin-top: -20px;
+}
+
+.index-game li.game-zryl:hover a img {
+    margin-top: -40px;
+}
+
+.index-main .index-games .index-games-right .games-right-fish .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-live .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-slots .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-sport .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-chess .games-hover-opacity {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+.index-main .index-games .index-games-right .games-right-fish:hover .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-live:hover .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-slots:hover .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-sport:hover .games-hover-opacity,
+.index-main .index-games .index-games-right .games-right-chess:hover .games-hover-opacity {
+    transition: all 0.3s ease-in-out;
+    display: block;
+    opacity: 0.15;
+    background-color: #ffffff;
+}
+
+.index-main .index-games .index-games-right .games-right-fish img {
+    position: absolute;
+    left: 36px;
+    bottom: 64px;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+}
+
+.index-main .index-games .index-games-right .games-right-fish:hover img {
+    bottom: 68px;
+    transition: all 0.3s ease-in-out;
+}
+
+.index-main .index-games .index-games-right .games-right-live img,
+.index-main .index-games .index-games-right .games-right-slots img,
+.index-main .index-games .index-games-right .games-right-sport img,
+.index-main .index-games .index-games-right .games-right-chess img {
+    position: absolute;
+    right: 51px;
+    bottom: -4px;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+}
+
+.index-main .index-games .index-games-right .games-right-slots img {
+    right: 36px;
+}
+
+.index-main .index-games .index-games-right .games-right-live:hover img,
+.index-main .index-games .index-games-right .games-right-slots:hover img,
+.index-main .index-games .index-games-right .games-right-sport:hover img,
+.index-main .index-games .index-games-right .games-right-chess:hover img {
+    bottom: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+/****************************mc_notice**********************************/
+
+#mc_notice {
+    display: none;
+    width: 950px;
+    height: 500px;
+    border-radius: 3px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.layui-layer-content {
+    border-radius: 3px;
+}
+
+#mc_notice .title {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid #181818;
+    background-image: linear-gradient(-180deg, #425294 0%, #33467D 100%);
+    border-radius: 10px 10px 0 0;
+}
+
+#mc_notice .title i.newsIcon {
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    background: url(/static/sobet/images/new/images/index/icon-speaker.svg) no-repeat;
+    margin: 0px 10px 0 20px;
+    vertical-align: middle;
+}
+
+#noticeLayer ~ .layui-layer-setwin .layui-layer-close2 {
+    background: url(/static/sobet/images/new/images/index/layer-close.svg) no-repeat;
+    background-position: center!important;
+    position: absolute;
+    right: 4px;
+    top: -2px;
+    width: 18px;
+    height: 18px;
+    margin-left: 0;
+}
+
+#noticeLayer ~ .layui-layer-setwin .layui-layer-close2:hover {
+    background: url(/static/sobet/images/new/images/index/layer-close-hover.svg) no-repeat;
+    background-position: center!important;
+}
+
+#mc_notice .name {
+    float: left;
+    width: 320px;
+    height: 455px;
+    background: #1A2542;;
+}
+
+#mc_notice .name .notice-tit {
+    height: 400px;
+    overflow: hidden;
+}
+
+#mc_notice .name ul {
+    height: 400px;
+    border-bottom: 1px solid #2a344f;
+    overflow: hidden;
+    display: none;
+}
+
+#mc_notice .name ul.ul-active {
+    display: block;
+}
+
+#mc_notice .name ul li {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    color: #e6e6e6;
+    font-size: 12px;
+}
+
+#mc_notice .name ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+#mc_notice .name ul li a .mainTitle {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#mc_notice .name ul li a .date {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    vertical-align: top;
+}
+
+#mc_notice .name ul a:hover {
+    background: #131C33;
+}
+
+#mc_notice .name .pager {
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+
+#mc_notice .name .pager span {
+    margin: 0 8px;
+    color: #A3A3A3;
+    font-size: 12px;
+}
+
+#mc_notice .name .pager span em {
+    font-style: normal;
+}
+
+#mc_notice .name .pager a {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    line-height: 20px;
+    background: #121212;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#mc_notice .name .pager a i.arrow-left {
+    background: url(/static/sobet/images/new/images/index/arrow-left.svg) no-repeat center;
+    background-size: cover;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+}
+
+#mc_notice .name .pager a i.arrow-left:hover {
+    background: url(/static/sobet/images/new/images/index/arrow-left-hover.svg) no-repeat center;
+}
+
+#mc_notice .name .pager a i.arrow-right {
+    background: url(/static/sobet/images/new/images/index/arrow-right.svg) no-repeat center;
+    background-size: cover;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+}
+
+#mc_notice .name .pager a i.arrow-right:hover {
+    background: url(/static/sobet/images/new/images/index/arrow-right-hover.svg) no-repeat center;
+}
+
+
+#mc_notice .content {
+    float: left;
+    width: 630px;
+    height: 455px;
+    background: #121B32;
+    padding: 10px 40px 0;
+}
+
+#mc_notice .content h3 {
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+    color: #E6E6E6;
+}
+
+#mc_notice .content .conType {
+    width: 100%;
+    height: 28px;
+    border-bottom: 1px solid #2A344F;;
+    font-size: 12px;
+}
+
+#mc_notice .content .createTime {
+    float: left;
+    color: #A3A3A3;
+}
+
+#mc_notice .content .type {
+    float: right;
+    color: #A3A3A3;
+}
+
+#mc_notice .content .newsContent {
+    max-width: 100%;
+    max-height: 290px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-right: 3px;
+    background: transparent;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #E6E6E6;
+}
+
+#mc_notice .content .newsContent * {
+    max-width: 540px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #e6e6e6 !important;
+    font-size: 14px !important;
+}
+
+#mc_notice .content>div {
+    display: none;
+}
+
+#mc_notice .name ul a.tab-active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#mc_notice .content>div.tab-content-active {
+    display: block;
+}
+
+#mc_notice.noticeAlert {
+    width: 578px;
+    height: auto;
+}
+
+.noticeLayer.layui-layer {
+    border-radius: 10px;
+    box-shadow: 0px 3px 7px rgb(0, 0, 0);
+}
+
+#mc_notice.noticeAlert .title {
+    background-image: linear-gradient(-180deg, #425294 0%, #33467D 100%);
+}
+
+#mc_notice.noticeAlert .title i.newsIcon {
+    background: url(/static/sobet/images/importanceTip.png) no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+#mc_notice.noticeAlert .name {
+    display: none;
+}
+
+#mc_notice.noticeAlert .content {
+    width: 578px;
+    height: 378px;
+}
+
+#mc_notice.noticeAlert .content h3 {
+    line-height: 36px;
+}
+
+#mc_notice.noticeAlert .content .newsContent {
+    max-height: 260px;
+}
+/* end */
+.animation-paused {
+    animation-play-state: paused!important;    
+}

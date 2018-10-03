@@ -1,0 +1,2396 @@
+
+/* 4+1 width */
+
+.report-pop .split41 span {
+  /*width:176px;*/
+  width: 215px;
+}
+
+.report-pop .split41 span.last {
+  width: 351px;
+}
+
+.report-pop ul.withoutscroll .split41 span.last {
+  width: 345px;
+  border-right: none;
+}
+
+.report-pop .list .data li span.lastl {
+  width: 114px;
+  border-right: none;
+}
+
+.report-pop .list .data li span.demand.lastl {
+  width: 179px;
+}
+
+.panel-tab.teamReport .list span.lastT {
+  width: 126px;
+}
+
+.report-pop .list li.blankplace {
+  position: relative;
+  text-align: center;
+}
+
+.report-pop .list li.blankplace div.blank {
+  position: relative;
+  display: block;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  margin: -16px auto 0 auto;
+  color: #666;
+}
+
+.report-pop .list li.highlight span {
+  color: red;
+}
+
+.report-pop .panel-tab h4 {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.report-pop input.datapick,
+input.datapick {
+  background: url(../images/userinfo1.png) -35px -15px no-repeat;
+}
+
+.recharge_history,
+.withdraw_history {
+  margin: 0 20px;
+}
+
+.team-level {
+  padding: 0 20px;
+  margin-bottom: 8px;
+}
+
+.team-level a {
+  white-space: nowrap;
+}
+
+.team-level a:last-child {
+  color: #ff6052;
+}
+
+.change-issue {
+  color: #858585;
+}
+
+.teamReport .team-level a:hover,
+.change-issue:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dayReport .team-level a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.change_condition #change_teamChk {
+  margin: 2px 0 0 10px;
+  width: 14px;
+}
+
+.report-pop .head .listhead .demand {
+  width: 180px;
+  position: relative;
+}
+
+.report-pop .head .listhead span:last-child {
+  position: relative;
+}
+
+.report-pop .head .listhead span.question {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(/static/sobet/images/question.png) no-repeat;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  vertical-align: top;
+}
+
+.report-pop .head .listhead .switch span.question {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url(/static/sobet/images/question.png) no-repeat;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  vertical-align: top;
+}
+
+
+.report-pop .head .listhead .switch.large span {
+  right: 10px;
+}
+
+.panel-tab.teamReport .list span {
+  box-sizing: border-box;
+  width: 114px;
+}
+
+.panel-tab.teamReport .list span.last {
+  width: 133px;
+  border-right: none;
+}
+
+.panel-tab .tip {
+  padding: 10px 15px 0px 0;
+  color: #b8b8b8;
+}
+
+.panel-tab .list li.count {
+  background-color: #EAEAEA;
+}
+
+
+.report-pop .teamReport .list span.username {
+  width: 142px;
+}
+
+.report-pop .teamReport .list span.large {
+  width: 85px;
+}
+
+.report-pop .ui-dialog-title {
+  display: none;
+}
+
+.report-pop .tab {
+  font-size: 12px;
+  padding-left: 55px;
+}
+
+.report-pop .tab li {
+  display: inline-block;
+  line-height: 30px;
+  color: #fff;
+  background-color: #737bf8;
+  padding: 0 12px;
+  margin-top: 5px;
+  border-right: 1px solid #eee;
+  cursor: pointer;
+}
+
+#main .tab>li:first-child {
+  border-top-left-radius: 5px;
+}
+
+#main .tab>li:last-child {
+  border-top-right-radius: 5px;
+}
+
+.report-pop .tab li.on {
+  color: #303030;
+  background-color: #ffffff;
+}
+
+.report-pop .panel-tab {
+  display: none;
+  margin: 0 9px;
+}
+
+#main #admin_report .panel-filter {
+  padding-bottom: 13px;
+}
+
+.report-pop .panel label,
+.report-pop .panel select {
+  font-size: 14px;
+  margin: 0px 5px;
+}
+
+.report-pop .panel select {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 35px;
+}
+
+.report-pop .panel a {
+  display: inline-block;
+  background: url("../images/userinfo1.png") -567px -165px no-repeat;
+  width: 100px;
+  height: 28px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+.report-pop .panel a:hover {
+  background-position: -455px -165px;
+}
+
+.report-pop .panel input[type="text"] {
+  width: 150px;
+  font-size: 14px;
+}
+
+.report-pop .panel-bonus input {
+  width: 100px;
+}
+
+
+/* 4+1 width */
+
+.report-pop .split41 span {
+  /*width:176px;*/
+  width: 215px;
+}
+
+.report-pop .split41 span.last {
+  width: 351px;
+}
+
+.report-pop ul.withoutscroll .split41 span.last {
+  width: 345px;
+  border-right: none;
+}
+
+
+/* 1/10 width */
+
+.report-pop .split10 span {
+  box-sizing: border-box;
+  width: 97px;
+}
+
+.report-pop .list .data .split10 span.last,
+.report-pop .list .head .split10 span.last {
+  width: 127px;
+  border-right: none;
+}
+
+.report-pop ul.withoutscroll .split10 span.last {
+  width: 107px;
+  border-right: none;
+}
+
+
+/* 1/11 width */
+
+.report-pop .split11 span {
+  box-sizing: border-box;
+  width: 110px;
+}
+
+.report-pop .split11 span.mini {
+  width: 70px;
+}
+
+.report-pop .split11 span.large {
+  width: 122px;
+}
+
+.report-pop .split11 span.last {
+  width: 118px;
+  border-right: none;
+}
+
+.report-pop ul.withoutscroll .split11 span.last {
+  width: 118px;
+  border-right: none;
+}
+
+.report-pop .split11 span.twocols {
+  width: 193px;
+}
+
+
+/* 11c width */
+
+.report-pop li.splitmulti {
+  height: 51px;
+}
+
+.report-pop li.splitmulti span {
+  /*width:96px;overflow: hidden;*/
+  width: 90px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.report-pop li.splitmulti span.mini,
+.report-pop li.changeList span.mini {
+  width: 66px;
+  overflow: hidden;
+}
+
+.report-pop li.splitmulti span.large,
+.report-pop li.changeList span.large {
+  width: 180px;
+  overflow: hidden;
+}
+
+.report-pop .list .data li.splitmulti span.last,
+.report-pop .list .head li.splitmulti span.last {
+  width: 124px;
+  border-right: none;
+}
+
+.report-pop ul.withoutscroll li.splitmulti span.inlast {
+  width: 85px;
+  border-right: none;
+}
+
+#panel_user .list ul.data {
+  border-left: none;
+  border-right: none;
+}
+
+.report-pop .list ul.linkList {
+  border: none;
+}
+
+.report-pop .list ul,
+.panel-tab div.panel-sectab,
+.panel-tab ul.head-tab {
+  overflow: auto;
+  zoom: 1;
+  clear: both;
+  min-height: 30px;
+}
+
+.report-pop .list .head li {
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  background-color: #484848;
+  font-size: 14px;
+  color: #fff;
+  color: #fff;
+}
+
+.report-pop .list .head li span {
+  float: left;
+  text-align: center;
+  border: none;
+}
+
+.report-pop .list .data li {
+  display: block;
+  content: "";
+  height: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.report-pop .list .data li span {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  float: left;
+  color: #222;
+}
+
+.report-pop .list .data li span.last {
+  width: 175px;
+  border-right: none;
+}
+
+.report-pop .list .data li span.lastl {
+  width: 126px;
+  border-right: none;
+}
+
+.report-pop .list .data li span.last2 {
+  width: 125px;
+  border-right: none;
+}
+
+.report-pop .list li.blankplace {
+  position: relative;
+  text-align: center;
+}
+
+.report-pop .list li.blankplace div.blank {
+  position: relative;
+  display: block;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  margin: -16px auto 0 auto;
+  color: #666;
+}
+
+.report-pop .list li.highlight span {
+  color: red;
+}
+
+.report-pop .panel-tab h4 {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.report-pop input.datapick {
+  background: url(../images/userinfo1.png) -35px -15px no-repeat;
+}
+
+.report-pop ul.searchList {
+  height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.report-pop ul.bonusList {
+  height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.report-pop .page-break {
+  margin-right: 3px;
+}
+
+.team_username {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #222;
+}
+
+.team-level {
+  padding: 0 20px;
+  margin-bottom: 8px;
+}
+
+.team-level a {
+  white-space: nowrap;
+}
+
+.team-level a:last-child {
+  color: #ff6052;
+}
+
+.change-issue {
+  color: #858585;
+}
+
+.teamReport .team-level a:hover,
+.change-issue:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dayReport .team-level a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.change_condition #change_teamChk {
+  margin: 2px 0 0 10px;
+  width: 14px;
+}
+
+.report-pop .panel.change_condition .change_teamlabel {
+  margin-right: 35px;
+}
+
+.report-pop .panel.change_condition .search {
+  position: relative;
+  top: 2px;
+}
+
+.report-pop .panel select option {
+  padding-left: 10px;
+}
+
+.report-pop .popdetails-page {
+  width: 100%;
+}
+
+#admin_report .panel label {
+  padding: 0px;
+}
+
+#admin_report input {
+  text-indent: 5px;
+}
+
+.recency-pop {
+  padding: 8px 14px 15px 14px;
+  font-family: 'Microsoft Yahei';
+}
+
+.recency-pop .ui-dialog-grid {
+  width: 640px;
+}
+
+.recency-pop .ui-dialog-title {
+  padding: 0px 15px 8px 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ui-dialog-content .market-pop {
+  margin: 5px 15px;
+  border-top: #d7d7d7 1px solid;
+}
+
+.recency-pop .ui-dialog-content table,
+.ui-dialog-content .market-pop table {
+  width: 640px;
+}
+
+.recency-pop .ui-dialog-content table.traceHTable,
+.ui-dialog-content .market-pop table.traceHTable {
+  width: 960px;
+}
+
+.recency-pop .ui-dialog-content table.traceHTable td.fixtrace,
+.ui-dialog-content .market-pop table.traceHTable td.fixtrace {
+  width: 385px;
+  border-left: 2px solid #aaa;
+  padding-left: 0;
+}
+
+.popdetails-page {
+  padding: 10px 0;
+  text-align: center;
+  /* display: none;*/
+}
+
+table.traceHTable div.popdetails-page {
+  height: 30px;
+  display: block;
+}
+
+.recency-pop .ui-dialog-content table th,
+.ui-dialog-content .market-pop table th {
+  background: #ededed;
+  width: 122px;
+  line-height: 30px;
+  border-left: #d7d7d7 1px solid;
+  border-bottom: #d7d7d7 1px solid;
+  padding-right: 5px;
+  text-align: right;
+  vertical-align: top;
+}
+
+.recency-pop .ui-dialog-content table td,
+.ui-dialog-content .market-pop table td {
+  position: relative;
+  line-height: 30px;
+  padding-left: 10px;
+  border-left: #d7d7d7 1px solid;
+  border-right: #d7d7d7 1px solid;
+  border-bottom: #d7d7d7 1px solid;
+  vertical-align: top;
+}
+
+.recency-pop .ui-dialog-content table td em.desc {
+  display: block;
+  width: 500px;
+  max-height: 300px;
+  word-break: break-word;
+  overflow: auto;
+}
+
+.recency-pop .ui-dialog-content table.traceTable td em.desc {
+  width: 435px;
+  max-height: 150px;
+}
+
+.recency-pop .ui-dialog-content table td a.btnCancel {
+  background-color: #ff5243;
+  margin-left: 10px;
+  padding: 2px 10px 3px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.recency-pop .ui-dialog-content table td a.btnCancel.disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: default;
+}
+
+.recency-pop .ui-dialog-content table td a.btnCancel:hover {
+  background-color: #ff6052;
+}
+
+.recency-pop .ui-dialog-content table td a.btnCancel.disabled:hover {
+  background-color: #ccc;
+}
+
+ul.traceInner li {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  height: 30px;
+  border-bottom: #d7d7d7 1px solid;
+}
+
+ul.traceInner li input {
+  float: left;
+  cursor: pointer;
+  margin-top: 9px;
+  margin-left: 15px;
+}
+
+ul.traceInner li a {
+  color: #ff5243;
+}
+
+ul.traceInner li input.disabled {
+  cursor: default;
+}
+
+ul.traceInner li.traceHead {
+  border-top: 0px;
+  background: #ededed;
+}
+
+ul.traceInner li span,
+ul.traceInner li em {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 235px;
+  text-indent: 0px;
+}
+
+table.traceHTable ul.traceInner li span,
+ul.traceInner li em {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 155px;
+  text-indent: 0px;
+}
+
+ul.traceInner li em {
+  width: 75px;
+  border-left: 1px solid #d7d7d7;
+}
+
+table.traceTable {
+  display: none;
+}
+
+div.cancelTrace a {
+  background: #ff5243;
+  width: 100px;
+  height: 32px;
+  font-size: 16px;
+  float: right;
+  line-height: 32px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  text-indent: 0px;
+}
+
+div.cancelTrace a.disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: default;
+}
+
+a.traceview {
+  color: #ff5243;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.report-pop .day span {
+  box-sizing: border-box;
+  width: 125px;
+}
+
+#day_radio_team,
+#day_radio_person {
+  margin-left: 18px;
+  width: 20px;
+  border: none;
+}
+
+.report-pop .head .listhead .switch {
+  position: relative;
+  width: 133px;
+}
+
+.report-pop .head .day .switch {
+  position: relative;
+  width: 125px;
+}
+
+.report-pop .head .listhead .switch span {
+  position: absolute;
+  width: 7px;
+  height: 5px;
+  cursor: pointer;
+  right: 4px;
+}
+
+.up {
+  background: url('../images/report_up.png') no-repeat;
+  top: 11px;
+}
+
+.up.on {
+  background: url('../images/report_up_on.png') no-repeat;
+}
+
+.report-pop .head .listhead .switch.large span {
+  right: 0px;
+}
+
+.down {
+  background: url('../images/report_down.png') no-repeat;
+  top: 19px;
+}
+
+.down.on {
+  background: url('../images/report_down_on.png') no-repeat;
+}
+
+.panel-tab.dayReport {
+  margin-bottom: 30px;
+}
+
+.panel-tab.teamReport .list span {
+  box-sizing: border-box;
+  width: 133px;
+}
+
+.panel-tab.teamReport .list span.last {
+  width: 133px;
+  border-right: none;
+}
+
+.panel-tab .tip {
+  padding: 10px 15px 0px 0;
+  color: #b8b8b8;
+  text-align: left;
+}
+
+.panel-tab .list li.count {
+  background-color: #EAEAEA;
+}
+
+.report-tab li {
+  float: left;
+}
+
+.report-pop .teamReport .list span.username {
+  width: 130px;
+}
+
+.report-pop .teamReport .list span.large {
+  width: 85px;
+}
+
+.report-pop .head .listhead .w_p20 {
+  width: 20%;
+}
+
+.report-pop .head .listhead .w_p30 {
+  width: 30%;
+}
+.report-pop .head .listhead .w_p11 {
+  width: 11%;
+}
+.report-pop .head .listhead .w_p8 {
+  width: 8%;
+}
+
+.contractsWrap,
+.contractsWrap {
+  margin: 20px 15px;
+  color: #666666;
+  font-size: 12px;
+}
+
+.contractsWrap>.unSignedContract,
+.contractsWrap>.unSignedContract {
+  width: 442px;
+  height: 80px;
+  border: 1px solid #e4e4e4;
+  border-left: 3px solid #46c2c2;
+  position: relative;
+  margin: 15px 0;
+}
+
+.contractsWrap>.unSignedContract:nth-child(even),
+.contractsWrap>.unSignedContract:nth-child(even),
+.contractsWrap>.signedContract:nth-child(even),
+.contractsWrap>.signedContract:nth-child(even),
+.contractsWrap .eachCttWrap:nth-child(even) {
+  float: right;
+}
+
+.contractsWrap>.unSignedContract:nth-child(odd),
+.contractsWrap>.unSignedContract:nth-child(odd),
+.contractsWrap>.signedContract:nth-child(odd),
+.contractsWrap>.signedContract:nth-child(odd),
+.contractsWrap .eachCttWrap:nth-child(odd) {
+  float: left;
+}
+
+.contractsWrap>.signedContract,
+.contractsWrap>.signedContract {
+  width: 442px;
+  height: 80px;
+  border: 1px solid #e4e4e4;
+  border-left: 3px solid #dc5843;
+  position: relative;
+  margin: 15px 0;
+}
+
+.contractsWrap .ctxRowOne,
+.contractsWrap .ctxRowOne {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.contractsWrap .ctxRowWrap,
+.contractsWrap .ctxRowWrap {
+  position: absolute;
+  top: 34px;
+  left: 25px;
+}
+
+.contractsWrap .ctxRowThree,
+.contractsWrap .ctxRowThree {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+}
+
+.contractsWrap .signedSeal,
+.contractsWrap .signedSeal {
+  position: absolute;
+  left: 200px;
+  top: 20px;
+  width: 151px;
+  height: 42px;
+  -webkit-transform: rotate(351deg);
+  -moz-transform: rotate(351deg);
+  -ms-transform: rotate(351deg);
+  transform: rotate(351deg);
+  font-family: '微软雅黑 Bold', '微软雅黑';
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #dc5843;
+}
+
+.ui-dialog-content .signedSeal {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  width: 151px;
+  height: 42px;
+  -webkit-transform: rotate(351deg);
+  -moz-transform: rotate(351deg);
+  -ms-transform: rotate(351deg);
+  transform: rotate(351deg);
+  font-family: '微软雅黑 Bold', '微软雅黑';
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #dc5843;
+}
+
+.ui-dialog-content .signedSeal>.signedSealBg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 151px;
+  height: 42px;
+  background: inherit;
+  background-color: rgba(255, 255, 255, 0.529411764705882);
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #dc5843;
+  border-radius: 10px;
+  -moz-box-shadow: inset 0px 0px 10px #dc5843;
+  -webkit-box-shadow: inset 0px 0px 10px #dc5843;
+  box-shadow: inset 0px 0px 10px #dc5843;
+}
+
+.ui-dialog-content .signedSeal>.signedWords {
+  visibility: visible;
+  transform-origin: 73.5px 13px 0px;
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 147px;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+.contractsWrap .signedSeal>.signedSealBg,
+.contractsWrap .signedSeal>.signedSealBg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 151px;
+  height: 42px;
+  background: inherit;
+  background-color: rgba(255, 255, 255, 0.529411764705882);
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #dc5843;
+  border-radius: 10px;
+  -moz-box-shadow: inset 0px 0px 10px #dc5843;
+  -webkit-box-shadow: inset 0px 0px 10px #dc5843;
+  box-shadow: inset 0px 0px 10px #dc5843;
+}
+
+.contractsWrap .signedSeal>.signedWords,
+.contractsWrap .signedSeal>.signedWords {
+  visibility: visible;
+  transform-origin: 73.5px 13px 0px;
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 147px;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+.contractsWrap .unSignedSeal,
+.contractsWrap .unSignedSeal {
+  position: absolute;
+  left: 170px;
+  top: 23px;
+  width: 63px;
+  height: 63px;
+  -webkit-transform: rotate(352deg);
+  -moz-transform: rotate(352deg);
+  -ms-transform: rotate(352deg);
+  transform: rotate(352deg);
+  font-family: '微软雅黑 Bold', '微软雅黑';
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: #46c2c2;
+}
+
+.statusCircle0 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background: #2bd7f5;
+  border-radius: 50%;
+  margin-right: 24px;
+  margin-bottom: 1px;
+}
+
+.statusCircle1 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background: #87d068;
+  border-radius: 50%;
+  margin-right: 24px;
+  margin-bottom: 1px;
+}
+
+.statusCircle2 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background: #ebcf12;
+  border-radius: 50%;
+  margin-right: 24px;
+  margin-bottom: 1px;
+}
+
+.statusCircle3,
+.statusCircle4 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background: #cccccc;
+  border-radius: 50%;
+  margin-right: 24px;
+  margin-bottom: 1px;
+}
+
+.statusCircle5 {
+  height: 5px;
+  width: 5px;
+  display: inline-block;
+  background: #ff5500;
+  border-radius: 50%;
+  margin-right: 24px;
+  margin-bottom: 1px;
+}
+
+.m0_auto {
+  margin: 0 auto;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.contractsWrap .unSignedSeal>.unSignedSealBg,
+.contractsWrap .unSignedSeal>.unSignedSealBg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 151px;
+  height: 42px;
+  /*width: 63px;
+  height: 63px;*/
+  border: 2px solid #46c2c2;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .529411764705882);
+  /*border-radius: 50%;*/
+  -moz-box-shadow: inset 0px 0px 10px #46c2c2;
+  -webkit-box-shadow: inset 0px 0px 10px #46c2c2;
+  box-shadow: inset 0px 0px 10px #46c2c2;
+}
+
+.contractsWrap .unSignedSeal>.unSignedWords,
+.contractsWrap .unSignedSeal>.unSignedWords {
+  visibility: visible;
+  transform-origin: 29.5px 11.5px 0px;
+  position: absolute;
+  left: 50px;
+  top: 12px;
+  width: 59px;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: #000000;
+}
+
+.queryArea {
+  font-weight: 400;
+  font-size: 13px;
+  color: #333333;
+  margin: 20px 0 0 0;
+}
+
+.queryArea .queryArea_one {
+  padding: 0 15px;
+}
+
+.queryArea .queryArea_two {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.queryArea .queryArea_four {
+  padding: 0 15px;
+}
+
+.queryArea .queryArea_six {
+  margin-left: 15px;
+}
+
+.dvdResult {
+  margin: 0 15px 10px 0;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 13px;
+  color: #666666;
+}
+
+.dvdResult .receivedDvd {
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.dvdResult .frozenMoney {
+  font-weight: 700;
+}
+
+.panel-tab.dividents .item .list,
+.panel-tab.sifan .item .list,
+.panel-tab.daySalary .item .list {
+  text-align: center;
+}
+
+.panel-tab.dividents .item .list .listhead>.dvd:first-child,
+.panel-tab.daySalary .item .list .listhead>.dvd:first-child {
+  width: 20%;
+  position: relative;
+}
+
+.panel-tab.dividents .item .list .listhead>.dvd,
+.panel-tab.sifan .item .list .listhead>.dvd,
+.panel-tab.daySalary .item .list .listhead>.dvd {
+  width: 16%;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list ul.head>li.listhead>.dvd[rel="bonusCycTitle"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="bonusCycTitle"] {
+  width: 136px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="betAmount"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="betAmount"] {
+  width: 136px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="activePeople"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="activePeople"] {
+  width: 150px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="profitLossCount"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="profitLossCount"] {
+  width: 132px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusRatio"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="bonusRatio"] {
+  width: 130px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusAmount"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="bonusAmount"] {
+  width: 156px;
+}
+
+.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="actionStatusDetail"],
+.panel-tab.dividents .item[name="myDevident"] .list ul.data>li>span[rel="actionStatusDetail"] {
+  width: 160px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd>span {
+  width: 7px;
+  height: 5px;
+  position: absolute;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusCycTitle"]>span {
+  right: 25px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="betAmount"]>span {
+  right: 15px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="activePeople"]>span {
+  right: 12px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="activePeople"]>em.activePeopleQuestion {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 50%;
+  background: #edc45a;
+  color: #4b4b4a!important;
+  font-weight: 900;
+  font-size: 14px;
+  right: -10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="profitLossCount"]>span {
+  right: 15px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusRatio"]>span {
+  right: 25px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusAmount"]>span {
+  right: 35px;
+}
+
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="bonusAmount"]>em.dvdDetailQuestion {
+  right: 10px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="myDevident"] .list .listhead>.dvd[rel="actionStatusDetail"]>span {
+  right: 15px;
+}
+
+
+.panel-tab.daySalary .item .list .listhead>.dvd>span {
+  width: 7px;
+  height: 5px;
+  right: 35px;
+  position: absolute;
+}
+
+.panel-tab.dividents .item .list .listhead>.lct,
+.panel-tab.sifan .item .list .listhead>.lct,
+.panel-tab.daySalary .item .list .listhead>.lct {
+  width: 15%;
+}
+
+.panel-tab.dividents .item .list .listhead>.lct:last-child,
+.panel-tab.sifan .item .list .listhead>.lct:last-child,
+.panel-tab.daySalary .item .list .listhead>.lct:last-child {
+  width: 25%;
+}
+
+.panel-tab .lctQuery,
+.panel-tab .lctQuery {
+  margin: 20px 0 20px 10px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  color: #666666;
+  font-size: 13px;
+}
+
+.panel-tab .lctQuery .lctName,
+.panel-tab .lctQuery .lctName {
+  width: 97px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+  text-align: left;
+  margin-right: 15px;
+}
+
+#admin_report>div.panel-tab.sifan .item[name="lowerDayDevidents"] div.queryLowerArea>input.dayStart,
+#admin_report>div.panel-tab.sifan .item[name="lowerDayDevidents"] div.queryLowerArea>input.dayEnd,
+#admin_report>div.panel-tab.daySalary .item[name="lowerDayDevidents"] div.queryLowerArea>input.dayStart,
+#admin_report>div.panel-tab.daySalary .item[name="lowerDayDevidents"] div.queryLowerArea>input.dayEnd {
+  width: 150px;
+  height: 25px;
+  font-family: 'Arial Normal', Arial;
+  font-weight: 400;
+  font-size: 13px;
+  color: #000;
+}
+
+.report-pop .dividents input.datapick,
+.report-pop .sifan input.datapick,
+.report-pop .daySalary input.datapick {
+  background: url(../images/userinfo1.png) -35px -20px no-repeat;
+}
+
+.panel-tab .lctQuery .lctTimeStart {
+  width: 150px;
+  height: 25px;
+  margin-left: 10px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.panel-tab.lctQuery .lctTimeEnd {
+  width: 150px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+  margin-right: 12px;
+}
+
+.queryLowerArea_three,
+.queryLowerArea_five,
+.queryArea_three,
+.queryArea_five {
+  height: 25px;
+}
+
+.panel-tab .lctQuery .lctState {
+  width: 108px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-indent: 10px;
+  text-decoration: none;
+  color: #666666;
+}
+
+.panel-tab .lctQuery .lctButton {
+  width: 115px;
+  height: 34px;
+  margin-left: 15px;
+}
+
+.panel-tab .lctQuery .lctCreateButton {
+  font-family: '微软雅黑 Bold', '微软雅黑';
+  font-weight: 700;
+  font-size: 12px;
+  color: #FFFFFF;
+  text-align: center;
+  width: 89px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
+  background-color: rgba(255, 102, 0, 1);
+  border: none;
+  border-radius: 3px;
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+  cursor: pointer;
+}
+
+.queryLowerArea {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  color: #333333;
+  margin: 20px 0 0 0;
+}
+
+.queryLowerArea .queryLowerArea_one {
+  padding: 0 15px;
+}
+
+.queryLowerArea .queryLowerArea_two {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.queryLowerArea .queryLowerArea_four {
+  padding: 0 15px;
+}
+
+.queryLowerArea .queryLowerArea_six {
+  margin-left: 15px;
+}
+
+.dvdLowerResult {
+  margin: 10px 15px 5px 0;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 13px;
+  color: #666666;
+}
+
+.dvdLowerResult .receivedDvdLower {
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.dvdLowerResult .frozenMoneyLower {
+  font-weight: 700;
+}
+
+.queryLowerArea .lowerDvdPercent {
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  color: #666666;
+  margin-left: 20px;
+}
+
+.queryLowerArea .lowerDvdInputPercent {
+  width: 33px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+  text-align: left;
+}
+
+.queryLowerArea .lowerDvdName {
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  color: #666666;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.queryLowerArea .lowerDvdInputName {
+  width: 97px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000000;
+  text-align: left;
+}
+
+.panel-tab.dividents .item .list .listhead>.ldd:first-child,
+.panel-tab.sifan .item .list .listhead>.ldd:first-child,
+.panel-tab.daySalary .item .list .listhead>.ldd:first-child {
+  width: 4%;
+  position: relative;
+}
+
+.panel-tab.dividents .item .list .listhead>.ldd,
+.panel-tab.sifan .item .list .listhead>.ldd,
+.panel-tab.daySalary .item .list .listhead>.ldd {
+  width: 12%;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd:first-child,
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span:first-child {
+  width: 32px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="lowerUserName"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="lowerUserName"] {
+  width: 110px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusCycTitle"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="bonusCycTitle"] {
+  width: 110px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="betAmount"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="betAmount"] {
+  width: 110px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="activePeople"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="activePeople"] {
+  width: 140px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="profitLossCount"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="profitLossCount"] {
+  width: 106px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusRatio"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="bonusRatio"] {
+  width: 96px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusAmount"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="bonusAmount"] {
+  width: 110px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="dvdLowerStatus"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="dvdLowerStatus"] {
+  width: 66px;
+}
+
+.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="dvdLowerManipulate"],
+.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span[rel="dvdLowerManipulate"] {
+  width: 120px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span.select-reverse {
+  width: 252px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list ul.data>li>span.batchSendWrap {
+  width: 110px;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusCycTitle"]>span {
+  right: 15px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="betAmount"]>span {
+  right: 10px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="activePeople"]>span {
+  right: 10px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="activePeople"]>em.activePeopleLowerQuestion {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 50%;
+  background: #edc45a;
+  color: #4b4b4a!important;
+  font-weight: 900;
+  font-size: 14px;
+  right: -10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="profitLossCount"]>span {
+  right: 8px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusRatio"]>span {
+  right: 10px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusAmount"]>span {
+  right: 18px!important;
+}
+
+#admin_report>div.panel-tab.dividents .item[name="lowerDevidents"] .list .listhead>.ldd[rel="bonusAmount"]>em.dvdLowerDetailQuestion {
+  right: 0;
+}
+
+
+.panel-tab.dividents .item .list .listhead>.ldd>span,
+.panel-tab.sifan .item .list .listhead>.ldd>span,
+.panel-tab.daySalary .item .list .listhead>.ldd>span {
+  width: 7px;
+  height: 5px;
+  position: absolute;
+  right: 20px;
+}
+
+.panel-tab .data li .w_p87,
+.panel-tab .data li .w_p87 {
+  width: 87%;
+}
+
+.panel-tab .data li .w_p88,
+.panel-tab .data li .w_p88 {
+  width: 88%;
+}
+
+.panel-tab .data li .w_p30,
+.panel-tab .data li .w_p30 {
+  width: 30%;
+}
+
+.panel-tab .data li .w_p20,
+.panel-tab .data li .w_p20 {
+  width: 20%;
+}
+
+.panel-tab .data li .w_p16,
+.panel-tab .data li .w_p16 {
+  width: 16%;
+}
+
+.panel-tab .data li .w_p11,
+.panel-tab .data li .w_p11 {
+  width: 11%;
+}
+
+.panel-tab .data li .w_p9,
+.panel-tab .data li .w_p9 {
+  width: 9%;
+}
+
+.panel-tab .data li .w_p8,
+.panel-tab .data li .w_p8 {
+  width: 8%;
+}
+
+.panel-tab .data li .w_p4,
+.panel-tab .data li .w_p4 {
+  width: 4%;
+}
+
+.panel-tab .data li .w_p12,
+.panel-tab .data li .w_p12 {
+  width: 12%;
+}
+
+.panel-tab .data li .w_p13,
+.panel-tab .data li .w_p13 {
+  width: 13%;
+}
+
+.panel-tab .data li .w_p18,
+.panel-tab .data li .w_p18 {
+  width: 18%;
+}
+
+.panel-tab .data li .w_p15,
+.panel-tab .data li .w_p15 {
+  width: 15%;
+}
+
+.panel-tab .data li .w_p25,
+.panel-tab .data li .w_p25 {
+  width: 25%;
+}
+
+.panel-tab .data li .w_p28,
+.panel-tab .data li .w_p28 {
+  width: 28%;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.m0_10 {
+  margin: 0 10px;
+}
+
+.mr0 {
+  margin-right: 0;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(3)>div.list>ul.data>li>span>em,
+#admin_report>div.panel-tab.sifan>div:nth-child(3)>div.list>ul.data>li>span>em,
+#admin_report>div.panel-tab.daySalary>div:nth-child(3)>div.list>ul.data>li>span>em {
+  color: #01b0ff;
+}
+
+.dividents .data li span>a {
+  text-decoration: underline;
+}
+
+.ui-dialog-content .rules {
+  margin: 20px 0 20px 25px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.ui-dialog-content .rulesTitle {
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 14px;
+  color: #333333;
+}
+
+.ui-dialog-content .rulesOne,
+.ui-dialog-content .rulesTwo,
+.ui-dialog-content .rulesThree,
+.ui-dialog-content .rulesFour,
+.ui-dialog-content .rulesP {
+  margin-bottom: 15px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+  text-indent: 96px;
+}
+
+.ui-dialog-content .rulesFive {
+  margin-bottom: 20px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+  text-indent: 84px;
+  word-break: break-all;
+}
+
+.ui-dialog-content .rulesFive span {
+  display: inline-block;
+  width: 77%;
+  text-indent: 0;
+  vertical-align: top;
+}
+
+.ui-dialog-content .rulesSix {
+  margin-bottom: 22px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+  text-indent: 60px;
+}
+
+.ui-dialog-content .rulesSeven {
+  text-align: center;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.ui-dialog-content .rulesSeven .dutyDeclare {
+  color: #4543CB;
+  cursor: pointer;
+}
+
+.ui-dialog-content .rulesEight {
+  /*position: absolute;*/
+  left: 0px;
+  bottom: 0px;
+  font-family: '微软雅黑 Oblique', '微软雅黑';
+  font-weight: 400;
+  font-style: oblique;
+  font-size: 12px;
+}
+
+[id='content:dutyDeclare'] .dutyBack {
+  position: absolute;
+}
+
+[id='content:dutyDeclare'] .dutyBack:hover {
+  text-decoration: underline;
+  color: green;
+  cursor: pointer;
+}
+
+.ui-dialog-content table {
+  width: 100%;
+}
+
+.ui-dialog-content div.caption {
+  font-family: '微软雅黑 Oblique', '微软雅黑';
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(102, 102, 102);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ui-dialog-content .wrapDuty {
+  /*overflow-y: scroll;*/
+  font-family: '宋体 Regular', '宋体';
+  font-weight: 400;
+  font-size: 13px;
+  color: #333333;
+  border: 1px solid #333333;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+[id="content:lctCreateButton"] p,
+[id="content:lctCreateButton"] .cancalCondition,
+[id="content:modifyLowerContract"] p,
+[id="content:modifyLowerContract"] .cancalCondition,
+[id="content:createByThis"] p,
+[id="content:createByThis"] .cancalCondition {
+  margin-bottom: 15px;
+  font-family: '微软雅黑 Regular', '微软雅黑';
+  font-weight: 400;
+  font-size: 12px;
+  text-indent: 38px;
+  margin-left: -10px;
+}
+
+[id="content:lctCreateButton"] p .proxyName,
+[id="content:modifyLowerContract"] p .proxyName,
+[id="content:createByThis"] p .proxyName {
+  width: 152px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #666666;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] p .moneyStartDate,
+[id="content:modifyLowerContract"] p .moneyStartDate,
+[id="content:createByThis"] p .moneyStartDate {
+  width: 132px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  text-decoration: none;
+  color: #666666;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] p .dayBetMoneyOne,
+[id="content:lctCreateButton"] p .dayBetMoneyTwo,
+[id="content:lctCreateButton"] p .dayBetMoneyThree,
+[id="content:modifyLowerContract"] p .dayBetMoneyOne,
+[id="content:modifyLowerContract"] p .dayBetMoneyTwo,
+[id="content:modifyLowerContract"] p .dayBetMoneyThree,
+[id="content:createByThis"] p .dayBetMoneyOne,
+[id="content:createByThis"] p .dayBetMoneyTwo,
+[id="content:createByThis"] p .dayBetMoneyThree {
+  width: 100px;
+  height: 25px;
+  background-color: #F2F2F2;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666666;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] p .lostMoneyOne,
+[id="content:lctCreateButton"] p .lostMoneyTwo,
+[id="content:lctCreateButton"] p .lostMoneyThree,
+[id="content:modifyLowerContract"] p .lostMoneyOne,
+[id="content:modifyLowerContract"] p .lostMoneyTwo,
+[id="content:modifyLowerContract"] p .lostMoneyThree,
+[id="content:createByThis"] p .lostMoneyOne,
+[id="content:createByThis"] p .lostMoneyTwo,
+[id="content:createByThis"] p .lostMoneyThree {
+  width: 50px;
+  height: 25px;
+  background-color: #F2F2F2;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666666;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] p .activePeople,
+[id="content:lctCreateButton"] p .activePeople,
+[id="content:lctCreateButton"] p .activePeople,
+[id="content:modifyLowerContract"] p .activePeople,
+[id="content:modifyLowerContract"] p .activePeople,
+[id="content:modifyLowerContract"] p .activePeople,
+[id="content:createByThis"] p .activePeople,
+[id="content:createByThis"] p .activePeople,
+[id="content:createByThis"] p .activePeople {
+  width: 50px;
+  height: 25px;
+  background-color: #F2F2F2;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666666;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] p .dvdPerOne,
+[id="content:lctCreateButton"] p .dvdPerTwo,
+[id="content:lctCreateButton"] p .dvdPerThree,
+[id="content:modifyLowerContract"] p .dvdPerOne,
+[id="content:modifyLowerContract"] p .dvdPerTwo,
+[id="content:modifyLowerContract"] p .dvdPerThree,
+[id="content:createByThis"] p .dvdPerOne,
+[id="content:createByThis"] p .dvdPerTwo,
+[id="content:createByThis"] p .dvdPerThree {
+  width: 50px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000000;
+  text-align: left;
+}
+
+[id="content:lctCreateButton"] .cancalCondition textarea,
+[id="content:modifyLowerContract"] .cancalCondition textarea,
+[id="content:createByThis"] .cancalCondition textarea {
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(119, 119, 119, 1);
+  border-radius: 3px;
+  height: 65px;
+  width: 450px;
+  vertical-align: top;
+}
+
+.m0_4 {
+  margin: 0 4px;
+}
+
+.m0_12 {
+  margin: 0 12px;
+}
+
+.red {
+  color: red;
+}
+
+[id="content:lctCreateButton"] .dutyDetail,
+[id="content:modifyLowerContract"] .dutyDetail,
+[id="content:createByThis"] .dutyDetail {
+  position: absolute;
+  bottom: -20px;
+  left: 170px;
+}
+
+[id="content:lctCreateButton"] .dutyDetail input,
+[id="content:modifyLowerContract"] .dutyDetail input,
+[id="content:createByThis"] .dutyDetail input {
+  vertical-align: middle;
+}
+
+[id="content:lctCreateButton"] .dutyDetail>em:last-child,
+[id="content:modifyLowerContract"] .dutyDetail>em:last-child,
+[id="content:createByThis"] .dutyDetail>em:last-child {
+  color: #4543CB;
+  cursor: pointer;
+}
+
+[id="content:lctCreateButton"] .dutyDetail>em:last-child:hover,
+[id="content:modifyLowerContract"] .dutyDetail>em:last-child:hover,
+[id="content:createByThis"] .dutyDetail>em:last-child:hover {
+  text-decoration: underline;
+}
+
+.item[name="lowerDevidents"] .data li:last-child,
+.item[name="lowerDayDevidents"] .data li:last-child {
+  background-color: #484848;
+}
+
+.item[name="lowerDevidents"] .data li:last-child>span,
+.item[name="lowerDayDevidents"] .data li:last-child>span {
+  color: whitesmoke;
+}
+
+.item[name="lowerDevidents"] .data li .w_p87,
+.item[name="lowerDayDevidents"] .data li .w_p87 {
+  border-right: none;
+  text-align: left;
+}
+
+.item[name="lowerDevidents"] .data li .w_p88,
+.item[name="lowerDayDevidents"] .data li .w_p88 {
+  border-right: none;
+  text-align: left;
+}
+
+.item[name="lowerDevidents"] .data li:last-child .selectAll,
+.item[name="lowerDayDevidents"] .data li:last-child .selectAll {
+  margin: 0 20px 0 15px;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  background: #737bf8;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.item[name="lowerDevidents"] .data li:last-child .reverseSelect,
+.item[name="lowerDayDevidents"] .data li:last-child .reverseSelect {
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  background: #737bf8;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.item[name="myDayDevident"] .queryArea .dayStart,
+.item[name="myDayDevident"] .queryArea .dayEnd {
+  width: 150px;
+  height: 25px;
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  color: #000000;
+}
+
+.queryArea_five {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-size: 13px;
+  color: #000000;
+}
+
+.readLowerContract:hover,
+.modifyLowerContract:hover,
+.cancelLowerContract:hover,
+.createByThis:hover {
+  cursor: pointer;
+  color: greenyellow;
+  text-decoration: underline;
+}
+
+.green {
+  color: green;
+}
+
+.contractsWrap>div:hover {
+  cursor: pointer;
+}
+
+
+/*我的分红*/
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd>span {
+  right: 20%;
+  cursor: pointer;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd:first-child>span {
+  right: 30%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd:nth-child(2)>span {
+  right: 21%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd:nth-child(3)>span {
+  right: 21%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd:nth-child(4)>span {
+  right: 24%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd:nth-child(5)>span {
+  right: 24%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(2)>div.list>ul.head>li>span.dvd>.dvdDetailQuestion {
+  position: absolute;
+  right: 4px;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(3)>span {
+  right: 30%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(4)>span {
+  right: 13%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(5)>span {
+  right: 13%;
+}
+
+#admin_report>div.panel-tab.dividents>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(6)>span,
+#admin_report>div.panel-tab.dividents>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(7)>span {
+  right: 18%;
+}
+
+.dvdLowerDetailQuestion {
+  position: absolute;
+  right: 4px;
+}
+
+.bonusAmount:hover,
+.bonusRatio:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#admin_report>div.panel-tab.dividents .list ul.data li span a,
+#admin_report>div.panel-tab.daySalary .list ul.data li span a {
+  color: #01b0ff;
+}
+
+.actionStatusDetail {
+  color: #01b0ff!important;
+}
+
+.dvdQuestion,
+.dvdDetailQuestion,
+.dvdLowerResultQuestion,
+.dvdLowerDetailQuestion,
+.queBonusAmount,
+.queBonusDayAmount,
+.questionMyDayDvd,
+.questionLowerDayDvd {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 50%;
+  background: #edc45a;
+  color: #4b4b4a!important;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.dvdDetailQuestion,
+.dvdLowerDetailQuestion,
+.queBonusAmount,
+.queBonusDayAmount {
+  top: 10px;
+}
+
+.queBonusAmount {
+  position: absolute;
+  /* right: 4px; */
+}
+
+.queBonusDayAmount {
+  position: absolute;
+  right: 0;
+}
+
+button.addRule,
+button.addRuleFirst,
+button.reduceRule {
+  display: inline-block;
+  width: 16px;
+  line-height: 8px;
+  height: 16px;
+  text-align: center;
+  /*vertical-align: middle;*/
+  border-color: #737bf8;
+  background-color: white;
+  color: #737bf8;
+}
+
+#admin_report>div.panel-tab.dividents ul.data>li>span>em.sendLowerDvd,
+.sendLowerDvd,
+.batchSendLowerDvd {
+  padding: 2px 14px;
+  background: #737bf8;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+#admin_report>div.panel-tab.dividents ul.data>li>span>em.sendLowerDvd:hover,
+.sendLowerDvd:hover,
+batchSendLowerDvd:hover {
+  text-decoration: underline;
+}
+
+.queryLowerArea_six,
+.queryArea_six,
+.lctButton {
+  /*color: white;
+  background: #737bf8;
+  padding: 5px 10px;
+  border-radius: 5px;*/
+  display: inline-block;
+  background: url(../images/userinfo1.png) -567px -165px no-repeat;
+  width: 100px;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 10px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.queryLowerArea_six:hover,
+.queryArea_six:hover {
+  text-decoration: underline;
+  color: deepskyblue;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li>span.dvd:first-child>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li>span.dvd:first-child>span {
+  right: 38%;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(2)>span,
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(3)>span
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(2)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(3)>span {
+  right: 25%;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(4)>span,
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(5)>span
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(4)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li>span.dvd::nth-child(5)>span {
+  right: 21%;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(3)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(3)>span {
+  right: 30%;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(4)>span,
+#admin_report>div.panel-tab.sifan>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(5)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(4)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(5)>span {
+  right: 19%;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(6)>span,
+#admin_report>div.panel-tab.sifan>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(7)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(6)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(4)>div.list>ul.head>li>span.ldd:nth-child(7)>span {
+  right: 13%;
+}
+
+.ui-dialog-content .textCenter td {
+  border: 1px solid;
+  font-size: 12px;
+  padding: 5px 20px;
+}
+
+.eachCttWrap {
+  padding: 10px 10px 30px 5px;
+  position: relative;
+  width: 480px;
+  border: 2px solid #cccccc;
+  background: #eff0f1;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.eachCttWrap .contractRight .rulesTopWrap {
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 10px;
+  width: 380px;
+}
+
+.eachCttWrap .contractRight .ruleTitle {
+  color: #7c3434;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.eachCttWrap .contractRight .ruleDate {
+  font-size: 12px;
+}
+
+.eachCttWrap .contractRight .rulesContentWrap {
+  border-bottom: 1px solid #d2d2d2;
+  height: 70px;
+  width: 380px;
+}
+
+.eachCttWrap .contractRight .rule {
+  padding-top: 13.5px;
+  height: 27px;
+}
+
+.eachCttWrap .linkCttDetail {
+  position: absolute;
+  right: 14px;
+  bottom: 9px;
+}
+
+.eachCttWrap .linkCttDetail:hover {
+  color: lightcoral;
+  text-decoration: underline;
+}
+
+.eachCttWrap .stampSeal,
+.ui-dialog .stampSeal {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+}
+
+.eachCttWrap:nth-child(even) {
+  float: right;
+}
+
+.eachCttWrap:nth-child(odd) {
+  float: left;
+}
+
+input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.ellipsis {
+  overflow: hidden!important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toolTip {
+  position: absolute;
+  border: 1px solid #f2ea91;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  background: #fef6e1;
+}
+
+.toolTip p {
+  line-height: 18px;
+}
+
+.triangle {
+  position: absolute;
+  border: 5px solid transparent;
+  border-top: 5px solid #f2ea91;
+  bottom: -11px;
+}
+
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li.listhead>span.dvd:nth-child(2)>span,
+#admin_report>div.panel-tab.sifan>div:nth-child(2)>div.list>ul.head>li.listhead>span.dvd:nth-child(3)>span, 
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li.listhead>span.dvd:nth-child(2)>span,
+#admin_report>div.panel-tab.daySalary>div:nth-child(2)>div.list>ul.head>li.listhead>span.dvd:nth-child(3)>span {
+  right: 43px;
+}
+
+[id="title:lctCreateButton"],
+[id="title:readLowerContract"],
+[id="title:createByThis"],
+[id="title:showContract"],
+[id="title:showDayContract"],
+[id="title:modifyLowerContract"],
+[id="title:dutyDeclare"] {
+  color: #8087f8;
+}
+
+
+/*弹窗左边三角形箭头隐藏*/
+
+.ui-popup-right-top .ui-dialog-arrow-a,
+.ui-popup-right-top .ui-dialog-arrow-b {
+  visibility: hidden;
+}
+
+button[i-id="modifyButton"],
+button[i-id="cancelButton"],
+button[i-id="createButton"] {
+  transform: translateY(-6px);
+}
+
+.ui-dialog-footer button {
+  border-bottom: none;
+}
+
+.contractModel {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contractModel span.model1,
+.contractModel span.model2 {
+  padding: 5px 20px;
+  background: gray;
+  color: black;
+  cursor: pointer;
+}
+
+.contractModel span.model1.on,
+.contractModel span.model2.on {
+  padding: 5px 20px;
+  background: #ff6052;
+  color: #fff;
+  cursor: pointer;
+}
+
+p.ruleFlag {
+  font-size: 0;
+}
+
+p.ruleFlag * {
+  font-size: 12px;
+}
+
+p.ruleFlag select[name="dvdPerBonusSelect"] {
+  width: 60px;
+  height: 25px;
+  background-color: #F2F2F2;
+  font-family: 'Arial Normal', Arial;
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #666;
+  text-align: left;
+  margin: 0 4px;
+}

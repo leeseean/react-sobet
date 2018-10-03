@@ -129,10 +129,26 @@
     "html-webpack-plugin": "2.29.0"
   },
   "proxy": {
-    "/api": {
+    "/dev": {
+      "target": "http://www.mochen111.net/",
+      "pathRewrite": {
+        "^/dev": ""
+      },
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/dev/jsonp": {
+      "target": "http://www.mochen111.net/sso",
+      "pathRewrite": {
+        "^/dev/jsonp": ""
+      },
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/online": {
       "target": "http://www.modeng188.com/",
       "pathRewrite": {
-        "^/api": ""
+        "^/online": ""
       },
       "secure": false,
       "changeOrigin": true

@@ -1,0 +1,284 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    min-width:1320px;
+}
+body{
+    font-family:"Microsoft Yahei",Arial,Helvetica,sans-serif;
+}
+.header_bg{
+    width:100%;
+    min-width:1320px;
+}
+.header_bg .top{
+    height:40px;
+    background-color:#010101;
+    width:100%;
+}
+.header_bg .top .m{
+    width:1200px;
+    margin:0 auto;
+    height:100%;
+    position: relative;
+}
+.header_bg .bottom .m{
+    width:1300px;
+    margin:0 auto;
+    height:100%;
+    text-align: center;
+}
+.header_bg .bottom .m img{
+    margin-top: 30px;
+}
+.header_bg .top .logo{
+    cursor:pointer;
+    display:inline-block;
+    width:150px;
+    height:36px;
+    margin-top: 5px;
+    background:url(/static/activity/thailand/images/logo.png) no-repeat left center;
+}
+.header_bg .top .time{
+    position: absolute;
+    left: 340px;
+    top: 20px;
+}
+.header_bg .top .time>div{
+    display: inline-block;
+}
+.header_bg .top .time .prev:before{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -133px -70px;
+    position: absolute;
+    left: -12px;
+    bottom: 0;
+}
+.header_bg .top .time .prev a{
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #2d1a5a;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 22px;
+}
+.header_bg .top .time .now{
+    background: #28075e;
+    width: 310px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 22px;
+    text-align: center;
+}
+.header_bg .top .time .now:before{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/sanjiao.png") no-repeat -133px -70px;
+    position: absolute;
+    left: 90px;
+    bottom: 0;
+}
+.header_bg .top .time .now:after{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/sanjiao.png") no-repeat -99px -70px;
+    position: absolute;
+    right: 90px;
+    bottom: 0;
+}
+.header_bg .top .time .now span{
+    color: #fff;
+    font-size: 16px;
+}
+.header_bg .top .time .now em{
+    color: #b3954d;
+    font-style: normal;
+    font-size: 14px;
+}
+.header_bg .top .time .next{
+    width: 80px;
+    height: 30px;
+    background: #2d1a5a;
+    color: #41306a;
+    text-align: center;
+    line-height: 30px;
+}
+.header_bg .top .time .next a{
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #2d1a5a;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 22px;
+}
+.header_bg .top .time .next:after{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -99px -70px;
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+}
+.header_bg .bottom{
+    height:120px;
+    background:url(/static/activity/thailand/images/b.png) repeat left center;
+    width:100%;
+}
+.main_bg{
+    width:100%;
+    min-width:1320px;
+    background:url(/static/activity/thailand/images/main2.jpg) no-repeat top;
+    background-size: cover;
+    padding-bottom: 20px;
+}
+.main_bg .m{
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.main_bg .m .activeVideo h2{
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    font-weight: normal;
+}
+.main_bg .m .activeVideo h2 span{
+    font-size: 24px;
+    margin-right: 20px;
+}
+.main_bg .m .activeVideo .video{
+    width: 604px;
+    height: 343px;
+    margin: 0 auto 27px;
+    border: 2px solid #a16734;
+    border-radius: 2px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.40);
+}
+#video{
+    cursor: pointer;
+}
+.main_bg .m .activePic{
+    width: 1100px;
+    margin: 0 auto;
+    background: url("/static/activity/thailand/images/twoPicBg.png");
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+}
+.main_bg .m .activePic>img{
+    margin: -20px auto;
+}
+.main_bg .m .activePic h3{
+    position: absolute;
+    left: 386px;
+    top: 24px;
+    font-size: 28px;
+    color: #f52222;
+    font-weight: 600;
+}
+.main_bg .m .activePic h3 span{
+    font-size: 22px;
+    color: #f52222;
+    margin-right: 20px;
+}
+.main_bg .m .activePic .pic{
+    width: 1000px;
+    padding: 0 5px;
+    margin: 30px auto;
+    background: #fdfdfd;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.40);
+}
+.main_bg .m .activePic .pic ul{
+    width:300px;
+    float: left;
+    margin: 20px 15px 20px;
+}
+.main_bg .m .activePic .pic li{
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.main_bg .m .contact p{
+    color: #343131;
+    height: 40px;
+    line-height: 40px;
+}
+.main_bg .m .contact a{
+    display: inline-block;
+    text-align: center;
+    line-height: 55px;
+    width: 216px;
+    height: 62px;
+    background: url("/static/activity/thailand/images/lianxiwomen.png");
+    color: #fff;
+    font-size: 18px;
+}
+.clear{
+    clear: both;
+}
+.func{
+    width: 50px;
+    position: fixed;
+    left: 50%;
+    margin-left: 610px;
+    top: 50%;
+    margin-top: -120px;
+}
+.func a{
+    display: inline-block;
+    width: 45px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.footer{
+    height:75px;
+    background-color: #fff;
+    font-size: 12px;
+    line-height: 75px;
+    color:#787878;
+}
+.footer .m{
+    width:1100px;
+    margin: 0 auto;
+}
+.footer .m .contactUs{
+    float: left;
+}
+.footer .m .contactUs a{
+    color:#787878;
+}
+.footer .m .copyright{
+    float: right;
+}

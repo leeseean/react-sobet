@@ -1,5 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
+import LazyLoad from 'react-lazy-load';
 import { getSlotGamesData } from '../../utils/ajax';
 import './allGame.styl';
 
@@ -10,7 +11,10 @@ class AllGame extends React.Component {
         platform: 'all',
         progressive: '0',
         payLine: '0',
-        typeId: '0'
+        typeId: '0',
+        currPage: 1,
+        isLastPage: false,
+        showLoadMore: true
     }
     componentDidMount() {
         this.filterGamesByPlatform();
@@ -28,6 +32,8 @@ class AllGame extends React.Component {
         }).then(res => {
             if (res.data.code === 0) {
                 this.setState({
+                    currPage: 1,
+                    isLastPage: res.data.data.isLastPage,
                     gamesData: res.data.data.list
                 });
             }
@@ -44,6 +50,8 @@ class AllGame extends React.Component {
             if (res.data.code === 0) {
                 this.setState({
                     platform,
+                    currPage: 1,
+                    isLastPage: res.data.data.isLastPage,
                     gamesData: res.data.data.list
                 });
             }
@@ -60,6 +68,8 @@ class AllGame extends React.Component {
         }).then(res => {
             if (res.data.code === 0) {
                 this.setState({
+                    currPage: 1,
+                    isLastPage: res.data.data.isLastPage,
                     gamesData: res.data.data.list
                 });
             }
@@ -79,8 +89,39 @@ class AllGame extends React.Component {
         }).then(res => {
             if (res.data.code === 0) {
                 this.setState({
+                    currPage: 1,
+                    isLastPage: res.data.data.isLastPage,
                     gamesData: res.data.data.list
                 });
+            }
+        });
+    }
+    loadMore = () => {
+        if (this.state.isLastPage) {
+            return;
+        }
+        getSlotGamesData({
+            currPage: this.state.currPage + 1,
+            pageSize: 15,
+            typeId: this.state.typeId,
+            isProgressive: this.state.progressive,
+            payLine: this.state.payLine,
+            chsName: this.state.searchValue
+        }).then(res => {
+            if (res.data.code === 0) {
+                this.setState((prevState) => {
+                    return {
+                        showLoadMore: false,
+                        currPage: prevState.currPage + 1,
+                        isLastPage: res.data.data.isLastPage,
+                        gamesData: prevState.gamesData.concat(res.data.data.list)
+                    };
+                });
+                setTimeout(() => {
+                    this.setState({
+                        showLoadMore: true
+                    });
+                }, 300);
             }
         });
     }
@@ -91,7 +132,7 @@ class AllGame extends React.Component {
                 <div className="game-item">
                     <div className="game-item-img">
                         <img className={isProgressive ? 'game-item-img--short' : null} src={imgUrl} alt="" />
-                        
+
                     </div>
                     <div className="game-item-bg">
                         <div className="game-item-bg-bottom">
@@ -106,7 +147,7 @@ class AllGame extends React.Component {
                         <div style={{ color: '#29cb85', marginTop: '12px', background: `url(${require('../../images/slot/playtech-logo-c.png')}) 8px center no-repeat` }}>{chsName}</div>
                         <a href={gameUrl} target="_blank"><div className="play-game">立即游戏</div></a>
                         <a href={gameTestUrl} target="_blank"><div className="test-game">免费试玩</div></a>
-                        
+
                     </div>
                 </div>
             );
@@ -151,22 +192,32 @@ class AllGame extends React.Component {
                         </select>
                     </div>
                     <div style={{ clear: 'both' }}></div>
-                    <ul id="show_tiger">
-                        <li className="tiger_poc"><em>奖励</em>
-                            <a className={`${this.state.progressive === '0' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail('0', this.state.payLine)}>全部</a>
-                            <a className={`${this.state.progressive ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(true, this.state.payLine)}>有奖池</a>
-                            <a className={`${!this.state.progressive ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(false, this.state.payLine)}>无奖池</a>
-                        </li>
-                        <li className="tiger_por"><em>线数</em>
-                            <a className={`${this.state.payLine === '0' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '0')}>全部</a>
-                            <a className={`${this.state.payLine === '1' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '1')}>经典一线</a>
-                            <a className={`${this.state.payLine === '2' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '2')}>3-25条线</a>
-                            <a className={`${this.state.payLine === '3' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '3')}>30-50条线</a>
-                            <a className={`${this.state.payLine === '4' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '4')}>50+</a></li>
-                    </ul>
+                    {
+                        this.state.typeId === '10' ? (<ul id="show_tiger">
+                            <li className="tiger_poc"><em>奖励</em>
+                                <a className={`${this.state.progressive === '0' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail('0', this.state.payLine)}>全部</a>
+                                <a className={`${this.state.progressive === true ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(true, this.state.payLine)}>有奖池</a>
+                                <a className={`${this.state.progressive === false ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(false, this.state.payLine)}>无奖池</a>
+                            </li>
+                            <li className="tiger_por"><em>线数</em>
+                                <a className={`${this.state.payLine === '0' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '0')}>全部</a>
+                                <a className={`${this.state.payLine === '1' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '1')}>经典一线</a>
+                                <a className={`${this.state.payLine === '2' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '2')}>3-25条线</a>
+                                <a className={`${this.state.payLine === '3' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '3')}>30-50条线</a>
+                                <a className={`${this.state.payLine === '4' ? 'select' : ''}`} onClick={() => this.filterGamesByDetail(this.state.progressive, '4')}>50+</a></li>
+                        </ul>) : null
+                    }
                 </div>
                 <div className="bottom-list">
                     <GameList listData={this.state.gamesData} className="clearfix bottom-list-wrapper" />
+                    {
+                        (!this.state.isLastPage && this.state.showLoadMore) ? (<LazyLoad onContentVisible={this.loadMore}>
+                            <div className="bottom_height" style={{ display: 'block' }}>
+                                <p>浏览更多游戏</p>
+                            </div>
+                        </LazyLoad>) : null
+                    }
+
                 </div>
             </React.Fragment>
         );

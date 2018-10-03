@@ -1,0 +1,132 @@
+<div class="usercenter">
+    <ul class="historyMenu">
+        <li data-type="nowMoney" class="on"><a>交易流水</a></li>
+        <li data-type="recharger"><a>充值记录</a></li>
+        <li data-type="draw"><a>提现记录</a></li>
+        <li data-type="boxTrace"><a>钱包互转记录</a></li>
+    </ul>
+</div>
+
+<div class="filter">
+    <label>查询日期</label>
+    <input type="text" id="date_from" value="" readonly="readonly"> - <input type="text" id="date_end" value="" readonly="readonly">
+    <div class="recharger" style="display: inline-block">
+        <label>状态</label>
+        <select id="queryType" name="queryType">
+            <option value="0" selected>全部</option>
+            <option value="1">成功</option>
+            <option value="2">失败</option>
+            <option value="3">待处理</option>
+        </select>
+    </div>
+    <div class="boxTrace" style="display: inline-block">
+        <label>转出</label>
+        <select id="turnOut" name="turnOut">
+            <option value="">请选择</option>
+        </select>
+        <label>转入</label>
+        <select id="turnIn" name="turnIn">
+            <option value="">请选择</option>
+        </select>
+        <label>状态</label>
+        <select id="queryType" name="queryType">
+            <option value="" selected>全部</option>
+            <option value="0">成功</option>
+            <option value="2">失败</option>
+        </select>
+    </div>
+    <div class="nowMoney" style="display: inline-block">
+        <label>钱包类型:</label>
+        <select id="cbType" name="cbType" style="width:85px;">
+            <option value="cb_01">彩票钱包</option>
+        </select>
+        <label>交易类型:</label>
+        <select name="queryType" class="queryType" style="width:100px;">
+            <option value="" selected>全部</option>
+            <option value="100" name="changeType">+ 收入</option>
+            <option value="1" name="changeType">&nbsp;&nbsp;&nbsp;> 充值</option>
+            <option value="2" name="changeType">&nbsp;&nbsp;&nbsp;> 上级转入</option>
+            <option value="3" name="changeType">&nbsp;&nbsp;&nbsp;> 其他钱包转入</option>
+            <option value="4" name="changeType">&nbsp;&nbsp;&nbsp;> 中奖</option>
+            <option value="5" name="changeType">&nbsp;&nbsp;&nbsp;> 返点</option>
+            <option value="6" name="changeType">&nbsp;&nbsp;&nbsp;> 会员活动</option>
+            <option value="7" name="changeType">&nbsp;&nbsp;&nbsp;> 代理活动（入）</option>
+            <option value="8" name="changeType">&nbsp;&nbsp;&nbsp;> 亏损佣金</option>
+            <option value="9" name="changeType">&nbsp;&nbsp;&nbsp;> 代理日工资（入）</option>
+            <option value="10" name="changeType">&nbsp;&nbsp;&nbsp;> 代理分红（入）</option>
+            <option value="11" name="changeType">&nbsp;&nbsp;&nbsp;> 取消取现</option>
+            <option value="12" name="changeType">&nbsp;&nbsp;&nbsp;> 撤单返款</option>
+            <option value="13" name="changeType">&nbsp;&nbsp;&nbsp;> 平台理赔</option>
+            <option value="200" name="changeType">- 支出</option>
+            <option value="14" name="changeType">&nbsp;&nbsp;&nbsp;> 提现</option>
+            <option value="15" name="changeType">&nbsp;&nbsp;&nbsp;> 转给下级</option>
+            <option value="16" name="changeType">&nbsp;&nbsp;&nbsp;> 代理活动（出）</option>
+            <option value="17" name="changeType">&nbsp;&nbsp;&nbsp;> 转到其他钱包</option>
+            <option value="18" name="changeType">&nbsp;&nbsp;&nbsp;> 投注</option>
+            <option value="19" name="changeType">&nbsp;&nbsp;&nbsp;> 撤销中奖</option>
+            <option value="20" name="changeType">&nbsp;&nbsp;&nbsp;> 撤销返点</option>
+            <option value="24" name="changeType">&nbsp;&nbsp;&nbsp;> 撤销佣金</option>
+            <option value="21" name="changeType">&nbsp;&nbsp;&nbsp;> 派奖扣减</option>
+            <option value="22" name="changeType">&nbsp;&nbsp;&nbsp;> 会员活动扣减</option>
+            <option value="23" name="changeType">&nbsp;&nbsp;&nbsp;> 代理活动扣减</option>
+            <option value="28" name="changeType">&nbsp;&nbsp;&nbsp;> 代理日工资（出）</option>
+            <option value="29" name="changeType">&nbsp;&nbsp;&nbsp;> 代理分红（出）</option>
+        </select>
+        <select name="gamequeryType" class="queryType" style="width:100px;display: none">
+            <option value="" selected>全部</option>
+            <option value="100" name="changeType">+ 收入</option>
+            <option value="3" name="changeType">&nbsp;&nbsp;&nbsp;> 其他钱包转入</option>
+            <option value="4" name="changeType">&nbsp;&nbsp;&nbsp;> 中奖</option>
+            <option value="12" name="changeType">&nbsp;&nbsp;&nbsp;> 撤单返款</option>
+            <option value="6" name="changeType">&nbsp;&nbsp;&nbsp;> 会员活动</option>
+            <option value="27" name="changeType">&nbsp;&nbsp;&nbsp;> 红包</option>
+            <option value="200" name="changeType">- 支出</option>
+            <option value="17" name="changeType">&nbsp;&nbsp;&nbsp;> 转到其他钱包</option>
+            <option value="18" name="changeType">&nbsp;&nbsp;&nbsp;> 投注</option>
+            <option value="25" name="changeType">&nbsp;&nbsp;&nbsp;> 扣款-资金异常</option>
+            <option value="26" name="changeType">&nbsp;&nbsp;&nbsp;> 小费</option>
+            <!--<option value="32" name="changeType">&nbsp;&nbsp;&nbsp;> 购买虚拟物品</option>-->
+        </select>
+        <label>关联订单:</label>
+        <input type="text" value="" name="" id="" class="gldd" style="background-image:none">
+    </div>
+    <a class="query hand"></a>
+</div>
+<div class="list">
+    <div class="tit"></div>
+    <div class="bloading tiploading" name="change" style="position: relative;top: 120px;">
+        <div class="ui-dialog-loading"></div>
+    </div>
+    <div class="notran" style="display: block;">
+        <h6>暂无数据</h6>
+        <!-- <div class="notran-img"></div> -->
+    </div>
+    <div class="box">
+        <div class="sppinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+        <ul></ul>
+        <div class="tip">温馨提示：仅保留最近一周的数据</div>
+        <div class="pagging"></div>
+    </div>
+
+    <div class="box-draw hide">
+        <ul></ul>
+        <div class="tip">温馨提示：仅保留最近一周的数据</div>
+        <div class="pagging"></div>
+    </div>
+
+    <div class="box-boxTrace hide">
+        <ul></ul>
+        <div class="tip">温馨提示：仅保留最近一周的数据</div>
+        <div class="pagging"></div>
+    </div>
+
+    <div class="box-nowMoney hide">
+        <ul></ul>
+        <div class="tip">温馨提示：仅保留最近一周的数据</div>
+        <div class="pagging"></div>
+    </div>
+</div>

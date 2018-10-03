@@ -1,0 +1,188 @@
+<div class="usercenter">
+    <ul class="historyMenu">
+        <li data-type="personal" class="on"><a>个人资料</a></li>
+        <li data-type="password"><a>登录密码</a></li>
+        <li data-type="emails"><a>电子邮箱</a></li>
+        <li data-type="mib"><a>密保问题</a></li>
+        <li data-type="capitalPw"><a>资金密码</a></li>
+        <li data-type="bank"><a>银行卡管理</a></li>
+        <li data-type="webind"><a>微信号绑定</a></li>
+    </ul>
+</div>
+
+<!--个人资料-->
+<ul class="contentMycount">
+    <li class="personal hide">
+
+    </li>
+
+    <li class="password hide">
+
+    </li>
+
+    <li class="emails bind-email hide">
+
+    </li>
+
+    <li class="mib questions hide">
+
+    </li>
+
+    <li class="capitalPw hide">
+    </li>
+
+    <li class="bank cards hide">
+        <div>
+            <div class="cardTips">
+                您最多可同时绑定5张银行卡。为了保障您的资金安全，提现银行卡的持卡人姓名必须与收款人姓名一致。
+            </div>
+            <div id="addCards">
+                <div class="addsection">
+                    <span>添加一号卡</span>
+                </div>
+                <div class="addsection">
+                    <span>添加二号卡</span>
+                </div>
+                <div class="addsection">
+                    <span>添加三号卡</span>
+                </div>
+                <div class="addsection">
+                    <span>添加四号卡</span>
+                </div>
+                <div class="addsection">
+                    <span>添加五号卡</span>
+                </div>
+                <div id="callCenter" class="callsection">
+                    <a target="_blank" href="https://v88.live800.com/live800/chatClient/chatbox.jsp?companyID=566686&configID=3127&jid=5379036822&s=1">
+                        <i></i><span>如需[解绑]请联系在线客服</span>
+                    </a>
+                </div>
+            </div>
+            <div class="cardManage_tip">
+                <div class="title">温馨提醒:</div>
+                <p>
+                    首次绑定银行卡<span></span>小时之后可用于提现，新增银行卡<span></span>小时以后可用于提现
+                </p>
+            </div>
+
+            <!-- 设置资金密码 -->
+            <form id="bankPassWork" method="post" class="payPasswordSet" action="" style="display: none" novalidate="novalidate">
+                <div class="row">
+                    <div class="input-wrap mragin-top-10 mragin-bottom-10">
+                        <i class="on">1</i><label class="pop-label card">登录密码</label><input id="loginPassword" name="loginPassword"
+                            type="password" placeholder="请输入登录密码" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-wrap mragin-top-10 mragin-bottom-10">
+                        <i class="on">2</i><label class="pop-label card">资金密码</label>
+                        <input id="password" name="payPassword" type="password" placeholder="长度6~16位，包含数字、字母" onkeydown="if(event.keyCode==13)return false"
+                        />
+                    </div>
+                </div>
+                <div class="row" style="position:relative;">
+                    <div class="input-wrap mragin-top-10 mragin-bottom-10">
+                        <i class="on">3</i><label class="pop-label card">确认资金密码</label><input id="confirm" name="confirm_password"
+                            type="password" placeholder="请再次输入资金密码" />
+                    </div>
+                </div>
+
+                <div class="row submit-dom clearfix">
+                    <button type="button" class="btn" onclick="cardManage.setPayPassword();">设置
+                    </button>
+                </div>
+            </form>
+
+
+            <!-- 验证资金密码 -->
+            <form id="payPasswordValidForm" method="post" style="display: none" action="" novalidate="novalidate">
+                <div class="row">
+                    <div class="input-wrap mragin-top-10 mragin-bottom-10">
+                        <label class="pop-label">资金密码</label>
+                        <input id="password1" name="payPassword" type="password" placeholder="长度6~16位，包含数字、字母" onkeydown="if(event.keyCode==13)return false"
+                        />
+                    </div>
+                </div>
+                <div class="row submit-dom clearfix">
+                    <button type="button" class="btn" onclick="cardManage.checkPayPwd();">验证
+                    </button>
+                </div>
+            </form>
+
+            <!-- 绑定银行卡弹出框 -->
+            <form id="account" action="saveOrUpdateCard" style="display:none" action="" novalidate="novalidate">
+                <input type="hidden" name="operation" value="" />
+                <input type="hidden" name="drawcashUrl" value="cardManage" />
+                <div class="row">
+                    <i class="on">1</i><label>收款人姓名</label>
+                    <div class="input-wrap">
+                        <input type="text" id="sn" name="sn" value="" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[(?!_)0-9]/g,''))"
+                            placeholder="只能是中文" />
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="on">2</i><label>收款人卡号</label>
+                    <div class="input-wrap">
+                        <input type="text" name="bankCardNo" id="bankCardNo" placeholder="请输入卡号" onparse="return false;" style="ime-mode: disabled"
+                            onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="on">3</i><label class="bank-label">开户行</label>
+                    <div class="input-wrap-bank">
+                        <select name="bankAllas" id="bankAllas" class="disabled-select">
+                            <option value="">开户银行选择</option>
+                            <option value="CCB">中国建设银行</option>
+                            <option value="ICBC">中国工商银行</option>
+                            <option value="ABC">中国农业银行</option>
+                            <option value="BOC">中国银行</option>
+                            <option value="COMM">交通银行</option>
+                            <option value="CMB">招商银行</option>
+                            <option value="CMBC">民生银行</option>
+                            <option value="CEB">光大银行</option>
+                            <option value="HB">华夏银行</option>
+                            <option value="CIB">兴业银行</option>
+                            <option value="SPDB">上海浦东发展银行</option>
+                            <option value="CITIC">中信银行</option>
+                            <option value="GDB">广发银行</option>
+                            <option value="BOB">北京银行</option>
+                            <option value="HZCB">杭州银行</option>
+                            <option value="NBBANK">宁波银行</option>
+                            <option value="PSBC">中国邮政储蓄银行</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <i class="on">4</i><label class="bank-label">开户省份/城市</label>
+                    <div class="input-wrap-bank" id="abc">
+                        <select name="province" id="province" class="prov disabled-select">
+                            <option>省份</option>
+                        </select>
+                        <select name="city" id="city" class="city disabled-select">
+                            <option>城市</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <i class="on">5</i><label>开户网点</label>
+                    <div class="input-wrap">
+                        <input type="text" name="place" id="place" placeholder="请输入开户网点" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="line"></div>
+                    <button type="button" class="btn" onclick="cardManage.addBankCard();">添加银行卡
+                    </button>
+                </div>
+            </form>
+        </div>
+    </li>
+
+    <li class="webind bind-wechat hide">
+
+    </li>   
+</ul>

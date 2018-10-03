@@ -1,0 +1,461 @@
+.main{
+    overflow: inherit;
+}
+.main .login-div{
+    padding:0 35px;
+}
+#container.register{
+    background:#343638;
+    width: 100%;
+    z-index: 10;
+    height:100%;
+    border-radius: 5px;
+    overflow: inherit;
+}
+.has-account {
+    width: 100%;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.has-account a {
+    color: #fff;
+}
+.has-account a:hover{
+    color: #ffaf3e;
+}
+.wrap{
+    min-width: 100%;
+}
+#register h1{
+    color: #ff9600;
+    line-height: 90px;
+    text-align: center;
+    font-size: 24px;
+}
+#registerForm>span{
+    color: #acacac;
+    font-size:12px;
+}
+
+#registerForm #password_level{
+    padding:0;
+    margin:0 0 0 85px;
+}
+#registerForm #password-error{
+    display: block;
+}
+#register .input-wrap input {
+    width: 280px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    color: #342f3f;
+    margin-bottom: 2px;
+}
+#register .captcha input{
+    width: 217px;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: left;
+    background: url("../images/code.png") no-repeat 12px 6px #fff;
+    color: #342f3f;
+    outline: none;
+    padding-left: 50px;
+}
+#register .input_name{
+    background: url("../images/username.png") no-repeat 12px 6px #fff;
+    padding-left: 50px;
+}
+#register .input_pass{
+    background: url("../images/password.png") no-repeat 12px 6px #fff;
+    padding-left: 50px;
+}
+.captcha img{
+    margin-left: 8px;
+    width: 100px;
+    height: 41px;
+    vertical-align: middle;
+}
+#register .row {
+    width: 330px;
+    margin: 0 auto 20px;
+}
+
+#register label,
+#findpwd label {
+    display: inline-block;
+    width: 70px;
+    padding-right: 5px;
+    vertical-align: middle;
+    text-align: right;
+}
+
+#findpwd .row .btn {
+    width: 332px;
+    border: none;
+    font-family: "Microsoft Yahei";
+    margin-left: 145px;
+    outline: none;
+}
+
+#register label i,
+#findpwd label i,
+#main label i {
+    font-family: 'SimSun';
+    padding: 0 3px;
+}
+
+#register .input-wrap,
+#findpwd .input-wrap {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*#register .input-wrap input,
+#findpwd .input-wrap input {
+    padding-left: 50px;
+}*/
+
+#register .input-wrap i,
+#findpwd .input-wrap i {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+#register .input-wrap i:hover,
+#findpwd .input-wrap i:hover {
+    color: #f03737;
+}
+
+#register .captcha {
+    display: inline-block;
+}
+
+#register .checkbox {
+    display: inline-block;
+    margin-left: 85px;
+    text-align: center;
+    vertical-align: bottom;
+}
+#register .checkbox input{
+    visibility: hidden;
+}
+#register .checkbox i{
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url("../images/check.png");
+    vertical-align: middle;
+}
+#register .checkbox i.on{
+    background: url("../images/check_on.png");
+}
+#register #agreement {
+    line-height: 20px;
+    text-align: right;
+    background: none;
+}
+
+#register .checkbox span {
+    font-size: 14px;
+    color:#7e7e7e;
+}
+#register .checkbox span a {
+    color:#fff;
+}
+.register .introduce{
+    width:1200px;
+    margin:0 auto;
+}
+.register .introduce h2{
+    font-size:30px;
+    font-style: italic;
+    color:#735ba1;
+    text-align:center;
+    line-height:137px;
+}
+.register .introduce ul{
+    margin-left:175px;
+}
+.register .introduce ul li{
+    float:left;
+    width:266px;
+    height:190px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius:3px;
+    margin-right:26px;
+    padding:13px 20px 0;
+}
+.register .introduce ul li h4{
+    font-size:30px;
+    font-weight:bold;
+    font-style:italic;
+    color:#d9d9d9;
+    text-align:center;
+    margin-bottom: 40px;
+}
+.introduce ul li h4 em{
+    color:#e3ba24;
+    font-style:italic;
+}
+.introduce ul li p{
+    color:#c6bec4;
+    font-size:14px;
+    line-height:25px;
+}
+
+#pwd_result.show {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#pwd_result td {
+    width: auto;
+    height: 20px;
+    vertical-align: middle;
+}
+
+#pwd_result .rankLow,
+#pwd_result .rankMiddle,
+#pwd_result .rankHigh {
+    float: left;
+    width: auto;
+    height: 15px;
+    padding-left: 70px;
+    font-size: 12px;
+    background: url("../images/pwd_sprite.png?__sprite") no-repeat;
+}
+
+#pwd_result .rankLow {
+    background-position: 0 2px;
+    color: #ff9c3a;
+}
+
+#pwd_result .rankMiddle {
+    background-position: 0 -40px;
+    color: #61d01c
+}
+
+#pwd_result .rankHigh {
+    background-position: 0 -87px;
+    color: #61d01c
+}
+
+.password_info {
+    font-size: 12px;
+    color: #808080;
+}
+
+#register .agree i {
+    margin-left: 90px;
+}
+
+#register .agree a {
+    padding: 0 5px;
+    color: #4780f3;
+}
+
+#register .agree a:hover {
+    text-decoration: underline;
+}
+
+#register .tips,
+#findpwd .tips{
+    padding-top:5px;
+}
+
+#register .tips i,
+#findpwd .tips i {
+    position: relative;
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+#register .tips i:before,
+#findpwd .tips i:before {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+}
+
+.basic .tips {
+    float: left;
+    margin-top: 10px;
+}
+
+.basic .input-wrap h3 {
+    position: absolute;
+    right: -45px;
+    top: 2px;
+    text-align: left;
+}
+
+.tips .icon-ok-sign {
+    color: #24b210;
+    width: 200px;
+}
+
+.tips .icon-info-sign {
+
+}
+
+#register #registerForm input.btn-reg {
+    width: 100%;
+    margin: 10px 0;
+    height:40px;
+    background:#ff8900;
+    background: linear-gradient(to bottom , #ffc571, #ff8900);
+    border: none;
+}
+
+#findpwd {
+    width: 1000px;
+    height: 400px;
+    margin: 80px auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    background: url("../images/findpwdbg.png") no-repeat #fff;
+}
+#userInfo-fpw{
+    width:580px;
+    float: right;
+    padding: 100px 0 0 70px;
+}
+
+#findpwd h2 {
+    position: relative;
+    height: 45px;
+    margin-bottom: 12px;
+    background-color: #F4F4F4;
+}
+
+#findpwd h2 span {
+    position: absolute;
+    left: 30px;
+    top: 14px;
+    border-bottom-color: #fff;
+    font-size: 18px;
+    color: #F18D00;
+}
+
+#findpwd h1{
+    font-size: 36px;
+    display:inline-block;
+}
+#findpwd span{
+    font-size: 36px;
+    color:#c0c0c0;
+    margin-left: 15px;
+}
+
+
+#findpwd .btn-next {
+    width: 330px;
+    margin-top: 50px;
+    margin-left: 145px;
+}
+
+#findpwd .btn-back {
+    display: inline-block;
+    background-color: #5cb606;
+    line-height: 38px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 130px;
+    margin-top: 30px;
+    margin-left: 145px;
+}
+
+.menu-title {
+    width: 269px;
+}
+
+.menu-title dt {
+    width: 269px;
+    line-height: 60px;
+    border-right: 1px solid #dedede;
+    color: #21b4e9;
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu-title dt i {
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.menu-title dt a {
+    display: block;
+    color: #21b4e9;
+    border-top: 1px solid #dedede;
+}
+#register span.error{
+    margin: 0;
+    display: block;
+    background: url(../images/unchecked.jpg?__sprite) no-repeat 0px 0px;
+    color: #EA5200;
+}
+.main .banner .flickity-viewport{
+    height:320px;
+}
+/*.flickity-page-dots{
+    bottom: 0;
+    left:0;
+}*/
+.regSuccess{
+    background: url("../images/reg.png") no-repeat;
+}
+.regSuccess h4{
+    font-size: 24px;
+    color:#636363;
+    text-align: right;
+    line-height: 50px;
+}
+.regSuccess p{
+    font-size: 14px;
+    color:#636363;
+    text-align: right;
+}
+.regSuccess p em,.regSuccess p a{
+    color:#ff0000;
+}
+.regSuccess .ui-dialog-header{
+    border: none;
+}
+#findpwd .way-choose label {
+    text-align: left;
+}
+
+
+#register .contact{
+    width: 100%;
+    margin-top: 25px;
+    color: #999;
+    display: none;
+}
+#register .contact h6{
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #888;
+}
+#register .contact p{
+    line-height: 26px;
+    display: none;
+    vertical-align: top;
+}
+#register .contact a{
+    float: right;
+    display: inline-block;
+    width: 82px;
+    height: 26px;
+}

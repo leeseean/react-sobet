@@ -1,0 +1,316 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    min-width:1320px;
+}
+body{
+    font-family:"Microsoft Yahei",Arial,Helvetica,sans-serif;
+    margin: auto 0;
+}
+img{
+    border:none;
+}
+@font-face{
+    font-family: Pingfang;
+    src:url("../font/PINGFANG MEDIUM.TTF");
+}
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+.float-clear{
+    clear:both;
+}
+.header_bg{
+    width:100%;
+    min-width:1320px;
+    background: url(../images/sub5/topbg.jpg) no-repeat top;
+    position: relative;
+    z-index:100;
+}
+.header_bg .top{
+    height:40px;
+    width:100%;
+}
+.header_bg .top .m{
+    width:1200px;
+    margin:0 auto;
+    height:100%;
+    position: relative;
+}
+.header_bg .bottom .m{
+    width:1300px;
+    margin:0 auto;
+    height:100%;
+    text-align: center;
+}
+.header_bg .bottom .m img{
+    margin-top: -40px;
+    position: relative;
+    z-index: 999;
+}
+.header_bg .top .logo{
+    cursor:pointer;
+    display:inline-block;
+    width:150px;
+    height:36px;
+    margin-top: 5px;
+    background:url(../images/logo.png) no-repeat left top;
+    position: relative;
+    z-index: 1000;
+}
+.header_bg .bottom{
+    height:644px;
+    width:100%;
+    position:relative;
+    z-index:2;
+}
+.header_bg .wheel01{
+    background: url(../images/sub5/1.png) no-repeat;
+    width: 94px; 
+    height:94px;
+    position:absolute;
+    top:-20px; right:-88px;
+}
+.header_bg .wheel02{
+    background: url(../images/sub5/2.png) no-repeat;
+    width: 115px; 
+    height:115px;
+    position:relative;
+    margin-top:328px;
+}
+.header_bg .wheel03{
+    background: url(../images/sub5/3.png) no-repeat;
+    width: 139px; 
+    height:139px;
+    position:absolute;
+    top:172px; right:-182px;
+}
+.header_bg .bottom .player-event{
+    width:1120px;
+    height:200px;
+    margin-left:-50px;
+}
+.header_bg .bottom .player-event-bg{
+    width:400px;
+    height: 300px;
+    margin-top:25px;
+    z-index:10;
+    position: relative;
+}
+.header_bg .bottom .player-event-bg:after{
+    content: '';
+    clear:both;
+}
+.header_bg .bottom .player-event-bg img{
+    margin-left:-15px;
+}
+.activeVideo .video{
+    background:transparent;
+}
+.activeVideo h2{
+    color:white;
+    position: absolute;
+    width:604px; 
+    margin-top:240px;
+    text-align: center;
+}
+.activeVideo .btn-play{
+    margin-top:135px;
+}
+.activeVideo .video{
+    margin-top: 35px;
+    border-radius: 2px;
+}
+.main_bg{
+    width:100%;
+    min-width:1320px;
+    background: #121212;
+    background-size: cover;
+    padding-bottom: 20px;
+    position: relative;
+    z-index:99;
+}
+.main_bg .nav{
+    width:1225px;
+    height:102px;
+    background: url(../images/sub5/ribbon.png) no-repeat center -25px;
+    position: relative;
+    z-index: 11;
+}
+.nav .nav-ul{
+    width:1200px;
+    height:52px;
+    color:#fff;
+    padding-top: 6px;
+    margin-left: 24px;
+}
+.nav .nav-ul li{
+    float:left;
+    margin-right:56px;
+    width:240px;
+    height:39px;
+    border-radius: 10px;
+    background: #161616;
+    text-align: center;
+    font-family: Pingfang;
+    font-size: 24px;
+    font-weight: 600;
+    color:#634f2f;
+    padding: 4px 0 4px 0;
+}
+.nav-ul .nav-li1:hover, .nav-ul .nav-li1.nav-li-active{
+    background: url(../images/sub5/day_fontags.png) no-repeat 22px 6px;
+    font-size:0px;
+}
+.nav-ul .nav-li2:hover, .nav-ul .nav-li2.nav-li-active{
+    background: url(../images/sub5/day_fontags.png) no-repeat -274px 6px;
+    font-size:0px;
+}
+.nav-ul .nav-li3:hover, .nav-ul .nav-li3.nav-li-active{
+    background: url(../images/sub5/day_fontags.png) no-repeat -575px 6px;
+    font-size:0px;
+}
+.nav-ul .nav-li4:hover, .nav-ul .nav-li4.nav-li-active{
+    background: url(../images/sub5/day_fontags.png) no-repeat -872px 7px;
+    font-size:0px;
+}
+.main_bg .m{
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.main_bg .m .activePic{
+    border:2px solid #bb852f;
+    border-top:none;
+    width:1190px;
+    margin-top: -75px;
+    position: relative;
+    z-index: 10;
+}
+.main_bg .m .activePic .pic ul{
+    width:338px;
+    float: left;
+    margin: 32px 0px 12px 10px;
+}
+.main_bg .m .activePic .pic li{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.pic{
+    width: 1072px;
+    padding: 0 0 8px 0;
+    margin: 36px auto;
+    height:100%;
+}
+.pic img{
+    width:338px;
+    height:225px;
+}
+.pic .bimg{
+    height:507px;
+}
+#video{
+    cursor: pointer;
+}
+.main_bg .m .activePic>img{
+    margin: 25px auto;
+}
+.main_bg .m .activePic h3{
+    position: absolute;
+    left: 386px;
+    top: 24px;
+    font-size: 28px;
+    color: #f52222;
+    font-weight: 600;
+}
+.main_bg .m .activePic h3 span{
+    font-size: 22px;
+    color: #f52222;
+    margin-right: 20px;
+}
+.contact{
+    text-align: center;
+    width:600px;
+    height:35px;
+    margin: 32px 0 32px 0;
+}
+.contact img{
+    margin-right: 90px;
+}
+.main_bg .m .contact p{
+    color: #343131;
+    height: 40px;
+    line-height: 40px;
+    margin:auto 0;
+    font-size:13px;
+    color: #ffd974;
+}
+.main_bg .m .contact a{
+    display: inline-block;
+}
+.clear{
+    clear: both;
+}
+.func{
+    width: 50px;
+    position: fixed;
+    left: 50%;
+    margin-left: 610px;
+    top: 50%;
+    margin-top: -120px;
+    z-index:9999;
+}
+.func a{
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    background:url(../images/siderbar_btn01.png) no-repeat;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.func a span{
+    display:block;
+    padding-top:11px;
+}
+.footer{
+    height:75px;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 75px;
+    color:#636363;
+}
+.footer .m{
+    width:1100px;
+    margin: 0 auto;
+}
+.footer .m .contactUs{
+    float: left;
+}
+.footer .m .contactUs a{
+    color:#636363;
+}
+.footer .m .copyright{
+    float: right;
+}
+.show{
+    display:block;
+}
+.hidden{
+    display: none;
+}

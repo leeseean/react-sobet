@@ -1,0 +1,694 @@
+body {
+    background: url(/static/sobet/images/ibg.jpg) center no-repeat;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    height: 310px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40), 0 5px 15px rgba(0, 0, 0, .4) inset;
+    background: #000;
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.banner .noticeDiv {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    z-index: 45;
+}
+
+.tp-banner ul li {
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .4) inset;
+}
+
+.tp-banner ul a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.banner .noticeDiv .main {
+    height: 100%;
+    position: relative;
+    padding-right: 6px;
+}
+
+.banner .notice {
+    width: 350px;
+    float: right;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 9px 0 0 0;
+    box-shadow: 4px 8px 18px -2px rgba(0, 0, 0, 0.5);
+}
+
+.banner .notice .title {
+    height: 41px;
+    line-height: 40px;
+    padding-left: 14px;
+    position: relative;
+    background: rgba(44, 44, 44, 0.9);
+    background: linear-gradient(to bottom, rgba(44, 44, 44, 0.9), rgba(33, 33, 33, 0.9));
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.banner .notice .title>span {
+    display: inline-block;
+    width: 78px;
+    height: 25px;
+    background: url(/static/sobet/images/noticeText.png) no-repeat;
+    vertical-align: middle;
+}
+
+.banner .notice .title .newsIcon {
+    background: url(/static/sobet/images/newsIcon.png);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.banner .notice .title .moreNotice {
+    display: inline-block;
+    width: 43px;
+    height: 17px;
+    background: #343434;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 17px;
+    color: #afafaf;
+    float: right;
+    font-size: 12px;
+    margin: 15px 13px 0 0;
+    cursor: pointer;
+}
+
+.banner .notice ul {
+    height: 252px;
+    background: rgba(33, 33, 33, 0.9);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.banner .notice ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+    height: 41px;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 17px 0 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.banner .notice ul li a {
+    display: inline-block;
+    width: 270px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.banner .notice ul li:first-child {
+    border-top: none;
+}
+
+.banner .notice ul li:last-child {
+    border-bottom: none;
+}
+
+.banner .notice ul li .date {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    float: right;
+}
+
+.main .activity {
+    margin-bottom: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+    border-radius: 5px;
+}
+
+.main .activity .gallery .slide {
+    cursor: pointer;
+}
+
+.main .activity .gallery .slide img {
+    border: 1px solid #000;
+    box-shadow: 0px 16px 15px rgba(0, 0, 0, 0.30);
+    border-radius: 5px;
+}
+
+.main .infoDiv {
+    height: 240px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    background: #1e1e1e;
+    overflow: hidden;
+    font-size: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.40);
+}
+
+.main .infoDiv .LT {
+    float: left;
+    width: 301px;
+    height: 238px;
+    background: url(/static/sobet/images/sscBg.png);
+    padding: 20px 29px;
+    border-right: 1px solid #000;
+    cursor: pointer;
+}
+
+.main .infoDiv .LT h2 {
+    font-size: 48px;
+    text-align: center;
+    color: #ffd04c;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffd35a), to(#ddaa2a));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 72px;
+}
+
+.main .infoDiv .LT span {
+    display: block;
+    background: rgba(13, 13, 13, 0.3);
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 3px;
+    margin-bottom: 7px;
+}
+
+.main .infoDiv .LT .clock {
+    height: 75px;
+    background: rgba(13, 13, 13, 0.3);
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+}
+
+.main .infoDiv .LT .clock b {
+    display: inline-block;
+    width: 58px;
+    height: 40px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    margin-top: 12px;
+    position: relative;
+}
+
+.main .infoDiv .LT .clock b.b1:after {
+    content: 'HOUR';
+    position: absolute;
+    font-size: 12px;
+    color: #5f5f5f;
+    bottom: -32px;
+    left: 11px;
+}
+
+.main .infoDiv .LT .clock b.b2:after {
+    content: 'MINUTE';
+    position: absolute;
+    font-size: 12px;
+    color: #5f5f5f;
+    bottom: -32px;
+    left: 6px;
+}
+
+.main .infoDiv .LT .clock b.b3:after {
+    content: 'SECOND';
+    position: absolute;
+    font-size: 12px;
+    color: #5f5f5f;
+    bottom: -32px;
+    left: 6px;
+}
+
+.main .infoDiv .LT .clock b.fenge {
+    width: 20px;
+}
+
+.main .infoDiv .LT span em {
+    color: #ff9600;
+    font-style: normal;
+}
+
+.main .clock .countMsg {
+    display: none;
+    position: absolute;
+    width: 242px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    left: 0px;
+    font-size: 40px;
+    background-color: #fff;
+    top: 0px;
+    border-radius: 4px;
+    color: #71219a;
+}
+
+.main .clock.showMsg .countMsg {
+    display: block;
+}
+
+.main .infoDiv>a {
+    display: inline-block;
+    width: 299px;
+    height: 238px;
+}
+
+.main .infoDiv>a img {
+    border: none;
+}
+
+
+/****************************mc_notice**********************************/
+
+#mc_notice {
+    display: none;
+    width: 950px;
+    height: 500px;
+    border-radius: 3px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.layui-layer-content {
+    border-radius: 3px;
+}
+
+#mc_notice .title {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #382197;
+    background: linear-gradient(to bottom, #382197, #2e1b7c);
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid #181818;
+}
+
+#mc_notice .title i.newsIcon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(/static/sobet/images/newsIcon.png) no-repeat;
+    margin: 0px 5px 0 18px;
+    vertical-align: middle;
+}
+
+#mc_notice .name {
+    float: left;
+    width: 320px;
+    height: 455px;
+    background: url(/static/sobet/images/noticeAlertBg.png);
+}
+
+#mc_notice .name .notice-tit {
+    height: 400px;
+    overflow: hidden;
+}
+
+#mc_notice .name ul {
+    height: 400px;
+    border-bottom: 1px solid #111;
+    overflow: hidden;
+    display: none;
+}
+
+#mc_notice .name ul.ul-active {
+    display: block;
+}
+
+#mc_notice .name ul li {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    color: rgb(133, 133, 133);
+    font-size: 12px;
+}
+
+#mc_notice .name ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+#mc_notice .name ul li a .mainTitle {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#mc_notice .name ul li a .date {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    vertical-align: top;
+}
+
+#mc_notice .name ul a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#mc_notice .name .pager {
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+
+#mc_notice .name .pager span {
+    margin: 0 40px;
+    color: #58565b;
+    font-size: 12px;
+}
+
+#mc_notice .name .pager span em {
+    font-style: normal;
+}
+
+#mc_notice .name .pager a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    background: #121212;
+    border-radius: 50%;
+    color: #afafaf;
+    font-size: 20px;
+}
+
+#mc_notice .content {
+    float: left;
+    width: 630px;
+    height: 455px;
+    background: #151515;
+    background: linear-gradient(to bottom, #151515, #111);
+    padding: 10px 40px 0;
+}
+
+#mc_notice .content h3 {
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+    color: rgb(165, 165, 165);
+}
+
+#mc_notice .content .conType {
+    width: 100%;
+    height: 35px;
+    border-bottom: 5px solid #1d1d1d;
+    color: #5d5d5d;
+    font-size: 12px;
+}
+
+#mc_notice .content .createTime {
+    float: left;
+}
+
+#mc_notice .content .type {
+    float: right;
+}
+
+#mc_notice .content .newsContent {
+    max-width: 100%;
+    max-height: 290px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-right: 3px;
+    background: transparent;
+    color: rgb(165, 165, 165);
+    font-size: 14px;
+}
+
+#mc_notice .content .newsContent * {
+    max-width: 540px !important;
+    border: none !important;
+    background: transparent !important;
+    color: rgb(165, 165, 165) !important;
+    font-size: 14px !important;
+}
+
+#mc_notice .content>div {
+    display: none;
+}
+
+#mc_notice .name ul a.tab-active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#mc_notice .content>div.tab-content-active {
+    display: block;
+}
+
+#mc_notice.noticeAlert {
+    width: 578px;
+    height: auto;
+    border: 1px solid #000;
+}
+
+.noticeLayer.layui-layer {
+    border-radius: 4px;
+    box-shadow: 0px 3px 7px rgb(0, 0, 0);
+}
+
+#mc_notice.noticeAlert .title {
+    background: #400787;
+    background: linear-gradient(to top, #400787, #4d2f98);
+}
+
+#mc_notice.noticeAlert .title i.newsIcon {
+    background: url("/static/sobet/images/importanceTip.png") no-repeat;
+}
+
+#mc_notice.noticeAlert .name {
+    display: none;
+}
+
+#mc_notice.noticeAlert .content {
+    width: 578px;
+    height: 378px;
+}
+
+#mc_notice.noticeAlert .content h3 {
+    line-height: 36px;
+}
+
+#mc_notice.noticeAlert .content .newsContent {
+    max-height: 260px;
+}
+
+
+/**************************new player*****************************/
+
+#mask {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+}
+
+#searchTip {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1100;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+#searchTip div {
+    position: absolute;
+    font-size: 0;
+    background-size: 90%;
+    display: none;
+}
+
+#searchTip div p {
+    position: absolute;
+    height: 65px;
+    width: 130px;
+    cursor: pointer;
+}
+
+#searchTip div a {
+    position: absolute;
+    height: 65px;
+    width: 130px;
+    cursor: pointer;
+}
+
+#searchTip div span {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.stepA {
+    width: 974px;
+    height: 580px;
+    background: url(/static/sobet/images/guide/stepA.png) no-repeat;
+    top: 0;
+    left: 0;
+}
+
+.stepA a {
+    height: 73px;
+    width: 155px;
+    bottom: 42px;
+    left: 407px;
+}
+
+.stepA span {
+    bottom: 280px;
+    left: 754px;
+}
+
+.stepB {
+    width: 544px;
+    height: 488px;
+    background: url(/static/sobet/images/guide/stepB.png) no-repeat;
+    top: 0;
+    right: 75px;
+}
+
+.stepB P {
+    bottom: 50px;
+    left: 100px;
+}
+
+.stepB a {
+    bottom: 50px;
+    left: 248px;
+}
+
+.stepB span {
+    bottom: 247px;
+    left: 459px;
+}
+
+.stepC {
+    width: 1134px;
+    height: 461px;
+    background: url(/static/sobet/images/guide/stepC.png) no-repeat;
+    top: 0;
+    left: 180px;
+}
+
+.stepC P {
+    bottom: 27px;
+    right: 391px;
+}
+
+.stepC a {
+    bottom: 27px;
+    right: 238px;
+}
+
+.stepC span {
+    top: 120px;
+    right: 114px;
+}
+
+.stepD {
+    width: 1164px;
+    height: 357px;
+    background: url(/static/sobet/images/guide/stepD.png) no-repeat;
+    top: 103px;
+    left: 145px;
+}
+
+.stepD P {
+    bottom: 73px;
+    left: 100px;
+}
+
+.stepD a {
+    bottom: 73px;
+    left: 248px;
+}
+
+.stepD span {
+    top: 43px;
+    left: 460px;
+}
+
+.stepE {
+    width: 883px;
+    height: 417px;
+    background: url(/static/sobet/images/guide/stepE.png) no-repeat;
+    top: 32px;
+    right: 10px;
+}
+
+.stepE P {
+    bottom: 43px;
+    left: 100px;
+}
+
+.stepE a {
+    bottom: 43px;
+    left: 248px;
+}
+
+.stepE span {
+    top: 123px;
+    left: 460px;
+}
+
+.stepF {
+    width: 544px;
+    height: 253px;
+    background: url(/static/sobet/images/guide/stepF.png) no-repeat;
+    top: 200px;
+    right: 290px;
+}
+
+.stepF em {
+    position: absolute;
+    width: 130px;
+    height: 65px;
+    cursor: pointer;
+    bottom: 27px;
+    left: 175px;
+}
+
+.stepF span {
+    top: 0px;
+    right: 55px;
+}
+
+

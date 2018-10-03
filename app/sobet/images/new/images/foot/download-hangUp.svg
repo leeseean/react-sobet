@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>bottom_icon_8gj</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E3E3E3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M10,11.0073299 C10,9.89871223 10.8897632,9 12.0035949,9 L32.9964051,9 C34.10296,9 35,9.89833832 35,11.0073299 L35,33.9926701 C35,35.1012878 34.1102368,36 32.9964051,36 L12.0035949,36 C10.89704,36 10,35.1016617 10,33.9926701 L10,11.0073299 Z M11,11.9979131 L11,16 L34,16 L34,11.9979131 C34,10.8982606 33.1041826,10 31.9991358,10 L13.0008642,10 C11.9016273,10 11,10.8944962 11,11.9979131 Z M12,13 C12,12.4477153 12.4489202,12 13.007484,12 L25.992516,12 C26.5489341,12 27,12.4438648 27,13 C27,13.5522847 26.5510798,14 25.992516,14 L13.007484,14 C12.4510659,14 12,13.5561352 12,13 Z M29,13 C29,12.4477153 29.4433532,12 30.0093689,12 L31.9906311,12 C32.5480902,12 33,12.4438648 33,13 C33,13.5522847 32.5566468,14 31.9906311,14 L30.0093689,14 C29.4519098,14 29,13.5561352 29,13 Z" id="path-3"></path>
+        <filter x="-2.0%" y="-1.9%" width="104.0%" height="107.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="新首页（2018尊享版)-" transform="translate(-1434.000000, -1145.000000)">
+            <g id="bottom" transform="translate(0.000000, 1131.000000)">
+                <g id="Group-4" transform="translate(1433.000000, 15.000000)">
+                    <g id="bottom_icon_8gj" transform="translate(2.000000, 0.000000)">
+                        <circle id="Oval-12" stroke="url(#linearGradient-1)" cx="22.5" cy="22.5" r="22.5"></circle>
+                        <g id="Combined-Shape">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

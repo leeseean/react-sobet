@@ -1,11 +1,24 @@
 import React from 'react';
-import { Popover } from 'antd';
+import { Popover, Carousel } from 'antd';
 import CountUp from 'react-countup';
 import HotGames from './HotGames';
 import './slot.styl';
 import AllGame from './AllGame';
+import { getSlotReward } from '../../utils/ajax';
 
 class Slot extends React.Component {
+    state = {
+        rewardData: []
+    }
+    componentDidMount() {
+        getSlotReward().then(res => {
+            if (res.data.code === 0) {
+                this.setState({
+                    rewardData: res.data.data
+                });
+            }
+        });
+    }
     render() {
         const QrcodePover = () => {
             return (
@@ -60,6 +73,29 @@ class Slot extends React.Component {
                             </div>
                             <div className="fr slot-pool">
                                 <div className="slot-pool-wrapper">
+                                    <div className="slot-pool-top" style={{ height: '260px' }}>
+                                        <Carousel vertical={true} slidesToScroll={1} dots={false} infinite={true} slidesToShow={10} autoplay={true} speed={2000} autoplaySpeed={2000} cssEase="linear">
+                                            {
+                                                this.state.rewardData.map((item, index) => {
+                                                    const { imgUrl, gameName, playerCode, rewardAmount } = item;
+                                                    return (
+                                                        <div className="clearfix" key={index}>
+                                                            <div className="fl">
+                                                                <img style={{ margin: '10px 0 0 10px' }} src={imgUrl} width="55" alt="" />
+                                                            </div>
+                                                            <div style={{ width: '90px', marginLeft: '20px' }} className="fl">
+                                                                <p style={{ color: '#f0bd02' }}>{playerCode.replace(playerCode.slice(1, 3), '***')}</p>
+                                                                <p style={{ color: '#fff' }}>{gameName}</p>
+                                                            </div>
+                                                            <div style={{ marginLeft: '20px' }} className="fl">
+                                                                <p style={{ color: '#c4540a' }}>￥{rewardAmount}</p>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })
+                                            }
+                                        </Carousel>
+                                    </div>
                                     <div className="slot-pool-bottom">
                                         <CountUp className="slot-pool-num" start={30000000} end={40000000} duration={12 * 60 * 60} separator="," decimal="." decimals={4} />
                                     </div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Back Chevron</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Artboard" transform="translate(-306.000000, -501.000000)" fill="#FFFFFF">
+            <polygon id="Back-Chevron" transform="translate(309.000000, 506.250000) scale(-1, 1) translate(-309.000000, -506.250000) " points="306 506.25 311.04 501 312 502 307.92 506.25 312 510.5 311.04 511.5"></polygon>
+        </g>
+    </g>
+</svg>

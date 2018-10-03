@@ -1,0 +1,594 @@
+.input-wrap input {
+    font-size: 12px;
+    border: none;
+    outline: none;
+	height: 82%;
+    background: #fff;
+}
+#main .top p{
+	display: inline-block;
+	font-size:12px;
+	font-weight: bold;
+	color: #858585;
+	padding-left:50px;
+	padding-top:15px;
+}
+#main .tab ul>li:first-child{
+	border-top-left-radius:5px;
+}
+#main .tab li.on{
+	background-color:#ffffff;
+}
+#main .row {
+	color: #bcbcbc;
+	font-size:12px;
+	padding-bottom: 15px;
+	margin-left: 50px; 
+}
+#main label {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #6d6d6d;
+}
+#main .row div{
+	margin-top: 5px;
+}
+
+#main .questions .row div {
+	margin-top: 0;
+}
+#main .row a{
+	color:#ffffff;
+}
+#main .row .line{
+	height:1px;
+	width: 90%;
+	border-bottom:1px solid #eeeeee;
+	padding-top: 20px;
+}
+#main .row span{
+	display: block;
+	width: 66px;
+	height:20px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #3dd295;
+	border-radius:3px;
+	margin-left: 325px;
+	margin-top: -20px;
+}
+.security ul.service {
+    margin-left: 50px;
+    overflow: hidden;
+}
+ul.service li>span:first-child {
+    display: inline-block;
+    font-size:24px;
+    font-weight:bold;
+    color:#ffffff;
+    padding: 60px 5px 10px 30px;
+}
+ul.service li>span.t{
+  display:block;
+  text-align:center;
+  height:12px;
+}
+ul.service li span{
+	color:#ffffff;
+	font-size:12px;
+}s
+ul.service li span a {
+    color: #ffffff;
+}
+ul.service li>span.btn {
+	display:block;
+	width: 70px;
+	height: 25px;
+	line-height:25px;
+	text-align:center;
+	background:url('../images/userInfo.png') 0px -260px no-repeat;
+	border-radius:3px;
+	margin:35px auto;
+}
+ul.service li>span.btn a{
+	color:#fff;
+	display: block;
+	width: 70px;
+	height: 25px;
+	line-height: 25px;
+}
+#main .no-bottom{
+	color:#ff6969;
+	padding:25px 0 120px 50px;
+}
+#main form .row{
+	margin:0px;
+	padding:0px;
+}
+#main #userInfo-spd .row label{
+	width:164px;
+	height:34px;
+	color:#6d6d6d;
+	font-size:16px;
+	margin:0px;
+}
+#main #userInfo-spd .row i.on{	
+	background-color:#737bf8;
+}
+#main input {
+    text-indent: 5px;
+}
+#main #userInfo-spd .row:last-child{
+	text-align:center;
+	padding:40px;
+}
+#main #userInfo-spd .row .btn{
+	width:196px;
+	height:42px;	
+	color:#ffffff;
+	margin-top:36px;
+	border-bottom: 2px solid #ec7f00;
+	background: #ffe06d;
+	background: linear-gradient(to bottom , #ffe06d,#ffb000);
+}
+#main #userInfo-spd .row .btn:hover{
+	border-bottom: 2px solid #ec5f00;
+	background:#ff8400;
+	background: linear-gradient(to bottom ,#ffc26a,#ff8400);
+}
+#main #userInfo .row{
+	height:50px;
+}
+
+#main .emails #userInfo .row .btn {
+	margin-left: 0px;
+}
+#main #userInfo .row .input-wrap.down {
+    top: 70px;
+    left: -182px
+}
+#main #userInfo .row .input-wrap {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-indent: 8px;
+    margin-left: 0;
+    left: 25px;
+    top: 10px
+}
+
+#main .questions #userInfo .row .input-wrap {
+	top: 3px
+}
+#main #userInfo .row .line{
+	height:1px;
+	width: 400px;
+	border-bottom:1px solid #eeeeee;
+	padding-top: 30px;
+	margin-left: -200px;
+}
+
+#main .emails #userInfo .row .line {
+	width: 550px;
+}
+#main.questions #userInfo .row .line{
+	padding-top: 28px;
+	margin-left: -215px;
+}
+#main #userInfo .row .topLine{
+	height:1px;
+	width: 500px;
+	border-bottom:1px solid #eeeeee;
+}
+#main #userInfo .row .light{
+	width:196px;
+	height:42px;
+	color:#ffffff;
+	border-radius:3px;
+	margin-top:30px;
+	border-bottom:2px solid #ec7f00;
+	background:#ffe06d;
+	background: linear-gradient(to bottom ,  #ffe06d,#ffb000);
+}
+#main #userInfo .row .light:hover{
+	border-bottom: 2px solid #ec5f00;
+	background:#ff8400;
+	background: linear-gradient(to bottom ,#ffc26a,#ff8400);
+}
+#main #userInfo .no-bottom-right{
+	margin-left: 225px;
+	margin-top: -38px;
+	padding-left:0px;
+}
+#main #addCards .addsection{
+	width:200px;
+	height:130px;
+	border-radius: 10px;
+	color:#6d6d6d;
+	background:url('../images/userInfo.png') 0px -120px no-repeat;	
+	margin:0 29px 30px 0;
+	float: left;	
+	cursor:pointer;
+}
+.cardManage_tip span{
+    color:#737bf8;
+}
+.cardManage_tip p{
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom:80px;
+}
+#main .results table tr th #allChecked{
+	display:none;
+}
+#main .results table tr th label{
+    width: 40px;
+    border: none;
+    margin-left: 0px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 12px;
+}
+#main .results table tr th label:hover{
+	width: 40px;
+	height:24px;
+	line-height:24px;
+	background-color:#383838;
+	border-radius:3px;
+}
+#main .results table tr.border {
+   color: #ffffff; 
+}
+
+#main .results table input {
+    vertical-align: middle;
+    display: none;
+}
+#main .results table tr:hover {
+    background: #f8f8f8;
+}
+#main h2.usercenter {
+    height: 20px;
+    line-height: 20px;
+    color: #4d4d4d;
+    padding: 20px 0 40px 50px;
+    background: #fff;
+}
+#main .no-border.results {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    font-size: 12px;
+    margin:0px;
+}
+#main .results .tips.usercenter{
+    width: 100%;
+    height: 100%;
+    line-height:80px;
+    font-size: 12px;
+    color: #000;
+    padding: 0;    
+    text-indent: 1em;
+    border:none; 
+    background:#fff;
+    margin:0px;
+}
+#main #addCards{
+	height:100%;
+	padding-left:170px;
+}
+#main .usercenter {
+    height:35px;
+    font-size:14px;
+    font-family:'Microsoft Yahei';
+	font-weight: 300;
+    background-color:#eeeeee; 
+}
+.security ul.service li {
+    height: 192px;
+    width: 192px;
+    background-color: #737bf8;
+    border-radius:10px;
+    float: left;
+   	margin-right:45px;   
+}
+#main .basic .row label {
+}
+
+#main .usercenter ul{
+	display: inline-block;
+	font-size:12px;
+	margin-top: 5px;
+	margin-left:55px;
+	text-align: center;
+}
+#main .usercenter ul>li:first-child{
+	border-top-left-radius:5px;
+}
+#main .usercenter ul>li:last-child{
+	border-top-right-radius:5px;
+}
+#main .usercenter ul li{
+	display: inline-block;
+	background-color:#737bf8;
+	border-right:1px solid #eeeeee;
+	cursor:pointer;
+}
+#main .usercenter ul li span{
+	color:#ffffff;
+}
+#main .usercenter ul li.on{
+	background-color:#ffffff;
+}
+#main .usercenter ul li.on span{
+	color:#4d4d4d;
+}
+#main .usercenter ul li a{
+	color:#ffffff;
+	display: inline-block;
+	min-width: 60px;
+	line-height: 30px;
+	padding:0 18px;
+}
+#main .usercenter ul li.on a{
+	color:#4d4d4d;
+}
+#main .basic .line{
+	height:1px;
+	width: 90%;
+	border-bottom:1px solid #eeeeee;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+.submit-dom.clearfix{
+	text-align:center;
+}
+.bankValidDialog .ui-dialog-grid,
+.addCardDialog .ui-dialog-grid {
+	overflow:auto;	
+}
+
+.payPasswordSet{
+	overflow: hidden;
+}
+
+.payPasswordSet .ui-dialog-grid{
+	overflow:auto;
+}
+.disabled-select.question{
+	top: -35px;
+	left: 207px;
+}
+#sq{
+	top:0px;
+	height:70px;
+}
+#sq i{
+	display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Microsoft Yahei';
+    background-color: #dadada;
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 0
+}
+#sq i.on {
+    background-color: #737bf8
+}
+#sq label{
+	width:164px;
+	margin-top:0px;
+	margin-right:15px;
+}
+#sq .disabled-select{	
+	position: absolute;
+    width: 200px;
+    border-radius: 3px;
+}
+#main.questions #userInfo .row .btn.sq{
+	margin:20px 0 0;
+}
+#userInfo .pop-label.card{
+	text-align:left;
+}
+#abc{
+	top:0px;
+}
+#main #userInfo #answer-error{
+	margin-left: 3px;
+	color:#EA5200;
+	padding-left: 10px;
+	margin-top: 1px;
+}
+#main #userInfo #newPassword-error,#main #userInfo #oldPassword-error,#main #userInfo #confirm_password-error{
+	margin: 5px 0 0 218px;
+	color:#EA5200;
+}
+table.payPasswordSet form#userInfo #loginPassword-error,table.payPasswordSet form#userInfo #password-error{
+	margin-left: 50px;
+}
+table.payPasswordSet form#userInfo #confirm-error{
+	position: absolute;
+	top: 30px;
+	left: 141px;
+}
+#main #userInfo #loginPassword-error,#main #userInfo #password-error{
+	margin-left: 210px;
+	color:#EA5200;
+}
+#main #userInfo-spd .updatepsw{
+	position: relative;
+}
+#main #userInfo-spd #oldPassword-error,#main #userInfo-spd #newPassword-error,#main #userInfo-spd #confirm_password-error{
+	position: absolute;
+	right:-150px;
+	top:25px;
+	color:#EA5200;
+}
+#main #userInfo-spd #password_level{
+	margin:60px 0 0 200px;
+}
+#main #userInfo #sq #question-error{
+	margin-left: 185px;
+	color:#EA5200;
+	margin-top: 1px;
+}
+#main.questions #userInfo #answer-error{
+	margin:0;
+	color:#EA5200;
+}
+#main #userInfo #oldAnswer-error{
+	margin: -1px 3px;
+	padding-left: 10px;
+	color:#EA5200;
+}
+
+#main #userInfo .firstTwo #question-error {
+	margin-top: -2px;
+}
+#main #userInfo #question-error{
+	margin-left: 208px;
+	margin-top: -13px;
+	color: #EA5200;
+}
+
+#main .bind-email #userInfo #email-error {
+	margin:60px 0;
+	color:#EA5200;
+}
+#main.questions #userInfo .row label{
+	height: 50px;
+	line-height: 50px;
+}
+#main.questions #userInfo .row .input-wrap{
+	vertical-align: top;
+	margin:0;
+}
+#main.questions #userInfo .row #qSpan{
+	line-height: 30px;
+	height: 30px;
+}
+
+#main .questions .no-bottom {
+	margin-top: 50px;
+}
+#main.security .emalSn{
+	margin-left: 130px;
+	width:174px;
+	background-color: #fff;
+	border: 1px solid #dadada;
+}
+
+#main .bind-email .no-bottom {
+	margin-top: 50px;
+}
+#main .emailLinks .unBindEmail{
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	color: #ffffff;
+	background: #8bf5c0;
+	background: linear-gradient(to bottom , #8bf5c0, #1dd16b);
+	font-size: 18px;
+}
+
+#main .emails {
+	width: 550px;
+	margin: 0 auto;
+}
+
+#main .emailsinfo {
+	margin-top: 110px;
+	margin-left: 75px;
+}
+
+#main .emailsinfo .row label {
+	font-weight: 300;
+	width: 164px;
+	height: 64px;
+	font-size: 16px;
+}
+
+#main .emailsinfo .row label .spec {
+	text-align: left;
+	padding-top: 5px;
+	font-size: 12px;
+	color: #d8d8d8;
+	width: 550px;
+	background: #ffffff;
+	margin: 0;
+}
+
+#main .emailsinfo .row #email {
+	width: 200px;
+	height: 30px;
+	border: 1px solid #bdbdbd;
+	padding-left: 10px;
+}
+
+#main .emailsinfo .row .input-wrap {
+	text-align: left;
+}
+
+#main .emailsinfo .emailist li {
+	width: 200px;
+	float: left;
+	display: none;
+}
+
+#main .emailsinfo #email-error {
+	width: 110px;
+	margin: 0;
+	background-color: #ffffff;
+	padding-left: 13px;
+	text-align: left;
+}
+
+#main .emailsinfo .row .btn {
+	width: 196px;
+	height: 42px;
+	color: #ffffff;
+	border-bottom: 2px solid #1a964d;
+	background: #8bf5c0;
+	background: linear-gradient(to bottom, #8bf5c0, #1dd16b);
+	margin-top: 25px;
+}
+
+#main .emailsinfo .row .btn:hover {
+	border-bottom: 2px solid #1a844d;
+	background: #1db96a;
+	background: linear-gradient(to bottom, #8be4c0, #1db96a);
+}
+
+#main .emailsinfo .row .line {
+	height: 1px;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #eee;
+	padding-top: 20px;
+	left: -130px;
+}
+
+#main .emails .no-bottom {
+	margin: 50px 0 0 0;
+	padding: 0;
+}
+
+#main .emails .no-bottom h5 {
+	padding: 0;
+}
+
+#main .emails .no-bottom p {
+	padding-left: 80px;
+}

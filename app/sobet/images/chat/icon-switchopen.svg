@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="22px" viewBox="0 0 58 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>switch</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="48.5" cy="10.5" r="7.5"></circle>
+        <filter x="-46.7%" y="-33.3%" width="193.3%" height="193.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-246.000000, -366.000000)">
+            <g id="switch" transform="translate(245.000000, 366.000000)">
+                <path d="M47.1943226,0 L12.6644459,0 C6.19373291,0 0.929384257,4.9346 0.929384257,11 C0.929384257,17.0654 6.19373291,22 12.6644459,22 L47.1943226,22 C53.6650356,22 58.9293843,17.0654 58.9293843,11 C58.9293843,4.9346 53.6650356,0 47.1943226,0 Z" id="XMLID_2_" fill="#281935" fill-rule="nonzero"></path>
+                <g id="Oval-6">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#B0EB4D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <circle stroke="#FFFFFF" stroke-width="3" cx="48.5" cy="10.5" r="6"></circle>
+                </g>
+            </g>
+            <text id="关" font-family="PingFangSC-Regular, PingFang SC" font-size="13" font-weight="normal" fill="#A79DBF">
+                <tspan x="254" y="382"></tspan>
+            </text>
+        </g>
+    </g>
+</svg>

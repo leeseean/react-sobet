@@ -1,0 +1,214 @@
+
+<div class="usercenter">
+	<ul class="historyMenu">
+		<li data-type="lottery" class="on"><a>彩票投注</a></li>
+		<li data-type="trace"><a>彩票追号</a></li>
+		<li data-type="AG_game"><a>AG真人娱乐</a></li>
+		<li data-type="BY_game"><a>AG捕鱼王</a></li>
+		<li data-type="PT_game"><a>PT老虎机</a></li>
+		<li data-type="BBIN_game"><a>BBIN游戏</a></li>
+		<li data-type="SB_game"><a>沙巴体育</a></li>
+		<li data-type="IDN_game"><a>IDN棋牌</a></li>
+		<li data-type="kgame_game"><a>Kgame棋牌</a></li>
+		<li data-type="HKLHC_game"><a>香港六合彩</a></li>
+		<li data-type="statistics"><a>盈亏统计</a></li>
+	</ul>
+</div>
+
+
+<div class="filter">
+	<div class="HKLHC-history" style="display:none;">
+		<select>
+			<option value="1">投注记录</option>
+			<option value="2">追号记录</option>
+		</select>
+	</div>
+	<label>查询时间</label>
+	<ul class="quickDate">
+		<li><a data-value='0'>今天</a></li>
+		<li><a data-value='-1'>昨天</a></li>
+		<li><a data-value='-7'>最近一周</a></li>
+		<li><a data-value='-30'>最近一月</a></li>
+	</ul>
+	<label>从:</label><input type="text" id="date_from" value="" readonly="readonly">
+	<label>至:</label><input type="text" id="date_end" value="" readonly="readonly">
+	<select class="lotteryList" name="lotteryList"><option value="">所有彩种</option></select>
+	<select class="typeList" name="typeList">
+		<option value="">全部游戏类型</option>
+		<option value="1">真人游戏</option>
+		<option value="2">刮刮乐</option>
+		<option value="3">休闲游戏</option>
+		<option value="4">视频老虎机</option>
+		<option value="5">其他</option>
+		<option value="9">桌面卡牌</option>
+		<option value="10">老虎机</option>
+	</select>
+	<select class="agGameList" name="agGameList">
+		<option value="">全部游戏类型</option>
+		<option value="BAC">百家乐</option>
+		<option value="CBAC">包桌百家乐</option>
+		<option value="LINK">连环百家乐</option>
+		<option value="DT">龙虎</option>
+		<option value="SHB">骰宝</option>
+		<option value="ROU">轮盘</option>
+		<option value="FT">番摊</option>
+		<option value="LBAC">竞咪百家乐</option>
+		<option value="ULPK">终极德州扑克</option>
+		<option value="SBAC">保险百家乐</option>
+		<option value="NN">牛牛</option>
+		<option value="OTHER">其他</option>
+	</select>
+	<select class="sbGameList" name="sbGameList">
+		<option value="">全部游戏类型</option>
+		<option value="1">足球</option>
+		<option value="2">篮球</option>
+		<option value="5">网球</option>
+		<option value="6">排球</option>
+		<option value="9">羽毛球</option>
+		<option value="4">冰上曲棍球</option>
+		<option value="7">台球</option>
+		<option value="8">棒球</option>
+		<option value="10">高尔夫</option>
+		<option value="11">赛车</option>
+		<option value="12">游泳</option>
+		<option value="18">乒乓球</option>
+		<option value="999">其他游戏</option>
+	</select>
+	<select class="idnGameList" name="idnGameList">
+		<option value="">全部</option>
+		<option value="TXH">德州扑克</option>
+		<option value="LPK">真人德州</option>
+		<option value="DMM">多米诺99</option>
+		<option value="EBN">多米诺9</option>
+		<option value="BTM">多米诺</option>
+		<option value="BJK">21点</option>
+		<option value="CAP">十三张</option>
+	</select>
+	<select class="kgameList" name="kgameList">
+		<option value="">全部游戏</option>
+		<option value="abaa8a9ffc7a5afb37473a99653ca44d">百家乐</option>
+		<option value="0a636149fdf36c98e47e7b4e62fdbc7a">百人牛牛</option>
+		<option value="4126d6e9e679c9574dc799e06fc70e6a">奔驰宝马</option>
+		<option value="1234567890abcdef">彩金德州</option>
+		<option value="fab61991dd952f155e430b82d9537e77">德州牛仔</option>
+		<option value="3e137d9e63d5a8e34fefb8bfd1aab357">夺金捕鱼</option>
+		<option value="8354e40811382019262acc7531c87c5b">二八杠</option>
+		<option value="904ad648d161251c4ac195f339269c44">新二人麻将</option>
+		<option value="dcb2c811292efb7216748802d91e731c">森林舞会</option>
+		<option value="c13bb7f1fd87361a1521d94d56eaa492">悟空闹海</option>
+		<option value="7b577d729ce1a9959f326b0ed8fa7460">幸运水果机</option>
+		<option value="1aa39cb263960aca4e491e7206b92cd0">中国娃娃</option>
+	</select>
+	<select class="bbinGameList" name="bbinGameList">
+		<option value="">全部游戏类型</option>
+	</select>
+
+	<select class="status" name="">
+		<option value="">全部状态</option>
+		<option value="0">未开奖</option>
+		<option value="1">未中奖</option>
+		<option value="2">已派奖</option>
+		<option value="3">等待派奖</option>
+		<option value="4">个人撤单</option>
+		<option value="5">系统撤单</option>
+	</select>
+	<select class="ag-status" name="">
+		<option value="">所有状态</option>
+		<option value="1">已结算</option>
+		<option value="0">未结算</option>
+		<option value="-1">重置试玩额度</option>
+		<option value="-2">注单被篡改</option>
+		<option value="-8">取消指定局注单</option>
+		<option value="-9">取消注单</option>
+	</select>
+	<select class="sb-status" name="">
+		<option value="">全部</option>
+		<option value="0">进行中</option>
+		<option value="1">已结算</option>
+	</select>
+	<label class="statistics-hide">类型:</label>
+	<select class="game-lists statistics-hide" name="game-lists">
+		<option value="CP">彩票</option>
+		<option value="AG">AG真人娱乐</option>
+		<option value="AGHUNTER">AG捕鱼王</option>
+		<option value="PT">PT老虎机</option>
+		<option value="BBIN">BBIN游戏</option>
+		<option value="SB">沙巴体育</option>
+		<option value="IDN">IDN棋牌</option>
+		<option value="KGAME">Kgame棋牌</option>
+		<option value="HKLHC">香港六合彩</option>
+	</select>
+	<select class="dantiao-status">
+		<option value="">是否单挑</option>
+		<option value="2">否</option>
+		<option value="3">是</option>
+	</select>
+	<a class="query hand"></a>
+</div>
+<div class="list">
+	<div class="tit"></div>
+	<div class="bloading tiploading" name="change" style="position: relative;top: 120px;">
+		<div class="ui-dialog-loading"></div>
+	</div>
+
+	<div class="notran" style="display: block;">
+		<h6>暂无数据</h6>
+		<!-- <div class="notran-img"></div> -->
+	</div>
+
+	<div class="box">
+	    <div class="sppinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+        </div>
+		<ul></ul>
+		<div class="tip">温馨提示：<em>仅保留90天的数据</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-trace hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>仅保留90天的数据</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-ag hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.AG游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-pt hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.PT游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-by hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.AG捕鱼王数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-bbin hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.BBIN游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-sb hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.沙巴体育游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-idn hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.IDN棋牌游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-kgame hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>1.仅保留90天的数据<br>2.Kgame棋牌游戏数据有15至30分钟的延迟</em></div>
+		<div class="pagging"></div>
+	</div>
+	<div class="box-statistics hide">
+		<ul></ul>
+		<div class="tip">温馨提示：<em>仅保留最近一周的数据</em></div>
+		<div class="pagging"></div>
+	</div>
+</div>

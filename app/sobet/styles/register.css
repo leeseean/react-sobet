@@ -1,0 +1,691 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "PingFang SC", "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+/********************media screen***********************/
+@media only screen and (min-width: 769px) {
+    body {
+        background: url(/static/sobet/images/new/images/login/login-bg.jpg) center no-repeat;
+        background-size: cover;
+    }
+    .wrap {
+        width: 955px;
+        margin: 0 auto;
+    }
+    header {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: #1a223a;
+    }
+    header .icon-logo {
+        display: inline-block;
+        width: 166px;
+        height: 34px;
+        background: url(/static/sobet/images/new/images/head/menu-icon-logo.png) center no-repeat;
+        background-size: cover;
+        vertical-align: middle;
+    }
+    header .icon-logo2018 {
+        display: inline-block;
+        width: 70px;
+        height: 24px;
+        margin-left: 10px;
+        background: url(/static/sobet/images/new/images/head/menu-icon-logo2018.svg) center no-repeat;
+        background-size: cover;
+        vertical-align: middle;
+    }
+    header ul {
+        height: 100%;
+    }
+    header ul li {
+        height: 100%;
+        width: 80px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        cursor: pointer;
+    }
+    header ul li .detail {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: 145px;
+        background-color: #0b0f19;
+        font-size: 14px;
+        z-index: 10;
+        cursor: default;
+    }
+    header ul li:hover {
+        background-color: #0b0f19;
+    }
+    header ul li:hover .detail{
+        display: block;
+    }
+
+    header li.about .detail .about_div {
+        width: 955px;
+        margin: 0 auto;
+        height: 145px;
+        text-align: left;
+    }
+    header li.about .detail i {
+        display: inline-block;
+        width: 132px;
+        height: 94px;
+        margin: 25px 40px 0 0;
+        background: url(/static/sobet/images/ab_d_icon.jpg) no-repeat;
+    }
+    header li.about .about_div>div {
+        width: 80%;
+        padding: 10px 0;
+    }
+    header li.about .detail p {
+        line-height: 30px;
+    }
+    header li.about .detail p em {
+        color: #a5843d;
+    }
+    header li.line .detail .line_div {
+        width: 955px;
+        margin: 0 auto;
+        line-height: 145px;
+    }
+    header li.line .detail .line_div a {
+        display: inline-block;
+        width: 122px;
+        height: 122px;
+        line-height: 100px;
+        background: url(/static/sobet/images/l_d_icon.png) no-repeat;
+        margin: 0 20px;
+        border-radius: 50%;
+        color: #333;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    header li.line .detail .line_div a.error {
+        background-position: -185px 0;
+    }
+    header li.contact a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: #fff;
+    }
+
+    #main {
+        width: 100%;
+        min-height: inherit;
+        margin: 75px 0 160px;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    #main .content {
+        width: 955px;
+        height: 340px;
+        margin: 0 auto;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+    }
+    .content .banner {
+        padding: 15px 10px;
+        background-color: #0d111e;
+    }
+    .content .banner .gallery .swiper-container{
+        width: 516px;
+        height: 310px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .gallery .slide-li {
+        position: relative;
+    }
+    .gallery .slide-li .swiper-lazy {
+        height: 100%;
+        background-size: 516px 310px;
+    }
+    .gallery .slide-li .slide-title-type {
+        position: absolute;
+        left: 16px;
+        bottom: 40px;
+        z-index: 2;
+    }
+    .gallery .slide-li .slide-title {
+        font-size: 16px;
+        color: #fff25d;
+    }
+    .gallery .slide-li .slide-type {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: #7a64d9;
+        border-radius: 10px;
+        font-size: 12px;
+        color: #fff;
+    }
+    .gallery .slide-li .slide-sub-title {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        font-size: 14px;
+        color: #fff;
+        z-index: 2;
+    }
+    .gallery .slide-li .slide-li-mask {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 516px;
+        height: 100px;
+        background-image: linear-gradient(-180deg, rgba(6, 6, 6, 0), rgba(0, 0, 0, 1));
+    }
+
+
+    .content .register {
+        width: 419px;
+        height: 100%;
+        background-image: linear-gradient(to bottom, #445b9f, #1a2649 70%);
+    }
+    .register .register-content {
+        position: relative;
+        width: 337px;
+        margin: 0 auto;
+    }
+    .register h3 {
+        line-height: 60px;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+    }
+    .register .login-btn {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        width: 50px;
+        height: 20px;
+        padding-left: 5px;
+        text-align: center;
+        line-height: 20px;
+        background-color: #c9dde6;
+        border-radius: 10px;
+        font-size: 14px;
+        color: #3f5596;
+        cursor: pointer;
+    }
+    .register .row {
+        width: 100%;
+        height: 90px;
+    }
+    .register .input-user {
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .register .icon {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .register .icon.user-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-user.png);
+    }
+    .register .icon.password-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-password.png);
+    }
+    .register .input-user input {
+        width: 100%;
+        height: 46px;
+        padding-left: 40px;
+        background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+        border: 1px solid #222b3b;
+        border-radius: 4px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+        font-size: 14px;
+        color: #607079;
+        transition: all .2s ease;
+        outline: none;
+    }
+    .register .input-user input:-webkit-autofill,
+    .register .input-user input:-webkit-autofill:hover,
+    .register .input-user input:-webkit-autofill:focus {
+        box-shadow: 0 0 0 46px #e7f1f5 inset;
+        -webkit-text-fill-color: #333;
+    }
+    .register .input-user input:focus {
+        border-color: #5de9fe;
+        box-shadow: 0 0 3px 0 rgba(93, 233, 254, .7);
+    }
+    .register span {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #d4e4eb;
+    }
+
+    .register span.error {
+        padding-left: 15px;
+        background: url(/static/sobet/images/new/images/login/icon-tip.png) 0 center no-repeat;
+        font-size: 12px;
+        color: #ff6363;
+    }
+
+    .register .code {
+        padding-top: 5px;
+    }
+    .register .code .input-code {
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .register .code .input-code input{
+        width: 235px;
+        height: 46px;
+        padding-left: 40px;
+        background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+        border: 1px solid #222b3b;
+        border-radius: 4px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+        font-size: 14px;
+        color: #607079;
+        transition: all .2s ease;
+        outline: none;
+    }
+    .register .code .input-code input:focus {
+        border-color: #5de9fe;
+        box-shadow: 0 0 3px 0 rgba(93, 233, 254, .7);
+    }
+    .register .icon.code-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-valicode.png);
+    }
+    .register .verifycode {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 100px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    .register .code .btn {
+        position: relative;
+        width: 96px;
+        height: 46px;
+        margin-bottom: 10px;
+        line-height: 46px;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #9a38ff, #8f25e6);
+        border-radius: 4px;
+        border: none;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+    }
+    .register .code .btn:hover {
+        background-image: linear-gradient(to bottom, #531194, #8d26e5);
+    }
+    .register .code .btn:active {
+        background: #4b1083;
+    }
+
+
+    .register .contact {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .register .contact h6 {
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 5px;
+        border-bottom: 1px dashed #999;
+        color: #ffc843;
+        font-size: 14px;
+    }
+    .register .contact p{
+        display: none;
+        line-height: 26px;
+        vertical-align: top;
+    }
+    .register .contact p span{
+        font-size: 14px;
+        color: #999;
+        word-break: break-all;
+    }
+    .register .contact a{
+        float: right;
+        display: inline-block;
+        width: 82px;
+        height: 26px;
+    }
+
+
+    footer .footer-t {
+        width: 100%;
+        padding: 18px 0;
+        text-align: center;
+        background-color: #101626;
+    }
+    footer .footer-b {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        background-color: #1a223a;
+    }
+    .footer-b .fl img {
+        margin-right: 17px;
+        vertical-align: middle;
+    }
+    .footer-b .fl span {
+        font-size: 12px;
+        color: #a3a3a3;
+    }
+    .footer-b .fr span {
+        font-size: 12px;
+        color: #fff;
+    }
+    .footer-b .fr img {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+
+    footer .right-fixed {
+        position: fixed;
+        right: 20px;
+        top: 170px;
+        width: 93px;
+    }
+    .right-fixed .app-download {
+        width: 100%;
+        height: 140px;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 5px;
+    }
+    .right-fixed .app-download .app-title {
+        padding: 15px 0 8px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .right-fixed .app-download .app-code {
+        text-align: center;
+    }
+    .right-fixed .app-download .app-scan {
+        padding: 12px 0 0;
+        text-align: center;
+        font-size: 12px;
+        color: #f1f1f1;
+    }
+    .right-fixed .app-download .app-scan .icon-scan{
+        display: inline-block;
+        width: 14px;
+        height: 11px;
+        padding-right: 4px;
+        background: url(/static/sobet/images/new/images/login/icon-scan.png) no-repeat;
+        vertical-align: middle;
+    }
+    .right-fixed .fast-client {
+        width: 100%;
+        height: 140px;
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 5px;
+    }
+    .right-fixed .fast-client a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .right-fixed .fast-client:hover {
+        background-color: #2a344f;
+    }
+    .right-fixed .fast-client .fast-img {
+        padding-top: 20px;
+        text-align: center;
+    }
+    .right-fixed .fast-client .fast-download {
+        line-height: 50px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-height: 768px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        display: none;
+    }
+
+    #main {
+        width: 100%;
+        height: 100%;
+    }
+    #main .banner {
+        display: none;
+    }
+    #main .register {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, #445b9f, #1a2649 70%);
+    }
+    #main .register-content {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .register h3 {
+        line-height: 60px;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+    }
+    .register .login-btn {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        width: 50px;
+        height: 20px;
+        padding-left: 5px;
+        text-align: center;
+        line-height: 20px;
+        background-color: #c9dde6;
+        border-radius: 10px;
+        font-size: 14px;
+        color: #3f5596;
+        cursor: pointer;
+    }
+    .register .row {
+        width: 100%;
+        height: 90px;
+    }
+    .register .input-user {
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .register .icon {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .register .icon.user-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-user.png);
+    }
+    .register .icon.password-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-password.png);
+    }
+    .register .input-user input {
+        width: 100%;
+        height: 46px;
+        background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+        border: 1px solid #222b3b;
+        border-radius: 4px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+        text-indent: 40px;
+        font-size: 14px;
+        color: #607079;
+        transition: all .2s ease;
+        outline: none;
+    }
+    .register .input-user input:focus {
+        border-color: #5de9fe;
+        box-shadow: 0 0 3px 0 rgba(93, 233, 254, .7);
+    }
+    .register span {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #d4e4eb;
+    }
+
+    .register span.error {
+        padding-left: 15px;
+        background: url(/static/sobet/images/new/images/login/icon-tip.png) 0 center no-repeat;
+        font-size: 12px;
+        color: #ff6363;
+    }
+
+    .register .code {
+        width: 100%;
+        padding-top: 5px;
+    }
+    .register .code .input-code {
+        position: relative;
+        width: 75%;
+        margin-bottom: 10px;
+    }
+    .register .code .input-code input{
+        width: 100%;
+        height: 46px;
+        background-image: linear-gradient(to bottom, #c3d8e3, #e7f1f5);
+        border: 1px solid #222b3b;
+        border-radius: 4px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+        text-indent: 40px;
+        font-size: 14px;
+        color: #607079;
+        transition: all .2s ease;
+        outline: none;
+    }
+    .register .code .input-code input:focus {
+        border-color: #5de9fe;
+        box-shadow: 0 0 3px 0 rgba(93, 233, 254, .7);
+    }
+    .register .icon.code-icon {
+        background-image: url(/static/sobet/images/new/images/login/icon-valicode.png);
+    }
+    .register .verifycode {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 70px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    .register .code .btn {
+        position: relative;
+        width: 23%;
+        height: 46px;
+        margin-bottom: 10px;
+        line-height: 46px;
+        text-align: center;
+        background-image: linear-gradient(to bottom, #9a38ff, #8f25e6);
+        border-radius: 4px;
+        border: none;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+    }
+    .register .code .btn:hover {
+        background-image: linear-gradient(to bottom, #531194, #8d26e5);
+    }
+    .register .code .btn:active {
+        background: #4b1083;
+    }
+
+
+    .register .contact {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .register .contact h6 {
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 5px;
+        border-bottom: 1px dashed #999;
+        color: #ffc843;
+        font-size: 14px;
+    }
+    .register .contact p{
+        display: none;
+        line-height: 26px;
+        vertical-align: top;
+    }
+    .register .contact p span{
+        font-size: 14px;
+        color: #999;
+        word-break: break-all;
+    }
+    .register .contact a{
+        float: right;
+        display: inline-block;
+        width: 82px;
+        height: 26px;
+    }
+
+
+    footer {
+        display: none;
+    }
+}
+
+.regSuccess{
+    background: url("../images/reg.png") no-repeat;
+}
+.regSuccess h4{
+    font-size: 24px;
+    color:#636363;
+    text-align: right;
+    line-height: 50px;
+}
+.regSuccess p{
+    font-size: 14px;
+    color:#636363;
+    text-align: right;
+}
+.regSuccess p em,.regSuccess p a{
+    color:#ff0000;
+}
+.regSuccess .ui-dialog-header{
+    border: none;
+}

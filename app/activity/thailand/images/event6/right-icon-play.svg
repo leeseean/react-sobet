@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>right-icon-play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Symbols" transform="translate(-106.000000, -63.000000)">
+            <g id="right-icon-play" transform="translate(106.000000, 63.000000)">
+                <circle id="Oval" stroke="#A3713F" stroke-width="2" fill="#000000" fill-rule="evenodd" cx="24" cy="24" r="23"></circle>
+                <path d="M34.51328,22.1448808 L20.81504,13.3049104 C19.81696,12.6225793 19,13.1245777 19,14.42024 L19,31.5801825 C19,32.8751782 19.81696,33.3771765 20.81504,32.6955121 L34.51328,23.8555417 C34.51328,23.8555417 35,23.4988763 35,23.0002113 C35,22.5015463 34.51328,22.1448808 34.51328,22.1448808 Z" id="Shape" fill="#E38E37" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

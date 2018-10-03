@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>right-icon-home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Symbols" transform="translate(-276.000000, -63.000000)">
+            <g id="right-icon-home" transform="translate(276.000000, 63.000000)">
+                <circle id="Oval-Copy-3" stroke="#A3713F" stroke-width="2" fill="#000000" cx="24" cy="24" r="23"></circle>
+                <g id="home" stroke-width="1" transform="translate(12.000000, 11.000000)" fill="#E38E37">
+                    <path d="M24,10.4195725 L12.5594687,0.209770647 C12.251773,-0.069923549 11.7482806,-0.069923549 11.4405848,0.209770647 L0,10.4195725 L1.11888386,11.6783035 L3.04895585,9.94402814 L3.04895585,20.9650181 C3.04895585,21.4405625 3.41260114,21.8041543 3.88809198,21.8041543 L20.1118545,21.8041543 C20.5873989,21.8041543 20.9509906,21.440509 20.9509906,20.9650181 L20.9509906,9.94408168 L22.8810626,11.678357 L24,10.4195725 Z M19.2727719,20.125882 L4.72728165,20.125882 L4.72728165,8.43355099 L12.0000268,1.94404599 L19.2727719,8.43355099 L19.2727719,20.125882 Z" id="Shape" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

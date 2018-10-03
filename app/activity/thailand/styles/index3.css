@@ -1,0 +1,292 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    min-width:1320px;
+}
+body{
+    font-family:"Microsoft Yahei",Arial,Helvetica,sans-serif;
+    background:url("../images/tw_bg.jpg") no-repeat top;
+    margin: auto 0;
+    height: 2795px;
+}
+.header_bg{
+    width:100%;
+    min-width:1320px;
+}
+.header_bg .top{
+    height:40px;
+    background-color:#010101;
+    width:100%;
+}
+.header_bg .top .m{
+    width:1200px;
+    margin:0 auto;
+    height:100%;
+    position: relative;
+}
+.header_bg .bottom .m{
+    width:1300px;
+    margin:0 auto;
+    height:100%;
+    text-align: center;
+}
+.header_bg .bottom .m img{
+    margin-top: 30px;
+}
+.header_bg .top .logo{
+    cursor:pointer;
+    display:inline-block;
+    width:150px;
+    height:36px;
+    margin-top: 5px;
+    background:url(../images/logo.png) no-repeat left center;
+}
+.header_bg .top .time{
+    position: absolute;
+    left: 340px;
+    top: 20px;
+}
+.header_bg .top .time>div{
+    display: inline-block;
+}
+.header_bg .top .time .prev:before{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -133px -70px;
+    position: absolute;
+    left: -12px;
+    bottom: 0;
+}
+.header_bg .top .time .prev a{
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #2d1a5a;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 22px;
+}
+.header_bg .top .time .now{
+    background: #28075e;
+    width: 310px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 22px;
+    text-align: center;
+}
+.header_bg .top .time .now:before{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -133px -70px;
+    position: absolute;
+    left: 90px;
+    bottom: 0;
+}
+.header_bg .top .time .now:after{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -99px -70px;
+    position: absolute;
+    right: 90px;
+    bottom: 0;
+}
+.header_bg .top .time .now span{
+    color: #fff;
+    font-size: 16px;
+}
+.header_bg .top .time .now em{
+    color: #b3954d;
+    font-style: normal;
+    font-size: 14px;
+}
+.header_bg .top .time .next{
+    width: 80px;
+    height: 30px;
+    background: #2d1a5a;
+    color: #41306a;
+    text-align: center;
+    line-height: 30px;
+}
+.header_bg .top .time .next a{
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #2d1a5a;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 22px;
+}
+.header_bg .top .time .next:after{
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("/static/activity/thailand/images/sanjiao.png") no-repeat -99px -70px;
+    position: absolute;
+    right: -12px;
+    bottom: 0;
+}
+.header_bg .bottom{
+    height:180px;
+    width:100%;
+}
+.main_bg{
+    width:100%;
+    min-width:1320px;
+    background-size: cover;
+    padding-bottom: 20px;
+    position: relative;
+}
+.main_bg .m{
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.main_bg .m .activeVideo{
+    position:relative;
+    z-index:1000;
+}
+.main_bg .m .activeVideo .video{
+    width: 728px;
+    height: 425px;
+    margin: 0 auto 27px;
+    padding-top: 35px;
+    border-radius: 2px;
+    background: url("../images/tw_video_bg02.png") no-repeat;
+    position: relative;
+    z-index:9999;
+}
+#video{
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    z-index:9999;
+}
+.main_bg .m .activePic{
+    width: 1173px;
+    height:2300px;
+    margin: 0 auto;
+    background: url("../images/tw_activelist_bg.png") no-repeat 0px 30px;
+    border-radius: 3px;
+    text-align: center;
+    position:relative;
+}
+.main_bg .m .activePic>img{
+    margin: 25px auto;
+}
+.main_bg .m .activePic h3{
+    position: absolute;
+    left: 386px;
+    top: 24px;
+    font-size: 28px;
+    color: #f52222;
+    font-weight: 600;
+}
+.main_bg .m .activePic h3 span{
+    font-size: 22px;
+    color: #f52222;
+    margin-right: 20px;
+}
+.main_bg .m .activePic .pic{
+    width: 1072px;
+    padding: 0 0 8px 24px;
+    margin: 15px auto;
+}
+.main_bg .m .activePic .pic ul{
+    width:338px;
+    float: left;
+    margin: -8px 0px 12px 8px;
+}
+.main_bg .m .activePic .pic li{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.contact{
+    text-align: center;
+    margin-top:8px;
+    margin-bottom:110px;
+}
+.main_bg .m .contact p{
+    color: #343131;
+    height: 40px;
+    line-height: 40px;
+    margin:auto 0;
+    font-size:13px;
+    color: #ffd974;
+}
+.main_bg .m .contact a{
+    display: inline-block;
+    text-align: center;
+    width: 168px;
+    height: 35px;
+    line-height: 32px;
+    font-size: 18px;
+    border:1px solid #ffd974;
+    color: #ffd974;
+}
+.clear{
+    clear: both;
+}
+.func{
+    width: 50px;
+    position: fixed;
+    left: 50%;
+    margin-left: 610px;
+    top: 50%;
+    margin-top: -120px;
+}
+.func a{
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    background:url(../images/siderbar_btn01.png) no-repeat;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.func a span{
+    display:block;
+    padding-top:11px;
+}
+.footer{
+    height:75px;
+    background-color: #221f10;
+    font-size: 12px;
+    line-height: 75px;
+    color:#ffd974;
+}
+.footer .m{
+    width:1100px;
+    margin: 0 auto;
+}
+.footer .m .contactUs{
+    float: left;
+}
+.footer .m .contactUs a{
+    color:#ffd974;
+}
+.footer .m .copyright{
+    float: right;
+}

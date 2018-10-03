@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>scroll btn</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="第二屏" transform="translate(-926.000000, -950.000000)">
+            <g id="scroll-btn" transform="translate(926.000000, 950.000000)">
+                <rect id="Rectangle-5-Copy" fill="#EA9B39" transform="translate(33.941125, 33.941125) rotate(45.000000) translate(-33.941125, -33.941125) " x="9.9411255" y="9.9411255" width="48" height="48"></rect>
+                <polygon id="Rectangle-5-Copy-2" fill="#000000" transform="translate(33.435029, 33.435029) scale(1, -1) rotate(45.000000) translate(-33.435029, -33.435029) " points="23.9350288 23.9350288 42.9350288 23.9350288 23.9350288 42.9350288"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

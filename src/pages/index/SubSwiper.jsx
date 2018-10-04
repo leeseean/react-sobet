@@ -38,7 +38,7 @@ class SubSwiper extends React.Component {
                 {
                     this.state.data.map(item => {
                         const { id, imagePath } = item;
-                        return <Item key={id} imagePath={imagePath} />
+                        return <Item key={id} id={id} imagePath={imagePath} />
                     })
                 }
             </Carousel>

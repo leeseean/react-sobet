@@ -69,7 +69,7 @@ class ActivityList extends React.Component {
             const countTime = Number(diffTime) - day * 24 * 60 * 60;
             return (
                 <div key={id} className="fl activity-item">
-                    <a href={`/activity/${id}`}>
+                    <a href={`/activity/list/${id}`}>
                         <img src={`http://www.mc188.com${frontImagePath}`} width="392" height="236" alt="" />
                         {
                             isjoined === '1' ? <img className="activity-ycj" width="38" height="62" src={require('../../images/activity/ycj.png')} alt="" /> : null
@@ -83,7 +83,7 @@ class ActivityList extends React.Component {
                             <Countdown className="count-down-time" count={countTime} />
                         </div>
                         <div className="fr">
-                            <a href={`/activity/${id}`} className="activity-view-detail">查看详情</a>
+                            <a href={`/activity/list/${id}`} className="activity-view-detail">查看详情</a>
                         </div>
                     </div>
                 </div>

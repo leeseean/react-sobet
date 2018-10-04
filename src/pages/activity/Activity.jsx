@@ -15,13 +15,13 @@ class Activity extends React.Component {
         return (
             <div className="activity-wrapper">
                 <Route
-                    exact
+                    exact={true}
                     path={`${match.url}/list`}
                     component={ActivityList}
                 />
                 <Route
-                    exact
-                    path={`${match.url}/:id`}
+                    exact={true}
+                    path={`${match.url}/list/:id`}
                     component={ActivityDetail}
                 />
             </div>

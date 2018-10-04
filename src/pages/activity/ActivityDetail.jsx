@@ -32,7 +32,7 @@ class ActivityDetail extends React.Component {
         }
     }
     queryActivityById = () => {
-        const { id } = this.props.match.param;
+        const { id } = this.props.match.params;
         queryActivityById({ id }).then(res => {
             if (res.data.code === 0) {
                 this.setState({
@@ -51,18 +51,18 @@ class ActivityDetail extends React.Component {
         return (
             <div className="activity-detail-wrapper">
                 <div className="activity-detail-header">
-                    <a className="recent-activity" href="">最新优惠</a>正文
+                    <a className="recent-activity" href="/activity/list">最新优惠</a>>正文
                 </div>
                 <div className="activity-detail-content">
-                    <h3>{activityTitle}</h3>
+                    <h3 className="activity-detail-content-title">{activityTitle}</h3>
                     <p>
-                        <span>开始时间：<em>{startTime}</em></span>
-                        <span>结束时间：<em>{endTime}</em></span>
-                        <span>活动类型：<em>日返水</em></span>
-                        <span>游戏类型：<em>{gamename}</em></span>
+                        <span className="mr20">开始时间：<em>{startTime}</em></span>
+                        <span className="mr20">结束时间：<em>{endTime}</em></span>
+                        <span className="mr20">活动类型：<em>日返水</em></span>
+                        <span className="mr20">游戏类型：<em>{gamename}</em></span>
                     </p>
                     <div>
-                        <img src={frontImagePath} alt="" width="1134" height="1329" />
+                        <img style={{display: 'block'}} src={frontImagePath} alt="" width="1134" height="1329" />
                     </div>
                     <div className="count-down-wrapper">
                         <p>活动倒计时：</p>

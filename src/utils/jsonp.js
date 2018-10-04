@@ -1,9 +1,12 @@
 import jsonp from 'easy-jsonp';
 
+const isDev = true;
+// const isDev = false;
+
 //获取登录状态
 export function getLoginState() {
   return jsonp({
-    url: 'http://www.mochen111.net/sso/getUserLoginState',
+    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/getUserLoginState',
     callback: 'jsonp1',
     params: {
       appId: 5
@@ -14,7 +17,7 @@ export function getLoginState() {
 //登录
 export function ssoLogin(username, password, capchaCode) {
   return jsonp({
-    url: 'http://www.mochen111.net/sso/login',
+    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/login',
     callback: 'jsonp1',
     params: {
       capchaCode,
@@ -30,7 +33,7 @@ export function ssoLogin(username, password, capchaCode) {
 //登出
 export function ssoLogout(username, noRedirect = true) {
   return jsonp({
-    url: 'http://www.mochen111.net/sso/logout',
+    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/logout',
     callback: 'jsonp1',
     params: {
       noRedirect,

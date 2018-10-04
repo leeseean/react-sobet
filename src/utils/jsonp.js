@@ -6,7 +6,7 @@ const isDev = true;
 //获取登录状态
 export function getLoginState() {
   return jsonp({
-    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/getUserLoginState',
+    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/getUserLoginState',
     callback: 'jsonp1',
     params: {
       appId: 5
@@ -16,24 +16,30 @@ export function getLoginState() {
 
 //登录
 export function ssoLogin(username, password, capchaCode) {
-  return jsonp({
-    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/login',
-    callback: 'jsonp1',
-    params: {
+  let params = {
+    password,
+    way: 'pwd',
+    from: 'portal',
+    cn: username,
+    appId: 5,
+  };
+  if (capchaCode) {
+    params = {
       capchaCode,
-      password,
-      way: 'pwd',
-      from: 'portal',
-      cn: username,
-      appId: 5,
-    }
+      ...params
+    };
+  }
+  return jsonp({
+    params,
+    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/login',
+    callback: 'jsonp1',
   });
 }
 
 //登出
 export function ssoLogout(username, noRedirect = true) {
   return jsonp({
-    url: isDev ? 'http://www.mochen111.net' : '' + '/sso/logout',
+    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/logout',
     callback: 'jsonp1',
     params: {
       noRedirect,

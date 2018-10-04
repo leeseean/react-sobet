@@ -31,13 +31,21 @@ const RouteConfig = [
         }),
         name: '彩票'
     }, {
+        path: '/vipEvent',
+        component: Loadable({
+            loader: () => import('./vipEvent/VipEvent'),
+            loading: GlobalLoading,
+            delay: 500
+        }),
+        name: 'Vip招待'
+    }, {
         path: '/activity',
         component: Loadable({
             loader: () => import('./activity/Activity'),
             loading: GlobalLoading,
             delay: 500
         }),
-        name: '活动页'
+        name: '活动页',
     }, {
         path: '/agent',
         component: Loadable({
@@ -158,8 +166,10 @@ class Home extends React.Component {
             case '/lottery':
                 document.title = '彩票';
                 break;
-            case '/activity':
+            case '/vipEvent':
                 document.title = 'Vip活动';
+            case '/activity':
+                document.title = '最新活动';
                 break;
             case '/agent':
                 document.title = '代理中心';

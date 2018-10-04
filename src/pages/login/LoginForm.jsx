@@ -43,6 +43,15 @@ class NormalLoginForm extends React.Component {
             .validateFields((err, formData) => {
                 if (!err) {
                     ssoLogin(formData.userName, md5(formData.password), formData.capchaCode).then(res => {
+                        if (res.needCapchaCode) {//验证码
+                            this.setState({
+                                verifycodeFlag: true
+                            });
+                        } else {
+                            this.setState({
+                                verifycodeFlag: false
+                            });
+                        }
                         if (res.server && res.server === 'maintenance') { //系统维护提示
                             message.warning(`${res.tipinfo || `系统维护中，预计${res.time}结束！`}`);
                             return;
@@ -72,15 +81,7 @@ class NormalLoginForm extends React.Component {
                                 message.error(res.msg);
                             }
                         }
-                        if (res.needCapchaCode) {//验证码
-                            this.setState({
-                                verifycodeFlag: true
-                            });
-                        } else {
-                            this.setState({
-                                verifycodeFlag: false
-                            });
-                        }
+                        
                     });
                 }
             });
@@ -90,6 +91,9 @@ class NormalLoginForm extends React.Component {
         if (globalStore.logined) { //如果登陆状态为true。直接跳到首页
             this.jumpByUserType(globalStore.userType);
         }
+    }
+    componentWillUnmount() {
+
     }
     render() {
         const { getFieldDecorator } = this.props.form;

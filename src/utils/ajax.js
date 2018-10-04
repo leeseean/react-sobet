@@ -52,8 +52,8 @@ const $http = (config) => {
 
 export default $http;
 
-const idDev = true;
-// const idDev = false;
+const isDev = true;
+// const isDev = false;
 
 //中奖喜报
 export function getLotteryWinTop10() {
@@ -66,7 +66,7 @@ export function getLotteryWinTop10() {
 //获取余额
 export function getPlayerBalance(dataOrParams) {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/pay/getPlayerBalance',
+        url: (isDev ? '/dev' : '') + '/sobet/pay/getPlayerBalance',
         method: 'GET',
         params: dataOrParams
     });
@@ -74,28 +74,28 @@ export function getPlayerBalance(dataOrParams) {
 //获取捕鱼王游戏链接
 export function getAGHURUrl() {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/ag/getAGHURUrl',
+        url: (isDev ? '/dev' : '') + '/sobet/ag/getAGHURUrl',
         method: 'GET'
     });
 }
 //获取IDN棋牌游戏链接
 export function getIdnUrl() {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/idn/getIdnUrl',
+        url: (isDev ? '/dev' : '') + '/sobet/idn/getIdnUrl',
         method: 'GET'
     });
 }
 //获取kgame棋牌accesstoken
 export function getKGAccessToken() {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/KG/getKGAccessToken',
+        url: (isDev ? '/dev' : '') + '/sobet/KG/getKGAccessToken',
         method: 'GET'
     });
 }
 //获取kgame棋牌游戏链接
 export function getKGGameUrl(dataOrParams) {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/KG/getKGGameUrl',
+        url: (isDev ? '/dev' : '') + '/sobet/KG/getKGGameUrl',
         method: 'GET',
         params: dataOrParams
     });
@@ -103,7 +103,7 @@ export function getKGGameUrl(dataOrParams) {
 //真人娱乐页面中间滚动数据
 export function queryTopBetData(dataOrParams) {
     return $http({
-        url: idDev ? '/dev' : '' + '/lottery/api/u/v1/ag/queryTopBetData',
+        url: (isDev ? '/dev' : '') + '/lottery/api/u/v1/ag/queryTopBetData',
         method: 'GET',
         params: dataOrParams
     });
@@ -111,7 +111,7 @@ export function queryTopBetData(dataOrParams) {
 //获取沙巴体育cookie
 export function getSportCookie() {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/userInfo/getIbcLoginSessionToken',
+        url: (isDev ? '/dev' : '') + '/sobet/userInfo/getIbcLoginSessionToken',
         method: 'GET'
     });
 }
@@ -163,7 +163,15 @@ export function getSlotReward() {
 //活动 /sobet/api/i/anon/activity/queryCurrentActivity
 export function queryCurrentActivity() {
     return $http({
-        url: idDev ? '/dev' : '' + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        url: (isDev ? '/dev' : '') + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        method: 'GET'
+    });
+}
+//活动详情 /sobet/api/i/anon/activity/queryActivityById?id=106
+export function queryActivityById(params) {
+    return $http({
+        params,
+        url: (isDev ? '/dev' : '') + '/sobet/api/i/anon/activity/queryActivityById',
         method: 'GET'
     });
 }

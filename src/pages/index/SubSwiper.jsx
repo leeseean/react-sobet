@@ -26,7 +26,7 @@ class SubSwiper extends React.Component {
         const Item = ({ id, imagePath }) => {
             return (
                 <div>
-                    <a href={`/sobet/activity/goDetailById?id=${id}`} target="_blank">
+                    <a href={`/activity/${id}`} target="_blank">
                         <img src={imagePath} width="315" height="190" />
                     </a>
                 </div>

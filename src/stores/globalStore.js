@@ -9,6 +9,14 @@ import {
 
 class GlobalStore {
 
+    @observable theme = localStorage.getItem('theme') || 'red';//切换页面主题背景字段
+
+    @action setTheme = (theme) => {
+        this.theme = theme;
+        document.querySelector('#theme').setAttribute('href', `/theme.${theme}.css`); 
+        localStorage.setItem('theme', theme);
+    }
+
     @observable logined = sessionStorage.getItem('logined');
 
     @observable platformId = sessionStorage.getItem('setPlatformId') || '1' //摩臣1

@@ -5,7 +5,7 @@ import {
     computed
 } from 'mobx';
 import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
-import trendCodeColorConfig from '../pages/lottery/trendCodeColorConfig';
+import trendConfig from '../pages/lottery/trendConfig';
 import {
     queryTrendData
 } from '../utils/ajax';
@@ -14,7 +14,7 @@ class LotteryStore {
 
     lotteryCodeToCn = lotteryCodeToCn
 
-    trendCodeColorConfig = trendCodeColorConfig
+    trendConfig = trendConfig
 
     @observable lotteryCode = '' //彩种codeCQSSC
 

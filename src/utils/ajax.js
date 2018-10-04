@@ -175,3 +175,12 @@ export function queryActivityById(params) {
         method: 'GET'
     });
 }
+//彩票最近30期走势 /lottery/api/anon/v1/lottery/simpleLast?size=30&lottery=RDLFC&method=sx_zx_fs
+export function queryTrendData(params) {
+    return $http({
+        params,
+        url: '/trend.json',
+        // url: (isDev ? '/dev' : '') + '/lottery/api/anon/v1/lottery/simpleLast',
+        method: 'GET'
+    });
+}

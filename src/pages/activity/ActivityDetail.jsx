@@ -66,10 +66,10 @@ class ActivityDetail extends React.Component {
                     </div>
                     <div className="count-down-wrapper">
                         <p>活动倒计时：</p>
-                        <div>
+                        <p>
                             <em className="count-down-day">{day}天</em>
                             <Countdown className="count-down-time" count={countTime} />
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>

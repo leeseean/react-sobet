@@ -34,14 +34,14 @@ class Countdown extends React.Component {
         s = `0${s}`.slice(-2);
         const { className, style } = this.props;
         return (
-            <div className={`count-down-wrapper ${className}`} style={style}>
+            <span className={`count-down-wrapper ${className}`} style={style}>
                 <i className="count-down-hours"></i>
                 <i className="count-down-hours">{h}</i>
                 <i className="count-down-symbol">:</i>
                 <i className="count-down-minutes">{m}</i>
                 <i className="count-down-symbol">:</i>
                 <i className="count-down-seconds">{s}</i>
-            </div>
+            </span>
         );
     }
 }

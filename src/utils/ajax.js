@@ -184,3 +184,12 @@ export function queryTrendData(params) {
         method: 'GET'
     });
 }
+//彩票奖期 /lottery/api/m/v1/lottery/issue_info_app?lottery=RDFFC
+export function updateIssue(params) {
+    return $http({
+        params,
+        url: '/issue.json',
+        // url: (isDev ? '/dev' : '') + '/lottery/api/m/v1/lottery/issue_info_app',
+        method: 'GET'
+    });
+}

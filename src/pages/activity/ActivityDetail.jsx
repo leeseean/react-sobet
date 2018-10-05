@@ -47,7 +47,7 @@ class ActivityDetail extends React.Component {
     render() {
         const { activityTitle, startTime, endTime, gamename, frontImagePath, diffTime } = this.state.detailObj;
         const day = Math.floor(Number(diffTime) / 1000 / 60 / 60 / 24);
-        const countTime = Number(diffTime) - day * 24 * 60 * 60;
+        const countTime = Number(diffTime) - day * 24 * 60 * 60 * 1000;
         return (
             <div className="activity-detail-wrapper">
                 <div className="activity-detail-header">
@@ -68,7 +68,7 @@ class ActivityDetail extends React.Component {
                         <p>活动倒计时：</p>
                         <p>
                             <em className="count-down-day">{day}天</em>
-                            <Countdown className="count-down-time" count={countTime} />
+                            <Countdown className="count-down-time" count={Date.now() + countTime} />
                         </p>
                     </div>
                 </div>

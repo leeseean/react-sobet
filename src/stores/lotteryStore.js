@@ -34,12 +34,9 @@ class LotteryStore {
         return [];
     }
 
-    @observable countdown = 0 //倒计时秒数
-
-    @observable updateCountdownflag = false
+    @observable countdown = Date.now() //倒计时秒数
 
     @action updateIssue = async () => {
-        this.updateCountdownflag = false;
         const res = await updateIssue({
             lottery: this.lotteryCode
         });
@@ -49,8 +46,7 @@ class LotteryStore {
                     second,
                     issue
                 } = res.data.result;
-                this.countdown = second;
-                this.updateCountdownflag = true;
+                this.countdown = Date.now() + second * 1000;
                 this.currentIssue = issue;
             }
         });

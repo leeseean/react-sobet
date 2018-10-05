@@ -8,7 +8,7 @@ import Countdown from '../../components/Countdown';
 
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, currentIssue, countdown, updateCountdownflag, updateIssue, opencodeArr } = this.props;
+        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr } = this.props;
         const Opencode = ({ codeArr, lotteryType, lotteryCode }) => {
             return codeArr.map((v, i) => {
                 switch (lotteryType) {
@@ -37,9 +37,7 @@ class LotteryHead extends React.Component {
                         <div className="head-center-issue-bottom">投注截止还有</div>
                     </div>
                     <div className="fr head-center-clock">
-                        {
-                            updateCountdownflag ? <Countdown className="issue-countdown" count={countdown} callback={updateIssue} /> : null
-                        }
+                        <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
                     </div>
                 </div>
                 <div className="fr clearfix head-right">

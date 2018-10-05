@@ -66,7 +66,7 @@ class ActivityList extends React.Component {
         const Item = ({ item }) => {
             const { id, activityTitle, frontImagePath, diffTime, isjoined } = item;
             const day = Math.floor(Number(diffTime) / 1000 / 60 / 60 / 24);
-            const countTime = Number(diffTime) - day * 24 * 60 * 60;
+            const countTime = Number(diffTime) - day * 24 * 60 * 60 * 1000;
             return (
                 <div key={id} className="fl activity-item">
                     <a href={`/activity/list/${id}`}>
@@ -80,7 +80,7 @@ class ActivityList extends React.Component {
                         <div className="fl">
                             活动倒计时：
                             <em className="count-down-day">{day}天</em>
-                            <Countdown className="count-down-time" count={countTime} />
+                            <Countdown className="count-down-time" count={Date.now() + countTime} />
                         </div>
                         <div className="fr">
                             <a href={`/activity/list/${id}`} className="activity-view-detail">查看详情</a>

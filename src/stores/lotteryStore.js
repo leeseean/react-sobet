@@ -21,27 +21,39 @@ class LotteryStore {
 
     @observable lotteryCode = localStorage.getItem('lotteryCode') || 'CQSSC' //彩种codeCQSSC
 
-    @observable currentIssue = '20181005-0655'
+    @observable currentIssue = ''
     
-    @observable openIssue = '20181005-0654'
+    @computed get openIssue() {
+        return this.trendData[0] && this.trendData[0]['issueNo'];
+    }
+
+    @computed get opencodeArr() {
+        if (this.trendData[0]) {
+            return this.trendData[0]['code'].split(',');
+        }
+        return [];
+    }
 
     @observable countdown = 0 //倒计时秒数
 
+    @observable updateCountdownflag = false
+
     @action updateIssue = async () => {
+        this.updateCountdownflag = false;
         const res = await updateIssue({
             lottery: this.lotteryCode
         });
-
-        if (res.data.code === 1) {
-            const {
-                second,
-                issue
-            } = res.data.result;
-            runInAction(() => {
+        runInAction(() => {
+            if (res.data.code === 1) {
+                const {
+                    second,
+                    issue
+                } = res.data.result;
                 this.countdown = second;
+                this.updateCountdownflag = true;
                 this.currentIssue = issue;
-            });
-        }
+            }
+        });
     }
 
     @computed get lotteryCn() { //彩种  重庆时时彩

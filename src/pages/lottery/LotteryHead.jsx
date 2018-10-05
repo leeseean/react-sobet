@@ -3,36 +3,48 @@
  */
 
 import React from 'react';
+import './lotteryHead.styl';
 import Countdown from '../../components/Countdown';
 
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencode } = this.props;
+        const { lotteryType, lotteryCode, currentIssue, countdown, updateCountdownflag, updateIssue, opencodeArr } = this.props;
+        const Opencode = ({ codeArr, lotteryType, lotteryCode }) => {
+            return codeArr.map((v, i) => {
+                switch (lotteryType) {
+                    case 'ssc':
+                    case '3d':
+                    case '11x5':
+                        return <span key={i} className="opencode">{v}</span>
+                    case 'k3':
+                    case 'pk10':
+                        return <span key={i} className="opencode" code={v} lotteryType={lotteryType}></span>
+                    default:
+                        return <span key={i} className="opencode" lotteryType={lotteryType} lotteryCode={lotteryCode}>{v}</span>
+                }
+            });
+        }
         return (
             <div className="clearfix lottery-head-wrapper">
                 <div className="fl head-left">
-                    <i class="lottery-logo" lt={lotteryCode}></i>
+                    <i className="lottery-logo" lt={lotteryCode.toLowerCase()}></i>
                 </div>
-                <div className="fl head-center">
-                    <div className="head-center-inner">
-                        <div className="head-center-issue">
-                            <div className="head-center-issue-top">
-                                第<em className="current-issue">{currentIssue}</em>期
-                            </div>
-                            <div className="head-center-issue-bottom">投注截止还有</div>
+                <div className="fl clearfix head-center">
+                    <div className="fl head-center-issue">
+                        <div className="head-center-issue-top">
+                            第<em className="current-issue">{currentIssue}</em>期
                         </div>
-                        <div className="head-center-clock">
-                            <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
-                        </div>
+                        <div className="head-center-issue-bottom">投注截止还有</div>
+                    </div>
+                    <div className="fr head-center-clock">
+                        {
+                            updateCountdownflag ? <Countdown className="issue-countdown" count={countdown} callback={updateIssue} /> : null
+                        }
                     </div>
                 </div>
                 <div className="fr clearfix head-right">
                     <div className="fr head-right-opencode">
-                        <span className="opencode">1</span>
-                        <span className="opencode">2</span>
-                        <span className="opencode">3</span>
-                        <span className="opencode">4</span>
-                        <span className="opencode">5</span>
+                        <Opencode codeArr={opencodeArr} lotteryType={lotteryType} lotteryCode={lotteryCode} />
                     </div>
                     <div className="fr head-right-issue">
                         <div className="head-right-issue-top">

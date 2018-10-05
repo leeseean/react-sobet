@@ -1,12 +1,13 @@
 import jsonp from 'easy-jsonp';
 
-const isDev = true;
-// const isDev = false;
+// const proxyPrefix = 'http://www.mochen111.net';
+const proxyPrefix = 'http://www.mc188.com';
+// const proxyPrefix = '';
 
 //获取登录状态
 export function getLoginState() {
   return jsonp({
-    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/getUserLoginState',
+    url: proxyPrefix + '/sso/getUserLoginState',
     callback: 'jsonp1',
     params: {
       appId: 5
@@ -31,7 +32,7 @@ export function ssoLogin(username, password, capchaCode) {
   }
   return jsonp({
     params,
-    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/login',
+    url: proxyPrefix + '/sso/login',
     callback: 'jsonp1',
   });
 }
@@ -39,7 +40,7 @@ export function ssoLogin(username, password, capchaCode) {
 //登出
 export function ssoLogout(username, noRedirect = true) {
   return jsonp({
-    url: (isDev ? 'http://www.mochen111.net' : '') + '/sso/logout',
+    url: proxyPrefix + '/sso/logout',
     callback: 'jsonp1',
     params: {
       noRedirect,

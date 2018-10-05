@@ -52,8 +52,9 @@ const $http = (config) => {
 
 export default $http;
 
-const isDev = true;
-// const isDev = false;
+// const proxyPrefix = 'dev';
+const proxyPrefix = 'online';
+// const proxyPrefix = '';
 
 //中奖喜报
 export function getLotteryWinTop10() {
@@ -66,7 +67,7 @@ export function getLotteryWinTop10() {
 //获取余额
 export function getPlayerBalance(dataOrParams) {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/pay/getPlayerBalance',
+        url: proxyPrefix + '/sobet/pay/getPlayerBalance',
         method: 'GET',
         params: dataOrParams
     });
@@ -74,28 +75,28 @@ export function getPlayerBalance(dataOrParams) {
 //获取捕鱼王游戏链接
 export function getAGHURUrl() {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/ag/getAGHURUrl',
+        url: proxyPrefix + '/sobet/ag/getAGHURUrl',
         method: 'GET'
     });
 }
 //获取IDN棋牌游戏链接
 export function getIdnUrl() {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/idn/getIdnUrl',
+        url: proxyPrefix + '/sobet/idn/getIdnUrl',
         method: 'GET'
     });
 }
 //获取kgame棋牌accesstoken
 export function getKGAccessToken() {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/KG/getKGAccessToken',
+        url: proxyPrefix + '/sobet/KG/getKGAccessToken',
         method: 'GET'
     });
 }
 //获取kgame棋牌游戏链接
 export function getKGGameUrl(dataOrParams) {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/KG/getKGGameUrl',
+        url: proxyPrefix + '/sobet/KG/getKGGameUrl',
         method: 'GET',
         params: dataOrParams
     });
@@ -103,7 +104,7 @@ export function getKGGameUrl(dataOrParams) {
 //真人娱乐页面中间滚动数据
 export function queryTopBetData(dataOrParams) {
     return $http({
-        url: (isDev ? '/dev' : '') + '/lottery/api/u/v1/ag/queryTopBetData',
+        url: proxyPrefix + '/lottery/api/u/v1/ag/queryTopBetData',
         method: 'GET',
         params: dataOrParams
     });
@@ -111,7 +112,7 @@ export function queryTopBetData(dataOrParams) {
 //获取沙巴体育cookie
 export function getSportCookie() {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/userInfo/getIbcLoginSessionToken',
+        url: proxyPrefix + '/sobet/userInfo/getIbcLoginSessionToken',
         method: 'GET'
     });
 }
@@ -163,7 +164,7 @@ export function getSlotReward() {
 //活动 /sobet/api/i/anon/activity/queryCurrentActivity
 export function queryCurrentActivity() {
     return $http({
-        url: (isDev ? '/dev' : '') + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });
 }
@@ -171,7 +172,7 @@ export function queryCurrentActivity() {
 export function queryActivityById(params) {
     return $http({
         params,
-        url: (isDev ? '/dev' : '') + '/sobet/api/i/anon/activity/queryActivityById',
+        url: proxyPrefix + '/sobet/api/i/anon/activity/queryActivityById',
         method: 'GET'
     });
 }
@@ -180,7 +181,7 @@ export function queryTrendData(params) {
     return $http({
         params,
         url: '/trend.json',
-        // url: (isDev ? '/dev' : '') + '/lottery/api/anon/v1/lottery/simpleLast',
+        // url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
 }
@@ -189,7 +190,7 @@ export function updateIssue(params) {
     return $http({
         params,
         url: '/issue.json',
-        // url: (isDev ? '/dev' : '') + '/lottery/api/m/v1/lottery/issue_info_app',
+        // url: proxyPrefix + '/lottery/api/m/v1/lottery/issue_info_app',
         method: 'GET'
     });
 }

@@ -11,7 +11,7 @@ class TrendList extends React.Component {
         };
         const { data, method, trendConfig } = this.props;
         const Colorcode = ({ code, method }) => {
-            codeArr = code.split(',');
+            const codeArr = code.split(',');
             return (
                 <div className="trend-codes">
                     {
@@ -28,23 +28,24 @@ class TrendList extends React.Component {
         let columns = [{
             title: '期号',
             dataIndex: 'issue',
-            width: 150,
+            width: 100,
         }, {
             title: '开奖号码',
             dataIndex: 'openCode',
-            width: 150,
+            width: 100,
         }];
         if (trendConfig[method]['shapeName']) {
             columns = [...columns, {
                 title: trendConfig[method]['shapeName'],
                 dataIndex: 'shape',
+                width: 100
             }];
         }
         const dataSource = data.map((item, index) => {
             const { issueNo, code } = item;
             let obj = {
                 key: index,
-                issue: () => <div className="trend-issue">{issueNo}</div>,
+                issue: <div className="trend-issue">{issueNo}</div>,
                 openCode: <Colorcode code={code} method={method} />,
             };
             if (trendConfig[method]['shapeName']) {
@@ -56,7 +57,7 @@ class TrendList extends React.Component {
             return obj;
         });
         return (
-            <div>
+            <div style={{width: '300px'}}>
                 <Table columns={columns} dataSource={dataSource} title={tableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 240 }} />
             </div>
         );

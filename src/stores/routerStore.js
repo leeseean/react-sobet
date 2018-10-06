@@ -1,5 +1,5 @@
 
-import {observable, action} from 'mobx'
+import {observable, action} from 'mobx';
 
 class RouterStore {
 
@@ -7,7 +7,7 @@ class RouterStore {
 
     @action
     setHistory(history) {
-        this.history = history
+        this.history = history;
     }
 }
 

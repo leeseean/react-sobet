@@ -15,12 +15,14 @@ class LotteryHead extends React.Component {
                     case 'ssc':
                     case '3d':
                     case '11x5':
-                        return <span key={i} className="opencode">{v}</span>
+                        return <span key={i} className="opencode">{v}</span>;
                     case 'k3':
                     case 'pk10':
-                        return <span key={i} className="opencode" code={v} lotteryType={lotteryType}></span>
+                        return <span key={i} className="opencode" code={v} lotteryType={lotteryType}></span>;
+                    case 'lhc':
+                        return <span key={i} className={`opencode ${i === codeArr.length - 1 ? 'tm' : ''}`} code={v} lotteryType={lotteryType}></span>;
                     default:
-                        return <span key={i} className="opencode" lotteryType={lotteryType} lotteryCode={lotteryCode}>{v}</span>
+                        return <span key={i} className="opencode" lotteryType={lotteryType} lotteryCode={lotteryCode}>{v}</span>;
                 }
             });
         }

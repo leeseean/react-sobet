@@ -194,3 +194,17 @@ export function updateIssue(params) {
         method: 'GET'
     });
 }
+//获取常玩彩种列表　/lottery/api/u/v1/lottery/getLotteryFavorite
+export function getLotteryFavorite() {
+    return $http({
+        url: '/favorite.json',
+        // url: proxyPrefix + '/lottery/api/u/v1/lottery/getLotteryFavorite',
+    });
+}
+//获取倒计时列表 /lottery/api/call/v1/lottery/times
+export function getCountdowns() {
+    return $http({
+        url: '/times.json',
+        // url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
+    });
+}

@@ -15,13 +15,22 @@ class Lottery extends React.Component {
         queryTrendData();
     }
     render() {
-        const { trendData, method, trendConfig, lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, lotteryCodeToCn } = this.props.lotteryStore;
+        const { trendData, method, trendConfig, lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <div className="lottery-wrapper">
                 <div className="lottery-inner-wrapper" ref={ref => this.mainRef = ref}>
                     <LotteryFavourite codeToCn={lotteryCodeToCn} mainRef={this.mainRef} />
-                    <LotteryHead {...{ lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr }} />
-                    <TrendList data={trendData} method={method} trendConfig={trendConfig} />
+                    <LotteryHead {...{ lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue }} />
+                    <div className="clearfix main-content">
+                        <div className="fl main-content-left">
+                            <div className="fixed-countdown-tip">
+                                
+                            </div>
+                        </div>
+                        <div className="fr main-content-right">
+                            <TrendList data={trendData} method={method} trendConfig={trendConfig} />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

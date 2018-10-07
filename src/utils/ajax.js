@@ -189,8 +189,8 @@ export function queryTrendData(params) {
 export function updateIssue(params) {
     return $http({
         params,
-        url: '/issue.json',
-        // url: proxyPrefix + '/lottery/api/m/v1/lottery/issue_info_app',
+        // url: '/issue.json',
+        url: proxyPrefix + '/lottery/api/m/v1/lottery/issue_info_app',
         method: 'GET'
     });
 }

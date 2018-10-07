@@ -13,11 +13,15 @@ const FormItem = Form.Item;
 @inject('globalStore')
 @observer
 class NormalLoginForm extends React.Component {
+    _mounted = false
     state = {
         verifycodeFlag: false,
         capchaUrl: `http://www.mochen111.net/sso/imageCode?date=${new Date()}`
     }
     refreshCapcha = () => {
+        if (!this._mounted) {
+            return;
+        }
         this.setState({
             capchaUrl: `http://www.mochen111.net/sso/imageCode?date=${new Date()}`
         });
@@ -41,7 +45,7 @@ class NormalLoginForm extends React.Component {
             .props
             .form
             .validateFields((err, formData) => {
-                if (!err) {
+                if (!err && this._mounted) {
                     ssoLogin(formData.userName, md5(formData.password), formData.capchaCode).then(res => {
                         if (res.needCapchaCode) {//验证码
                             this.setState({
@@ -93,7 +97,7 @@ class NormalLoginForm extends React.Component {
         }
     }
     componentWillUnmount() {
-
+        this._mounted = false;
     }
     render() {
         const { getFieldDecorator } = this.props.form;

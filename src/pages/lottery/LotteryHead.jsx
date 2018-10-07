@@ -5,10 +5,11 @@
 import React from 'react';
 import './lotteryHead.styl';
 import Countdown from '../../components/Countdown';
+import FixedCountdownTip from './FixedCountdownTip';
 
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr } = this.props;
+        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props;
         const Opencode = ({ codeArr, lotteryType, lotteryCode }) => {
             return codeArr.map((v, i) => {
                 switch (lotteryType) {
@@ -28,6 +29,7 @@ class LotteryHead extends React.Component {
         }
         return (
             <div className="clearfix lottery-head-wrapper">
+                <FixedCountdownTip />
                 <div className="fl head-left">
                     <i className="lottery-logo" lt={lotteryCode.toLowerCase()}></i>
                 </div>
@@ -48,7 +50,7 @@ class LotteryHead extends React.Component {
                     </div>
                     <div className="fr head-right-issue">
                         <div className="head-right-issue-top">
-                            第<em className="open-issue">{currentIssue}</em>期
+                            第<em className="open-issue">{openIssue}</em>期
                         </div>
                         <div className="head-right-issue-bottom">开奖号码</div>
                     </div>

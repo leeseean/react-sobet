@@ -14,7 +14,19 @@ class GlobalHead extends React.Component {
     state = {
         showBackToIndex: false,
         showBalanceFlag: true,
-        showBalanceText: '隐藏'
+        showBalanceText: '隐藏',
+        fixed: false
+    }
+    initFixed(path) {
+        if (path === '/lottery') {
+            this.setState({
+                fixed: true
+            });
+        } else {
+            this.setState({
+                fixed: false
+            });
+        }
     }
     initBackToIndex(path) {
         if (path === '/index') {
@@ -45,8 +57,10 @@ class GlobalHead extends React.Component {
         const { history } = this.props;
         history.listen(location => {
             this.initBackToIndex(location.pathname);
+            this.initFixed(location.pathname);
         });
         this.initBackToIndex(history.location.pathname);
+        this.initFixed(history.location.pathname);
     }
     render() {
         const { logined } = this.props.globalStore;
@@ -94,7 +108,7 @@ class GlobalHead extends React.Component {
             );
         };
         return (
-            <div className="head-wrapper">
+            <div className={`head-wrapper ${this.state.fixed ? 'fixed' : ''}`}>
                 <div className="clearfix head-wrapper__main">
                     <BackToIndex show={this.state.showBackToIndex} />
                     <div className="fl head--height head__all-game">

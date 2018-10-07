@@ -1,15 +1,18 @@
 import React from 'react';
 import { Table } from 'antd';
+import './trendList.styl';
 
 class TrendList extends React.Component {
     render() {
-        const tableTitle = () => {
-            <div className="clearfix">
-                <span className="fl">近期开奖结果</span>
-                <span className="fr"><i></i>走势图</span>
-            </div>
+        const TableTitle = () => {
+            return (
+                <div className="clearfix history-trend-title">
+                    <span className="fl history-trend-title-left">近期开奖结果</span>
+                    <a className="fr history-trend-title-right"><i className="icon-trend"></i>走势图</a>
+                </div>
+            );
         };
-        const { data, method, trendConfig } = this.props;
+        const { data, method, trendConfig, className } = this.props;
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
@@ -26,26 +29,27 @@ class TrendList extends React.Component {
             return <div className="trend-shape" dangerouslySetInnerHTML={{ __html: value }}></div>;
         };
         let columns = [{
-            title: '期号',
+            title: <span className="trend-head-col">期号</span>,
             dataIndex: 'issue',
             width: 100,
         }, {
-            title: '开奖号码',
+            title: <span className="trend-head-col">开奖号码</span>,
             dataIndex: 'openCode',
             width: 100,
         }];
         if (trendConfig[method]['shapeName']) {
+            const Title = () => <span className="trend-head-col">{trendConfig[method]['shapeName']}</span>;
             columns = [...columns, {
-                title: trendConfig[method]['shapeName'],
+                title: <Title />,
                 dataIndex: 'shape',
-                width: 100
+                width: 100,
             }];
         }
         const dataSource = data.map((item, index) => {
             const { issueNo, code } = item;
             let obj = {
                 key: index,
-                issue: <div className="trend-issue">{issueNo}</div>,
+                issue: <div className="trend-issue">{issueNo.split('-').slice(-1)}</div>,
                 openCode: <Colorcode code={code} method={method} />,
             };
             if (trendConfig[method]['shapeName']) {
@@ -57,8 +61,8 @@ class TrendList extends React.Component {
             return obj;
         });
         return (
-            <div style={{width: '300px'}}>
-                <Table columns={columns} dataSource={dataSource} title={tableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 240 }} />
+            <div className={`trend-wrapper ${className}`}>
+                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 240 }} />
             </div>
         );
     }

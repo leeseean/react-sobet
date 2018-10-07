@@ -6,7 +6,7 @@ import './globalNav.styl';
 class GlobalNav extends React.Component {
     render() {
         const { history } = this.props;
-        if (['/login', '/'].indexOf(history.location.pathname) !== -1) {
+        if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
             return null;
         }
         // only consider an event active if its event id is an odd number

@@ -62,7 +62,7 @@ class TrendList extends React.Component {
         });
         return (
             <div className={`trend-wrapper ${className}`}>
-                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 240 }} />
+                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 800 }} />
             </div>
         );
     }

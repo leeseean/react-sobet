@@ -197,14 +197,29 @@ export function updateIssue(params) {
 //获取常玩彩种列表　/lottery/api/u/v1/lottery/getLotteryFavorite
 export function getLotteryFavorite() {
     return $http({
-        url: '/favorite.json',
-        // url: proxyPrefix + '/lottery/api/u/v1/lottery/getLotteryFavorite',
+        // url: '/favorite.json',
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/getLotteryFavorite',
+    });
+}
+// 选中删除常玩       /lottery/api/u/v1/lottery/delLotteryFavorite?lottery=hlj11y
+export function delLotteryFavorite(params) {
+    return $http({
+        params,
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/delLotteryFavorite',
+        method: 'GET'
+    });
+}
+export function addLotteryFavorite(params) {
+    return $http({
+        params,
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/addLotteryFavorite',
+        method: 'GET'
     });
 }
 //获取倒计时列表 /lottery/api/call/v1/lottery/times
 export function getCountdowns() {
     return $http({
-        url: '/times.json',
-        // url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
+        // url: '/times.json',
+        url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
     });
 }

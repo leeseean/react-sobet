@@ -3,9 +3,7 @@
         "include": [
             "react",
             "react-router-dom",
-            "react-loadable",
-            "mobx-react",
-            "axios"
+            "antd"
         ]
     },
     "compilerOptions": {

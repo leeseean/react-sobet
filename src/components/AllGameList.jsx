@@ -6,7 +6,7 @@ import React from 'react';
 import './allGameList.styl';
 
 class AllGameList extends React.Component {
-    LotteryListData = [
+    lotteryListData = [
         {
             title: '时时彩',
             list: [
@@ -231,7 +231,6 @@ class AllGameList extends React.Component {
             ]
         },
         {
-            type: '3d',
             title: '3D/低频',
             list: [
                 {
@@ -396,7 +395,7 @@ class AllGameList extends React.Component {
         return (
             <div className="all-game-wrapper">
                 <div className="all-game__lottery">
-                    <LotteryLists listsArr={this.LotteryListData} />
+                    <LotteryLists listsArr={this.lotteryListData} />
                 </div>
                 <div className="all-game__divider"></div>
                 <div className="all-game__other">

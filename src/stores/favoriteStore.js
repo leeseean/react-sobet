@@ -5,12 +5,12 @@ import {
     runInAction,
     computed
 } from 'mobx';
-import { getLotteryFavorite, getCountdowns } from '../utils/ajax';
+import { getLotteryFavorite, getCountdowns, delLotteryFavorite, addLotteryFavorite } from '../utils/ajax';
 
 class FavoriteStore {
 
     @observable data = []
-    
+
     @observable countdownsObj = {}
 
     @action
@@ -31,6 +31,22 @@ class FavoriteStore {
                 this.countdownsObj = res.data.result.time;
             }
         });
+    }
+
+    @observable modalVisible = false
+
+    @action toggleModalVisible = (bool) => {
+        this.modalVisible = bool;
+    }
+
+    @action switchFavorite = (ltCode) => {
+        const _index = this.data.findIndex(v => v.lottery_code === ltCode);
+        if (_index === -1) {
+            addLotteryFavorite(ltCode);
+        } else {
+            delLotteryFavorite(ltCode);
+        }
+        this.getFavorites();
     }
 }
 

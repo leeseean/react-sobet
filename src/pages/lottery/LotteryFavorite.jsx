@@ -8,6 +8,7 @@ import './lotteryFavorite.styl';
 import Countdown from '../../components/Countdown';
 import offsetDis from '../../utils/offsetDis';
 import setStyle from '../../utils/setStyle';
+import FavoriteModal from './FavoriteModal';
 
 @inject('favoriteStore')
 @observer
@@ -54,8 +55,8 @@ class LotteryFavorite extends React.Component {
         });
     }
     render() {
-        const { codeToCn } = this.props;console.log(this.props)
-        const { data, countdownsObj } = this.props.favoriteStore;
+        const { codeToCn } = this.props;
+        const { data, countdownsObj, modalVisible, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
         const Item = ({ item }) => {
             const { lottery_code } = item;
             return (
@@ -83,7 +84,7 @@ class LotteryFavorite extends React.Component {
                         </div>
                     </div>
                     <List data={data} />
-                    <div className="set-button-wrapper">
+                    <div className="set-button-wrapper" onClick={() => toggleModalVisible(true)}>
                         <div className="set-button">
                             <i className="set-button-icon"></i>
                             <span>设置</span>
@@ -100,6 +101,7 @@ class LotteryFavorite extends React.Component {
                     <i className="favorite-show-icon"></i>
                     <span>展开</span>
                 </div>
+                <FavoriteModal wrapClassName="favorite-modal" closable={false} centered={true} visible={modalVisible} footer={null} data={data} codeToCn={codeToCn} toggleModalVisible={toggleModalVisible} switchFavorite={switchFavorite} />
             </React.Fragment>
         );
     }

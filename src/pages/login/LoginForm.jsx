@@ -91,6 +91,7 @@ class NormalLoginForm extends React.Component {
             });
     }
     componentDidMount() {
+        this._mounted = true;
         const { globalStore } = this.props;
         if (globalStore.logined) { //如果登陆状态为true。直接跳到首页
             this.jumpByUserType(globalStore.userType);

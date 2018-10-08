@@ -26,7 +26,7 @@ class LotteryHead extends React.Component {
                         return <span key={i} className="opencode" lotteryType={lotteryType} lotteryCode={lotteryCode}>{v}</span>;
                 }
             });
-        }
+        };
         return (
             <div className="clearfix lottery-head-wrapper">
                 <FixedCountdownTip />

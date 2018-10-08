@@ -91,7 +91,7 @@
         vertical-align: middle;
     }
 
-    .open-code-list-mini li.pk10 {
+    .open-code-list-mini li[lottery-type=pk10] {
         width: 15px;
         height: 20px;
         border-radius: 0;
@@ -100,7 +100,15 @@
         color: #e72629;
     }
 
-    .open-code-list-mini li.lhc-mini {
+    .open-code-list-mini li[lottery-type=lhc] {
         font-size: 12px;
+    }
+
+    for i in 1 2 3 4 5 6 {
+        .open-code-list-mini li[lottery-type=k3][code={i}] {
+            background: url('../../images/lottery/shai' + i + '.svg') center no-repeat;
+            background-size: cover;
+            border-radius: 0;
+        }
     }
 }

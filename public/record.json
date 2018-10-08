@@ -1,0 +1,44 @@
+{
+    "code": 1,
+    "msg": "ok",
+    "result": [
+        {
+            "amount": 2000,
+            "cancel": 0,
+            "code": "0,1,2,3,4,5,6,7,8,9|0,1,2,3,4,5,6,7,8,9|0,1,2,3,4,5,6,7,8,9",
+            "isCurrentIssue": 1,
+            "issue": "20181008-1416",
+            "istrace": 0,
+            "lottery": "RDFFC",
+            "method": "qsm_zx_fs",
+            "mode": 2,
+            "nums": 1000,
+            "odds": 1956,
+            "orderId": "201810080O1WzYx15LMF0001",
+            "orderTime": 1539012943000,
+            "piece": 1,
+            "point": 0,
+            "status": "æœªå¼€å¥–",
+            "traceTotalPrice": 0
+        },
+        {
+            "amount": 2000,
+            "cancel": 0,
+            "code": "0,1,2,3,4,5,6,7,8,9|0,1,2,3,4,5,6,7,8,9|0,1,2,3,4,5,6,7,8,9",
+            "isCurrentIssue": 0,
+            "issue": "20181008-1390",
+            "istrace": 0,
+            "lottery": "RDFFC",
+            "method": "qsm_zx_fs",
+            "mode": 2,
+            "nums": 1000,
+            "odds": 1956,
+            "orderId": "201810080O1WzA215HYE0001",
+            "orderTime": 1539011346000,
+            "piece": 1,
+            "point": 0,
+            "status": "1956.0000",
+            "traceTotalPrice": 0
+        }
+    ]
+}

@@ -1,21 +1,22 @@
 for i in '01' '02' '03' '04' '05' '06' '07' '08' '09' '10' {
-    .opencode[lotteryCode=bjpk10][code={i}] {
-        background: url('/static/lottery/images/theme/cars/car' + i + '.png') center no-repeat;
+    .opencode[lottery-code=bjpk10][code={i}] {
+        background: url('../../images/lottery/car' + i + '.png') center no-repeat;
         background-size: cover;
     }
 }
 
 for i in '01' '02' '03' '04' '05' '06' '07' '08' '09' '10' {
-    .opencode[lotteryCode=mcpk10][code={i}] {
-        background: url('/static/lottery/images/theme/cars/mcpk10kj' + i + '.png') center no-repeat;
+    .opencode[lottery-code=mcpk10][code={i}] {
+        background: url('../../images/lottery/mcpk10kj' + i + '.png') center no-repeat;
         background-size: cover;
     }
 }
 
 for i in 1 2 3 4 5 6 {
-    .opencode[lotteryType=k3][code={i}] {
-        background: url('/static/lottery/images/svg/shai' + i + '.svg') center no-repeat;
+    .opencode[lottery-type=k3][code={i}] {
+        background: url('../../images/lottery/shai' + i + '.svg') center no-repeat;
         background-size: cover;
         border-radius: 0;
     }
 }
+

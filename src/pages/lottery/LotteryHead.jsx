@@ -9,7 +9,7 @@ import FixedCountdownTip from './FixedCountdownTip';
 
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props;
+        const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props;
         const Opencode = ({ codeArr, lotteryType, lotteryCode }) => {
             return codeArr.map((v, i) => {
                 switch (lotteryType) {
@@ -19,17 +19,17 @@ class LotteryHead extends React.Component {
                         return <span key={i} className="opencode">{v}</span>;
                     case 'k3':
                     case 'pk10':
-                        return <span key={i} className="opencode" code={v} lotteryType={lotteryType}></span>;
+                        return <span key={i} className="opencode" code={v} lottery-type={lotteryType}></span>;
                     case 'lhc':
-                        return <span key={i} className={`opencode ${i === codeArr.length - 1 ? 'tm' : ''}`} code={v} lotteryType={lotteryType}></span>;
+                        return <span key={i} className={`opencode ${i === codeArr.length - 1 ? 'tm' : ''}`} code={v} lottery-type={lotteryType}></span>;
                     default:
-                        return <span key={i} className="opencode" lotteryType={lotteryType} lotteryCode={lotteryCode}>{v}</span>;
+                        return <span key={i} className="opencode" lottery-type={lotteryType} lottery-code={lotteryCode}>{v}</span>;
                 }
             });
         };
         return (
             <div className="clearfix lottery-head-wrapper">
-                <FixedCountdownTip />
+                <FixedCountdownTip {...{ lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue }} />
                 <div className="fl head-left">
                     <i className="lottery-logo" lt={lotteryCode.toLowerCase()}></i>
                 </div>
@@ -41,7 +41,9 @@ class LotteryHead extends React.Component {
                         <div className="head-center-issue-bottom">投注截止还有</div>
                     </div>
                     <div className="fr head-center-clock">
-                        <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
+                        {
+                            countdown === <span className="wait-to-sell">等待开售</span> ? '等待开售' : <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
+                        }
                     </div>
                 </div>
                 <div className="fr clearfix head-right">

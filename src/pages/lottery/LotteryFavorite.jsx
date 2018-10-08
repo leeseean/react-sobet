@@ -16,6 +16,7 @@ class LotteryFavorite extends React.Component {
     _mounted = false
     expendRef = null
     menuRef = null
+    timer = null
     state = {
         menuShowFlag: true,
     }
@@ -24,11 +25,12 @@ class LotteryFavorite extends React.Component {
         const { getFavorites, getCountdowns } = this.props.favoriteStore;
         getFavorites();
         getCountdowns();
-        this.controlMenuPosition();
+        this.timer = setTimeout(this.controlMenuPosition, 600);
         window.addEventListener('resize', this.controlMenuPosition);
         window.addEventListener('scroll', this.controlMenuPosition);
     }
     componentWillUnmount() {
+        clearTimeout(this.timer);
         this._mounted = false;
     }
     controlMenuPosition = () => {

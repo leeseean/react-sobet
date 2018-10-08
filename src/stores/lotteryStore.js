@@ -22,7 +22,7 @@ class LotteryStore {
     @observable lotteryCode = localStorage.getItem('lotteryCode') || 'CQSSC' //彩种codeCQSSC
 
     @observable currentIssue = ''
-    
+
     @computed get openIssue() {
         return this.trendData[0] && this.trendData[0]['issueNo'];
     }
@@ -46,7 +46,11 @@ class LotteryStore {
                     second,
                     issue
                 } = res.data.result;
-                this.countdown = Date.now() + second * 1000;
+                if (second < 0) {
+                    this.countdown = '等待开售';
+                } else { 
+                    this.countdown = Date.now() + second * 1000;
+                 }
                 this.currentIssue = issue;
             }
         });

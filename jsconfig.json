@@ -2,6 +2,7 @@
     "typeAcquisition": {
         "include": [
             "react",
+            "mobx-react",
             "react-router-dom",
             "antd"
         ]

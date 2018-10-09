@@ -16,8 +16,8 @@
         "amount": 2.0,
         "cancel": 0,
         "awardMoney": 0.0,
-        "istrace": 0,
-        "isCurrentIssue": 0,
+        "istrace": 1,
+        "isCurrentIssue": 1,
         "nums": 1,
         "singleStatus": 0
     },

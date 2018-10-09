@@ -1,0 +1,66 @@
+{
+    "result": {
+        "userName": "nacwin888",
+        "lottery": "CQSSC",
+        "method": "nn_nn_nn_nn",
+        "perAmount": 2.0,
+        "odds": 30.288,
+        "start": "20181010-002",
+        "issueCount": 5,
+        "finishCount": 1,
+        "cancelCount": 4,
+        "totalMoney": 20.0,
+        "finishMoney": 2.0,
+        "cancelMoney": 18.0,
+        "winStop": 1,
+        "status": "已完成",
+        "createTime": "2018-10-10 00:06:39",
+        "singleStatus": 0,
+        "issues": [
+            {
+                "traceId": 2018661,
+                "issue": "20181010-002",
+                "count": 1,
+                "status": 1,
+                "money": 2.0,
+                "bonus": 0.0,
+                "lotteryStatus": 1,
+                "orderId": "20181010012LEgP19CqL0001"
+            },
+            {
+                "traceId": 2018661,
+                "issue": "20181010-003",
+                "count": 1,
+                "status": 2,
+                "money": 2.0
+            },
+            {
+                "traceId": 2018661,
+                "issue": "20181010-004",
+                "count": 2,
+                "status": 2,
+                "money": 4.0
+            },
+            {
+                "traceId": 2018661,
+                "issue": "20181010-005",
+                "count": 2,
+                "status": 2,
+                "money": 4.0
+            },
+            {
+                "traceId": 2018661,
+                "issue": "20181010-006",
+                "count": 4,
+                "status": 2,
+                "money": 8.0
+            }
+        ],
+        "traceId": 2018661,
+        "code": "牛牛",
+        "position": "",
+        "traceType": 3
+    },
+    "code": 1,
+    "msg": "ok"
+}

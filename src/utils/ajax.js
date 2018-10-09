@@ -239,4 +239,18 @@ export function getRecordDetail(params) {
         // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
     });
 }
-
+//查询追号详情 /lottery/api/u/v1/lottery/trace?orderId=20181009012LEpl18jJm0001
+export function getTraceDetail(params) {
+    return $http({
+        params,
+        url: '/traceDetail.json',
+        // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+    });
+}
+//追号终止  /lottery/api/u/v1/lottery/trace_cancel?traceId=''&issues=[]
+export function cancelTrace(params) {
+    return $http({
+        params,
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/trace_cancel',
+    });
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table, Modal } from 'antd';
-import { getRecord, getRecordDetail } from '../../utils/ajax';
+import { Table, Modal, Pagination, Checkbox } from 'antd';
+import { getRecord, getRecordDetail, getTraceDetail, cancelTrace } from '../../utils/ajax';
 import formatTime from '../../utils/formatTime';
 import './lotteryRecord.styl';
 
@@ -9,17 +9,25 @@ class LotteryRecord extends React.Component {
         recordShowFlag: true,
         dataSource: [],
         columns: [],
-        detailModalFlag: false,
-        recordDetail: {}
+        betModalFlag: false,
+        recordDetail: {},
+        traceModalFlag: false,
+        traceDetail: {},
+        tracePageData: [],
+        cancelTraceFlag: true
+    }
+    traceModeConfig = {
+        1: '利润率追号',
+        2: '同倍追号',
+        3: '翻倍追号'
     }
     toggleRecord = () => {
         this.setState(prevState => ({
             recordShowFlag: !prevState.recordShowFlag,
-            dataSource: prevState.recordShowFlag ? [] : prevState.dataSource
         }));
     }
     async getDataSource() {
-        const { lotteryCode, playWayToCn, codeToCn } = this.props;
+        const { lotteryCode, playWayToCn } = this.props;
         const res = await getRecord({
             lottery: lotteryCode
         });
@@ -35,7 +43,7 @@ class LotteryRecord extends React.Component {
                     method: playWayToCn[method],
                     code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
                     key: orderId,
-                    mani: status === '未开奖' ? [<span className="order-again">再次投注</span>, <span className="order-cancel">撤单</span>] : <span className="order-again">再次投注</span>
+                    mani: status === '未开奖' ? [<span className="order-again" onClick={() => this.betAgain(orderId)}>再次投注</span>, <span className="order-cancel" onClick={() => this.cancalOrder(orderId)}>撤单</span>] : <span className="order-again">再次投注</span>
                 };
             });
             this.setState({
@@ -85,15 +93,58 @@ class LotteryRecord extends React.Component {
                 if (res.data.code === 1) {
                     this.setState({
                         recordDetail: res.data.result,
-                        detailModalFlag: true
+                        betModalFlag: true
                     });
                 }
             }, // 点击行
         };
     }
-    closeDetailModal = () => {
+    closeBetModal = () => {
         this.setState({
-            detailModalFlag: false
+            betModalFlag: false
+        });
+    }
+    betAgain = (orderId) => {
+
+    }
+    cancalOrder = (orderId) => {
+
+    }
+    viewTraceDetail = async (orderId) => {
+        const res = await getTraceDetail(orderId);
+        if (res.data.code === 1) {
+            this.setState({
+                traceModalFlag: true,
+                traceDetail: res.data.result,
+                tracePageData: res.data.result.issues.slice(0, 10)
+            });
+        }
+    }
+    closeTraceModal = () => {
+        this.setState({
+            traceModalFlag: false
+        });
+    }
+    backToBetModal = () => {
+        this.setState({
+            traceModalFlag: false,
+            betModalFlag: true
+        });
+    }
+    turnPage = (e) => {
+        console.log(e);
+        this.setState({
+            tracePageData: this.state.traceDetail.issues.slice(e - 10, e)
+        });
+    }
+    checkAll = (e) => {
+
+        this.setState({
+
+        });
+    }
+    checkGroupChange = () => {
+        this.setState({
         });
     }
     render() {
@@ -112,14 +163,21 @@ class LotteryRecord extends React.Component {
         };
         const columns = this.genColums();
         return (
-            <div className="record-table-wrapper">
-                <Table columns={columns} dataSource={this.state.dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} />
-                <Modal width="650px" title="投注详细" wrapClassName="record-detail-wrapper" rowClassName="record-row" centered footer={null} visible={this.state.detailModalFlag} onCancel={this.closeDetailModal}>
+            <div className="record-wrapper">
+                <div className={`record-table-wrapper ${this.state.recordShowFlag ? '' : 'hide'}`}>
+                    <Table columns={columns} dataSource={this.state.dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} />
+                </div>
+                <Modal width="650px" title="投注详情" wrapClassName="record-detail-wrapper" rowClassName="record-row" centered footer={null} visible={this.state.betModalFlag} onCancel={this.closeBetModal}>
                     <table>
                         <tbody>
                             <tr>
                                 <th>注单编号：</th>
-                                <td><em>{this.state.recordDetail.orderId}</em></td>
+                                <td>
+                                    <em>{this.state.recordDetail.orderId}</em>
+                                    {
+                                        this.state.recordDetail.isCurrentIssue === 1 ? <span className="order-cancel" onClick={() => this.cancalOrder(this.state.recordDetail.orderId)}>撤单</span> : null
+                                    }
+                                </td>
                             </tr>
                             <tr>
                                 <th>游戏用户：</th>
@@ -139,7 +197,14 @@ class LotteryRecord extends React.Component {
                             </tr>
                             <tr>
                                 <th>期号：</th>
-                                <td><div>{this.state.recordDetail.issue}</div></td>
+                                <td>
+                                    <div>
+                                        {this.state.recordDetail.issue}
+                                        {
+                                            this.state.recordDetail.istrace === 1 ? <span className="trace-view" onClick={() => this.viewTraceDetail(this.state.recordDetail.orderId)}>(查看追号信息)</span> : null
+                                        }
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <th>投注内容：</th>
@@ -180,6 +245,121 @@ class LotteryRecord extends React.Component {
                             <tr>
                                 <th>状态：</th>
                                 <td>{this.state.recordDetail.status}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Modal>
+                <Modal width="1060px" title={[<span key="A">追号详情</span>, <span key="B" className="back-bet-modal" onClick={this.backToBetModal}>(返回)</span>]} wrapClassName="trace-detail-wrapper" rowClassName="trace-row" centered footer={null} visible={this.state.traceModalFlag} onCancel={this.closeTraceModal}>
+                    <table className="traceTable traceHTable">
+                        <tbody>
+                            <tr>
+                                <th>追号编号：</th>
+                                <td>{this.state.traceDetail.traceId}</td>
+                                <td rowSpan="18" className="fixtrace">
+                                    <ul className="traceInner">
+                                        <li className="traceHead">
+                                            <span>
+                                                <i className="checkbox-wrapper"><Checkbox className="chkall hand" onChange={this.checkAll} /></i>
+                                                奖期
+                                            </span>
+                                            <em>追号倍数</em>
+                                            <em>追号状态</em>
+                                            <em>注单详情</em>
+                                        </li>
+                                        {
+                                            this.state.tracePageData.map(item => {
+                                                const { traceId, issue, count, status } = item;
+                                                return (
+                                                    <li key={traceId}>
+                                                        <span>
+                                                            <i className="checkbox-wrapper"><Checkbox className="hand" disabled={status === 1 ? true : false} /></i>
+                                                            {issue}
+                                                        </span>
+                                                        <em>{count}</em>
+                                                        <em>
+                                                            <label>{status === 1 ? '已完成' : '进行中'}</label>
+                                                        </em>
+                                                        <em>
+                                                            <a className="hand traceDetails">{status === 1 ? '详情' : ''}</a>
+                                                        </em>
+                                                    </li>
+                                                );
+                                            })
+                                        }
+                                    </ul>
+                                    <div className="tracePager popdetails-page">
+                                        <Pagination size="small" pageSize={10} onChange={this.turnPage} total={this.state.traceDetail.issueCount} />
+                                    </div>
+                                    <div className="cancelTrace"><a className={`hand ${this.state.cancelTraceFlag ? '' : 'disabled'}`} name="2018393" onClick={this.cancelTrace}>追号终止</a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>游戏用户：</th>
+                                <td>{this.state.traceDetail.userName}</td>
+                            </tr>
+                            <tr>
+                                <th>追号时间：</th>
+                                <td>{formatTime(new Date(this.state.traceDetail.createTime), 'YY-MM-DD hh:mm:ss')}</td>
+                            </tr>
+                            <tr>
+                                <th>彩种：</th>
+                                <td>{codeToCn[this.state.traceDetail.lottery]}</td>
+                            </tr>
+                            <tr>
+                                <th>追号内容：</th>
+                                <td><div className="ellipsis w500">{this.state.traceDetail.code}</div></td>
+                            </tr>
+                            <tr>
+                                <th>玩法：</th>
+                                <td>{playWayToCn[this.state.traceDetail.method && this.state.traceDetail.method.split('_').slice(0, 3).join('_')]}</td>
+                            </tr>
+                            <tr>
+                                <th>追号模式：</th>
+                                <td>{this.traceModeConfig[this.state.traceDetail.traceType]}</td>
+                            </tr>
+                            <tr>
+                                <th>开始期号：</th>
+                                <td>{this.state.traceDetail.start}</td>
+                            </tr>
+                            <tr>
+                                <th>奖金模式：</th>
+                                <td>{this.state.traceDetail.odds}</td>
+                            </tr>
+                            <tr>
+                                <th>模式：</th>
+                                <td>{this.state.traceDetail.perAmount}元</td>
+                            </tr>
+                            <tr>
+                                <th>追号期数：</th>
+                                <td>{this.state.traceDetail.issueCount}</td>
+                            </tr>
+                            <tr>
+                                <th>追号总金额：</th>
+                                <td>¥{this.state.traceDetail.totalMoney}</td>
+                            </tr>
+                            <tr>
+                                <th>完成期数：</th>
+                                <td>{this.state.traceDetail.finishCount}</td>
+                            </tr>
+                            <tr>
+                                <th>完成金额：</th>
+                                <td>¥{this.state.traceDetail.finishMoney}</td>
+                            </tr>
+                            <tr>
+                                <th>取消期数：</th>
+                                <td>{this.state.traceDetail.cancelCount}</td>
+                            </tr>
+                            <tr>
+                                <th>取消金额：</th>
+                                <td>¥{this.state.traceDetail.cancelMoney}</td>
+                            </tr>
+                            <tr>
+                                <th>追号状态：</th>
+                                <td>{this.state.traceDetail.status}</td>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;&nbsp;中奖后终止：</th>
+                                <td>追中即停</td>
                             </tr>
                         </tbody>
                     </table>

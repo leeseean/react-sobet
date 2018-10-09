@@ -2,5 +2,6 @@
     "files.autoSaveDelay": 5000,
     "editor.formatOnSaveTimeout": 1500,
     "editor.codeActionsOnSaveTimeout": 1500,
-    "files.autoSave": "onWindowChange"
+    "files.autoSave": "onWindowChange",
+    "editor.detectIndentation": false
 }

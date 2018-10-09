@@ -223,3 +223,12 @@ export function getCountdowns() {
         url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
     });
 }
+//获取游戏记录 /lottery/api/u/v1/lottery/recent_order?lottery=WBGMMC
+export function getRecord(params) {
+    return $http({
+        params,
+        // url: '/record.json',
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
+    });
+}
+

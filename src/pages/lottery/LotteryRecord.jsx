@@ -1,15 +1,40 @@
 import React from 'react';
 import { Table } from 'antd';
+import { getRecord } from '../../utils/ajax';
 import './lotteryRecord.styl';
 
 class LotteryRecord extends React.Component {
     state = {
-        recordShowFlag: true
+        recordShowFlag: true,
+        dataSource: [],
+        columns: []
     }
     toggleRecord = () => {
         this.setState(prevState => ({
             recordShowFlag: !prevState.recordShowFlag
         }));
+    }
+    async getDataSource() {
+        const { lotteryCode } = this.props;
+        const res = getRecord({
+            lottery: lotteryCode
+        });
+        if (res.data.code === 1) {
+            const dataSource = res.data.result.map(item => {
+                const { orderId, orderTime, issue, code, amount, status } = item;
+                return {
+                    key: orderId,
+                    orderTime,
+                    issue,
+                    code,
+                    amount,
+                    status
+                };
+            });
+            this.setState({
+                dataSource
+            });
+        }
     }
     genColums() {
         const { lotteryCode } = this.props;
@@ -40,6 +65,9 @@ class LotteryRecord extends React.Component {
         }
         return columns;
     }
+    componentDidMount() {
+        this.getDataSource();
+    }
     render() {
         const TableTitle = () => {
             return (
@@ -55,7 +83,7 @@ class LotteryRecord extends React.Component {
         const columns = this.genColums();
         return (
             <div className="record-table-wrapper">
-                <Table />
+                <Table columns={columns} dataSource={this.state.dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '尚无投注记录' }} />
             </div>
         );
     }

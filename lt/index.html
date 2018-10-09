@@ -1,0 +1,327 @@
+﻿<!doctype html>
+<html class="no-js">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="摩臣娱乐|摩臣188 北美最大的线上娱乐！">
+	<meta name="keywords" content="摩臣娱乐|摩臣188 北美最大的线上娱乐！">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>摩臣娱乐 - 彩票</title>
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="icon" type="image/x-icon" href="/static/common/favicon.ico">
+	<link href="/static/sobet/styles/new/reset.css" type="text/css" rel="stylesheet" >    
+	<link rel="stylesheet" href="/static/lottery/styles/vendor.css">
+	<link rel="stylesheet" href="/static/sobet/styles/navigation.css">
+	<link href="/static/sobet/styles/new/iconFont-index/iconfont-index.css" type="text/css" rel="stylesheet">
+    <link href="/static/sobet/styles/new/header.css" type="text/css" rel="stylesheet">
+    <link href="/static/sobet/styles/new/footer.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/lottery/styles/main.css">
+	<link rel="stylesheet" href="/static/lottery/styles/lhc.css">
+	<script type="text/javascript" src="/static/sobet/scripts/jquery-1.9.1.min.js"></script>  
+
+</head>
+
+<body class="theme">
+	<script type="text/javascript" src="/static/sobet/scripts/header.js"></script>
+
+	<div id="lotteryClass">
+		<dl class="sortablelist">
+			<dt><span class="icon-title"></span>常玩彩种</dt>
+			<dt class="setButton"><b class="setting fa fa-cog"></b><b class="setFont">设置</b></dt>
+			<div class="menu-close"><i class="icon-close"></i>收起</div>
+		</dl>
+	</div>
+
+	<div class="bar-show">
+		<i class="icon-bar"></i>
+		<span class="bar-text">展开</span>
+	</div>
+
+	<div class="js-main-wrap wrap">
+		<div class="js-info info lottery-info-top clearfix">
+			<div class="name fl">
+				<i class="js-lottery-logo lottery-logo"></i>
+				<i class="js-stop-sell stop-sell" style="display:none;"></i>
+			</div>
+
+			<div class="js-issue-wrap issue fl">
+				<div class="issue-text">
+					<p class="issue-text-row">第<em class="js-issue current-issue"></em>期</p>
+					<p class="issue-text-row">投注截止还有</p>
+				</div>
+				<div class="js-clock clock">
+					<b class="clock_b0"></b>
+					<b class="clock_b1"></b>
+					<b class="clock_b2"></b>
+					<span></span>
+				</div>
+				<div class="detail_rd">
+					<p>对应官网开奖时间</p>
+					<h3></h3>
+					<a href="http://www.opencode.com" target="_blank" class="swedish">访问官网</a>
+				</div>
+			</div>
+
+			<div class="flipball-wrap">
+				<div class="flipball-mask"></div>
+				<div id="flipball"></div>
+			</div>
+			<div class="js-last-issue last-issue fr">
+				<div class="last-issue-wrap fl">
+					<p class="last-issue-row">第<em class="js-open-issue open-issue">-</em>期</p>
+					<p class="last-issue-row">开奖号码</p>
+				</div>
+				<div class="open-code-list-wrap">
+					<ul class="js-open-code-list open-code-list clearfix"></ul>
+				</div>
+				<div class="detail_hg1f5"></div>
+				<a class="js-diceGameFlag diceGameFlag" href="/static/diceGame/diceGame.html" target="_blank">骰宝入口</a>
+			</div>
+		</div>
+
+		<div class="js-lottery-main clearfix">
+			<div class="lottery-main-wrap fl">
+				<div class="js-lottery-wrap">
+					<div class="js-info-mini info-mini clearfix">
+						<div class="info-mini-wrap">
+							<div class="info-title-mini fl">
+								<span class="info-title-text"></span>
+								<span class="info-title-status"></span>
+							</div>
+							<div class="info-issue-mini fl">
+								<p>第<span class="js-issue current-issue"></span>期&nbsp;投注截止还有&nbsp;<span class="clock-mini"><b class="clock_b0"></b>:<b class="clock_b1"></b>:<b class="clock_b2"></b></span></p>
+							</div>
+							<div class="info-last-mini fr">
+								<div class="last-mini-text">第<em class="js-open-issue open-issue">-</em>期&nbsp;开奖号码</div>
+								<ul class="js-open-code-mini open-code-list-mini open-code-list"></ul>
+							</div>
+						</div>
+					</div>
+					<div class="pk10_ani">
+						<div class="road_bg">
+							<div class="ready"></div>
+							<div class="line"></div>
+							<div class="cars">
+								<div class="car_1"><i></i></div>
+								<div class="car_2"><i></i></div>
+								<div class="car_3"><i></i></div>
+								<div class="car_4"><i></i></div>
+								<div class="car_5"><i></i></div>
+								<div class="car_6"><i></i></div>
+								<div class="car_7"><i></i></div>
+								<div class="car_8"><i></i></div>
+								<div class="car_9"><i></i></div>
+								<div class="car_10"><i></i></div>
+							</div>
+						</div>
+					</div>
+					<div class="xgpk10_ani" style="display: none;">
+						<iframe id="horseRaceFrame" name="horseRaceFrame" scrolling="no" width="796" height="498"></iframe>
+					</div>
+					<div id="lottery" class="js-lottery lottery">
+						<div class="togglePkAni open">隐藏动画</div>
+						<div class="toggleXGPkAni open">隐藏动画</div>
+						<div class="js-tab tab"></div>
+						<div class="js-subtab subtab"></div>
+						<div class="js-save-tab save-tab">
+							<dl>
+								<dt>历史玩法</dt>
+							</dl>
+						</div>
+						<div class="direction theme_direction">
+							<div class="hint_theme">
+								<div class="hint_name">玩法说明</div>
+								<div class="hint_icon">
+									<div class="hotMissExplain">
+										<i class="triangle"></i>
+										<p class="paraphrase"></p>
+									</div>
+								</div>
+							</div>
+							<div class="hotMissWrap" style="display: none;">
+								<div class="hotMiss">
+									<div class="hotMissTab" flag="missTab"><i class="hot-miss"></i>遗漏</div>
+									<div class="hotMissTab" flag="hotTab"><i class="hot-miss"></i>冷热</div>
+								</div>
+								<div class="hotMissIcon">
+									<div class="hotMissExplain">
+										<i class="triangle"></i>
+										<p>遗漏</p>
+										<p>表示该号码从上次开出至今，有多少期未出现</p>
+										<p>冷热</p>
+										<p>表示在最近100期开奖中，该号码在对应的位置上出现的次数</p>
+									</div>
+								</div>
+							</div>
+							<div class="oddsTab-wrap">
+								<div class="js-oddsTab oddsTab" switch="A">A面</div>
+								<div class="js-oddsTab oddsTab" switch="B">B面</div>
+								<div class="js-oddsTip oddsTip"></div>
+							</div>
+						</div>
+						<div class="js-number-wrap number-wrap"><div class="js-number number"></div></div>
+						<div class="js-count count">
+							<div class="top">
+								<span class="mode">
+									<input type="radio" name="mode" id="modeRadio1" value="2" checked="checked" /><label for="modeRadio1"><i></i>2元</label>
+									<input type="radio" name="mode" id="modeRadio11" value="1"/><label for="modeRadio11"><i></i>1元</label>
+									<input type="radio" name="mode" id="modeRadio2" value="0.2" /><label for="modeRadio2"><i></i>2角</label>
+									<input type="radio" name="mode" id="modeRadio21" value="0.1" /><label for="modeRadio21"><i></i>1角</label>
+									<input type="radio" name="mode" id="modeRadio3" value="0.02" /><label for="modeRadio3"><i></i>2分</label>
+									<input type="radio" name="mode" id="modeRadio4" value="0.002" /><label for="modeRadio4"><i></i>2厘</label>
+								</span>
+								<span class="times">倍数<input type="text" class="spinner biggerw" min="1" max="99999" step="1" value="1"></span>
+								<span class="odds">奖金<em>0</em>
+									<select><option value="0"></option></select>
+								</span>
+								<a href="javascript:;" class="quickSubmit disabled">快速投注</a>
+								
+							</div>
+							<div class="total clearfix">
+								您选择了<em class="js-bet-count">0</em>注，共<em class="js-bet-times times">0</em>倍，共计<em class="js-bet-money money">0</em>元
+								<a href="javascript:;" class="confirm disabled">添加选号</a>
+								<ul class="select-random">
+									<li class="random-item" data-num="1">机选1注</li>
+									<li class="random-item" data-num="5">机选5注</li>
+									<li class="random-item" data-num="10">机选10注</li>
+								</ul>
+							</div>
+						</div>
+						<div class="js-count-lhc count count-lhc clearfix">
+							<div class="js-clickType-per fl clickType-per hide" >
+								单注金额：
+								<input class="js-clickType-per-input clickType-per-input" type="number" min="1" max="99999">
+							</div>
+							<div class="total fl">您选择了
+								<em class="js-count-num">0</em>个选号，共计
+								<em class="money js-total-money">0</em>元
+							</div>
+							<a href="javascript:;" class="quickSubmit fl js-quickSubmit disabled">快速投注</a>
+							<a href="javascript:;" class="confirm fl js-confirm disabled">添加选号</a>
+						</div>
+						<div class="js-orders orders clearfix">
+							<div class="list">
+								<div class="title">
+									<span class="codes">玩法及投注内容</span>
+									<!--  <span class="odds">奖金模式</span> -->
+									<span class="share">倍数</span>
+									<span class="mode">模式</span>
+									<span class="money">投注金额</span>
+									<span class="win">盈利金额</span>
+									<span class="delete delete-all" title="一键清空"></span>
+								</div>
+								<div class="title title-lhc">
+									<span class="codes">玩法及投注内容</span>
+									<span class="odd">赔率</span>
+									<span class="money">投注金额</span>
+									<span class="delete delete-all" title="一键清空"></span>
+								</div>
+								<ul></ul>
+							</div>
+							<div class="bottom">
+								<div>
+									<span class="totalMoney">
+										<label>总投注数<em class="total">0</em></label>
+										<label>投注总金额<em class="amount">0</em></label>
+									</span>
+								</div>
+								<div class="countTimeBox">
+									<div class="js-countTime countTime">
+										离投注截止还有<em></em>
+									</div>
+								</div>
+								<div>
+									<a href="javascript:;" class="js-submit submit disabled"></a>
+								</div>
+								<div id="trace-box-lottery" class="trace-box">
+									<input type="checkbox" name="autoTrace" data-type="lottery" value="0" style="display:none" />
+									<label class="hand">
+										<i class="trace-icon"></i>我要追号
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="recency">
+							<div class="js-recency-wrap">
+								<div class="recency-t">
+									<em><i class="icon-recency"></i>投注记录</em>
+									<i class="js-recency-switch hidden">隐藏列表</i>
+								</div>
+								<div class="tit">
+									<span class="wd1">参与时间</span>
+									<span class="wd1">奖期</span>
+									<span class="wd2">玩法</span>
+									<span class="wd2">投注内容</span>
+									<span class="wd5">投注金额</span>
+									<span class="wd4">中奖情况</span>
+									<span class="wd6">操作</span>
+								</div>
+								<ul class="js-recency-list"></ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div class="js-aside-wrap aside fr">
+				<div class="history">
+					<div class="resuleShow">
+						<div class="t js-history-trend-title history-trend-title clearfix">
+							<span class="history-trend-title-left fl">近期开奖结果</span>
+							<a class="js-trend-link history-trend-title-right fr" href="javascript: void(0)" target="_blank"><i class="icon-trend"></i>走势图></a>
+						</div>
+						<div class="t1 js-history-trend-head history-trend-head">
+							<span class="history-trend-issue issue">期号</span>
+							<span class="history-trend-open r">开奖号码</span>
+							<span class="rGames"></span>
+							<span class="rGames_2"></span>
+							<span class="rGames_3"></span>
+						</div>
+						<div class="t1 t1-lhc">
+							<span class="issue">开奖号码</span>
+							<span class="rGames">生肖</span>
+							<span class="rGames_2">色波</span>
+							<span class="rGames_3">大小</span>
+							<span class="rGames_4">单双</span>
+						</div>
+						<ul class="js-trend-list history-trend-list"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="position: relative;z-index: 40;">
+		<div class="winResultsList" style="position: fixed;">
+			<div class="winLine">
+				<div style="margin-left: 0;font-size: 12px;width: 999999999999px;color: white;" class="winNoticeMarginChange">
+					<div style="float: left;" class="winNoticeWrap">
+					</div>
+				</div>
+				<i class="winLineClose"></i>
+
+			</div>
+		</div>
+	</div>
+	<div class="heightHack"></div>
+	<script type="text/javascript" src="/static/sobet/scripts/footer.js"></script>
+	<!-- START: 弹框备用内容 -->
+	<div class="overlay"></div>
+	<div class="guide-box"></div>
+	<div id="show-win-fix">
+		<div id="show-win-wrap"></div>
+	</div>
+	<!-- END: 弹框备用内容 -->
+	<script src="/static/lottery/scripts/vendor.js" type="text/javascript"></script>
+	<script src="/static/sobet/scripts/layer.js" type="text/javascript"></script>
+	<script src="/static/common/global.min.js" type="text/javascript"></script>
+	<script src="/static/lottery/scripts/load-config.js"></script>
+	<script src="/static/lottery/scripts/main.js" type="text/javascript"></script>
+</body>
+</html>

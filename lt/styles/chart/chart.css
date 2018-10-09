@@ -1,0 +1,212 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Main Style */
+body {
+  font-size: 12px;
+}
+#header {
+  background-color: #232325;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #c0c0c0;
+  font-family: 'Microsoft Yahei';
+  color: #fff;
+}
+.wrap {
+  width: 1260px;
+  margin: 0 auto;
+}
+#header .lt-name {
+  display: inline-block;
+  width: 200px;
+  line-height: 45px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#header a, #header button {
+  background-color: #e0e0e0;
+  margin-right: 10px;
+  padding: 3px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #333;
+}
+#header a.on, #header a:hover, #header button:hover {
+  background-color: #ff5243;
+  color: #fff;
+}
+#header a.chart-line {
+  margin-right: 50px;
+}
+#header input {
+  background: #fff url('../images/datepicker.png') 118px 0 no-repeat;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 10px;
+  padding: 0;
+  padding-left: 5px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+#header button {
+  display: inline-block;
+  line-height: 30px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+
+#chart {
+  position: relative;
+  margin-top: 20px;
+  padding-top: 1px;
+  overflow: hidden;
+}
+#chart .head, #chart .body, #chart .foot {
+  width: 1260px;
+  margin-top: -1px;
+}
+#chart .head {
+  background: #f0f0f0;
+}
+#chart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#chart table tr th,
+#chart table tr td {
+  border: 1px solid #c0c0c0;
+  vertical-align: middle;
+  text-align: center;
+}
+#chart h4 {
+  height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+#chart i, #chart span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px auto;
+  padding: 0;
+  line-height: 16px;
+  border-radius: 50%;
+  font-style: normal;
+}
+#chart span {
+  background: #dd3333;
+  color: #fff;
+}
+#chart i.cur {
+  color: #fff;
+}
+#chart i.p4.cur {
+  background: #ff773d;
+}
+#chart i.p3.cur {
+  background: #8c0a91;
+}
+#chart i.p2.cur {
+  background: #650019;
+}
+#chart i.p1.cur {
+  background: #3686ab;
+}
+#chart i.p0.cur {
+  background: #00a0d2;
+}
+
+svg {
+  position: absolute;
+  height: 100%;
+}
+.hide {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.sobet.chart {
+  font-family: 'Microsoft Yahei';
+  color: #454545;
+}
+
+.sobet.chart .ui-dialog-title {
+  padding-left: 20px;
+  font-size: 24px;
+  font-weight: normal;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.sobet.chart .ui-dialog-content {
+  padding: 10px 20px 20px;
+  font-size: 16px;
+}
+
+.sobet.chart .ui-dialog-footer button {
+  background-color: #ff5243;
+  width: 80px;
+  padding: 5px 0;
+  border: none;
+  text-align: center;
+  font-family: 'Microsoft Yahei';
+  color: #fff;
+  outline: none;
+}
+.sobet.chart .ui-dialog-footer button:hover,
+.sobet.chart .ui-dialog-footer button:focus,
+.sobet.chart .ui-dialog-footer button:active {
+  background-color: #ff6052;
+  color: #fff;
+}
+.goLogin {
+  margin-left: 8px;
+  color:#4990fe;
+  text-decoration: none;
+}
+.goLogin:hover  {
+  color: #f40
+}
+
+#header a.pk10-a{
+	display:none;
+}
+.pk10 #header a.pk10-a{
+	display:inline;
+}
+.pk10 #header input{
+	width:115px;
+	background-position:88px 0;
+}
+.pk10 #header a, .pk10 #header button{
+	padding:3px 15px;
+}
+.pk10 #header a.chart-line, .pk10 #header a.pk10-a.h5{
+	margin-right:35px;
+}
+
+.pk10 .wrap,.pk10 .wrap #chart .body, .pk10 .wrap #chart .foot, .pk10 .wrap #chart .head{
+	width:1300px;
+}
+  
+.pk10 .th_codes{
+	width:129px;
+}
+
+.pk10 #chart i, .pk10 #chart span{
+	width:20px;
+	height:20px;
+	line-height:20px;
+}
+	  
+	  

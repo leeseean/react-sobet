@@ -82,7 +82,7 @@ class GlobalNav extends React.Component {
                             </li>
 
                             <li className="menu-li fl">
-                                <NavLink exact to="/activity" isActive={active} activeClassName="global-nav-on">
+                                <NavLink exact to="/vipEvent" isActive={active} activeClassName="global-nav-on">
                                     <i className="menu-entertain-icon"></i>
                                     <span className="menu-entertain-title"></span>
                                 </NavLink>

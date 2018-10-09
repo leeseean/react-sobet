@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="32" viewBox="0 0 160 32">
+    <defs>
+        <linearGradient id="c" x1="52.322%" x2="52.322%" y1="3.069%" y2="100%">
+            <stop offset="0%" stop-color="#E2423B"/>
+            <stop offset="52.59%" stop-color="#C63030"/>
+            <stop offset="100%" stop-color="#AC1B1B"/>
+        </linearGradient>
+        <rect id="b" width="160" height="32" x="2181" y="436" rx="6"/>
+        <filter id="a" width="101.1%" height="106.9%" x="-.5%" y="-1.7%" filterUnits="objectBoundingBox">
+            <feOffset dy=".8" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".15"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+        </filter>
+        <filter id="d" width="102.3%" height="112.8%" x="-1.1%" y="-4.7%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" radius="1" result="shadowSpreadInner1"/>
+            <feGaussianBlur in="shadowSpreadInner1" result="shadowBlurInner1" stdDeviation=".5"/>
+            <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-2181 -436)">
+        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+        <use fill="url(#c)" xlink:href="#b"/>
+        <use fill="#FFF" fill-opacity=".2" xlink:href="#b"/>
+        <use fill="#000" filter="url(#d)" xlink:href="#b"/>
+        <rect width="159" height="31" x="2181.5" y="436.5" stroke="#972626" rx="6"/>
+    </g>
+</svg>

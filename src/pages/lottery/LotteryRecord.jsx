@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
 import { getRecord } from '../../utils/ajax';
+import formatTime from '../../utils/formatTime';
 import './lotteryRecord.styl';
 
 class LotteryRecord extends React.Component {
@@ -15,20 +16,23 @@ class LotteryRecord extends React.Component {
         }));
     }
     async getDataSource() {
-        const { lotteryCode } = this.props;
-        const res = getRecord({
+        const { lotteryCode, playWayToCn } = this.props;
+        const res = await getRecord({
             lottery: lotteryCode
         });
         if (res.data.code === 1) {
             const dataSource = res.data.result.map(item => {
-                const { orderId, orderTime, issue, code, amount, status } = item;
+                const { orderId, orderTime, issue, method, code, amount, status } = item;
                 return {
-                    key: orderId,
-                    orderTime,
+                    orderTime: formatTime(new Date(orderTime), 'MM-DD hh:mm:ss'),
                     issue,
                     code,
                     amount,
-                    status
+                    status,
+                    method: playWayToCn[method],
+                    code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
+                    key: orderId,
+                    mani: status === '未开奖' ? [<span className="order-again">再次投注</span>, <span className="order-cancel">撤单</span>] : <span className="order-again">再次投注</span>
                 };
             });
             this.setState({
@@ -40,7 +44,7 @@ class LotteryRecord extends React.Component {
         const { lotteryCode } = this.props;
         let columns = [{
             title: '参与时间',
-            dataIndex: 'orderTime'
+            dataIndex: 'orderTime',
         }, {
             title: '奖期',
             dataIndex: 'issue'
@@ -49,19 +53,21 @@ class LotteryRecord extends React.Component {
             dataIndex: 'method'
         }, {
             title: '投注内容',
-            dataIndex: 'code'
+            dataIndex: 'code',
+            width: 120,
         }, {
             title: '投注金额',
-            dataIndex: 'amount'
+            dataIndex: 'amount',
         }, {
             title: '中奖情况',
-            dataIndex: 'status'
+            dataIndex: 'status',
         }, {
             title: '操作',
-            dataIndex: 'mani'
+            dataIndex: 'mani',
+            width: 160,
         }];
         if (lotteryCode === 'WBGMMC') {
-            columns = columns.pop();
+            columns.pop();
         }
         return columns;
     }

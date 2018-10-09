@@ -1,0 +1,263 @@
+.history-pop .ui-dialog-title {
+  display: none;
+}
+.history-pop {
+}
+.history-pop .tab {
+  border-bottom: 2px solid #ff5243;
+  margin: 0 10px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+.history-pop .tab li {
+  background: #eaeaea;
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 8px;
+  margin-left: 5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  float: left;
+}
+.history-pop .tab li.on {
+  background-color: #ff5243;
+  color: #fff;
+}
+.history-pop .filter {
+  background: #f8f8f8;
+  display: block;
+  height: 32px;
+  padding: 8px 0;
+}
+.history-pop .filter label {
+  margin: 0px 5px 0 10px;
+}
+.history-pop .filter input,.history-pop .filter select {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+.history-pop .filter input {
+  background: #fff url('../images/datepicker.png') right 0 no-repeat;
+  width: 130px;
+  line-height: 30px;
+  height: 30px;
+  margin-left: 5px;
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 20px;
+  outline: none
+}
+.history-pop .filter select {
+  width: 100px;
+  padding: 6px 0;
+  margin: 0 3px;
+
+}
+.history-pop .filter select.methodList {
+  width: 140px;
+}
+.history-pop .query {
+  background-color: #ff5243;
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  float:right;
+}
+.history-pop .query:hover {
+  background-color: #ff6052;
+}
+
+.history-pop .list {
+  margin: 0 10px;
+  overflow: auto;
+  clear: both;
+}
+.history-pop .list ul {
+  min-height: 35px;
+}
+.history-pop .list li {
+  height:35px;
+  line-height:35px;
+  cursor: pointer;
+}
+.history-pop .list li:hover {
+  background-color: #ededed;
+}
+
+.history-pop .tit {
+  background-color: #484848;
+  overflow: hidden;
+}
+.history-pop .list li.evenTr {
+  background-color: #f8f8f8;
+}
+.history-pop .list li:hover,
+.history-pop .list li.evenTr:hover {
+  background-color: #eee;
+  cursor:pointer;
+}
+.history-pop .list span {
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  color: #666;
+  font-size: 12px;
+  float: left;
+  text-align: center;
+  overflow: auto;
+  overflow-y: hidden;
+  word-break: break-all;
+}
+.history-pop .list span.wd1 {
+  width: 145px;
+}
+.history-pop .list span.wd2 {
+  width: 120px;
+}
+.history-pop .list span.wd3 {
+  width: 30px;
+}
+.history-pop .list span.wd4 {
+  width: 65px;
+}
+.history-pop .list span.wd5, .history-pop .list.mt span.wd5 {
+  width: 90px;
+}
+.history-pop .list.mt span {
+  width: 105px;
+}
+.history-pop .list.mt span.wd1 {
+  width: 180px;
+}
+.history-pop .list.mt span.wd2 {
+  width: 110px;
+}
+.history-pop .list.mt span.wd3 {
+  width: 60px;
+}
+.history-pop .list.mt span.wd4 {
+  width: 80px;
+}
+.history-pop .list.trace span.wd3 {
+  width: 50px;
+}
+
+.history-pop .tit span {
+  color: #fff;
+}
+.history-pop a.viewfull{
+  color:#ff5243;
+}
+.history-pop a.viewfull:hover{
+  text-decoration: underline;
+}
+.all-code {
+  max-width: 600px;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.history-pop .grid-total {
+  background-color: #e6e6e6;
+  border-left: 5px solid #ff6600;
+  height: 40px;
+  line-height: 40px;
+  overflow: auto;
+}
+
+.history-pop .grid-total label {
+  width: 130px;
+  float: left;
+  margin-left: 15px;
+}
+.history-pop .mt .grid-total label {
+  width: 160px;
+}
+.history-pop .grid-total span {
+  height: 40px;
+  line-height: 40px;
+}
+.history-pop .grid-total .grid-amount {
+  margin-left: 490px;
+}
+.history-pop .mt .grid-total .grid-amount {
+  margin-left: 410px;
+}
+.history-pop .trace .grid-total .grid-amount {
+  margin-left: 475px;
+}
+
+.history-pop .pagging {
+  background-color: #fff;
+  padding: 10px 5px 0px 5px;
+  text-align: center;
+}
+.history-pop .pagging a, .popdetails-page a {
+  display: inline-block;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  min-width: 16px;
+  line-height: 20px;
+  padding: 0 2px;
+  font-size: 12px;
+  margin-right: 2px;
+  border-radius: 3px;
+  text-indent: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.history-pop .pagging span.page-break,.popdetails-page span.page-break{
+  margin: 0px 2px 0px 0px;
+  width:auto;
+  line-height: 20px;
+  float:none;
+}
+.history-pop .pagging a.on,.popdetails-page a.on {
+  background-color: #ff5243;
+  border-color: #ff5243;
+  color: #fff;
+}
+.history-pop .pagging a.prev,
+.history-pop .pagging a.next,.popdetails-page a.prev,.popdetails-page a.next {
+  width: auto;
+}
+
+.history-pop .wrapbox {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-pop li div.icon{
+  background-image: url('../images/market_z.png');
+  background-position: -43px -636px;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  margin:5px 2px 0px 8px;
+  color: #fff;
+  text-align: center;
+  float:left;
+}
+
+.history-pop li.buy div.icon{
+  background-position: -43px -602px;
+}
+
+.history-pop div.icon i{
+  text-align:center;
+}
+

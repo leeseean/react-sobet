@@ -6,12 +6,15 @@ import {
 } from 'mobx';
 import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
 import trendConfig from '../pages/lottery/trendConfig';
+import playWayToCn from '../pages/lottery/playWayToCn';
 import {
     queryTrendData,
     updateIssue
 } from '../utils/ajax';
 
 class LotteryStore {
+
+    playWayToCn = playWayToCn
 
     lotteryCodeToCn = lotteryCodeToCn
 

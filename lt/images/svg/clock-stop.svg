@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="37" viewBox="0 0 130 37">
+    <defs>
+        <linearGradient id="c" x1="52.322%" x2="52.322%" y1="3.069%" y2="100%">
+            <stop offset="0%" stop-color="#FAFAFA"/>
+            <stop offset="52.59%" stop-color="#F8F8F8"/>
+            <stop offset="100%" stop-color="#F2F2F2"/>
+        </linearGradient>
+        <rect id="b" width="130" height="37" x="1983" y="1108" rx="4"/>
+        <filter id="a" width="101.3%" height="105.9%" x="-.7%" y="-1.5%" filterUnits="objectBoundingBox">
+            <feOffset dy=".8" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".15"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+        </filter>
+        <filter id="d" width="102.8%" height="111.1%" x="-1.4%" y="-4.1%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" radius="1" result="shadowSpreadInner1"/>
+            <feGaussianBlur in="shadowSpreadInner1" result="shadowBlurInner1" stdDeviation=".5"/>
+            <feOffset dy="-1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.497714711 0 0 0 0 0.497714711 0 0 0 0 0.497714711 0 0 0 0.4 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-1983 -1108)">
+        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+        <use fill="url(#c)" xlink:href="#b"/>
+        <use fill="#000" filter="url(#d)" xlink:href="#b"/>
+        <rect width="129" height="36" x="1983.5" y="1108.5" stroke="#E2DFDF" rx="4"/>
+    </g>
+</svg>

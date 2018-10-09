@@ -1,0 +1,2877 @@
+body.theme {
+    background: #242d47;
+}
+
+
+/*********************left*************************/
+
+body.theme #lotteryClass dl {
+    border-radius: 8px;
+    background-color: #3A3A3A;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.22);
+}
+
+body.theme #lotteryClass dd.on span {
+    color: #fff;
+}
+
+body.theme .lotterySetting .saveLottery {
+    font-size: 14px;
+}
+
+
+/*************************main***************************/
+
+
+.js-main-wrap .js-info .issue .detail_rd {
+    position: absolute;
+    right: 0;
+    top: 62px;
+    display: none;
+    width: 190px;
+    height: 87px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.info[lt=rdffc] .issue:hover .detail_rd,
+.info[lt=rdlfc] .issue:hover .detail_rd {
+    display: block;
+}
+
+.js-main-wrap .js-info .issue .detail_rd p {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #999;
+}
+
+
+.js-main-wrap .js-info .issue .detail_rd h3 {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #333;
+}
+
+.js-main-wrap .js-info .issue .swedish {
+    width: 82px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: #183eb0;
+    color: #fff;
+}
+
+
+body.theme .lottery .subtab dl {
+    padding-bottom: 8px;
+}
+
+body.theme .lottery .subtab dt {
+    margin-right: 0;
+    width: 90px;
+    font-size: 14px;
+    color: #727272;
+}
+
+body.theme .lottery .subtab dd {
+    height: 22px;
+    line-height: 20px;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    color: #333;
+}
+
+body.theme dd[data-type='zx_hfs'],
+body.theme dd[data-type='zx_hds'],
+body.theme dd[data-type='zx_hhz'],
+body.theme dd[data-type='zx_qfs'],
+body.theme dd[data-type='zx_qds'],
+body.theme dd[data-type='zx_qhz'],
+body.theme dd[data-type='zx_qkd'],
+body.theme dd[data-type='zux_qbd'],
+body.theme dd[data-type='zx_hkd'],
+body.theme dd[data-type='zux_hbd'],
+body.theme dd[data-type='zux_hfs'],
+body.theme dd[data-type='zux_hds'],
+body.theme dd[data-type='zux_hhz'],
+body.theme dd[data-type='zux_qfs'],
+body.theme dd[data-type='zux_qds'],
+body.theme dd[data-type='zux_qhz'],
+body.theme dd[data-type='zux_z120'],
+body.theme dd[data-type='zux_z60'],
+body.theme dd[data-type='zux_z30'],
+body.theme dd[data-type='zux_z20'],
+body.theme dd[data-type='zux_z10'],
+body.theme dd[data-type='zux_z5'],
+body.theme dd[data-type='zux_z24'],
+body.theme dd[data-type='zux_z12'],
+body.theme dd[data-type='zux_z6'],
+body.theme dd[data-type='zux_z4'],
+body.theme dd[data-type='zux_z3'],
+body.theme dd[data-type='zux_hh'],
+body.theme dd[data-type='zux_hz'],
+body.theme dd[data-type='dwd_dwd'],
+body.theme dd[data-type='zux_bd'],
+body.theme dd[data-type='zx_kd'],
+body.theme dd[data-type='zx_fs'],
+body.theme dd[data-type='zx_ds'],
+body.theme dd[data-type='zx_hz'],
+body.theme dd[data-type='zx_zh'],
+body.theme dd[data-type='zux_fs'],
+body.theme dd[data-type='zux_ds'],
+body.theme dd[data-type='lhh_wq'],
+body.theme dd[data-type='lhh_wb'],
+body.theme dd[data-type='lhh_ws'],
+body.theme dd[data-type='lhh_wg'],
+body.theme dd[data-type='lhh_qb'],
+body.theme dd[data-type='lhh_qs'],
+body.theme dd[data-type='lhh_qg'],
+body.theme dd[data-type='lhh_bs'],
+body.theme dd[data-type='lhh_bg'],
+body.theme dd[data-type='lhh_sg'],
+body.theme dd[data-type='bdd_bdd1'],
+body.theme dd[data-type='bdd_bdd2'],
+body.theme dd[data-type='xt_xt'],
+body.theme dd[data-type='cq1_cq1'],
+body.theme dd[data-type='cq2_cq2'],
+body.theme dd[data-type='cq2_ds'],
+body.theme dd[data-type='cq3_cq3'],
+body.theme dd[data-type='cq3_ds'],
+body.theme dd[data-type='cq4_cq4'],
+body.theme dd[data-type='cq4_ds'],
+body.theme dd[data-type='cq5_cq5'],
+body.theme dd[data-type='cq5_ds'],
+body.theme dd[data-type='dx_d1'],
+body.theme dd[data-type='dx_d2'],
+body.theme dd[data-type='dx_d3'],
+body.theme dd[data-type='dx_d4'],
+body.theme dd[data-type='dx_d5'],
+body.theme dd[data-type='ds_d1'],
+body.theme dd[data-type='ds_d2'],
+body.theme dd[data-type='ds_d3'],
+body.theme dd[data-type='ds_d4'],
+body.theme dd[data-type='ds_d5'],
+body.theme dd[data-type='lh_1v10'],
+body.theme dd[data-type='lh_2v9'],
+body.theme dd[data-type='lh_3v8'],
+body.theme dd[data-type='lh_4v7'],
+body.theme dd[data-type='lh_5v6'],
+body.theme dd[data-type='hz_hz'],
+body.theme dd[data-type='dx_fs'],
+body.theme dd[data-type='dx_ds'],
+body.theme dd[data-type='bth3_fs'],
+body.theme dd[data-type='bth3_ds'],
+body.theme dd[data-type='bth2_fs'],
+body.theme dd[data-type='bth2_ds'],
+body.theme dd[data-type='bdd_bdd11y'],
+body.theme dd[data-type='dwd_dwd11y'],
+body.theme dd[data-type='rxfs_1z1'],
+body.theme dd[data-type='rxfs_2z2'],
+body.theme dd[data-type='rxfs_3z3'],
+body.theme dd[data-type='rxfs_4z4'],
+body.theme dd[data-type='rxfs_5z5'],
+body.theme dd[data-type='rxfs_6z5'],
+body.theme dd[data-type='rxfs_7z5'],
+body.theme dd[data-type='rxfs_8z5'],
+body.theme dd[data-type='rxds_1z1'],
+body.theme dd[data-type='rxds_2z2'],
+body.theme dd[data-type='rxds_3z3'],
+body.theme dd[data-type='rxds_4z4'],
+body.theme dd[data-type='rxds_5z5'],
+body.theme dd[data-type='rxds_6z5'],
+body.theme dd[data-type='rxds_7z5'],
+body.theme dd[data-type='rxds_8z5'],
+body.theme dd[data-type='rxdt_2z2'],
+body.theme dd[data-type='rxdt_3z3'],
+body.theme dd[data-type='rxdt_4z4'],
+body.theme dd[data-type='rxdt_5z5'],
+body.theme dd[data-type='rxdt_6z5'],
+body.theme dd[data-type='rxdt_7z5'],
+body.theme dd[data-type='rxdt_8z5'],
+body.theme dd[data-type='rxdt_7z5'],
+body.theme dd[data-type='zux_hz'],
+body.theme dd[data-type='bjl_bjl'],
+body.theme dd[data-type='lh3_dx'],
+body.theme dd[data-type='lh3_tx'],
+body.theme dd[data-type='bs_tx'],
+body.theme dd[data-type='bs_dx'],
+body.theme dd[data-type='z6_tx'],
+body.theme dd[data-type='z6_dx'],
+body.theme dd[data-type='xt_q3'],
+body.theme dd[data-type='xt_z3'],
+body.theme dd[data-type='xt_h3'],
+body.theme dd[data-type='th3_th3dx'],
+body.theme dd[data-type='th3_th3tx'],
+body.theme dd[data-type='nn_nn'] {
+    width: 60px;
+}
+
+body.theme dd[data-type='bdd_qs1'],
+body.theme dd[data-type='bdd_qs2'],
+body.theme dd[data-type='bdd_z31'],
+body.theme dd[data-type='bdd_z32'],
+body.theme dd[data-type='bdd_hs1'],
+body.theme dd[data-type='bdd_hs2'],
+body.theme dd[data-type='bdd4_4x1'],
+body.theme dd[data-type='bdd4_4x2'],
+body.theme dd[data-type='bdd4_4x3'],
+body.theme dd[data-type='bdd5_5x1'],
+body.theme dd[data-type='bdd5_5x2'],
+body.theme dd[data-type='bdd5_5x3'],
+body.theme dd[data-type='dxds_h2'],
+body.theme dd[data-type='dxds_q2'],
+body.theme dd[data-type='dxds_h3'],
+body.theme dd[data-type='dxds_q3'],
+body.theme dd[data-type='hzdxds_5xhz'],
+body.theme dd[data-type='hzdxds_q3hz'],
+body.theme dd[data-type='hzdxds_z3hz'],
+body.theme dd[data-type='hzdxds_h3hz'],
+body.theme dd[data-type='dxgs_wx'],
+body.theme dd[data-type='dxgs_sx'],
+body.theme dd[data-type='dxgs_qs'],
+body.theme dd[data-type='dxgs_zs'],
+body.theme dd[data-type='dxgs_hs'],
+body.theme dd[data-type='dsgs_wx'],
+body.theme dd[data-type='dsgs_sx'],
+body.theme dd[data-type='dsgs_qs'],
+body.theme dd[data-type='dsgs_zs'],
+body.theme dd[data-type='dsgs_hs'],
+body.theme dd[data-type='xt_wx'],
+body.theme dd[data-type='ts_yffs'],
+body.theme dd[data-type='ts_hscs'],
+body.theme dd[data-type='ts_sxbx'],
+body.theme dd[data-type='ts_sjfc'],
+body.theme dd[data-type='dwd_q5'],
+body.theme dd[data-type='dwd_h5'],
+body.theme dd[data-type='dx_q2'],
+body.theme dd[data-type='hz_q2'],
+body.theme dd[data-type='hz_q3'],
+body.theme dd[data-type='ds_q2'],
+body.theme dd[data-type='dxds_dxds'],
+body.theme dd[data-type='fx_fx'],
+body.theme dd[data-type='th2fx_fx'],
+body.theme dd[data-type='em_zxfs'],
+body.theme dd[data-type='em_zxds'],
+body.theme dd[data-type='em_zuxfs'],
+body.theme dd[data-type='em_zuxds'],
+body.theme dd[data-type='sm_zxfs'],
+body.theme dd[data-type='sm_zxds'],
+body.theme dd[data-type='sm_zuxfs'],
+body.theme dd[data-type='sm_zuxds'],
+body.theme dd[data-type='bdd_3x1m'],
+body.theme dd[data-type='bdd_4x1m'],
+body.theme dd[data-type='bdd_5x1m'],
+body.theme dd[data-type='cygh_cygh'] {
+    width: 105px;
+}
+
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zx_hfs'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zx_hds'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zx_qfs'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zx_qds'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zux_hfs'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zux_hds'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zux_qfs'],
+body.theme .lottery[data-lt=lt-3d] dd[data-type='zux_qds'] {
+    width: 105px;
+}
+
+body.theme .lottery .subtab dd.on {
+    background-color: #c93231;
+    color: #fff;
+    border-color: #c93231;
+}
+
+body.theme .lottery .direction {
+    display: none;
+}
+
+body.theme .lottery .theme_direction {
+    display: block;
+    border-top: 1px solid #e0e6ed;
+    background-color: #fbfbfb;
+    padding-left: 20px;
+}
+
+body.theme .lottery .theme_direction .hotMissWrap {
+    margin-right: 15px;
+}
+
+body.theme #lottery .theme_direction div.hotMissTab {
+    width: 44px;
+    height: 20px;
+    line-height: 20px;
+    color: #475669;
+}
+
+.theme_direction div.hotMissTab .hot-miss {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 2px 4px 0 0;
+    background: url(/static/lottery/images/new/new_lottery_common.png) -36px -97px no-repeat;
+    vertical-align: top;
+}
+
+body.theme #lottery .theme_direction div.hotMissTab.on .hot-miss{
+    background-position: -10px -97px;
+}
+
+body.theme #lottery .theme_direction div.hotMissIcon {
+    width: 14px;
+    height: 14px;
+    margin: 0 9px 0 5px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -14px -555px;
+}
+
+body.theme #lottery .theme_direction div.hotMissIcon:hover {
+    background-position: -51px -555px;
+}
+
+body.theme #lottery .theme_direction div.hotMissIcon:hover .hotMissExplain {
+    display: block;
+}
+
+body.theme #lottery .direction.theme_direction div.hotMissExplain {
+    position: absolute;
+    width: 284px;
+    background-color: #494949;
+    color: #fff;
+    border: 1px solid #494949;
+    left: -11px;
+    text-align: left;
+    top: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    padding: 10px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+body.theme #lottery .direction div.hotMissIcon div.hotMissExplain>p:nth-child(odd),
+body.theme #lottery .direction div.hotMissIcon div.hotMissExplain>p:nth-child(even) {
+    color: #fff;
+}
+
+body.theme #lottery .theme_direction div.hotMissTab:hover .hotMissExplain {
+    animation: hotmiss 1s infinite 1s;
+}
+
+@keyframes hotmiss {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+
+body.theme #lottery .theme_direction div.hotMissExplain i.triangle {
+    top: -4px;
+    left: 12px;
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #494949;
+    border: 1px solid transparent;
+    border-top-color: #494949;
+    border-left-color: #494949;
+    transform: rotate(45deg);
+}
+
+body.theme .lottery .theme_direction div {
+    vertical-align: top;
+}
+
+body.theme .lottery .theme_direction .hint_icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -14px -555px;
+    vertical-align: text-bottom;
+    position: relative;
+}
+
+body.theme #lottery .theme_direction .hint_icon .hotMissExplain {
+    width: 400px;
+}
+
+body.theme #lottery .theme_direction .hint_theme {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+body.theme #lottery .theme_direction .hint_theme:hover .hint_icon {
+    background-position: -51px -555px;
+}
+
+body.theme #lottery .theme_direction .hint_theme:hover .hotMissExplain {
+    display: block;
+}
+
+body.theme .lottery .direction .paraphrase {
+    position: static;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    width: auto;
+}
+
+
+
+body.theme .lottery .number i.diceNum {
+    width: 80px;
+    height: 42px;
+    line-height: 32px;
+    background: #f0f0f0;
+}
+
+body.theme .lottery .number i.diceNum:hover {
+    background: #FFDDDC;
+}
+
+body.theme .lottery .number i.diceNum:active {
+    background: #FFDDDC;
+}
+
+body.theme .lottery .number i.diceNum.on {
+    background: #c31111;
+    background: linear-gradient(to bottom, #CA1413, #8C0103);
+    border: 1px solid #830202;
+}
+
+body.theme .lottery .number i.diceNum.dice18 {
+    width: 600px;
+}
+
+body.theme .lottery .number i.diceNum.dice18,
+body.theme .lottery .number i.diceNum.dice4,
+body.theme .lottery .number i.diceNum.dice5,
+body.theme .lottery .number i.diceNum.threeDice,
+body.theme .lottery .number i.diceNum.threeDice1 {
+    height: auto;
+}
+
+body.theme .lottery .number i.diceNum.dice4 {
+    width: 400px;
+}
+
+body.theme .lottery .number i.diceNum.dice5 {
+    width: 500px;
+}
+
+body.theme .lottery .number dd i.fourText {
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+    color: #333;
+}
+
+body.theme .lottery .number dd i.fourText.on {
+    background: #c63030;
+    background: linear-gradient(to bottom, #e2423b, #c63030 53%, #ac1b1b);
+    border: 1px solid #972626;
+    border-radius: 6px;
+    color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(236, 236, 236, 0.39), inset 0 1px 1px 1px rgba(255, 255, 255, 0.42);
+}
+
+body.theme .lottery .number dd i.twoText {
+    font-size: 14px;
+}
+
+
+/****************nn****************/
+body.theme .lottery .number[method-2=nn] dt {
+    height: 76px;
+    line-height: 76px;
+    margin: 0;
+}
+
+body.theme .lottery .number[method-2=nn] dd i {
+    display: inline-block;
+    width: 65px;
+    height: 76px;
+    background: none;
+    margin: 0 10px 14px;
+    border-radius: 10px;
+}
+
+body.theme .lottery .number[method-2=nn] dd i.on {
+    background: url(/static/lottery/images/new/QWWF.png) -0px -895px no-repeat;
+}
+
+span.qw-num-nn {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 11px 0 0;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+i:hover span.qw-num-nn {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+
+i.on span.qw-num-nn {
+    background: transparent;
+    border: none;
+}
+
+span.qw-name-nn {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+span.qw-odds {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #737373;
+    vertical-align: top;
+}
+
+span.qw-name-nn-nda {
+    background-position: 1px -425px;
+}
+span.qw-name-nn-nx {
+    background-position: -56px -425px;
+}
+span.qw-name-nn-ndan {
+    background-position: -114px -425px;
+}
+span.qw-name-nn-ns {
+    background-position: -172px -425px;
+}
+span.qw-name-nn-wn {
+    background-position: -230px -425px;
+}
+span.qw-name-nn-n1 {
+    background-position: 1px -495px;
+}
+span.qw-name-nn-n2 {
+    background-position: -56px -495px;
+}
+span.qw-name-nn-n3 {
+    background-position: -114px -495px;
+}
+span.qw-name-nn-n4 {
+    background-position: -172px -495px;
+}
+span.qw-name-nn-n5 {
+    background-position: -230px -495px;
+}
+span.qw-name-nn-n6 {
+    background-position: 1px -565px;
+}
+span.qw-name-nn-n7 {
+    background-position: -56px -565px;
+}
+span.qw-name-nn-n8 {
+    background-position: -114px -565px;
+}
+span.qw-name-nn-n9 {
+    background-position: -172px -565px;
+}
+span.qw-name-nn-nn {
+    background-position: -230px -565px;
+}
+
+i.on span.qw-name-nn-nda {
+    background-position: 1px -459px;
+}
+i.on span.qw-name-nn-nx {
+    background-position: -56px -459px;
+}
+i.on span.qw-name-nn-ndan {
+    background-position: -114px -459px;
+}
+i.on span.qw-name-nn-ns {
+    background-position: -172px -459px;
+}
+i.on span.qw-name-nn-wn {
+    background-position: -230px -459px;
+}
+i.on span.qw-name-nn-n1 {
+    background-position: 1px -528px;
+}
+i.on span.qw-name-nn-n2 {
+    background-position: -56px -528px;
+}
+i.on span.qw-name-nn-n3 {
+    background-position: -114px -528px;
+}
+i.on span.qw-name-nn-n4 {
+    background-position: -172px -528px;
+}
+i.on span.qw-name-nn-n5 {
+    background-position: -230px -528px;
+}
+i.on span.qw-name-nn-n6 {
+    background-position: 1px -597px;
+}
+i.on span.qw-name-nn-n7 {
+    background-position: -56px -597px;
+}
+i.on span.qw-name-nn-n8 {
+    background-position: -114px -597px;
+}
+i.on span.qw-name-nn-n9 {
+    background-position: -172px -597px;
+}
+i.on span.qw-name-nn-nn {
+    background-position: -230px -597px;
+}
+i.on span.qw-odds {
+    color: #fff;
+}
+
+/*********************sh****************************/
+body.theme .lottery .number[method-2=sh] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=sh] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=sh] dd i {
+    display: inline-block;
+    width: 75px;
+    height: 65px;
+    margin: 0 0 0 15px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+body.theme .lottery .number[method-2=sh] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+
+body.theme .lottery .number[method-2=sh] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+
+span.qw-name-sh {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+span.qw-name-sh-sitiao {
+    background-position: 0 -215px;
+}
+span.qw-name-sh-hl {
+    background-position: -59px -215px;
+}
+span.qw-name-sh-sz {
+    background-position: -119px -215px;
+}
+span.qw-name-sh-santiao {
+    background-position: -179px -215px;
+}
+span.qw-name-sh-ld {
+    background-position: -239px -215px;
+}
+span.qw-name-sh-yd {
+    background-position: -299px -215px;
+}
+span.qw-name-sh-dp {
+    background-position: -358px -215px;
+}
+
+i.on span.qw-name-sh-sitiao {
+    background-position: 0 -249px;
+}
+i.on span.qw-name-sh-hl {
+    background-position: -59px -249px;
+}
+i.on span.qw-name-sh-sz {
+    background-position: -119px -249px;
+}
+i.on span.qw-name-sh-santiao {
+    background-position: -179px -249px;
+}
+i.on span.qw-name-sh-ld {
+    background-position: -239px -249px;
+}
+i.on span.qw-name-sh-yd {
+    background-position: -299px -249px;
+}
+i.on span.qw-name-sh-dp {
+    background-position: -358px -249px;
+}
+
+
+
+/***********************bjl***************************/
+body.theme .lottery .number[method-2=bjl] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=bjl] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=bjl] dd i {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 0 0 0 15px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+body.theme .lottery .number[method-2=bjl] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+
+body.theme .lottery .number[method-2=bjl] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+
+span.qw-name-bjl {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+span.qw-name-bjl-zhuang {
+    width: 25px;
+    background-position: 0 -356px;
+}
+span.qw-name-bjl-xian {
+    width: 25px;
+    background-position: -32px -356px;
+}
+span.qw-name-bjl-he {
+    width: 25px;
+    background-position: -63px -356px;
+}
+span.qw-name-bjl-zhuangdui {
+    background-position: -96px -356px;
+}
+span.qw-name-bjl-xiandui {
+    background-position: -153px -356px;
+}
+span.qw-name-bjl-super6 {
+    background-position: -203px -356px;
+}
+i.on span.qw-name-bjl-zhuang {
+    width: 25px;
+    background-position: 0 -389px;
+}
+i.on span.qw-name-bjl-xian {
+    width: 25px;
+    background-position: -32px -389px;
+}
+i.on span.qw-name-bjl-he {
+    width: 25px;
+    background-position: -63px -389px;
+}
+i.on span.qw-name-bjl-zhuangdui {
+    background-position: -96px -389px;
+}
+i.on span.qw-name-bjl-xiandui {
+    background-position: -153px -389px;
+}
+i.on span.qw-name-bjl-super6 {
+    background-position: -203px -389px;
+}
+
+/**********************hzdxds*************************/
+body.theme .lottery .number[method-2=hzdxds] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=hzdxds] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=hzdxds] dd i {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 0 0 25px 8px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+body.theme .lottery .number[method-2=hzdxds] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+body.theme .lottery .number[method-3=5xhz] dd i {
+    margin: 0 0 25px 8px;
+}
+body.theme .lottery .number[method-2=hzdxds] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+span.qw-name-hzdxds {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+i[data-value="大"] .qw-name-hzdxds {
+    background-position: 1px -632px;
+}
+i[data-value="小"] .qw-name-hzdxds {
+    background-position: -32px -632px;
+}
+i[data-value="单"] .qw-name-hzdxds {
+    background-position: -65px -632px;
+}
+i[data-value="双"] .qw-name-hzdxds {
+    background-position: -98px -632px;
+}
+span.qw-name-hzdxds-dd {
+    width: 50px;
+    background-position: -131px -632px;
+}
+span.qw-name-hzdxds-ds {
+    width: 50px;
+    background-position: -189px -632px;
+}
+span.qw-name-hzdxds-xd {
+    width: 50px;
+    background-position: -247px -632px;
+}
+span.qw-name-hzdxds-xs {
+    width: 50px;
+    background-position: -305px -632px;
+}
+i[data-value="大"].on .qw-name-hzdxds {
+    background-position: 1px -666px;
+}
+i[data-value="小"].on .qw-name-hzdxds {
+    background-position: -32px -666px;
+}
+i[data-value="单"].on .qw-name-hzdxds {
+    background-position: -65px -666px;
+}
+i[data-value="双"].on .qw-name-hzdxds {
+    background-position: -98px -666px;
+}
+i.on span.qw-name-hzdxds-dd {
+    width: 50px;
+    background-position: -131px -666px;
+}
+i.on span.qw-name-hzdxds-ds {
+    width: 50px;
+    background-position: -189px -666px;
+}
+i.on span.qw-name-hzdxds-xd {
+    width: 50px;
+    background-position: -247px -666px;
+}
+i.on span.qw-name-hzdxds-xs {
+    width: 50px;
+    background-position: -305px -666px;
+}
+
+/************************dxds*************************/
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] dl:not(:first-child) {
+    margin-top: 15px;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] dd i {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 0 0 0 8px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=dxds] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+span.qw-name-dxds {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+i[data-value="大"] .qw-name-dxds {
+    background-position: 1px -632px;
+}
+i[data-value="小"] .qw-name-dxds {
+    background-position: -32px -632px;
+}
+i[data-value="单"] .qw-name-dxds {
+    background-position: -65px -632px;
+}
+i[data-value="双"] .qw-name-dxds {
+    background-position: -98px -632px;
+}
+i[data-value="大"].on .qw-name-dxds {
+    background-position: 1px -666px;
+}
+i[data-value="小"].on .qw-name-dxds {
+    background-position: -32px -666px;
+}
+i[data-value="单"].on .qw-name-dxds {
+    background-position: -65px -666px;
+}
+i[data-value="双"].on .qw-name-dxds {
+    background-position: -98px -666px;
+}
+
+/**********************lhh*******************************/
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dt {
+    height: 143px;
+    line-height: 160px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] .numBtns {
+    height: 143px;
+    line-height: 160px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dd {
+    height: auto;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dd i {
+    display: inline-block;
+    width: 115px;
+    height: 143px;
+    background: none;
+    margin: 0 0 0 20px;
+    border-radius: 10px;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dd i[data-value="龙"].on {
+    background: url(/static/lottery/images/new/QWWF.png) -0px -62px no-repeat;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dd i[data-value="虎"].on {
+    background: url(/static/lottery/images/new/QWWF.png) -125px -62px no-repeat;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=lhh] dd i[data-value="和"].on {
+    background: url(/static/lottery/images/new/QWWF.png) -250px -62px no-repeat;
+}
+span.qw-num-lhh {
+    display: inline-block;
+    width: 115px;
+    height: 115px;
+    margin: 28px 0 0;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+i:hover span.qw-num-lhh {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+i.on span.qw-num-lhh {
+    background: transparent;
+    border: none;
+}
+span.lhh-pos {
+    display: block;
+    width: 100%;
+    height: 10px;
+    margin: 9px 0 13px;
+}
+span.lhh-pos b {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #c6c6c6;
+    vertical-align: top;
+}
+span.lhh-pos b.on {
+    background-color: #a9a9a9;
+}
+span.qw-name-lhh {
+    display: inline-block;
+    width: 60px;
+    height: 54px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+span.qw-name-lhh-long {
+    background-position: 2px 0;
+}
+span.qw-name-lhh-hu {
+    background-position: -57px 0;
+}
+span.qw-name-lhh-he {
+    background-position: -118px 0;
+}
+i.on span.qw-name-lhh {
+    background: none;
+}
+i.on b {
+    border-color: #fba7a7;
+}
+i.on b.on {
+    background: #fff;
+    border-color: #fff;
+}
+
+
+/*******************XT*******************/
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=xt] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=xt] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=xt] dd i {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 0 0 0 15px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=xt] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+} 
+
+body.theme .lottery[data-lt=lt-ssc] .number[method-2=xt] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+
+span.qw-name-xt {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+span.qw-name-xt-bz {
+    background-position: 0 -285px;
+}
+span.qw-name-xt-sz {
+    background-position: -59px -285px;
+}
+span.qw-name-xt-dz {
+    background-position: -119px -285px;
+}
+span.qw-name-xt-bs {
+    background-position: -180px -285px;
+}
+span.qw-name-xt-zl {
+    background-position: -238px -285px;
+}
+i.on span.qw-name-xt-bz {
+    background-position: 0 -322px;
+}
+i.on span.qw-name-xt-sz {
+    background-position: -59px -322px;
+}
+i.on span.qw-name-xt-dz {
+    background-position: -119px -322px;
+}
+i.on span.qw-name-xt-bs {
+    background-position: -180px -322px;
+}
+i.on span.qw-name-xt-zl {
+    background-position: -238px -322px;
+}
+
+/***********************dxgs dsgs*************************/
+body.theme .lottery .number[method-2=dxgs] dt,
+body.theme .lottery .number[method-2=dsgs] dt {
+    height: 65px;
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=dxgs] .numBtns,
+body.theme .lottery .number[method-2=dsgs] .numBtns {
+    line-height: 65px;
+    margin: 0;
+}
+body.theme .lottery .number[method-2=dxgs] dd i,
+body.theme .lottery .number[method-2=dsgs] dd i {
+    display: inline-block;
+    width: 85px;
+    height: 65px;
+    margin: 0 0 0 15px;
+    background: linear-gradient(to bottom, #fff, #e9edef);
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+}
+
+body.theme .lottery .number[method-2=dxgs] dd i:hover,
+body.theme .lottery .number[method-2=dsgs] dd i:hover {
+    background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+    border-color: #e8c5c5;
+}
+
+body.theme .lottery .number[method-2=dxgs] dd i.on,
+body.theme .lottery .number[method-2=dsgs] dd i.on {
+    background: linear-gradient(to bottom, #f85657 25%, #9d1e1e);
+}
+
+span.qw-name-dxgs,
+span.qw-name-dsgs {
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+    margin-top: 12px;
+    background-image: url(/static/lottery/images/new/QWWF.png);
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+i[data-value="5大0小"] span.qw-name-dxgs,
+i[data-value="4大0小"] span.qw-name-dxgs,
+i[data-value="3大0小"] span.qw-name-dxgs {
+    width: 50px;
+    background-position: 0 -701px;
+}
+i[data-value="0大5小"] span.qw-name-dxgs,
+i[data-value="0大4小"] span.qw-name-dxgs,
+i[data-value="0大3小"] span.qw-name-dxgs {
+    width: 50px;
+    background-position: -59px -701px;
+}
+i[data-value="4大1小"] span.qw-name-dxgs {
+    background-position: 0 -768px;
+}
+i[data-value="3大2小"] span.qw-name-dxgs {
+    background-position: -72px -768px;
+}
+i[data-value="1大4小"] span.qw-name-dxgs {
+    background-position: -217px -768px;
+}
+i[data-value="2大3小"] span.qw-name-dxgs {
+    background-position: -145px -768px;
+}
+i[data-value="3大1小"] span.qw-name-dxgs {
+    background-position: -290px -768px;
+}
+i[data-value="2大2小"] span.qw-name-dxgs {
+    background-position: -363px -768px;
+}
+i[data-value="1大3小"] span.qw-name-dxgs {
+    background-position: -436px -768px;
+}
+i[data-value="2大1小"] span.qw-name-dxgs {
+    background-position: -508px -768px;
+}
+i[data-value="1大2小"] span.qw-name-dxgs {
+    background-position: -580px -768px;
+}
+i[data-value="5大0小"].on span.qw-name-dxgs,
+i[data-value="4大0小"].on span.qw-name-dxgs,
+i[data-value="3大0小"].on span.qw-name-dxgs {
+    width: 50px;
+    background-position: 0 -735px;
+}
+i[data-value="0大5小"].on span.qw-name-dxgs,
+i[data-value="0大4小"].on span.qw-name-dxgs,
+i[data-value="0大3小"].on span.qw-name-dxgs {
+    width: 50px;
+    background-position: -59px -735px;
+}
+i[data-value="4大1小"].on span.qw-name-dxgs {
+    background-position: 0 -797px;
+}
+i[data-value="3大2小"].on span.qw-name-dxgs {
+    background-position: -72px -797px;
+}
+i[data-value="1大4小"].on span.qw-name-dxgs {
+    background-position: -217px -797px;
+}
+i[data-value="2大3小"].on span.qw-name-dxgs {
+    background-position: -145px -797px;
+}
+i[data-value="3大1小"].on span.qw-name-dxgs {
+    background-position: -290px -797px;
+}
+i[data-value="2大2小"].on span.qw-name-dxgs {
+    background-position: -363px -797px;
+}
+i[data-value="1大3小"].on span.qw-name-dxgs {
+    background-position: -436px -797px;
+}
+i[data-value="2大1小"].on span.qw-name-dxgs {
+    background-position: -508px -797px;
+}
+i[data-value="1大2小"].on span.qw-name-dxgs {
+    background-position: -580px -797px;
+}
+
+i[data-value="5单0双"] span.qw-name-dsgs,
+i[data-value="4单0双"] span.qw-name-dsgs,
+i[data-value="3单0双"] span.qw-name-dsgs {
+    width: 50px;
+    background-position: -118px -701px;
+}
+i[data-value="0单5双"] span.qw-name-dsgs,
+i[data-value="0单4双"] span.qw-name-dsgs,
+i[data-value="0单3双"] span.qw-name-dsgs {
+    width: 50px;
+    background-position: -178px -701px;
+}
+i[data-value="4单1双"] span.qw-name-dsgs {
+    background-position: 0 -830px;
+}
+i[data-value="3单2双"] span.qw-name-dsgs {
+    background-position: -72px -830px;
+}
+i[data-value="1单4双"] span.qw-name-dsgs {
+    background-position: -217px -830px;
+}
+i[data-value="2单3双"] span.qw-name-dsgs {
+    background-position: -145px -830px;
+}
+i[data-value="3单1双"] span.qw-name-dsgs {
+    background-position: -290px -830px;
+}
+i[data-value="2单2双"] span.qw-name-dsgs {
+    background-position: -363px -830px;
+}
+i[data-value="1单3双"] span.qw-name-dsgs {
+    background-position: -436px -830px;
+}
+i[data-value="2单1双"] span.qw-name-dsgs {
+    background-position: -508px -830px;
+}
+i[data-value="1单2双"] span.qw-name-dsgs {
+    background-position: -580px -830px;
+}
+i[data-value="5单0双"].on span.qw-name-dsgs,
+i[data-value="4单0双"].on span.qw-name-dsgs,
+i[data-value="3单0双"].on span.qw-name-dsgs {
+    width: 50px;
+    background-position: -118px -735px;
+}
+i[data-value="0单5双"].on span.qw-name-dsgs,
+i[data-value="0单4双"].on span.qw-name-dsgs,
+i[data-value="0单3双"].on span.qw-name-dsgs {
+    width: 50px;
+    background-position: -178px -735px;
+}
+i[data-value="4单1双"].on span.qw-name-dsgs {
+    background-position: 0 -860px;
+}
+i[data-value="3单2双"].on span.qw-name-dsgs {
+    background-position: -72px -860px;
+}
+i[data-value="1单4双"].on span.qw-name-dsgs {
+    background-position: -217px -860px;
+}
+i[data-value="2单3双"].on span.qw-name-dsgs {
+    background-position: -145px -860px;
+}
+i[data-value="3单1双"].on span.qw-name-dsgs {
+    background-position: -290px -860px;
+}
+i[data-value="2单2双"].on span.qw-name-dsgs {
+    background-position: -363px -860px;
+}
+i[data-value="1单3双"].on span.qw-name-dsgs {
+    background-position: -436px -860px;
+}
+i[data-value="2单1双"].on span.qw-name-dsgs {
+    background-position: -508px -860px;
+}
+i[data-value="1单2双"].on span.qw-name-dsgs {
+    background-position: -580px -860px;
+}
+
+
+body.theme .lottery .number .pos span {
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 35px;
+}
+body.theme .lottery .number .pos span.pos-tip {
+    margin-left: 30px;
+}
+
+body.theme .lottery .number .pos label {
+    width: auto;
+    height: 26px;
+    padding-left: 20px;
+    line-height: 26px;
+    margin-right: 15px;
+    background: url("/static/lottery/images/theme/pos.png") no-repeat 2px center;
+    font-size: 14px;
+}
+
+
+body.theme .lottery .number .pos label.on {
+    background: url("/static/lottery/images/theme/pos-on.png") no-repeat 2px center;
+    color: #565656;
+}
+
+
+body.theme .lottery .number .box {
+    width: 760px;
+    height: 157px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: 1px solid #bcaaa4;
+    float: none;
+}
+
+body.theme .lottery .number .box-input {
+    float: none;
+    height: 32px;
+    margin: 10px 0 0 10px;
+}
+
+body.theme .lottery .number input[type=button] {
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    margin: 0 20px 0 0;
+    border-radius: 6px;
+    background: url("/static/lottery/images/svg/upload.svg") no-repeat;
+    vertical-align: middle;
+}
+
+body.theme .lottery .number input[type=button].clear {
+    background: url("/static/lottery/images/theme/button.png") no-repeat -164px -268px;
+    border: none;
+    color: #fff;
+}
+
+body.theme .lottery .number input[type=button].clear:hover {
+    background-position: -306px -268px;
+}
+
+body.theme .lottery .number input[type=button].clear:active {
+    background-position: -453px -268px;
+}
+
+body.theme .lottery .number input[type=button].clear.disabled,
+body.theme .lottery .number input[type=button].clear.disabled:hover,
+body.theme .lottery .number input[type=button].clear.disabled:active {
+    background-position: -2px -267px;
+    color: #666;
+}
+
+body.theme .lottery .number textarea.editable {
+    height: 135px;
+}
+
+body.theme .lottery .number dl[rel=selectAllNum] dt {
+    color: #a42727;
+}
+
+
+body.theme .lottery .number dl[rel=selectAllNum] dd i {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    margin: 4px 9px;
+    background: url("/static/lottery/images/theme/all-num.png") no-repeat center;
+    background-size: 26px;
+    font-size: 18px;
+}
+
+
+body.theme .lottery .number dl[rel=selectAllNum] dd i.on {
+    background: url("/static/lottery/images/theme/all-num-on.png") no-repeat center;
+    background-size: 26px;
+}
+
+
+body.theme .lottery .number dl[rel=selectAllNum] dd button {
+    font-size: 14px;
+    vertical-align: baseline;
+}
+
+body.theme .lottery .number dl[rel=selectAllNum] dd button:active {
+    background: #892222;
+}
+
+body.theme .lottery .count>div:first-child {
+    color: #424242;
+    font-size: 16px;
+}
+
+body.theme .lottery .count em {
+    color: #d24454;
+}
+
+body.theme .lottery .count .mode label {
+    width: 30px;
+    line-height: 22px;
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+body.theme .lottery .count .mode label:hover {
+    background-color: #F6F6F6;
+}
+
+body.theme .lottery .count .mode label.modeSelect {
+    background: #c7484a;
+    color: #fff;
+    border-color: #c7484a;
+}
+
+body.theme .lottery .count .times span input {
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 20px;
+    border-radius: 6px;
+    border-color: #e0e0e0;
+    color: #636363;
+}
+
+body.theme div.number-spin-btn-down {
+    width: 20px;
+    border-right: 1px solid #e0e0e0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+body.theme div.number-spin-btn-up {
+    width: 20px;
+    border-left: 1px solid #e0e0e0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+body.theme div.number-spin-btn-down:before,
+body.theme div.number-spin-btn-up:before {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+
+body.theme .lottery .count .odds select {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    appearance: none;
+    background: url("/static/lottery/images/theme/arrow.png") no-repeat scroll right center #fff;
+    padding-right: 15px;
+    padding-left: 5px;
+    line-height: 16px;
+}
+
+body.theme .lottery .count .odds select::-ms-expand {
+    display: none;
+}
+
+body.theme .lottery .count .odds select option:hover {
+    background-color: #e2423b;
+    color: #fff;
+}
+
+body.theme .lottery .count .top .times {
+    margin-left: 15px;
+    color: #636363;
+}
+
+body.theme .lottery .count .top .odds {
+    color: #636363;
+    margin-left: 20px;
+}
+
+body.theme .lottery .count .quickSubmit {
+    width: 120px;
+    height: 32px;
+    padding-left: 30px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -149px 0;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+body.theme .lottery .count .quickSubmit.disabled,
+body.theme .lottery .count .quickSubmit.disabled:hover,
+body.theme .lottery .count .quickSubmit.disabled:active {
+    background-position: -2px 0;
+    color: #666;
+}
+
+body.theme .lottery .count .quickSubmit:hover {
+    background-position: -296px 0;
+}
+
+body.theme .lottery .count .quickSubmit:active {
+    background-position: -443px 0;
+}
+
+body.theme .lottery .count a.quickSubmit.loading,
+body.theme .lottery .count a.quickSubmit.loading:hover,
+body.theme .lottery .count a.quickSubmit.loading:active {
+    background: #ffbb5c;
+    border: 1px solid #f5862c;
+}
+
+body.theme .lottery .bottom a.loading,
+body.theme .aside .btns a.loading,
+body.theme .lottery .count a.quickSubmit.loading,
+body.theme .lottery .orders .trace-data a.submit.loading {
+    animation: none;
+}
+
+body.theme .lottery .bottom a.loading {
+    background: #e17f7d;
+    border: 1px solid #972626;
+}
+
+body.theme .lottery .count a.quickSubmit.loading,
+body.theme .lottery .bottom a.loading {
+    position: relative;
+}
+
+body.theme .lottery .count a.quickSubmit.loading:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-left-color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 7px;
+    animation: rotate 1s infinite linear;
+}
+
+body.theme .lottery .bottom a.loading:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-left-color: #fff;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    animation: rotate 1s infinite linear;
+}
+
+body.theme .lottery .orders .trace-data a.submit.loading:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-left-color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 7px;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+body.theme .lottery .count .confirm {
+    width: 120px;
+    height: 32px;
+    padding-left: 30px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -151px -68px;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+body.theme .lottery .count .confirm.disabled,
+body.theme .lottery .count .confirm.disabled:hover,
+body.theme .lottery .count .confirm.disabled:active {
+    background-position: -2px -68px;
+    color: #666;
+}
+
+body.theme .lottery .count .confirm:hover {
+    background-position: -301px -68px;
+}
+
+body.theme .lottery .count .confirm:active {
+    background-position: -443px -68px;
+}
+
+body.theme .lottery .orders .list .title span {
+    color: #282828;
+}
+
+body.theme .lottery .orders .list .title span.codes,
+body.theme .lottery .orders .list ul div.codes {
+    width: 165px;
+}
+
+body.theme .lottery .orders .list ul li div {
+    color: #636363;
+}
+
+body.theme .lottery .orders .list ul div.share input {
+    width: 96px;
+    padding: 0 20px;
+    border-radius: 6px;
+    border-color: #e0e0e0;
+    color: #636363;
+}
+
+body.theme .lottery .orders .list .title span.mode,
+body.theme .lottery .orders .list ul div.mode {
+    width: 85px;
+}
+
+body.theme .lottery .orders .list ul div.money,
+body.theme .lottery .orders .list ul div.win {
+    width: 92px;
+}
+
+body.theme .lottery .orders .list ul select {
+    height: 20px;
+    width: 50px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    appearance: none;
+    background: url("/static/lottery/images/theme/arrow.png") no-repeat scroll right center #fff;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+body.theme .lottery .orders .list ul select::-ms-expand {
+    display: none;
+}
+
+body.theme .lottery .orders .list ul a.delete {
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    background: url("/static/lottery/images/svg/delete.svg") no-repeat;
+}
+
+body.theme .lottery .orders .bottom {
+    width: 160px;
+    line-height: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+body.theme .lottery .orders .totalMoney em {
+    padding: 0;
+    color: #c7484a;
+    font-weight: lighter;
+}
+
+body.theme .lottery .orders .totalMoney>label:last-child em {
+    color: #c7484a;
+}
+
+body.theme .lottery .bottom em {
+    top: 0;
+}
+
+body.theme .lottery .orders .countTime em {
+    top: 0;
+    color: #c52031;
+}
+
+body.theme .lottery .bottom .submit {
+    width: 160px;
+    height: 40px;
+    line-height: 38px;
+    margin: 0;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -187px -139px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body.theme .lottery .bottom .submit:hover {
+    background-position: -369px -139px;
+}
+
+body.theme .lottery .bottom .submit:active {
+    background-position: -550px -139px;
+}
+
+body.theme .lottery .bottom .submit.disabled,
+body.theme .lottery .bottom .submit.disabled:hover,
+body.theme .lottery .bottom .submit.disabled:active {
+    background-position: -2px -139px;
+}
+
+body.theme .lottery .orders .bottom a.submit.loading,
+body.theme .lottery .orders .bottom a.submit.loading:hover,
+body.theme .lottery .orders .bottom a.submit.loading:active {
+    background: #e17f7d;
+    border: 1px solid #972626;
+    padding-left: 25px;
+}
+
+body.theme .lottery .orders .bottom .trace-box {
+    margin-top: 0;
+    margin-left: -5px;
+}
+
+body.theme .lottery .orders .bottom .hand {
+    font-size: 12px;
+}
+
+body.theme .lottery .orders .bottom .trace-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background: url("/static/lottery/images/svg/trace.svg") no-repeat;
+    background-size: 15px;
+    vertical-align: sub;
+}
+
+body.theme .lottery .orders .bottom .trace-icon.on {
+    background: url("/static/lottery/images/svg/trace-on.svg") no-repeat;
+    background-size: 15px;
+}
+
+body.theme .lottery .orders .bottom .trace-icon:after {
+    content: '可提高中奖率';
+    width: 84px;
+    height: 20px;
+    padding: 0;
+    line-height: 20px;
+    font-size: 12px;
+    border-radius: 6px;
+    background: #fcd685;
+    text-align: center;
+    color: #333;
+    top: -3px;
+    left: 74px;
+}
+
+body.theme #mmcLoop {
+    width: 160px;
+    height: 46px;
+    margin-bottom: 5px;
+    padding: 5px 0 0;
+    border: none;
+}
+
+body.theme #mmcLoop input[type=text] {
+    border-radius: 6px;
+    border-color: #e0e0e0;
+    outline-color: #e2423b;
+}
+
+body.theme .es-list {
+    border-radius: 6px;
+    border-color: #e0e0e0;
+}
+
+body.theme .es-list li {
+    text-align: left;
+    padding-left: 10px;
+    color: #666;
+}
+
+body.theme .es-list li.selected {
+    background-color: #e2423b;
+    color: #fff;
+}
+
+body.theme #mmcLoop label {
+    margin-top: 6px;
+}
+
+body.theme #mmcLoop label.succStop {
+    margin: 0;
+    float: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: url(/static/lottery/images/svg/trace.svg) no-repeat;
+    background-size: 15px;
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
+body.theme #mmcLoop label input {
+    vertical-align: middle;
+    display: none;
+}
+
+body.theme #mmcLoop #succStop:checked+label.succStop {
+    background: url(/static/lottery/images/svg/trace-on.svg) no-repeat;
+    background-size: 15px;
+}
+
+body.theme div.trace-data {
+    width: 760px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background: transparent;
+}
+
+body.theme .lottery .orders ul.trace-tab {
+    background-color: transparent;
+}
+
+body.theme .trace-tab li {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    color: #333;
+}
+
+body.theme .trace-tab li:first-child {
+    border-left: 1px solid #e0e0e0;
+}
+
+body.theme .trace-tab li:not(first-child) {
+    border-left: none;
+}
+
+body.theme .trace-tab li.on {
+    background-color: #fff;
+}
+
+body.theme div.trace-double,
+body.theme div.trace-rate,
+body.theme div.trace-same {
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+body.theme ul.trace-details {
+    width: auto;
+    color: #636363;
+}
+
+body.theme ul.trace-details li span {
+    height: 23px;
+}
+
+body.theme ul.trace-details li em {
+    color: #636363;
+}
+
+body.theme div.trace-data input.spinner {
+    width: 80px;
+    padding: 0 20px;
+    border-radius: 6px;
+}
+
+body.theme .trace-items li.chkitem input.medium {
+    color: #636363;
+}
+
+body.theme div.trace-data a#lgenTrace {
+    background: url("/static/lottery/images/svg/tracePlane.svg") no-repeat;
+    font-size: 14px;
+}
+
+body.theme .trace-list {
+    width: 760px;
+    border-color: #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+body.theme .trace-fixed {
+    width: 100%;
+    background: #f5f5f5;
+    color: #333;
+    border-color: #e0e0e0;
+}
+
+body.theme .trace-fixed span.chk,
+body.theme .trace-items li span.chk {
+    width: 84px;
+}
+
+body.theme .trace-fixed>span,
+body.theme .trace-items li>span {
+    width: 150px;
+}
+
+body.theme .trace-fixed label.chkall {
+    width: 54px;
+    background: url("/static/lottery/images/svg/checkall.svg") no-repeat !important;
+    background-size: 54px;
+    text-align: right;
+    color: #333 !important;
+}
+
+body.theme .trace-fixed label.chkall:hover {
+    color: #333 !important;
+    background: url("/static/lottery/images/svg/checkall.svg") no-repeat !important;
+}
+
+body.theme .trace-fixed label.chkall.on {
+    background: url("/static/lottery/images/svg/checkall-on.svg") no-repeat !important;
+    background-size: 54px;
+}
+
+body.theme .trace-items li {
+    border-color: #e0e0e0;
+}
+
+body.theme .trace-fixed span.medium,
+body.theme .trace-items li span.medium {
+    width: 155px;
+}
+
+body.theme .trace-items li span.chk {
+    text-align: left;
+}
+
+body.theme .trace-items span.chk label {
+    border-radius: 0;
+    float: left;
+    background: url("/static/lottery/images/svg/check.svg") no-repeat;
+    background-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body.theme .trace-items span.chk label.on_check {
+    background: url("/static/lottery/images/svg/check-on.svg") no-repeat;
+    background-size: 16px;
+}
+
+body.theme .trace-items li.first .issue:after {
+    content: '当前期';
+    width: 53px;
+    height: 19px;
+    background: #ff9100;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    right: -16px;
+}
+
+body.theme .trace-items li.nextDay .issue:after {
+    content: '隔天期';
+    width: 53px;
+    height: 19px;
+    background: #3d5afe;
+    border-radius: 6px;
+    text-align: center;
+    color: #fff;
+    right: -16px;
+}
+
+body.theme .lottery .orders .trace-data .hand {
+    color: #636363;
+}
+
+body.theme .lottery .orders .trace-data .hand .trace-icon {
+    width: 15px;
+    height: 15px;
+    background: url("/static/lottery/images/svg/trace.svg") no-repeat;
+    background-size: 15px;
+    vertical-align: sub;
+}
+
+body.theme .lottery .orders .trace-data .hand .trace-icon.on {
+    background: url("/static/lottery/images/svg/trace-on.svg") no-repeat;
+    background-size: 15px;
+}
+
+body.theme .lottery .orders .trace-data .submit {
+    height: 32px;
+    line-height: 30px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -2px -422px;
+    border: none;
+}
+
+body.theme .lottery .orders .trace-data .submit:hover {
+    background-position: -154px -422px;
+}
+
+body.theme .lottery .orders .trace-data .submit:active {
+    background-position: -307px -422px;
+}
+
+body.theme .lottery .orders .trace-data .submit.disabled,
+body.theme .lottery .orders .trace-data .submit.disabled:hover,
+body.theme .lottery .orders .trace-data .submit.disabled:active {
+    background-position: -459px -422px;
+}
+
+body.theme .lottery .orders .trace-data a.submit.loading {
+    background: #e17f7d;
+    border: 1px solid #972626;
+    padding-left: 30px;
+}
+
+
+
+body.theme .lottery .recency ul span.wd6 {
+    width: 126px;
+    height: 46px;
+    line-height: 46px;
+    color: #666;
+}
+body.theme .lottery .recency ul span.wd6 i {
+    display: inline-block;
+    width: 66px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 2px;
+    border-radius: 6px;
+    text-align: center;
+    background: url("/static/lottery/images/theme/button.png") no-repeat 0 -590px;
+    color: #fff;
+}
+body.theme .lottery .recency ul span.wd6 i.order-cancel {
+    width: 46px;
+    background-position: 0 -630px;
+}
+
+body.theme .lottery .recency ul span.wd6 i:hover {
+    background-position: -74px -590px;
+}
+
+body.theme .lottery .recency ul span.wd6 i:active {
+    background-position: -148px -590px;
+}
+
+body.theme .lottery .recency ul span.wd6 i.order-cancel:hover {
+    background-position: -74px -630px;
+}
+
+body.theme .lottery .recency ul span.wd6 i.order-cancel:active {
+    background-position: -148px -630px;
+}
+
+
+body.theme .aside .history .resuleShow ul li label {
+    height: 36px;
+}
+
+body.theme .aside .history .resuleShow ul li span {
+    height: 36px;
+}
+
+body.theme .lotterySetting {
+    border-radius: 10px;
+}
+
+body.theme .lotterySetting .ui-dialog-grid {
+    border-radius: 10px;
+}
+
+body.theme #lotterySet>div.sscType {
+    border-top-left-radius: 10px;
+    overflow: hidden;
+}
+
+body.theme #lotterySet>div.last {
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+body.theme .go-next-issue {
+    width: 330px;
+    height: 188px;
+    padding-top: 30px;
+}
+
+body.theme .go-next-issue .ui-dialog-header {
+    display: none !important;
+}
+
+body.theme .go-next-issue h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+body.theme .go-next-issue p {
+    color: #666;
+    line-height: 24px;
+}
+
+body.theme .go-next-issue p em {
+    color: #c7484a;
+}
+
+body.theme .confirm-again .ui-dialog-header {
+    display: none;
+}
+
+body.theme .confirm-again .ui-dialog-body {
+    padding: 20px 30px 20px;
+}
+
+body.theme .confirm-again h2 {
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: #333;
+}
+
+body.theme .confirm-again .ui-dialog-content .list {
+    margin-top: 0;
+    border-bottom: none;
+    width: 100%;
+}
+
+body.theme .confirm-again .ui-dialog-content dt {
+    padding: 0;
+    line-height: 30px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+}
+
+body.theme .confirm-again .ui-dialog-content dt em.issue {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+body.theme .confirm-again .ui-dialog-content dt em.mode {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+body.theme .confirm-again .ui-dialog-content dd {
+    width: 100%;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+}
+
+body.theme .confirm-again .ui-dialog-content dd:last-child {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+body.theme .confirm-again .ui-dialog-content dd p {
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c7484a;
+}
+
+body.theme .confirm-again .ui-dialog-content dd em {
+    max-height: 200px;
+    overflow: auto;
+    font-size: 12px;
+    padding: 0;
+    color: #333;
+}
+
+body.theme .confirm-again .ui-dialog-content dd span {
+    font-size: 12px;
+    color: #666;
+}
+
+body.theme .confirm-again .ui-dialog-content dd span i {
+    font-size: 12px;
+    color: #c7484a;
+    font-style: normal;
+}
+
+body.theme .confirm-again .ui-dialog-content dd:first-child {
+    border-top: none;
+}
+
+body.theme .confirm-again .ui-dialog-content h4 {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+}
+
+body.theme .confirm-again .ui-dialog-content h4 em {
+    font-size: 14px;
+    color: #c7484a;
+    font-weight: bold;
+}
+
+body.theme .printStatus,
+body.theme .printStatus2 {
+    float: right;
+    color: #666;
+}
+
+body.theme .printStatus input,
+body.theme .printStatus2 input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+body.theme .ui-dialog-footer button {
+    width: 120px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border: none !important;
+    line-height: 30px !important;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -2px -371px !important;
+    color: #424242 !important;
+    font-size: 14px;
+}
+
+body.theme .ui-dialog-footer button:first-child {
+    background-position: -2px -422px !important;
+    color: #fff !important;
+}
+
+body.theme .ui-dialog-footer button:first-child:hover {
+    background-position: -154px -422px !important;
+}
+
+body.theme .ui-dialog-footer button:first-child:active {
+    background-position: -307px -422px !important;
+}
+
+body.theme .lottery_again .ui-dialog-header {
+    display: none;
+}
+
+body.theme .lottery_again h3 {
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+body.theme .lottery_again li {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+body.theme .lottery_again li span {
+    width: auto;
+}
+
+body.theme .lottery_again li.lotCont {
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #999;
+}
+
+body.theme .lottery_again li.lotCont p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #c7484a;
+}
+
+body.theme .lottery_again li .mode2 label {
+    width: 30px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    color: #666;
+}
+
+body.theme .lottery_again li .mode2 label.modeSelect {
+    background: #c7484a;
+    border-color: #c7484a;
+    color: #fff;
+}
+
+body.theme .lottery_again li .times2>span {
+    width: 110px;
+    border-radius: 6px;
+}
+
+body.theme .lottery_again li .times2 input {
+    width: 110px;
+    padding: 0 20px;
+    border-color: #e0e0e0;
+    border-radius: 6px;
+}
+
+body.theme .lottery_again li em.total {
+    font-size: 14px;
+    font-weight: bold;
+    color: #c7484a;
+}
+
+body.theme .content_again {
+    font-size: 12px;
+    color: #333;
+    margin-left: 0;
+}
+
+body.theme .ui-dialog.mmc-loop {
+    top: 0;
+    left: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+body.theme .mmc-loop .ui-dialog-arrow-a,
+body.theme .mmc-loop .ui-dialog-arrow-b {
+    display: none;
+}
+
+body.theme .mmc-loop .mmcLotCont {
+    width: 800px;
+    margin-bottom: 0;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.theme .mmc-loop .mmcLotCont .emptyCont {
+    height: 16px;
+    margin-bottom: 4px;
+    border-bottom: 1px dashed #4a4a4a;
+}
+
+body.theme .mmc-loop .mmcLotCont .title {
+    width: 100%;
+    height: 24px;
+    line-height: 22px;
+    background-color: #e9e9e9;
+    border-top: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
+    color: #000;
+}
+
+body.theme .mmc-loop .mmcLotCont span {
+    display: inline-block;
+    width: 175px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+body.theme .mmc-loop .mmcLotCont span.code {
+    width: 255px;
+    text-align: left;
+    padding-left: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span {
+    position: relative;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span:before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span.code:before {
+    background: url("/static/lottery/images/svg/lotCont.svg") no-repeat;
+    background-size: 30px;
+    left: 20px;
+    top: 0px;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span.times:before {
+    background: url("/static/lottery/images/svg/times.svg") no-repeat;
+    background-size: 30px;
+    left: 44px;
+    top: 3px;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span.mode:before {
+    background: url("/static/lottery/images/svg/mode.svg") no-repeat;
+    background-size: 20px;
+    left: 54px;
+    top: 3px;
+}
+
+body.theme .mmc-loop .mmcLotCont .title span.money:before {
+    background: url("/static/lottery/images/svg/lotMoney.svg") no-repeat;
+    background-size: 20px;
+    left: 40px;
+    top: 2px;
+}
+
+body.theme .mmc-loop .mmcLotCont ul {
+    width: 100%;
+    max-height: 90px;
+    overflow-y: auto;
+    color: #4a4a4a;
+}
+
+body.theme .mmc-loop .mmcLotCont ul li {
+    height: 30px;
+    line-height: 28px;
+}
+
+body.theme .mmc-loop .ui-dialog-grid .mmckj {
+    width: 800px;
+    height: 256px;
+    background: url('/static/lottery/images/theme/mmcbox.png') no-repeat;
+}
+
+body.theme .mmc-loop .ui-dialog-grid .dialog_left {
+    width: 400px;
+    padding: 11px 25px 18px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+body.theme .mmc-loop .ui-dialog-grid .dialog_right {
+    width: 400px;
+    height: 257px;
+    padding: 30px 65px 20px;
+    background: none;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+}
+
+body.theme .mmc-loop .dialog_left .head {
+    width: 333px;
+    margin-top: 10px;
+    display: table;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+body.theme .mmc-loop .dialog_left span {
+    display: table-cell;
+    width: 25%;
+    border: none;
+}
+
+body.theme .mmc-loop .dialog_left span.code {
+    width: 45%;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+body.theme .mmc-loop .dialog_left span.statusColor {
+    font-weight: bold;
+    color: #d24454;
+}
+
+body.theme .mmc-loop .dialog_left .mmcmx {
+    height: 170px;
+}
+
+body.theme .mmc-loop .dialog_left ul li {
+    border: none;
+    color: #666;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg {
+    background: transparent;
+    padding: 0;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg h4 {
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #ef3b3a;
+    font-weight: normal;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg .m {
+    display: none;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul {
+    margin: 10px 0 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul li {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    border-top: 1px solid #e2e2e2;
+    color: #666;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul li:first-child {
+    border: none;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul li span {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul li span em {
+    color: #d24454;
+}
+
+body.theme .mmc-loop .dialog_right .kjjg ul li span:first-child {
+    text-align: left;
+    font-size: 14px;
+    color: #636363;
+    font-weight: normal;
+}
+
+body.theme .mmc-loop .dialog_right .moreTimes {
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    margin-top: 20px;
+    color: #fff;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -2px -422px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+body.theme .mmc-loop .dialog_right .moreTimes:before {
+    display: none;
+}
+
+body.theme .mmc-loop .dialog_right .btn-mmc-loop {
+    width: 160px;
+    height: 32px;
+    line-height: 30px;
+    margin-top: 20px;
+    position: static;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -204px -321px;
+    font-size: 14px;
+}
+
+body.theme .mmc-loop .dialog_right .btn-mmc-loop:hover {
+    background-position: -386px -321px;
+}
+
+body.theme .mmc-loop .dialog_right .btn-mmc-loop:active {
+    background-position: -567px -321px;
+}
+
+body.theme .mmc-loop .dialog_right .btn-mmc-loop.mmc-loop-cancel {
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    line-height: 30px;
+    margin-top: 20px;
+    position: static;
+    color: #424242;
+    float: right;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -2px -371px;
+    font-size: 14px;
+}
+
+body.theme .lottery_dan {
+    padding-top: 15px;
+}
+
+body.theme .lottery_dan .ui-dialog-header {
+    display: none;
+}
+
+body.theme .lottery_dan .ui-dialog-content {
+    width: 275px !important;
+}
+
+body.theme .ui-dialog-footer button+button {
+    margin-left: 25px;
+}
+
+body.theme .ui-dialog-footer button:active {
+    box-shadow: none;
+}
+
+body.theme .tip.ui-dialog {
+    background-color: #c7484a;
+    padding: 0;
+}
+
+body.theme .tip.ui-dialog .ui-dialog-arrow-a,
+body.theme .tip.ui-dialog .ui-dialog-arrow-b {
+    border-top-color: #c7484a;
+}
+
+body.theme .tip.pocTip.ui-dialog .ui-dialog-arrow-a,
+body.theme .tip.pocTip.ui-dialog .ui-dialog-arrow-b {
+    border-bottom-color: #c7484a;
+    border-top-color: transparent;
+}
+
+body.theme .cancelTip.ui-dialog .ui-dialog-arrow-a,
+body.theme .cancelTip.ui-dialog .ui-dialog-arrow-b {
+    border-top-color: transparent;
+    border-right-color: #c7484a;
+}
+
+body.theme .recency-pop .ui-dialog-header {
+    text-align: center;
+}
+
+body.theme .recency-pop .ui-dialog-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+body.theme .recency-pop .ui-dialog-content table td a.btnCancel {
+    background: linear-gradient(to bottom, #e2423b, #c63030 53%, #ac1b1b);
+    border: 1px solid #972626;
+    font-size: 12px;
+}
+
+body.theme .recency-pop .ui-dialog-content table td a.btnCancel.disabled {
+    color: #fff;
+}
+
+body.theme .recency-pop .ui-dialog-content table th,
+body.theme .ui-dialog-content .market-pop table th,
+body.theme .recency-pop .ui-dialog-content table td,
+body.theme .ui-dialog-content .market-pop table td {
+    border: 1px solid #ededed;
+}
+
+body.theme .upload .ui-dialog-title {
+    line-height: 50px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+
+body.theme .upload #uploader {
+    width: 480px;
+    border-top: none;
+}
+
+body.theme .upload #uploader .tip {
+    margin-top: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+body.theme .webuploader-pick,
+body.theme .webuploader-upload {
+    width: 120px;
+    height: 32px;
+    background: url("/static/lottery/images/theme/button.png") no-repeat -2px -422px;
+    border-bottom: none;
+}
+
+body.theme .webuploader-pick-disable,
+body.theme .webuploader-upload.disabled {
+    background-position: -459px -422px;
+    color: #666;
+    border-bottom: none;
+}
+
+body.theme .ui-dialog.sobet,
+body.theme .confirm-again,
+body.theme .go-next-issue,
+body.theme .lottery_again {
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 1px rgba(0, 0, 0, 0.2);
+}
+
+body.theme .ui-dialog-grid {
+    border-radius: 10px;
+}
+
+body.theme .code-box .ui-dialog-title {
+    margin-top: 15px;
+    text-align: center;
+    color: #333;
+    border-bottom: none;
+}
+
+body.theme .sixzt_24,
+body.theme .sxxt_zal,
+body.theme .wxxt_dp,
+body.theme .wxzt_120 {
+    color: #7c4dff;
+}
+
+body.theme .sixzt_12,
+body.theme .sxxt_bs,
+body.theme .sxzt_6,
+body.theme .wxzt_60,
+body.theme .wxzt_ld {
+    color: #40c4ff;
+}
+
+body.theme .sixzt_6,
+body.theme .sxxt_dz,
+body.theme .sxzt_3,
+body.theme .wxxt_st,
+body.theme .wxzt_30 {
+    color: #00c853;
+}
+
+body.theme .sxxt_sz,
+body.theme .wxxt_sz,
+body.theme .wxzt_20 {
+    color: #ffa000;
+}
+
+body.theme .sixxt_4,
+body.theme .sxxt_bz,
+body.theme .wxxt_hulu,
+body.theme .wxzt_10 {
+    color: #d32f2f;
+}
+
+body.theme .wxzt_5,
+body.theme .wxxt_sit {
+    color: #8d6e63;
+}
+
+body.theme .wxxt_yd {
+    color: #2962ff;
+}
+
+body.theme .ui-dialog-close {
+    font-size: 0;
+    background: url("/static/lottery/images/theme/button.png") -10px -514px no-repeat;
+}
+
+body.theme .ui-dialog-close:hover {
+    background-position: -45px -514px;
+}
+
+body.theme .ui-dialog.loopSet {
+    width: 330px;
+    border-radius: 10px;
+}
+
+body.theme .ui-dialog.loopSet .ui-dialog-title {
+    text-align: center;
+    line-height: 60px;
+    color: #333;
+    font-size: 16px;
+    border-bottom: none;
+}
+
+body.theme .ui-dialog.loopSet #mmcLoopSet {
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+}
+
+body.theme .ui-dialog.loopSet #mmcLoopSet .es-input {
+    width: 60px;
+    height: 20px;
+    padding-right: 15px;
+    padding-left: 8px;
+    margin: 0 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: url(/static/lottery/images/theme/arrow.png) right center no-repeat;
+}
+
+body.theme .ui-dialog.loopSet label input {
+    vertical-align: middle;
+    display: none;
+}
+
+body.theme .ui-dialog.loopSet #mmcLoopSet label {
+    margin: 0;
+}
+
+body.theme .ui-dialog.loopSet #mmcLoopSet label.succStop {
+    display: inline-block;
+    margin: 0 5px;
+    float: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: url(/static/lottery/images/svg/trace.svg) no-repeat;
+    background-size: 15px;
+    vertical-align: sub;
+    outline-color: #e2423b;
+}
+
+body.theme .ui-dialog.loopSet #succStop1:checked+label.succStop {
+    background: url(/static/lottery/images/svg/trace-on.svg) no-repeat;
+    background-size: 15px;
+}

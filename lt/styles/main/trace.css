@@ -1,0 +1,492 @@
+.trace-box label input{
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  bottom: 11px;
+  overflow: hidden;
+  margin-right: 2px;
+}
+
+.trace-data{
+  display: none;
+  	overflow: hidden;
+  zoom: 1;
+  margin-top: 8px;	
+  height: auto;
+  width:100%;
+  background-color:#fff;
+  border-bottom:1px solid #d7d7d7;
+}
+
+.orders .list ul.trace-details,ul.trace-details{
+  height: auto;
+  border: none;
+}
+.lottery .orders ul.trace-tab{
+	background-color:#efefef;
+	border: none;
+	border-bottom: 1px solid #d7d7d7;
+	height: 30px;
+	font-size:14px;
+}
+
+.orders .list ul.trace-tab li,.lottery .orders .list ul.trace-details li{
+	border-bottom: none;
+	margin: 0px;
+	margin-left: 8px;
+}
+
+.orders ul.trace-tab li.disabled,.lottery .orders ul.trace-details li.disabled{
+	opacity: 0.1;
+}
+
+.trace-tab li{
+  margin:0px;
+  height: 29px;
+  line-height:29px;
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+  color:#6b7074;
+  border-right: 1px solid #d7d7d7;
+}
+.trace-tab li.on{
+	background-color: #fff;
+	color:#14151d;
+	height:30px;
+	border: 1px solid #d7d7d7;
+	border-bottom:none;
+	border-top:none;
+}
+.trace-tab li:first-child.on{
+	border-left:none;
+}
+.trace-tab li.tracebuy{
+	background-color: #7aad0c;
+}
+
+div.trace-data{
+	position: relative;
+	width:778px;
+	margin-left:13px;
+	border:1px solid #e2e2e2;
+	border-radius:3px;
+	font-size:14px;
+}
+div.trace-data input.spinner{
+	width: 60px;
+    height: 20px;
+    outline: none;
+}
+div.trace-data a#lgenTrace{
+	position: absolute;
+	top:35px;
+	right: 20px;
+	background:url(../images/button.png) -200px -170px no-repeat;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 120px;
+    outline: none;
+    z-index: 100;
+} 
+.trace-list{
+    width:777px;
+    position: relative;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.trace-fixed{
+	height: 32px;
+	width:776px;
+	background-color: #f4f4f4;
+	z-index: 88;
+	margin-left:0px;
+  	color:#7e7e7e;
+  	border-top:1px solid #d0d0d0;
+  	border-bottom:1px solid #d0d0d0;
+  	background:linear-gradient(#ffffff,#efefef);
+}
+
+.trace-items, .market .orders .list ul.trace-items{
+	height: 240px;
+	font-size:14px;
+	overflow: auto;
+  	background-color: #fff;
+ 	color:#9d9d9d;
+}
+
+.trace-items li{
+	border: none;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	line-height: 30px;
+	height: 30px;
+	cursor: pointer;
+	border-top: 1px solid #d7d7d7;
+}
+/*
+.trace-items li{
+  width: 100%;
+}
+*/
+.trace-fixed label.chkall{
+  cursor: pointer;
+  display: inline-block;
+  width:40px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 3px;
+  color:#00AEFF;
+}
+.trace-fixed label.chkall.on{
+    color: #fff;
+    background-color: #00b8ff;
+}
+.trace-fixed label.chkall:hover{
+    color:#fff !important;
+    background: rgb(0, 184, 255) !important;
+}
+
+.trace-items li.evenTr{
+}
+
+.trace-items li.first .issue {
+  position: relative;
+}
+
+.trace-items li.first .issue:after {
+  content: '';
+  position: absolute;
+  background: url(../images/little_logos.png) -60px -53px no-repeat;
+  width: 47px;
+  height: 18px;
+  line-height: 18px;
+  top: 6px;
+  right: -12px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-bottom: 0px\0;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 3px;
+  padding-left: 1px;
+  padding-left: 2px\0;
+}
+/*
+.trace-items li.first .issue:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 11px;
+  top: 10px\0;
+  right: 24px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #ff5243;
+}*/
+
+.trace-items li.chkitem.first .issue:after {
+  color: #ff5243;
+}
+.trace-items li.chkitem.first .issue:before {
+  border-right: 5px solid #fff;
+}
+.trace-items li.nextDay{
+ /* background-color:#788d9f;*/
+}
+
+.trace-items li.nextDay .issue{
+  position: relative;
+}
+
+.trace-items li.nextDay .issue:after {
+  content: '';
+  position: absolute;
+  background: url(../images/little_logos.png) -110px -53px no-repeat;
+  width: 47px;
+  height: 18px;
+  line-height: 18px;
+  top: 6px;
+  right: -12px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-bottom: 0px\0;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 3px;
+  padding-left: 1px;
+  padding-left: 2px\0;
+}
+
+.trace-items li.nextDay:hover span{
+}
+
+.trace-items li.nextDay.chkitem:hover span{
+}
+
+.trace-items li.nextDay span{
+}
+
+.trace-items li:hover{
+  background-color: #fafafa;
+  color:#858585;
+}
+
+.trace-items li.chkitem{
+  color:#636363;
+}
+.trace-items li.chkitem input.medium{
+    color:#ff5232;
+}
+.trace-items li > span,.trace-fixed > span{
+	width:165px;
+	padding: 0px 4px;
+    display: inline-block;
+    text-align: center;
+	line-height: 32px;
+}
+.trace-data .trace-items li span.wide,.trace-data .trace-fixed span.wide{
+	width: 175px;
+}
+
+.trace-items li span.medium,.trace-fixed span.medium{
+	width: 160px;
+	height:30px;
+	line-height:30px;
+}
+.trace-items li span.chk,.trace-fixed span.chk{
+	width: 80px;
+}
+.trace-items li span.chk input,.trace-fixed span.chk input {
+  vertical-align: middle;
+  margin-top: 0;
+}
+
+.trace-items li input.medium {
+  width: 116px;
+  height:20px;
+  text-align:center;
+  background-color:#ffffff;
+  background-position:0px 0px;
+  background-repeat: no-repeat;
+    color:#9DA0AC;
+}
+
+.trace-items li span.wide.issue{
+  border-right: 0;
+  border-left: 0;
+}
+
+div.trace-hidden{
+	display: none;
+}
+div.trace-rate,div.trace-same,div.trace-double{
+	overflow: hidden;
+    color:#5b646c;
+    background-color:#fff;
+    width: 100%;
+    position: relative;
+}
+
+.market div.trace-rate,.market div.trace-same,.market div.trace-double{
+	border: 0px;
+	border-bottom: 1px solid #ececec;
+}
+
+ul.trace-details {
+	height:40px;
+	width:70%;
+	margin-left:15px;
+}
+
+ul.trace-details li span{
+  margin:0px 6px;
+}
+
+ul.trace-details li {
+	float: left;
+	overflow: hidden;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px;
+	margin:0px;
+	margin-right: 8px;
+	position: inherit;
+	width:auto;
+	border: none;
+}
+ul.trace-details li em{
+	padding:0 5px;
+	color:#ff3131
+}
+ul.trace-details li select{
+	width:60px;
+	border: 1px solid #d8d8d8;
+	font-size: 12px;
+	margin-left: 8px;
+	text-align: center;
+}
+
+a.traceview{
+	color: #ff5243;
+	text-decoration: underline;
+	margin-left: 10px;
+    cursor: pointer;
+}
+
+a.backInfo{
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: underline;color: #ff6600;margin-left: 10px;
+	cursor: pointer;
+}
+ul.traceInner{
+	min-height: 413px;
+}
+
+div.market-pop ul.traceInner{
+	min-height: 341px;
+}
+
+ul.traceInner li{
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+	display:block;
+	height:30px;
+	border-bottom: #d7d7d7 1px solid;
+}
+
+ul.traceInner li input{
+	float:left;
+	cursor:pointer;
+	margin-top:9px;
+	margin-left:15px;
+}
+ul.traceInner li a {
+    color: #ff5243;
+    cursor: pointer;
+}
+
+ul.traceInner li input.disabled{
+  cursor: default;
+}
+
+ul.traceInner li.traceHead{
+	border-top: 0px;
+	background: #ededed;
+}
+ul.traceInner li span,ul.traceInner li em{
+  display: block;
+  float: left;
+  text-align:center;
+  width:235px;
+  text-indent:0px;
+}
+table.traceHTable ul.traceInner li span,ul.traceInner li em{
+  display: block;
+  float: left;
+  text-align:center;
+  width:155px;
+  text-indent:0px;
+}
+
+ul.traceInner li em{
+  width:75px;
+  border-left: 1px solid #d7d7d7;
+}
+
+div.listmsg input{
+	border: none;
+	width:auto;
+}
+
+div.cancelTrace a{
+  background: #ff5243;
+  width: 100px;
+  height: 32px;
+  font-size: 16px;
+  float: right;
+  line-height: 32px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  text-indent:0px;
+}
+
+
+div.cancelTrace a.disabled{
+  background-color: #ccc;
+  color: #999;
+  cursor: default;
+}
+
+table.traceTable,a.backInfo{display:none;}
+
+h3.highmsg{
+  color:red;
+  font-weight:bold;
+}
+
+.trace-fixed .chkall input[type=checkbox],.trace-items .chk input[type=checkbox]{    
+	display: none;
+}
+.trace-fixed label.chkall{   
+	display: inline-block;
+    width:40px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.trace-items span.chk label{
+    display: inline-block;
+    width: 16px;
+    height:16px;
+    border-radius: 50%;
+    cursor: pointer;    
+    background: url("../images/little_logos.png") -20px -54px no-repeat;
+    vertical-align:top;    
+    margin-top: 7px;
+}
+.trace-items span.chk label.on_check{    
+	background: url("../images/little_logos.png") 0px -54px no-repeat;
+}
+
+.lottery .orders .trace-data .submit{
+    display: inline-block;
+    width: 120px;
+    height:35px;
+    line-height: 32px;
+    font-size: 16px;
+    background: #ff4946;
+    background: linear-gradient(to bottom,#ff4946,#ff2117);
+    color:#fff;
+    position: absolute;
+    bottom: 3px;
+    right: 20px;
+    text-align: center;
+    border-radius: 3px;
+    border:1px solid #d1312a;
+    outline: none;
+}
+.lottery .orders .trace-data .submit.disabled{
+    background: #eee;
+    background: linear-gradient(to bottom,#fff,#eee);
+    color:#bcbcbc;
+    border:1px solid #C3BEBE;
+}
+.lottery .orders .trace-data a.submit.loading{
+    background-color: #ff1d10;
+}

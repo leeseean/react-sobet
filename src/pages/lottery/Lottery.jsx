@@ -4,6 +4,9 @@ import './lottery.styl';
 import LotteryHead from './LotteryHead';
 import TrendList from './TrendList';
 import LotteryFavourite from './LotteryFavorite';
+import LotteryRecord from './LotteryRecord';
+import LotteryPlate from './LotteryPlate';
+import LotteryOrder from './LotteryOrder';
 
 @inject('lotteryStore')
 @observer
@@ -15,7 +18,7 @@ class Lottery extends React.Component {
         queryTrendData();
     }
     render() {
-        const { trendData, method, trendConfig, lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
+        const { trendData, method, trendConfig, playWayToCn, lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <div className="lottery-wrapper">
                 <div className="lottery-inner-wrapper" ref={ref => this.mainRef = ref}>
@@ -23,7 +26,9 @@ class Lottery extends React.Component {
                     <LotteryHead {...{ lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue }} />
                     <div className="clearfix main-content">
                         <div className="fl main-content-left">
-
+                            <LotteryPlate />
+                            <LotteryOrder />
+                            <LotteryRecord lotteryCode={lotteryCode} playWayToCn={playWayToCn} />
                         </div>
                         <div className="fr main-content-right">
                             <TrendList data={trendData} method={method} trendConfig={trendConfig} />

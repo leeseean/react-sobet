@@ -1,0 +1,58 @@
+/* HTML5 Number polyfill | Jonathan Stipe | https://github.com/jonstipe/number-polyfill*/
+input.spinner {
+  width: 30px;
+  height: 21px;
+  line-height: 21px; 
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  border-radius: 3px;
+}
+div.number-spin-btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  position: absolute;
+  
+  width: 12px;
+  top: 0px; }
+div.number-spin-btn:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+div.number-spin-btn:active {
+  background-color: #ccc;
+}
+div.number-spin-btn-up:before,
+div.number-spin-btn-down:before {
+  position: absolute;
+  width: 12px;
+  height: 21px;
+  line-height: 21px;
+  padding: 0;
+  left: 0;
+  top: 50%;
+  font-size: 14px;
+  font-family: "Simsun";
+  text-align: center;
+  color: #929292;
+  margin-top:-11px;
+}
+
+div.number-spin-btn-up {
+  right: 1px;
+}
+div.number-spin-btn-up:before {
+  content: "+";
+}
+div.number-spin-btn-down {
+  left: 1px;
+}
+div.number-spin-btn-down:before {
+  content: "-";
+}
+input:disabled + div.number-spin-btn-up:active, input:disabled + div.number-spin-btn-down:active {
+  color: #000; }

@@ -1,5 +1,20 @@
 .record-table-wrapper {
     width: 794px;
+
+    .ant-table-title {
+        padding: 0;
+    }
+
+    .ant-table-thead > tr > th {
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    .ant-table-tbody > tr > td {
+        padding: 12px;
+        white-space: nowrap;
+    }
+
     .record-title-wrapper {
         position: relative;
         height: 32px;
@@ -37,6 +52,48 @@
             font-size: 12px;
             color: #999;
             box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .record-item-code {
+        width: 80px;
+    }
+
+    .order-again, .order-cancel {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 6px;
+        text-align: center;
+        background: url('../../images/lottery/button.png') no-repeat;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .order-again {
+        width: 66px;
+        background-position: 0 -590px;
+
+        &:hover {
+            background-position: -74px -590px;
+        }
+
+        &:active {
+            background-position: -148px -590px;
+        }
+    }
+
+    .order-cancel {
+        width: 46px;
+        margin-left: 6px;
+        background-position: 0 -630px;
+
+        &:hover {
+            background-position: -74px -630px;
+        }
+
+        &:active {
+            background-position: -148px -630px;
         }
     }
 }

@@ -1,23 +1,28 @@
 @import './_variables.styl';
 @import './_mixins.styl';
 
-body,
-#root {
-  background-color: $body-background-color;
+body, #root {
+    background-color: $body-background-color;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .absolute-center {
-  absolute-center();
+    absolute-center();
 }
 
 .animation-paused {
-  animation-play-state: paused!important;
+    animation-play-state: paused !important;
 }
 
 .fixed {
-  position: fixed;
+    position: fixed;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

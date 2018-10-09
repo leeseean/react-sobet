@@ -28,7 +28,7 @@ class Lottery extends React.Component {
                         <div className="fl main-content-left">
                             <LotteryPlate />
                             <LotteryOrder />
-                            <LotteryRecord lotteryCode={lotteryCode} playWayToCn={playWayToCn} />
+                            <LotteryRecord lotteryCode={lotteryCode} playWayToCn={playWayToCn} codeToCn={lotteryCodeToCn} />
                         </div>
                         <div className="fr main-content-right">
                             <TrendList data={trendData} method={method} trendConfig={trendConfig} />

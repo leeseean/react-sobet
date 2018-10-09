@@ -231,4 +231,12 @@ export function getRecord(params) {
         // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
     });
 }
+//获取游戏记录详情 /lottery/api/u/v1/lottery/recent_detail?orderId=201810090T2Nehg17msP0001
+export function getRecordDetail(params) {
+    return $http({
+        params,
+        url: '/recordDetail.json',
+        // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+    });
+}
 

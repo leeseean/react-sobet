@@ -7,6 +7,7 @@ import LotteryFavourite from './LotteryFavorite';
 import LotteryRecord from './LotteryRecord';
 import LotteryPlate from './LotteryPlate';
 import LotteryOrder from './LotteryOrder';
+import WinListMarquee from './WinListMarquee';
 
 @inject('lotteryStore')
 @observer
@@ -35,6 +36,7 @@ class Lottery extends React.Component {
                         </div>
                     </div>
                 </div>
+                <WinListMarquee />
             </div>
         );
     }

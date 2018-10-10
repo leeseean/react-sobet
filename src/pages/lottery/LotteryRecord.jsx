@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table, Modal, Pagination, Checkbox } from 'antd';
-import { getRecord, getRecordDetail, getTraceDetail, cancelTrace } from '../../utils/ajax';
+import { Table, Modal, message, Pagination, Checkbox } from 'antd';
+import { getRecord, getRecordDetail, getTraceDetail, cancelTrace, cancelOrder } from '../../utils/ajax';
 import formatTime from '../../utils/formatTime';
 import './lotteryRecord.styl';
 
@@ -14,7 +14,7 @@ class LotteryRecord extends React.Component {
         traceModalFlag: false,
         traceDetail: {},
         tracePageData: [],
-        cancelTraceFlag: true
+        checkList: [],
     }
     traceModeConfig = {
         1: '利润率追号',
@@ -43,7 +43,7 @@ class LotteryRecord extends React.Component {
                     method: playWayToCn[method],
                     code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
                     key: orderId,
-                    mani: status === '未开奖' ? [<span className="order-again" onClick={() => this.betAgain(orderId)}>再次投注</span>, <span className="order-cancel" onClick={() => this.cancalOrder(orderId)}>撤单</span>] : <span className="order-again">再次投注</span>
+                    mani: status === '未开奖' ? [<span className="order-again" value="再次投注">再次投注</span>, <span className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>
                 };
             });
             this.setState({
@@ -85,17 +85,29 @@ class LotteryRecord extends React.Component {
     componentDidMount() {
         this.getDataSource();
     }
+    viewOrderDetail = async (orderId) => {
+        const res = await getRecordDetail({ orderId });
+        if (res.data.code === 1) {
+            this.setState({
+                recordDetail: res.data.result,
+                betModalFlag: true,
+                traceModalFlag: false
+            });
+        }
+    }
     maniRowCallback = (record) => {
         return {
-            onClick: async () => {
-                const { orderId } = record;
-                const res = await getRecordDetail({ orderId });
-                if (res.data.code === 1) {
-                    this.setState({
-                        recordDetail: res.data.result,
-                        betModalFlag: true
-                    });
+            onClick: (e) => {
+                const { orderId, issue } = record;
+                if (e.target.getAttribute('value') === '再次投注') {
+                    this.betAgain(orderId, issue);
+                    return;
                 }
+                if (e.target.getAttribute('value') === '撤单') {
+                    this.cancelOrder(orderId, issue);
+                    return;
+                }
+                this.viewOrderDetail({ orderId });
             }, // 点击行
         };
     }
@@ -105,13 +117,30 @@ class LotteryRecord extends React.Component {
         });
     }
     betAgain = (orderId) => {
-
+        console.log(222)
     }
-    cancalOrder = (orderId) => {
-
+    cancelOrder = (orderId, issue) => {
+        Modal.confirm({
+            title: `您确定要撤销${issue}期的这一注单吗？`,
+            onOk: async () => {
+                const res = await cancelOrder({ orderId });
+                if (res.data.code === 0) {
+                    message.success('撤单成功！');
+                }
+            }
+        });
     }
-    viewTraceDetail = async (orderId) => {
-        const res = await getTraceDetail(orderId);
+    cancelTrace = async () => {
+        const res = await cancelTrace({ traceId: this.state.traceDetail.traceId, issues: this.state.checkList });
+        if (res.data.code === 1) {
+            this.setState({
+                checkList: []
+            });
+            this.viewTraceDetail();
+        }
+    }
+    viewTraceDetail = async () => {
+        const res = await getTraceDetail({ orderId: this.state.recordDetail.orderId });
         if (res.data.code === 1) {
             this.setState({
                 traceModalFlag: true,
@@ -134,18 +163,35 @@ class LotteryRecord extends React.Component {
     turnPage = (e) => {
         console.log(e);
         this.setState({
-            tracePageData: this.state.traceDetail.issues.slice(e - 10, e)
+            tracePageData: this.state.traceDetail.issues.slice(e - 10, e),
+            checkList: []
         });
     }
     checkAll = (e) => {
-
-        this.setState({
-
-        });
+        if (e.target.checked) {
+            this.setState({
+                checkList: this.state.tracePageData.filter(v => v.status !== 1).map(v => v.issue)
+            });
+        } else {
+            this.setState({
+                checkList: []
+            });
+        }
     }
-    checkGroupChange = () => {
-        this.setState({
-        });
+    checkChange = (e) => {
+        const value = e.target.issue;
+        const _list = this.state.checkList;
+        if (_list.includes(value)) {
+            const _index = _list.indexOf(value);
+            _list.splice(_index, 1);
+            this.setState({
+                checkList: _list
+            });
+        } else {
+            this.setState((prevState) => ({
+                checkList: [...prevState.checkList, value]
+            }));
+        }
     }
     render() {
         const { playWayToCn, codeToCn } = this.props;
@@ -175,7 +221,7 @@ class LotteryRecord extends React.Component {
                                 <td>
                                     <em>{this.state.recordDetail.orderId}</em>
                                     {
-                                        this.state.recordDetail.isCurrentIssue === 1 ? <span className="order-cancel" onClick={() => this.cancalOrder(this.state.recordDetail.orderId)}>撤单</span> : null
+                                        this.state.recordDetail.isCurrentIssue === 1 ? <span className="order-cancel" onClick={() => this.cancelOrder(this.state.recordDetail.orderId)}>撤单</span> : null
                                     }
                                 </td>
                             </tr>
@@ -201,7 +247,7 @@ class LotteryRecord extends React.Component {
                                     <div>
                                         {this.state.recordDetail.issue}
                                         {
-                                            this.state.recordDetail.istrace === 1 ? <span className="trace-view" onClick={() => this.viewTraceDetail(this.state.recordDetail.orderId)}>(查看追号信息)</span> : null
+                                            this.state.recordDetail.istrace === 1 ? <span className="trace-view" onClick={this.viewTraceDetail}>(查看追号信息)</span> : null
                                         }
                                     </div>
                                 </td>
@@ -268,11 +314,11 @@ class LotteryRecord extends React.Component {
                                         </li>
                                         {
                                             this.state.tracePageData.map(item => {
-                                                const { traceId, issue, count, status } = item;
+                                                const { orderId, issue, count, status } = item;
                                                 return (
-                                                    <li key={traceId}>
+                                                    <li key={issue}>
                                                         <span>
-                                                            <i className="checkbox-wrapper"><Checkbox className="hand" disabled={status === 1 ? true : false} /></i>
+                                                            <i className="checkbox-wrapper"><Checkbox issue={issue} className="hand" onChange={this.checkChange} disabled={status === 1 ? true : false} checked={this.state.checkList.includes(issue)} /></i>
                                                             {issue}
                                                         </span>
                                                         <em>{count}</em>
@@ -280,7 +326,7 @@ class LotteryRecord extends React.Component {
                                                             <label>{status === 1 ? '已完成' : '进行中'}</label>
                                                         </em>
                                                         <em>
-                                                            <a className="hand traceDetails">{status === 1 ? '详情' : ''}</a>
+                                                            <a className="hand traceDetails" onClick={() => this.viewOrderDetail(orderId)}>{status === 1 ? '详情' : ''}</a>
                                                         </em>
                                                     </li>
                                                 );
@@ -290,7 +336,7 @@ class LotteryRecord extends React.Component {
                                     <div className="tracePager popdetails-page">
                                         <Pagination size="small" pageSize={10} onChange={this.turnPage} total={this.state.traceDetail.issueCount} />
                                     </div>
-                                    <div className="cancelTrace"><a className={`hand ${this.state.cancelTraceFlag ? '' : 'disabled'}`} name="2018393" onClick={this.cancelTrace}>追号终止</a></div>
+                                    <div className="cancelTrace"><a className={`hand ${this.state.checkList.length > 0 ? '' : 'disabled'}`} onClick={this.cancelTrace}>追号终止</a></div>
                                 </td>
                             </tr>
                             <tr>

@@ -221,6 +221,7 @@ export function getCountdowns() {
     return $http({
         // url: '/times.json',
         url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
+        method: 'GET'
     });
 }
 //获取游戏记录 /lottery/api/u/v1/lottery/recent_order?lottery=WBGMMC
@@ -229,6 +230,7 @@ export function getRecord(params) {
         params,
         url: '/record.json',
         // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
+        method: 'GET'
     });
 }
 //获取游戏记录详情 /lottery/api/u/v1/lottery/recent_detail?orderId=201810090T2Nehg17msP0001
@@ -237,6 +239,7 @@ export function getRecordDetail(params) {
         params,
         url: '/recordDetail.json',
         // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        method: 'GET'
     });
 }
 //查询追号详情 /lottery/api/u/v1/lottery/trace?orderId=20181009012LEpl18jJm0001
@@ -245,6 +248,15 @@ export function getTraceDetail(params) {
         params,
         url: '/traceDetail.json',
         // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        method: 'GET'
+    });
+}
+//取消订单  /lottery/api/u/v1/lottery/cancel_order
+export function cancelOrder(data) {
+    return $http({
+        data,
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/trace_cancel',
+        method: 'POST'
     });
 }
 //追号终止  /lottery/api/u/v1/lottery/trace_cancel?traceId=''&issues=[]
@@ -252,5 +264,6 @@ export function cancelTrace(params) {
     return $http({
         params,
         url: proxyPrefix + '/lottery/api/u/v1/lottery/trace_cancel',
+        method: 'GET'
     });
 }

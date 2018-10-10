@@ -4,7 +4,6 @@ import './fixedCountdownTip.styl';
 
 class FixedCountdownTip extends React.Component {
     _mounted = false
-    domRef = null
     state = {
         showFlag: false
     }
@@ -31,8 +30,8 @@ class FixedCountdownTip extends React.Component {
     render() {
         const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue } = this.props;
         return (
-            <div className="info-mini clearfix">
-                <div className={`info-mini-wrap ${this.state.showFlag ? 'show' : ''}`} ref={ref => this.domRef = ref}>
+            <div className={`info-mini ${this.state.showFlag ? 'show' : ''} clearfix`}>
+                <div className="info-mini-wrap">
                     <div className="info-title-mini fl">
                         <span className="info-title-text">{lotteryCn}</span> 
                         <span className="info-title-status"></span></div>

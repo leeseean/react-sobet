@@ -529,7 +529,7 @@ export default {
         }
     },
     zh_hzdxds_h3hz: {
-        area: [1, 2, 3],
+        area: [2, 3, 4],
         shapeName: `<em class="margin-0-4px">和值</em><em class="margin-0-4px">大小</em><em class="margin-0-4px">单双</em>`,
         calcShape(code) {
             const codeArr = this.area.map((v, i) => code.split(',')[i]);

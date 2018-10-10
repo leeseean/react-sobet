@@ -31,18 +31,17 @@ class TrendList extends React.Component {
         let columns = [{
             title: <span className="trend-head-col">期号</span>,
             dataIndex: 'issue',
-            width: 100,
+            width: trendConfig[method]['widthConfig']['col1']
         }, {
             title: <span className="trend-head-col">开奖号码</span>,
             dataIndex: 'openCode',
-            width: 100,
+            width: trendConfig[method]['widthConfig']['col2']
         }];
         if (trendConfig[method]['shapeName']) {
-            const Title = () => <span className="trend-head-col">{trendConfig[method]['shapeName']}</span>;
+            const Title = () => <span className="trend-head-col" dangerouslySetInnerHTML={{ __html: trendConfig[method]['shapeName'] }}></span>;
             columns = [...columns, {
                 title: <Title />,
                 dataIndex: 'shape',
-                width: 100,
             }];
         }
         const dataSource = data.map((item, index) => {

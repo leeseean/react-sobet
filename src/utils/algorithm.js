@@ -152,9 +152,9 @@ export function calcNiuniu(arr) {
         dxXt = '---';
         dsXt = '---';
     } else {
-        niuniuXt = YU === 0 ? '<em class="niuniu">牛牛</em>' : `<em class="niuniu">牛${YU}</em>`;
-        dxXt = [6, 7, 8, 9, 0].indexOf(YU) !== -1 ? '<em class="niuda">牛大</em>' : '<em class="niuxiao">牛小</em>';
-        dsXt = YU % 2 === 0 ? '<em class="niushuang">牛双</em>' : '<em class="niudan">牛单</em>';
+        niuniuXt = YU === 0 ? '<em class="margin-0-4px shape--niuniu">牛牛</em>' : `<em class="margin-0-4px shape--niuniu">牛${YU}</em>`;
+        dxXt = [6, 7, 8, 9, 0].indexOf(YU) !== -1 ? '<em class="margin-0-4px shape--niuda">牛大</em>' : '<em class="margin-0-4px shape--niuxiao">牛小</em>';
+        dsXt = YU % 2 === 0 ? '<em class="margin-0-4px shape--niushuang">牛双</em>' : '<em class="margin-0-4px shape--niudan">牛单</em>';
     }
     return {
         nn: niuniuXt,
@@ -212,24 +212,24 @@ export function calcBjl(arr) {
     const xian = (shi + ge) % 10;
     let bjlXtPlus = '';
     if (wan === qian) {
-        bjlXtPlus = '<em class="zhuangdui">庄对</em>';
+        bjlXtPlus = '<em class="shape--zhuangdui">庄对</em>';
     }
     if (shi === ge) {
-        bjlXtPlus = '<em class="xiandui">闲对</em>';
+        bjlXtPlus = '<em class="shape--xiandui">闲对</em>';
     }
     if (wan === qian && shi === ge) {
-        bjlXtPlus = '<em class="zhuangdui">庄对</em><em class="xiandui">闲对</em>';
+        bjlXtPlus = '<em class="shape--zhuangdui">庄对</em><em class="shape--xiandui">闲对</em>';
     }
     if (zhuang > xian) {
         if (zhuang === 6 && xian < 6) {
-            return `<i><em class="s6">S6${bjlXtPlus}</em></i>`;
+            return `<i><em class="shape--s6">S6${bjlXtPlus}</em></i>`;
         }
-        return `<i><em class="zhuang">庄${bjlXtPlus}</em></i>`;
+        return `<i><em class="shape--zhuang">庄${bjlXtPlus}</em></i>`;
     }
     if (zhuang < xian) {
-        return `<i><em class="xian">闲${bjlXtPlus}</em></i>`;
+        return `<i><em class="shape--xian">闲${bjlXtPlus}</em></i>`;
     }
-    return `<i><em class="he">和${bjlXtPlus}</em></i>`;
+    return `<i><em class="shape--he">和${bjlXtPlus}</em></i>`;
 }
 /* 
     数组转成计算每个值重复的个数 的对象
@@ -340,4 +340,25 @@ export function calcDsgs(arr) {
         dan: `<em class="margin-0-4px>${dan}</em>`,
         shuang: `<em class="margin-0-4px>${shuang}</em>`
     };
+}
+/**
+ * 计算3星组态
+ * 规则：3个号码中有两个相同为“组三”，3个都不相同为“组六”,3个相同为“豹子”
+ * @param {数组} arr [1,2,3],只能是3个元素
+ */
+export function cacl3xZutai(arr) {
+    if (!Array.isArray(arr)) {
+        throw new Error('所传参数必须是数组');
+    }
+    if (arr.length !== 3) {
+        throw new Error('数组只能含3个数字');
+    }
+    arr = arr.map(v => Number(v));
+    const obj = {
+        1: '<em class="margin-0-4px shape--baozi">豹子</em>',
+        2: '<em class="margin-0-4px shape--duizi">对子</em>',
+        3: calcShunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--shunzi">顺子</em>' : '<em class="margin-0-4px shape--za6">杂六</em>'
+    };
+    const deduplicationArr = [...new Set(arr)]; //去重
+    return obj[deduplicationArr.length];
 }

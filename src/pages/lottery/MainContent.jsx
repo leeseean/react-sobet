@@ -11,13 +11,15 @@ import LotteryOrder from './LotteryOrder';
 class MainContent extends React.Component {
     mainRef = null
     componentDidMount() {
-        const { queryTrendData, updateIssue } = this.props.lotteryStore;
+        const { queryTrendData, updateIssue, } = this.props.lotteryStore;
         updateIssue();
         queryTrendData();
     }
     render() {
+        const { setLotteryCode } = this.props.lotteryStore;
         const { lotteryCode } = this.props.match.params;
-        const { trendData, method, trendConfig, playWayToCn, lotteryType, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
+        setLotteryCode(lotteryCode);
+        const { lotteryType, trendData, method, trendConfig, playWayToCn, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead {...{ lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue }} />

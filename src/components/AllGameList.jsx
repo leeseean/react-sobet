@@ -91,9 +91,9 @@ class AllGameList extends React.Component {
                     isNew: true,
                     isHot: false
                 }, {
-                    en: 'RD1FC',
+                    en: 'TX1FC',
                     cn: '腾讯1分彩',
-                    path: '/lottery/rd1fc',
+                    path: '/lottery/tx1fc',
                     isNew: true,
                     isHot: false
                 }
@@ -338,7 +338,7 @@ class AllGameList extends React.Component {
         const LotteryItem = ({ itemObj }) => {
             const { cn, path, isNew, isHot } = itemObj;
             return (
-                <Link className="fl"  to={path}>
+                <Link className="fl" to={path}>
                     <span>{cn}</span>
                     {isNew ? <i className="all-game__new-icon"></i> : null}
                     {isHot ? <i className="all-game__hot-icon"></i> : null}
@@ -370,7 +370,7 @@ class AllGameList extends React.Component {
         const OtherItem = ({ itemObj }) => {
             const { cn, path, icon } = itemObj;
             return (
-                <Link className="fl" exact to={path}>
+                <Link className="fl" to={path}>
                     <i className={icon}></i>
                     <span>{cn}</span>
                 </Link>

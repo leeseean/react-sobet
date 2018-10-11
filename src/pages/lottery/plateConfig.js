@@ -1,5 +1,5 @@
 export default {
-    CQSSC: {
+    cqssc: {
         normal: [{
             tab: '五星',
             subTabConfig: [{

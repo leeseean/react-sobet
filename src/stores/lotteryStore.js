@@ -4,6 +4,7 @@ import {
     runInAction,
     computed
 } from 'mobx';
+import lotteryTypeConfig from '../pages/lottery/lotteryTypeConfig';
 import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
 import trendConfig from '../pages/lottery/trendConfig';
 import playWayToCn from '../pages/lottery/playWayToCn';
@@ -16,13 +17,22 @@ class LotteryStore {
 
     playWayToCn = playWayToCn
 
+    lotteryTypeConfig = lotteryTypeConfig
+
     lotteryCodeToCn = lotteryCodeToCn
 
     trendConfig = trendConfig
 
-    @observable lotteryType = localStorage.getItem('lotteryType') || 'ssc' //彩种类型 ssc
+    @computed get lotteryType() {
+        return this.lotteryTypeConfig[this.lotteryCode];
+    }
 
-    @observable lotteryCode = localStorage.getItem('lotteryCode') || 'CQSSC' //彩种codeCQSSC
+    @observable lotteryCode = localStorage.getItem('lotteryCode') || 'cqssc' //彩种codeCQSSC
+
+    @action setLotteryCode = (value) => {
+        this.lotteryCode = value;
+        localStorage.setItem('lotteryCode', value);
+    }
 
     @observable currentIssue = ''
 
@@ -51,9 +61,9 @@ class LotteryStore {
                 } = res.data.result;
                 if (second < 0) {
                     this.countdown = '等待开售';
-                } else { 
+                } else {
                     this.countdown = Date.now() + second * 1000;
-                 }
+                }
                 this.currentIssue = issue;
             }
         });

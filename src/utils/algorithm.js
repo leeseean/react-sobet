@@ -113,12 +113,12 @@ export function calc2xDuizi(arr) {
 //计算龙湖和
 export function calcLhh(a, b) {
     if (a > b) {
-        return '<em class="long">龙</em>';
+        return '<em class="margin-0-4px shape--long">龙</em>';
     }
     if (a < b) {
-        return '<em class="hu">虎</em>';
+        return '<em class="margin-0-4px shape--hu">虎</em>';
     }
-    return '<em class="he">和</em>';
+    return '<em class="margin-0-4px shape--he">和</em>';
 }
 /* 
 牛牛：
@@ -292,6 +292,7 @@ export function calcBanshunzi(arr, min = 0, max = 9) {
 }
 //daxiaodanshuang
 export function calcDxds(num, flag) {
+    num = Number(num);
     let dx;
     let ds;
     if (num >= flag) {
@@ -311,6 +312,7 @@ export function calcDxds(num, flag) {
 }
 //daxiaogeshu
 export function calcDxgs(arr, flag) {
+    arr = arr.map(v => Number(v));
     let da = 0;
     let xiao = 0;
     for (let value of arr) {

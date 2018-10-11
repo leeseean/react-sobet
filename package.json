@@ -11,7 +11,7 @@
     "js-cookie": "^2.2.0",
     "lodash": "^4.17.11",
     "md5": "^2.2.1",
-    "mobx": "^5.1.0",
+    "mobx": "^4.5.0",
     "mobx-react": "^5.2.5",
     "object-assign": "4.1.1",
     "promise": "8.0.1",

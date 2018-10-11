@@ -9,6 +9,9 @@ class GlobalNav extends React.Component {
         if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
             return null;
         }
+        if (/^\/lottery\//.test(history.location.pathname)) {
+            return null;
+        }
         // only consider an event active if its event id is an odd number
         const active = (match, location) => {
             if (!match) {

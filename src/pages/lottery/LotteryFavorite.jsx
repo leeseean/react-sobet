@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import { Link } from 'react-router-dom';
 import './lotteryFavorite.styl';
 import Countdown from '../../components/Countdown';
 import offsetDis from '../../utils/offsetDis';
@@ -14,7 +15,6 @@ import FavoriteModal from './FavoriteModal';
 @observer
 class LotteryFavorite extends React.Component {
     _mounted = false
-    expendRef = null
     menuRef = null
     timer = null
     state = {
@@ -63,7 +63,9 @@ class LotteryFavorite extends React.Component {
             const { lottery_code } = item;
             return (
                 <div className="lottery-favorite-item">
-                    <div className="item-cn">{codeToCn[lottery_code]}</div>
+                    <div className="item-cn">
+                        <Link exact to={`/lottery/${lottery_code.toLocaleLowerCase()}`}>{codeToCn[lottery_code]}</Link>
+                    </div>
                     <div className="item-countdown">
                         {
                             countdownsObj[lottery_code] > 0 ? <Countdown count={Date.now() + countdownsObj[lottery_code] * 1000} /> : '暂停销售'
@@ -99,7 +101,7 @@ class LotteryFavorite extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className={`lottery-favorite-show ${this.state.menuShowFlag ? '' : 'show'}`} onClick={() => this.toggleMenu(true)} ref={ref => this.expendRef = ref}>
+                <div className={`lottery-favorite-show ${this.state.menuShowFlag ? '' : 'show'}`} onClick={() => this.toggleMenu(true)}>
                     <i className="favorite-show-icon"></i>
                     <span>展开</span>
                 </div>

@@ -18,7 +18,7 @@ class GlobalHead extends React.Component {
         fixed: false
     }
     initFixed(path) {
-        if (path === '/lottery') {
+        if (/^\/lottery\//.test(path)) {
             this.setState({
                 fixed: true
             });

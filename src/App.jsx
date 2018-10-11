@@ -11,7 +11,7 @@ class App extends React.Component {
     render() {
         return (
             <Provider {...stores}>
-                <BrowserRouter>
+                <BrowserRouter forceRefresh={false}>
                     <div className="App">
                         <GlobalHead/>
                         <GlobalNav/>

@@ -1,5 +1,5 @@
 
-import { calcDxds, calcDsgs, calcDxgs, cacl3xZutai, calcShunzi, arrToCountItemObj, calcBjl, calcNiuniu, calcLhh, calc2xDuizi, calcHezhi, calcKuadu } from '../../utils/algorithm';
+import { calcDxds, calcDsgs, calcDxgs, cacl3xZutai, calcShunzi, arrToCountItemObj, calcBjl, calcNiuniu, calcLhh, calcHezhi, calcKuadu } from '../../utils/algorithm';
 
 export default {
     ssc: {
@@ -941,7 +941,7 @@ export default {
                     4: '<em class="margin-0-4px shape--yidui">一对</em>',
                     3: values.includes(3) ? '<em class="margin-0-4px shape--santiao">三条</em>' : '<em class="margin-0-4px shape--liangdui">两对</em>',
                     2: values.includes(4) ? '<em class="margin-0-4px shape--sitiao">四条</em>' : '<em class="margin-0-4px shape--hulu">葫芦</em>',
-                    1: '<em class="margin-0-4px shape--shunzi">豹子</em>',
+                    1: '<em class="margin-0-4px shape--baozi">豹子</em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -1202,22 +1202,22 @@ export default {
                 col2: 150
             },
         },
-        get rxds_rxdt_3z3() {
+        get rxdt_rxdt_3z3() {
             return this['rxdt_rxdt_2z2'];
         },
-        get rxds_rxdt_4z4() {
+        get rxdt_rxdt_4z4() {
             return this['rxdt_rxdt_2z2'];
         },
-        get rxds_rxdt_5z5() {
+        get rxdt_rxdt_5z5() {
             return this['rxdt_rxdt_2z2'];
         },
-        get rxds_rxdt_6z5() {
+        get rxdt_rxdt_6z5() {
             return this['rxdt_rxdt_2z2'];
         },
-        get rxds_rxdt_7z5() {
+        get rxdt_rxdt_7z5() {
             return this['rxdt_rxdt_2z2'];
         },
-        get rxds_rxdt_8z5() {
+        get rxdt_rxdt_8z5() {
             return this['rxdt_rxdt_2z2'];
         },
         qw_qw_dds: {
@@ -1267,7 +1267,7 @@ export default {
                 return shapeConfig[_arr.length];
             }
         },
-        get th3_th3_th3dx() {
+        get th3_th3_th3tx() {
             return this['th3_th3_th3dx'];
         },
         get bth3_bth3_ds() {

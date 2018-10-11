@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './allGameList.styl';
 
 class AllGameList extends React.Component {
@@ -337,11 +338,11 @@ class AllGameList extends React.Component {
         const LotteryItem = ({ itemObj }) => {
             const { cn, path, isNew, isHot } = itemObj;
             return (
-                <a className="fl" href={path}>
+                <Link className="fl"  to={path}>
                     <span>{cn}</span>
                     {isNew ? <i className="all-game__new-icon"></i> : null}
                     {isHot ? <i className="all-game__hot-icon"></i> : null}
-                </a>
+                </Link>
             );
         };
         const LotteryItems = ({ listArr }) => {
@@ -369,10 +370,10 @@ class AllGameList extends React.Component {
         const OtherItem = ({ itemObj }) => {
             const { cn, path, icon } = itemObj;
             return (
-                <a className="fl" href={path}>
+                <Link className="fl" exact to={path}>
                     <i className={icon}></i>
                     <span>{cn}</span>
-                </a>
+                </Link>
             );
         };
         const OtherItems = ({ listArr }) => {

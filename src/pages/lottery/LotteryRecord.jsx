@@ -40,7 +40,7 @@ class LotteryRecord extends React.Component {
                     code,
                     amount,
                     status,
-                    method: playWayToCn[method],
+                    method: playWayToCn[method.split('_').slice(0, 3).join('_')],
                     code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
                     key: orderId,
                     mani: status === '未开奖' ? [<span className="order-again" value="再次投注">再次投注</span>, <span className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>

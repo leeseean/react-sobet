@@ -12,14 +12,14 @@ class TrendList extends React.Component {
                 </div>
             );
         };
-        const { data, method, trendConfig, className } = this.props;
+        const { data, lotteryType, method, trendConfig, className } = this.props;
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
                 <div className="trend-codes">
                     {
                         codeArr.map((val, idx) => {
-                            return <span key={idx} className={trendConfig[method]['area'].includes(idx) ? 'trend-code active' : 'trend-code'}>{val}</span>;
+                            return <span key={idx} className={trendConfig[lotteryType][method]['area'].includes(idx) ? 'trend-code active' : 'trend-code'}>{val}</span>;
                         })
                     }
                 </div>
@@ -31,14 +31,14 @@ class TrendList extends React.Component {
         let columns = [{
             title: <span className="trend-head-col">期号</span>,
             dataIndex: 'issue',
-            width: trendConfig[method]['widthConfig']['col1']
+            width: trendConfig[lotteryType][method]['widthConfig']['col1']
         }, {
             title: <span className="trend-head-col">开奖号码</span>,
             dataIndex: 'openCode',
-            width: trendConfig[method]['widthConfig']['col2']
+            width: trendConfig[lotteryType][method]['widthConfig']['col2']
         }];
-        if (trendConfig[method]['shapeName']) {
-            const Title = () => <span className="trend-head-col" dangerouslySetInnerHTML={{ __html: trendConfig[method]['shapeName'] }}></span>;
+        if (trendConfig[lotteryType][method]['shapeName']) {
+            const Title = () => <span className="trend-head-col" dangerouslySetInnerHTML={{ __html: trendConfig[lotteryType][method]['shapeName'] }}></span>;
             columns = [...columns, {
                 title: <Title />,
                 dataIndex: 'shape',
@@ -51,13 +51,14 @@ class TrendList extends React.Component {
                 issue: <div className="trend-issue">{issueNo.split('-').slice(-1)}</div>,
                 openCode: <Colorcode code={code} method={method} />,
             };
-            if (trendConfig[method]['shapeName']) {
+            if (trendConfig[lotteryType][method]['shapeName']) {
                 obj = {
                     ...obj,
-                    shape: <Shape value={trendConfig[method]['calcShape'](code)} />,
+                    shape: <Shape value={trendConfig[lotteryType][method]['calcShape'](code)} />,
                 };
             }
             return obj;
+
         });
         return (
             <div className={`trend-wrapper ${className}`}>

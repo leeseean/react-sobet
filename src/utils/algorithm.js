@@ -359,7 +359,7 @@ export function cacl3xZutai(arr) {
     const obj = {
         1: '<em class="margin-0-4px shape--baozi">豹子</em>',
         2: '<em class="margin-0-4px shape--duizi">对子</em>',
-        3: calcShunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--shunzi">顺子</em>' : '<em class="margin-0-4px shape--za6">杂六</em>'
+        3: calcShunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--shunzi">顺子</em>' : calcBanshunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--banshun">半顺</em>' : '<em class="margin-0-4px shape--za6">杂六</em>'
     };
     const deduplicationArr = [...new Set(arr)]; //去重
     return obj[deduplicationArr.length];

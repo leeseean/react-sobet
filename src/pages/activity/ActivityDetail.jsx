@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Countdown from '../../components/Countdown';
 import { queryActivityById } from '../../utils/ajax';
 import './activityDetail.styl';
@@ -51,7 +52,7 @@ class ActivityDetail extends React.Component {
         return (
             <div className="activity-detail-wrapper">
                 <div className="activity-detail-header">
-                    <a className="recent-activity" href="/activity/list">最新优惠</a>>正文
+                    <Link className="recent-activity" to="/activity/list">最新优惠</Link>>正文
                 </div>
                 <div className="activity-detail-content">
                     <h3 className="activity-detail-content-title">{activityTitle}</h3>

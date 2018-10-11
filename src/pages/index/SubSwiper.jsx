@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
 import $http from '../../utils/ajax';
 import './subSwiper.styl';
@@ -26,9 +27,9 @@ class SubSwiper extends React.Component {
         const Item = ({ id, imagePath }) => {
             return (
                 <div>
-                    <a href={`/activity/${id}`} target="_blank">
+                    <Link to={`/activity/list/${id}`} target="_blank">
                         <img src={imagePath} width="315" height="190" />
-                    </a>
+                    </Link>
                 </div>
             );
         };

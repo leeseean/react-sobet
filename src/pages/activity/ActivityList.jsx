@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Countdown from '../../components/Countdown';
 import { queryCurrentActivity } from '../../utils/ajax';
 
@@ -69,12 +70,12 @@ class ActivityList extends React.Component {
             const countTime = Number(diffTime) - day * 24 * 60 * 60 * 1000;
             return (
                 <div key={id} className="fl activity-item">
-                    <a href={`/activity/list/${id}`}>
+                    <Link to={`/activity/list/${id}`}>
                         <img src={`http://www.mc188.com${frontImagePath}`} width="392" height="236" alt="" />
                         {
                             isjoined === '1' ? <img className="activity-ycj" width="38" height="62" src={require('../../images/activity/ycj.png')} alt="" /> : null
                         }
-                    </a>
+                    </Link>
                     <div className="activity-title">{activityTitle}</div>
                     <div className="clearfix activity-countdown">
                         <div className="fl">
@@ -83,7 +84,7 @@ class ActivityList extends React.Component {
                             <Countdown className="count-down-time" count={Date.now() + countTime} />
                         </div>
                         <div className="fr">
-                            <a href={`/activity/list/${id}`} className="activity-view-detail">查看详情</a>
+                            <Link to={`/activity/list/${id}`} className="activity-view-detail">查看详情</Link>
                         </div>
                     </div>
                 </div>

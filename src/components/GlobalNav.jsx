@@ -1,16 +1,11 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
 import { NavLink, withRouter } from 'react-router-dom';
 import './globalNav.styl';
 
 @withRouter
-@inject(stores => ({
-    lotteryCode: stores.lotteryStore.lotteryCode
-}))
-@observer
 class GlobalNav extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, history } = this.props;
+        const { history } = this.props;
         if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
             return null;
         }
@@ -41,7 +36,7 @@ class GlobalNav extends React.Component {
                             </li>
 
                             <li className="menu-li fl">
-                                <NavLink exact to={`/lottery/${lotteryCode}`} isActive={active} activeClassName="global-nav-on">
+                                <NavLink exact to="/lottery" isActive={active} activeClassName="global-nav-on">
                                     <i className="menu-lottery-icon"></i>
                                     <span className="menu-lottery-title"></span>
                                 </NavLink>

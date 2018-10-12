@@ -3,97 +3,104 @@
  */
 
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import './allGameList.styl';
 
+@withRouter
+@inject(stores => ({
+    linkToLottery: stores.lotteryStore.linkToLottery
+}))
+@observer
 class AllGameList extends React.Component {
     lotteryListData = [
         {
             title: '时时彩',
             list: [
                 {
-                    en: 'RDFFC',
+                    en: 'rdffc',
                     cn: '瑞典1分彩',
-                    path: '/lottery/rdffc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 },
                 {
-                    en: 'RDLFC',
+                    en: 'rdlfc',
                     cn: '瑞典2分彩',
-                    path: '/lottery/rdlfc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 }, {
-                    en: 'RBSSM',
+                    en: 'rbssm',
                     cn: '日本30秒',
-                    path: '/lottery/rbssm',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 }, {
-                    en: 'WBGMMC',
+                    en: 'wbgmmc',
                     cn: 'WBG秒秒彩',
-                    path: '/lottery/wbgmmc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 }, {
-                    en: 'WBGFFC',
+                    en: 'wbgffc',
                     cn: 'WBG分分彩',
-                    path: '/lottery/wbgffc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 }, {
-                    en: 'WBG5FC',
+                    en: 'wbg5fc',
                     cn: 'WBG5分彩',
-                    path: '/lottery/wbg5fc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'CQSSC',
+                    en: 'cqssc',
                     cn: '重庆时时彩',
-                    path: '/lottery/cqssc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 }, {
-                    en: 'TJSSC',
+                    en: 'tjssc',
                     cn: '天津时时彩',
-                    path: '/lottery/tjssc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'XJSSC',
+                    en: 'xjssc',
                     cn: '新疆时时彩',
-                    path: '/lottery/xjssc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'XN5FC',
+                    en: 'xn5fc',
                     cn: '悉尼5分彩',
-                    path: '/lottery/xn5fc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'HN5FC',
+                    en: 'hn5fc',
                     cn: '河内5分彩',
-                    path: '/lottery/hn5fc',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 }, {
-                    en: 'QQSSM',
+                    en: 'qqssm',
                     cn: 'QQ30秒彩',
-                    path: '/lottery/qqssm',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 }, {
-                    en: 'TXFFC',
+                    en: 'txffc',
                     cn: '腾讯分分彩',
-                    path: '/lottery/txffc',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 }, {
-                    en: 'TX1FC',
+                    en: 'tx1fc',
                     cn: '腾讯1分彩',
-                    path: '/lottery/tx1fc',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 }
@@ -103,58 +110,58 @@ class AllGameList extends React.Component {
             title: '11选5',
             list: [
                 {
-                    en: 'MC11Y',
+                    en: 'mc11y',
                     cn: '摩臣11选5',
-                    path: '/lottery/mc11y',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'GD11Y',
+                    en: 'gd11y',
                     cn: '广东11选5',
-                    path: '/lottery/gd11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'SD11Y',
+                    en: 'sd11y',
                     cn: '山东11选5',
-                    path: '/lottery/sd11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'JX11Y',
+                    en: 'jx11y',
                     cn: '江西11选5',
-                    path: '/lottery/jx11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'SH11Y',
+                    en: 'sh11y',
                     cn: '上海11选5',
-                    path: '/lottery/sh11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'AH11Y',
+                    en: 'ah11y',
                     cn: '安徽11选5',
-                    path: '/lottery/ah11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'HLJ11Y',
+                    en: 'hlj11y',
                     cn: '黑龙江11选5',
-                    path: '/lottery/hlj11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'YN11Y',
+                    en: 'yn11y',
                     cn: '云南11选5',
-                    path: '/lottery/yn11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'HUB11Y',
+                    en: 'hub11y',
                     cn: '湖北11选5',
-                    path: '/lottery/hub11y',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 },
@@ -164,23 +171,23 @@ class AllGameList extends React.Component {
             title: 'PK10',
             list: [
                 {
-                    en: 'MCPK10',
+                    en: 'mcpk10',
                     cn: '摩臣PK10',
-                    path: '/lottery/mcpk10',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'BJPK10',
+                    en: 'bjpk10',
                     cn: '北京PK10',
-                    path: '/lottery/bjpk10',
+                    path: '/lottery',
                     isNew: false,
                     isHot: true
                 },
                 {
-                    en: 'XGPK10',
+                    en: 'xgpk10',
                     cn: '香港PK10',
-                    path: '/lottery/xgpk10',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }
@@ -190,42 +197,43 @@ class AllGameList extends React.Component {
             title: '快3',
             list: [
                 {
-                    en: 'MCK3',
+                    en: 'mck3',
                     cn: '摩臣快3',
-                    path: '/lottery/mck3',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
                     en: '',
                     cn: '摩臣骰宝',
+                    otherPage: true,
                     path: 'https://www.',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'JSK3',
+                    en: 'jsk3',
                     cn: '江苏快3',
-                    path: '/lottery/jsk3',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 },
                 {
-                    en: 'HNK3',
+                    en: 'hnk3',
                     cn: '河南快3',
-                    path: '/lottery/hnk3',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'HBK3',
+                    en: 'hbk3',
                     cn: '湖北快3',
-                    path: '/lottery/hbk3',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'AHK3',
+                    en: 'ahk3',
                     cn: '安徽快3',
-                    path: '/lottery/ahk3',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }
@@ -235,36 +243,36 @@ class AllGameList extends React.Component {
             title: '3D/低频',
             list: [
                 {
-                    en: 'MC3D',
+                    en: 'mc3d',
                     cn: '摩臣3D',
-                    path: '/lottery/mc3d',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'SHSSL',
+                    en: 'shssl',
                     cn: '上海时时乐',
-                    path: '/lottery/shssl',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: '3DFC',
+                    en: '3dfc',
                     cn: '福彩3D',
-                    path: '/lottery/3dfc',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 },
                 {
-                    en: 'TCP3',
+                    en: 'tcp3',
                     cn: '排列3',
-                    path: '/lottery/tcp3',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }, {
-                    en: 'TCP5',
+                    en: 'tcp5',
                     cn: '排列5',
-                    path: '/lottery/tcp5',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 }
@@ -274,30 +282,31 @@ class AllGameList extends React.Component {
             title: '其他彩票',
             list: [
                 {
-                    en: 'SCKL12',
+                    en: 'sckl12',
                     cn: '四川快乐12',
-                    path: '/lottery/sckl12',
+                    path: '/lottery',
                     isNew: false,
                     isHot: false
                 },
                 {
-                    en: 'HNKY481',
+                    en: 'hnky481',
                     cn: '河南快赢481',
-                    path: '/lottery/hnky481',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'XGLHC',
+                    en: 'xglhc',
                     cn: '香港六合彩',
+                    otherPage: true,
                     path: 'http://',
                     isNew: true,
                     isHot: false
                 },
                 {
-                    en: 'JSLHC',
+                    en: 'jslhc',
                     cn: '极速六合彩',
-                    path: '/lottery/jslhc',
+                    path: '/lottery',
                     isNew: true,
                     isHot: false
                 }
@@ -335,14 +344,23 @@ class AllGameList extends React.Component {
         ]
     }
     render() {
+        const { history, linkToLottery } = this.props;
         const LotteryItem = ({ itemObj }) => {
-            const { cn, path, isNew, isHot } = itemObj;
+            const { en, cn, path, otherPage, isNew, isHot } = itemObj;
+            if (otherPage) {
+                return (
+                    <Link className="fl" to={path}>
+                        <span>{cn}</span>
+                        {isNew ? <i className="all-game__new-icon"></i> : null}
+                        {isHot ? <i className="all-game__hot-icon"></i> : null}
+                    </Link>);
+            }
             return (
-                <Link className="fl" to={path}>
+                <a href="javascript: void(0);" className="fl" onClick={() => linkToLottery(en, history, '/lottery')}>
                     <span>{cn}</span>
                     {isNew ? <i className="all-game__new-icon"></i> : null}
                     {isHot ? <i className="all-game__hot-icon"></i> : null}
-                </Link>
+                </a>
             );
         };
         const LotteryItems = ({ listArr }) => {

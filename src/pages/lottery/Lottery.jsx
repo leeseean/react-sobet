@@ -1,6 +1,5 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Route } from 'react-router-dom';
 import './lottery.styl';
 import LotteryFavourite from './LotteryFavorite';
 import MainContent from './MainContent';
@@ -24,6 +23,7 @@ class Lottery extends React.Component {
         });
     }
     render() {
+        console.log(this.props)
         const { lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <div className="lottery-wrapper">
@@ -31,7 +31,7 @@ class Lottery extends React.Component {
                     {
                         this.state._mounted ? <LotteryFavourite codeToCn={lotteryCodeToCn} mainRef={this.mainRef} /> : null
                     }
-                    <Route exact path="/lottery/:lotteryCode" component={MainContent} />
+                    <MainContent />
                 </div>
                 <WinListMarquee />
             </div>

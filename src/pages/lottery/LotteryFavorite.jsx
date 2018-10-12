@@ -4,14 +4,18 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './lotteryFavorite.styl';
 import Countdown from '../../components/Countdown';
 import offsetDis from '../../utils/offsetDis';
 import setStyle from '../../utils/setStyle';
 import FavoriteModal from './FavoriteModal';
 
-@inject('favoriteStore')
+@withRouter
+@inject(stores => ({
+    favoriteStore: stores.favoriteStore,
+    linkToLottery: stores.lotteryStore.linkToLottery
+}))
 @observer
 class LotteryFavorite extends React.Component {
     _mounted = false
@@ -57,14 +61,14 @@ class LotteryFavorite extends React.Component {
         });
     }
     render() {
-        const { codeToCn } = this.props;
+        const { codeToCn, linkToLottery, history } = this.props;
         const { data, countdownsObj, modalVisible, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
         const Item = ({ item }) => {
             const { lottery_code } = item;
             return (
                 <div className="lottery-favorite-item">
                     <div className="item-cn">
-                        <Link exact to={`/lottery/${lottery_code.toLocaleLowerCase()}`}>{codeToCn[lottery_code]}</Link>
+                        <a href="javascript:void(0);" onClick={() => linkToLottery(lottery_code.toLocaleLowerCase(), history, '/lottery')}>{codeToCn[lottery_code]}</a>
                     </div>
                     <div className="item-countdown">
                         {

@@ -34,6 +34,14 @@ class LotteryStore {
         localStorage.setItem('lotteryCode', value);
     }
 
+    @action linkToLottery = (lotteryCode, history, path) => {
+        this.setLotteryCode(lotteryCode);
+        if (history.location.pathname.startsWith(path)) {
+            return;
+        }
+        history.push(path);
+    }
+
     @observable currentIssue = ''
 
     @computed get openIssue() {

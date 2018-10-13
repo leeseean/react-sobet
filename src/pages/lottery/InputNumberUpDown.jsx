@@ -1,38 +1,41 @@
-import React from 'react';
+import React from "react";
 import { Input, Icon } from "antd";
 
 class InputNumberUpDown extends React.Component {
-    state = {
-        value: this.props.value,
-    }
+    inputRef = null;
     plus = () => {
-        if (Number(this.state.value) === Number(this.props.max)) {
+        if (Number(this.inputRef.input.value) === Number(this.props.max)) {
             return;
         }
-        this.setState(prevState => ({
-            value: Number(prevState.value) + 1
-        }));
-    }
+        this.inputRef.input.value = Number(this.inputRef.input.value) + 1;
+        this.props.onChange(this.inputRef.input.value);
+    };
     minus = () => {
-        if (Number(this.state.value) === Number(this.props.min)) {
+        if (Number(this.inputRef.input.value) === Number(this.props.min)) {
             return;
         }
-        this.setState(prevState => ({
-            value: Number(prevState.value) - 1
-        }));
-    }
-    changeValue = (e) => {console.log(e.target.value)
-        this.setState({ value: e.target.value });
-    }
+        this.inputRef.input.value = Number(this.inputRef.input.value) - 1;
+        this.props.onChange(this.inputRef.input.value);
+    };
+    changeValue = e => {
+        this.props.onChange(e.target.value);
+    };
     render() {
-        const { className, style, size, addonClassName, addonStyle, ...rest } = this.props;
+        const {
+            className,
+            style,
+            size,
+            addonClassName,
+            addonStyle,
+            ...rest
+        } = this.props;
         return (
             <span className="input-number-updown-wrapper">
                 <Input
+                    ref={ref => (this.inputRef = ref)}
                     className={`input-number-updown ${className}`}
                     style={style}
                     {...rest}
-                    value={this.state.value}
                     onChange={this.changeValue}
                     type="number"
                     size={size}

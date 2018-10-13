@@ -23,7 +23,6 @@ class Lottery extends React.Component {
         });
     }
     render() {
-        console.log(this.props)
         const { lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <div className="lottery-wrapper">

@@ -22,6 +22,7 @@ class InputNumberUpDown extends React.Component {
     };
     render() {
         const {
+            wrapperClassName,
             className,
             style,
             size,
@@ -30,7 +31,7 @@ class InputNumberUpDown extends React.Component {
             ...rest
         } = this.props;
         return (
-            <span className="input-number-updown-wrapper">
+            <span className={`input-number-updown-wrapper ${wrapperClassName}`}>
                 <Input
                     ref={ref => (this.inputRef = ref)}
                     className={`input-number-updown ${className}`}

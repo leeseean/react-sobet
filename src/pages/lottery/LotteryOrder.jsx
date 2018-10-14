@@ -1,12 +1,14 @@
 import React from 'react';
-import { Table, Icon, Button } from 'antd';
+import { Table, Icon, Button, Checkbox   } from 'antd';
 import Countdown from '../../components/Countdown';
 import { inject, observer } from 'mobx-react';
+import './lotteryOrder.styl';
 
 @inject('orderStore')
 @observer
 class LotteryOrder extends React.Component {
     render() {
+        const { orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem } = this.props.orderStore;
         const orderColumns = [
             {
                 title: '玩法及投注内容',
@@ -52,7 +54,9 @@ class LotteryOrder extends React.Component {
             <div className="lottery-order-wrapper">
                 <div className="clearfix order-wrapper">
                     <div className="fl order-list">
-                        <Table columns={orderColumns}
+                        <Table
+                            className="order-table"
+                            columns={orderColumns}
                             dataSource={orderData}
                             pagination={false}
                             size="small"
@@ -63,39 +67,34 @@ class LotteryOrder extends React.Component {
                                 y: 212
                             }} />
                     </div>
-                    <div className="fr order-bet">
+                    <div className="fr order-bet-wrapper">
                         <div className="order-total">
-                            <div>总投注数</div>
-                            <div
-                                style={{
-                                    color: '#d24454'
-                                }}>{orderTotalCount}</div>
-                            <div
-                                style={{
-                                    marginTop: '14px'
-                                }}>投注总金额</div>
-                            <div
-                                style={{
-                                    color: '#d24454'
-                                }}>{orderTotalMoney}</div>
+                            <div className="total-count-title">总投注数</div>
+                            <div className="total-count">{orderTotalCount}</div>
+                            <div className="total-money-title">投注总金额</div>
+                            <div className="total-money">{orderTotalMoney}</div>
                         </div>
                         <div className="order-countdown">
-                            离投注截止还有<span
-                                style={{
-                                    color: '#c52031',
-                                    padding: '0 8px'
-                                }}><Countdown count="100000" /></span>
+                            离投注截止还有
+                            <span className="order-countdown-inner">
+                                <Countdown count="100000" />
+                            </span>
                         </div>
                         <div className="order-bet">
                             <Button
                                 disabled={orderTotalMoney <= 0}
                                 block
                                 size="large"
-                                onClick={showBetModal}
+                                onClick={() => toggleBetModal(true)}
                                 style={{
                                     fontWeight: 'bold',
                                     color: '#999'
                                 }}>立即投注</Button>
+                        </div>
+                        <div className="order-trace">
+                            <Checkbox onChange={''} name="switch-trace-button" />
+                            <span className="order-trace-info">我要追号</span>
+                            <span className="order-trace-icon">可提高中奖率</span>
                         </div>
                     </div>
                 </div>

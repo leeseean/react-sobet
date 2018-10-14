@@ -1,9 +1,72 @@
 .lottery-order-wrapper {
     width: 794px;
-    padding: 12px;    
-    .order-list {
+    padding: 12px;
+
+    .order-table {
         width: 594px;
         border: 1px solid #e0e6ed;
         border-radius: 6px;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .ant-table-small {
+        border: none;
+    }
+
+    .order-bet-wrapper {
+        width: 168px;
+    }
+
+    .order-total {
+        text-align: right;
+        padding-right: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid #e0e6ed;
+        border-radius: 6px;
+
+        .total-count-title, .total-money-title {
+            color: #666;
+        }
+
+        .total-money-title {
+            margin-top: 14px;
+        }
+
+        .total-count, .total-money {
+            color: #d24454;
+        }
+    }
+
+    .order-countdown {
+        margin: 14px 0;
+    }
+
+    .order-countdown-inner {
+        color: #c52031;
+        padding: 0 8px;
+    }
+
+    .order-trace {
+        margin-top: 14px;
+
+        .order-trace-info {
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .order-trace-icon {
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 6px;
+            background: #fcd685;
+            text-align: center;
+            color: #333;
+        }
+
+        .ant-checkbox-inner {
+            border-radius: 50%;
+        }
     }
 }

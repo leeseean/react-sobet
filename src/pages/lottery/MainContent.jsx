@@ -23,7 +23,7 @@ class MainContent extends React.Component {
                 <div className="clearfix main-content">
                     <div className="fl main-content-left">
                         <LotteryPlate />
-                        {/*<LotteryOrder />*/}
+                        <LotteryOrder />
                         <LotteryRecord lotteryCode={lotteryCode} playWayToCn={playWayToCn} codeToCn={lotteryCodeToCn} />
                     </div>
                     <div className="fr main-content-right">

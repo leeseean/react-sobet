@@ -28,6 +28,10 @@ class OrderStore {
         return 0;
     }
 
+    @computed get orderTotalCount() {
+        return 0;
+    }
+
     @action
     deleteAllItem = () => {
         this.orderData = [];

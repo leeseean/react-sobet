@@ -3,13 +3,16 @@
  */
 
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import './lotteryHead.styl';
 import Countdown from '../../components/Countdown';
 import FixedCountdownTip from './FixedCountdownTip';
 
+@inject('lotteryStore')
+@observer
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props;
+        const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props.lotteryStore;
         const Opencode = ({ codeArr, lotteryType, lotteryCode }) => {
             return codeArr.map((v, i) => {
                 switch (lotteryType) {
@@ -29,7 +32,7 @@ class LotteryHead extends React.Component {
         };
         return (
             <div className="clearfix lottery-head-wrapper">
-                <FixedCountdownTip {...{ lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue }} />
+                <FixedCountdownTip />
                 <div className="fl head-left">
                     <i className="lottery-logo" lt={lotteryCode.toLowerCase()}></i>
                 </div>
@@ -42,7 +45,7 @@ class LotteryHead extends React.Component {
                     </div>
                     <div className="fr head-center-clock">
                         {
-                            countdown === <span className="wait-to-sell">等待开售</span> ? '等待开售' : <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
+                            countdown === '等待开售' ? <span className="wait-to-sell">等待开售</span> : <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
                         }
                     </div>
                 </div>

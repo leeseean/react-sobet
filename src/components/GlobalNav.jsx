@@ -6,10 +6,11 @@ import './globalNav.styl';
 class GlobalNav extends React.Component {
     render() {
         const { history } = this.props;
-        if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
-            return null;
-        }
-        if (/^\/lottery\//.test(history.location.pathname)) {
+        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer)\/{0,1})/;//不显示导航栏的地址
+        // if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
+        //     return null;
+        // }
+        if (noNavReg.test(history.location.pathname)) {
             return null;
         }
         // only consider an event active if its event id is an odd number

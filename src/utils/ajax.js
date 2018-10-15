@@ -53,16 +53,25 @@ const $http = (config) => {
 export default $http;
 
 // const proxyPrefix = 'dev';
-const proxyPrefix = 'online';
-// const proxyPrefix = '';
+// const proxyPrefix = 'online';
+const proxyPrefix = '';
 
 //中奖喜报
 export function getLotteryWinTop10() {
     return $http({
-        // url: '/api/lottery/api/call/v1/lottery/getLotteryWinTop10',
-        url: '/win-list.json',
+        url: proxyPrefix + '/lottery/api/call/v1/lottery/getLotteryWinTop10',
+        // url: '/win-list.json',
         method: 'GET'
     });
+}
+//公告 
+export function getNoticeList(params) {
+    return $http({
+        params,
+        url: proxyPrefix + '/sobet/adminCommon/getAdminNotice.do',
+        // url: '/notice.json',
+        method: 'GET'
+    })
 }
 //获取余额
 export function getPlayerBalance(dataOrParams) {
@@ -122,7 +131,8 @@ export function getHotSlotGamesData({
     pageSize = 6,
 }) {
     return $http({
-        url: '/hot-game.json',
+        url: proxyPrefix + '/sport/api/pt/recommend_games',
+        // url: '/hot-game.json',
         method: 'GET',
         params: {
             currPage,
@@ -131,7 +141,7 @@ export function getHotSlotGamesData({
     });
 }
 
-//老虎机热们游戏
+//老虎机游戏
 export function getSlotGamesData({
     currPage = 1,
     pageSize = 6,
@@ -141,7 +151,8 @@ export function getSlotGamesData({
     payLine = ''
 }) {
     return $http({
-        url: '/slot-game.json',
+        url: proxyPrefix + '/sport/api/pt/games',
+        // url: '/slot-game.json',
         method: 'GET',
         params: {
             currPage,
@@ -157,14 +168,16 @@ export function getSlotGamesData({
 //老虎机中奖喜报
 export function getSlotReward() {
     return $http({
-        url: '/slot-reward.json',
+        url: proxyPrefix + '/sport/api/pt/reward_rankings',
+        // url: '/slot-reward.json',
         method: 'GET'
     });
 }
 //活动 /sobet/api/i/anon/activity/queryCurrentActivity
 export function queryCurrentActivity() {
     return $http({
-        url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        url: '/activity.json',
+        // url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });
 }
@@ -180,8 +193,8 @@ export function queryActivityById(params) {
 export function queryTrendData(params) {
     return $http({
         params,
-        url: '/trend.json',
-        // url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
+        // url: '/trend.json',
+        url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
 }
@@ -228,8 +241,8 @@ export function getCountdowns() {
 export function getRecord(params) {
     return $http({
         params,
-        url: '/record.json',
-        // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
+        // url: '/record.json',
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
         method: 'GET'
     });
 }
@@ -237,8 +250,8 @@ export function getRecord(params) {
 export function getRecordDetail(params) {
     return $http({
         params,
-        url: '/recordDetail.json',
-        // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        // url: '/recordDetail.json',
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
         method: 'GET'
     });
 }
@@ -246,8 +259,8 @@ export function getRecordDetail(params) {
 export function getTraceDetail(params) {
     return $http({
         params,
-        url: '/traceDetail.json',
-        // url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        // url: '/traceDetail.json',
+        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
         method: 'GET'
     });
 }

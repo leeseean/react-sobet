@@ -53,6 +53,9 @@ class GlobalHead extends React.Component {
             });
         }
     }
+    voucherCenter(p){ //充值中心
+        this.props.history.push('/voucher/'+p);
+    }
     componentDidMount() {
         const { history } = this.props;
         history.listen(location => {
@@ -123,9 +126,9 @@ class GlobalHead extends React.Component {
                         </a>
                     </div>
                     <div className="fr head--height head__money">
-                        <span className="head__money-charge">充值</span>
-                        <span className="head__money-transfer">转账</span>
-                        <span className="head__money-withdraw">提现</span>
+                        <span className="head__money-charge" onClick={this.voucherCenter.bind(this,'charge')}>充值</span>
+                        <span className="head__money-transfer" onClick={this.voucherCenter.bind(this,'transfer')}>转账</span>
+                        <span className="head__money-withdraw" onClick={this.voucherCenter.bind(this,'withdraw')}>提现</span>
                     </div>
                     <BalanceContent show={this.state.showBalanceFlag} text={this.state.showBalanceText} balance={balance} toggleBalance={this.toggleBalance} refreshBalance={refreshBalance} />
                     <div className="fr head--height head__agent">

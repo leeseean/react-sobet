@@ -1,11 +1,16 @@
-
 import {
     observable,
     action,
     runInAction,
     computed
 } from 'mobx';
-import { getLotteryFavorite, getCountdowns, delLotteryFavorite, addLotteryFavorite } from '../utils/ajax';
+import {
+    getLotteryFavorite,
+    getCountdowns,
+    delLotteryFavorite,
+    addLotteryFavorite
+} from '../utils/ajax';
+import timeSleep from '../utils/timeSleep';
 
 class FavoriteStore {
 
@@ -39,13 +44,18 @@ class FavoriteStore {
         this.modalVisible = bool;
     }
 
-    @action switchFavorite = (ltCode) => {
+    @action switchFavorite = async (ltCode) => {
         const _index = this.data.findIndex(v => v.lottery_code === ltCode);
         if (_index === -1) {
-            addLotteryFavorite(ltCode);
+            addLotteryFavorite({
+                lottery: ltCode
+            });
         } else {
-            delLotteryFavorite(ltCode);
+            delLotteryFavorite({
+                lottery: ltCode
+            });
         }
+        await timeSleep(1000);
         this.getFavorites();
     }
 }

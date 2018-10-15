@@ -57,7 +57,7 @@ class LotteryOrder extends React.Component {
                         <Table
                             className="order-table"
                             columns={orderColumns}
-                            dataSource={orderData}
+                            dataSource={orderData.slice()}
                             pagination={false}
                             size="small"
                             locale={{
@@ -92,7 +92,7 @@ class LotteryOrder extends React.Component {
                                 }}>立即投注</Button>
                         </div>
                         <div className="order-trace">
-                            <Checkbox onChange={''} name="switch-trace-button" />
+                            <Checkbox onChange={() => {}} name="switch-trace-button" />
                             <span className="order-trace-info">我要追号</span>
                             <span className="order-trace-icon">可提高中奖率</span>
                         </div>

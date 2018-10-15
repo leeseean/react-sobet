@@ -1,9 +1,13 @@
 import React from 'react';
-
-const Agent = () => {
-    return (
-        <div className="center">代理中心</div>
-    );
-};
+import { Button } from 'antd';
+class Agent extends React.Component {
+    render() {
+        return (
+        <div>
+            <Button type="primary">保存</Button>
+        </div>
+        )
+    }
+}
 
 export default Agent;

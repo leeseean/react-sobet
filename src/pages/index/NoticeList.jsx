@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal, Tabs, Icon } from 'antd';
-import $http from '../../utils/ajax';
+import $http, { getNoticeList } from '../../utils/ajax';
+import { addClass, removeClass } from '../../utils/cssClass';
+
 import './noticeList.styl';
 
 class NoticeList extends React.Component {
@@ -14,43 +16,64 @@ class NoticeList extends React.Component {
         showPageNext: false,
         showModalFlag: false,
         defaultActiveKey: null,
+        modalWidth: 950
     }
     perPageTabsCount = 8 //弹窗每页显示的tab数量
     listRef = null
+    alertId = null
     componentDidMount() {
         this.getData();
     }
-    getData() {
-        $http({
-            url: '/notice.json',
-            method: 'GET',
-        }).then(res => {
-            const endNum = res.data.items.length > this.perPageTabsCount ? this.perPageTabsCount : res.data.items.length;
-            this.setState({
-                data: res.data.items,
-                pageData: res.data.items.slice(0, this.perPageTabsCount),
-                defaultActiveKey: String(res.data.items[0].id),
-                endNum: endNum,
-                showPageNext: endNum < res.data.items.length
-            });
-
-            const arr = [];
-            for (let item of res.data.items) {
-                if (this.listRef.offsetWidth > 800) {//限制显示条目
-                    break;
-                }
-                arr.push(item);
-                this.setState({
-                    showedData: arr
-                });
-            }
+    async getData() {
+        const res = await getNoticeList({
+            pageNumber: -1,
+            scroll: 2,
+            noticeType: 1
         });
+        const items = res.data.items;
+        const endNum = items.length > this.perPageTabsCount ? this.perPageTabsCount : items.length;
+        this.setState({
+            data: items,
+            pageData: items.slice(0, this.perPageTabsCount),
+            defaultActiveKey: String(items[0].id),
+            endNum: endNum,
+            showPageNext: endNum < items.length
+        });
+
+        this.alertId = items.some(v => v.isJumpView === "1") && items.filter(v => v.isJumpView === "1").sort((a, b) => new Date(b.createTime).getTime() - new Date(a.createTime).getTime())[0]['id'];
+        const firstLoginAlerted = localStorage.getItem(`firstLoginAlerted-${this.alertId}`);
+        if (this.alertId && firstLoginAlerted !== 'done') {
+            this.firstLoginAlert();
+        }
+
+        const arr = [];
+        for (let item of items) {
+            if (this.listRef.offsetWidth > 750) {//限制显示条目
+                break;
+            }
+            arr.push(item);
+            this.setState({
+                showedData: arr
+            });
+        }
+    }
+
+    firstLoginAlert = () => {//首次登陆是否弹窗
+        this.setState({ showModalFlag: true, modalWidth: 630, defaultActiveKey: this.alertId });
+        setTimeout(() => {
+            addClass(document.querySelector('.ant-tabs-bar'), 'hide');
+        }, 250);
+        localStorage.setItem(`firstLoginAlerted-${this.alertId}`, 'done');
     }
     showNoticeModal = id => {
         this.setState({
             defaultActiveKey: String(id || this.state.data[0].id),
+            modalWidth: 950,
             showModalFlag: true
         });
+        setTimeout(() => {
+            removeClass(document.querySelector('.ant-tabs-bar'), 'hide');
+        }, 250);
     }
     closeModal = () => {
         this.setState({
@@ -116,7 +139,7 @@ class NoticeList extends React.Component {
                     }
                 </span>
                 <span className="main-announcement-more fr" onClick={() => this.showNoticeModal()}>更多 <i className="icon-more">&gt;</i></span>
-                <Modal width={950} className="notice-modal-wrapper" footer={null} title={<ModalTitle />} centered destroyOnClose visible={this.state.showModalFlag} onCancel={this.closeModal}>
+                <Modal width={this.state.modalWidth} className="notice-modal-wrapper" footer={null} title={<ModalTitle />} centered destroyOnClose visible={this.state.showModalFlag} onCancel={this.closeModal}>
                     <Tabs defaultActiveKey={this.state.defaultActiveKey} tabPosition="left" tabBarExtraContent={<TabBarExtraContent />}>
                         {
                             this.state.pageData.map(item => {

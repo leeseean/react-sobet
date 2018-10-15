@@ -12,7 +12,6 @@ const Index = () => {
     return (
         <div className="index-wrapper">
             <BannerSwiper />
-            
             <div className="index-main">
                 <div className="index-activity">
                     <div className="index-top clearfix">

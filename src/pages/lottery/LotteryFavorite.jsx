@@ -14,7 +14,8 @@ import FavoriteModal from './FavoriteModal';
 @withRouter
 @inject(stores => ({
     favoriteStore: stores.favoriteStore,
-    linkToLottery: stores.lotteryStore.linkToLottery
+    linkToLottery: stores.lotteryStore.linkToLottery,
+    codeToCn: stores.lotteryStore.lotteryCodeToCn,
 }))
 @observer
 class LotteryFavorite extends React.Component {
@@ -62,17 +63,17 @@ class LotteryFavorite extends React.Component {
     }
     render() {
         const { codeToCn, linkToLottery, history } = this.props;
-        const { data, countdownsObj, modalVisible, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
+        const { data, getCountdowns, countdownsObj, modalVisible, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
         const Item = ({ item }) => {
             const { lottery_code } = item;
             return (
-                <div className="lottery-favorite-item">
+                <div className="lottery-favorite-item" onClick={() => linkToLottery(lottery_code.toLocaleLowerCase(), history, '/lottery')}>
                     <div className="item-cn">
-                        <a href="javascript:void(0);" onClick={() => linkToLottery(lottery_code.toLocaleLowerCase(), history, '/lottery')}>{codeToCn[lottery_code]}</a>
+                        <span>{codeToCn[lottery_code.toLocaleLowerCase()]}</span>
                     </div>
                     <div className="item-countdown">
                         {
-                            countdownsObj[lottery_code] > 0 ? <Countdown count={Date.now() + countdownsObj[lottery_code] * 1000} /> : '暂停销售'
+                            [-1, -2].includes(countdownsObj[lottery_code]) ? '暂停销售' : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={getCountdowns} />
                         }
                     </div>
                     <div className="item-recommend"></div>
@@ -109,7 +110,7 @@ class LotteryFavorite extends React.Component {
                     <i className="favorite-show-icon"></i>
                     <span>展开</span>
                 </div>
-                <FavoriteModal wrapClassName="favorite-modal" closable={false} centered={true} visible={modalVisible} footer={null} data={data} codeToCn={codeToCn} toggleModalVisible={toggleModalVisible} switchFavorite={switchFavorite} />
+                <FavoriteModal wrapClassName="favorite-modal" closable={false} centered={true} visible={modalVisible} footer={null} />
             </React.Fragment>
         );
     }

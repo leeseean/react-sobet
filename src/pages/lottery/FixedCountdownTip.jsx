@@ -1,7 +1,10 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import Countdown from '../../components/Countdown';
 import './fixedCountdownTip.styl';
 
+@inject('lotteryStore')
+@observer
 class FixedCountdownTip extends React.Component {
     _mounted = false
     state = {
@@ -28,7 +31,7 @@ class FixedCountdownTip extends React.Component {
         this._mounted = false;
     }
     render() {
-        const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue } = this.props;
+        const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue } = this.props.lotteryStore;
         return (
             <div className={`info-mini ${this.state.showFlag ? 'show' : ''} clearfix`}>
                 <div className="info-mini-wrap">

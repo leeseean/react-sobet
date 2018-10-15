@@ -6,14 +6,19 @@ import {
 import {
     ssoLogout
 } from '../utils/jsonp';
+import Cookie from 'js-cookie';
 
 class GlobalStore {
 
-    @observable theme = localStorage.getItem('theme') || 'red';//切换页面主题背景字段
+    appId = 5
+
+    sig = encodeURI(Cookie.get('SIG'))
+
+    @observable theme = localStorage.getItem('theme') || 'red'; //切换页面主题背景字段
 
     @action setTheme = (theme) => {
         this.theme = theme;
-        document.querySelector('#theme').setAttribute('href', `/theme.${theme}.css`); 
+        document.querySelector('#theme').setAttribute('href', `/theme.${theme}.css`);
         localStorage.setItem('theme', theme);
     }
 
@@ -87,4 +92,3 @@ class GlobalStore {
 }
 
 export default new GlobalStore();
-

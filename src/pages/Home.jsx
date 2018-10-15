@@ -134,7 +134,15 @@ const RouteConfig = [
             delay: 500
         }),
         name: '忘记密码'
-    }
+    }, {
+        path: '/voucher',
+        component:Loadable({
+            loader:()=>import('./voucher'),
+            loading:GlobalLoading,
+            delay:500
+        }),
+        name:'充值'
+    }, 
 ];
 
 @withRouter

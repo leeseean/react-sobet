@@ -29,7 +29,7 @@ class LotteryRecord extends React.Component {
     async getDataSource() {
         const { lotteryCode, playWayToCn } = this.props;
         const res = await getRecord({
-            lottery: lotteryCode
+            lottery: lotteryCode.toLocaleUpperCase()
         });
         if (res.data.code === 1) {
             const dataSource = res.data.result.map(item => {
@@ -84,6 +84,11 @@ class LotteryRecord extends React.Component {
     }
     componentDidMount() {
         this.getDataSource();
+    }
+    componentDidUpdate(prevProps) {
+        if (prevProps.lotteryCode !== this.props.lotteryCode) {
+            this.getDataSource();
+        }
     }
     viewOrderDetail = async (orderId) => {
         const res = await getRecordDetail({ orderId });
@@ -161,7 +166,6 @@ class LotteryRecord extends React.Component {
         });
     }
     turnPage = (e) => {
-        console.log(e);
         this.setState({
             tracePageData: this.state.traceDetail.issues.slice(e - 10, e),
             checkList: []

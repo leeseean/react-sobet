@@ -299,7 +299,7 @@ class AllGameList extends React.Component {
                     en: 'xglhc',
                     cn: '香港六合彩',
                     otherPage: true,
-                    path: 'http://',
+                    path: '/lhc',
                     isNew: true,
                     isHot: false
                 },

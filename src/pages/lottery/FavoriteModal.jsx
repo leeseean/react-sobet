@@ -1,7 +1,13 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import { Modal } from 'antd';
 import './favoriteModal.styl';
 
+@inject(stores => ({
+    favoriteStore: stores.favoriteStore,
+    codeToCn: stores.lotteryStore.lotteryCodeToCn,
+}))
+@observer
 class FavoriteModal extends React.Component {
     lotteryListData = [
         {
@@ -180,12 +186,13 @@ class FavoriteModal extends React.Component {
         }
     ]
     render() {
-        const { data, codeToCn, wrapClassName, centered, visible, footer, closable, toggleModalVisible, switchFavorite } = this.props;
+        const { codeToCn, wrapClassName, centered, visible, footer, closable } = this.props;
+        const { data, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
         const LeftItem = ({ item }) => {
             const { lottery_code } = item;
             return (
                 <dd>
-                    <div><em>{codeToCn[lottery_code]}</em></div>
+                    <div><em>{codeToCn[lottery_code.toLocaleLowerCase()]}</em></div>
                 </dd>
             );
         };
@@ -216,19 +223,19 @@ class FavoriteModal extends React.Component {
         return (
             <Modal width="900px" {...{ wrapClassName, centered, visible, footer, closable }}>
                 <div className="clearfix">
-                <dl className="fl favorite-set-menu">
-                    <dt><span className="icon-title"></span>常玩彩种</dt>
-                    {
-                        data.map(item => <LeftItem id={item.id} item={item} />)
-                    }
-                </dl>
-                <div id="lotterySet" className="fl">
-                    <p>请选择您最常玩的彩种(最多可选10个彩种)</p>
-                    {
-                        this.lotteryListData.map(item => <RightItem key={item.title} item={item} />)
-                    }
-                    <div className="saveLottery" onClick={() => toggleModalVisible(false)}>确定</div>
-                </div>
+                    <dl className="fl favorite-set-menu">
+                        <dt><span className="icon-title"></span>常玩彩种</dt>
+                        {
+                            data.map(item => <LeftItem id={item.id} item={item} />)
+                        }
+                    </dl>
+                    <div id="lotterySet" className="fl">
+                        <p>请选择您最常玩的彩种(最多可选10个彩种)</p>
+                        {
+                            this.lotteryListData.map(item => <RightItem key={item.title} item={item} />)
+                        }
+                        <div className="saveLottery" onClick={() => toggleModalVisible(false)}>确定</div>
+                    </div>
                 </div>
                 <div className="close-btn" onClick={() => toggleModalVisible(false)}></div>
             </Modal>

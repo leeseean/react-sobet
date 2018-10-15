@@ -1,7 +1,10 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import { Table } from 'antd';
 import './trendList.styl';
 
+@inject('lotteryStore')
+@observer
 class TrendList extends React.Component {
     render() {
         const TableTitle = () => {
@@ -12,7 +15,8 @@ class TrendList extends React.Component {
                 </div>
             );
         };
-        const { data, lotteryType, method, trendConfig, className } = this.props;
+        const { className, mainLeftRef } = this.props;
+        const { trendData, lotteryType, method, trendConfig } = this.props.lotteryStore;
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
@@ -44,7 +48,7 @@ class TrendList extends React.Component {
                 dataIndex: 'shape',
             }];
         }
-        const dataSource = data.map((item, index) => {
+        const dataSource = trendData.map((item, index) => {
             const { issueNo, code } = item;
             let obj = {
                 key: index,
@@ -61,8 +65,8 @@ class TrendList extends React.Component {
 
         });
         return (
-            <div className={`trend-wrapper ${className}`}>
-                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: 800 }} />
+            <div className={`trend-wrapper ${className ? className : ''}`}>
+                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: mainLeftRef.offsetHeight - 37*2 }} />
             </div>
         );
     }

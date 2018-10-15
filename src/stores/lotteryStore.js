@@ -1,4 +1,5 @@
 import {
+    observe,
     observable,
     action,
     runInAction,
@@ -12,8 +13,20 @@ import {
     queryTrendData,
     updateIssue
 } from '../utils/ajax';
+import timeSleep from '../utils/timeSleep';
 
 class LotteryStore {
+
+    disposer = observe(this, 'lotteryCode', (change) => {
+        const {
+            newValue,
+            oldValue
+        } = change;
+        if (newValue !== oldValue) {
+            this.updateIssue();
+            this.queryTrendData();
+        }
+    })
 
     playWayToCn = playWayToCn
 
@@ -58,8 +71,9 @@ class LotteryStore {
     @observable countdown = Date.now() //倒计时秒数
 
     @action updateIssue = async () => {
+        await timeSleep(3000);
         const res = await updateIssue({
-            lottery: this.lotteryCode
+            lottery: this.lotteryCode.toLocaleUpperCase()
         });
         runInAction(() => {
             if (res.data.code === 1) {
@@ -88,7 +102,7 @@ class LotteryStore {
     @action queryTrendData = () => {
         queryTrendData({
             size: 30,
-            lottery: this.lotteryCode,
+            lottery: this.lotteryCode.toLocaleUpperCase(),
             method: this.method
         }).then(res => {
             if (res.data.code === 1) {

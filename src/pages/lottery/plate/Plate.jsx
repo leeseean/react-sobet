@@ -9,6 +9,9 @@ import { Input } from 'antd';
 const { TextArea } = Input;
 
 @inject(stores => ({
+    activeTab: stores.plateStore.activeTab,
+    isChaidan: stores.plateStore.isChaidan,
+    tabConfig: stores.plateStore.tabConfig,
     plateConfig: stores.plateStore.plateConfig,
     method: stores.plateStore.method,
     lotteryCode: stores.lotteryStore.lotteryCode,
@@ -17,7 +20,7 @@ const { TextArea } = Input;
 @observer
 class Plate extends React.Component {
     render() {
-        const { plateConfig, method, lotteryCode, lotteryType } = this.props;
+        const { activeTab, plateConfig, method, lotteryCode, lotteryType } = this.props;
         const { type, pos, num, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         filter.reverse();
         const ClickPlate = ({ pos, num, filter }) => {

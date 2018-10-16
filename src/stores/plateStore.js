@@ -15,13 +15,19 @@ class PlateStore {
     }
 
     @computed get tabConfig() {
-        return tabConfig[this.lotteryCode]['normal'];
+        return tabConfig[this.lotteryCode];
     }
 
     plateConfig = plateConfig
 
     @observable activeTab = JSON.parse(localStorage.getItem(`${this.lotteryCode}-activeTab`)) || this.tabConfig[0];
 
+    @computed get isChaidan() {
+        const subItem = this.activeTab['subTabConfig'].find(item => {
+            return item.playWay.some(({ en }) => en === this.method)
+        });
+        return subItem.isChaidan;
+    }
     @action
     setActiveTab = (obj) => {
         this.activeTab = obj;
@@ -38,7 +44,7 @@ class PlateStore {
     @observable missShowFlag = localStorage.getItem('missShowFlag')
 
     @observable hotShowFlag = localStorage.getItem('hotShowFlag')
-    
+
     @action switchMiss = (bool) => {
         this.missShowFlag = bool;
         if (bool) {

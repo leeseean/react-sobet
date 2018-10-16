@@ -652,93 +652,213 @@ export default {
             }
         },
         dxds_dxds_h2: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '后二大小单双'
         },
         dxds_dxds_q2: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前二大小单双'
         },
         dxds_dxds_h3: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '后三大小单双'
         },
         dxds_dxds_q3: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前三大小单双'
         },
         dxds_dxgs_wx: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '五星大小个数'
         },
         dxds_dxgs_sx: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '四星大小个数'
         },
         dxds_dxgs_qs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前三大小个数'
         },
         dxds_dxgs_zs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '中三大小个数'
         },
         dxds_dxgs_hs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '后三大小个数'
         },
         dxds_dsgs_wx: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '五星单双个数'
         },
         dxds_dsgs_sx: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '四星单双个数'
         },
         dxds_dsgs_qs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前三单双个数'
         },
         dxds_dsgs_qs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前三单双个数'
         },
         dxds_dsgs_zs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '中三单双个数'
         },
         zh_hzdxds_5xhz: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '五星总和'
         },
         qw_lhh_wq: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '万千龙虎斗'
         },
         qw_lhh_wb: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '万百龙虎斗'
         },
         qw_lhh_ws: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '万十龙虎斗'
         },
         qw_lhh_wg: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '万个龙虎斗'
         },
         qw_lhh_qb: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '千百龙虎斗'
         },
         qw_lhh_qg: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '千个龙虎斗'
         },
         qw_lhh_bs: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '百十龙虎斗'
         },
         qw_lhh_bg: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '百个龙虎斗'
         },
         qw_lhh_sg: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '十个龙虎斗'
         },
         qw_xt_q3: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '前三炸金花'
         },
         qw_xt_z3: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '中三炸金花'
         },
         qw_xt_h3: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '后三炸金花'
         },
         nn_nn_nn: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '牛牛'
         },
         sh_sh_wx: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '梭哈'
         },
         bjl_bjl_bjl: {
+            palte: {
+                type: 'click',
+                filter: ['全', '清'],
+            },
             name: '百家乐'
         },
         rx2_zx_fs: {

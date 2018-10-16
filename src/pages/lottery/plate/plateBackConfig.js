@@ -356,23 +356,23 @@ export default {
                 playWay: [{
                     isChaidan: true,
                     cn: '后二大小单双',
-                    en: 'dxds_dxgs_h2',
+                    en: 'dxds_dxds_h2',
                     name: '后二大小单双',
                     plate: {
                         type: 'click',
                         pos: ['十位', '个位'],
                         num: [{
                             cn: '大',
-                            en: 'dxds_dxgs_h2_da'
+                            en: 'dxds_dxds_h2_da'
                         }, {
                             cn: '小',
-                            en: 'dxds_dxgs_h2_xiao'
+                            en: 'dxds_dxds_h2_xiao'
                         }, {
                             cn: '单',
-                            en: 'dxds_dxgs_h2_dan'
+                            en: 'dxds_dxds_h2_dan'
                         }, {
                             cn: '双',
-                            en: 'dxds_dxgs_h2_shuang'
+                            en: 'dxds_dxds_h2_shuang'
                         }],
                         filter: ['全', '清']
                     }
@@ -381,23 +381,23 @@ export default {
                 {
                     isChaidan: true,
                     cn: '前二大小单双',
-                    en: 'dxds_dxgs_q2',
+                    en: 'dxds_dxds_q2',
                     name: '前二大小单双',
                     plate: {
                         type: 'click',
                         pos: ['万位', '千位'],
                         num: [{
                             cn: '大',
-                            en: 'dxds_dxgs_q2_da'
+                            en: 'dxds_dxds_q2_da'
                         }, {
                             cn: '小',
-                            en: 'dxds_dxgs_q2_xiao'
+                            en: 'dxds_dxds_q2_xiao'
                         }, {
                             cn: '单',
-                            en: 'dxds_dxgs_q2_dan'
+                            en: 'dxds_dxds_q2_dan'
                         }, {
                             cn: '双',
-                            en: 'dxds_dxgs_q2_shuang'
+                            en: 'dxds_dxds_q2_shuang'
                         }],
                         filter: ['全', '清']
                     }
@@ -406,23 +406,23 @@ export default {
                 {
                     isChaidan: true,
                     cn: '后三大小单双',
-                    en: 'dxds_dxgs_h3',
+                    en: 'dxds_dxds_h3',
                     name: '后三大小单双',
                     plate: {
                         type: 'click',
                         pos: ['百位', '十位', '个位'],
                         num: [{
                             cn: '大',
-                            en: 'dxds_dxgs_h3_da'
+                            en: 'dxds_dxds_h3_da'
                         }, {
                             cn: '小',
-                            en: 'dxds_dxgs_h3_xiao'
+                            en: 'dxds_dxds_h3_xiao'
                         }, {
                             cn: '单',
-                            en: 'dxds_dxgs_h3_dan'
+                            en: 'dxds_dxds_h3_dan'
                         }, {
                             cn: '双',
-                            en: 'dxds_dxgs_h3_shuang'
+                            en: 'dxds_dxds_h3_shuang'
                         }],
                         filter: ['全', '清']
                     }
@@ -431,23 +431,23 @@ export default {
                 {
                     isChaidan: true,
                     cn: '前三大小单双',
-                    en: 'dxds_dxgs_q3',
+                    en: 'dxds_dxds_q3',
                     name: '前三大小单双',
                     plate: {
                         type: 'click',
                         pos: ['万位', '千位', '百位'],
                         num: [{
                             cn: '大',
-                            en: 'dxds_dxgs_q3_da'
+                            en: 'dxds_dxds_q3_da'
                         }, {
                             cn: '小',
-                            en: 'dxds_dxgs_q3_xiao'
+                            en: 'dxds_dxds_q3_xiao'
                         }, {
                             cn: '单',
-                            en: 'dxds_dxgs_q3_dan'
+                            en: 'dxds_dxds_q3_dan'
                         }, {
                             cn: '双',
-                            en: 'dxds_dxgs_q3_shuang'
+                            en: 'dxds_dxds_q3_shuang'
                         }],
                         filter: ['全', '清']
                     }

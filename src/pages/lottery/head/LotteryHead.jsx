@@ -5,8 +5,8 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import './lotteryHead.styl';
-import Countdown from '../../components/Countdown';
-import FixedCountdownTip from './FixedCountdownTip';
+import Countdown from '../../../components/Countdown';
+import FixedCountdownTip from '../FixedCountdownTip';
 
 @inject('lotteryStore')
 @observer

@@ -651,6 +651,96 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清']
             }
         },
+        dxds_dxds_h2: {
+            name: '后二大小单双'
+        },
+        dxds_dxds_q2: {
+            name: '前二大小单双'
+        },
+        dxds_dxds_h3: {
+            name: '后三大小单双'
+        },
+        dxds_dxds_q3: {
+            name: '前三大小单双'
+        },
+        dxds_dxgs_wx: {
+            name: '五星大小个数'
+        },
+        dxds_dxgs_sx: {
+            name: '四星大小个数'
+        },
+        dxds_dxgs_qs: {
+            name: '前三大小个数'
+        },
+        dxds_dxgs_zs: {
+            name: '中三大小个数'
+        },
+        dxds_dxgs_hs: {
+            name: '后三大小个数'
+        },
+        dxds_dsgs_wx: {
+            name: '五星单双个数'
+        },
+        dxds_dsgs_sx: {
+            name: '四星单双个数'
+        },
+        dxds_dsgs_qs: {
+            name: '前三单双个数'
+        },
+        dxds_dsgs_qs: {
+            name: '前三单双个数'
+        },
+        dxds_dsgs_zs: {
+            name: '中三单双个数'
+        },
+        zh_hzdxds_5xhz: {
+            name: '五星总和'
+        },
+        qw_lhh_wq: {
+            name: '万千龙虎斗'
+        },
+        qw_lhh_wb: {
+            name: '万百龙虎斗'
+        },
+        qw_lhh_ws: {
+            name: '万十龙虎斗'
+        },
+        qw_lhh_wg: {
+            name: '万个龙虎斗'
+        },
+        qw_lhh_qb: {
+            name: '千百龙虎斗'
+        },
+        qw_lhh_qg: {
+            name: '千个龙虎斗'
+        },
+        qw_lhh_bs: {
+            name: '百十龙虎斗'
+        },
+        qw_lhh_bg: {
+            name: '百个龙虎斗'
+        },
+        qw_lhh_sg: {
+            name: '十个龙虎斗'
+        },
+        qw_xt_q3: {
+            name: '前三炸金花'
+        },
+        qw_xt_z3: {
+            name: '中三炸金花'
+        },
+        qw_xt_h3: {
+            name: '后三炸金花'
+        },
+        nn_nn_nn: {
+            name: '牛牛'
+        },
+        sh_sh_wx: {
+            name: '梭哈'
+        },
+        bjl_bjl_bjl: {
+            name: '百家乐'
+        },
         rx2_zx_fs: {
             name: '任二直选复式',
             plate: {

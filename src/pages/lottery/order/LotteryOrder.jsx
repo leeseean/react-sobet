@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Icon, Button, Checkbox   } from 'antd';
-import Countdown from '../../components/Countdown';
+import Countdown from '../../../components/Countdown';
 import { inject, observer } from 'mobx-react';
 import './lotteryOrder.styl';
 

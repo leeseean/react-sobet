@@ -7,7 +7,7 @@ import {
 } from 'mobx';
 import lotteryTypeConfig from '../pages/lottery/lotteryTypeConfig';
 import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
-import trendConfig from '../pages/lottery/trendConfig';
+import trendConfig from '../pages/lottery/trend/trendConfig';
 import playWayToCn from '../pages/lottery/playWayToCn';
 import {
     queryTrendData,
@@ -95,8 +95,7 @@ class LotteryStore {
         return this.lotteryCodeToCn[this.lotteryCode];
     }
 
-    @observable method = localStorage.getItem('method') || 'wx_zx_fs' //玩法wx_zx_fs
-
+    
     @observable trendData = []
 
     @action queryTrendData = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import './lottery.styl';
-import LotteryFavourite from './LotteryFavorite';
+import LotteryFavourite from './favorite/LotteryFavorite';
 import MainContent from './MainContent';
 import WinListMarquee from './WinListMarquee';
 import io from 'socket.io-client';

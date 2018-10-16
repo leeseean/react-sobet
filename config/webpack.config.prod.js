@@ -12,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const themeAntdMC = require('./theme/antd-mc');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -249,44 +250,17 @@ module.exports = {
           },
           {
             test: /\.less$/,
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-              },
-              {
-                loader: require.resolve('postcss-loader'),
-                options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
-                        '>1%',
-                        'last 4 versions',
-                        'Firefox ESR',
-                        'not ie < 9', // React doesn't support IE8 anyway
-                      ],
-                      flexbox: 'no-2009',
-                    }),
-                  ],
+            use: [{
+                  loader: 'style-loader',
+                }, {
+                  loader: 'css-loader', // translates CSS into CommonJS
+                }, {
+                  loader: 'less-loader', // compiles Less to CSS
+                  options: {
+                    modifyVars: themeAntdMC,
+                    javascriptEnabled: true,
                 },
-              },
-              {
-                loader: 'less-loader',
-                options: {
-                  sourceMap: true,
-                  modifyVars: {
-                    'primary-color': '#c7484a',
-                    'link-color': '#1DA57A',
-                    'border-radius-base': '2px',
-                },
-                javascriptEnabled: true,
-                }
-              },
-            ],
+              }]
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.

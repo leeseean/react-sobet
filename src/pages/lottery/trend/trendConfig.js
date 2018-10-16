@@ -1,5 +1,5 @@
 
-import { calcDxds, calcDsgs, calcDxgs, cacl3xZutai, calcShunzi, arrToCountItemObj, calcBjl, calcNiuniu, calcLhh, calcHezhi, calcKuadu } from '../../utils/algorithm';
+import { calcDxds, calcDsgs, calcDxgs, cacl3xZutai, calcShunzi, arrToCountItemObj, calcBjl, calcNiuniu, calcLhh, calcHezhi, calcKuadu } from '../../../utils/algorithm';
 
 export default {
     ssc: {

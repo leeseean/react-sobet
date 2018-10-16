@@ -1,0 +1,264 @@
+.lottery-plate-wrapper {
+    width: 794px;
+
+    .tab-wrapper {
+        height: 36px;
+        line-height: 36px;
+        background-color: #eee;
+        border-top: 1px solid #e0e6ed;
+        border-bottom: 1px solid #e0e6ed;
+
+        .tab {
+            line-height: 32px;
+            font-size: 14px;
+            text-align: center;
+            cursor: pointer;
+            color: #666;
+            padding: 0 8px;
+            border-top: 3px solid transparent;
+
+            &.active {
+                background-color: #fff;
+                color: #ed292d;
+                border-top: 3px solid #ed292d;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+
+    .subTab-wrapper {
+        padding: 8px 0 8px 20px;
+
+        .subTab-item {
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .subTab-item-title {
+            width: 90px;
+            font-size: 14px;
+            color: #727272;
+            text-align: left;
+        }
+
+        .subTab-item-way {
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            color: #333;
+            text-align: center;
+            margin-right: 8px;
+            min-width: 60px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+
+            &.active {
+                background-color: #c93231;
+                color: #fff;
+                border-color: #c93231;
+            }
+
+            &[method='qw_ts_yffs'], &[method='qw_ts_hscs'], &[method='zh_hzdxds_5xhz'], &[method='zh_hzdxds_q3hz'], &[method='zh_hzdxds_z3hz'], &[method='zh_hzdxds_h3hz'], &[method='dxds_dxgs_h2'], &[method='dxds_dxgs_q2'], &[method='dxds_dxgs_h3'], &[method='dxds_dxgs_q3'], &[method='dxds_dxgs_wx'], &[method='dxds_dxgs_sx'], &[method='dxds_dxgs_qs'], &[method='dxds_dxgs_zs'], &[method='dxds_dxgs_hs'], &[method='dxds_dsgs_wx'], &[method='dxds_dsgs_sx'], &[method='dxds_dsgs_qs'], &[method='dxds_dsgs_zs'], &[method='dxds_dsgs_hs'], &[method='bdd_bdd_qs1'], &[method='bdd_bdd_qs2'], &[method='bdd_bdd_zs1'], &[method='bdd_bdd_zs2'], &[method='bdd_bdd_hs1'], &[method='bdd_bdd_hs2'], &[method='bdd_bdd_4x1'], &[method='bdd_bdd_4x2'], &[method='bdd_bdd_4x3'], &[method='bdd_bdd_5x1'], &[method='bdd_bdd_5x2'], &[method='bdd_bdd_5x3'] {
+                width: 105px;
+            }
+        }
+    }
+
+    .tip-hot-wrapper {
+        padding: 12px 0 0 20px;
+        border-top: 1px solid #e0e6ed;
+
+        .tip-title {
+            font-size: 12px;
+            vertical-align: middle;
+            font-weight: lighter;
+            color: #444;
+            margin-right: 5px;
+        }
+
+        .tip-icon, .miss-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 14px;
+            height: 14px;
+            background: url('../../../images/lottery/button.png') no-repeat -14px -555px;
+
+            &:hover {
+                background-position: -51px -555px;
+            }
+        }
+
+        .miss-hot {
+            margin-left: 30px;
+            color: #444;
+
+            .miss-text, .hot-text {
+                margin: 0 4px;
+            }
+        }
+
+        .miss {
+            margin-right: 5px;
+        }
+
+        .miss, .hot {
+            vertical-align: middle;
+        }
+    }
+
+    .plate-wrapper {
+        display: flex;
+        align-items: center;
+        min-height: 137px;
+        padding: 15px 10px;
+        overflow: hidden;
+
+        .plate-wrapper-inner {
+            width: 100%;
+        }
+
+        .plate-item {
+            margin-bottom: 14px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .plate-item-pos {
+            width: 60px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .plate-item-num {
+            width: 34px;
+            height: 34px;
+            line-height: 36px;
+            margin: 0 5px;
+            background: url('../../../images/lottery/ball.svg') no-repeat;
+            background-size: 34px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
+            color: #878787;
+            text-align: center;
+            font-style: normal;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:hover {
+                background: url('../../../images/lottery/ball-hover.svg') no-repeat;
+                background-size: 34px;
+            }
+
+            &.active {
+                background: url('../../../images/lottery/ball-active.svg') no-repeat;
+                background-size: 34px;
+                color: #fff;
+            }
+        }
+
+        .plate-item-filters {
+            height: 34px;
+        }
+
+        .plate-item-filter {
+            width: 26px;
+            height: 26px;
+            line-height: 24px;
+            border: 1px solid #e0e6ed;
+            margin-right: 4px;
+            padding: 0;
+            font-size: 14px;
+            color: #666;
+            outline: 0;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: #fff;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:hover {
+                border: 1px solid #d4cdc0;
+            }
+
+            &.active {
+                color: #fff;
+                background-color: #c7484a;
+                border-color: #c7484a;
+            }
+        }
+
+        .input-plate-wrapper {
+            width: 760px;
+            height: 157px;
+            border-radius: 10px;
+            border: 1px solid #bcaaa4;
+            cursor: text;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 8px;
+
+            .input-value-list {
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            textarea.ant-input {
+                outline: 0;
+                border: none;
+                resize: none;
+            }
+
+            .ant-input:hover {
+                border-color: transparent;
+                border-right-width: 0 !important;
+            }
+
+            .ant-input:focus {
+                border-color: none;
+                outline: 0;
+                box-shadow: none;
+                border-right-width: 0 !important;
+            }
+
+            .input-value-item {
+                font-size: 12px;
+                color: #676767;
+                background: #dadada;
+                line-height: 21px;
+                margin-right: 5px;
+                margin-bottom: 3px;
+                padding: 0 2px 0 8px;
+                border-radius: 3px;
+                float: left;
+                height: 21px;
+
+                .close {
+                    cursor: pointer;
+                    font-family: 'Microsoft Yahei';
+                    font-size: 13px;
+                    padding: 0 3px;
+                    font-weight: 700;
+                    color: #e74c3c;
+                    opacity: 0.5;
+                    position: relative;
+                    top: -1px;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

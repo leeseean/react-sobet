@@ -1,10 +1,10 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import LotteryHead from './LotteryHead';
-import TrendList from './TrendList';
-import LotteryRecord from './LotteryRecord';
-import LotteryPlate from './LotteryPlate';
-import LotteryOrder from './LotteryOrder';
+import LotteryHead from './head/LotteryHead';
+import TrendList from './trend/TrendList';
+import LotteryRecord from './record/LotteryRecord';
+import LotteryPlate from './plate/LotteryPlate';
+import LotteryOrder from './order/LotteryOrder';
 
 @inject('lotteryStore')
 @observer

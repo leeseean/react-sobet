@@ -6,9 +6,9 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Link, withRouter } from 'react-router-dom';
 import './lotteryFavorite.styl';
-import Countdown from '../../components/Countdown';
-import offsetDis from '../../utils/offsetDis';
-import setStyle from '../../utils/setStyle';
+import Countdown from '../../../components/Countdown';
+import offsetDis from '../../../utils/offsetDis';
+import setStyle from '../../../utils/setStyle';
 import FavoriteModal from './FavoriteModal';
 
 @withRouter

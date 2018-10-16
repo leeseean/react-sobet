@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Modal, message, Pagination, Checkbox } from 'antd';
-import { getRecord, getRecordDetail, getTraceDetail, cancelTrace, cancelOrder } from '../../utils/ajax';
-import formatTime from '../../utils/formatTime';
+import { getRecord, getRecordDetail, getTraceDetail, cancelTrace, cancelOrder } from '../../../utils/ajax';
+import formatTime from '../../../utils/formatTime';
 import './lotteryRecord.styl';
 
 class LotteryRecord extends React.Component {

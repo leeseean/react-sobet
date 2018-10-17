@@ -362,84 +362,31 @@ export default {
         tab: '大小单双',
         subTabConfig: [{
             title: '大小单双组合',
-            isChaidan: true,
             playWay: [{
-                pos: ['十位', '个位'],
+                isChaidan: false,
                 cn: '后二大小单双',
                 en: 'dxds_dxds_h2',
-                plate: [{
-                    cn: '大',
-                    en: 'dxds_dxds_h2_da'
-                }, {
-                    cn: '小',
-                    en: 'dxds_dxds_h2_xiao'
-                }, {
-                    cn: '单',
-                    en: 'dxds_dxds_h2_dan'
-                }, {
-                    cn: '双',
-                    en: 'dxds_dxds_h2_shuang'
-                }],
             },
             {
-                pos: ['万位', '千位'],
+                isChaidan: false,
                 cn: '前二大小单双',
                 en: 'dxds_dxds_q2',
-                plate: [{
-                    cn: '大',
-                    en: 'dxds_dxds_q2_da'
-                }, {
-                    cn: '小',
-                    en: 'dxds_dxds_q2_xiao'
-                }, {
-                    cn: '单',
-                    en: 'dxds_dxds_q2_dan'
-                }, {
-                    cn: '双',
-                    en: 'dxds_dxds_q2_shuang'
-                }],
             },
             {
+                isChaidan: false,
                 cn: '后三大小单双',
                 en: 'dxds_dxds_h3',
-                pos: ['百位', '十位', '个位'],
-                plate: [{
-                    cn: '大',
-                    en: 'dxds_dxds_h3_da'
-                }, {
-                    cn: '小',
-                    en: 'dxds_dxds_h3_xiao'
-                }, {
-                    cn: '单',
-                    en: 'dxds_dxds_h3_dan'
-                }, {
-                    cn: '双',
-                    en: 'dxds_dxds_h3_shuang'
-                }],
             },
             {
+                isChaidan: false,
                 cn: '前三大小单双',
                 en: 'dxds_dxds_q3',
-                pos: ['万位', '千位', '百位'],
-                plate: [{
-                    cn: '大',
-                    en: 'dxds_dxds_q3_da'
-                }, {
-                    cn: '小',
-                    en: 'dxds_dxds_q3_xiao'
-                }, {
-                    cn: '单',
-                    en: 'dxds_dxds_q3_dan'
-                }, {
-                    cn: '双',
-                    en: 'dxds_dxds_q3_shuang'
-                }],
             },
             ]
         }, {
             title: '大小个数',
-            isChaidan: true,
             playWay: [{
+                isChaidan: true,
                 cn: '五星大小个数',
                 en: 'dxds_dxgs_wx',
                 pos: ['五星'],
@@ -463,6 +410,7 @@ export default {
                     en: 'dxds_dxgs_wx_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '四星大小个数',
                 en: 'dxds_dxgs_sx',
                 pos: ['四星'],
@@ -483,6 +431,7 @@ export default {
                     en: 'dxds_dxgs_sx_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '前三大小个数',
                 en: 'dxds_dxgs_qs',
                 pos: ['前三'],
@@ -500,44 +449,46 @@ export default {
                     en: 'dxds_dxgs_qs_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '中三大小个数',
                 en: 'dxds_dxgs_zs',
                 pos: ['中三'],
                 plate: [{
                     cn: '全大',
-                    en: 'dxds_dxgs_qs_qd_qx'
+                    en: 'dxds_dxgs_zs_qd_qx'
                 }, {
                     cn: '2大1小',
-                    en: 'dxds_dxgs_qs_21_12'
+                    en: 'dxds_dxgs_zs_21_12'
                 }, {
                     cn: '1大2小',
-                    en: 'dxds_dxgs_qs_21_12'
+                    en: 'dxds_dxgs_zs_21_12'
                 }, {
                     cn: '全小',
-                    en: 'dxds_dxgs_qs_qd_qx'
+                    en: 'dxds_dxgs_zs_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '后三大小个数',
                 en: 'dxds_dxgs_hs',
                 pos: ['后三'],
                 plate: [{
                     cn: '全大',
-                    en: 'dxds_dxgs_qs_qd_qx'
+                    en: 'dxds_dxgs_hs_qd_qx'
                 }, {
                     cn: '2大1小',
-                    en: 'dxds_dxgs_qs_21_12'
+                    en: 'dxds_dxgs_hs_21_12'
                 }, {
                     cn: '1大2小',
-                    en: 'dxds_dxgs_qs_21_12'
+                    en: 'dxds_dxgs_hs_21_12'
                 }, {
                     cn: '全小',
-                    en: 'dxds_dxgs_qs_qd_qx'
+                    en: 'dxds_dxgs_hs_qd_qx'
                 }],
             }],
         }, {
             title: '单双个数',
-            isChaidan: true,
             playWay: [{
+                isChaidan: true,
                 cn: '五星单双个数',
                 en: 'dxds_dsgs_wx',
                 pos: ['五星'],
@@ -561,6 +512,7 @@ export default {
                     en: 'dxds_dsgs_wx_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '四星单双个数',
                 en: 'dxds_dsgs_sx',
                 pos: ['四星'],
@@ -581,6 +533,7 @@ export default {
                     en: 'dxds_dsgs_sx_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '前三单双个数',
                 en: 'dxds_dsgs_qs',
                 pos: ['前三'],
@@ -598,38 +551,40 @@ export default {
                     en: 'dxds_dsgs_qs_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '中三单双个数',
                 en: 'dxds_dsgs_zs',
                 pos: ['中三'],
                 plate: [{
                     cn: '全单',
-                    en: 'dxds_dsgs_qs_qd_qx'
+                    en: 'dxds_dsgs_zs_qd_qx'
                 }, {
                     cn: '2单1双',
-                    en: 'dxds_dsgs_qs_21_12'
+                    en: 'dxds_dsgs_zs_21_12'
                 }, {
                     cn: '1单2双',
-                    en: 'dxds_dsgs_qs_21_12'
+                    en: 'dxds_dsgs_zs_21_12'
                 }, {
                     cn: '全双',
-                    en: 'dxds_dsgs_qs_qd_qx'
+                    en: 'dxds_dsgs_zs_qd_qx'
                 }],
             }, {
+                isChaidan: true,
                 cn: '后三单双个数',
                 en: 'dxds_dsgs_hs',
                 pos: ['后三'],
                 plate: [{
                     cn: '全单',
-                    en: 'dxds_dsgs_qs_qd_qx'
+                    en: 'dxds_dsgs_hs_qd_qx'
                 }, {
                     cn: '2单1双',
-                    en: 'dxds_dsgs_qs_21_12'
+                    en: 'dxds_dsgs_hs_21_12'
                 }, {
                     cn: '1单2双',
-                    en: 'dxds_dsgs_qs_21_12'
+                    en: 'dxds_dsgs_hs_21_12'
                 }, {
                     cn: '全双',
-                    en: 'dxds_dsgs_qs_qd_qx'
+                    en: 'dxds_dsgs_hs_qd_qx'
                 }],
             }],
         }]
@@ -638,8 +593,8 @@ export default {
         tab: '总和',
         subTabConfig: [{
             title: '总和大小单双',
-            isChaidan: true,
             playWay: [{
+                isChaidan: true,
                 cn: '五星总和',
                 en: 'zh_hzdxds_5xhz',
                 pos: ['五星总和'],
@@ -688,155 +643,112 @@ export default {
                 isChaidan: true,
                 cn: '万千',
                 en: 'qw_lhh_wq',
-                name: '万千龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['万千'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_wq_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_wq_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['万千'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_wq_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_wq_hu'
+                }],
+
             }, {
                 isChaidan: true,
                 cn: '万百',
                 en: 'qw_lhh_wb',
-                name: '万百龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['万百'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_wb_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_wb_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['万百'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_wb_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_wb_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '万十',
                 en: 'qw_lhh_ws',
-                name: '万十龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['万十'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_ws_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_ws_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['万十'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_ws_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_ws_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '万个',
                 en: 'qw_lhh_wg',
-                name: '万个龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['万个'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_wg_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_wg_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['万个'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_wg_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_wg_hu'
+                }],
+
             }, {
                 isChaidan: true,
                 cn: '千百',
                 en: 'qw_lhh_qb',
-                name: '千百龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['千百'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_qb_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_qb_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['千百'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_qb_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_qb_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '千个',
                 en: 'qw_lhh_qg',
-                name: '千个龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['千个'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_qg_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_qg_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['千个'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_qg_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_qg_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '百十',
                 en: 'qw_lhh_bs',
-                name: '百十龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['百十'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_bs_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_bs_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['百十'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_bs_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_bs_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '百个',
                 en: 'qw_lhh_bg',
-                name: '百个龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['百个'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_bg_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_bg_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['百个'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_bg_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_bg_hu'
+                }],
             }, {
                 isChaidan: true,
                 cn: '十个',
                 en: 'qw_lhh_sg',
-                name: '十个龙虎斗',
-                plate: {
-                    type: 'click',
-                    pos: ['十个'],
-                    num: [{
-                        cn: '龙',
-                        en: 'qw_lhh_sg_long'
-                    }, {
-                        cn: '虎',
-                        en: 'qw_lhh_sg_hu'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['十个'],
+                plate: [{
+                    cn: '龙',
+                    en: 'qw_lhh_sg_long'
+                }, {
+                    cn: '虎',
+                    en: 'qw_lhh_sg_hu'
+                }],
             }]
         }, {
             title: '炸金花',
@@ -844,71 +756,56 @@ export default {
                 isChaidan: true,
                 cn: '前三',
                 en: 'qw_xt_q3',
-                name: '前三炸金花',
-                plate: {
-                    type: 'click',
-                    pos: ['前三炸金花'],
-                    num: [{
-                        cn: '顺子',
-                        en: 'qw_xt_q3_sz'
-                    }, {
-                        cn: '对子',
-                        en: 'qw_xt_q3_dz'
-                    }, {
-                        cn: '半顺',
-                        en: 'qw_xt_q3_bs'
-                    }, {
-                        cn: '杂六',
-                        en: 'qw_xt_q3_z6'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['前三炸金花'],
+                plate: [{
+                    cn: '顺子',
+                    en: 'qw_xt_q3_sz'
+                }, {
+                    cn: '对子',
+                    en: 'qw_xt_q3_dz'
+                }, {
+                    cn: '半顺',
+                    en: 'qw_xt_q3_bs'
+                }, {
+                    cn: '杂六',
+                    en: 'qw_xt_q3_z6'
+                }],
             }, {
                 isChaidan: true,
                 cn: '中三',
                 en: 'qw_xt_z3',
-                name: '中三炸金花',
-                plate: {
-                    type: 'click',
-                    pos: ['中三炸金花'],
-                    num: [{
-                        cn: '顺子',
-                        en: 'qw_xt_z3_sz'
-                    }, {
-                        cn: '对子',
-                        en: 'qw_xt_z3_dz'
-                    }, {
-                        cn: '半顺',
-                        en: 'qw_xt_z3_bs'
-                    }, {
-                        cn: '杂六',
-                        en: 'qw_xt_z3_z6'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['中三炸金花'],
+                plate: [{
+                    cn: '顺子',
+                    en: 'qw_xt_z3_sz'
+                }, {
+                    cn: '对子',
+                    en: 'qw_xt_z3_dz'
+                }, {
+                    cn: '半顺',
+                    en: 'qw_xt_z3_bs'
+                }, {
+                    cn: '杂六',
+                    en: 'qw_xt_z3_z6'
+                }],
             }, {
                 isChaidan: true,
                 cn: '后三',
                 en: 'qw_xt_h3',
-                name: '后三炸金花',
-                plate: {
-                    type: 'click',
-                    pos: ['后三炸金花'],
-                    num: [{
-                        cn: '顺子',
-                        en: 'qw_xt_h3_sz'
-                    }, {
-                        cn: '对子',
-                        en: 'qw_xt_h3_dz'
-                    }, {
-                        cn: '半顺',
-                        en: 'qw_xt_h3_bs'
-                    }, {
-                        cn: '杂六',
-                        en: 'qw_xt_h3_z6'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['后三炸金花'],
+                plate: [{
+                    cn: '顺子',
+                    en: 'qw_xt_h3_sz'
+                }, {
+                    cn: '对子',
+                    en: 'qw_xt_h3_dz'
+                }, {
+                    cn: '半顺',
+                    en: 'qw_xt_h3_bs'
+                }, {
+                    cn: '杂六',
+                    en: 'qw_xt_h3_z6'
+                }],
             }]
         }, {
             title: '特殊',
@@ -929,58 +826,53 @@ export default {
                 isChaidan: true,
                 cn: '牛牛',
                 en: 'nn_nn_nn',
-                name: '牛牛',
-                plate: {
-                    type: 'click',
-                    pos: '牛牛',
-                    num: [{
-                        cn: '牛大',
-                        en: 'nn_nn_nn_nda'
-                    }, {
-                        cn: '牛小',
-                        en: 'nn_nn_nn_nx'
-                    }, {
-                        cn: '牛单',
-                        en: 'nn_nn_nn_ndan'
-                    }, {
-                        cn: '牛双',
-                        en: 'nn_nn_nn_ns'
-                    }, {
-                        cn: '无牛',
-                        en: 'nn_nn_nn_wn'
-                    }, {
-                        cn: '牛1',
-                        en: 'nn_nn_nn_n1'
-                    }, {
-                        cn: '牛2',
-                        en: 'nn_nn_nn_n2'
-                    }, {
-                        cn: '牛3',
-                        en: 'nn_nn_nn_n3'
-                    }, {
-                        cn: '牛4',
-                        en: 'nn_nn_nn_n4'
-                    }, {
-                        cn: '牛5',
-                        en: 'nn_nn_nn_n5'
-                    }, {
-                        cn: '牛6',
-                        en: 'nn_nn_nn_n6'
-                    }, {
-                        cn: '牛7',
-                        en: 'nn_nn_nn_n7'
-                    }, {
-                        cn: '牛8',
-                        en: 'nn_nn_nn_n8'
-                    }, {
-                        cn: '牛9',
-                        en: 'nn_nn_nn_n9'
-                    }, {
-                        cn: '牛牛',
-                        en: 'nn_nn_nn_nn'
-                    }],
-                    filter: []
-                }
+                pos: ['牛牛'],
+                plate: [{
+                    cn: '牛大',
+                    en: 'nn_nn_nn_nda'
+                }, {
+                    cn: '牛小',
+                    en: 'nn_nn_nn_nx'
+                }, {
+                    cn: '牛单',
+                    en: 'nn_nn_nn_ndan'
+                }, {
+                    cn: '牛双',
+                    en: 'nn_nn_nn_ns'
+                }, {
+                    cn: '无牛',
+                    en: 'nn_nn_nn_wn'
+                }, {
+                    cn: '牛1',
+                    en: 'nn_nn_nn_n1'
+                }, {
+                    cn: '牛2',
+                    en: 'nn_nn_nn_n2'
+                }, {
+                    cn: '牛3',
+                    en: 'nn_nn_nn_n3'
+                }, {
+                    cn: '牛4',
+                    en: 'nn_nn_nn_n4'
+                }, {
+                    cn: '牛5',
+                    en: 'nn_nn_nn_n5'
+                }, {
+                    cn: '牛6',
+                    en: 'nn_nn_nn_n6'
+                }, {
+                    cn: '牛7',
+                    en: 'nn_nn_nn_n7'
+                }, {
+                    cn: '牛8',
+                    en: 'nn_nn_nn_n8'
+                }, {
+                    cn: '牛9',
+                    en: 'nn_nn_nn_n9'
+                }, {
+                    cn: '牛牛',
+                    en: 'nn_nn_nn_nn'
+                }],
             }]
         }]
     }, {
@@ -992,28 +884,24 @@ export default {
                 isChaidan: true,
                 cn: '梭哈',
                 en: 'sh_sh_wx',
-                name: '梭哈',
-                plate: {
-                    type: 'click',
-                    pos: '梭哈',
-                    num: [{
-                        cn: '顺子',
-                        en: 'sh_sh_wx_sz'
-                    }, {
-                        cn: '三条',
-                        en: 'sh_sh_wx_santiao'
-                    }, {
-                        cn: '两对',
-                        en: 'sh_sh_wx_ld'
-                    }, {
-                        cn: '一对',
-                        en: 'sh_sh_wx_yd'
-                    }, {
-                        cn: '单牌',
-                        en: 'sh_sh_wx_dp'
-                    }],
-                    filter: ['全', '清']
-                }
+                pos: ['梭哈'],
+                plate: [{
+                    cn: '顺子',
+                    en: 'sh_sh_wx_sz'
+                }, {
+                    cn: '三条',
+                    en: 'sh_sh_wx_santiao'
+                }, {
+                    cn: '两对',
+                    en: 'sh_sh_wx_ld'
+                }, {
+                    cn: '一对',
+                    en: 'sh_sh_wx_yd'
+                }, {
+                    cn: '单牌',
+                    en: 'sh_sh_wx_dp'
+                }],
+
             }]
         }]
     }, {
@@ -1021,9 +909,9 @@ export default {
         tab: '百家乐',
         subTabConfig: [{
             title: '百家乐',
-            isChaidan: true,
-            pos: ['百家乐'],
             playWay: [{
+                isChaidan: true,
+                pos: ['百家乐'],
                 cn: '百家乐',
                 en: 'bjl_bjl_bjl',
                 plate: [{

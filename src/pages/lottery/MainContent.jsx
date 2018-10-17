@@ -6,18 +6,23 @@ import LotteryRecord from './record/LotteryRecord';
 import LotteryPlate from './plate/LotteryPlate';
 import LotteryOrder from './order/LotteryOrder';
 
-@inject('lotteryStore')
+@inject(stores => ({
+    lotteryStore: stores.lotteryStore,
+}))
 @observer
 class MainContent extends React.Component {
-    mainRef = null
+    state = {
+        trendShowFlag: false
+    }
     mainLeftRef = null
     componentDidMount() {
         const { queryTrendData, updateIssue } = this.props.lotteryStore;
         updateIssue();
         queryTrendData();
+        this.setState({ trendShowFlag: true });
     }
     render() {
-        const { lotteryCode, lotteryType, trendData, method, trendConfig, playWayToCn, lotteryCn, currentIssue, countdown, updateIssue, opencodeArr, openIssue, lotteryCodeToCn } = this.props.lotteryStore;
+        const { lotteryCode, playWayToCn, lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead />
@@ -29,7 +34,7 @@ class MainContent extends React.Component {
                     </div>
                     <div className="fr main-content-right">
                         {
-                            this.mainLeftRef ? <TrendList mainLeftRef={this.mainLeftRef} /> : null
+                            this.state.trendShowFlag ? <TrendList mainLeftRef={this.mainLeftRef} /> : null
                         }
                     </div>
                 </div>

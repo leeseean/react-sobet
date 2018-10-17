@@ -5,12 +5,12 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject('lotteryStore', 'plateStore')
+@inject('plateStore')
 @observer
 class PlayTabs extends React.Component {
     render() {
-        const { tabConfig, activeTab, setActiveTab, method, setMethod } = this.props.plateStore;
-        const config = tabConfig;
+        const { currentTabConfig, unlimitedFlag, switchMoreTab, activeTab, setActiveTab, method, setMethod } = this.props.plateStore;
+        const config = currentTabConfig;
         const Tab = ({ config }) => {
             return config.map(item => {
                 const { tab } = item;
@@ -32,10 +32,17 @@ class PlayTabs extends React.Component {
                 );
             });
         };
+        let MoreTab = null;
+        if (unlimitedFlag) {
+            MoreTab = ({text, onClick}) => {
+                return <div className="fr tab-more" onClick={onClick}><i className="more-icon"></i>更多</div>;
+            };
+        }
         return (
             <React.Fragment>
-                <div className="tab-wrapper">
+                <div className="clearfix tab-wrapper">
                     <Tab config={config} />
+                    <MoreTab onClick={switchMoreTab} />
                 </div>
                 <div className="subTab-wrapper">
                     <SubTab subTabConfig={activeTab['subTabConfig']} />

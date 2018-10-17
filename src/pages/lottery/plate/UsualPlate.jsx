@@ -15,18 +15,31 @@ const { TextArea } = Input;
 class UsualPlate extends React.Component {
     render() {
         const { plateConfig, method, lotteryCode, lotteryType } = this.props;
-        const { type, pos, num, filter = [] } = plateConfig[lotteryCode][method]['plate'];
-        filter.reverse();
+        const { type, pos, num, isQw, isLonghu, area, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         const ClickPlate = ({ pos, num, filter }) => {
             return pos.map(val => {
                 return (
                     <div key={val} className="clearfix plate-item" lottery-type={lotteryType} lottery-code={lotteryCode}>
                         <div className="fl plate-item-pos">{val}</div>
-                        <div className="fl clearfix plate-item-nums">
-                            {num.map(v => <div className="fl plate-item-num">{v}</div>)}
+                        <div className="fl clearfix plate-item-nums" method={method}>
+                            {num.map(v => {
+                                let content = null;
+                                let className = '';
+                                if (isQw) {
+                                    content = ([<div key="1" className="qw-text" value={v}></div>, <div key="2" className="qw-odd">1中3.67</div>]);
+                                    className = 'plate-item-num-qw';
+                                } else if (isLonghu) {
+                                    content = ([<div key="0" className="longhu-circle" value={v}></div>, <div key="1" className="longhu-text" value={v}></div>, <div key="2" className="longhu-odd">1中3.67</div>]);
+                                    className = 'plate-item-num-longhu';
+                                } else {
+                                    content = v;
+                                    className = 'plate-item-num';
+                                }
+                                return <div key={v} className={`fl ${className}`}>{content}</div>;
+                            })}
                         </div>
                         <div className="fr clearfix plate-item-filters">
-                            {filter.map(v => <div className="fr plate-item-filter">{v}</div>)}
+                            {filter.map(v => <div key={v} className="fr plate-item-filter">{v}</div>)}
                         </div>
                     </div>
                 );

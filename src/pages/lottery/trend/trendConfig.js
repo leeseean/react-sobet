@@ -743,13 +743,25 @@ export default {
             }
         },
         qw_lhh_wq: {
-            area: [0, 1, 2, 3, 4]
+            area: [0, 1, 2, 3, 4],
+            widthConfig: {
+                col1: 140,
+                col2: 150
+            },
         },
         qw_lhh_wb: {
-            area: [0, 1, 2, 3, 4]
+            area: [0, 1, 2, 3, 4],
+            widthConfig: {
+                col1: 140,
+                col2: 150
+            },
         },
         qw_lhh_ws: {
-            area: [0, 1, 2, 3, 4]
+            area: [0, 1, 2, 3, 4],
+            widthConfig: {
+                col1: 140,
+                col2: 150
+            },
         },
         qw_lhh_wg: {
             area: [0, 1, 2, 3, 4],

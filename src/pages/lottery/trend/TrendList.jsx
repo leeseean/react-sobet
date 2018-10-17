@@ -3,7 +3,10 @@ import { inject, observer } from 'mobx-react';
 import { Table } from 'antd';
 import './trendList.styl';
 
-@inject('lotteryStore')
+@inject(stores => ({
+    lotteryStore: stores.lotteryStore,
+    method: stores.plateStore.method
+}))
 @observer
 class TrendList extends React.Component {
     render() {
@@ -15,8 +18,8 @@ class TrendList extends React.Component {
                 </div>
             );
         };
-        const { className, mainLeftRef } = this.props;
-        const { trendData, lotteryType, method, trendConfig } = this.props.lotteryStore;
+        const { className, mainLeftRef, method } = this.props;
+        const { trendData, lotteryType, trendConfig } = this.props.lotteryStore;
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (

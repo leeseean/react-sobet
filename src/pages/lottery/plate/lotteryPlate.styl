@@ -24,6 +24,33 @@
                 border-bottom: 1px solid #fff;
             }
         }
+
+        .tab-more {
+            height: 25px;
+            line-height: 25px;
+            background-color: #fff;
+            border: 1px solid #e0e6ed;
+            font-size: 12px;
+            color: #d81f1f;
+            cursor: pointer;
+            outline: 0;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin-right: 4px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+
+            .more-icon {
+                display: inline-block;
+                position: relative;
+                top: 2px;
+                margin-right: 4px;
+                width: 12px;
+                height: 12px;
+                background: url('../../../images/lottery/new_lottery_common.png') -114px -16px no-repeat;
+            }
+        }
     }
 
     .subTab-wrapper {
@@ -61,7 +88,7 @@
                 border-color: #c93231;
             }
 
-            &[method='qw_ts_yffs'], &[method='qw_ts_hscs'], &[method='zh_hzdxds_5xhz'], &[method='zh_hzdxds_q3hz'], &[method='zh_hzdxds_z3hz'], &[method='zh_hzdxds_h3hz'], &[method='dxds_dxgs_h2'], &[method='dxds_dxgs_q2'], &[method='dxds_dxgs_h3'], &[method='dxds_dxgs_q3'], &[method='dxds_dxgs_wx'], &[method='dxds_dxgs_sx'], &[method='dxds_dxgs_qs'], &[method='dxds_dxgs_zs'], &[method='dxds_dxgs_hs'], &[method='dxds_dsgs_wx'], &[method='dxds_dsgs_sx'], &[method='dxds_dsgs_qs'], &[method='dxds_dsgs_zs'], &[method='dxds_dsgs_hs'], &[method='bdd_bdd_qs1'], &[method='bdd_bdd_qs2'], &[method='bdd_bdd_zs1'], &[method='bdd_bdd_zs2'], &[method='bdd_bdd_hs1'], &[method='bdd_bdd_hs2'], &[method='bdd_bdd_4x1'], &[method='bdd_bdd_4x2'], &[method='bdd_bdd_4x3'], &[method='bdd_bdd_5x1'], &[method='bdd_bdd_5x2'], &[method='bdd_bdd_5x3'] {
+            &[method='dxds_dxds_h2'], &[method='dxds_dxds_q2'], &[method='dxds_dxds_h3'], &[method='dxds_dxds_q3'], &[method='qw_ts_yffs'], &[method='qw_ts_hscs'], &[method='zh_hzdxds_5xhz'], &[method='zh_hzdxds_q3hz'], &[method='zh_hzdxds_z3hz'], &[method='zh_hzdxds_h3hz'], &[method='dxds_dxgs_h2'], &[method='dxds_dxgs_q2'], &[method='dxds_dxgs_h3'], &[method='dxds_dxgs_q3'], &[method='dxds_dxgs_wx'], &[method='dxds_dxgs_sx'], &[method='dxds_dxgs_qs'], &[method='dxds_dxgs_zs'], &[method='dxds_dxgs_hs'], &[method='dxds_dsgs_wx'], &[method='dxds_dsgs_sx'], &[method='dxds_dsgs_qs'], &[method='dxds_dsgs_zs'], &[method='dxds_dsgs_hs'], &[method='bdd_bdd_qs1'], &[method='bdd_bdd_qs2'], &[method='bdd_bdd_zs1'], &[method='bdd_bdd_zs2'], &[method='bdd_bdd_hs1'], &[method='bdd_bdd_hs2'], &[method='bdd_bdd_4x1'], &[method='bdd_bdd_4x2'], &[method='bdd_bdd_4x3'], &[method='bdd_bdd_5x1'], &[method='bdd_bdd_5x2'], &[method='bdd_bdd_5x3'] {
                 width: 105px;
             }
         }
@@ -112,7 +139,7 @@
     .plate-wrapper {
         display: flex;
         align-items: center;
-        min-height: 137px;
+        min-height: 200px;
         padding: 15px 10px;
         overflow: hidden;
 
@@ -125,6 +152,24 @@
 
             &:last-child {
                 margin-bottom: 0;
+
+                .plate-item-nums[method='dwd_dwd_dwd'] {
+                    .plate-item-num {
+                        width: 26px;
+                        height: 26px;
+                        line-height: 26px;
+                        margin: 4px 9px;
+                        background: url('../../../images/lottery/all-num.png') no-repeat center;
+                        background-size: 26px;
+                        font-size: 18px;
+
+                        &.active {
+                            background: url('../../../images/lottery/all-num-on.png') no-repeat center;
+                            background-size: 26px;
+                            color: #fff;
+                        }
+                    }
+                }
             }
         }
 
@@ -135,6 +180,44 @@
             text-align: center;
             font-size: 12px;
             color: #666;
+
+            &.qw {
+                height: 65px;
+                line-height: 65px;
+            }
+
+            &.longhu {
+                height: 143px;
+                line-height: 143px;
+            }
+        }
+
+        .plate-item-nums[method='qsm_zx_hz'], .plate-item-nums[method='qsm_zux_hz'], .plate-item-nums[method='zsm_zx_hz'], .plate-item-nums[method='zsm_zux_hz'], .plate-item-nums[method='hsm_zx_hz'], .plate-item-nums[method='hsm_zux_hz'] {
+            width: 700px;
+
+            .plate-item-num {
+                margin-bottom: 14px;
+            }
+        }
+
+        .plate-item-nums[method='zh_hzdxds_5xhz'] {
+            width: 356px;
+
+            .plate-item-num-qw {
+                margin-bottom: 14px;
+                width: 65px;
+                padding: 0;
+            }
+        }
+
+        .plate-item-nums[method='nn_nn_nn'] {
+            width: 410px;
+
+            .plate-item-num-qw {
+                margin-bottom: 14px;
+                width: 65px;
+                padding: 0;
+            }
         }
 
         .plate-item-num {
@@ -164,8 +247,742 @@
             }
         }
 
+        .plate-item-num-qw {
+            height: 65px;
+            margin: 0 0 0 8px;
+            padding: 0 15px;
+            background: linear-gradient(to bottom, #fff, #e9edef);
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+                border-color: #e8c5c5;
+            }
+
+            .qw-text {
+                width: 25px;
+                height: 25px;
+                margin: auto;
+                margin-top: 8px;
+                background-image: url('../../../images/lottery/QWWF.png');
+                background-repeat: no-repeat;
+
+                &[value='庄'] {
+                    width: 25px;
+                    background-position: 0 -356px;
+                }
+
+                &[value='闲'] {
+                    width: 25px;
+                    background-position: -32px -356px;
+                }
+
+                &[value='和'] {
+                    width: 25px;
+                    background-position: -63px -356px;
+                }
+
+                &[value='庄对'] {
+                    width: 50px;
+                    background-position: -96px -356px;
+                }
+
+                &[value='闲对'] {
+                    width: 50px;
+                    background-position: -153px -356px;
+                }
+
+                &[value='S6'] {
+                    width: 50px;
+                    background-position: -203px -356px;
+                }
+
+                &[value='三条'] {
+                    width: 50px;
+                    background-position: -179px -215px;
+                }
+
+                &[value='两对'] {
+                    width: 50px;
+                    background-position: -239px -215px;
+                }
+
+                &[value='一对'] {
+                    width: 50px;
+                    background-position: -299px -215px;
+                }
+
+                &[value='单牌'] {
+                    width: 50px;
+                    background-position: -358px -215px;
+                }
+
+                &[value='大'] {
+                    background-position: 1px -632px;
+                }
+
+                &[value='小'] {
+                    background-position: -32px -632px;
+                }
+
+                &[value='单'] {
+                    background-position: -65px -632px;
+                }
+
+                &[value='双'] {
+                    background-position: -98px -632px;
+                }
+
+                &[value='全大'], &[value='3大0小'], &[value='4大0小'], &[value='5大0小'] {
+                    width: 50px;
+                    background-position: 0 -701px;
+                }
+
+                &[value='全小'], &[value='0大3小'], &[value='0大4小'], &[value='0大5小'] {
+                    width: 50px;
+                    background-position: -59px -701px;
+                }
+
+                &[value='4大1小'] {
+                    width: 64px;
+                    background-position: 0 -768px;
+                }
+
+                &[value='3大2小'] {
+                    width: 64px;
+                    background-position: -72px -768px;
+                }
+
+                &[value='1大4小'] {
+                    width: 64px;
+                    background-position: -217px -768px;
+                }
+
+                &[value='2大3小'] {
+                    width: 64px;
+                    background-position: -145px -768px;
+                }
+
+                &[value='3大1小'] {
+                    width: 64px;
+                    background-position: -290px -768px;
+                }
+
+                &[value='2大2小'] {
+                    width: 64px;
+                    background-position: -363px -768px;
+                }
+
+                &[value='1大3小'] {
+                    width: 64px;
+                    background-position: -436px -768px;
+                }
+
+                &[value='2大1小'] {
+                    width: 64px;
+                    background-position: -508px -768px;
+                }
+
+                &[value='1大2小'] {
+                    width: 64px;
+                    background-position: -580px -768px;
+                }
+
+                &[value='全单'], &[value='3单0双'], &[value='4单0双'], &[value='5单0双'] {
+                    width: 50px;
+                    background-position: -118px -701px;
+                }
+
+                &[value='全双'], &[value='0单3双'], &[value='0单4双'], &[value='0单5双'] {
+                    width: 50px;
+                    background-position: -178px -701px;
+                }
+
+                &[value='4单1双'] {
+                    width: 64px;
+                    background-position: 0 -830px;
+                }
+
+                &[value='3单2双'] {
+                    width: 64px;
+                    background-position: -72px -830px;
+                }
+
+                &[value='1单4双'] {
+                    width: 64px;
+                    background-position: -217px -830px;
+                }
+
+                &[value='2单3双'] {
+                    width: 64px;
+                    background-position: -145px -830px;
+                }
+
+                &[value='3单1双'] {
+                    width: 64px;
+                    background-position: -290px -830px;
+                }
+
+                &[value='2单2双'] {
+                    width: 64px;
+                    background-position: -363px -830px;
+                }
+
+                &[value='1单3双'] {
+                    width: 64px;
+                    background-position: -436px -830px;
+                }
+
+                &[value='2单1双'] {
+                    width: 64px;
+                    background-position: -508px -830px;
+                }
+
+                &[value='1单2双'] {
+                    width: 64px;
+                    background-position: -580px -830px;
+                }
+
+                &[value='大单'] {
+                    width: 50px;
+                    background-position: -131px -632px;
+                }
+
+                &[value='大双'] {
+                    width: 50px;
+                    background-position: -189px -632px;
+                }
+
+                &[value='小单'] {
+                    width: 50px;
+                    background-position: -247px -632px;
+                }
+
+                &[value='小双'] {
+                    width: 50px;
+                    background-position: -305px -632px;
+                }
+
+                &[value='顺子'] {
+                    width: 50px;
+                    background-position: -59px -285px;
+                }
+
+                &[value='对子'] {
+                    width: 50px;
+                    background-position: -119px -285px;
+                }
+
+                &[value='半顺'] {
+                    width: 50px;
+                    background-position: -180px -285px;
+                }
+
+                &[value='杂六'] {
+                    width: 50px;
+                    background-position: -238px -285px;
+                }
+
+                &[value='牛大'] {
+                    width: 50px;
+                    background-position: 1px -425px;
+                }
+
+                &[value='牛小'] {
+                    width: 50px;
+                    background-position: -56px -425px;
+                }
+
+                &[value='牛单'] {
+                    width: 50px;
+                    background-position: -114px -425px;
+                }
+
+                &[value='牛双'] {
+                    width: 50px;
+                    background-position: -172px -425px;
+                }
+
+                &[value='无牛'] {
+                    width: 50px;
+                    background-position: -230px -425px;
+                }
+
+                &[value='牛1'] {
+                    width: 50px;
+                    background-position: 1px -495px;
+                }
+
+                &[value='牛2'] {
+                    width: 50px;
+                    background-position: -56px -495px;
+                }
+
+                &[value='牛3'] {
+                    width: 50px;
+                    background-position: -114px -495px;
+                }
+
+                &[value='牛4'] {
+                    width: 50px;
+                    background-position: -172px -495px;
+                }
+
+                &[value='牛5'] {
+                    width: 50px;
+                    background-position: -230px -495px;
+                }
+
+                &[value='牛6'] {
+                    width: 50px;
+                    background-position: 1px -565px;
+                }
+
+                &[value='牛7'] {
+                    width: 50px;
+                    background-position: -56px -565px;
+                }
+
+                &[value='牛8'] {
+                    width: 50px;
+                    background-position: -114px -565px;
+                }
+
+                &[value='牛9'] {
+                    width: 50px;
+                    background-position: -172px -565px;
+                }
+
+                &[value='牛牛'] {
+                    width: 50px;
+                    background-position: -230px -565px;
+                }
+            }
+
+            .qw-odd {
+                width: 100%;
+                height: 20px;
+                line-height: 20px;
+                margin-top: 5px;
+                font-size: 12px;
+                color: #737373;
+                text-align: center;
+            }
+
+            &.active {
+                .qw-text {
+                    &[value='庄'] {
+                        background-position: 0 -389px;
+                    }
+
+                    &[value='闲'] {
+                        background-position: -32px -389px;
+                    }
+
+                    &[value='和'] {
+                        background-position: -63px -389px;
+                    }
+
+                    &[value='庄对'] {
+                        background-position: -96px -389px;
+                    }
+
+                    &[value='闲对'] {
+                        background-position: -153px -389px;
+                    }
+
+                    &[value='S6'] {
+                        background-position: -203px -389px;
+                    }
+
+                    &[value='三条'] {
+                        background-position: -179px -249px;
+                    }
+
+                    &[value='两对'] {
+                        background-position: -239px -249px;
+                    }
+
+                    &[value='单牌'] {
+                        background-position: -358px -249px;
+                    }
+
+                    &[value='一对'] {
+                        background-position: -299px -249px;
+                    }
+
+                    &[value='大单'] {
+                        background-position: -131px -666px;
+                    }
+
+                    &[value='大双'] {
+                        background-position: -189px -666px;
+                    }
+
+                    &[value='小单'] {
+                        background-position: -247px -666px;
+                    }
+
+                    &[value='小双'] {
+                        background-position: -305px -666px;
+                    }
+
+                    &[value='顺子'] {
+                        background-position: -59px -322px;
+                    }
+
+                    &[value='对子'] {
+                        background-position: -119px -322px;
+                    }
+
+                    &[value='半顺'] {
+                        background-position: -180px -322px;
+                    }
+
+                    &[value='杂六'] {
+                        background-position: -238px -322px;
+                    }
+
+                    &[value='牛大'] {
+                        background-position: 1px -459px;
+                    }
+
+                    &[value='全单'], &[value='3单0双'], &[value='4单0双'], &[value='5单0双'] {
+                        background-position: -118px -735px;
+                    }
+
+                    &[value='全双'], &[value='0单3双'], &[value='0单4双'], &[value='0单5双'] {
+                        background-position: -178px -735px;
+                    }
+
+                    &[value='4单1双'] {
+                        background-position: 0 -860px;
+                    }
+
+                    &[value='3单2双'] {
+                        background-position: -72px -860px;
+                    }
+
+                    &[value='1单4双'] {
+                        background-position: -217px -860px;
+                    }
+
+                    &[value='2单3双'] {
+                        background-position: -145px -860px;
+                    }
+
+                    &[value='3单1双'] {
+                        background-position: -290px -860px;
+                    }
+
+                    &[value='2单2双'] {
+                        background-position: -363px -860px;
+                    }
+
+                    &[value='1单3双'] {
+                        background-position: -436px -860px;
+                    }
+
+                    &[value='2单1双'] {
+                        background-position: -508px -860px;
+                    }
+
+                    &[value='1单2双'] {
+                        background-position: -580px -860px;
+                    }
+
+                    &[value='全大'], &[value='3大0小'], &[value='4大0小'], &[value='5大0小'] {
+                        width: 64px;
+                        background-position: 0 -735px;
+                    }
+
+                    &[value='全小'], &[value='0大3小'], &[value='0大4小'], &[value='0大5小'] {
+                        width: 50px;
+                        background-position: -59px -735px;
+                    }
+
+                    &[value='4大1小'] {
+                        background-position: 0 -797px;
+                    }
+
+                    &[value='3大2小'] {
+                        background-position: -72px -797px;
+                    }
+
+                    &[value='1大4小'] {
+                        background-position: -217px -797px;
+                    }
+
+                    &[value='2大3小'] {
+                        background-position: -145px -797px;
+                    }
+
+                    &[value='3大1小'] {
+                        background-position: -290px -797px;
+                    }
+
+                    &[value='2大2小'] {
+                        background-position: -363px -797px;
+                    }
+
+                    &[value='1大3小'] {
+                        background-position: -436px -797px;
+                    }
+
+                    &[value='2大1小'] {
+                        background-position: -508px -797px;
+                    }
+
+                    &[value='1大2小'] {
+                        background-position: -580px -797px;
+                    }
+
+                    &[value='大'] {
+                        background-position: 1px -666px;
+                    }
+
+                    &[value='小'] {
+                        background-position: -32px -666px;
+                    }
+
+                    &[value='单'] {
+                        background-position: -65px -666px;
+                    }
+
+                    &[value='双'] {
+                        background-position: -98px -666px;
+                    }
+
+                    &[value='全大'], &[value='3大0小'], &[value='4大0小'], &[value='5大0小'] {
+                        width: 64px;
+                        background-position: 0 -735px;
+                    }
+
+                    &[value='全小'], &[value='0大3小'], &[value='0大4小'], &[value='0大5小'] {
+                        width: 50px;
+                        background-position: -59px -735px;
+                    }
+
+                    &[value='4大1小'] {
+                        background-position: 0 -797px;
+                    }
+
+                    &[value='3大2小'] {
+                        background-position: -72px -797px;
+                    }
+
+                    &[value='1大4小'] {
+                        background-position: -217px -797px;
+                    }
+
+                    &[value='2大3小'] {
+                        background-position: -145px -797px;
+                    }
+
+                    &[value='3大1小'] {
+                        background-position: -290px -797px;
+                    }
+
+                    &[value='2大2小'] {
+                        background-position: -363px -797px;
+                    }
+
+                    &[value='1大3小'] {
+                        background-position: -436px -797px;
+                    }
+
+                    &[value='2大1小'] {
+                        background-position: -508px -797px;
+                    }
+
+                    &[value='1大2小'] {
+                        background-position: -580px -797px;
+                    }
+
+                    &[value='牛小'] {
+                        background-position: -56px -459px;
+                    }
+
+                    &[value='牛单'] {
+                        background-position: -114px -459px;
+                    }
+
+                    &[value='牛双'] {
+                        background-position: -172px -459px;
+                    }
+
+                    &[value='无牛'] {
+                        background-position: -230px -459px;
+                    }
+
+                    &[value='牛1'] {
+                        background-position: 1px -528px;
+                    }
+
+                    &[value='牛2'] {
+                        background-position: -56px -528px;
+                    }
+
+                    &[value='牛3'] {
+                        background-position: -114px -528px;
+                    }
+
+                    &[value='牛4'] {
+                        background-position: -172px -528px;
+                    }
+
+                    &[value='牛5'] {
+                        background-position: -230px -528px;
+                    }
+
+                    &[value='牛6'] {
+                        background-position: 1px -597px;
+                    }
+
+                    &[value='牛7'] {
+                        background-position: -56px -597px;
+                    }
+
+                    &[value='牛8'] {
+                        background-position: -114px -597px;
+                    }
+
+                    &[value='牛9'] {
+                        background-position: -172px -597px;
+                    }
+
+                    &[value='牛牛'] {
+                        background-position: -230px -597px;
+                    }
+                }
+            }
+        }
+
+        .plate-item-num-longhu {
+            width: 115px;
+            height: 143px;
+            background: 0 0;
+            margin: 0 0 0 20px;
+
+            &.active {
+                border: none;
+                height: 143px;
+
+                &[value='龙'] {
+                    background: url('../../../images/lottery/QWWF.png') 0 -62px no-repeat;
+                }
+
+                &[value='虎'] {
+                    background: url('../../../images/lottery/QWWF.png') -125px -62px no-repeat;
+                }
+
+                .num-longhu-inner {
+                    background: transparent;
+                    border: none;
+                }
+
+                .longhu-text {
+                    background: 0 0;
+                }
+
+                .longhu-pos-wrapper {
+                    .longhu-pos {
+                        border-color: #fba7a7;
+
+                        &.active {
+                            background-color: #fff;
+                            border-color: #fff;
+                        }
+                    }
+                }
+
+                .longhu-odd {
+                    color: #fff;
+                }
+            }
+        }
+
+        .num-longhu-inner {
+            display: inline-block;
+            width: 115px;
+            height: 115px;
+            margin-top: 28px;
+            background: linear-gradient(to bottom, #fff, #e9edef);
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background: linear-gradient(to bottom, #fdf3f3, #f3d7d7);
+                border-color: #e8c5c5;
+            }
+
+            .longhu-pos-wrapper {
+                width: 100%;
+                height: 10px;
+                margin: 9px 0 13px 0;
+
+                .longhu-pos {
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                    border-radius: 50%;
+                    border: 1px solid #c6c6c6;
+                    vertical-align: top;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &.active {
+                        background-color: #a9a9a9;
+                    }
+                }
+            }
+
+            .longhu-text {
+                display: inline-block;
+                width: 60px;
+                height: 54px;
+                background-repeat: no-repeat;
+                vertical-align: top;
+                background-image: url('../../../images/lottery/QWWF.png');
+
+                &[value='龙'] {
+                    background-position: 2px 0;
+                }
+
+                &[value='虎'] {
+                    background-position: -57px 0;
+                }
+            }
+
+            .longhu-odd {
+                display: inline-block;
+                width: 100%;
+                height: 20px;
+                line-height: 20px;
+                margin-top: 5px;
+                font-size: 12px;
+                color: #737373;
+                vertical-align: top;
+            }
+        }
+
         .plate-item-filters {
             height: 34px;
+
+            &.qw {
+                height: 65px;
+            }
+
+            &.longhu {
+                height: 143px;
+            }
         }
 
         .plate-item-filter {

@@ -6,7 +6,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zx_ds: {
@@ -22,7 +22,7 @@ export default {
                 type: 'click',
                 pos: ['组120'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zux_z60: {
@@ -31,7 +31,7 @@ export default {
                 type: 'click',
                 pos: ['二重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zux_z30: {
@@ -40,7 +40,7 @@ export default {
                 type: 'click',
                 pos: ['二重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zux_z20: {
@@ -49,7 +49,7 @@ export default {
                 type: 'click',
                 pos: ['三重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zux_z10: {
@@ -58,7 +58,7 @@ export default {
                 type: 'click',
                 pos: ['三重号', '二重号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         wx_zux_z5: {
@@ -67,7 +67,7 @@ export default {
                 type: 'click',
                 pos: ['四重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         sx_zx_fs: {
@@ -76,7 +76,7 @@ export default {
                 type: 'click',
                 pos: ['千位', '百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         sx_zx_ds: {
@@ -92,7 +92,7 @@ export default {
                 type: 'click',
                 pos: ['组24'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         sx_zux_z12: {
@@ -101,7 +101,7 @@ export default {
                 type: 'click',
                 pos: ['二重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         sx_zux_z6: {
@@ -110,7 +110,7 @@ export default {
                 type: 'click',
                 pos: ['二重号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         sx_zux_z4: {
@@ -119,7 +119,7 @@ export default {
                 type: 'click',
                 pos: ['三重号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zx_fs: {
@@ -128,7 +128,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zx_ds: {
@@ -153,7 +153,7 @@ export default {
                 type: 'click',
                 pos: ['跨度'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zux_z3: {
@@ -162,7 +162,7 @@ export default {
                 type: 'click',
                 pos: ['组3'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zux_z6: {
@@ -171,7 +171,7 @@ export default {
                 type: 'click',
                 pos: ['组6'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zux_hh: {
@@ -205,7 +205,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         zsm_zx_ds: {
@@ -230,7 +230,7 @@ export default {
                 type: 'click',
                 pos: ['跨度'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         zsm_zux_z3: {
@@ -239,7 +239,7 @@ export default {
                 type: 'click',
                 pos: ['组3'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         zsm_zux_z6: {
@@ -248,7 +248,7 @@ export default {
                 type: 'click',
                 pos: ['组6'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         zsm_zux_hh: {
@@ -282,7 +282,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hsm_zx_ds: {
@@ -307,7 +307,7 @@ export default {
                 type: 'click',
                 pos: ['跨度'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hsm_zux_z3: {
@@ -316,7 +316,7 @@ export default {
                 type: 'click',
                 pos: ['组3'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hsm_zux_z6: {
@@ -325,7 +325,7 @@ export default {
                 type: 'click',
                 pos: ['组6'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hsm_zux_hh: {
@@ -359,7 +359,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qem_zx_ds: {
@@ -384,7 +384,7 @@ export default {
                 type: 'click',
                 pos: ['跨度'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qem_zux_fs: {
@@ -393,7 +393,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qem_zux_ds: {
@@ -427,7 +427,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hem_zx_ds: {
@@ -452,7 +452,7 @@ export default {
                 type: 'click',
                 pos: ['跨度'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hem_zux_fs: {
@@ -461,7 +461,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         hem_zux_ds: {
@@ -495,7 +495,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_qs1: {
@@ -504,7 +504,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_qs2: {
@@ -513,7 +513,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_zs1: {
@@ -522,7 +522,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_zs2: {
@@ -531,7 +531,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_hs1: {
@@ -540,7 +540,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_hs2: {
@@ -549,7 +549,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_4x1: {
@@ -558,7 +558,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_4x2: {
@@ -567,7 +567,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_4x3: {
@@ -576,7 +576,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_5x1: {
@@ -585,7 +585,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_5x2: {
@@ -594,7 +594,7 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         bdd_bdd_5x3: {
@@ -603,34 +603,37 @@ export default {
                 type: 'click',
                 pos: ['不定胆'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         zh_hzdxds_q3hz: {
             name: '前三总和',
             plate: {
+                isQw: true,
                 type: 'click',
                 pos: ['前三总和'],
                 num: ['大', '小', '单', '双'],
-                filter: ['全', '清']
+                filter: ['全', '清'].reverse()
             }
         },
         zh_hzdxds_z3hz: {
             name: '中三总和',
             plate: {
+                isQw: true,
                 type: 'click',
                 pos: ['中三总和'],
                 num: ['大', '小', '单', '双'],
-                filter: ['全', '清']
+                filter: ['全', '清'].reverse()
             }
         },
         zh_hzdxds_h3hz: {
             name: '后三总和',
             plate: {
+                isQw: true,
                 type: 'click',
                 pos: ['后三总和'],
                 num: ['大', '小', '单', '双'],
-                filter: ['全', '清']
+                filter: ['全', '清'].reverse()
             }
         },
         qw_ts_yffs: {
@@ -639,7 +642,7 @@ export default {
                 type: 'click',
                 pos: ['一帆风顺'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qw_ts_hscs: {
@@ -648,216 +651,263 @@ export default {
                 type: 'click',
                 pos: ['好事成双'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         dxds_dxds_h2: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                pos: ['十位', '个位'],
+                num: ['大', '小', '单', '双'],
+                filter: ['全', '清'].reverse(),
             },
             name: '后二大小单双'
         },
         dxds_dxds_q2: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                pos: ['万位', '千位'],
+                num: ['大', '小', '单', '双'],
+                filter: ['全', '清'].reverse(),
             },
             name: '前二大小单双'
         },
         dxds_dxds_h3: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                pos: ['百位', '十位', '个位'],
+                num: ['大', '小', '单', '双'],
+                filter: ['全', '清'].reverse(),
             },
             name: '后三大小单双'
         },
         dxds_dxds_q3: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                pos: ['万位', '千位', '百位'],
+                num: ['大', '小', '单', '双'],
+                filter: ['全', '清'].reverse(),
             },
             name: '前三大小单双'
         },
         dxds_dxgs_wx: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '五星大小个数'
         },
         dxds_dxgs_sx: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '四星大小个数'
         },
         dxds_dxgs_qs: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '前三大小个数'
         },
         dxds_dxgs_zs: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '中三大小个数'
         },
         dxds_dxgs_hs: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '后三大小个数'
         },
         dxds_dsgs_wx: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '五星单双个数'
         },
         dxds_dsgs_sx: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '四星单双个数'
         },
         dxds_dsgs_qs: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '前三单双个数'
         },
-        dxds_dsgs_qs: {
-            palte: {
+        dxds_dsgs_hs: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
-            name: '前三单双个数'
+            name: '后三单双个数'
         },
         dxds_dsgs_zs: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '中三单双个数'
         },
         zh_hzdxds_5xhz: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '五星总和'
         },
         qw_lhh_wq: {
-            palte: {
+            plate: {
+                area: [0, 1],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '万千龙虎斗'
         },
         qw_lhh_wb: {
-            palte: {
+            plate: {
+                area: [0, 2],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '万百龙虎斗'
         },
         qw_lhh_ws: {
-            palte: {
+            plate: {
+                area: [0, 3],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '万十龙虎斗'
         },
         qw_lhh_wg: {
-            palte: {
+            plate: {
+                area: [0, 4],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '万个龙虎斗'
         },
         qw_lhh_qb: {
-            palte: {
+            plate: {
+                area: [1, 3],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '千百龙虎斗'
         },
         qw_lhh_qg: {
-            palte: {
+            plate: {
+                area: [1, 4],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '千个龙虎斗'
         },
         qw_lhh_bs: {
-            palte: {
+            plate: {
+                area: [2, 3],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '百十龙虎斗'
         },
         qw_lhh_bg: {
-            palte: {
+            plate: {
+                area: [2, 4],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '百个龙虎斗'
         },
         qw_lhh_sg: {
-            palte: {
+            plate: {
+                area: [3, 4],
+                isLonghu: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '十个龙虎斗'
         },
         qw_xt_q3: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '前三炸金花'
         },
         qw_xt_z3: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '中三炸金花'
         },
         qw_xt_h3: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '后三炸金花'
         },
         nn_nn_nn: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '牛牛'
         },
         sh_sh_wx: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '梭哈'
         },
         bjl_bjl_bjl: {
-            palte: {
+            plate: {
+                isQw: true,
                 type: 'click',
-                filter: ['全', '清'],
+                filter: ['全', '清'].reverse(),
             },
             name: '百家乐'
         },
@@ -867,7 +917,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx2_zx_ds: {
@@ -892,7 +942,7 @@ export default {
                 type: 'click',
                 pos: ['组选复式'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx2_zux_ds: {
@@ -917,7 +967,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx3_zx_ds: {
@@ -942,7 +992,7 @@ export default {
                 type: 'click',
                 pos: ['组3'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx3_zux_z6: {
@@ -951,7 +1001,7 @@ export default {
                 type: 'click',
                 pos: ['组6'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx3_zux_hh: {
@@ -976,7 +1026,7 @@ export default {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx4_zx_ds: {
@@ -992,7 +1042,7 @@ export default {
                 type: 'click',
                 pos: ['组24'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx4_zux_z12: {
@@ -1001,7 +1051,7 @@ export default {
                 type: 'click',
                 pos: ['组12'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx4_zux_z6: {
@@ -1010,7 +1060,7 @@ export default {
                 type: 'click',
                 pos: ['组6'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx4_zux_z4: {
@@ -1019,7 +1069,7 @@ export default {
                 type: 'click',
                 pos: ['组4'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                filter: ['全', '大', '小', '奇', '偶', '清']
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         }
     }

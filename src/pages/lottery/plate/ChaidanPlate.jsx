@@ -2,9 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 
 @inject(stores => ({
-    activeTab: stores.plateStore.activeTab,
-    isChaidan: stores.plateStore.isChaidan,
-    tabConfig: stores.plateStore.tabConfig,
+    chaidanConfig: stores.plateStore.chaidanConfig,
     plateConfig: stores.plateStore.plateConfig,
     method: stores.plateStore.method,
     lotteryCode: stores.lotteryStore.lotteryCode,
@@ -13,14 +11,13 @@ import { inject, observer } from 'mobx-react';
 @observer
 class ChaidanPlate extends React.Component {
     render() {
-        const { plateConfig, lotteryCode, activeTab, method } = this.props;
-        const itemObj = activeTab['subTabConfig'].find(item => {
-            return item['playWay'].some(({ en }) => en === method);
-        });
-        const plateObj = itemObj['playWay'].find(({ en }) => en === method);
-        const pos = itemObj['pos'];
-        const num = plateObj['plate'];
+        const { chaidanConfig, plateConfig, lotteryCode, method } = this.props;
+        const { pos, plate, isChaidan } = chaidanConfig;
+        const num = plate;
         const filter = plateConfig[lotteryCode][method]['plate']['filter'];
+        if (!isChaidan) {
+            return null;
+        }
         return (
             <div className="plate-wrapper">
                 <div className="plate-wrapper-inner">

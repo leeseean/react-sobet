@@ -22,12 +22,6 @@ class PlateStore {
 
     @observable activeTab = JSON.parse(localStorage.getItem(`${this.lotteryCode}-activeTab`)) || this.tabConfig[0];
 
-    @computed get isChaidan() {
-        const subItem = this.activeTab['subTabConfig'].find(item => {
-            return item.playWay.some(({ en }) => en === this.method)
-        });
-        return subItem.isChaidan;
-    }
     @action
     setActiveTab = (obj) => {
         this.activeTab = obj;
@@ -37,8 +31,13 @@ class PlateStore {
 
     @observable method = this.activeTab['subTabConfig'][0]['playWay'][0]['en'] //玩法wx_zx_fs
 
-    @action setMethod = (value) => {
+    @observable chaidanConfig = {}
+
+    @action setMethod = (value, rest) => {
         this.method = value;
+        if (rest.isChaidan) {
+            this.chaidanConfig = rest;
+        }
     }
 
     @observable missShowFlag = localStorage.getItem('missShowFlag')

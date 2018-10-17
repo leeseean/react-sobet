@@ -25,7 +25,7 @@ class PlayTabs extends React.Component {
                         <div className="fl subTab-item-title">{title}</div>
                         <div className="fl clearfix subTab-item-ways">
                             {
-                                playWay.map(({ en, cn }) => <div key={en} method={en} className={`fl subTab-item-way ${method === en ? 'active' : ''}`} onClick={() => setMethod(en)}>{cn}</div>)
+                                playWay.map(({ en, cn, ...rest }) => <div key={en} method={en} className={`fl subTab-item-way ${method === en ? 'active' : ''}`} onClick={() => setMethod(en, rest)}>{cn}</div>)
                             }
                         </div>
                     </div>

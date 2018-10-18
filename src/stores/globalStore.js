@@ -22,53 +22,53 @@ class GlobalStore {
         localStorage.setItem('theme', theme);
     }
 
-    @observable logined = sessionStorage.getItem('logined');
+    @observable logined = localStorage.getItem('logined');
 
-    @observable platformId = sessionStorage.getItem('setPlatformId') || '1' //摩臣1
+    @observable platformId = localStorage.getItem('setPlatformId') || '1' //摩臣1
 
-    @observable loginTime = sessionStorage.getItem('loginTime') || '0000 00'
+    @observable loginTime = localStorage.getItem('loginTime') || '0000 00'
 
     @observable letterCount = 0
 
-    @observable username = sessionStorage.getItem('username') || '----'
+    @observable username = localStorage.getItem('username') || '----'
 
     @action setPlatformId = (id) => {
         this.platformId = id;
-        sessionStorage.setItem('setPlatformId', id);
+        localStorage.setItem('setPlatformId', id);
     }
 
     @action setUserName = (name) => {
         this.username = name;
-        sessionStorage.setItem('username', name);
+        localStorage.setItem('username', name);
     }
 
     @action setLoginTime = (time) => {
         this.loginTime = time;
-        sessionStorage.setItem('loginTime', time);
+        localStorage.setItem('loginTime', time);
     }
 
-    @observable userType = sessionStorage.getItem('userType')
+    @observable userType = localStorage.getItem('userType')
 
-    @observable roleType = sessionStorage.getItem('roleType')
+    @observable roleType = localStorage.getItem('roleType')
 
     @action setUserType = (type) => {
         this.userType = type;
-        sessionStorage.setItem('userType', type);
+        localStorage.setItem('userType', type);
     }
 
     @action setRoleType = (type) => {
         this.roleType = type;
-        sessionStorage.setItem('roleType', type);
+        localStorage.setItem('roleType', type);
     }
 
-    @observable balance = sessionStorage.getItem('balance')
+    @observable balance = localStorage.getItem('balance')
 
     @action refreshBalance = () => {
         this.balance = 'loading';
         setTimeout(() => {
             runInAction(() => {
                 this.balance = '2000';
-                sessionStorage.setItem('balance', '2000');
+                localStorage.setItem('balance', '2000');
             });
         }, 2000);
     }
@@ -78,13 +78,13 @@ class GlobalStore {
     }
 
     @action login = () => {
-        sessionStorage.setItem('logined', true);
+        localStorage.setItem('logined', true);
         this.logined = true;
     }
 
     @action logout = () => {
         return ssoLogout(this.username).then(res => {
-            sessionStorage.removeItem('logined');
+            localStorage.removeItem('logined');
             this.logined = false;
             return Promise.resolve(res);
         });

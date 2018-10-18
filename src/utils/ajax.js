@@ -193,8 +193,8 @@ export function queryActivityById(params) {
 export function queryTrendData(params) {
     return $http({
         params,
-        url: '/trend.json',
-        // url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
+        // url: '/trend.json',
+        url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
 }

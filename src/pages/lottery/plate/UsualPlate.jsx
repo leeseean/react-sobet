@@ -8,6 +8,8 @@ const { TextArea } = Input;
 @inject(stores => ({
     plateConfig: stores.plateStore.plateConfig,
     method: stores.plateStore.method,
+    missShowFlag: stores.plateStore.missShowFlag,
+    hotShowFlag: stores.plateStore.hotShowFlag,
     lotteryCode: stores.lotteryStore.lotteryCode,
     lotteryType: stores.lotteryStore.lotteryType,
     hitFrequency: stores.lotteryStore.hitFrequency,
@@ -16,7 +18,7 @@ const { TextArea } = Input;
 @observer
 class UsualPlate extends React.Component {
     render() {
-        const { plateConfig, method, lotteryCode, lotteryType, hitFrequency, skipFrequency } = this.props;
+        const { plateConfig, method, lotteryCode, lotteryType, hotShowFlag, missShowFlag, hitFrequency, skipFrequency } = this.props;
         const { type, pos, num, isQw, isLonghu, area, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         let extraClass = '';
         if (isQw) {
@@ -76,7 +78,7 @@ class UsualPlate extends React.Component {
                             </div>
                         </div>
                         {
-                            skipFrequency.length > 0 ? (<div className="clearfix hot-skip-item">
+                            (missShowFlag && skipFrequency && skipFrequency.length > 0) ? (<div className="clearfix hot-skip-item">
                                 <div className="fl hot-skip-title"><span className="title">遗漏</span></div>
                                 <div className="fl clearfix hot-skip-nums">
                                     <HitSkipNums arr={skipFrequency[skipToPos + idx]} type="skip" />
@@ -84,7 +86,7 @@ class UsualPlate extends React.Component {
                             </div>) : null
                         }
                         {
-                            hitFrequency.length > 0 ? (
+                            (hotShowFlag && hitFrequency && hitFrequency.length > 0) ? (
                                 <div className="clearfix hot-skip-item">
                                     <div className="fl hot-skip-title"><span className="title">冷热</span></div>
                                     <div className="fl clearfix hot-skip-nums">

@@ -136,10 +136,30 @@
         }
     }
 
+    .pos-select-wrapper {
+        padding: 0 0 0 20px;
+        height: 60px;
+        line-height: 60px;
+
+        .pos-select-title {
+            margin-right: 35px;
+        }
+
+        .pos-select-list {
+            color: #565656;
+            font-size: 12px;
+            width: 270px;
+        }
+
+        .pos-select-tip {
+            margin-left: 30px;
+        }
+    }
+
     .plate-wrapper {
         display: flex;
         align-items: center;
-        min-height: 200px;
+        min-height: 140px;
         padding: 15px 10px;
         overflow: hidden;
 
@@ -148,8 +168,10 @@
         }
 
         .plate-item {
-            margin-bottom: 14px;
-
+            margin: 7px 0;
+            &:first-child {
+                margin-top: 0;    
+            }
             &:last-child {
                 margin-bottom: 0;
 
@@ -194,6 +216,14 @@
 
         .plate-item-nums[method='qsm_zx_hz'], .plate-item-nums[method='qsm_zux_hz'], .plate-item-nums[method='zsm_zx_hz'], .plate-item-nums[method='zsm_zux_hz'], .plate-item-nums[method='hsm_zx_hz'], .plate-item-nums[method='hsm_zux_hz'] {
             width: 700px;
+
+            .plate-item-num {
+                margin-bottom: 14px;
+            }
+        }
+
+        .plate-item-nums[method='rx2_zx_hz'], .plate-item-nums[method='rx2_zux_hz'], .plate-item-nums[method='rx3_zx_hz'], .plate-item-nums[method='rx3_zux_hz'], .plate-item-nums[method='rx4_zx_hz'], .plate-item-nums[method='rx2_zux_hz'] {
+            width: 600px;
 
             .plate-item-num {
                 margin-bottom: 14px;
@@ -1074,6 +1104,40 @@
                     &:hover {
                         opacity: 1;
                     }
+                }
+            }
+        }
+
+        .hot-skip-item {
+            .hot-skip-title {
+                width: 60px;
+                text-align: center;
+
+                .title {
+                    color: #666;
+                    background-color: #eee;
+                    font-size: 12px;
+                    padding: 2px 6px;
+                }
+            }
+
+            .hot-skip-num {
+                width: 34px;
+                height: 16px;
+                line-height: 16px;
+                margin: 0 5px;
+                color: #99a9bf;
+                font-size: 12px;
+                text-align: center;
+                font-style: normal;
+                font-weight: lighter;
+
+                &.max {
+                    color: #ea4040;
+                }
+
+                &.min {
+                    color: #12a821;
                 }
             }
         }

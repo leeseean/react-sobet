@@ -53,8 +53,8 @@ const $http = (config) => {
 export default $http;
 
 // const proxyPrefix = 'dev';
-// const proxyPrefix = 'online';
-const proxyPrefix = '';
+const proxyPrefix = 'online';
+// const proxyPrefix = '';
 
 //中奖喜报
 export function getLotteryWinTop10() {
@@ -193,8 +193,8 @@ export function queryActivityById(params) {
 export function queryTrendData(params) {
     return $http({
         params,
-        // url: '/trend.json',
-        url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
+        url: '/trend.json',
+        // url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
 }

@@ -98,6 +98,10 @@ class PlateStore {
             localStorage.removeItem('hotShowFlag');
         }
     }
+
+    @action posSelectChange = (posValues) => {
+        console.log(posValues);
+    }
 }
 
 export default new PlateStore();

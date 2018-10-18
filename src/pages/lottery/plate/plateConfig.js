@@ -922,22 +922,24 @@ export default {
         },
         rx2_zx_ds: {
             name: '任二直选单式',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
-                pos: ['万位', '千位', '百位', '十位', '个位']
             }
         },
         rx2_zx_hz: {
             name: '任二直选和值',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                 filter: []
             }
         },
         rx2_zux_fs: {
             name: '任二组选复式',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组选复式'],
@@ -947,13 +949,14 @@ export default {
         },
         rx2_zux_ds: {
             name: '任二组选单式',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
-                pos: ['万位', '千位', '百位', '十位', '个位']
             }
         },
         rx2_zux_hz: {
             name: '任二组选和值',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -972,13 +975,14 @@ export default {
         },
         rx3_zx_ds: {
             name: '任三直选单式',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
-                pos: ['万位', '千位', '百位', '十位', '个位']
             }
         },
         rx3_zx_hz: {
             name: '任三直选和值',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
@@ -988,6 +992,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -997,6 +1002,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -1006,13 +1012,14 @@ export default {
         },
         rx3_zux_hh: {
             name: '任三组选混合',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
-                pos: ['万位', '千位', '百位', '十位', '个位']
             }
         },
         rx3_zux_hz: {
             name: '任三组选和值',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -1031,13 +1038,14 @@ export default {
         },
         rx4_zx_ds: {
             name: '任四直选单式',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
-                pos: ['万位', '千位', '百位', '十位', '个位']
             }
         },
         rx4_zux_z24: {
             name: '任四组选24',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组24'],
@@ -1047,6 +1055,7 @@ export default {
         },
         rx4_zux_z12: {
             name: '任四组选12',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组12'],
@@ -1056,6 +1065,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -1065,6 +1075,7 @@ export default {
         },
         rx4_zux_z4: {
             name: '任四组选4',
+            posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
                 pos: ['组4'],

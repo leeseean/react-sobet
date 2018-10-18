@@ -95,19 +95,25 @@ class LotteryStore {
         return this.lotteryCodeToCn[this.lotteryCode];
     }
 
-    
+
     @observable trendData = []
 
-    @action queryTrendData = () => {
-        queryTrendData({
+    @observable hitFrequency = []
+
+    @observable skipFrequency = []
+
+    @action queryTrendData = async () => {
+        const res = await queryTrendData({
             size: 30,
             lottery: this.lotteryCode.toLocaleUpperCase(),
             method: this.method
-        }).then(res => {
-            if (res.data.code === 1) {
-                this.trendData = res.data.result.issue
-            }
         });
+
+        if (res.data.code === 1) {
+            this.trendData = res.data.result.issue;
+            this.hitFrequency = res.data.result.hitFrequency;
+            this.skipFrequency = res.data.result.skipFrequency;
+        }
     }
 
 }

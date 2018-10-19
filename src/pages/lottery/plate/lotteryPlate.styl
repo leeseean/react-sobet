@@ -169,9 +169,11 @@
 
         .plate-item {
             padding: 7px 0;
+
             &:first-child {
-                padding-top: 0;    
+                padding-top: 0;
             }
+
             &:last-child {
                 padding-bottom: 0;
 
@@ -1140,6 +1142,50 @@
                     color: #12a821;
                 }
             }
+        }
+    }
+
+    .k3-plate-item-num {
+        background: #f0f0f0;
+
+        &:hover {
+            background: #ffdddc;
+        }
+
+        .k3-chip {
+            width: 26px;
+            height: 26px;
+            background: url('../../../images/lottery/dice.png');
+            font-size: 0;
+        }
+
+        .k3-chip[value='1'] {
+            background-position: 0 -133px;
+        }
+
+        .k3-chip[value='2'] {
+            background-position: -29px -133px;
+        }
+
+        .k3-chip[value='3'] {
+            background-position: -58px -133px;
+        }
+
+        .k3-chip[value='4'] {
+            background-position: -87px -133px;
+        }
+
+        .k3-chip[value='5'] {
+            background-position: -116px -133px;
+        }
+
+        .k3-chip[value='6'] {
+            background-position: -145px -133px;
+        }
+
+        &.active {
+            background: linear-gradient(to bottom, #ca1413, #8c0103);
+            border: 1px solid #830202;
         }
     }
 }

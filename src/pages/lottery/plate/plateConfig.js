@@ -1104,6 +1104,7 @@ export default {
         th3_th3_th3dx: {
             name: '三同号单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['111', '222', '333', '444', '555', '666'],
@@ -1113,6 +1114,7 @@ export default {
         th3_th3_th3tx: {
             name: '三同号通选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['111|222|333|444|555|666'],
@@ -1122,6 +1124,7 @@ export default {
         bth3_bth3_ds: {
             name: '三不同号单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['123', '124', '125', '126', '134', '135', '136', '145', '146', '234', '235', '236', '345', '346', '456'],
@@ -1131,6 +1134,7 @@ export default {
         bth3_bth3_fs: {
             name: '三不同号复选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['复选'],
                 num: ['1', '2', '3', '4', '5', '6'],
@@ -1140,6 +1144,7 @@ export default {
         bth3_lh3_dx: {
             name: '三连号单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['123', '234', '345', '456'],
@@ -1149,6 +1154,7 @@ export default {
         bth3_lh3_tx: {
             name: '三连号通选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['123|234|345|456'],
@@ -1158,6 +1164,7 @@ export default {
         bth3_bs_dx: {
             name: '半顺单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['124', '125', '126', '134', '145', '235', '236', '346'],
@@ -1167,6 +1174,7 @@ export default {
         bth3_bs_tx: {
             name: '半顺通选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['通选'],
                 num: ['124|125|126|134|145|235|236|346'],
@@ -1176,6 +1184,7 @@ export default {
         bth3_z6_dx: {
             name: '杂六单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['135', '136', '145', '146'],
@@ -1185,6 +1194,7 @@ export default {
         bth3_z6_tx: {
             name: '杂六通选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['通选'],
                 num: ['135|136|145|146'],
@@ -1194,6 +1204,7 @@ export default {
         th2_th2dx_fs: {
             name: '二同号单选复式',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['同号', '不同号'],
                 num: { '同号': ['11', '22', '33', '44', '55', '66'], '不同号': ['1', '2', '3', '4', '5', '6'] },
@@ -1203,6 +1214,7 @@ export default {
         th2_th2dx_ds: {
             name: '二同号单选单式',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['112', '113', '114', '115', '116', '221', '223', '224', '225', '226', '331', '332', '334', '335', '336', '441', '442', '443', '445', '446', '551', '552', '553', '554', '556', '661', '662', '663', '664', '665'],
@@ -1212,6 +1224,7 @@ export default {
         th2_th2fx_fx: {
             name: '二同号复选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['二同号复选'],
                 num: ['11', '22', '33', '44', '55', '66'],
@@ -1221,6 +1234,7 @@ export default {
         bth2_bth2_fs: {
             name: '二不同号复选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['复选'],
                 num: ['1', '2', '3', '4', '5', '6'],
@@ -1230,6 +1244,7 @@ export default {
         bth2_bth2_ds: {
             name: '二不同号单选',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['单选'],
                 num: ['12', '13', '14', '15', '16', '23', '24', '25', '26', '34', '35', '36', '45', '46', '56'],
@@ -1239,6 +1254,7 @@ export default {
         cygh_cygh_cygh: {
             name: '猜一个号',
             plate: {
+                isChip: true,
                 type: 'click',
                 pos: ['猜一个号'],
                 num: ['1', '2', '3', '4', '5', '6'],

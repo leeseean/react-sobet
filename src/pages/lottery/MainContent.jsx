@@ -6,9 +6,7 @@ import LotteryRecord from './record/LotteryRecord';
 import LotteryPlate from './plate/LotteryPlate';
 import LotteryOrder from './order/LotteryOrder';
 
-@inject(stores => ({
-    lotteryStore: stores.lotteryStore,
-}))
+@inject('lotteryStore')
 @observer
 class MainContent extends React.Component {
     state = {

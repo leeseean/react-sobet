@@ -9,22 +9,30 @@ import UsualPlate from './UsualPlate';
 import K3Plate from './K3Plate';
 
 @inject(stores => ({
-    chaidanConfig: stores.plateStore.chaidanConfig,
+    chaidanConfig: stores.lotteryStore.chaidanConfig,
     lotteryType: stores.lotteryStore.lotteryType,
 }))
 @observer
 class Plate extends React.Component {
     render() {
         const { chaidanConfig, lotteryType } = this.props;
+        let plate;
         if (lotteryType === 'k3') {
-            return <K3Plate />;
+            plate = <K3Plate />;
         } else {
             if (chaidanConfig.isChaidan) {
-                return <ChaidanPlate />;
+                plate = <ChaidanPlate />;
             } else {
-                return <UsualPlate />;
+                plate = <UsualPlate />;
             }
         }
+        return (
+            <div className="plate-wrapper">
+                <div className="plate-wrapper-inner">
+                    {plate}
+                </div>
+            </div>
+        );
     }
 }
 

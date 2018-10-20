@@ -1,17 +1,11 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject(stores => ({
-    chaidanConfig: stores.plateStore.chaidanConfig,
-    plateConfig: stores.plateStore.plateConfig,
-    method: stores.plateStore.method,
-    lotteryCode: stores.lotteryStore.lotteryCode,
-    lotteryType: stores.lotteryStore.lotteryType,
-}))
+@inject('lotteryStore')
 @observer
 class ChaidanPlate extends React.Component {
     render() {
-        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props;
+        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props.lotteryStore;
         const { pos, plate } = chaidanConfig;
         const num = plate;
         const { filter, isQw, isLonghu, area } = plateConfig[lotteryCode][method]['plate'];

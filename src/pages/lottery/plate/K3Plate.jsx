@@ -5,18 +5,12 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject(stores => ({
-    chaidanConfig: stores.plateStore.chaidanConfig,
-    plateConfig: stores.plateStore.plateConfig,
-    method: stores.plateStore.method,
-    lotteryCode: stores.lotteryStore.lotteryCode,
-    lotteryType: stores.lotteryStore.lotteryType,
-}))
+@inject('lotteryStore')
 @observer
 class K3Plate extends React.Component {
     render() {
+        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props.lotteryStore;
         if (chaidanConfig.isChaidan) {
-            const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props;
             const { pos, plate } = chaidanConfig;
             const num = plate;
             const { isChip, filter } = plateConfig[lotteryCode][method]['plate'];
@@ -25,7 +19,7 @@ class K3Plate extends React.Component {
                     return _num.map(({ en, cn }) => {
                         let chipTpl = cn;
                         if (isChip) {//选号盘用图片
-                            chipArr = cn.split('|');//'111|222' => [111,222]
+                            const chipArr = cn.split('|');//'111|222' => [111,222]
                             const SubChip = ({ chip }) => {
                                 const _arr = chip.split('');//'111' => ['1','1','1']
                                 return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
@@ -57,14 +51,13 @@ class K3Plate extends React.Component {
                 );
             });
         } else {
-            const { plateConfig, method, lotteryCode, lotteryType } = this.props;
             const { isChip, pos, num, filter = [] } = plateConfig[lotteryCode][method]['plate'];
             const ItemNum = ({ num, posVal }) => {
                 const ItemNumPick = ({ _num }) => {
                     return _num.map(v => {
                         let chipTpl = v;
                         if (isChip) {//选号盘用图片
-                            chipArr = v.split('|');//'111|222' => [111,222]
+                            const chipArr = v.split('|');//'111|222' => [111,222]
                             const SubChip = ({ chip }) => {
                                 const _arr = chip.split('');//'111' => ['1','1','1']
                                 return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);

@@ -4,27 +4,14 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Checkbox, Row, Col } from 'antd';
+import { Checkbox } from 'antd';
 import tipConfig from '../tipConfig';
 
-const CheckboxGroup = Checkbox.Group;
-
-@inject(stores => ({
-    method: stores.plateStore.method,
-    plateConfig: stores.plateStore.plateConfig,
-    missShowFlag: stores.plateStore.missShowFlag,
-    hotShowFlag: stores.plateStore.hotShowFlag,
-    switchMiss: stores.plateStore.switchMiss,
-    switchHot: stores.plateStore.switchHot,
-    posSelectChange: stores.plateStore.posSelectChange,
-    lotteryCode: stores.lotteryStore.lotteryCode,
-    lotteryType: stores.lotteryStore.lotteryType,
-    hitFrequency: stores.lotteryStore.hitFrequency,
-}))
+@inject('lotteryStore')
 @observer
 class TipAndHot extends React.Component {
     render() {
-        const { method, plateConfig, lotteryType, lotteryCode, posSelectChange, hotShowFlag, missShowFlag, switchMiss, switchHot, hitFrequency } = this.props;
+        const { method, plateConfig, lotteryType, lotteryCode, posSelectChange, hotShowFlag, missShowFlag, switchMiss, switchHot, hitFrequency } = this.props.lotteryStore;
         const { name, posSelect } = plateConfig[lotteryCode][method];
 
         return (

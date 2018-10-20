@@ -24,7 +24,7 @@ class GlobalStore {
 
     @observable logined = localStorage.getItem('logined');
 
-    @observable platformId = localStorage.getItem('setPlatformId') || '1' //摩臣1
+    @observable platformId = localStorage.getItem('platformId') || '1' //摩臣1
 
     @observable loginTime = localStorage.getItem('loginTime') || '0000 00'
 
@@ -34,7 +34,7 @@ class GlobalStore {
 
     @action setPlatformId = (id) => {
         this.platformId = id;
-        localStorage.setItem('setPlatformId', id);
+        localStorage.setItem('platformId', id);
     }
 
     @action setUserName = (name) => {

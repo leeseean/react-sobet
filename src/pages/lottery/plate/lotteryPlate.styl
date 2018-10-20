@@ -1145,17 +1145,149 @@
         }
     }
 
+    .plate-item-nums {
+        &[method='th3_th3_th3dx'], &[method='th3_th3_th3tx'] {
+            .k3-chips {
+                width: 80px;
+                height: 80px;
+
+                .k3-chip:nth-child(1) {
+                    margin: 6px 26px 7px 26px;
+                }
+
+                .k3-chip:nth-child(2) {
+                    margin: 7px 7px 6px 6px;
+                }
+
+                .k3-chip:nth-child(3) {
+                    margin: 7px 6px 6px 7px;
+                }
+            }
+        }
+
+        &[method='th3_th3_th3tx'] {
+            .k3-plate-item-num {
+                padding: 0 30px;
+            }
+        }
+
+        &[method='th2_th2dx_ds'], &[method='bth3_bth3_ds'], &[method='bth3_lh3_dx'], &[method='bth3_bs_dx'], &[method='bth3_z6_dx'] {
+            .k3-plate-item-num {
+                padding: 5px;
+                margin-bottom: 14px;
+
+                .k3-chips {
+                    width: auto;
+                    height: 26px;
+
+                    .k3-chip {
+                        margin: 0 4px;
+                    }
+                }
+            }
+        }
+
+        &[method='bth3_bth3_ds'], &[method='th2_th2dx_ds'] {
+            width: 560px;
+        }
+
+        &[method='bth3_bs_dx'] {
+            width: 400px;
+        }
+
+        &[method='bth3_lh3_tx'], &[method='bth3_bs_tx'], &[method='bth3_z6_tx'] {
+            .k3-plate-item-num {
+                padding: 5px;
+
+                .k3-chips {
+                    width: auto;
+                    height: 26px;
+                    margin: 0 8px;
+
+                    .k3-chip {
+                        margin: 0 4px;
+                    }
+                }
+            }
+        }
+
+        &[method='bth3_bs_tx'] {
+            width: 488px;
+
+            .k3-plate-item-num {
+                padding: 0 10px;
+
+                .k3-chips {
+                    margin: 6px;
+                }
+            }
+        }
+
+        &[method='bth3_bth3_fs'] {
+            .k3-plate-item-num {
+                padding: 6px 26px;
+            }
+        }
+
+        &[method='th2_th2dx_fs'] {
+            .k3-chips {
+                padding: 0 5px;
+
+                &[value='1'], &[value='2'], &[value='3'], &[value='4'], &[value='5'], &[value='6'] {
+                    padding: 0 23px;
+                }
+
+                .k3-chip {
+                    margin: 5px;
+                }
+            }
+        }
+
+        &[method='bth2_bth2_fs'], &[method='cygh_cygh_cygh'] {
+            .k3-chips {
+                padding: 0 23px;
+
+                .k3-chip {
+                    margin: 5px;
+                }
+            }
+        }
+
+        &[method='th2_th2fx_fx'], &[method='bth2_bth2_ds'] {
+            .k3-chips {
+                padding: 0 5px;
+
+                .k3-chip {
+                    margin: 5px;
+                }
+            }
+        }
+
+         &[method='bth2_bth2_ds'] {
+             width: 500px;
+             .k3-plate-item-num {
+                 margin-bottom: 14px;
+            }
+        }
+    }
+
     .k3-plate-item-num {
         background: #f0f0f0;
+        margin: 0 5px;
+        border-radius: 3px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        cursor: pointer;
 
         &:hover {
             background: #ffdddc;
+            border: 1px solid #ffcbc9;
         }
 
         .k3-chip {
             width: 26px;
             height: 26px;
-            background: url('../../../images/lottery/dice.png');
+            background: url('../../../images/lottery/dice.png') no-repeat;
             font-size: 0;
         }
 

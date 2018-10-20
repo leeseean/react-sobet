@@ -5,7 +5,7 @@ import './trendList.styl';
 
 @inject(stores => ({
     lotteryStore: stores.lotteryStore,
-    method: stores.plateStore.method
+    method: stores.lotteryStore.method
 }))
 @observer
 class TrendList extends React.Component {

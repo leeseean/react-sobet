@@ -1127,7 +1127,7 @@ export default {
                 isChip: true,
                 type: 'click',
                 pos: ['单选'],
-                num: ['123', '124', '125', '126', '134', '135', '136', '145', '146', '234', '235', '236', '345', '346', '456'],
+                num: ['123', '124', '125', '126', '134', '135', '136', '145', '146', '156', '234', '235', '236', '245', '246', '256', '345', '346', '356', '456'],
                 filter: []
             }
         },
@@ -1167,7 +1167,7 @@ export default {
                 isChip: true,
                 type: 'click',
                 pos: ['单选'],
-                num: ['124', '125', '126', '134', '145', '235', '236', '346'],
+                num: ['124', '125', '126', '134', '145', '156', '235', '236', '245', '256', '346', '356'],
                 filter: []
             }
         },
@@ -1177,7 +1177,7 @@ export default {
                 isChip: true,
                 type: 'click',
                 pos: ['通选'],
-                num: ['124|125|126|134|145|235|236|346'],
+                num: ['124|125|126|134|145|156|235|236|245|256|346|356'],
                 filter: []
             }
         },
@@ -1261,5 +1261,179 @@ export default {
                 filter: []
             }
         },
+    },
+    shssl: {
+        sm_zx_fs: {
+            name: '三码直选复式',
+            plate: {
+                type: 'click',
+                pos: ['百位', '十位'],
+                num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sm_zx_ds: {
+            name: '三码直选单式',
+            plate: {
+                type: 'input',
+            }
+        },
+        sm_zx_hz: {
+            name: '三码直选和值',
+            plate: {
+                type: 'click',
+                pos: ['和值'],
+                num: [...Array(28).map((v, i) => i)],
+                filter: []
+            }
+        },
+        sm_zux_z3: {
+            name: '三码组选组3',
+            plate: {
+                type: 'click',
+                pos: ['组3'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sm_zux_z6: {
+            name: '三码组选组6',
+            plate: {
+                type: 'click',
+                pos: ['组6'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sm_zux_hh: {
+            name: '三码组选混合',
+            plate: {
+                type: 'input',
+            }
+        },
+        sm_zux_hz: {
+            name: '三码组选和值',
+            plate: {
+                type: 'click',
+                pos: ['和值'],
+                num: [...Array(26).map((v, i) => i + 1)],
+                filter: []
+            }
+        },
+        em_zx_hfs: {
+            name: '后二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['十位', '个位'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zx_hds: {
+            name: '后二直选单式',
+            plate: {
+                type: 'input',
+            }
+        },
+        em_zx_qfs: {
+            name: '前二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['百位', '十位'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zx_qds: {
+            name: '前二直选单式',
+            plate: {
+                type: 'input',
+            }
+        },
+        em_zux_hfs: {
+            name: '后二组选复式',
+            plate: {
+                type: 'click',
+                pos: ['十位', '个位'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zux_hds: {
+            name: '后二组选单式',
+            plate: {
+                type: 'input',
+            }
+        },
+        em_zux_qfs: {
+            name: '前二组选复式',
+            plate: {
+                type: 'click',
+                pos: ['百位', '十位'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zux_qds: {
+            name: '前二组选单式',
+            plate: {
+                type: 'input',
+            }
+        },
+        dwd_dwd_dwd: {
+            name: '定位胆',
+            plate: {
+                type: 'click',
+                pos: ['定位胆'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        bdd_bdd_bdd1: {
+            name: '一码不定胆',
+            plate: {
+                type: 'click',
+                pos: ['不定胆'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        bdd_bdd_bdd2: {
+            name: '二码不定胆',
+            plate: {
+                type: 'click',
+                pos: ['不定胆'],
+                num: [...Array(10).map((v, i) => i)],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qw_lhh_bs: {
+            name: '百十龙虎斗',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse(),
+            }
+        },
+        qw_lhh_bg: {
+            name: '百个龙虎斗',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse(),
+            }
+        },
+        qw_lhh_sg: {
+            name: '十十龙虎斗',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse(),
+            }
+        },
+        qw_xt_xt: {
+            name: '形态',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse(),
+            }
+        }
     }
 };

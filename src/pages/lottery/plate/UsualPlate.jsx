@@ -5,20 +5,11 @@ import { Input } from 'antd';
 
 const { TextArea } = Input;
 
-@inject(stores => ({
-    plateConfig: stores.plateStore.plateConfig,
-    method: stores.plateStore.method,
-    missShowFlag: stores.plateStore.missShowFlag,
-    hotShowFlag: stores.plateStore.hotShowFlag,
-    lotteryCode: stores.lotteryStore.lotteryCode,
-    lotteryType: stores.lotteryStore.lotteryType,
-    hitFrequency: stores.lotteryStore.hitFrequency,
-    skipFrequency: stores.lotteryStore.skipFrequency,
-}))
+@inject('lotteryStore')
 @observer
 class UsualPlate extends React.Component {
     render() {
-        const { plateConfig, method, lotteryCode, lotteryType, hotShowFlag, missShowFlag, hitFrequency, skipFrequency } = this.props;
+        const { plateConfig, method, lotteryCode, lotteryType, hotShowFlag, missShowFlag, hitFrequency, skipFrequency } = this.props.lotteryStore;
         const { type, pos, num, isQw, isLonghu, area, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         let extraClass = '';
         if (isQw) {
@@ -113,16 +104,10 @@ class UsualPlate extends React.Component {
             );
         };
         const reflectConfig = {
-            click: <ClickPlate {...{ pos, num, filter, hitFrequency, skipFrequency }} />,
-            input: <InputPlate />
+            click: <ClickPlate key="click" {...{ pos, num, filter, hitFrequency, skipFrequency }} />,
+            input: <InputPlate key="input" />
         };
-        return (
-            <div className="plate-wrapper">
-                <div className="plate-wrapper-inner">
-                    {reflectConfig[type]}
-                </div>
-            </div>
-        );
+        return reflectConfig[type];
     }
 }
 

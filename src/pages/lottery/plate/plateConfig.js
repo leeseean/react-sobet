@@ -1435,5 +1435,294 @@ export default {
                 filter: ['全', '清'].reverse(),
             }
         }
+    },
+    gd11y: {
+        sm_sm_zxfs: {
+            name: '前三直选复式',
+            plate: {
+                type: 'click',
+                pos: ['第一位', '第二位', '第三位'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sm_sm_zxds: {
+            name: '前三直选单式',
+            isRandom: true,//是否机选
+            plate: {
+                type: 'input',
+            }
+        },
+        sm_sm_zuxfs: {
+            name: '前三组选复式',
+            plate: {
+                type: 'click',
+                pos: ['前三组选'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sm_sm_zuxds: {
+            name: '前三组选单式',
+            isRandom: true,//是否机选
+            plate: {
+                type: 'input',
+            }
+        },
+        em_em_zxfs: {
+            name: '前二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['第一位', '第二位', '第三位'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_em_zxds: {
+            name: '前二直选单式',
+            isRandom: true,//是否机选
+            plate: {
+                type: 'input',
+            }
+        },
+        em_em_zuxfs: {
+            name: '前二组选复式',
+            plate: {
+                type: 'click',
+                pos: ['前二组选'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_em_zuxds: {
+            name: '前二组选单式',
+            isRandom: true,//是否机选
+            plate: {
+                type: 'input',
+            }
+        },
+        bdd_bdd_bdd11y: {
+            name: '不定胆',
+            plate: {
+                type: 'click',
+                pos: ['前三位'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        dwd_dwd_dwd11y: {
+            name: '定位胆',
+            plate: {
+                type: 'click',
+                pos: ['第一位', '第二位', '第三位'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_1z1: {
+            name: '任选复式一中一',
+            plate: {
+                type: 'click',
+                pos: ['选1中1'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_2z2: {
+            name: '任选复式二中二',
+            plate: {
+                type: 'click',
+                pos: ['选2中2'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_3z3: {
+            name: '任选复式三中三',
+            plate: {
+                type: 'click',
+                pos: ['选3中3'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_4z4: {
+            name: '任选复式四中四',
+            plate: {
+                type: 'click',
+                pos: ['选4中4'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_5z5: {
+            name: '任选复式五中五',
+            plate: {
+                type: 'click',
+                pos: ['选5中5'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_6z5: {
+            name: '任选复式六中五',
+            plate: {
+                type: 'click',
+                pos: ['选6中5'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_7z5: {
+            name: '任选复式七中五',
+            plate: {
+                type: 'click',
+                pos: ['选7中5'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxfs_rxfs_8z5: {
+            name: '任选复式八中五',
+            plate: {
+                type: 'click',
+                pos: ['选8中5'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxds_rxds_1z1: {
+            name: '任选单式一中一',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_2z2: {
+            name: '任选单式二中二',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_3z3: {
+            name: '任选单式三中三',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_4z4: {
+            name: '任选单式四中四',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_5z5: {
+            name: '任选单式五中五',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_6z5: {
+            name: '任选单式六中五',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_7z5: {
+            name: '任选单式七中五',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxds_rxds_8z5: {
+            name: '任选单式八中五',
+            isRandom: true,
+            plate: {
+                type: 'input',
+            }
+        },
+        rxdt_rxdt_2z2: {
+            name: '任选胆拖二中二',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_3z3: {
+            name: '任选胆拖三中三',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_4z4: {
+            name: '任选胆拖四中四',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_5z5: {
+            name: '任选胆拖五中五',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_6z5: {
+            name: '任选胆拖六中五',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_7z5: {
+            name: '任选胆拖七中五',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rxdt_rxdt_8z5: {
+            name: '任选胆拖八中五',
+            plate: {
+                type: 'click',
+                pos: ['胆码', '拖码'],
+                num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qw_qw_dds: {
+            name: '定单双',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse()
+            }
+        },
+        qw_qw_czw: {
+            name: '猜中位',
+            plate: {
+                type: 'click',
+                filter: ['全', '清'].reverse()
+            }
+        },
     }
 };

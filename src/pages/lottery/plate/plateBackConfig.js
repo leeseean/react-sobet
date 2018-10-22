@@ -1349,6 +1349,503 @@ export default {
                 }]
             }]
         }]
-    }
-    ]
+    },
+    ],
+    gd11y: [{
+        type: 'normal',
+        tab: '三星',
+        subTabConfig: [{
+            title: '三码',
+            playWay: [{
+                cn: '前三直选复式',
+                en: 'sm_sm_zxfs'
+            }, {
+                cn: '前三直选单式',
+                en: 'sm_sm_zxds'
+            }, {
+                cn: '前三组选复式',
+                en: 'sm_sm_zuxfs'
+            }, {
+                cn: '前三组选单式',
+                en: 'sm_sm_zuxds'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '二星',
+        subTabConfig: [{
+            title: '二码',
+            playWay: [{
+                cn: '前二直选复式',
+                en: 'em_em_zxfs'
+            }, {
+                cn: '前二直选单式',
+                en: 'em_em_zxds'
+            }, {
+                cn: '前二组选复式',
+                en: 'em_em_zuxfs'
+            }, {
+                cn: '前二组选单式',
+                en: 'em_em_zuxds'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '不定胆',
+        subTabConfig: [{
+            title: '不定胆',
+            playWay: [{
+                cn: '前三位',
+                en: 'bdd_bdd_bdd11y'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '定位胆',
+        subTabConfig: [{
+            title: '定位胆',
+            playWay: [{
+                cn: '前三位',
+                en: 'dwd_dwd_dwd11y'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '任选复式',
+        subTabConfig: [{
+            title: '任选复式',
+            playWay: [{
+                cn: '一中一',
+                en: 'rxfs_rxfs_1z1'
+            }, {
+                cn: '二中二',
+                en: 'rxfs_rxfs_2z2'
+            }, {
+                cn: '三中三',
+                en: 'rxfs_rxfs_3z3'
+            }, {
+                cn: '四中四',
+                en: 'rxfs_rxfs_4z4'
+            }, {
+                cn: '五中五',
+                en: 'rxfs_rxfs_5z5'
+            }, {
+                cn: '六中五',
+                en: 'rxfs_rxfs_6z5'
+            }, {
+                cn: '七中五',
+                en: 'rxfs_rxfs_7z5'
+            }, {
+                cn: '八中五',
+                en: 'rxfs_rxfs_8z5'
+            }]
+        }, {
+            type: 'normal',
+            tab: '任选单式',
+            subTabConfig: [{
+                title: '任选单式',
+                playWay: [{
+                    cn: '一中一',
+                    en: 'rxds_rxds_1z1'
+                }, {
+                    cn: '二中二',
+                    en: 'rxds_rxds_2z2'
+                }, {
+                    cn: '三中三',
+                    en: 'rxds_rxds_3z3'
+                }, {
+                    cn: '四中四',
+                    en: 'rxds_rxds_4z4'
+                }, {
+                    cn: '五中五',
+                    en: 'rxds_rxds_5z5'
+                }, {
+                    cn: '六中五',
+                    en: 'rxds_rxds_6z5'
+                }, {
+                    cn: '七中五',
+                    en: 'rxds_rxds_7z5'
+                }, {
+                    cn: '八中五',
+                    en: 'rxds_rxds_8z5'
+                }]
+            }]
+        }, {
+            type: 'normal',
+            tab: '任选胆拖',
+            subTabConfig: [{
+                title: '任选胆拖',
+                playWay: [{
+                    cn: '二中二',
+                    en: 'rxdt_rxdt_2z2'
+                }, {
+                    cn: '三中三',
+                    en: 'rxdt_rxdt_3z3'
+                }, {
+                    cn: '四中四',
+                    en: 'rxdt_rxdt_4z4'
+                }, {
+                    cn: '五中五',
+                    en: 'rxdt_rxdt_5z5'
+                }, {
+                    cn: '六中五',
+                    en: 'rxdt_rxdt_6z5'
+                }, {
+                    cn: '七中五',
+                    en: 'rxdt_rxdt_7z5'
+                }, {
+                    cn: '八中五',
+                    en: 'rxdt_rxdt_8z5'
+                }]
+            }]
+        }, {
+            type: 'normal',
+            tab: '趣味',
+            subTabConfig: [{
+                title: '定单双',
+                playWay: [{
+                    isChaidan: true,
+                    cn: '定单双',
+                    en: 'qw_qw_dds',
+                    pos: ['定单双'],
+                    plate: [{
+                        cn: '5单0双',
+                        en: 'qw_qw_dds_50'
+                    }, {
+                        cn: '4单1双',
+                        en: 'qw_qw_dds_41'
+                    }, {
+                        cn: '3单2双',
+                        en: 'qw_qw_dds_32'
+                    }, {
+                        cn: '2单3双',
+                        en: 'qw_qw_dds_23'
+                    }, {
+                        cn: '1单4双',
+                        en: 'qw_qw_dds_14'
+                    }, {
+                        cn: '0单5双',
+                        en: 'qw_qw_dds_05'
+                    }]
+                }]
+            }, {
+                title: '猜中位',
+                playWay: [{
+                    isChaidan: true,
+                    cn: '猜中位',
+                    en: 'qw_qw_czw',
+                    pos: ['猜中位'],
+                    plate: [{
+                        cn: '03',
+                        en: 'qw_qw_czw_3_9'
+                    }, {
+                        cn: '04',
+                        en: 'qw_qw_czw_4_8'
+                    }, {
+                        cn: '05',
+                        en: 'qw_qw_czw_5_7'
+                    }, {
+                        cn: '06',
+                        en: 'qw_qw_czw_6'
+                    }, {
+                        cn: '07',
+                        en: 'qw_qw_czw_5_7'
+                    }, {
+                        cn: '08',
+                        en: 'qw_qw_czw_4_8'
+                    }, {
+                        cn: '09',
+                        en: 'qw_qw_czw_3_9'
+                    }]
+                }]
+            }]
+        }]
+    }],
+    bjpk10: [{
+        type: 'normal',
+        tab: '猜冠军',
+        subTabConfig: [{
+            title: '猜冠军',
+            playWay: [{
+                cn: '猜冠军',
+                en: 'cq1_cq1_cq1'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '猜前二',
+        subTabConfig: [{
+            title: '猜前二',
+            playWay: [{
+                cn: '猜前二',
+                en: 'cq2_cq2_cq2'
+            }]
+        }, {
+            cn: '单式',
+            en: 'cq2_cq2_ds'
+        }]
+    }, {
+        type: 'normal',
+        tab: '猜前三',
+        subTabConfig: [{
+            title: '猜前三',
+            playWay: [{
+                cn: '猜前三',
+                en: 'cq3_cq3_cq3'
+            }]
+        }, {
+            cn: '单式',
+            en: 'cq3_cq3_ds'
+        }]
+    }, {
+        type: 'normal',
+        tab: '猜前四',
+        subTabConfig: [{
+            title: '猜前四',
+            playWay: [{
+                cn: '猜前四',
+                en: 'cq4_cq4_cq4'
+            }]
+        }, {
+            cn: '单式',
+            en: 'cq4_cq4_ds'
+        }]
+    }, {
+        type: 'normal',
+        tab: '猜前五',
+        subTabConfig: [{
+            title: '猜前五',
+            playWay: [{
+                cn: '猜前五',
+                en: 'cq5_cq5_cq5'
+            }]
+        }, {
+            cn: '单式',
+            en: 'cq5_cq5_ds'
+        }]
+    }, {
+        type: 'normal',
+        tab: '定位胆',
+        subTabConfig: [{
+            title: '定位胆',
+            playWay: [{
+                cn: '前五定位胆',
+                en: 'dwd_dwd_q5'
+            }, {
+                cn: '后五定位胆',
+                en: 'dwd_dwd_h5'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '大小',
+        subTabConfig: [{
+            title: '大小',
+            playWay: [{
+                cn: '冠军',
+                en: 'dx_dx_d1'
+            }, {
+                cn: '第二名',
+                en: 'dx_dx_d2'
+            }, {
+                cn: '第三名',
+                en: 'dx_dx_d3'
+            }, {
+                cn: '第四名',
+                en: 'dx_dx_d4'
+            }, {
+                cn: '第五名',
+                en: 'dx_dx_d5'
+            }, {
+                isChaidan: true,
+                cn: '冠亚和值',
+                en: 'dx_dx_q2',
+                pos: ['冠亚和值'],
+                plate: [{
+                    cn: '大',
+                    cn: 'dx_dx_q2_da'
+                }, {
+                    cn: '小',
+                    cn: 'dx_dx_q2_xiao'
+                }]
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '单双',
+        subTabConfig: [{
+            title: '单双',
+            playWay: [{
+                cn: '冠军',
+                en: 'ds_ds_d1'
+            }, {
+                cn: '第二名',
+                en: 'ds_ds_d2'
+            }, {
+                cn: '第三名',
+                en: 'ds_ds_d3'
+            }, {
+                cn: '第四名',
+                en: 'ds_ds_d4'
+            }, {
+                cn: '第五名',
+                en: 'ds_ds_d5'
+            }, {
+                isChaidan: true,
+                cn: '冠亚和值',
+                en: 'ds_ds_q2',
+                pos: ['冠亚和值'],
+                plate: [{
+                    cn: '单',
+                    cn: 'ds_ds_q2_dan'
+                }, {
+                    cn: '双',
+                    cn: 'ds_ds_q2_shuang'
+                }]
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '和值',
+        subTabConfig: [{
+            title: '和值',
+            playWay: [{
+                isChaidan: true,
+                pos: ['和值'],
+                cn: '冠亚和值',
+                en: 'hz_hz_q2',
+                plate: [{
+                    cn: '3',
+                    en: 'hz_hz_q2_3_19'
+                }, {
+                    cn: '4',
+                    en: 'hz_hz_q2_4_18'
+                }, {
+                    cn: '5',
+                    en: 'hz_hz_q2_5_17'
+                }, {
+                    cn: '6',
+                    en: 'hz_hz_q2_6_16'
+                }, {
+                    cn: '7',
+                    en: 'hz_hz_q2_7_15'
+                }, {
+                    cn: '8',
+                    en: 'hz_hz_q2_8_14'
+                }, {
+                    cn: '9',
+                    en: 'hz_hz_q2_9_13'
+                }, {
+                    cn: '10',
+                    en: 'hz_hz_q2_10_12'
+                }, {
+                    cn: '11',
+                    en: 'hz_hz_q2_11'
+                }, {
+                    cn: '12',
+                    en: 'hz_hz_q2_10_12'
+                }, {
+                    cn: '13',
+                    en: 'hz_hz_q2_9_13'
+                }, {
+                    cn: '14',
+                    en: 'hz_hz_q2_8_14'
+                }, {
+                    cn: '15',
+                    en: 'hz_hz_q2_7_15'
+                }, {
+                    cn: '16',
+                    en: 'hz_hz_q2_6_16'
+                }, {
+                    cn: '17',
+                    en: 'hz_hz_q2_5_17'
+                }, {
+                    cn: '18',
+                    en: 'hz_hz_q2_4_18'
+                }, {
+                    cn: '19',
+                    en: 'hz_hz_q2_3_19'
+                }]
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '和值',
+        subTabConfig: [{
+            title: '和值',
+            playWay: [{
+                isChaidan: true,
+                pos: ['和值'],
+                cn: '前三和值',
+                en: 'hz_hz_q3',
+                plate: [{
+                    cn: '6',
+                    en: 'hz_hz_q3_6_27'
+                }, {
+                    cn: '7',
+                    en: 'hz_hz_q3_7_26'
+                }, {
+                    cn: '8',
+                    en: 'hz_hz_q3_8_25'
+                }, {
+                    cn: '9',
+                    en: 'hz_hz_q3_9_24'
+                }, {
+                    cn: '10',
+                    en: 'hz_hz_q3_10_23'
+                }, {
+                    cn: '11',
+                    en: 'hz_hz_q3_11_22'
+                }, {
+                    cn: '12',
+                    en: 'hz_hz_q3_12_21'
+                }, {
+                    cn: '13',
+                    en: 'hz_hz_q3_13_20'
+                }, {
+                    cn: '14',
+                    en: 'hz_hz_q3_14_19'
+                }, {
+                    cn: '15',
+                    en: 'hz_hz_q3_15_18'
+                }, {
+                    cn: '16',
+                    en: 'hz_hz_q3_16_17'
+                }, {
+                    cn: '17',
+                    en: 'hz_hz_q3_16_17'
+                }, {
+                    cn: '18',
+                    en: 'hz_hz_q3_15_18'
+                }, {
+                    cn: '19',
+                    en: 'hz_hz_q3_14_19'
+                }, {
+                    cn: '20',
+                    en: 'hz_hz_q3_13_20'
+                }, {
+                    cn: '21',
+                    en: 'hz_hz_q3_12_21'
+                }, {
+                    cn: '22',
+                    en: 'hz_hz_q3_11_22'
+                }, {
+                    cn: '23',
+                    en: 'hz_hz_q3_10_13'
+                }, {
+                    cn: '24',
+                    en: 'hz_hz_q3_9_24'
+                }, {
+                    cn: '25',
+                    en: 'hz_hz_q3_8_25'
+                }, {
+                    cn: '26',
+                    en: 'hz_hz_q3_7_26'
+                }, {
+                    cn: '27',
+                    en: 'hz_hz_q3_6_27'
+                }]
+            }]
+        }]
+    }]
 };

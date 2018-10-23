@@ -1243,7 +1243,7 @@ export default {
             return this['qw_qw_dds'];
         },
     },
-    'k3': {
+    k3: {
         dxds_dxds_dxds: {
             area: [0, 1, 2],
             widthConfig: {

@@ -3,12 +3,13 @@
  */
 
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './agentCenterList.styl';
 
 class AgentCenterList extends React.Component {
     listData = [
         {
-            path: '/agent/teamReport',
+            path: '/agent/teamReport/lotteryReport',
             title: '团队报表'
         },
         {
@@ -25,9 +26,9 @@ class AgentCenterList extends React.Component {
             return listData.map(item => {
                 const { path, title } = item;
                 return (
-                    <a key={title} href={path}>
+                    <Link key={title} to={path}>
                         <li className="head__agent-item">{title}</li>
-                    </a>
+                    </Link>
                 );
             });
         };

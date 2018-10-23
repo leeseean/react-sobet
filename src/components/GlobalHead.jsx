@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { withRouter } from 'react-router-dom';
+import { withRouter,Redirect } from 'react-router-dom';
 import { Spin } from 'antd';
 import './globalHead.styl';
 import AllGameList from './AllGameList';
@@ -69,7 +69,7 @@ class GlobalHead extends React.Component {
         const { logined } = this.props.globalStore;
         const { username, balance, refreshBalance } = this.props.globalStore;
         if (!logined) {
-            return null;
+            return <Redirect to={"/login"} />;
         }
         const BackToIndex = ({ show }) => {
             if (show) {

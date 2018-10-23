@@ -89,6 +89,8 @@ class GlobalStore {
             return Promise.resolve(res);
         });
     }
+
+    @observable agentMenu = ['private']
 }
 
 export default new GlobalStore();

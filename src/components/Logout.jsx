@@ -11,6 +11,7 @@ class Logout extends React.Component {
     globalStore.logout().then((res) => {
       if (res.code === 0) {
         history.push('/login');
+        //window.location.href='/login'
       }
     });
   }

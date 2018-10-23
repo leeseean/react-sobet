@@ -8,9 +8,9 @@ import $http from '../utils/ajax';
 import {
     calcSxFilterConfig
 } from '../utils/algorithm';
-import config from '../pages/lhc/lhcConfig';
-import methodToCnObj from '../pages/lhc/methodToCnObj';
-import numToCnObj from '../pages/lhc/numToCnObj';
+import config from '../views_common/lhc/lhcConfig';
+import methodToCnObj from '../views_common/lhc/methodToCnObj';
+import numToCnObj from '../views_common/lhc/numToCnObj';
 
 class XglhcStore {
 

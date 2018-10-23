@@ -5,11 +5,11 @@ import {
     runInAction,
     computed
 } from 'mobx';
-import lotteryTypeConfig from '../pages/lottery/lotteryTypeConfig';
-import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
-import trendConfig from '../pages/lottery/trend/trendConfig';
-import playWayToCn from '../pages/lottery/playWayToCn';
-import plateConfig from '../pages/lottery/plate/plateConfig';
+import lotteryTypeConfig from '../views_common/lottery/lotteryTypeConfig';
+import lotteryCodeToCn from '../views_common/lottery/lotteryCodeToCn';
+import trendConfig from '../views_common/lottery/trend/trendConfig';
+import playWayToCn from '../views_common/lottery/playWayToCn';
+import plateConfig from '../views_common/lottery/plate/plateConfig';
 import {
     queryTrendData,
     updateIssue,

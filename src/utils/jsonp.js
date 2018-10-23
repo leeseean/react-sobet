@@ -1,7 +1,7 @@
 import jsonp from 'easy-jsonp';
 
-// const proxyPrefix = 'http://www.mochen111.net';
-const proxyPrefix = 'http://www.mc188.com';
+const proxyPrefix = 'http://www.mochen111.net';
+// const proxyPrefix = 'http://www.mc188.com';
 // const proxyPrefix = '';
 
 //获取登录状态

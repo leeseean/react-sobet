@@ -99,7 +99,8 @@
                 "title": "定位胆",
                 "playWay": [
                     {
-                        "cn": "dwd_dwd_dwd"
+                        "cn": "定位胆",
+                        "en": "dwd_dwd_dwd"
                     }
                 ]
             }
@@ -132,6 +133,7 @@
                 "title": "龙虎斗",
                 "playWay": [
                     {
+                        "isChaidan": true,
                         "cn": "百十",
                         "en": "qw_lhh_bs",
                         "pos": [
@@ -147,13 +149,9 @@
                                 "en": "qw_lhh_bs_lh"
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "title": "龙虎斗",
-                "playWay": [
+                    },
                     {
+                        "isChaidan": true,
                         "cn": "百个",
                         "en": "qw_lhh_bg",
                         "pos": [
@@ -169,13 +167,9 @@
                                 "en": "qw_lhh_bg_lh"
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "title": "龙虎斗",
-                "playWay": [
+                    },
                     {
+                        "isChaidan": true,
                         "cn": "十个",
                         "en": "qw_lhh_sg",
                         "pos": [
@@ -198,6 +192,7 @@
                 "title": "形态",
                 "playWay": [
                     {
+                        "isChaidan": true,
                         "cn": "形态",
                         "en": "qw_xt_xt",
                         "pos": [
@@ -205,19 +200,25 @@
                         ],
                         "plate": [
                             {
-                                "cn": "qw_xt_xt_bz"
+                                "cn": "豹子",
+                                "en": "qw_xt_xt_bz"
+
                             },
                             {
-                                "cn": "qw_xt_xt_sz"
+                                "cn": "顺子",
+                                "en": "qw_xt_xt_sz"
                             },
                             {
-                                "cn": "qw_xt_xt_dz"
+                                "cn": "对子",
+                                "en": "qw_xt_xt_dz"
                             },
                             {
-                                "cn": "qw_xt_xt_zl"
+                                "cn": "杂六",
+                                "en": "qw_xt_xt_zl"
                             },
                             {
-                                "cn": "qw_xt_xt_bs"
+                                "cn": "半顺",
+                                "en": "qw_xt_xt_bs"
                             }
                         ]
                     }

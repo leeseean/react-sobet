@@ -1,0 +1,36 @@
+.index-wrapper {
+    .banner-slide-item {
+        display: block;
+        height: 600px;
+    }
+
+    .carousel-custom-page {
+        width: 140px;
+        height: 30px;
+        line-height: @height;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 240px;
+        font-size: 0;
+    }
+
+    .carousel-custom-page--icon {
+        font-size: 28px;
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    .carousel-custom-page--current, .carousel-custom-page--total {
+        margin: 0 8px 0 4px;
+    }
+
+    .carousel-custom-page--current, .carousel-custom-page--total, .carousel-custom-page--slash {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+}

@@ -4,6 +4,7 @@ import './lotteryPlate.styl';
 import PlayTabs from './PlayTabs';
 import TipAndHot from './TipAndHot';
 import Plate from './Plate';
+import BetOption from './BetOption';
 
 @inject('lotteryStore')
 @observer
@@ -18,9 +19,7 @@ class LotteryPlate extends React.Component {
                 <PlayTabs />
                 <TipAndHot />
                 <Plate />
-                {
-                    /*<BetOption /> */
-                }
+                <BetOption />
             </div>
         );
     }

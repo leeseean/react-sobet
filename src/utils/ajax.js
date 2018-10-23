@@ -52,8 +52,8 @@ const $http = (config) => {
 
 export default $http;
 
-const proxyPrefix = 'dev';
-// const proxyPrefix = 'online';
+// const proxyPrefix = 'dev';
+const proxyPrefix = 'online';
 // const proxyPrefix = '';
 
 //中奖喜报

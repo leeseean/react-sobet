@@ -10,6 +10,9 @@ import { inject, observer } from 'mobx-react';
 class K3Plate extends React.Component {
     render() {
         const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props.lotteryStore;
+        if (!plateConfig[lotteryCode][method]) {
+            return null;
+        }
         if (chaidanConfig.isChaidan) {
             const { pos, plate } = chaidanConfig;
             const num = plate;

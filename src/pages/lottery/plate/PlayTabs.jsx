@@ -39,7 +39,7 @@ class PlayTabs extends React.Component {
         };
         //pk10 打开动画按钮
         const RaceTab = ({ text, onClick }) => {
-            return <div className="fr tab-race-control" onClick={onClick}>{text}</div>
+            return <div className="fr tab-race-control" onClick={onClick}>{text}</div>;
         };
         return (
             <React.Fragment>

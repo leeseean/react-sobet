@@ -1561,6 +1561,127 @@ export default {
             }]
         }]
     }],
+    sckl12: [{
+        type: 'normal',
+        tab: '三星',
+        subTabConfig: [{
+            title: '三码',
+            playWay: [{
+                cn: '前三直选复式',
+                en: 'sm_sm_zxfs'
+            }, {
+                cn: '前三直选单式',
+                en: 'sm_sm_zxds'
+            }, {
+                cn: '前三组选复式',
+                en: 'sm_sm_zuxfs'
+            }, {
+                cn: '前三组选单式',
+                en: 'sm_sm_zuxds'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '二星',
+        subTabConfig: [{
+            title: '二码',
+            playWay: [{
+                cn: '前二直选复式',
+                en: 'em_em_zxfs'
+            }, {
+                cn: '前二直选单式',
+                en: 'em_em_zxds'
+            }, {
+                cn: '前二组选复式',
+                en: 'em_em_zuxfs'
+            }, {
+                cn: '前二组选单式',
+                en: 'em_em_zuxds'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '不定胆',
+        subTabConfig: [{
+            title: '不定胆',
+            playWay: [{
+                cn: '前三位',
+                en: 'bdd_bdd_bdd11y'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '定位胆',
+        subTabConfig: [{
+            title: '定位胆',
+            playWay: [{
+                cn: '前三一码',
+                en: 'bdd_bdd_3x1m'
+            }, {
+                cn: '前四一码',
+                en: 'bdd_bdd_4x1m'
+            }, {
+                cn: '五星一码',
+                en: 'bdd_bdd_5x1m'
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '任选复式',
+        subTabConfig: [{
+            title: '任选复式',
+            playWay: [{
+                cn: '二中二',
+                en: 'rxfs_rxfs_2z2'
+            }, {
+                cn: '三中三',
+                en: 'rxfs_rxfs_3z3'
+            }, {
+                cn: '四中四',
+                en: 'rxfs_rxfs_4z4'
+            }, {
+                cn: '五中五',
+                en: 'rxfs_rxfs_5z5'
+            }, {
+                cn: '六中五',
+                en: 'rxfs_rxfs_6z5'
+            }, {
+                cn: '七中五',
+                en: 'rxfs_rxfs_7z5'
+            }, {
+                cn: '八中五',
+                en: 'rxfs_rxfs_8z5'
+            }]
+        }, {
+            type: 'normal',
+            tab: '任选单式',
+            subTabConfig: [{
+                title: '任选单式',
+                playWay: [{
+                    cn: '二中二',
+                    en: 'rxds_rxds_2z2'
+                }, {
+                    cn: '三中三',
+                    en: 'rxds_rxds_3z3'
+                }, {
+                    cn: '四中四',
+                    en: 'rxds_rxds_4z4'
+                }, {
+                    cn: '五中五',
+                    en: 'rxds_rxds_5z5'
+                }, {
+                    cn: '六中五',
+                    en: 'rxds_rxds_6z5'
+                }, {
+                    cn: '七中五',
+                    en: 'rxds_rxds_7z5'
+                }, {
+                    cn: '八中五',
+                    en: 'rxds_rxds_8z5'
+                }]
+            }]
+        }]
+    }],
     bjpk10: [{
         type: 'normal',
         tab: '猜冠军',
@@ -1579,10 +1700,10 @@ export default {
             playWay: [{
                 cn: '猜前二',
                 en: 'cq2_cq2_cq2'
+            }, {
+                cn: '单式',
+                en: 'cq2_cq2_ds'
             }]
-        }, {
-            cn: '单式',
-            en: 'cq2_cq2_ds'
         }]
     }, {
         type: 'normal',
@@ -1592,10 +1713,10 @@ export default {
             playWay: [{
                 cn: '猜前三',
                 en: 'cq3_cq3_cq3'
+            }, {
+                cn: '单式',
+                en: 'cq3_cq3_ds'
             }]
-        }, {
-            cn: '单式',
-            en: 'cq3_cq3_ds'
         }]
     }, {
         type: 'normal',
@@ -1605,10 +1726,10 @@ export default {
             playWay: [{
                 cn: '猜前四',
                 en: 'cq4_cq4_cq4'
+            }, {
+                cn: '单式',
+                en: 'cq4_cq4_ds'
             }]
-        }, {
-            cn: '单式',
-            en: 'cq4_cq4_ds'
         }]
     }, {
         type: 'normal',
@@ -1618,10 +1739,10 @@ export default {
             playWay: [{
                 cn: '猜前五',
                 en: 'cq5_cq5_cq5'
+            }, {
+                cn: '单式',
+                en: 'cq5_cq5_ds'
             }]
-        }, {
-            cn: '单式',
-            en: 'cq5_cq5_ds'
         }]
     }, {
         type: 'normal',
@@ -1844,6 +1965,73 @@ export default {
                 }, {
                     cn: '27',
                     en: 'hz_hz_q3_6_27'
+                }]
+            }]
+        }]
+    }, {
+        type: 'normal',
+        tab: '龙虎',
+        subTabConfig: [{
+            title: '龙虎',
+            playWay: [{
+                isChaidan: true,
+                pos: ['1v10'],
+                cn: '1v10',
+                en: 'lh_lh_1v10',
+                plate: [{
+                    cn: '龙',
+                    en: 'lh_lh_1v10_long'
+                }, {
+                    cn: '虎',
+                    en: 'lh_lh_1v10_hu'
+                }]
+            }, {
+                isChaidan: true,
+                pos: ['2v9'],
+                cn: '2v9',
+                en: 'lh_lh_2v9',
+                plate: [{
+                    cn: '龙',
+                    en: 'lh_lh_2v9_long'
+                }, {
+                    cn: '虎',
+                    en: 'lh_lh_2v9_hu'
+                }]
+            }, {
+                isChaidan: true,
+                pos: ['3v8'],
+                cn: '3v8',
+                en: 'lh_lh_3v8',
+                plate: [{
+                    cn: '龙',
+                    en: 'lh_lh_3v8_long'
+                }, {
+                    cn: '虎',
+                    en: 'lh_lh_3v8_hu'
+                }]
+            }, {
+                isChaidan: true,
+                pos: ['4v7'],
+                cn: '4v7',
+                en: 'lh_lh_4v7',
+                plate: [{
+                    cn: '龙',
+                    en: 'lh_lh_4v7_long'
+                }, {
+                    cn: '虎',
+                    en: 'lh_lh_4v7_hu'
+                }]
+            }, {
+                isChaidan: true,
+                pos: ['5v6'],
+                cn: '5v6',
+                en: 'lh_lh_5v6',
+                plate: [{
+                    cn: '龙',
+                    en: 'lh_lh_5v6_long'
+                }, {
+                    cn: '虎',
+                    en: 'lh_lh_5v6_hu'
                 }]
             }]
         }]

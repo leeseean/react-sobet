@@ -1,0 +1,228 @@
+[
+    {
+        "type": "normal",
+        "tab": "三星",
+        "subTabConfig": [
+            {
+                "title": "直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "sm_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "sm_zx_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "sm_zx_hz"
+                    }
+                ]
+            },
+            {
+                "title": "组选",
+                "playWay": [
+                    {
+                        "cn": "组三",
+                        "en": "sm_zux_z3"
+                    },
+                    {
+                        "cn": "组六",
+                        "en": "sm_zux_z6"
+                    },
+                    {
+                        "cn": "混合",
+                        "en": "sm_zux_hh"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "sm_zux_hz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "二星",
+        "subTabConfig": [
+            {
+                "title": "直选",
+                "playWay": [
+                    {
+                        "cn": "后二直选复式",
+                        "en": "em_zx_hfs"
+                    },
+                    {
+                        "cn": "后二直选单式",
+                        "en": "em_zx_hds"
+                    },
+                    {
+                        "cn": "前二直选复式",
+                        "en": "em_zx_qfs"
+                    },
+                    {
+                        "cn": "前二直选单式",
+                        "en": "em_zx_qds"
+                    }
+                ]
+            },
+            {
+                "title": "组选",
+                "playWay": [
+                    {
+                        "cn": "后二组选复式",
+                        "en": "em_zux_hfs"
+                    },
+                    {
+                        "cn": "后二组选单式",
+                        "en": "em_zux_hds"
+                    },
+                    {
+                        "cn": "前二组选复式",
+                        "en": "em_zux_qfs"
+                    },
+                    {
+                        "cn": "前二组选单式",
+                        "en": "em_zux_qds"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "定位胆",
+        "subTabConfig": [
+            {
+                "title": "定位胆",
+                "playWay": [
+                    {
+                        "cn": "dwd_dwd_dwd"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "不定胆",
+        "subTabConfig": [
+            {
+                "title": "不定胆",
+                "playWay": [
+                    {
+                        "cn": "一码",
+                        "en": "bdd_bdd_bdd1"
+                    },
+                    {
+                        "cn": "二码",
+                        "en": "bdd_bdd_bdd2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "趣味玩法",
+        "subTabConfig": [
+            {
+                "title": "龙虎斗",
+                "playWay": [
+                    {
+                        "cn": "百十",
+                        "en": "qw_lhh_bs",
+                        "pos": [
+                            "百十"
+                        ],
+                        "plate": [
+                            {
+                                "cn": "龙",
+                                "en": "qw_lhh_bs_lh"
+                            },
+                            {
+                                "cn": "虎",
+                                "en": "qw_lhh_bs_lh"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "龙虎斗",
+                "playWay": [
+                    {
+                        "cn": "百个",
+                        "en": "qw_lhh_bg",
+                        "pos": [
+                            "百个"
+                        ],
+                        "plate": [
+                            {
+                                "cn": "龙",
+                                "en": "qw_lhh_bg_lh"
+                            },
+                            {
+                                "cn": "虎",
+                                "en": "qw_lhh_bg_lh"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "龙虎斗",
+                "playWay": [
+                    {
+                        "cn": "十个",
+                        "en": "qw_lhh_sg",
+                        "pos": [
+                            "十个"
+                        ],
+                        "plate": [
+                            {
+                                "cn": "龙",
+                                "en": "qw_lhh_sg_lh"
+                            },
+                            {
+                                "cn": "虎",
+                                "en": "qw_lhh_sg_lh"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "形态",
+                "playWay": [
+                    {
+                        "cn": "形态",
+                        "en": "qw_xt_xt",
+                        "pos": [
+                            "形态"
+                        ],
+                        "plate": [
+                            {
+                                "cn": "qw_xt_xt_bz"
+                            },
+                            {
+                                "cn": "qw_xt_xt_sz"
+                            },
+                            {
+                                "cn": "qw_xt_xt_dz"
+                            },
+                            {
+                                "cn": "qw_xt_xt_zl"
+                            },
+                            {
+                                "cn": "qw_xt_xt_bs"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

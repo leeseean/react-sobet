@@ -20,6 +20,9 @@ class TrendList extends React.Component {
         };
         const { className, mainLeftRef, method } = this.props;
         const { trendData, lotteryType, trendConfig } = this.props.lotteryStore;
+        if (!trendConfig[lotteryType][method]) {
+            return null;
+        }
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
@@ -69,7 +72,7 @@ class TrendList extends React.Component {
         });
         return (
             <div className={`trend-wrapper ${className ? className : ''}`}>
-                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: mainLeftRef.offsetHeight - 37*2 }} />
+                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: mainLeftRef.offsetHeight - 37 * 2 }} />
             </div>
         );
     }

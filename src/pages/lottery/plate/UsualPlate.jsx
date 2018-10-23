@@ -10,6 +10,9 @@ const { TextArea } = Input;
 class UsualPlate extends React.Component {
     render() {
         const { plateConfig, method, lotteryCode, lotteryType, hotShowFlag, missShowFlag, hitFrequency, skipFrequency } = this.props.lotteryStore;
+        if (!plateConfig[lotteryCode][method]) {
+            return null;
+        }
         const { type, pos, num, isQw, isLonghu, area, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         let extraClass = '';
         if (isQw) {
@@ -25,18 +28,18 @@ class UsualPlate extends React.Component {
                     const max = Math.max(...arr);
                     const min = Math.min(...arr);
                     if (n === max) {
-                        return <div className="fl hot-skip-num max" type={type}>{n}</div>;
+                        return <div key={n} className="fl hot-skip-num max" type={type}>{n}</div>;
                     }
                     if (n === min) {
-                        return <div className="fl hot-skip-num min" type={type}>{n}</div>;
+                        return <div key={n} className="fl hot-skip-num min" type={type}>{n}</div>;
                     }
-                    return <div className="fl hot-skip-num" type={type}>{n}</div>;
+                    return <div key={n} className="fl hot-skip-num" type={type}>{n}</div>;
                 });
             };
             return pos.map((val, idx) => {
                 return (
-                    <React.Fragment>
-                        <div key={val} className="clearfix plate-item" lottery-type={lotteryType} lottery-code={lotteryCode}>
+                    <React.Fragment key={val}>
+                        <div className="clearfix plate-item" lottery-type={lotteryType} lottery-code={lotteryCode}>
                             <div className={`fl plate-item-pos ${extraClass}`}>{val}</div>
                             <div className="fl clearfix plate-item-nums" method={method}>
                                 {num.map(v => {

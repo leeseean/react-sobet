@@ -1,0 +1,241 @@
+[
+    {
+        "type": "normal",
+        "tab": "大小单双",
+        "subTabConfig": [
+            {
+                "title": "大小单双",
+                "playWay": [
+                    {
+                        "cn": "大小单双",
+                        "en": "dxds_dxds_dxds"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "和值",
+        "subTabConfig": [
+            {
+                "title": "和值",
+                "playWay": [
+                    {
+                        "isChaidan": true,
+                        "pos": [
+                            "和值"
+                        ],
+                        "cn": "和值",
+                        "en": "hz_hz_hz",
+                        "plate": [
+                            {
+                                "cn": 3,
+                                "en": "hz_hz_hz_3_18"
+                            },
+                            {
+                                "cn": 4,
+                                "en": "hz_hz_hz_4_17"
+                            },
+                            {
+                                "cn": 5,
+                                "en": "hz_hz_hz_5_16"
+                            },
+                            {
+                                "cn": 6,
+                                "en": "hz_hz_hz_6_15"
+                            },
+                            {
+                                "cn": 7,
+                                "en": "hz_hz_hz_7_14"
+                            },
+                            {
+                                "cn": 8,
+                                "en": "hz_hz_hz_8_13"
+                            },
+                            {
+                                "cn": 9,
+                                "en": "hz_hz_hz_9_12"
+                            },
+                            {
+                                "cn": 10,
+                                "en": "hz_hz_hz_10_11"
+                            },
+                            {
+                                "cn": 11,
+                                "en": "hz_hz_hz_10_11"
+                            },
+                            {
+                                "cn": 12,
+                                "en": "hz_hz_hz_9_12"
+                            },
+                            {
+                                "cn": 13,
+                                "en": "hz_hz_hz_8_13"
+                            },
+                            {
+                                "cn": 14,
+                                "en": "hz_hz_hz_7_14"
+                            },
+                            {
+                                "cn": 15,
+                                "en": "hz_hz_hz_6_15"
+                            },
+                            {
+                                "cn": 16,
+                                "en": "hz_hz_hz_5_16"
+                            },
+                            {
+                                "cn": 17,
+                                "en": "hz_hz_hz_4_17"
+                            },
+                            {
+                                "cn": 18,
+                                "en": "hz_hz_hz_3_18"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "三同号",
+        "subTabConfig": [
+            {
+                "title": "三同号",
+                "playWay": [
+                    {
+                        "cn": "单选",
+                        "en": "th3_th3_th3dx"
+                    },
+                    {
+                        "cn": "通选",
+                        "en": "th3_th3_th3tx"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "三不同号",
+        "subTabConfig": [
+            {
+                "title": "三不同号",
+                "playWay": [
+                    {
+                        "cn": "单选",
+                        "en": "bth3_bth3_ds"
+                    },
+                    {
+                        "cn": "复选",
+                        "en": "bth3_bth3_fs"
+                    }
+                ]
+            },
+            {
+                "title": "三连号",
+                "playWay": [
+                    {
+                        "cn": "单选",
+                        "en": "bth3_lh3_dx"
+                    },
+                    {
+                        "cn": "通选",
+                        "en": "bth3_lh3_tx"
+                    }
+                ]
+            },
+            {
+                "title": "半顺",
+                "playWay": [
+                    {
+                        "cn": "单选",
+                        "en": "bth3_bs_dx"
+                    },
+                    {
+                        "cn": "通选",
+                        "en": "bth3_bs_tx"
+                    }
+                ]
+            },
+            {
+                "title": "杂六",
+                "playWay": [
+                    {
+                        "cn": "单选",
+                        "en": "bth3_z6_dx"
+                    },
+                    {
+                        "cn": "通选",
+                        "en": "bth3_z6_tx"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "二同号",
+        "subTabConfig": [
+            {
+                "title": "二同号单选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "th2_th2dx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "th2_th2dx_ds"
+                    }
+                ]
+            },
+            {
+                "title": "二同号复选",
+                "playWay": [
+                    {
+                        "cn": "复选",
+                        "en": "th2_th2fx_fx"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "二不同号",
+        "subTabConfig": [
+            {
+                "title": "二不同号",
+                "playWay": [
+                    {
+                        "cn": "复选",
+                        "en": "bth2_bth2_fs"
+                    },
+                    {
+                        "cn": "单选",
+                        "en": "bth2_bth2_ds"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "猜一个号",
+        "subTabConfig": [
+            {
+                "title": "猜一个号",
+                "playWay": [
+                    {
+                        "cn": "猜一个号",
+                        "en": "cygh_cygh_cygh"
+                    }
+                ]
+            }
+        ]
+    }
+]

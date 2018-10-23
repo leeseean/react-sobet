@@ -14,9 +14,10 @@ class MainContent extends React.Component {
     }
     mainLeftRef = null
     componentDidMount() {
-        const { queryTrendData, updateIssue } = this.props.lotteryStore;
+        const { queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
         updateIssue();
         queryTrendData();
+        getTabConfig();
         this.setState({ trendShowFlag: true });
     }
     render() {

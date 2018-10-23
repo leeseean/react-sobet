@@ -12,6 +12,9 @@ import tipConfig from '../tipConfig';
 class TipAndHot extends React.Component {
     render() {
         const { method, plateConfig, lotteryType, lotteryCode, posSelectChange, hotShowFlag, missShowFlag, switchMiss, switchHot, hitFrequency } = this.props.lotteryStore;
+        if (!plateConfig[lotteryCode][method]) {
+            return null;
+        }
         const { name, posSelect } = plateConfig[lotteryCode][method];
 
         return (

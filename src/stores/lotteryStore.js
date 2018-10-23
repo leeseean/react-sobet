@@ -9,11 +9,11 @@ import lotteryTypeConfig from '../pages/lottery/lotteryTypeConfig';
 import lotteryCodeToCn from '../pages/lottery/lotteryCodeToCn';
 import trendConfig from '../pages/lottery/trend/trendConfig';
 import playWayToCn from '../pages/lottery/playWayToCn';
-import tabConfig from '../pages/lottery/plate/plateBackConfig';
 import plateConfig from '../pages/lottery/plate/plateConfig';
 import {
     queryTrendData,
-    updateIssue
+    updateIssue,
+    getLotteryTabConfig
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
 
@@ -27,7 +27,7 @@ class LotteryStore {
         if (newValue !== oldValue) {
             this.updateIssue();
             this.queryTrendData();
-            this.setActiveTab(JSON.parse(localStorage.getItem(`${newValue}-activeTab`)) || this.currentTabConfig[0]);
+            this.getTabConfig();
         }
     })
 
@@ -41,6 +41,20 @@ class LotteryStore {
 
     @computed get lotteryType() {
         return this.lotteryTypeConfig[this.lotteryCode];
+    }
+
+    @computed get showRaceTabFlag() {
+        return this.lotteryType === 'pk10';
+    }
+
+    @observable showRaceFlag = Boolean(localStorage.getItem('showRaceFlag')) || true
+
+    @computed get raceTabText() {
+        if (this.showRaceFlag) {
+            return '隐藏动画';
+        } else {
+            return '打开动画';
+        }
     }
 
     @observable lotteryCode = localStorage.getItem('lotteryCode') || 'cqssc' //彩种codeCQSSC
@@ -119,8 +133,12 @@ class LotteryStore {
         }
     }
 
-    @computed get tabConfig() {
-        return tabConfig[this.lotteryCode];
+    @observable tabConfig = []
+
+    @action getTabConfig = async () => {
+        const res = await getLotteryTabConfig({ lottery: this.lotteryCode });
+        this.tabConfig = res.data;
+        this.setActiveTab(JSON.parse(localStorage.getItem(`${this.lotteryCode}-activeTab`)) || this.currentTabConfig[0]);
     }
 
     @computed get normalTabConfig() {
@@ -160,6 +178,15 @@ class LotteryStore {
         localStorage.setItem(`${this.lotteryCode}-tabType`, this.tabType);
     }
 
+    @action switchRaceTab = () => {
+        this.showRaceFlag = !this.showRaceFlag;
+        if (this.showRaceFlag) {
+            localStorage.setItem(`${this.lotteryCode}-showRaceFlag`, 1);
+        } else {
+            localStorage.removeItem(`${this.lotteryCode}-showRaceFlag`);
+        }
+    }
+
     plateConfig = plateConfig
 
     @observable activeTab = JSON.parse(localStorage.getItem(`${this.lotteryCode}-activeTab`)) || this.currentTabConfig[0];
@@ -172,7 +199,7 @@ class LotteryStore {
         localStorage.setItem(`${this.lotteryCode}-activeTab`, JSON.stringify(obj));
     }
 
-    @observable method = this.activeTab['subTabConfig'][0]['playWay'][0]['en'] //玩法wx_zx_fs
+    @observable method = this.activeTab && this.activeTab['subTabConfig'][0]['playWay'][0]['en'] //玩法wx_zx_fs
 
     @observable chaidanConfig = JSON.parse(localStorage.getItem(`${this.lotteryCode}-chaidanConfig`)) || {}
 

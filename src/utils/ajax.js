@@ -280,3 +280,11 @@ export function cancelTrace(params) {
         method: 'GET'
     });
 }
+//获取彩种tab配置
+export function getLotteryTabConfig(params) {
+    return $http({
+        params,
+        url: `/lottery_config/${params.lottery}.json`,
+        method: 'GET'
+    });
+}

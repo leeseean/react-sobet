@@ -9,6 +9,10 @@ import Plate from './Plate';
 @observer
 class LotteryPlate extends React.Component {
     render() {
+        const { activeTab } = this.props.lotteryStore;
+        if (!activeTab) {
+            return null;
+        }
         return (
             <div className="lottery-plate-wrapper">
                 <PlayTabs />

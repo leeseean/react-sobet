@@ -16,6 +16,7 @@ import {
     getLotteryTabConfig
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
+import { toggleClass } from '../utils/cssClass';
 
 class LotteryStore {
 
@@ -207,6 +208,8 @@ class LotteryStore {
         this.method = value;
         this.chaidanConfig = rest;
         localStorage.setItem(`${this.lotteryCode}-chaidanConfig`, JSON.stringify(rest));
+        this.selectedNums = {};
+        this.filteredNums = {};
     }
 
     @observable missShowFlag = localStorage.getItem('missShowFlag')
@@ -233,6 +236,130 @@ class LotteryStore {
 
     @action posSelectChange = (posValues) => {
         console.log(posValues);
+    }
+
+    @observable selectedNums = {}
+
+    @action selectNum = (pos, index, num) => {
+        this.selectedNums[index] = this.selectedNums[index] || [];
+        const INDEX = this.selectedNums[index].findIndex(v => v === num);
+        if (INDEX === -1) {
+            this.selectedNums[index].push(num);
+        } else {
+            this.selectedNums[index].splice(INDEX, 1);
+        }
+        this.selectedNums = { ...this.selectedNums };
+    }
+
+    @action filterNum = (pos, index, value, numArr) => {
+        const DaxiaoFlag = (Number(numArr[0]) + Number(numArr[numArr.length - 1])) / 2;
+        switch (value) {
+            case '全':
+                this.selectedNums[index] = numArr;
+                break;
+            case '大':
+                this.selectedNums[index] = numArr.filter(v => Number(v) > DaxiaoFlag);
+                break;
+            case '小':
+                this.selectedNums[index] = numArr.filter(v => Number(v) <= DaxiaoFlag);
+                break;
+            case '奇':
+                this.selectedNums[index] = numArr.filter(v => Number(v) % 2 !== 0);
+                break;
+            case '偶':
+                this.selectedNums[index] = numArr.filter(v => Number(v) % 2 === 0);
+                break;
+            case '清':
+                this.selectedNums[index] = [];
+                break;
+        }
+        this.selectedNums = { ...this.selectedNums };
+    }
+
+    @computed get plateType() {
+        return this.plateConfig[this.lotteryCode][this.method] && this.plateConfig[this.lotteryCode][this.method]['plate']['type'];
+    }
+
+    @computed get mathConfig() {
+        return this.plateConfig[this.lotteryCode][this.method] && this.plateConfig[this.lotteryCode][this.method]['mathConfig'];
+    }
+
+    @computed get betCount() {
+        if (this.plateType === 'click') {
+            switch (this.mathConfig['type']) {//计算注数的方式，有阶乘、组合、累加等
+                case 'jiecheng':
+                    const posCount = this.mathConfig['posCount'];
+                    const keys = Object.keys(this.selectedNums);
+                    let values = Object.values(this.selectedNums);
+                    values = values.map(a => a.slice());//mobx数组转js数组
+                    if (keys.length < posCount) {//位置没选满，为0
+                        return 0;
+                    } else {
+                        return values.reduce((a, b) => a * b.length, 1);
+                    }
+                default:
+                    return 0;
+            }
+        }
+        if (this.plateType === 'input') {
+            return this.inputedNums.length;
+        }
+    }
+
+    defaultBetPiece = 1
+
+    @observable betPiece = 1
+
+    @action changePiece = (value) => {
+        this.betPiece = Number(value);
+    }
+
+    defaultBetMode = '2'
+
+    @observable betMode = 2
+
+    @action changeMode = (value) => {
+        this.betMode = Number(value);
+    }
+
+    @computed get betMoney() {
+        return (this.betCount * this.betMode * this.betPiece).toFixed(2);
+    }
+
+    @observable inputedNums = []
+
+    @action uploadFile = (numOfEach, event) => {
+        const reg = /['\r\n','\n','\r','\t','\v','\D','\f','\s+','　','；','，',';',',']/;
+        const file = event.nativeEvent.target.files[0];
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+            const result = fileReader.result.split(reg).filter(v => v !== '');
+            if (result.some(v => v.length !== numOfEach)) {
+                return;
+            }
+
+            this.inputedNums = result;
+        };
+        fileReader.readAsText(file);
+    }
+
+    @action deleteInputItem = (index) => {
+        this.inputedNums.splice(index, 1);
+        this.inputedNums = [...this.inputedNums];
+    }
+
+    @action clearInputNums = () => {
+        this.inputedNums = [];
+    }
+
+    @action inputNum = (numOfEach, event) => {
+        const value = event.target.value;
+        if (value.length !== numOfEach) {
+            return;
+        }
+        this.inputedNums.push(value);
+        this.inputedNums = [...this.inputedNums];
+        event.target.value = '';
     }
 
 }

@@ -223,6 +223,7 @@
                             background: url('../../../images/lottery/all-num-on.png') no-repeat center;
                             background-size: 26px;
                             color: #fff;
+                            // animation: ball-scale 0.15s ease-out 0s forwards;
                         }
                     }
                 }
@@ -343,6 +344,7 @@
                 background: url('../../../images/lottery/ball-active.svg') no-repeat;
                 background-size: 34px;
                 color: #fff;
+                // animation: ball-scale 0.15s ease-out 0s forwards;
             }
 
             &[m-method='qw_xt_xt_bz'], &[m-method='qw_xt_xt_sz'], &[m-method='qw_xt_xt_dz'], &[m-method='qw_xt_xt_zl'], &[m-method='qw_xt_xt_bs'] {
@@ -675,6 +677,7 @@
             }
 
             &.active {
+                // animation: ball-scale 0.15s ease-out 0s forwards;
                 .qw-text {
                     &[value='庄'] {
                         background-position: 0 -389px;
@@ -973,6 +976,7 @@
                 border: none;
                 height: 143px;
 
+                // animation: ball-scale 0.15s ease-out 0s forwards;
                 &[value='龙'] {
                     background: url('../../../images/lottery/QWWF.png') 0 -62px no-repeat;
                 }
@@ -1110,7 +1114,7 @@
                 border: 1px solid #d4cdc0;
             }
 
-            &.active {
+            &:active {
                 color: #fff;
                 background-color: #c7484a;
                 border-color: #c7484a;
@@ -1176,6 +1180,43 @@
 
                     &:hover {
                         opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .input-plate-buttons {
+            margin-top: 6px;
+
+            .upload {
+                width: 120px;
+                height: 32px;
+                margin: 0 20px 0 0;
+                border-radius: 6px;
+                background: url('../../../images/lottery/upload.svg') no-repeat;
+                cursor: pointer;
+            }
+
+            .clear {
+                width: 120px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                margin: 0 20px 0 0;
+                border-radius: 6px;
+                font-size: 14px;
+                background: url('../../../images/lottery/button.png') no-repeat -164px -268px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+
+                &.disabled {
+                    background-position: -2px -267px;
+                    color: #666;
+
+                    &:hover {
+                        background-position: -2px -267px;
+                        color: #666;
                     }
                 }
             }
@@ -1390,11 +1431,12 @@
         &.active {
             background: linear-gradient(to bottom, #ca1413, #8c0103);
             border: 1px solid #830202;
+            // animation: ball-scale 0.15s ease-out 0s forwards;
         }
     }
 }
 
-@keyframes ballScale {
+@keyframes ball-scale {
     0% {
         transform: scale(0.4);
         opacity: 0.4;
@@ -1404,4 +1446,8 @@
         transform: scale(1);
         opacity: 1;
     }
+}
+
+.ball-scale {
+    animation: ball-scale 0.15s ease-out 0s forwards;
 }

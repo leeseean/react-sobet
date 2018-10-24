@@ -1,0 +1,309 @@
+[
+    {
+        "type": "normal",
+        "tab": "四星",
+        "subTabConfig": [
+            {
+                "title": "四星直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "sx_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "sx_zx_ds"
+                    }
+                ]
+            },
+            {
+                "title": "四星组选",
+                "playWay": [
+                    {
+                        "cn": "组选24",
+                        "en": "sx_zux_z24"
+                    },
+                    {
+                        "cn": "组选12",
+                        "en": "sx_zux_z12"
+                    },
+                    {
+                        "cn": "组选6",
+                        "en": "sx_zux_z6"
+                    },
+                    {
+                        "cn": "组选4",
+                        "en": "sx_zux_z4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "前三",
+        "subTabConfig": [
+            {
+                "title": "前三直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "qsm_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "qsm_zx_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "qsm_zx_hz"
+                    }
+                ]
+            },
+            {
+                "title": "前三组选",
+                "playWay": [
+                    {
+                        "cn": "组三",
+                        "en": "qsm_zux_z3"
+                    },
+                    {
+                        "cn": "组六",
+                        "en": "qsm_zux_z6"
+                    },
+                    {
+                        "cn": "混合",
+                        "en": "qsm_zux_hh"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "qsm_zux_hz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "后三",
+        "subTabConfig": [
+            {
+                "title": "后三直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "hsm_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "hsm_zx_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "hsm_zx_hz"
+                    }
+                ]
+            },
+            {
+                "title": "后三组选",
+                "playWay": [
+                    {
+                        "cn": "组三",
+                        "en": "hsm_zux_z3"
+                    },
+                    {
+                        "cn": "组六",
+                        "en": "hsm_zux_z6"
+                    },
+                    {
+                        "cn": "混合",
+                        "en": "hsm_zux_hh"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "hsm_zux_hz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "前二",
+        "subTabConfig": [
+            {
+                "title": "前二直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "em_zx_qfs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "em_zx_qds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "em_zx_qhz"
+                    }
+                ]
+            },
+            {
+                "title": "前二组选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "em_zux_qfs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "em_zux_qds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "em_zux_qhz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "后二",
+        "subTabConfig": [
+            {
+                "title": "后二直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "em_zx_qfs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "em_zx_hds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "em_zx_hhz"
+                    }
+                ]
+            },
+            {
+                "title": "后二组选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "em_zux_hfs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "em_zux_hds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "em_zux_hhz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "normal",
+        "tab": "定位胆",
+        "subTabConfig": [
+            {
+                "title": "定位胆",
+                "playWay": [
+                    {
+                        "cn": "定位胆",
+                        "en": "dwd_dwd_dwd"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "unlimited",
+        "tab": "任选二",
+        "subTabConfig": [
+            {
+                "title": "任二直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "rx2_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "rx2_zx_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "rx2_zx_hz"
+                    }
+                ]
+            },
+            {
+                "title": "任二组选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "rx2_zux_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "rx2_zux_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "rx2_zux_hz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "unlimited",
+        "tab": "任选三",
+        "subTabConfig": [
+            {
+                "title": "任三直选",
+                "playWay": [
+                    {
+                        "cn": "复式",
+                        "en": "rx3_zx_fs"
+                    },
+                    {
+                        "cn": "单式",
+                        "en": "rx3_zx_ds"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "rx3_zx_hz"
+                    }
+                ]
+            },
+            {
+                "title": "任三组选",
+                "playWay": [
+                    {
+                        "cn": "组三",
+                        "en": "rx3_zux_z3"
+                    },
+                    {
+                        "cn": "组六",
+                        "en": "rx3_zux_z6"
+                    },
+                    {
+                        "cn": "混合",
+                        "en": "rx3_zux_hh"
+                    },
+                    {
+                        "cn": "和值",
+                        "en": "rx3_zux_hz"
+                    }
+                ]
+            }
+        ]
+    }
+]

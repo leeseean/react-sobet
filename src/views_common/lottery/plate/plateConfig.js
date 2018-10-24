@@ -353,7 +353,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -362,14 +362,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -378,7 +378,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -387,7 +387,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -396,14 +396,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -412,7 +412,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -421,7 +421,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -430,14 +430,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -446,7 +446,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -455,7 +455,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -464,14 +464,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -480,7 +480,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -985,7 +985,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -1438,7 +1438,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -1447,14 +1447,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -1463,7 +1463,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -1472,7 +1472,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -1481,14 +1481,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -1497,7 +1497,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -1506,7 +1506,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -1515,14 +1515,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -1531,7 +1531,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -1540,7 +1540,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -1549,14 +1549,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -1565,7 +1565,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -2070,7 +2070,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -2523,7 +2523,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -2532,14 +2532,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -2548,7 +2548,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -2557,7 +2557,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -2566,14 +2566,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -2582,7 +2582,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -2591,7 +2591,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -2600,14 +2600,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -2616,7 +2616,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -2625,7 +2625,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -2634,14 +2634,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -2650,7 +2650,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -3155,7 +3155,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -3608,7 +3608,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -3617,14 +3617,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -3633,7 +3633,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -3642,7 +3642,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -3651,14 +3651,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -3667,7 +3667,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -3676,7 +3676,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -3685,14 +3685,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -3701,7 +3701,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -3710,7 +3710,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -3719,14 +3719,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -3735,7 +3735,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -4240,7 +4240,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -4693,7 +4693,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -4702,14 +4702,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -4718,7 +4718,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -4727,7 +4727,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -4736,14 +4736,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -4752,7 +4752,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -4761,7 +4761,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -4770,14 +4770,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -4786,7 +4786,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -4795,7 +4795,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -4804,14 +4804,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -4820,7 +4820,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -5325,7 +5325,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -5778,7 +5778,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -5787,14 +5787,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -5803,7 +5803,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -5812,7 +5812,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -5821,14 +5821,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -5837,7 +5837,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -5846,7 +5846,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -5855,14 +5855,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -5871,7 +5871,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -5880,7 +5880,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -5889,14 +5889,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -5905,7 +5905,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -6410,7 +6410,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -6863,7 +6863,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -6872,14 +6872,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -6888,7 +6888,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -6897,7 +6897,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -6906,14 +6906,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -6922,7 +6922,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -6931,7 +6931,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -6940,14 +6940,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -6956,7 +6956,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -6965,7 +6965,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -6974,14 +6974,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -6990,7 +6990,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -7495,7 +7495,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -7948,7 +7948,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -7957,14 +7957,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -7973,7 +7973,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -7982,7 +7982,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -7991,14 +7991,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -8007,7 +8007,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -8016,7 +8016,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -8025,14 +8025,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -8041,7 +8041,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -8050,7 +8050,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -8059,14 +8059,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -8075,7 +8075,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -8580,7 +8580,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -9033,7 +9033,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -9042,14 +9042,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -9058,7 +9058,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -9067,7 +9067,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -9076,14 +9076,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -9092,7 +9092,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -9101,7 +9101,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -9110,14 +9110,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -9126,7 +9126,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -9135,7 +9135,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -9144,14 +9144,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -9160,7 +9160,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -9665,7 +9665,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -10118,7 +10118,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -10127,14 +10127,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -10143,7 +10143,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -10152,7 +10152,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -10161,14 +10161,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -10177,7 +10177,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -10186,7 +10186,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -10195,14 +10195,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -10211,7 +10211,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -10220,7 +10220,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -10229,14 +10229,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -10245,7 +10245,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -10750,7 +10750,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -11203,7 +11203,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -11212,14 +11212,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -11228,7 +11228,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -11237,7 +11237,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -11246,14 +11246,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -11262,7 +11262,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -11271,7 +11271,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -11280,14 +11280,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -11296,7 +11296,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -11305,7 +11305,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -11314,14 +11314,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -11330,7 +11330,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -11835,7 +11835,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -12288,7 +12288,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -12297,14 +12297,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -12313,7 +12313,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -12322,7 +12322,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -12331,14 +12331,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -12347,7 +12347,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -12356,7 +12356,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -12365,14 +12365,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -12381,7 +12381,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -12390,7 +12390,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -12399,14 +12399,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -12415,7 +12415,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -12920,7 +12920,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -13373,7 +13373,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -13382,14 +13382,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -13398,7 +13398,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -13407,7 +13407,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -13416,14 +13416,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -13432,7 +13432,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -13441,7 +13441,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -13450,14 +13450,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -13466,7 +13466,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -13475,7 +13475,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -13484,14 +13484,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -13500,7 +13500,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -14005,7 +14005,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -14458,7 +14458,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -14467,14 +14467,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -14483,7 +14483,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -14492,7 +14492,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -14501,14 +14501,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -14517,7 +14517,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -14526,7 +14526,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -14535,14 +14535,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -14551,7 +14551,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -14560,7 +14560,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -14569,14 +14569,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -14585,7 +14585,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -15090,7 +15090,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -15543,7 +15543,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             name: '前二直选复式',
             plate: {
                 type: 'click',
@@ -15552,14 +15552,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zx_ds: {
+        em_zx_qds: {
             name: '前二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zx_hz: {
+        em_zx_qhz: {
             name: '前二直选和值',
             plate: {
                 type: 'click',
@@ -15568,7 +15568,7 @@ export default {
                 filter: []
             }
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             name: '前二直选跨度',
             plate: {
                 type: 'click',
@@ -15577,7 +15577,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             name: '前二组选复式',
             plate: {
                 type: 'click',
@@ -15586,14 +15586,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        qem_zux_ds: {
+        em_zux_qds: {
             name: '前二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        qem_zux_hz: {
+        em_zux_qhz: {
             name: '前二组选和值',
             plate: {
                 type: 'click',
@@ -15602,7 +15602,7 @@ export default {
                 filter: []
             }
         },
-        qem_zux_bd: {
+        em_zux_qbd: {
             name: '前二组选包胆',
             plate: {
                 type: 'click',
@@ -15611,7 +15611,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_fs: {
+        em_zx_hfs: {
             name: '后二直选复式',
             plate: {
                 type: 'click',
@@ -15620,14 +15620,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zx_ds: {
+        em_zx_hds: {
             name: '后二直选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zx_hz: {
+        em_zx_hhz: {
             name: '后二直选和值',
             plate: {
                 type: 'click',
@@ -15636,7 +15636,7 @@ export default {
                 filter: []
             }
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             name: '后二直选跨度',
             plate: {
                 type: 'click',
@@ -15645,7 +15645,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             name: '后二组选复式',
             plate: {
                 type: 'click',
@@ -15654,14 +15654,14 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        hem_zux_ds: {
+        em_zux_hds: {
             name: '后二组选单式',
             plate: {
                 type: 'input',
                 pos: ['万位', '千位'],
             }
         },
-        hem_zux_hz: {
+        em_zux_hhz: {
             name: '后二组选和值',
             plate: {
                 type: 'click',
@@ -15670,7 +15670,7 @@ export default {
                 filter: []
             }
         },
-        hem_zux_bd: {
+        em_zux_hbd: {
             name: '后二组选包胆',
             plate: {
                 type: 'click',
@@ -16175,7 +16175,7 @@ export default {
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位'],
+                pos: ['直选和值'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27],
                 filter: []
             }
@@ -21398,6 +21398,403 @@ export default {
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
+            }
+        }
+    },
+    hnky481: {
+        sx_zx_fs: {
+            name: '四星直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sx_zx_ds: {
+            name: '四星直选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            }
+        },
+        sx_zux_z24: {
+            name: '四星组选24',
+            plate: {
+                type: 'click',
+                pos: ['组24'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sx_zux_z12: {
+            name: '四星组选12',
+            plate: {
+                type: 'click',
+                pos: ['二重号', '单号'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sx_zux_z6: {
+            name: '四星组选6',
+            plate: {
+                type: 'click',
+                pos: ['二重号'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        sx_zux_z4: {
+            name: '四星组选4',
+            plate: {
+                type: 'click',
+                pos: ['三重号'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qsm_zx_fs: {
+            name: '前三直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qsm_zx_ds: {
+            name: '前三直选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳', '蛙泳'],
+            }
+        },
+        qsm_zx_hz: {
+            name: '前三直选和值',
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+                filter: []
+            }
+        },
+        qsm_zux_z3: {
+            name: '前三组选3',
+            plate: {
+                type: 'click',
+                pos: ['组3'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qsm_zux_z6: {
+            name: '前三组选6',
+            plate: {
+                type: 'click',
+                pos: ['组6'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        qsm_zux_hh: {
+            name: '前三组选混合',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳', '蛙泳']
+            }
+        },
+        qsm_zux_hz: {
+            name: '前三组选和值',
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                filter: []
+            }
+        },
+        hsm_zx_fs: {
+            name: '后三直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        hsm_zx_ds: {
+            name: '后三直选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳', '蛙泳'],
+            }
+        },
+        hsm_zx_hz: {
+            name: '后三直选和值',
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+                filter: []
+            }
+        },
+        hsm_zux_z3: {
+            name: '后三组选3',
+            plate: {
+                type: 'click',
+                pos: ['组3'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        hsm_zux_z6: {
+            name: '后三组选6',
+            plate: {
+                type: 'click',
+                pos: ['组6'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        hsm_zux_hh: {
+            name: '后三组选混合',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳', '蛙泳']
+            }
+        },
+        hsm_zux_hz: {
+            name: '后三组选和值',
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                filter: []
+            }
+        },
+        em_zx_qfs: {
+            name: '前二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zx_qds: {
+            name: '前二直选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳'],
+            }
+        },
+        em_zx_qhz: {
+            name: '前二直选和值',
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                filter: []
+            }
+        },
+        em_zux_qfs: {
+            name: '前二组选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zux_qds: {
+            name: '前二组选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳'],
+            }
+        },
+        em_zux_qhz: {
+            name: '前二组选和值',
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                filter: []
+            }
+        },
+        em_zx_hfs: {
+            name: '后二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zx_hds: {
+            name: '后二直选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳'],
+            }
+        },
+        em_zx_hhz: {
+            name: '后二直选和值',
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                filter: []
+            }
+        },
+        em_zux_hfs: {
+            name: '后二组选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        em_zux_hds: {
+            name: '后二组选单式',
+            plate: {
+                type: 'input',
+                pos: ['自由泳', '仰泳'],
+            }
+        },
+        em_zux_hhz: {
+            name: '后二组选和值',
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                filter: []
+            }
+        },
+        dwd_dwd_dwd: {
+            name: '定位胆',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳', '所有位置'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx2_zx_fs: {
+            name: '任二直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx2_zx_ds: {
+            name: '任二直选单式',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'input',
+            }
+        },
+        rx2_zx_hz: {
+            name: '任二直选和值',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                filter: []
+            }
+        },
+        rx2_zux_fs: {
+            name: '任二组选复式',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['组选复式'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx2_zux_ds: {
+            name: '任二组选单式',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'input',
+            }
+        },
+        rx2_zux_hz: {
+            name: '任二组选和值',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                filter: []
+            }
+        },
+        rx3_zx_fs: {
+            name: '任三直选复式',
+            plate: {
+                type: 'click',
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx3_zx_ds: {
+            name: '任三直选单式',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'input',
+            }
+        },
+        rx3_zx_hz: {
+            name: '任三直选和值',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['直选和值'],
+                num: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+                filter: []
+            }
+        },
+        rx3_zux_z3: {
+            name: '任三组选3',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['组3'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx3_zux_z6: {
+            name: '任三组选6',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['组6'],
+                num: [1, 2, 3, 4, 5, 6, 7, 8],
+                filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
+            }
+        },
+        rx3_zux_hh: {
+            name: '任三组选混合',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'input',
+            }
+        },
+        rx3_zux_hz: {
+            name: '任三组选和值',
+            posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+            plate: {
+                type: 'click',
+                pos: ['组选和值'],
+                num: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                filter: []
             }
         }
     },

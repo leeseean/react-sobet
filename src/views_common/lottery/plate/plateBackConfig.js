@@ -218,19 +218,19 @@ export default {
             title: '前二直选',
             playWay: [{
                 cn: '复式',
-                en: 'qem_zx_fs',
+                en: 'em_zx_qfs',
             },
             {
                 cn: '单式',
-                en: 'qem_zx_ds',
+                en: 'em_zx_qds',
             },
             {
                 cn: '和值',
-                en: 'qem_zx_hz',
+                en: 'em_zx_qhz',
             },
             {
                 cn: '跨度',
-                en: 'qem_zx_kd',
+                en: 'em_zx_qkd',
             }
             ]
         },
@@ -238,18 +238,18 @@ export default {
             title: '前二组选',
             playWay: [{
                 cn: '复式',
-                en: 'qem_zux_fs',
+                en: 'em_zux_qfs',
             },
             {
                 cn: '单式',
-                en: 'qem_zux_ds',
+                en: 'em_zux_qds',
             }, {
                 cn: '和值',
-                en: 'qem_zux_hz',
+                en: 'em_zux_qhz',
 
             }, {
                 cn: '包胆',
-                en: 'qem_zux_bd',
+                en: 'em_zux_qbd',
             }
             ]
         }
@@ -261,19 +261,19 @@ export default {
             title: '后二直选',
             playWay: [{
                 cn: '复式',
-                en: 'hem_zx_fs',
+                en: 'em_zx_qfs',
             },
             {
                 cn: '单式',
-                en: 'hem_zx_ds',
+                en: 'em_zx_hds',
             },
             {
                 cn: '和值',
-                en: 'hem_zx_hz',
+                en: 'em_zx_hhz',
             },
             {
                 cn: '跨度',
-                en: 'hem_zx_kd',
+                en: 'em_zx_hkd',
             }
             ]
         },
@@ -281,17 +281,17 @@ export default {
             title: '后二组选',
             playWay: [{
                 cn: '复式',
-                en: 'hem_zux_fs',
+                en: 'em_zux_hfs',
             },
             {
                 cn: '单式',
-                en: 'hem_zux_ds',
+                en: 'em_zux_hds',
             }, {
                 cn: '和值',
-                en: 'hem_zux_hz',
+                en: 'em_zux_hhz',
             }, {
                 cn: '包胆',
-                en: 'hem_zux_bd',
+                en: 'em_zux_hbd',
             }
             ]
         }

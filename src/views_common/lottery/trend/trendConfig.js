@@ -307,7 +307,7 @@ export default {
                 return `<em class="margin-0-4px shape--hz">${hz}</em>`;
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             area: [0, 1],
             shapeName: '直选和值',
             widthConfig: {
@@ -320,13 +320,13 @@ export default {
                 return `<em class="margin-0-4px shape--hz">${hz}</em>`;
             }
         },
-        get qem_zx_ds() {
-            return this['qem_zx_fs'];
+        get em_zx_qds() {
+            return this['em_zx_qfs'];
         },
-        get qem_zx_hz() {
-            return this['qem_zx_fs'];
+        get em_zx_qhz() {
+            return this['em_zx_qfs'];
         },
-        qem_zx_kd: {
+        em_zx_qkd: {
             area: [0, 1],
             shapeName: '直选跨度',
             widthConfig: {
@@ -339,7 +339,7 @@ export default {
                 return `<em class="margin-0-4px shape--kd">${kd}</em>`;
             }
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             area: [0, 1],
             shapeName: '组选和值',
             widthConfig: {
@@ -356,16 +356,16 @@ export default {
                 return `<em class="margin-0-4px shape--hz">${hz}</em>`;
             }
         },
-        get qem_zux_ds() {
-            return this['qem_zux_fs'];
+        get em_zux_qds() {
+            return this['em_zux_qfs'];
         },
-        get qem_zux_hz() {
-            return this['qem_zux_fs'];
+        get em_zux_qhz() {
+            return this['em_zux_qfs'];
         },
-        get qem_zux_bd() {
-            return this['qem_zux_fs'];
+        get em_zux_qbd() {
+            return this['em_zux_qfs'];
         },
-        hem_zx_fs: {
+        em_zx_qfs: {
             area: [3, 4],
             shapeName: '直选和值',
             widthConfig: {
@@ -378,13 +378,13 @@ export default {
                 return `<em class="margin-0-4px shape--hz">${hz}</em>`;
             }
         },
-        get hem_zx_ds() {
-            return this['hem_zx_fs'];
+        get em_zx_hds() {
+            return this['em_zx_qfs'];
         },
-        get hem_zx_hz() {
-            return this['hem_zx_fs'];
+        get em_zx_hhz() {
+            return this['em_zx_qfs'];
         },
-        hem_zx_kd: {
+        em_zx_hkd: {
             area: [3, 4],
             shapeName: '直选跨度',
             widthConfig: {
@@ -397,7 +397,7 @@ export default {
                 return `<em class="margin-0-4px shape--kd">${kd}</em>`;
             }
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             area: [3, 4],
             shapeName: '组选和值',
             widthConfig: {
@@ -414,14 +414,14 @@ export default {
                 return `<em class="margin-0-4px shape--hz">${hz}</em>`;
             }
         },
-        get hem_zux_ds() {
-            return this['hem_zux_fs'];
+        get em_zux_hds() {
+            return this['em_zux_hfs'];
         },
-        get hem_zux_hz() {
-            return this['hem_zux_fs'];
+        get em_zux_hhz() {
+            return this['em_zux_hfs'];
         },
-        get hem_zux_bd() {
-            return this['hem_zux_fs'];
+        get em_zux_hbd() {
+            return this['em_zux_hfs'];
         },
         dwd_dwd_dwd: {
             area: [0, 1, 2, 3, 4],
@@ -2082,7 +2082,7 @@ export default {
                 return `<em class="shape--hz">${hz}</em>`;
             }
         },
-        qem_zx_fs: {
+        em_zx_qfs: {
             area: [0, 1, 2],
             shapeName: '直选和值',
             widthConfig: {
@@ -2095,13 +2095,13 @@ export default {
                 return `<em class="shape--hz">${hz}</em>`;
             }
         },
-        get qem_zx_ds() {
-            return this['qem_zx_fs'];
+        get em_zx_qds() {
+            return this['em_zx_qfs'];
         },
-        get qem_zx_hz() {
-            return this['qem_zx_fs'];
+        get em_zx_qhz() {
+            return this['em_zx_qfs'];
         },
-        qem_zux_fs: {
+        em_zux_qfs: {
             area: [0, 1, 2],
             shapeName: '组选和值',
             widthConfig: {
@@ -2118,13 +2118,13 @@ export default {
                 return `<em class="shape--hz">${hz}</em>`;
             }
         },
-        get qem_zux_ds() {
-            return this['qem_zux_fs'];
+        get em_zux_qds() {
+            return this['em_zux_qfs'];
         },
-        get qem_zux_hz() {
-            return this['qem_zux_fs'];
+        get em_zux_qhz() {
+            return this['em_zux_qfs'];
         },
-        hem_zx_fs: {
+        em_zx_qfs: {
             area: [0, 1, 2],
             shapeName: '直选和值',
             widthConfig: {
@@ -2137,13 +2137,13 @@ export default {
                 return `<em class="shape--hz">${hz}</em>`;
             }
         },
-        get hem_zx_ds() {
-            return this['hem_zx_fs'];
+        get em_zx_hds() {
+            return this['em_zx_qfs'];
         },
-        get hem_zx_hz() {
-            return this['hem_zx_fs'];
+        get em_zx_hhz() {
+            return this['em_zx_qfs'];
         },
-        hem_zux_fs: {
+        em_zux_hfs: {
             area: [0, 1, 2],
             shapeName: '组选和值',
             widthConfig: {
@@ -2160,11 +2160,11 @@ export default {
                 return `<em class="shape--hz">${hz}</em>`;
             }
         },
-        get hem_zux_ds() {
-            return this['hem_zux_fs'];
+        get em_zux_hds() {
+            return this['em_zux_hfs'];
         },
-        get hem_zux_hz() {
-            return this['hem_zux_fs'];
+        get em_zux_hhz() {
+            return this['em_zux_hfs'];
         },
     }
 };

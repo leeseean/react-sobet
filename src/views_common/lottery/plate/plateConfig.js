@@ -12,7 +12,7 @@ export default {
         },
         wx_zx_ds: {
             name: '五星直选单式',
-            mathConfig: { type: 'leijia' },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 5,//没注要求的数字数量 如五星是每注选号有5个数字

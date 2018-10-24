@@ -302,6 +302,9 @@ class LotteryStore {
             }
         }
         if (this.plateType === 'input') {
+            if (this.mathConfig['needMultiplyPos']) {//任选玩法单式需要成语位置
+
+            }
             return this.inputedNums.length;
         }
     }

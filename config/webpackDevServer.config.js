@@ -80,7 +80,29 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy,
+    proxy:{
+      '*':{
+        target:"http://www.mochen111.net",
+        secure:false,
+        changeOrigin:true
+      },
+        onProxyRes: function(proxyRes, req, res) {
+          var cookies = proxyRes.headers['set-cookie'];
+          var cookieRegex = /Path=\/XXX\//i;
+          //修改cookie Path
+          if (cookies) {
+            var newCookie = cookies.map(function(cookie) {
+              if (cookieRegex.test(cookie)) {
+                return cookie.replace(cookieRegex, 'Path=/');
+              }
+              return cookie;
+            });
+            //修改cookie path
+            delete proxyRes.headers['set-cookie'];
+            proxyRes.headers['set-cookie'] = newCookie;
+          }
+        }
+    },
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());

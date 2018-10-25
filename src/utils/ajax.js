@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 // 添加请求拦截器
@@ -52,9 +53,7 @@ const $http = (config) => {
 
 export default $http;
 
-// const proxyPrefix = 'dev';
-const proxyPrefix = 'online';
-// const proxyPrefix = '';
+const proxyPrefix = '';
 
 //中奖喜报
 export function getLotteryWinTop10() {

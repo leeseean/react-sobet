@@ -1,8 +1,6 @@
 import jsonp from 'easy-jsonp';
 
-// const proxyPrefix = 'http://www.mochen111.net';
-const proxyPrefix = 'http://www.mc188.com';
-// const proxyPrefix = '';
+const proxyPrefix = '';
 
 //获取登录状态
 export function getLoginState() {
@@ -48,7 +46,6 @@ export function ssoLogout(username, noRedirect = true) {
     }
   });
 }
-//lastLoginTime和站内信数量PlatformId，username，roleType，userType放到userInfoAjax接口里面
 
 /* 
 jsonp({

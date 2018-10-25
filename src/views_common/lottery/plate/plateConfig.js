@@ -20,7 +20,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', m: 9, n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, m: 9, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -30,7 +30,7 @@ export default {
         },
         wx_zux_z60: {
             name: '五星组选60',
-            mathType: { type: 'zucheng', up: 1, down: 3 },
+            mathConfig: { type: 'zucheng', up: 1, down: 3 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -40,7 +40,7 @@ export default {
         },
         wx_zux_z30: {
             name: '五星组选30',
-            mathType: { type: 'zucheng', up: 2, down: 1 },
+            mathConfig: { type: 'zucheng', up: 2, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -50,7 +50,7 @@ export default {
         },
         wx_zux_z20: {
             name: '五星组选20',
-            mathType: { type: 'zucheng', up: 1, down: 2 },
+            mathConfig: { type: 'zucheng', up: 1, down: 2 },
             plate: {
                 type: 'click',
                 pos: ['三重号', '单号'],
@@ -60,7 +60,7 @@ export default {
         },
         wx_zux_z10: {
             name: '五星组选10',
-            mathType: { type: 'zucheng', up: 1, down: 1 },
+            mathConfig: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['三重号', '二重号'],
@@ -70,7 +70,7 @@ export default {
         },
         wx_zux_z5: {
             name: '五星组选5',
-            mathType: { type: 'zucheng', up: 1, down: 1 },
+            mathConfig: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['四重号', '单号'],
@@ -98,7 +98,7 @@ export default {
         },
         sx_zux_z24: {
             name: '四星组选24',
-            mathConfig: { type: 'zuhe', n: 4 },
+            mathConfig: { type: 'zuhe', per: 1, n: 4 },
             plate: {
                 type: 'click',
                 pos: ['组24'],
@@ -108,7 +108,7 @@ export default {
         },
         sx_zux_z12: {
             name: '四星组选12',
-            mathType: { type: 'zucheng', up: 1, down: 2 },
+            mathConfig: { type: 'zucheng', up: 1, down: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -118,7 +118,7 @@ export default {
         },
         sx_zux_z6: {
             name: '四星组选6',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号'],
@@ -128,7 +128,7 @@ export default {
         },
         sx_zux_z4: {
             name: '四星组选4',
-            mathType: { type: 'zucheng', up: 1, down: 1 },
+            mathConfig: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['三重号', '单号'],
@@ -156,7 +156,7 @@ export default {
         },
         qsm_zx_hz: {
             name: '前三直选和值',
-            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -166,7 +166,7 @@ export default {
         },
         qsm_zx_kd: {
             name: '前三直选跨度',
-            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -176,7 +176,7 @@ export default {
         },
         qsm_zux_z3: {
             name: '前三组选3',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', per: 1, n: 2, per: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -186,7 +186,7 @@ export default {
         },
         qsm_zux_z6: {
             name: '前三组选6',
-            mathConfig: { type: 'zuhe', n: 3 },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -204,7 +204,7 @@ export default {
         },
         qsm_zux_hz: {
             name: '前三组选和值',
-            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -214,7 +214,7 @@ export default {
         },
         qsm_zux_bd: {
             name: '前三组选包胆',
-            mathType: { type: 'baodan', n: 54 },
+            mathConfig: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -242,7 +242,7 @@ export default {
         },
         zsm_zx_hz: {
             name: '中三直选和值',
-            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -252,7 +252,7 @@ export default {
         },
         zsm_zx_kd: {
             name: '中三直选跨度',
-            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -262,7 +262,7 @@ export default {
         },
         zsm_zux_z3: {
             name: '中三组选3',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -272,7 +272,7 @@ export default {
         },
         zsm_zux_z6: {
             name: '中三组选6',
-            mathConfig: { type: 'zuhe', n: 3 },
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -290,7 +290,7 @@ export default {
         },
         zsm_zux_hz: {
             name: '中三组选和值',
-            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -300,7 +300,7 @@ export default {
         },
         zsm_zux_bd: {
             name: '中三组选包胆',
-            mathType: { type: 'baodan', n: 54 },
+            mathConfig: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -328,7 +328,7 @@ export default {
         },
         hsm_zx_hz: {
             name: '后三直选和值',
-            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -338,7 +338,7 @@ export default {
         },
         hsm_zx_kd: {
             name: '后三直选跨度',
-            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -348,7 +348,7 @@ export default {
         },
         hsm_zux_z3: {
             name: '后三组选3',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -358,7 +358,7 @@ export default {
         },
         hsm_zux_z6: {
             name: '后三组选6',
-            mathConfig: { type: 'zuhe', n: 3 },
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -376,7 +376,7 @@ export default {
         },
         hsm_zux_hz: {
             name: '后三组选和值',
-            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -386,7 +386,7 @@ export default {
         },
         hsm_zux_bd: {
             name: '后三组选包胆',
-            mathType: { type: 'baodan', n: 54 },
+            mathConfig: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -414,7 +414,7 @@ export default {
         },
         em_zx_qhz: {
             name: '前二直选和值',
-            mathType: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -424,7 +424,7 @@ export default {
         },
         em_zx_qkd: {
             name: '前二直选跨度',
-            mathType: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -434,7 +434,7 @@ export default {
         },
         em_zux_qfs: {
             name: '前二组选复式',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -452,7 +452,7 @@ export default {
         },
         em_zux_qhz: {
             name: '前二组选和值',
-            mathType: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -462,7 +462,7 @@ export default {
         },
         em_zux_qbd: {
             name: '前二组选包胆',
-            mathType: { type: 'baodan', n: 9 },
+            mathConfig: { type: 'baodan', n: 9 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -490,7 +490,7 @@ export default {
         },
         em_zx_hhz: {
             name: '后二直选和值',
-            mathType: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -500,7 +500,7 @@ export default {
         },
         em_zx_hkd: {
             name: '后二直选跨度',
-            mathType: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -510,7 +510,7 @@ export default {
         },
         em_zux_hfs: {
             name: '后二组选复式',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -528,7 +528,7 @@ export default {
         },
         em_zux_hhz: {
             name: '后二组选和值',
-            mathType: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -538,7 +538,7 @@ export default {
         },
         em_zux_hbd: {
             name: '后二组选包胆',
-            mathType: { type: 'baodan', n: 9 },
+            mathConfig: { type: 'baodan', n: 9 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -558,7 +558,7 @@ export default {
         },
         bdd_bdd_qs1: {
             name: '前三一码不定胆',
-            mathConfig: { type: 'zuhe', n: 1 },
+            mathConfig: { type: 'zuhe', n: 1, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -568,7 +568,7 @@ export default {
         },
         bdd_bdd_qs2: {
             name: '前三二码不定胆',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -576,9 +576,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_zs1: {
+        bdd_bdd_z31: {
             name: '中三一码不定胆',
-            mathConfig: { type: 'zuhe', n: 1 },
+            mathConfig: { type: 'zuhe', n: 1, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -586,9 +586,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_zs2: {
+        bdd_bdd_z32: {
             name: '中三二码不定胆',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -598,7 +598,7 @@ export default {
         },
         bdd_bdd_hs1: {
             name: '后三一码不定胆',
-            mathConfig: { type: 'zuhe', n: 1 },
+            mathConfig: { type: 'zuhe', n: 1, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -608,7 +608,7 @@ export default {
         },
         bdd_bdd_hs2: {
             name: '后三二码不定胆',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -616,9 +616,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
-            mathConfig: { type: 'zuhe', n: 1 },
+            mathConfig: { type: 'zuhe', n: 1, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -626,9 +626,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -636,9 +636,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
-            mathConfig: { type: 'zuhe', n: 3 },
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -646,9 +646,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
-            mathConfig: { type: 'zuhe', n: 1 },
+            mathConfig: { type: 'zuhe', n: 1, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -656,9 +656,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
-            mathConfig: { type: 'zuhe', n: 2 },
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -666,9 +666,9 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
-            mathConfig: { type: 'zuhe', n: 3 },
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -1048,7 +1048,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1109,7 +1109,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 2, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1120,7 +1120,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', n: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1169,7 +1169,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', n: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1180,7 +1180,7 @@ export default {
         },
         rx4_zux_z12: {
             name: '任四组选12',
-            mathType: { type: 'zucheng', up: 1, down: 2, r: 4, needMultiplyPos: true },
+            mathConfig: { type: 'zucheng', up: 1, down: 2, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1191,8 +1191,8 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', r: 4, n: 2, needMultiplyPos: true  },
-            mathType: 'r4zux6',
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: 'r4zux6',
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1203,7 +1203,7 @@ export default {
         },
         rx4_zux_z4: {
             name: '任四组选4',
-            mathType: 'r4zux4',
+            mathConfig: { type: 'zucheng', up: 1, down: 1, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1766,7 +1766,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -1775,7 +1775,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -1784,7 +1784,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -1793,7 +1793,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -1802,7 +1802,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -1811,7 +1811,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -2851,7 +2851,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -2860,7 +2860,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -2869,7 +2869,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -2878,7 +2878,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -2887,7 +2887,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -2896,7 +2896,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -3936,7 +3936,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -3945,7 +3945,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -3954,7 +3954,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -3963,7 +3963,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -3972,7 +3972,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -3981,7 +3981,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -5021,7 +5021,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -5030,7 +5030,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -5039,7 +5039,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -5048,7 +5048,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -5057,7 +5057,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -5066,7 +5066,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -6106,7 +6106,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -6115,7 +6115,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -6124,7 +6124,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -6133,7 +6133,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -6142,7 +6142,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -6151,7 +6151,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -7191,7 +7191,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -7200,7 +7200,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -7209,7 +7209,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -7218,7 +7218,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -7227,7 +7227,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -7236,7 +7236,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -8276,7 +8276,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -8285,7 +8285,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -8294,7 +8294,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -8303,7 +8303,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -8312,7 +8312,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -8321,7 +8321,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -9361,7 +9361,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -9370,7 +9370,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -9379,7 +9379,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -9388,7 +9388,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -9397,7 +9397,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -9406,7 +9406,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -10446,7 +10446,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -10455,7 +10455,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -10464,7 +10464,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -10473,7 +10473,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -10482,7 +10482,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -10491,7 +10491,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -11531,7 +11531,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -11540,7 +11540,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -11549,7 +11549,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -11558,7 +11558,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -11567,7 +11567,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -11576,7 +11576,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -12616,7 +12616,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -12625,7 +12625,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -12634,7 +12634,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -12643,7 +12643,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -12652,7 +12652,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -12661,7 +12661,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -13701,7 +13701,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -13710,7 +13710,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -13719,7 +13719,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -13728,7 +13728,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -13737,7 +13737,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -13746,7 +13746,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -14786,7 +14786,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -14795,7 +14795,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -14804,7 +14804,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -14813,7 +14813,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -14822,7 +14822,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -14831,7 +14831,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -15871,7 +15871,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1: {
+        bdd_bdd4_4x1: {
             name: '四星一码不定胆',
             plate: {
                 type: 'click',
@@ -15880,7 +15880,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x2: {
+        bdd_bdd4_4x2: {
             name: '四星二码不定胆',
             plate: {
                 type: 'click',
@@ -15889,7 +15889,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x3: {
+        bdd_bdd4_4x3: {
             name: '四星三码不定胆',
             plate: {
                 type: 'click',
@@ -15898,7 +15898,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1: {
+        bdd_bdd5_5x1: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',
@@ -15907,7 +15907,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x2: {
+        bdd_bdd5_5x2: {
             name: '五星二码不定胆',
             plate: {
                 type: 'click',
@@ -15916,7 +15916,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x3: {
+        bdd_bdd5_5x3: {
             name: '五星三码不定胆',
             plate: {
                 type: 'click',
@@ -20664,7 +20664,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_4x1m: {
+        bdd_bdd4_4x1m: {
             name: '前四一码不定胆',
             plate: {
                 type: 'click',
@@ -20673,7 +20673,7 @@ export default {
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
-        bdd_bdd_5x1m: {
+        bdd_bdd5_5x1m: {
             name: '五星一码不定胆',
             plate: {
                 type: 'click',

@@ -1,7 +1,7 @@
 // 数学公式
 // 阶乘 n!=n*(n-1)!
 export const factorial = function (n) {
-    return n <= 0 ? 1 : n * Math.factorial(n - 1);
+    return n <= 0 ? 1 : n * factorial(n - 1);
 };
 // 组合combination: m个数中取出n个不同的数
 export const combination = function (m, n) {
@@ -36,36 +36,6 @@ export const nzn = function (s, n) {
     return tmp;
 };
 
-//求数组组合的所有组合方式[1,2,3]->[1,2],[1,3],[2,3]
-export function choose(arr, size) {
-    var allResult = [];
-
-    function _choose(arr, size, result) {
-        var arrLen = arr.length;
-        if (size > arrLen) {
-            return;
-        }
-        if (size == arrLen) {
-            allResult.push([].concat(result, arr))
-        } else {
-            for (var i = 0; i < arrLen; i++) {
-                var newResult = [].concat(result);
-                newResult.push(arr[i]);
-
-                if (size == 1) {
-                    allResult.push(newResult);
-                } else {
-                    var newArr = [].concat(arr);
-                    newArr.splice(0, i + 1);
-                    _choose(newArr, size - 1, newResult);
-                }
-            }
-        }
-    }
-    _choose(arr, size, []);
-
-    return allResult;
-}
 //从数组中各取一个数字组成 [1,2] => [1,1] [2,2] [1,2] [2,1]
 export const combineQuene = (arr, size) => {
     const final = [];
@@ -90,6 +60,8 @@ export const calcHzCount = (hz, size, nums) => {
 export const calcZuxHzCount = (hz, size, nums) => {
     let arr = combineQuene(nums, size);
     arr = arr.filter(v => [...new Set(v)].length !== 1);
+    arr = arr.map(v => JSON.stringify(v.sort()));
+    arr = [...new Set(arr)].map(v => JSON.parse(v));
     return arr.filter(a => a.reduce((m, n) => m + n) === hz).length;
 };
 

@@ -59,12 +59,12 @@ class UsualPlate extends React.Component {
                                         };
                                         content = (<div className="num-longhu-inner"><div className="longhu-pos-wrapper"><LonghuDots area={area} /></div><div className="longhu-text" value={v}></div><div className="longhu-odd">1中3.67</div></div>);
                                         className = 'plate-item-num-longhu';
-                                        return <div key={v} className={`fl ${className} ${(selectedNums[idx] && selectedNums[idx].includes(v)) ? 'active' : ''}`} value={v} onClick={() => selectNum(val, idx, v)}>{content}</div>;
+                                        return <div key={v} className={`fl ${className} ${(selectedNums[idx] && selectedNums[idx].includes(v)) ? 'active' : ''}`} value={v} onClick={() => selectNum(val, idx, v, pos)}>{content}</div>;
                                     } else {
                                         content = v;
                                         className = 'plate-item-num';
                                     }
-                                    return <div key={v} className={`fl ${className} ${(selectedNums[idx] && selectedNums[idx].includes(v)) ? 'active' : ''}`} onClick={() => selectNum(val, idx, v)}>{content}</div>;
+                                    return <div key={v} className={`fl ${className} ${(selectedNums[idx] && selectedNums[idx].includes(v)) ? 'active' : ''}`} onClick={() => selectNum(val, idx, v, pos)}>{content}</div>;
                                 })}
                             </div>
                             <div className={`fr clearfix plate-item-filters ${extraClass}`}>
@@ -109,7 +109,7 @@ class UsualPlate extends React.Component {
                                 })
                             }
                         </ul>
-                        <TextArea onPressEnter={event => inputNum(numOfEach, event)} placeholder="请输入投注号码，按空格或回车键确认选号" autosize={{ minRows: 3, maxRows: 6 }} />
+                        <TextArea onPressEnter={event => inputNum(numOfEach, event)} placeholder="请输入投注号码，按回车键确认选号" autosize={{ minRows: 3, maxRows: 6 }} />
                     </div>
                     <div className="clearfix input-plate-buttons">
                         <label htmlFor="txt-upload" className="fl upload" title="只接受txt后缀文件，每注号码之间请用一个 空格[ ]、逗号[,] 或者 分号[;] 隔开"></label>

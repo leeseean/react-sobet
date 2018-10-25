@@ -11,7 +11,7 @@ import { inject, observer } from 'mobx-react';
 @observer
 class PlayTabs extends React.Component {
     render() {
-        const { currentTabConfig, unlimitedFlag, raceTabText, showRaceTabFlag, switchRaceTab, switchMoreTab, activeTab, setActiveTab, method, setMethod } = this.props.lotteryStore;
+        const { currentTabConfig, unlimitedFlag, raceTabText, showRaceTabFlag, switchRaceTab, switchMoreTab, activeTab, setActiveTab, method, setMethod, lotteryType } = this.props.lotteryStore;
         const config = currentTabConfig;
         const Tab = ({ config }) => {
             return config.map(item => {
@@ -48,7 +48,7 @@ class PlayTabs extends React.Component {
                     {unlimitedFlag ? <MoreTab onClick={switchMoreTab} text="更多" /> : null}
                     {showRaceTabFlag ? <RaceTab onClick={switchRaceTab} text={raceTabText} /> : null}
                 </div>
-                <div className="subTab-wrapper">
+                <div className="subTab-wrapper" lottery-type={lotteryType}>
                     <SubTab subTabConfig={activeTab['subTabConfig']} />
                 </div>
             </React.Fragment>

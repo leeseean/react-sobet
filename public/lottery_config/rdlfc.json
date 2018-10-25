@@ -371,11 +371,11 @@
                     },
                     {
                         "cn": "中三一码",
-                        "en": "bdd_bdd_zs1"
+                        "en": "bdd_bdd_z31"
                     },
                     {
                         "cn": "中三二码",
-                        "en": "bdd_bdd_zs2"
+                        "en": "bdd_bdd_z32"
                     },
                     {
                         "cn": "后三一码",
@@ -392,15 +392,15 @@
                 "playWay": [
                     {
                         "cn": "四星一码",
-                        "en": "bdd_bdd_4x1"
+                        "en": "bdd_bdd4_4x1"
                     },
                     {
                         "cn": "四星二码",
-                        "en": "bdd_bdd_4x2"
+                        "en": "bdd_bdd4_4x2"
                     },
                     {
                         "cn": "四星三码",
-                        "en": "bdd_bdd_4x3"
+                        "en": "bdd_bdd4_4x3"
                     }
                 ]
             },
@@ -409,15 +409,15 @@
                 "playWay": [
                     {
                         "cn": "五星一码",
-                        "en": "bdd_bdd_5x1"
+                        "en": "bdd_bdd5_5x1"
                     },
                     {
                         "cn": "五星二码",
-                        "en": "bdd_bdd_5x2"
+                        "en": "bdd_bdd5_5x2"
                     },
                     {
                         "cn": "五星三码",
-                        "en": "bdd_bdd_5x3"
+                        "en": "bdd_bdd5_5x3"
                     }
                 ]
             }

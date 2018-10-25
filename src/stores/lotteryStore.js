@@ -242,7 +242,41 @@ class LotteryStore {
 
     @observable selectedNums = {}
 
-    @action selectNum = (pos, index, num) => {
+    @action selectNum = (pos, index, num, posArr) => {
+        if (pos === '所有位置') {//定位胆的所有位置
+            this.selectedNums[index] = this.selectedNums[index] || [];
+            const INDEX = this.selectedNums[index].findIndex(v => v === num);
+            if (INDEX === -1) {
+                this.selectedNums[index].push(num);
+                posArr.forEach((p, idx) => {
+                    this.selectedNums[idx] = this.selectedNums[idx] || [];
+                    !this.selectedNums[idx].includes(num) && this.selectedNums[idx].push(num);
+                });
+            } else {
+                this.selectedNums[index].splice(INDEX, 1);
+                posArr.forEach((p, idx) => {
+                    this.selectedNums[idx] = this.selectedNums[idx] || [];
+                    const IDX = this.selectedNums[idx].findIndex(v => v === num);
+                    if (IDX !== -1) {
+                        this.selectedNums[idx].splice(IDX, 1);
+                    } 
+                });
+            }
+            this.selectedNums = { ...this.selectedNums };
+            return;
+        }
+        if (this.mathConfig['type'] === 'baodan') {//奇葩的包胆玩法，点击规则不一样
+            this.selectedNums[index] = this.selectedNums[index] || [];
+            const INDEX = this.selectedNums[index].findIndex(v => v === num);
+            if (INDEX === -1) {
+                this.selectedNums[index] = [];
+                this.selectedNums[index].push(num);
+            } else {
+                this.selectedNums[index].splice(INDEX, 1);
+            }
+            this.selectedNums = { ...this.selectedNums };
+            return;
+        }
         this.selectedNums[index] = this.selectedNums[index] || [];
         const INDEX = this.selectedNums[index].findIndex(v => v === num);
         if (INDEX === -1) {
@@ -309,16 +343,19 @@ class LotteryStore {
                 }
             }
             if (this.mathConfig['type'] === 'zuhe') {
-                const { n, r, needMultiplyPos } = this.mathConfig;
+                const { per, n, r, needMultiplyPos } = this.mathConfig;
+                this.selectedNums[0] = this.selectedNums[0] || [];
                 const m = this.selectedNums[0].length;
                 if (needMultiplyPos) {
-                    return combination(this.rxPosValues.length, r) * combination(m, n);
+                    return combination(this.rxPosValues.length, r) * combination(m, n) * per;
                 }
-                return combination(m, n);
+                return combination(m, n) * per;
             }
 
             if (this.mathConfig['type'] === 'zucheng') {
                 const { up, down, r, needMultiplyPos } = this.mathConfig;
+                this.selectedNums[0] = this.selectedNums[0] || [];
+                this.selectedNums[1] = this.selectedNums[1] || [];
                 const upNums = this.selectedNums[0];
                 const downNums = this.selectedNums[1];
                 const calcZucheng = (a, b, c) => {
@@ -343,6 +380,7 @@ class LotteryStore {
 
             if (this.mathConfig['type'] === 'hezhi') {
                 const { size, nums, needMultiplyPos } = this.mathConfig;
+                this.selectedNums[0] = this.selectedNums[0] || [];
                 const result = this.selectedNums[0].reduce((p, q) => p + calcHzCount(Number(q), size, nums), 0);
                 if (needMultiplyPos) {
                     return combination(this.rxPosValues.length, size) * result;
@@ -351,6 +389,7 @@ class LotteryStore {
             }
             if (this.mathConfig['type'] === 'zuxhezhi') {
                 const { size, nums, needMultiplyPos } = this.mathConfig;
+                this.selectedNums[0] = this.selectedNums[0] || [];
                 const result = this.selectedNums[0].reduce((p, q) => p + calcZuxHzCount(Number(q), size, nums), 0);
                 if (needMultiplyPos) {
                     return combination(this.rxPosValues.length, size) * result;
@@ -359,11 +398,15 @@ class LotteryStore {
             }
             if (this.mathConfig['type'] === 'kuadu') {
                 const { size, nums } = this.mathConfig;
+                this.selectedNums[0] = this.selectedNums[0] || [];
                 return this.selectedNums[0].reduce((p, q) => p + calcKuaduCount(Number(q), size, nums), 0);
             }
             if (this.mathConfig['type'] === 'baodan') {
                 const { n } = this.mathConfig;
-                return n;
+                if (this.selectedNums[0] && this.selectedNums[0].length > 0) {
+                    return n;
+                }
+                return 0;
             }
             if (this.mathConfig['type'] === 'rzxfs') {
                 const { r } = this.mathConfig;

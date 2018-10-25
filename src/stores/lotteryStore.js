@@ -259,7 +259,7 @@ class LotteryStore {
                     const IDX = this.selectedNums[idx].findIndex(v => v === num);
                     if (IDX !== -1) {
                         this.selectedNums[idx].splice(IDX, 1);
-                    } 
+                    }
                 });
             }
             this.selectedNums = { ...this.selectedNums };
@@ -487,7 +487,7 @@ class LotteryStore {
 
     @action inputNum = (numOfEach, event) => {
         const value = event.target.value;
-        if (value.length !== numOfEach) {
+        if (!/^\d+$/.test(value) || value.length !== numOfEach) {
             return;
         }
         this.inputedNums.push(value);

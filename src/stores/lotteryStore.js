@@ -16,7 +16,7 @@ import {
     getLotteryTabConfig
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
-import { toggleClass } from '../utils/cssClass';
+import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount } from '../utils/calcBetCount';
 
 class LotteryStore {
 
@@ -234,8 +234,10 @@ class LotteryStore {
         }
     }
 
+    @observable rxPosValues = [];
+
     @action posSelectChange = (posValues) => {
-        console.log(posValues);
+        this.rxPosValues = posValues;
     }
 
     @observable selectedNums = {}
@@ -286,24 +288,109 @@ class LotteryStore {
 
     @computed get betCount() {
         if (this.plateType === 'click') {
-            switch (this.mathConfig['type']) {//计算注数的方式，有阶乘、组合、累加等
-                case 'jiecheng':
-                    const posCount = this.mathConfig['posCount'];
-                    const keys = Object.keys(this.selectedNums);
-                    let values = Object.values(this.selectedNums);
-                    values = values.map(a => a.slice());//mobx数组转js数组
-                    if (keys.length < posCount) {//位置没选满，为0
-                        return 0;
-                    } else {
-                        return values.reduce((a, b) => a * b.length, 1);
-                    }
-                default:
-                    return 0;
+            if (this.mathConfig['type'] === 'leijia') {
+                const { r, needMultiplyPos } = this.mathConfig;
+                let values = Object.values(this.selectedNums);
+                values = values.map(a => a.slice());//mobx数组转js数组
+                if (needMultiplyPos) {
+                    return combination(this.rxPosValues.length, r) * values.reduce((a, b) => a + b.length, 0);
+                }
+                return values.reduce((a, b) => a + b.length, 0);
             }
+            if (this.mathConfig['type'] === 'jiecheng') {
+                const { posCount } = this.mathConfig;
+                const keys = Object.keys(this.selectedNums);
+                let values = Object.values(this.selectedNums);
+                values = values.map(a => a.slice());//mobx数组转js数组
+                if (keys.length < posCount) {//位置没选满，为0
+                    return 0;
+                } else {
+                    return values.reduce((a, b) => a * b.length, 1);
+                }
+            }
+            if (this.mathConfig['type'] === 'zuhe') {
+                const { n, r, needMultiplyPos } = this.mathConfig;
+                const m = this.selectedNums[0].length;
+                if (needMultiplyPos) {
+                    return combination(this.rxPosValues.length, r) * combination(m, n);
+                }
+                return combination(m, n);
+            }
+
+            if (this.mathConfig['type'] === 'zucheng') {
+                const { up, down, r, needMultiplyPos } = this.mathConfig;
+                const upNums = this.selectedNums[0];
+                const downNums = this.selectedNums[1];
+                const calcZucheng = (a, b, c) => {
+                    const n1 = combination(b.length, c);
+                    const n2 = difference(a, b).length;
+                    const n3 = intersection(a, b).length;
+                    const n4 = combination(b.length - 1, c) * n3;
+                    return n1 * n2 + n4;
+                };
+                let result;
+                if (up === 1) {
+                    result = calcZucheng(upNums, downNums, down);
+                }
+                if (down === 1) {
+                    result = calcZucheng(downNums, upNums, up);
+                }
+                if (needMultiplyPos) {
+                    return combination(this.rxPosValues.length, r) * result;
+                }
+                return result;
+            }
+
+            if (this.mathConfig['type'] === 'hezhi') {
+                const { size, nums, needMultiplyPos } = this.mathConfig;
+                const result = this.selectedNums[0].reduce((p, q) => p + calcHzCount(Number(q), size, nums), 0);
+                if (needMultiplyPos) {
+                    return combination(this.rxPosValues.length, size) * result;
+                }
+                return result;
+            }
+            if (this.mathConfig['type'] === 'zuxhezhi') {
+                const { size, nums, needMultiplyPos } = this.mathConfig;
+                const result = this.selectedNums[0].reduce((p, q) => p + calcZuxHzCount(Number(q), size, nums), 0);
+                if (needMultiplyPos) {
+                    return combination(this.rxPosValues.length, size) * result;
+                }
+                return result;
+            }
+            if (this.mathConfig['type'] === 'kuadu') {
+                const { size, nums } = this.mathConfig;
+                return this.selectedNums[0].reduce((p, q) => p + calcKuaduCount(Number(q), size, nums), 0);
+            }
+            if (this.mathConfig['type'] === 'baodan') {
+                const { n } = this.mathConfig;
+                return n;
+            }
+            if (this.mathConfig['type'] === 'rzxfs') {
+                const { r } = this.mathConfig;
+                const wan = this.selectedNums[0] ? this.selectedNums[0].length : 0;
+                const qian = this.selectedNums[1] ? this.selectedNums[1].length : 0;
+                const bai = this.selectedNums[2] ? this.selectedNums[2].length : 0;
+                const shi = this.selectedNums[3] ? this.selectedNums[3].length : 0;
+                const ge = this.selectedNums[4] ? this.selectedNums[4].length : 0;
+                if (r === 2) {//任选2
+                    return wan * (qian + bai + shi + ge) + qian * (bai + shi + ge) + bai * (shi + ge) + shi * ge;
+                }
+
+                if (r === 3) {//任选3
+                    return (wan * qian + wan * bai + qian * bai) * (shi + ge) + wan * qian * bai + (wan + qian + bai) * shi * ge;
+                }
+
+                if (r === 4) {
+                    return wan * qian * bai * shi + wan * qian * bai * ge + wan * qian * shi * ge + wan * bai * shi * ge + qian * bai * shi * ge;
+                }
+            }
+
+            return 0;
         }
         if (this.plateType === 'input') {
-            if (this.mathConfig['needMultiplyPos']) {//任选玩法单式需要成语位置
-
+            const { r, needMultiplyPos } = this.mathConfig;
+            if (needMultiplyPos) {//任选玩法单式需要成语位置
+                return combination(this.rxPosValues.length, r) * this.inputedNums.length;
             }
             return this.inputedNums.length;
         }

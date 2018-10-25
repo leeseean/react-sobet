@@ -16,7 +16,7 @@ class TipAndHot extends React.Component {
             return null;
         }
         const { name, posSelect } = plateConfig[lotteryCode][method];
-
+        posSelectChange(posSelect);
         return (
             <React.Fragment>
                 {

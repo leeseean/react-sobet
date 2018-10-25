@@ -20,7 +20,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', m: 9, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -30,7 +30,7 @@ export default {
         },
         wx_zux_z60: {
             name: '五星组选60',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 3 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -40,7 +40,7 @@ export default {
         },
         wx_zux_z30: {
             name: '五星组选30',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 2, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -50,7 +50,7 @@ export default {
         },
         wx_zux_z20: {
             name: '五星组选20',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 2 },
             plate: {
                 type: 'click',
                 pos: ['三重号', '单号'],
@@ -60,7 +60,7 @@ export default {
         },
         wx_zux_z10: {
             name: '五星组选10',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['三重号', '二重号'],
@@ -70,7 +70,7 @@ export default {
         },
         wx_zux_z5: {
             name: '五星组选5',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['四重号', '单号'],
@@ -80,7 +80,7 @@ export default {
         },
         sx_zx_fs: {
             name: '四星直选复式',
-            mathType: 'jicheng',
+            mathConfig: { type: 'jiecheng', posCount: 4 },
             plate: {
                 type: 'click',
                 pos: ['千位', '百位', '十位', '个位'],
@@ -90,7 +90,7 @@ export default {
         },
         sx_zx_ds: {
             name: '四星直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 4,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -98,7 +98,7 @@ export default {
         },
         sx_zux_z24: {
             name: '四星组选24',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 4 },
             plate: {
                 type: 'click',
                 pos: ['组24'],
@@ -108,7 +108,7 @@ export default {
         },
         sx_zux_z12: {
             name: '四星组选12',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -118,7 +118,7 @@ export default {
         },
         sx_zux_z6: {
             name: '四星组选6',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号'],
@@ -128,17 +128,17 @@ export default {
         },
         sx_zux_z4: {
             name: '四星组选4',
-            mathType: 'zucheng',
+            mathType: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
-                pos: ['三重号'],
+                pos: ['三重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         qsm_zx_fs: {
             name: '前三直选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
@@ -148,7 +148,7 @@ export default {
         },
         qsm_zx_ds: {
             name: '前三直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 3,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -156,7 +156,7 @@ export default {
         },
         qsm_zx_hz: {
             name: '前三直选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -166,7 +166,7 @@ export default {
         },
         qsm_zx_kd: {
             name: '前三直选跨度',
-            mathType: 'kuadu',
+            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -176,7 +176,7 @@ export default {
         },
         qsm_zux_z3: {
             name: '前三组选3',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -186,7 +186,7 @@ export default {
         },
         qsm_zux_z6: {
             name: '前三组选6',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 3 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -196,7 +196,7 @@ export default {
         },
         qsm_zux_hh: {
             name: '前三组选混合',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['万位', '千位', '百位']
@@ -204,7 +204,7 @@ export default {
         },
         qsm_zux_hz: {
             name: '前三组选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -214,7 +214,7 @@ export default {
         },
         qsm_zux_bd: {
             name: '前三组选包胆',
-            mathType: 'baodan',
+            mathType: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -224,7 +224,7 @@ export default {
         },
         zsm_zx_fs: {
             name: '中三直选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
@@ -234,7 +234,7 @@ export default {
         },
         zsm_zx_ds: {
             name: '中三直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 3,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -242,7 +242,7 @@ export default {
         },
         zsm_zx_hz: {
             name: '中三直选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -252,7 +252,7 @@ export default {
         },
         zsm_zx_kd: {
             name: '中三直选跨度',
-            mathType: 'kuadu',
+            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -262,7 +262,7 @@ export default {
         },
         zsm_zux_z3: {
             name: '中三组选3',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -272,7 +272,7 @@ export default {
         },
         zsm_zux_z6: {
             name: '中三组选6',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 3 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -282,7 +282,7 @@ export default {
         },
         zsm_zux_hh: {
             name: '中三组选混合',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['万位', '千位', '百位']
@@ -290,7 +290,7 @@ export default {
         },
         zsm_zux_hz: {
             name: '中三组选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -300,7 +300,7 @@ export default {
         },
         zsm_zux_bd: {
             name: '中三组选包胆',
-            mathType: 'baodan',
+            mathType: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -310,7 +310,7 @@ export default {
         },
         hsm_zx_fs: {
             name: '后三直选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位'],
@@ -320,7 +320,7 @@ export default {
         },
         hsm_zx_ds: {
             name: '后三直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 3,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -328,7 +328,7 @@ export default {
         },
         hsm_zx_hz: {
             name: '后三直选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -338,7 +338,7 @@ export default {
         },
         hsm_zx_kd: {
             name: '后三直选跨度',
-            mathType: 'kuadu',
+            mathType: { type: 'kuadu', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -348,7 +348,7 @@ export default {
         },
         hsm_zux_z3: {
             name: '后三组选3',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -358,7 +358,7 @@ export default {
         },
         hsm_zux_z6: {
             name: '后三组选6',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 3 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -368,7 +368,7 @@ export default {
         },
         hsm_zux_hh: {
             name: '后三组选混合',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['万位', '千位', '百位']
@@ -376,7 +376,7 @@ export default {
         },
         hsm_zux_hz: {
             name: '后三组选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -386,7 +386,7 @@ export default {
         },
         hsm_zux_bd: {
             name: '后三组选包胆',
-            mathType: 'baodan',
+            mathType: { type: 'baodan', n: 54 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -396,7 +396,7 @@ export default {
         },
         em_zx_qfs: {
             name: '前二直选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -406,7 +406,7 @@ export default {
         },
         em_zx_qds: {
             name: '前二直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 2,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -414,7 +414,7 @@ export default {
         },
         em_zx_qhz: {
             name: '前二直选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -424,7 +424,7 @@ export default {
         },
         em_zx_qkd: {
             name: '前二直选跨度',
-            mathType: 'kuadu',
+            mathType: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -434,7 +434,7 @@ export default {
         },
         em_zux_qfs: {
             name: '前二组选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -444,7 +444,7 @@ export default {
         },
         em_zux_qds: {
             name: '前二组选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 2,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -452,7 +452,7 @@ export default {
         },
         em_zux_qhz: {
             name: '前二组选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -462,7 +462,7 @@ export default {
         },
         em_zux_qbd: {
             name: '前二组选包胆',
-            mathType: 'baodan',
+            mathType: { type: 'baodan', n: 9 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -472,7 +472,7 @@ export default {
         },
         em_zx_hfs: {
             name: '后二直选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -482,7 +482,7 @@ export default {
         },
         em_zx_hds: {
             name: '后二直选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 2,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -490,7 +490,7 @@ export default {
         },
         em_zx_hhz: {
             name: '后二直选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -500,7 +500,7 @@ export default {
         },
         em_zx_hkd: {
             name: '后二直选跨度',
-            mathType: 'kuadu',
+            mathType: { type: 'kuadu', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['跨度'],
@@ -510,7 +510,7 @@ export default {
         },
         em_zux_hfs: {
             name: '后二组选复式',
-            mathType: 'jiecheng',
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位'],
@@ -520,7 +520,7 @@ export default {
         },
         em_zux_hds: {
             name: '后二组选单式',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 numOfEach: 2,//没注要求的数字数量 如五星是每注选号有5个数字
@@ -528,7 +528,7 @@ export default {
         },
         em_zux_hhz: {
             name: '后二组选和值',
-            mathType: 'hezhi',
+            mathType: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -538,7 +538,7 @@ export default {
         },
         em_zux_hbd: {
             name: '后二组选包胆',
-            mathType: 'baodan',
+            mathType: { type: 'baodan', n: 9 },
             plate: {
                 type: 'click',
                 pos: ['组选包胆'],
@@ -548,7 +548,7 @@ export default {
         },
         dwd_dwd_dwd: {
             name: '定位胆',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
@@ -558,7 +558,7 @@ export default {
         },
         bdd_bdd_qs1: {
             name: '前三一码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -568,7 +568,7 @@ export default {
         },
         bdd_bdd_qs2: {
             name: '前三二码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -578,7 +578,7 @@ export default {
         },
         bdd_bdd_zs1: {
             name: '中三一码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -588,7 +588,7 @@ export default {
         },
         bdd_bdd_zs2: {
             name: '中三二码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -598,7 +598,7 @@ export default {
         },
         bdd_bdd_hs1: {
             name: '后三一码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -608,7 +608,7 @@ export default {
         },
         bdd_bdd_hs2: {
             name: '后三二码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -618,7 +618,7 @@ export default {
         },
         bdd_bdd_4x1: {
             name: '四星一码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -628,7 +628,7 @@ export default {
         },
         bdd_bdd_4x2: {
             name: '四星二码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -638,7 +638,7 @@ export default {
         },
         bdd_bdd_4x3: {
             name: '四星三码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 3 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -648,7 +648,7 @@ export default {
         },
         bdd_bdd_5x1: {
             name: '五星一码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 1 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -658,7 +658,7 @@ export default {
         },
         bdd_bdd_5x2: {
             name: '五星二码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 2 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -668,7 +668,7 @@ export default {
         },
         bdd_bdd_5x3: {
             name: '五星三码不定胆',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'zuhe', n: 3 },
             plate: {
                 type: 'click',
                 pos: ['不定胆'],
@@ -678,7 +678,7 @@ export default {
         },
         zh_hzdxds_q3hz: {
             name: '前三总和',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -689,7 +689,7 @@ export default {
         },
         zh_hzdxds_z3hz: {
             name: '中三总和',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -700,7 +700,7 @@ export default {
         },
         zh_hzdxds_h3hz: {
             name: '后三总和',
-            mathConfig: { type: 'leijia', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -711,7 +711,7 @@ export default {
         },
         qw_ts_yffs: {
             name: '一帆风顺',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['一帆风顺'],
@@ -721,7 +721,7 @@ export default {
         },
         qw_ts_hscs: {
             name: '好事成双',
-            mathConfig: { type: 'zuhe', posCount: 5 },
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['好事成双'],
@@ -731,7 +731,7 @@ export default {
         },
         dxds_dxds_h2: {
             name: '后二大小单双',
-            mathType: 'zucheng',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -741,7 +741,8 @@ export default {
             },
         },
         dxds_dxds_q2: {
-            mathType: 'zucheng',
+            name: '前二大小单双',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -749,10 +750,10 @@ export default {
                 num: ['大', '小', '单', '双'],
                 filter: ['全', '清'].reverse(),
             },
-            name: '前二大小单双'
         },
         dxds_dxds_h3: {
-            mathType: 'zucheng',
+            name: '后三大小单双',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -760,10 +761,10 @@ export default {
                 num: ['大', '小', '单', '双'],
                 filter: ['全', '清'].reverse(),
             },
-            name: '后三大小单双'
         },
         dxds_dxds_q3: {
-            mathType: 'zucheng',
+            name: '前三大小单双',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 isQw: true,
                 type: 'click',
@@ -771,254 +772,253 @@ export default {
                 num: ['大', '小', '单', '双'],
                 filter: ['全', '清'].reverse(),
             },
-            name: '前三大小单双'
         },
         dxds_dxgs_wx: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '五星大小个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '五星大小个数'
         },
         dxds_dxgs_sx: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '四星大小个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '四星大小个数'
         },
         dxds_dxgs_qs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '前三大小个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '前三大小个数'
         },
         dxds_dxgs_zs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '中三大小个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '中三大小个数'
         },
         dxds_dxgs_hs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '后三大小个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '后三大小个数'
         },
         dxds_dsgs_wx: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '五星单双个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '五星单双个数'
         },
         dxds_dsgs_sx: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '四星单双个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '四星单双个数'
         },
         dxds_dsgs_qs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '前三单双个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '前三单双个数'
         },
         dxds_dsgs_hs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '后三单双个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '后三单双个数'
         },
         dxds_dsgs_zs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '中三单双个数',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '中三单双个数'
         },
         zh_hzdxds_5xhz: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '五星总和',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '五星总和'
         },
         qw_lhh_wq: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '万千龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [0, 1],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '万千龙虎斗'
         },
         qw_lhh_wb: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '万百龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [0, 2],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '万百龙虎斗'
         },
         qw_lhh_ws: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '万十龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [0, 3],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '万十龙虎斗'
         },
         qw_lhh_wg: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '万个龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [0, 4],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '万个龙虎斗'
         },
         qw_lhh_qb: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '千百龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [1, 3],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '千百龙虎斗'
         },
         qw_lhh_qg: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '千个龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [1, 4],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '千个龙虎斗'
         },
         qw_lhh_bs: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '百十龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [2, 3],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '百十龙虎斗'
         },
         qw_lhh_bg: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '百个龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [2, 4],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '百个龙虎斗'
         },
         qw_lhh_sg: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '十个龙虎斗',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 area: [3, 4],
                 isLonghu: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '十个龙虎斗'
         },
         qw_xt_q3: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '前三炸金花',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '前三炸金花'
         },
         qw_xt_z3: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '中三炸金花',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '中三炸金花'
         },
         qw_xt_h3: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '后三炸金花',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '后三炸金花'
         },
         nn_nn_nn: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '牛牛',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '牛牛'
         },
         sh_sh_wx: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '梭哈',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '梭哈'
         },
         bjl_bjl_bjl: {
-            mathConfig: { type: 'leijia', posCount: 5 },
+            name: '百家乐',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 isQw: true,
                 type: 'click',
                 filter: ['全', '清'].reverse(),
             },
-            name: '百家乐'
         },
         rx2_zx_fs: {
             name: '任二直选复式',
-            mathType: 'r2zxfs',
+            mathConfig: { type: 'rzxfs', r: 2 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
@@ -1028,7 +1028,7 @@ export default {
         },
         rx2_zx_ds: {
             name: '任二直选单式',
-            mathType: 'r2zxds',
+            mathConfig: { type: 'leijia', r: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
@@ -1037,7 +1037,7 @@ export default {
         },
         rx2_zx_hz: {
             name: '任二直选和值',
-            mathType: 'r2zxhz',
+            mathConfig: { type: 'hezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1048,7 +1048,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathType: 'r2zuxfs',
+            mathConfig: { type: 'zuhe', n: 2, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1059,7 +1059,7 @@ export default {
         },
         rx2_zux_ds: {
             name: '任二组选单式',
-            mathType: 'r2zuxds',
+            mathConfig: { type: 'leijia', r: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
@@ -1068,7 +1068,7 @@ export default {
         },
         rx2_zux_hz: {
             name: '任二组选和值',
-            mathType: 'r2zuxhz',
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1079,7 +1079,7 @@ export default {
         },
         rx3_zx_fs: {
             name: '任三直选复式',
-            mathType: 'r3zxfs',
+            mathConfig: { type: 'rzxfs', r: 3 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
@@ -1089,7 +1089,7 @@ export default {
         },
         rx3_zx_ds: {
             name: '任三直选单式',
-            mathType: 'r3zxds',
+            mathConfig: { type: 'leijia', r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
@@ -1098,7 +1098,7 @@ export default {
         },
         rx3_zx_hz: {
             name: '任三直选和值',
-            mathType: 'r3zxhz',
+            mathConfig: { type: 'hezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1109,7 +1109,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathType: 'r3zux3',
+            mathConfig: { type: 'zuhe', n: 2, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1120,7 +1120,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathType: 'r3zux6',
+            mathConfig: { type: 'zuhe', n: 3, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1131,7 +1131,7 @@ export default {
         },
         rx3_zux_hh: {
             name: '任三组选混合',
-            mathType: 'r3zuxhh',
+            mathConfig: { type: 'leijia', r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
@@ -1139,7 +1139,7 @@ export default {
         },
         rx3_zux_hz: {
             name: '任三组选和值',
-            mathType: 'r3zuxhz',
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1150,7 +1150,7 @@ export default {
         },
         rx4_zx_fs: {
             name: '任四直选复式',
-            mathType: 'r4zxfs',
+            mathConfig: { type: 'rzxfs', r: 4 },
             plate: {
                 type: 'click',
                 pos: ['万位', '千位', '百位', '十位', '个位'],
@@ -1160,7 +1160,7 @@ export default {
         },
         rx4_zx_ds: {
             name: '任四直选单式',
-            mathType: 'r4zxds',
+            mathConfig: { type: 'leijia', r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'input',
@@ -1169,7 +1169,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathType: 'r4zux24',
+            mathConfig: { type: 'zuhe', n: 4, needMultiplyPos: true  },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1180,17 +1180,18 @@ export default {
         },
         rx4_zux_z12: {
             name: '任四组选12',
-            mathType: 'r4zux12',
+            mathType: { type: 'zucheng', up: 1, down: 2, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
-                pos: ['组12'],
+                pos: ['二重号', '单号'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         rx4_zux_z6: {
             name: '任四组选6',
+            mathConfig: { type: 'zuhe', r: 4, n: 2, needMultiplyPos: true  },
             mathType: 'r4zux6',
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {

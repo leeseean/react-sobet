@@ -195,21 +195,23 @@ class LotteryStore {
     @action
     setActiveTab = (obj) => {
         this.activeTab = obj;
-        const { en, cn, ...rest } = obj['subTabConfig'][0]['playWay'][0];
-        this.setMethod(en, rest);
+        this.setMethod(localStorage.getItem(`${this.lotteryCode}-${this.activeTab.tab}-method`) || this.activeTab['subTabConfig'][0]['playWay'][0]['en']); 
         localStorage.setItem(`${this.lotteryCode}-activeTab`, JSON.stringify(obj));
     }
 
-    @observable method = this.activeTab && this.activeTab['subTabConfig'][0]['playWay'][0]['en'] //玩法wx_zx_fs
+    @observable method = localStorage.getItem(`${this.lotteryCode}-${this.activeTab && this.activeTab.tab}-method`) || (this.activeTab && this.activeTab['subTabConfig'][0]['playWay'][0]['en']) //玩法wx_zx_fs
 
-    @observable chaidanConfig = JSON.parse(localStorage.getItem(`${this.lotteryCode}-chaidanConfig`)) || {}
-
-    @action setMethod = (value, rest = {}) => {
+    @action setMethod = (value) => {
         this.method = value;
-        this.chaidanConfig = rest;
-        localStorage.setItem(`${this.lotteryCode}-chaidanConfig`, JSON.stringify(rest));
+        localStorage.setItem(`${this.lotteryCode}-${this.activeTab.tab}-method`, value);
         this.selectedNums = {};
-        this.filteredNums = {};
+        this.selectedChaidanNums = [];
+    }
+
+    @computed get chaidanConfig() {
+        const activeSubItem = this.activeTab['subTabConfig'].find(subObj => subObj.playWay.some(({ en }) => en === this.method));
+        const result = activeSubItem.playWay.find(({ en }) => en === this.method);
+        return result;
     }
 
     @observable missShowFlag = localStorage.getItem('missShowFlag')
@@ -310,6 +312,29 @@ class LotteryStore {
                 break;
         }
         this.selectedNums = { ...this.selectedNums };
+    }
+
+    @observable selectedChaidanNums = [];
+
+    @action selectChaidanNum = ({ en, cn }) => {
+        const value = JSON.stringify({ en, cn });
+        const INDEX = this.selectedChaidanNums.findIndex(v => v === value);
+        if (INDEX === -1) {
+            this.selectedChaidanNums.push(value);
+        } else {
+            this.selectedChaidanNums.splice(INDEX, 1);
+        }
+    }
+
+    @action filterChaidanNum = (value, numArr) => {
+        switch (value) {
+            case '全':
+                this.selectedChaidanNums = numArr.map(o => JSON.stringify(o));
+                break;
+            case '清':
+                this.selectedChaidanNums = [];
+                break;
+        }
     }
 
     @computed get plateType() {

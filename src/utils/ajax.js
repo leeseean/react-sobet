@@ -42,6 +42,9 @@ axios
     });
 
 const $http = (config) => {
+    if (process.env.NODE_ENV === 'development') {
+        config.url = '/dev' + config.url;
+    }
     config = Object.assign(config, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',

@@ -20285,6 +20285,7 @@ export default {
     gd11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -20294,6 +20295,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20301,6 +20303,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -20310,6 +20313,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20317,15 +20321,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20333,6 +20339,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -20342,6 +20349,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20349,6 +20357,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -20358,6 +20367,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -20367,6 +20377,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -20376,6 +20387,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -20385,6 +20397,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -20394,6 +20407,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -20403,6 +20417,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -20412,6 +20427,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -20421,6 +20437,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -20430,6 +20447,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -20439,6 +20457,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20446,6 +20465,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20453,6 +20473,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20460,6 +20481,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20467,6 +20489,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20474,6 +20497,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20481,6 +20505,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20488,6 +20513,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20495,6 +20521,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20504,6 +20531,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20513,6 +20541,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20522,6 +20551,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20531,6 +20561,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20540,6 +20571,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20549,6 +20581,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20558,6 +20591,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -20565,6 +20599,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -20574,6 +20609,7 @@ export default {
     sd11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -20583,6 +20619,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20590,6 +20627,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -20599,6 +20637,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20606,15 +20645,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20622,6 +20663,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -20631,6 +20673,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20638,6 +20681,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -20647,6 +20691,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -20656,6 +20701,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -20665,6 +20711,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -20674,6 +20721,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -20683,6 +20731,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -20692,6 +20741,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -20701,6 +20751,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -20710,6 +20761,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -20719,6 +20771,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -20728,6 +20781,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20735,6 +20789,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20742,6 +20797,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20749,6 +20805,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20756,6 +20813,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20763,6 +20821,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20770,6 +20829,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20777,6 +20837,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -20784,6 +20845,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20793,6 +20855,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20802,6 +20865,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20811,6 +20875,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20820,6 +20885,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20829,6 +20895,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20838,6 +20905,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -20847,6 +20915,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -20854,6 +20923,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -20863,6 +20933,7 @@ export default {
     jx11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -20872,6 +20943,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20879,6 +20951,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -20888,6 +20961,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20895,15 +20969,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20911,6 +20987,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -20920,6 +20997,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -20927,6 +21005,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -20936,6 +21015,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -20945,6 +21025,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -20954,6 +21035,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -20963,6 +21045,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -20972,6 +21055,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -20981,6 +21065,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -20990,6 +21075,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -20999,6 +21085,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -21008,6 +21095,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -21017,6 +21105,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21024,6 +21113,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21031,6 +21121,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21038,6 +21129,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21045,6 +21137,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21052,6 +21145,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21059,6 +21153,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21066,6 +21161,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21073,6 +21169,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21082,6 +21179,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21091,6 +21189,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21100,6 +21199,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21109,6 +21209,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21118,6 +21219,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21127,6 +21229,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21136,6 +21239,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21143,6 +21247,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21152,6 +21257,7 @@ export default {
     sh11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -21161,6 +21267,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21168,6 +21275,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -21177,6 +21285,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21184,15 +21293,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21200,6 +21311,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -21209,6 +21321,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21216,6 +21329,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -21225,6 +21339,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -21234,6 +21349,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -21243,6 +21359,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -21252,6 +21369,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -21261,6 +21379,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -21270,6 +21389,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -21279,6 +21399,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -21288,6 +21409,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -21297,6 +21419,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -21306,6 +21429,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21313,6 +21437,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21320,6 +21445,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21327,6 +21453,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21334,6 +21461,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21341,6 +21469,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21348,6 +21477,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21355,6 +21485,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21362,6 +21493,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21371,6 +21503,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21380,6 +21513,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21389,6 +21523,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21398,6 +21533,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21407,6 +21543,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21416,6 +21553,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21425,6 +21563,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21432,6 +21571,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21441,6 +21581,7 @@ export default {
     ah11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -21450,6 +21591,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21457,6 +21599,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -21466,6 +21609,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21473,15 +21617,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21489,6 +21635,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -21498,6 +21645,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21505,6 +21653,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -21514,6 +21663,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -21523,6 +21673,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -21532,6 +21683,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -21541,6 +21693,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -21550,6 +21703,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -21559,6 +21713,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -21568,6 +21723,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -21577,6 +21733,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -21586,6 +21743,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -21595,6 +21753,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21602,6 +21761,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21609,6 +21769,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21616,6 +21777,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21623,6 +21785,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21630,6 +21793,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21637,6 +21801,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21644,6 +21809,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21651,6 +21817,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21660,6 +21827,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21669,6 +21837,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21678,6 +21847,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21687,6 +21857,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21696,6 +21867,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21705,6 +21877,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21714,6 +21887,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21721,6 +21895,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -21730,6 +21905,7 @@ export default {
     hlj11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -21739,6 +21915,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21746,6 +21923,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -21755,6 +21933,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21762,15 +21941,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21778,6 +21959,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -21787,6 +21969,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -21794,6 +21977,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -21803,6 +21987,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -21812,6 +21997,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -21821,6 +22007,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -21830,6 +22017,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -21839,6 +22027,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -21848,6 +22037,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -21857,6 +22047,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -21866,6 +22057,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -21875,6 +22067,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -21884,6 +22077,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21891,6 +22085,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21898,6 +22093,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21905,6 +22101,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21912,6 +22109,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21919,6 +22117,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21926,6 +22125,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21933,6 +22133,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -21940,6 +22141,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21949,6 +22151,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21958,6 +22161,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21967,6 +22171,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21976,6 +22181,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21985,6 +22191,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -21994,6 +22201,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22003,6 +22211,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22010,6 +22219,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22019,6 +22229,7 @@ export default {
     yn11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -22028,6 +22239,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22035,6 +22247,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -22044,6 +22257,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22051,15 +22265,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22067,6 +22283,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -22076,6 +22293,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22083,6 +22301,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -22092,6 +22311,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -22101,6 +22321,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -22110,6 +22331,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -22119,6 +22341,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -22128,6 +22351,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -22137,6 +22361,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -22146,6 +22371,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -22155,6 +22381,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -22164,6 +22391,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -22173,6 +22401,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22180,6 +22409,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22187,6 +22417,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22194,6 +22425,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22201,6 +22433,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22208,6 +22441,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22215,6 +22449,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22222,6 +22457,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22229,6 +22465,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22238,6 +22475,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22247,6 +22485,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22256,6 +22495,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22265,6 +22505,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22274,6 +22515,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22283,6 +22525,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22292,6 +22535,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22299,6 +22543,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22308,6 +22553,7 @@ export default {
     hub11y: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -22317,6 +22563,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22324,6 +22571,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -22333,6 +22581,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22340,15 +22589,17 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位'],
+                pos: ['第一位', '第二位'],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22356,6 +22607,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -22365,6 +22617,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22372,6 +22625,7 @@ export default {
         },
         bdd_bdd_bdd11y: {
             name: '不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -22381,6 +22635,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '所有位置'],
@@ -22390,6 +22645,7 @@ export default {
         },
         rxfs_rxfs_1z1: {
             name: '任选复式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['选1中1'],
@@ -22399,6 +22655,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -22408,6 +22665,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -22417,6 +22675,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -22426,6 +22685,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -22435,6 +22695,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -22444,6 +22705,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -22453,6 +22715,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -22462,6 +22725,7 @@ export default {
         },
         rxds_rxds_1z1: {
             name: '任选单式一中一',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22469,6 +22733,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22476,6 +22741,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22483,6 +22749,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22490,6 +22757,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22497,6 +22765,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22504,6 +22773,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22511,6 +22781,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -22518,6 +22789,7 @@ export default {
         },
         rxdt_rxdt_2z2: {
             name: '任选胆拖二中二',
+            mathConfig: { type: '11x5rxdt', z: 2 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22527,6 +22799,7 @@ export default {
         },
         rxdt_rxdt_3z3: {
             name: '任选胆拖三中三',
+            mathConfig: { type: '11x5rxdt', z: 3 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22536,6 +22809,7 @@ export default {
         },
         rxdt_rxdt_4z4: {
             name: '任选胆拖四中四',
+            mathConfig: { type: '11x5rxdt', z: 4 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22545,6 +22819,7 @@ export default {
         },
         rxdt_rxdt_5z5: {
             name: '任选胆拖五中五',
+            mathConfig: { type: '11x5rxdt', z: 5 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22554,6 +22829,7 @@ export default {
         },
         rxdt_rxdt_6z5: {
             name: '任选胆拖六中五',
+            mathConfig: { type: '11x5rxdt', z: 6 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22563,6 +22839,7 @@ export default {
         },
         rxdt_rxdt_7z5: {
             name: '任选胆拖七中五',
+            mathConfig: { type: '11x5rxdt', z: 7 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22572,6 +22849,7 @@ export default {
         },
         rxdt_rxdt_8z5: {
             name: '任选胆拖八中五',
+            mathConfig: { type: '11x5rxdt', z: 8 },
             plate: {
                 type: 'click',
                 pos: ['胆码', '拖码'],
@@ -22581,6 +22859,7 @@ export default {
         },
         qw_qw_dds: {
             name: '定单双',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22588,6 +22867,7 @@ export default {
         },
         qw_qw_czw: {
             name: '猜中位',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22811,6 +23091,7 @@ export default {
     bjpk10: {
         cq1_cq1_cq1: {
             name: '猜冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -22820,6 +23101,7 @@ export default {
         },
         cq2_cq2_cq2: {
             name: '猜前二',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名'],
@@ -22829,12 +23111,14 @@ export default {
         },
         cq2_cq2_ds: {
             name: '猜前二单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq3_cq3_cq3: {
             name: '猜前三',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名'],
@@ -22844,12 +23128,14 @@ export default {
         },
         cq3_cq3_ds: {
             name: '猜前三单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq4_cq4_cq4: {
             name: '猜前四',
+            mathConfig: { type: '11x5zxfs', posCount: 4 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名'],
@@ -22859,12 +23145,14 @@ export default {
         },
         cq4_cq4_ds: {
             name: '猜前四单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq5_cq5_cq5: {
             name: '猜前五',
+            mathConfig: { type: '11x5zxfs', posCount: 5 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名'],
@@ -22874,12 +23162,14 @@ export default {
         },
         cq5_cq5_ds: {
             name: '猜前五单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         dwd_dwd_q5: {
             name: '前五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
@@ -22889,6 +23179,7 @@ export default {
         },
         dwd_dwd_h5: {
             name: '后五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
@@ -22898,6 +23189,7 @@ export default {
         },
         dx_dx_d1: {
             name: '大小冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -22907,6 +23199,7 @@ export default {
         },
         dx_dx_d2: {
             name: '大小第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -22916,6 +23209,7 @@ export default {
         },
         dx_dx_d3: {
             name: '大小第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -22925,6 +23219,7 @@ export default {
         },
         dx_dx_d4: {
             name: '大小第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -22934,6 +23229,7 @@ export default {
         },
         dx_dx_d5: {
             name: '大小第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -22943,6 +23239,7 @@ export default {
         },
         dx_dx_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -22950,6 +23247,7 @@ export default {
         },
         hz_hz_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -22957,6 +23255,7 @@ export default {
         },
         hz_hz_q3: {
             name: '前三和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -22964,6 +23263,7 @@ export default {
         },
         ds_ds_d1: {
             name: '单双冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -22973,6 +23273,7 @@ export default {
         },
         ds_ds_d2: {
             name: '单双第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -22982,6 +23283,7 @@ export default {
         },
         ds_ds_d3: {
             name: '单双第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -22991,6 +23293,7 @@ export default {
         },
         ds_ds_d4: {
             name: '单双第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -23000,6 +23303,7 @@ export default {
         },
         ds_ds_d5: {
             name: '单双第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -23009,6 +23313,7 @@ export default {
         },
         ds_ds_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23016,6 +23321,7 @@ export default {
         },
         lh_lh_1v10: {
             name: '龙虎1v10',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23023,6 +23329,7 @@ export default {
         },
         lh_lh_2v9: {
             name: '龙虎2v9',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23030,6 +23337,7 @@ export default {
         },
         lh_lh_3v8: {
             name: '龙虎3v8',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23037,6 +23345,7 @@ export default {
         },
         lh_lh_4v7: {
             name: '龙虎4v7',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23044,6 +23353,7 @@ export default {
         },
         lh_lh_5v6: {
             name: '龙虎5v6',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23053,6 +23363,7 @@ export default {
     mcpk10: {
         cq1_cq1_cq1: {
             name: '猜冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23062,6 +23373,7 @@ export default {
         },
         cq2_cq2_cq2: {
             name: '猜前二',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名'],
@@ -23071,12 +23383,14 @@ export default {
         },
         cq2_cq2_ds: {
             name: '猜前二单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq3_cq3_cq3: {
             name: '猜前三',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名'],
@@ -23086,12 +23400,14 @@ export default {
         },
         cq3_cq3_ds: {
             name: '猜前三单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq4_cq4_cq4: {
             name: '猜前四',
+            mathConfig: { type: '11x5zxfs', posCount: 4 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名'],
@@ -23101,12 +23417,14 @@ export default {
         },
         cq4_cq4_ds: {
             name: '猜前四单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq5_cq5_cq5: {
             name: '猜前五',
+            mathConfig: { type: '11x5zxfs', posCount: 5 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名'],
@@ -23116,12 +23434,14 @@ export default {
         },
         cq5_cq5_ds: {
             name: '猜前五单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         dwd_dwd_q5: {
             name: '前五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
@@ -23131,6 +23451,7 @@ export default {
         },
         dwd_dwd_h5: {
             name: '后五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
@@ -23140,6 +23461,7 @@ export default {
         },
         dx_dx_d1: {
             name: '大小冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23149,6 +23471,7 @@ export default {
         },
         dx_dx_d2: {
             name: '大小第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -23158,6 +23481,7 @@ export default {
         },
         dx_dx_d3: {
             name: '大小第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -23167,6 +23491,7 @@ export default {
         },
         dx_dx_d4: {
             name: '大小第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -23176,6 +23501,7 @@ export default {
         },
         dx_dx_d5: {
             name: '大小第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -23185,6 +23511,7 @@ export default {
         },
         dx_dx_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23192,6 +23519,7 @@ export default {
         },
         hz_hz_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -23199,6 +23527,7 @@ export default {
         },
         hz_hz_q3: {
             name: '前三和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -23206,6 +23535,7 @@ export default {
         },
         ds_ds_d1: {
             name: '单双冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23215,6 +23545,7 @@ export default {
         },
         ds_ds_d2: {
             name: '单双第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -23224,6 +23555,7 @@ export default {
         },
         ds_ds_d3: {
             name: '单双第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -23233,6 +23565,7 @@ export default {
         },
         ds_ds_d4: {
             name: '单双第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -23242,6 +23575,7 @@ export default {
         },
         ds_ds_d5: {
             name: '单双第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -23251,6 +23585,7 @@ export default {
         },
         ds_ds_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23258,6 +23593,7 @@ export default {
         },
         lh_lh_1v10: {
             name: '龙虎1v10',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23265,6 +23601,7 @@ export default {
         },
         lh_lh_2v9: {
             name: '龙虎2v9',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23272,6 +23609,7 @@ export default {
         },
         lh_lh_3v8: {
             name: '龙虎3v8',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23279,6 +23617,7 @@ export default {
         },
         lh_lh_4v7: {
             name: '龙虎4v7',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23286,6 +23625,7 @@ export default {
         },
         lh_lh_5v6: {
             name: '龙虎5v6',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23295,6 +23635,7 @@ export default {
     xgpk10: {
         cq1_cq1_cq1: {
             name: '猜冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23304,6 +23645,7 @@ export default {
         },
         cq2_cq2_cq2: {
             name: '猜前二',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名'],
@@ -23313,12 +23655,14 @@ export default {
         },
         cq2_cq2_ds: {
             name: '猜前二单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq3_cq3_cq3: {
             name: '猜前三',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名'],
@@ -23328,12 +23672,14 @@ export default {
         },
         cq3_cq3_ds: {
             name: '猜前三单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq4_cq4_cq4: {
             name: '猜前四',
+            mathConfig: { type: '11x5zxfs', posCount: 4 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名'],
@@ -23343,12 +23689,14 @@ export default {
         },
         cq4_cq4_ds: {
             name: '猜前四单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         cq5_cq5_cq5: {
             name: '猜前五',
+            mathConfig: { type: '11x5zxfs', posCount: 5 },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名'],
@@ -23358,12 +23706,14 @@ export default {
         },
         cq5_cq5_ds: {
             name: '猜前五单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input'
             }
         },
         dwd_dwd_q5: {
             name: '前五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
@@ -23373,6 +23723,7 @@ export default {
         },
         dwd_dwd_h5: {
             name: '后五定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
@@ -23382,6 +23733,7 @@ export default {
         },
         dx_dx_d1: {
             name: '大小冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23391,6 +23743,7 @@ export default {
         },
         dx_dx_d2: {
             name: '大小第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -23400,6 +23753,7 @@ export default {
         },
         dx_dx_d3: {
             name: '大小第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -23409,6 +23763,7 @@ export default {
         },
         dx_dx_d4: {
             name: '大小第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -23418,6 +23773,7 @@ export default {
         },
         dx_dx_d5: {
             name: '大小第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -23427,6 +23783,7 @@ export default {
         },
         dx_dx_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23434,6 +23791,7 @@ export default {
         },
         hz_hz_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -23441,6 +23799,7 @@ export default {
         },
         hz_hz_q3: {
             name: '前三和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: []
@@ -23448,6 +23807,7 @@ export default {
         },
         ds_ds_d1: {
             name: '单双冠军',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['冠军'],
@@ -23457,6 +23817,7 @@ export default {
         },
         ds_ds_d2: {
             name: '单双第二名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第二名'],
@@ -23466,6 +23827,7 @@ export default {
         },
         ds_ds_d3: {
             name: '单双第三名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第三名'],
@@ -23475,6 +23837,7 @@ export default {
         },
         ds_ds_d4: {
             name: '单双第四名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第四名'],
@@ -23484,6 +23847,7 @@ export default {
         },
         ds_ds_d5: {
             name: '单双第五名',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第五名'],
@@ -23493,6 +23857,7 @@ export default {
         },
         ds_ds_q2: {
             name: '冠亚和值',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23500,6 +23865,7 @@ export default {
         },
         lh_lh_1v10: {
             name: '龙虎1v10',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23507,6 +23873,7 @@ export default {
         },
         lh_lh_2v9: {
             name: '龙虎2v9',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23514,6 +23881,7 @@ export default {
         },
         lh_lh_3v8: {
             name: '龙虎3v8',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23521,6 +23889,7 @@ export default {
         },
         lh_lh_4v7: {
             name: '龙虎4v7',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()
@@ -23528,6 +23897,7 @@ export default {
         },
         lh_lh_5v6: {
             name: '龙虎5v6',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 filter: ['全', '清'].reverse()

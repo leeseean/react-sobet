@@ -16,7 +16,7 @@ import {
     getLotteryTabConfig
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
-import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount } from '../utils/calcBetCount';
+import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
 import { choose } from '../utils/algorithm';
 
 class LotteryStore {
@@ -497,24 +497,7 @@ class LotteryStore {
                 if (keys.length < posCount) {//位置没选满，为0
                     return 0;
                 } else {
-                    let result = 0;
-                    if (posCount === 3) {
-                        for (let i = 0; i < values[0].length; i++) {
-                            for (let j = 0; j < values[1].length; j++) {
-                                if (values[1][j] === values[0][i]) continue;
-                                for (let k = 0; k < values[2].length; k++) {
-                                    if (values[2][k] === values[0][i] || values[2][k] === values[1][j]) continue;
-                                    result += 1;
-                                }
-                            }
-                        }
-                        return result;
-                    }
-                    if (posCount === 2) {
-                        const n1 = values[0].length * values[1].length;
-                        const n2 = intersection(values[0], values[1]).length;
-                        return n1 - n2;
-                    }
+                    return noRepeatMul(values).length;
                 }
             }
             if (this.mathConfig['type'] === '11x5rxdt') {

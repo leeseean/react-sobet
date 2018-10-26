@@ -102,7 +102,7 @@ class UsualPlate extends React.Component {
                                 inputedNums.slice().map((value, index) => {
                                     return (
                                         <li key={index} className="input-value-item">
-                                            <span className="text">{value.split('').join(',')}</span>
+                                            <span className="text">{value}</span>
                                             <i className="close" onClick={() => deleteInputItem(index)}>x</i>
                                         </li>
                                     );

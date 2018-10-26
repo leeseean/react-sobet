@@ -27,15 +27,6 @@ export const difference = function (a, b) {
     });
 };
 
-// 11选5的n中n的算注数公式
-export const nzn = function (s, n) {
-    var tmp = 1;
-    for (var i = 0; i < n; i++) {
-        tmp *= (s - i) / (i + 1);
-    }
-    return tmp;
-};
-
 //从数组中各取一个数字组成 [1,2] => [1,1] [2,2] [1,2] [2,1]
 export const combineQuene = (arr, size) => {
     const final = [];

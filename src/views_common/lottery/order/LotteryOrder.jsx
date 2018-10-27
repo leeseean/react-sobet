@@ -1,36 +1,60 @@
 import React from 'react';
-import { Table, Icon, Button, Checkbox   } from 'antd';
-import Countdown from '../../../components/Countdown';
 import { inject, observer } from 'mobx-react';
+import { Table, Icon, Button, Checkbox, Select } from 'antd';
+import Countdown from '../../../components/Countdown';
 import './lotteryOrder.styl';
+import InputNumber from '../InputNumberUpDown';
+import '../inputNumberUpDown.styl';
 
-@inject('orderStore')
+@inject('lotteryStore')
 @observer
 class LotteryOrder extends React.Component {
     render() {
-        const { orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem } = this.props.orderStore;
+        const { orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode } = this.props.lotteryStore;
         const orderColumns = [
             {
-                title: '玩法及投注内容',
+                key: 'detail',
+                title: <div style={{ width: '160px' }}>玩法及投注内容</div>,
                 dataIndex: 'detail',
-                width: 200
+                width: 180,
+                render: text => <div style={{ width: '160px' }} className="ellipsis" title={text}>{text}</div>
             }, {
+                key: 'piece',
                 title: '倍数',
                 dataIndex: 'piece',
-                width: 100
+                width: 120,
+                render: (text, record) => <InputNumber min="1" defaultValue={text} size="small" onChange={(value) => changeOrderItemPiece(record, value)} />
             }, {
+                key: 'price',
                 title: '模式',
                 dataIndex: 'price',
-                width: 80
+                width: 80,
+                render: (text, record) => {
+                    return (
+                        <Select size="small" defaultValue={text} onChange={(value) => changeOrderItemMode(record, value)}>
+                            <Select.Option value={2}>2元</Select.Option>
+                            <Select.Option value={1}>1元</Select.Option>
+                            <Select.Option value={0.2}>2角</Select.Option>
+                            <Select.Option value={0.1}>1角</Select.Option>
+                            <Select.Option value={0.02}>2分</Select.Option>
+                            <Select.Option value={0.002}>2厘</Select.Option>
+                        </Select>
+                    );
+                }
             }, {
+                key: 'amount',
                 title: '投注金额',
                 dataIndex: 'amount',
-                width: 80
+                width: 80,
+                render: (text, record) => <div className="ellipsis" title={record.price * record.piece * text}>{record.price * record.piece * text}</div>
             }, {
+                key: 'win',
                 title: '盈利金额',
                 dataIndex: 'win',
-                width: 80
+                width: 80,
+                render: text => <div className="ellipsis" title={text}>{text}</div>
             }, {
+                key: 'delete',
                 title: <Icon
                     type="close-circle"
                     theme="filled"
@@ -57,7 +81,7 @@ class LotteryOrder extends React.Component {
                         <Table
                             className="order-table"
                             columns={orderColumns}
-                            dataSource={orderData.slice()}
+                            dataSource={orderData}
                             pagination={false}
                             size="small"
                             locale={{
@@ -92,7 +116,7 @@ class LotteryOrder extends React.Component {
                                 }}>立即投注</Button>
                         </div>
                         <div className="order-trace">
-                            <Checkbox onChange={() => {}} name="switch-trace-button" />
+                            <Checkbox onChange={() => { }} name="switch-trace-button" />
                             <span className="order-trace-info">我要追号</span>
                             <span className="order-trace-icon">可提高中奖率</span>
                         </div>

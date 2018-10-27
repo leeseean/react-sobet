@@ -13,19 +13,19 @@ import './betOption.styl';
 @observer
 class BetOption extends React.Component {
     render() {
-        const { betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode } = this.props.lotteryStore;
+        const { betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, quickBet } = this.props.lotteryStore;
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
                     <div className="clearfix left-top-wrapper">
                         <div className="fl mode-select">
                             <Radio.Group defaultValue={defaultBetMode} size="small" buttonStyle="solid" onChange={(e) => changeMode(e.target.value)}>
-                                <Radio.Button value="2">2元</Radio.Button>
-                                <Radio.Button value="1">1元</Radio.Button>
-                                <Radio.Button value="0.2">2角</Radio.Button>
-                                <Radio.Button value="0.1">1角</Radio.Button>
-                                <Radio.Button value="0.02">2分</Radio.Button>
-                                <Radio.Button value="0.002">2厘</Radio.Button>
+                                <Radio.Button value={2}>2元</Radio.Button>
+                                <Radio.Button value={1}>1元</Radio.Button>
+                                <Radio.Button value={0.2}>2角</Radio.Button>
+                                <Radio.Button value={0.1}>1角</Radio.Button>
+                                <Radio.Button value={0.02}>2分</Radio.Button>
+                                <Radio.Button value={0.002}>2厘</Radio.Button>
                             </Radio.Group>
                         </div>
                         <div className="fl piece-input">
@@ -45,8 +45,8 @@ class BetOption extends React.Component {
                     </div>
                 </div>
                 <div className="fr right-wrapper">
-                    <div className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`}>快速投注</div>
-                    <div className={`add-order ${betCount > 0 ? '' : 'disabled'}`}>添加订单</div>
+                    <div className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={quickBet}>快速投注</div>
+                    <div className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={addOrder}>添加订单</div>
                 </div>
             </div>
         );

@@ -30,6 +30,7 @@ class LotteryStore {
             this.updateIssue();
             this.queryTrendData();
             this.getTabConfig();
+            this.orderData = [];
         }
     })
 
@@ -205,8 +206,14 @@ class LotteryStore {
     @action setMethod = (value) => {
         this.method = value;
         localStorage.setItem(`${this.lotteryCode}-${this.activeTab.tab}-method`, value);
+        this.resetPlate();
+    }
+
+    @action resetPlate = () => {
         this.selectedNums = {};
         this.selectedChaidanNums = [];
+        this.inputedNums = [];
+        this.rxPosValues = this.plateConfig[this.lotteryCode][this.method]['posSelect'];
     }
 
     @computed get chaidanConfig() {
@@ -533,7 +540,7 @@ class LotteryStore {
         this.betPiece = Number(value);
     }
 
-    defaultBetMode = '2'
+    defaultBetMode = 2
 
     @observable betMode = 2
 
@@ -581,6 +588,107 @@ class LotteryStore {
         event.target.value = '';
     }
 
+    @action addOrder = () => {//添加订单
+        const { name } = this.plateConfig[this.lotteryCode][this.method];
+        let result = [];
+        if (this.plateType === 'input') {
+            result = [{
+                key: '1',
+                detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${this.inputedNums.toString()}`,
+                piece: this.betPiece,
+                price: this.betMode,
+                amount: this.betMoney,
+                win: '1',
+            }];
+            this.inputedNums = [];
+            return;
+        }
+        if (this.chaidanConfig.isChaidan) {
+            result = this.selectedChaidanNums.map((item, index) => {
+                const { en, cn } = JSON.parse(item);
+                return {
+                    key: index,
+                    detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${cn}`,
+                    piece: this.betPiece,
+                    price: this.betMode,
+                    amount: this.betMoney,
+                    win: '1',
+                }
+            });
+            this.selectedChaidanNums = [];
+            return;
+        }
+        const { pos } = this.plateConfig[this.lotteryCode][this.method]['plate'];
+        const arr = [];
+        //转成想要的格式，如123,,1,1,
+        for (let i = 0; i < pos.length; i++) {
+            if (this.selectedNums[i]) {
+                arr.push(this.selectedNums[i].join(''));
+            } else {
+                arr.push('');
+            }
+        }
+        result = [{
+            key: '1',
+            detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${arr.toString()}`,
+            piece: this.betPiece,
+            price: this.betMode,
+            amount: this.betMoney,
+            win: '1',
+        }];
+        this.orderData = [...this.orderData, ...result];
+        this.selectedNums = {};
+    }
+
+    @action changeOrderItemPiece = (orderItemObj, piece) => {
+        orderItemObj.piece = piece;
+        this.orderData = [...this.orderData];
+    }
+
+    @action changeOrderItemMode = (orderItemObj, mode) => {
+        orderItemObj.price = mode;
+        this.orderData = [...this.orderData];
+    }
+
+    @action quickBet = () => {//快速投注
+
+    }
+    //order订单栏部分
+    @observable betModalShowed = false
+
+    @observable printOrderFlag = false
+
+    @observable orderData = []
+
+    @action
+    toggleBetModal = (bool) => {
+        this.betModalShowed = bool;
+    }
+
+    @action
+    setPrintOrderFlag = (bool) => {
+        this.printOrderFlag = bool;
+    }
+
+    @computed get orderTotalMoney() {
+        return 0;
+    }
+
+    @computed get orderTotalCount() {
+        return 0;
+    }
+
+    @action
+    deleteAllItem = () => {
+        this.orderData = [];
+    }
+
+    @action
+    deleteOrderItem = (key) => {
+        const _index = this.orderData.findIndex(v => v.key === key);
+        this.orderData.splice(_index, 1);
+        this.orderData = [...this.orderData];
+    }
 }
 
 export default new LotteryStore();

@@ -24274,6 +24274,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24284,6 +24285,7 @@ export default {
         },
         rx2_zux_ds: {
             name: '任二组选单式',
+            mathConfig: { type: 'leijia', r: 2, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
@@ -24291,6 +24293,7 @@ export default {
         },
         rx2_zux_hz: {
             name: '任二组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [1, 2, 3, 4, 5, 6, 7, 8], needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24301,6 +24304,7 @@ export default {
         },
         rx3_zx_fs: {
             name: '任三直选复式',
+            mathConfig: { type: 'rzxfs', r: 3 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
@@ -24310,6 +24314,7 @@ export default {
         },
         rx3_zx_ds: {
             name: '任三直选单式',
+            mathConfig: { type: 'leijia', r: 3, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
@@ -24317,6 +24322,7 @@ export default {
         },
         rx3_zx_hz: {
             name: '任三直选和值',
+            mathConfig: { type: 'hezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8], needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24327,6 +24333,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24337,6 +24344,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24347,6 +24355,7 @@ export default {
         },
         rx3_zux_hh: {
             name: '任三组选混合',
+            mathConfig: { type: 'leijia', r: 3, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
@@ -24354,6 +24363,7 @@ export default {
         },
         rx3_zux_hz: {
             name: '任三组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8], needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',

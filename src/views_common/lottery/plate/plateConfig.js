@@ -22877,6 +22877,7 @@ export default {
     sckl12: {
         sm_sm_zxfs: {
             name: '前三直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -22886,6 +22887,7 @@ export default {
         },
         sm_sm_zxds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22893,6 +22895,7 @@ export default {
         },
         sm_sm_zuxfs: {
             name: '前三组选复式',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前三组选'],
@@ -22902,6 +22905,7 @@ export default {
         },
         sm_sm_zuxds: {
             name: '前三组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22909,6 +22913,7 @@ export default {
         },
         em_em_zxfs: {
             name: '前二直选复式',
+            mathConfig: { type: '11x5zxfs', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位'],
@@ -22918,6 +22923,7 @@ export default {
         },
         em_em_zxds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22925,6 +22931,7 @@ export default {
         },
         em_em_zuxfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['前二组选'],
@@ -22934,6 +22941,7 @@ export default {
         },
         em_em_zuxds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
@@ -22941,6 +22949,7 @@ export default {
         },
         bdd_bdd_3x1m: {
             name: '前三一码不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前三位'],
@@ -22950,6 +22959,7 @@ export default {
         },
         bdd_bdd4_4x1m: {
             name: '前四一码不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['前四位'],
@@ -22959,6 +22969,7 @@ export default {
         },
         bdd_bdd5_5x1m: {
             name: '五星一码不定胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['五位'],
@@ -22968,6 +22979,7 @@ export default {
         },
         dwd_dwd_dwd11y: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['第一位', '第二位', '第三位', '第四位', '第五位', '所有位置'],
@@ -22977,6 +22989,7 @@ export default {
         },
         rxfs_rxfs_2z2: {
             name: '任选复式二中二',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选2中2'],
@@ -22986,6 +22999,7 @@ export default {
         },
         rxfs_rxfs_3z3: {
             name: '任选复式三中三',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选3中3'],
@@ -22995,6 +23009,7 @@ export default {
         },
         rxfs_rxfs_4z4: {
             name: '任选复式四中四',
+            mathConfig: { type: 'zuhe', n: 4, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选4中4'],
@@ -23004,6 +23019,7 @@ export default {
         },
         rxfs_rxfs_5z5: {
             name: '任选复式五中五',
+            mathConfig: { type: 'zuhe', n: 5, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选5中5'],
@@ -23013,6 +23029,7 @@ export default {
         },
         rxfs_rxfs_6z5: {
             name: '任选复式六中五',
+            mathConfig: { type: 'zuhe', n: 6, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选6中5'],
@@ -23022,6 +23039,7 @@ export default {
         },
         rxfs_rxfs_7z5: {
             name: '任选复式七中五',
+            mathConfig: { type: 'zuhe', n: 7, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选7中5'],
@@ -23031,6 +23049,7 @@ export default {
         },
         rxfs_rxfs_8z5: {
             name: '任选复式八中五',
+            mathConfig: { type: 'zuhe', n: 8, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['选8中5'],
@@ -23040,6 +23059,7 @@ export default {
         },
         rxds_rxds_2z2: {
             name: '任选单式二中二',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23047,6 +23067,7 @@ export default {
         },
         rxds_rxds_3z3: {
             name: '任选单式三中三',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23054,6 +23075,7 @@ export default {
         },
         rxds_rxds_4z4: {
             name: '任选单式四中四',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23061,6 +23083,7 @@ export default {
         },
         rxds_rxds_5z5: {
             name: '任选单式五中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23068,6 +23091,7 @@ export default {
         },
         rxds_rxds_6z5: {
             name: '任选单式六中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23075,6 +23099,7 @@ export default {
         },
         rxds_rxds_7z5: {
             name: '任选单式七中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23082,6 +23107,7 @@ export default {
         },
         rxds_rxds_8z5: {
             name: '任选单式八中五',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             isRandom: true,
             plate: {
                 type: 'input',
@@ -23907,6 +23933,7 @@ export default {
     hnky481: {
         sx_zx_fs: {
             name: '四星直选复式',
+            mathConfig: { type: 'jiecheng', posCount: 4 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
@@ -23916,6 +23943,7 @@ export default {
         },
         sx_zx_ds: {
             name: '四星直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
@@ -23923,6 +23951,7 @@ export default {
         },
         sx_zux_z24: {
             name: '四星组选24',
+            mathConfig: { type: 'zuhe', per: 1, n: 4 },
             plate: {
                 type: 'click',
                 pos: ['组24'],
@@ -23932,6 +23961,7 @@ export default {
         },
         sx_zux_z12: {
             name: '四星组选12',
+            mathConfig: { type: 'zucheng', up: 1, down: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号', '单号'],
@@ -23941,6 +23971,7 @@ export default {
         },
         sx_zux_z6: {
             name: '四星组选6',
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },
             plate: {
                 type: 'click',
                 pos: ['二重号'],
@@ -23950,6 +23981,7 @@ export default {
         },
         sx_zux_z4: {
             name: '四星组选4',
+            mathConfig: { type: 'zucheng', up: 1, down: 1 },
             plate: {
                 type: 'click',
                 pos: ['三重号'],
@@ -23959,6 +23991,7 @@ export default {
         },
         qsm_zx_fs: {
             name: '前三直选复式',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳'],
@@ -23968,6 +24001,7 @@ export default {
         },
         qsm_zx_ds: {
             name: '前三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳'],
@@ -23975,6 +24009,7 @@ export default {
         },
         qsm_zx_hz: {
             name: '前三直选和值',
+            mathConfig: { type: 'hezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -23984,6 +24019,7 @@ export default {
         },
         qsm_zux_z3: {
             name: '前三组选3',
+            mathConfig: { type: 'zuhe', per: 1, n: 2, per: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -23993,6 +24029,7 @@ export default {
         },
         qsm_zux_z6: {
             name: '前三组选6',
+            mathConfig: { type: 'zuhe', per: 1, n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -24002,6 +24039,7 @@ export default {
         },
         qsm_zux_hh: {
             name: '前三组选混合',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳']
@@ -24009,6 +24047,7 @@ export default {
         },
         qsm_zux_hz: {
             name: '前三组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -24018,6 +24057,7 @@ export default {
         },
         hsm_zx_fs: {
             name: '后三直选复式',
+            mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳'],
@@ -24027,6 +24067,7 @@ export default {
         },
         hsm_zx_ds: {
             name: '后三直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳'],
@@ -24034,6 +24075,7 @@ export default {
         },
         hsm_zx_hz: {
             name: '后三直选和值',
+            mathConfig: { type: 'hezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -24043,6 +24085,7 @@ export default {
         },
         hsm_zux_z3: {
             name: '后三组选3',
+            mathConfig: { type: 'zuhe', n: 2, per: 2 },
             plate: {
                 type: 'click',
                 pos: ['组3'],
@@ -24052,6 +24095,7 @@ export default {
         },
         hsm_zux_z6: {
             name: '后三组选6',
+            mathConfig: { type: 'zuhe', n: 3, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['组6'],
@@ -24061,6 +24105,7 @@ export default {
         },
         hsm_zux_hh: {
             name: '后三组选混合',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳']
@@ -24068,6 +24113,7 @@ export default {
         },
         hsm_zux_hz: {
             name: '后三组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 3, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -24077,6 +24123,7 @@ export default {
         },
         em_zx_qfs: {
             name: '前二直选复式',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳'],
@@ -24086,6 +24133,7 @@ export default {
         },
         em_zx_qds: {
             name: '前二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
@@ -24093,6 +24141,7 @@ export default {
         },
         em_zx_qhz: {
             name: '前二直选和值',
+            mathConfig: { type: 'hezhi', size: 2, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -24102,6 +24151,7 @@ export default {
         },
         em_zux_qfs: {
             name: '前二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳'],
@@ -24111,6 +24161,7 @@ export default {
         },
         em_zux_qds: {
             name: '前二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
@@ -24118,6 +24169,7 @@ export default {
         },
         em_zux_qhz: {
             name: '前二组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -24127,6 +24179,7 @@ export default {
         },
         em_zx_hfs: {
             name: '后二直选复式',
+            mathConfig: { type: 'jiecheng', posCount: 2 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳'],
@@ -24136,6 +24189,7 @@ export default {
         },
         em_zx_hds: {
             name: '后二直选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
@@ -24143,6 +24197,7 @@ export default {
         },
         em_zx_hhz: {
             name: '后二直选和值',
+            mathConfig: { type: 'hezhi', size: 2, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['直选和值'],
@@ -24152,6 +24207,7 @@ export default {
         },
         em_zux_hfs: {
             name: '后二组选复式',
+            mathConfig: { type: 'zuhe', n: 2, per: 1 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳'],
@@ -24161,6 +24217,7 @@ export default {
         },
         em_zux_hds: {
             name: '后二组选单式',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
@@ -24168,6 +24225,7 @@ export default {
         },
         em_zux_hhz: {
             name: '后二组选和值',
+            mathConfig: { type: 'zuxhezhi', size: 2, nums: [1, 2, 3, 4, 5, 6, 7, 8] },
             plate: {
                 type: 'click',
                 pos: ['组选和值'],
@@ -24177,6 +24235,7 @@ export default {
         },
         dwd_dwd_dwd: {
             name: '定位胆',
+            mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳', '所有位置'],
@@ -24186,6 +24245,7 @@ export default {
         },
         rx2_zx_fs: {
             name: '任二直选复式',
+            mathConfig: { type: 'rzxfs', r: 2 },
             plate: {
                 type: 'click',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
@@ -24195,6 +24255,7 @@ export default {
         },
         rx2_zx_ds: {
             name: '任二直选单式',
+            mathConfig: { type: 'leijia', r: 2, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
@@ -24202,6 +24263,7 @@ export default {
         },
         rx2_zx_hz: {
             name: '任二直选和值',
+            mathConfig: { type: 'hezhi', size: 2, nums: [1, 2, 3, 4, 5, 6, 7, 8], needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',

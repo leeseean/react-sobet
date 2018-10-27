@@ -43,7 +43,9 @@ axios
 
 const $http = (config) => {
     if (process.env.NODE_ENV === 'development') {
-        config.url = '/dev' + config.url;
+        if (!/\.json/.test(config.url)) {
+            config.url = '/dev' + config.url;
+        }
     }
     config = Object.assign(config, {
         headers: {

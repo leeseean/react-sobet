@@ -175,8 +175,8 @@ export function getSlotReward() {
 //活动 /sobet/api/i/anon/activity/queryCurrentActivity
 export function queryCurrentActivity() {
     return $http({
-        url: '/activity.json',
-        // url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        // url: '/activity.json',
+        url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });
 }

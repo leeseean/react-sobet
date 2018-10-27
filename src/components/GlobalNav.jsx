@@ -1,31 +1,21 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Loadable from 'react-loadable'
 
-const platComponet = ['','views_mc1','views_mc2'];
+const platComponet = ['', 'views_mc1', 'views_mc2'];
+
 @withRouter
 @inject('globalStore')
 @observer
-
 class Nav extends React.Component {
-    // state={
-    //     nav:this.props.globalStore.platformId
-    // }
-    // componentWillUpdate(){
-    //     this.setState({nav:this.props.globalStore.platformId})
-    //    console.log('update:',this.state.nav)
-    // }
     render() {
-        let NavComponet =Loadable({
-            loader:()=>import('../'+platComponet[this.props.globalStore.platformId]+'/nav'),
-            loading:()=>''
-        })
+        const NavComponet = Loadable({
+            loader: () => import('../' + platComponet[this.props.globalStore.platformId] + '/nav'),
+            loading: () => ''
+        });
         const { history } = this.props;
         const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer)\/{0,1})/;//不显示导航栏的地址
-        // if (['/login', '/', '/lottery'].indexOf(history.location.pathname) !== -1) {
-        //     return null;
-        // }
         if (noNavReg.test(history.location.pathname)) {
             return null;
         }
@@ -38,7 +28,7 @@ class Nav extends React.Component {
         };
         return (
             <div className="nav global-nav">
-                <NavComponet active={active}/>
+                <NavComponet active={active} />
             </div>
         );
     }

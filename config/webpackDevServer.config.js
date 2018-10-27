@@ -80,7 +80,7 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
-    proxy:{
+    /* proxy:{
       '*':{
         target:"http://www.mochen111.net",
         secure:false,
@@ -102,7 +102,7 @@ module.exports = function(proxy, allowedHost) {
             proxyRes.headers['set-cookie'] = newCookie;
           }
         }
-    },
+    }, */
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());

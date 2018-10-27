@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 @observer
 class ChaidanPlate extends React.Component {
     render() {
-        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props.lotteryStore;
+        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
         const { pos, plate } = chaidanConfig;
         const num = plate;
         if (!plateConfig[lotteryCode][method]) {
@@ -40,16 +40,16 @@ class ChaidanPlate extends React.Component {
                                 };
                                 content = (<div className="num-longhu-inner"><div className="longhu-pos-wrapper"><LonghuDots area={area} /></div><div className="longhu-text" value={cn}></div><div className="longhu-odd">1中3.67</div></div>);
                                 className = 'plate-item-num-longhu';
-                                return <div className={`fl ${className}`} m-method={en} value={cn}>{content}</div>;
+                                return <div key={en} className={`fl ${className} ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m-method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                             } else {
                                 content = cn;
                                 className = 'plate-item-num';
                             }
-                            return <div className={`fl ${className}`} m-method={en}>{content}</div>;
+                            return <div key={en} className={`fl ${className} ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m-method={en} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                         })}
                     </div>
                     <div className={`fr clearfix plate-item-filters ${extraClass}`}>
-                        {filter.map(v => <div className="fr plate-item-filter">{v}</div>)}
+                        {filter.map(v => <div key={v} className="fr plate-item-filter" onClick={() => filterChaidanNum(v, num)}>{v}</div>)}
                     </div>
                 </div>
             );

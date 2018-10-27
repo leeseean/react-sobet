@@ -1,5 +1,6 @@
 import jsonp from 'easy-jsonp';
 
+// const proxyPrefix = 'http://www.mochen111.net';
 const proxyPrefix = 'http://www.mc188.com';
 // const proxyPrefix = '';
 

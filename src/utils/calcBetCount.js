@@ -27,15 +27,6 @@ export const difference = function (a, b) {
     });
 };
 
-// 11选5的n中n的算注数公式
-export const nzn = function (s, n) {
-    var tmp = 1;
-    for (var i = 0; i < n; i++) {
-        tmp *= (s - i) / (i + 1);
-    }
-    return tmp;
-};
-
 //从数组中各取一个数字组成 [1,2] => [1,1] [2,2] [1,2] [2,1]
 export const combineQuene = (arr, size) => {
     const final = [];
@@ -74,3 +65,26 @@ export const calcKuaduCount = (kd, size, nums) => {
         return max - min === kd;
     }).length;
 };
+
+//11选5直选复式 pk10猜前几,无重复阶乘, n是生成新数组的每个子数组的长度
+export const noRepeatMul = (arr) => {
+    let newArr = [];
+    const calcpkzux = function (arr) {
+        if (arr.length == 1) {
+            return;
+        }
+        for (let i = 0; i < arr[0].length; i++) {
+            for (let j = 0; j < arr[1].length; j++) {
+                if (String(arr[0][i]).indexOf(arr[1][j]) === -1) {
+                    const item = arr[0][i] + '-' + arr[1][j];
+                    newArr.push(item);
+                }
+            }
+        }
+        arr.splice(0, 2, newArr);
+        newArr = [];
+        calcpkzux(arr);
+    }
+    calcpkzux(arr);
+    return arr[0];
+}

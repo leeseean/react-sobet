@@ -9,7 +9,7 @@ import { inject, observer } from 'mobx-react';
 @observer
 class K3Plate extends React.Component {
     render() {
-        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method } = this.props.lotteryStore;
+        const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedNums, selectNum, filterNum, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
         if (!plateConfig[lotteryCode][method]) {
             return null;
         }
@@ -17,7 +17,7 @@ class K3Plate extends React.Component {
             const { pos, plate } = chaidanConfig;
             const num = plate;
             const { isChip, filter } = plateConfig[lotteryCode][method]['plate'];
-            const ItemNum = ({ num, posVal }) => {
+            const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {
                     return _num.map(({ en, cn }) => {
                         let chipTpl = cn;
@@ -28,9 +28,9 @@ class K3Plate extends React.Component {
                                 return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
                             };
                             chipTpl = chipArr.map(chip => <div key={chip} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
-                            return <div key={cn} className="fl clearfix k3-plate-item-num" m_method={en} value={cn}>{chipTpl}</div>;
+                            return <div key={cn} className={`fl clearfix k3-plate-item-num ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m_method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{chipTpl}</div>;
                         }
-                        return <div key={cn} className="fl clearfix plate-item-num" m_method={en} value={cn}>{chipTpl}</div>;
+                        return <div key={cn} className={`fl clearfix plate-item-num ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m_method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{chipTpl}</div>;
                     });
                 };
                 if (Array.isArray(num)) {
@@ -40,22 +40,22 @@ class K3Plate extends React.Component {
                     return <ItemNumPick _num={num[posVal]} />;
                 }
             };
-            return pos.map(val => {
+            return pos.map((val, idx) => {
                 return (
                     <div key={val} className="clearfix plate-item" lottery-type={lotteryType} lottery-code={lotteryCode}>
                         <div className="fl plate-item-pos">{val}</div>
                         <div className="fl clearfix plate-item-nums" method={method}>
-                            <ItemNum num={num} posVal={val} />
+                            <ItemNum num={num} posVal={val} posIndex={idx} />
                         </div>
                         <div className="fr clearfix plate-item-filters">
-                            {filter.map(v => <div key={v} className="fr plate-item-filter">{v}</div>)}
+                            {filter.map(v => <div key={v} className="fr plate-item-filter" onClick={() => filterChaidanNum(v, num)}>{v}</div>)}
                         </div>
                     </div>
                 );
             });
         } else {
             const { isChip, pos, num, filter = [] } = plateConfig[lotteryCode][method]['plate'];
-            const ItemNum = ({ num, posVal }) => {
+            const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {
                     return _num.map(v => {
                         let chipTpl = v;
@@ -66,9 +66,9 @@ class K3Plate extends React.Component {
                                 return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
                             };
                             chipTpl = chipArr.map(chip => <div key={chip} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
-                            return <div key={v} className="fl clearfix k3-plate-item-num" value={v}>{chipTpl}</div>;
+                            return <div key={v} className={`fl clearfix k3-plate-item-num ${selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
                         }
-                        return <div key={v} className="fl clearfix plate-item-num" value={v}>{chipTpl}</div>;
+                        return <div key={v} className={`fl clearfix plate-item-num ${selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
                     });
                 };
                 if (Array.isArray(num)) {
@@ -78,15 +78,15 @@ class K3Plate extends React.Component {
                     return <ItemNumPick _num={num[posVal]} />;
                 }
             };
-            return pos.map(val => {
+            return pos.map((val, idx) => {
                 return (
                     <div key={val} className="clearfix plate-item" lottery-type={lotteryType} lottery-code={lotteryCode}>
                         <div className="fl plate-item-pos">{val}</div>
                         <div className="fl clearfix plate-item-nums" method={method}>
-                            <ItemNum num={num} posVal={val} />
+                            <ItemNum num={num} posVal={val} posIndex={idx} />
                         </div>
                         <div className="fr clearfix plate-item-filters">
-                            {filter.map(v => <div key={v} className="fr plate-item-filter">{v}</div>)}
+                            {filter.map(v => <div key={v} className="fr plate-item-filter" onClick={() => filterNum(val, idx, v, num)}>{v}</div>)}
                         </div>
                     </div>
                 );

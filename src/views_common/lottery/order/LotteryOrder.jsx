@@ -16,8 +16,12 @@ class LotteryOrder extends React.Component {
                 key: 'detail',
                 title: <div style={{ width: '160px' }}>玩法及投注内容</div>,
                 dataIndex: 'detail',
-                width: 180,
-                render: text => <div style={{ width: '160px' }} className="ellipsis" title={text}>{text}</div>
+                width: 160,
+                render: text => {
+                    const { name, rxPos, betContent, playWay } = text;
+                    const content = `${name} ${rxPos} ${betContent}`;
+                    return <div style={{ width: '160px' }} className="ellipsis" title={content}>{content}</div>;
+                }
             }, {
                 key: 'piece',
                 title: '倍数',
@@ -46,7 +50,7 @@ class LotteryOrder extends React.Component {
                 title: '投注金额',
                 dataIndex: 'amount',
                 width: 80,
-                render: (text, record) => <div className="ellipsis" title={record.price * record.piece * text}>{record.price * record.piece * text}</div>
+                render: (text, record) => <div className="ellipsis" title={record.price * record.piece * text.betCount}>{record.price * record.piece * text.betCount}</div>
             }, {
                 key: 'win',
                 title: '盈利金额',
@@ -110,10 +114,8 @@ class LotteryOrder extends React.Component {
                                 block
                                 size="large"
                                 onClick={() => toggleBetModal(true)}
-                                style={{
-                                    fontWeight: 'bold',
-                                    color: '#999'
-                                }}>立即投注</Button>
+                                type="primary"
+                            >立即投注</Button>
                         </div>
                         <div className="order-trace">
                             <Checkbox onChange={() => { }} name="switch-trace-button" />

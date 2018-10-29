@@ -549,7 +549,7 @@ class LotteryStore {
     }
 
     @computed get betMoney() {
-        return (this.betCount * this.betMode * this.betPiece).toFixed(2);
+        return Number((this.betCount * this.betMode * this.betPiece).toFixed(2));
     }
 
     @observable inputedNums = []
@@ -594,24 +594,35 @@ class LotteryStore {
         if (this.plateType === 'input') {
             result = [{
                 key: '1',
-                detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${this.inputedNums.toString()}`,
+                detail: {
+                    name,
+                    rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                    betContent: this.inputedNums.toString(),
+                    playWay: this.method
+                },
                 piece: this.betPiece,
                 price: this.betMode,
-                amount: this.betMoney,
+                amount: { betMoney: this.betMoney, betCount: this.betCount },
                 win: '1',
             }];
             this.inputedNums = [];
             return;
         }
         if (this.chaidanConfig.isChaidan) {
+            const len = this.selectedChaidanNums.length;
             result = this.selectedChaidanNums.map((item, index) => {
                 const { en, cn } = JSON.parse(item);
                 return {
                     key: index,
-                    detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${cn}`,
+                    detail: {
+                        name,
+                        rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                        betContent: cn,
+                        playWay: en
+                    },
                     piece: this.betPiece,
                     price: this.betMode,
-                    amount: this.betMoney,
+                    amount: { betMoney: this.betMoney / len, betCount: 1 },
                     win: '1',
                 }
             });
@@ -630,10 +641,15 @@ class LotteryStore {
         }
         result = [{
             key: '1',
-            detail: `${name} ${this.rxPosValues ? this.rxPosValues.toString() : ''} ${arr.toString()}`,
+            detail: {
+                name,
+                rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                betContent: arr.toString(),
+                playWay: this.method
+            },
             piece: this.betPiece,
             price: this.betMode,
-            amount: this.betMoney,
+            amount: { betMoney: this.betMoney, betCount: this.betCount },
             win: '1',
         }];
         this.orderData = [...this.orderData, ...result];
@@ -656,7 +672,7 @@ class LotteryStore {
     //order订单栏部分
     @observable betModalShowed = false
 
-    @observable printOrderFlag = false
+    @observable printOrderFlag = Boolean(localStorage.getItem('printOrderFlag')) || false
 
     @observable orderData = []
 
@@ -668,14 +684,19 @@ class LotteryStore {
     @action
     setPrintOrderFlag = (bool) => {
         this.printOrderFlag = bool;
+        if (bool) {
+            localStorage.setItem('printOrderFlag', 1);
+        } else {
+            localStorage.removeItem('printOrderFlag');
+        }
     }
 
     @computed get orderTotalMoney() {
-        return 0;
+        return this.orderData.reduce((a, b) => a + b.amount.betCount * b.piece * b.price, 0);
     }
 
     @computed get orderTotalCount() {
-        return 0;
+        return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);;
     }
 
     @action

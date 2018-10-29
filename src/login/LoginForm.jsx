@@ -36,7 +36,7 @@ class NormalLoginForm extends React.Component {
             default:
                 history.push('/index');
                 break;
-        }   
+        }
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -87,7 +87,7 @@ class NormalLoginForm extends React.Component {
                                 message.error(res.msg);
                             }
                         }
-                        
+
                     });
                 }
             });

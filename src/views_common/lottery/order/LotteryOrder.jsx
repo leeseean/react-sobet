@@ -11,7 +11,7 @@ import BetModal from '../BetModal';
 @observer
 class LotteryOrder extends React.Component {
     render() {
-        const { orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode } = this.props.lotteryStore;
+        const { countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode } = this.props.lotteryStore;
         const orderColumns = [
             {
                 key: 'detail',
@@ -106,7 +106,7 @@ class LotteryOrder extends React.Component {
                         <div className="order-countdown">
                             离投注截止还有
                             <span className="order-countdown-inner">
-                                <Countdown count="100000" />
+                                <Countdown count={countdown} />
                             </span>
                         </div>
                         <div className="order-bet">

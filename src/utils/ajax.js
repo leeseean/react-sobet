@@ -177,10 +177,10 @@ export function getSlotReward() {
         method: 'GET'
     });
 }
-//活动 /sobet/api/i/anon/activity/queryCurrentActivity
-export function queryCurrentActivity() {
+//活动 /sobet/api/i/anon/activity/queryCurrentActivity?platformId=1
+export function queryCurrentActivity(params) {
     return $http({
-        // url: '/activity.json',
+        params,
         url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });

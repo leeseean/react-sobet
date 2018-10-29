@@ -15,7 +15,7 @@ class NoticeList extends React.Component {
         showPagePrev: false,
         showPageNext: false,
         showModalFlag: false,
-        defaultActiveKey: null,
+        defaultActiveKey: '',
         modalWidth: 950
     }
     perPageTabsCount = 8 //弹窗每页显示的tab数量

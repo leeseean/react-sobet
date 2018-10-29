@@ -706,7 +706,7 @@ class LotteryStore {
     @action
     submitOrder = async () => {
         const res = await submitOrder({
-            lottery: this.lotteryCode,
+            lottery: this.lotteryCode.toLocaleUpperCase(),
             issue: this.currentIssue,
             order: JSON.stringify(this.orderData.map(order => ({
                 method: order.detail.playWay,

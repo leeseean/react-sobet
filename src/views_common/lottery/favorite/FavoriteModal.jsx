@@ -226,7 +226,7 @@ class FavoriteModal extends React.Component {
                     <dl className="fl favorite-set-menu">
                         <dt><span className="icon-title"></span>常玩彩种</dt>
                         {
-                            data.map(item => <LeftItem id={item.id} item={item} />)
+                            data.map(item => <LeftItem key={item.id} id={item.id} item={item} />)
                         }
                     </dl>
                     <div id="lotterySet" className="fl">

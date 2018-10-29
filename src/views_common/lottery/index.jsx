@@ -16,7 +16,8 @@ class Lottery extends React.Component {
     mainRef = null
     initSocket = () => {
         const { lotteryCode, queryTrendData, getRecord } = this.props.lotteryStore;
-        this.socket = io(window.location.origin || (window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '')));
+        this.socket = io('http://www.mc188.com');
+        // this.socket = io(window.location.origin || (window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '')));
         this.socket.on('connect', () => {});
         this.socket.on('message', (data) => {
             data = JSON.parse(data);

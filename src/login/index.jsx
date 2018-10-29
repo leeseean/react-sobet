@@ -49,7 +49,7 @@ class Login extends React.Component {
         }]
     }
     componentDidMount() {
-        queryCurrentActivity().then(res => {
+        queryCurrentActivity({ platformId: 1 }).then(res => {
             if (res.data.code === 0) {
                 this.setState({
                     sliderData: res.data.result.entities

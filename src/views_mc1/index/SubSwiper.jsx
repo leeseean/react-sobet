@@ -1,9 +1,14 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
-import $http, { queryCurrentActivity } from '../../utils/ajax';
+import { queryCurrentActivity } from '../../utils/ajax';
 import './subSwiper.styl';
 
+@inject(stores => ({
+    platformId: stores.globalStore.platformId
+}))
+@observer
 class SubSwiper extends React.Component {
     state = {
         data: []
@@ -12,7 +17,8 @@ class SubSwiper extends React.Component {
         this.getData();
     }
     async getData() {
-        const res = await queryCurrentActivity();
+        const { platformId } = this.props;
+        const res = await queryCurrentActivity({ platformId });
         if (res.data.code === 0) {
             this.setState({
                 data: res.data.result.entities

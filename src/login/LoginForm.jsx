@@ -16,14 +16,14 @@ class NormalLoginForm extends React.Component {
     _mounted = false
     state = {
         verifycodeFlag: false,
-        capchaUrl: `http://www.mochen111.net/sso/imageCode?date=${new Date()}`
+        capchaUrl: `/sso/imageCode?date=${new Date()}`
     }
     refreshCapcha = () => {
         if (!this._mounted) {
             return;
         }
         this.setState({
-            capchaUrl: `http://www.mochen111.net/sso/imageCode?date=${new Date()}`
+            capchaUrl: `/sso/imageCode?date=${new Date()}`
         });
     }
     jumpByUserType = (type) => {
@@ -63,13 +63,13 @@ class NormalLoginForm extends React.Component {
                         }
                         if (res.code === 0) {
                             globalStore.login();
+                            // globalStore.getUserInfo(); //等接口好了恢复这句话把下面的注释
                             globalStore.setUserName(res.user.cn);
                             globalStore.setUserType(res.user.userType);
                             globalStore.setRoleType(res.user.roleType);
                             globalStore.setLoginTime(new Date(Number(res.user.createTimeStr)).toLocaleString());
                             globalStore.setPlatformId(res.user.platformId);
                             this.jumpByUserType(res.user.userType);
-                            //window.location.reload();
                         } else {
                             if (res.code === 2) {
                                 if (res.loginFailCount === 1) {
@@ -132,7 +132,7 @@ class NormalLoginForm extends React.Component {
                         <Input
                             prefix={< Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                             type="password"
-                            placeholder="密码" size="large" />
+                            placeholder="密码" size="large" autoComplete="true" />
                     )}
                 </FormItem>
                 <FormItem>

@@ -77,14 +77,6 @@ export function getNoticeList(params) {
         method: 'GET'
     })
 }
-//获取余额
-export function getPlayerBalance(dataOrParams) {
-    return $http({
-        url: proxyPrefix + '/sobet/pay/getPlayerBalance',
-        method: 'GET',
-        params: dataOrParams
-    });
-}
 //获取捕鱼王游戏链接
 export function getAGHURUrl() {
     return $http({
@@ -298,5 +290,20 @@ export function submitOrder(data) {
         data,
         url: '/lottery/api/u/v1/lottery/add_order',
         method: 'POST'
+    });
+}
+// 获取余额 /sobet/pay/getPlayerBalance?cbId=sobet_01
+export function getPlayerBalance(params) {
+    return $http({
+        params,
+        url: '/sobet/pay/getPlayerBalance',
+        method: 'GET'
+    });
+}
+//获取用户信息 /sobet/userInfo/userInfoAjax?
+export function getUserInfo() {
+    return $http({
+        url: '/sobet/userInfo/userInfoAjax',
+        method: 'GET'
     });
 }

@@ -48,7 +48,7 @@ class NoticeList extends React.Component {
 
         const arr = [];
         for (let item of items) {
-            if (this.listRef.offsetWidth > 750) {//限制显示条目
+            if (this.listRef && this.listRef.offsetWidth > 750) {//限制显示条目
                 break;
             }
             arr.push(item);

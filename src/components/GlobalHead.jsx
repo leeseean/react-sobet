@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { withRouter,Redirect } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { Spin } from 'antd';
 import './globalHead.styl';
 import AllGameList from './AllGameList';
@@ -53,21 +53,22 @@ class GlobalHead extends React.Component {
             });
         }
     }
-    voucherCenter(p){ //充值中心
-        this.props.history.push('/voucher/'+p);
+    voucherCenter(p) { //充值中心
+        this.props.history.push('/voucher/' + p);
     }
     componentDidMount() {
-        const { history } = this.props;
+        const { history, globalStore } = this.props;
         history.listen(location => {
             this.initBackToIndex(location.pathname);
             this.initFixed(location.pathname);
         });
         this.initBackToIndex(history.location.pathname);
         this.initFixed(history.location.pathname);
+        globalStore.getPlayerBalance();
     }
     render() {
         const { logined } = this.props.globalStore;
-        const { username, balance, refreshBalance } = this.props.globalStore;
+        const { nickname, username, balance, getPlayerBalance } = this.props.globalStore;
         if (!logined) {
             return <Redirect to={"/login"} />;
         }
@@ -83,7 +84,7 @@ class GlobalHead extends React.Component {
                 return null;
             }
         };
-        const BalanceContent = ({ show, text, balance, toggleBalance, refreshBalance }) => {
+        const BalanceContent = ({ show, text, balance, toggleBalance, getPlayerBalance }) => {
             const Count = ({ _show, _balance }) => {
                 if (_show) {
                     return (
@@ -91,7 +92,7 @@ class GlobalHead extends React.Component {
                             <span className="head__balance-text">
                                 账号余额：<em className="head__balance-count">{_balance === 'loading' ? <Spin size='small' /> : _balance}</em>元
                             </span>
-                            <i className="head__balance-icon" onClick={refreshBalance}></i>
+                            <i className="head__balance-icon" onClick={getPlayerBalance}></i>
                         </React.Fragment>
                     );
                 }
@@ -126,18 +127,18 @@ class GlobalHead extends React.Component {
                         </a>
                     </div>
                     <div className="fr head--height head__money">
-                        <span className="head__money-charge" onClick={this.voucherCenter.bind(this,'charge')}>充值</span>
-                        <span className="head__money-transfer" onClick={this.voucherCenter.bind(this,'transfer')}>转账</span>
-                        <span className="head__money-withdraw" onClick={this.voucherCenter.bind(this,'withdraw')}>提现</span>
+                        <span className="head__money-charge" onClick={this.voucherCenter.bind(this, 'charge')}>充值</span>
+                        <span className="head__money-transfer" onClick={this.voucherCenter.bind(this, 'transfer')}>转账</span>
+                        <span className="head__money-withdraw" onClick={this.voucherCenter.bind(this, 'withdraw')}>提现</span>
                     </div>
-                    <BalanceContent show={this.state.showBalanceFlag} text={this.state.showBalanceText} balance={balance} toggleBalance={this.toggleBalance} refreshBalance={refreshBalance} />
+                    <BalanceContent show={this.state.showBalanceFlag} text={this.state.showBalanceText} balance={balance} toggleBalance={this.toggleBalance} getPlayerBalance={getPlayerBalance} />
                     <div className="fr head--height head__agent">
                         <span className="head__agent-text">代理中心</span>
                         <i className="head__agent-icon"></i>
                         <AgentCenterList />
                     </div>
                     <div className="fr head--height head__greet">
-                        <span className="head__greet-text">您好，{username}</span>
+                        <span className="head__greet-text">您好，{nickname || username}</span>
                         <i className="head__greet-icon"></i>
                         <PersonalCenterList />
                     </div>

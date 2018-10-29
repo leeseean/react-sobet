@@ -6,6 +6,7 @@ import {
 import {
     ssoLogout
 } from '../utils/jsonp';
+import { getPlayerBalance, getUserInfo } from '../utils/ajax';
 import Cookie from 'js-cookie';
 
 class GlobalStore {
@@ -42,9 +43,20 @@ class GlobalStore {
         localStorage.setItem('username', name);
     }
 
+    @observable nickname = null
+
+    @action setNickName = (name) => {
+        this.nickname = name;
+        localStorage.setItem('nickname', name);
+    }
+
     @action setLoginTime = (time) => {
         this.loginTime = time;
         localStorage.setItem('loginTime', time);
+    }
+
+    @action setLettersCount = value => {
+        this.letterCount = value;
     }
 
     @observable userType = localStorage.getItem('userType')
@@ -61,20 +73,28 @@ class GlobalStore {
         localStorage.setItem('roleType', type);
     }
 
-    @observable balance = localStorage.getItem('balance')
+    @observable balance = 'loading'
 
-    @action refreshBalance = (value) => {
+    @action getPlayerBalance = async () => {
         this.balance = 'loading';
-        setTimeout(() => {
-            runInAction(() => {
-                this.balance = value;
-                localStorage.setItem('balance', value);
-            });
-        }, 2000);
+        const res = await getPlayerBalance({ cbId: 'sobet_01' });
+        this.refreshBalance(res.data.cash);
     }
 
-    @action getUserInfo = () => {
+    @action refreshBalance = value => {
+        this.balance = value;
+    }
 
+    @action getUserInfo = async () => {
+        const res = await getUserInfo();
+        const { nikeName, cn, registerWay, userType, roleType, platformId, lastLoginTime, lettersCount } = res.data.userInfo;
+        this.setNickName(nikeName);
+        this.setUserName(cn);
+        this.setUserType(userType);
+        this.setRoleType(roleType);
+        this.setLoginTime(lastLoginTime);
+        this.setPlatformId(platformId);
+        this.setLettersCount(lettersCount);
     }
 
     @action login = () => {

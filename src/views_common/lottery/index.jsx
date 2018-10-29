@@ -15,13 +15,14 @@ class Lottery extends React.Component {
     socket = null
     mainRef = null
     initSocket = () => {
-        const { lotteryCode, queryTrendData } = this.props.lotteryStore;
+        const { lotteryCode, queryTrendData, getRecord } = this.props.lotteryStore;
         this.socket = io(window.location.origin || (window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '')));
         this.socket.on('connect', () => {});
         this.socket.on('message', (data) => {
             data = JSON.parse(data);
             if (data.lottery === lotteryCode.toLocaleUpperCase()) {
                 queryTrendData();
+                getRecord();
             }
         });
         this.socket.on('disconnect', () => { });
@@ -42,7 +43,6 @@ class Lottery extends React.Component {
         this.socket.disconnect();
     }
     render() {
-        const { lotteryCodeToCn } = this.props.lotteryStore;
         return (
             <div className="lottery-wrapper">
                 <div className="lottery-inner-wrapper" ref={ref => this.mainRef = ref}>

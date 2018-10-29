@@ -7,6 +7,7 @@ class ChaidanPlate extends React.Component {
     render() {
         const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
         const { pos, plate } = chaidanConfig;
+        console.log(selectedChaidanNums.includes('{"cn":"牛大","en":"nn_nn_nn_nda"}'))
         const num = plate;
         if (!plateConfig[lotteryCode][method]) {
             return null;
@@ -40,12 +41,12 @@ class ChaidanPlate extends React.Component {
                                 };
                                 content = (<div className="num-longhu-inner"><div className="longhu-pos-wrapper"><LonghuDots area={area} /></div><div className="longhu-text" value={cn}></div><div className="longhu-odd">1中3.67</div></div>);
                                 className = 'plate-item-num-longhu';
-                                return <div key={en} className={`fl ${className} ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m-method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
+                                return <div key={en} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                             } else {
                                 content = cn;
                                 className = 'plate-item-num';
                             }
-                            return <div key={en} className={`fl ${className} ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m-method={en} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
+                            return <div key={en} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                         })}
                     </div>
                     <div className={`fr clearfix plate-item-filters ${extraClass}`}>

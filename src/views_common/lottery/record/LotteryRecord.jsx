@@ -26,30 +26,26 @@ class LotteryRecord extends React.Component {
             recordShowFlag: !prevState.recordShowFlag,
         }));
     }
-    async getDataSource() {
-        const { lotteryCode, playWayToCn } = this.props;
-        const res = await getRecord({
-            lottery: lotteryCode.toLocaleUpperCase()
+    getDataSource() {
+        const { recordData, playWayToCn } = this.props;
+
+        const dataSource = recordData.map(item => {
+            const { orderId, orderTime, issue, method, code, amount, status } = item;
+            return {
+                orderTime: formatTime(new Date(orderTime), 'MM-DD hh:mm:ss'),
+                issue,
+                code,
+                amount,
+                status,
+                method: playWayToCn[method.split('_').slice(0, 3).join('_')],
+                code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
+                key: orderId,
+                mani: status === '未开奖' ? [<span className="order-again" value="再次投注">再次投注</span>, <span className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>
+            };
         });
-        if (res.data.code === 1) {
-            const dataSource = res.data.result.map(item => {
-                const { orderId, orderTime, issue, method, code, amount, status } = item;
-                return {
-                    orderTime: formatTime(new Date(orderTime), 'MM-DD hh:mm:ss'),
-                    issue,
-                    code,
-                    amount,
-                    status,
-                    method: playWayToCn[method.split('_').slice(0, 3).join('_')],
-                    code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
-                    key: orderId,
-                    mani: status === '未开奖' ? [<span className="order-again" value="再次投注">再次投注</span>, <span className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>
-                };
-            });
-            this.setState({
-                dataSource
-            });
-        }
+        this.setState({
+            dataSource
+        });
     }
     genColums() {
         const { lotteryCode } = this.props;
@@ -86,7 +82,7 @@ class LotteryRecord extends React.Component {
         this.getDataSource();
     }
     componentDidUpdate(prevProps) {
-        if (prevProps.lotteryCode !== this.props.lotteryCode) {
+        if (JSON.stringify(prevProps.recordData) !== JSON.stringify(this.props.recordData)) {
             this.getDataSource();
         }
     }

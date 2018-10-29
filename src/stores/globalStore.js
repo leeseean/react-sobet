@@ -63,12 +63,12 @@ class GlobalStore {
 
     @observable balance = localStorage.getItem('balance')
 
-    @action refreshBalance = () => {
+    @action refreshBalance = (value) => {
         this.balance = 'loading';
         setTimeout(() => {
             runInAction(() => {
-                this.balance = '2000';
-                localStorage.setItem('balance', '2000');
+                this.balance = value;
+                localStorage.setItem('balance', value);
             });
         }, 2000);
     }

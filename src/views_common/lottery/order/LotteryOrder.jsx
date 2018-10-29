@@ -5,6 +5,7 @@ import Countdown from '../../../components/Countdown';
 import './lotteryOrder.styl';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
+import BetModal from '../BetModal';
 
 @inject('lotteryStore')
 @observer
@@ -85,14 +86,14 @@ class LotteryOrder extends React.Component {
                         <Table
                             className="order-table"
                             columns={orderColumns}
-                            dataSource={orderData}
+                            dataSource={orderData.slice()}
                             pagination={false}
                             size="small"
                             locale={{
                                 emptyText: ''
                             }}
                             scroll={{
-                                y: 212
+                                y: 180
                             }} />
                     </div>
                     <div className="fr order-bet-wrapper">
@@ -116,6 +117,7 @@ class LotteryOrder extends React.Component {
                                 onClick={() => toggleBetModal(true)}
                                 type="primary"
                             >立即投注</Button>
+                            <BetModal />
                         </div>
                         <div className="order-trace">
                             <Checkbox onChange={() => { }} name="switch-trace-button" />

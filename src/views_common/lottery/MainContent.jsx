@@ -21,7 +21,7 @@ class MainContent extends React.Component {
         this.setState({ trendShowFlag: true });
     }
     render() {
-        const { lotteryCode, playWayToCn, lotteryCodeToCn } = this.props.lotteryStore;
+        const { lotteryCode, playWayToCn, lotteryCodeToCn, recordData } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead />
@@ -29,7 +29,7 @@ class MainContent extends React.Component {
                     <div className="fl main-content-left" ref={ref => this.mainLeftRef = ref}>
                         <LotteryPlate />
                         <LotteryOrder />
-                        <LotteryRecord lotteryCode={lotteryCode} playWayToCn={playWayToCn} codeToCn={lotteryCodeToCn} />
+                        <LotteryRecord lotteryCode={lotteryCode} recordData={recordData} playWayToCn={playWayToCn} codeToCn={lotteryCodeToCn} />
                     </div>
                     <div className="fr main-content-right">
                         {

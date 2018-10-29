@@ -292,3 +292,11 @@ export function getLotteryTabConfig(params) {
         method: 'GET'
     });
 }
+//投注 /lottery/api/u/v1/lottery/add_order
+export function submitOrder(data) {
+    return $http({
+        data,
+        url: '/lottery/api/u/v1/lottery/add_order',
+        method: 'POST'
+    });
+}

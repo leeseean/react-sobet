@@ -13,7 +13,9 @@ import plateConfig from '../views_common/lottery/plate/plateConfig';
 import {
     queryTrendData,
     updateIssue,
-    getLotteryTabConfig
+    getLotteryTabConfig,
+    submitOrder,
+    getRecord
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
 import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
@@ -29,6 +31,7 @@ class LotteryStore {
         if (newValue !== oldValue) {
             this.updateIssue();
             this.queryTrendData();
+            this.getRecord();
             this.getTabConfig();
             this.orderData = [];
         }
@@ -363,10 +366,9 @@ class LotteryStore {
     @observable selectedChaidanNums = [];
 
     @action selectChaidanNum = ({ en, cn }) => {
-        const value = JSON.stringify({ en, cn });
-        const INDEX = this.selectedChaidanNums.findIndex(v => v === value);
+        const INDEX = this.selectedChaidanNums.findIndex(v => v.cn === cn);
         if (INDEX === -1) {
-            this.selectedChaidanNums.push(value);
+            this.selectedChaidanNums.push({ en, cn });
         } else {
             this.selectedChaidanNums.splice(INDEX, 1);
         }
@@ -375,7 +377,7 @@ class LotteryStore {
     @action filterChaidanNum = (value, numArr) => {
         switch (value) {
             case '全':
-                this.selectedChaidanNums = numArr.map(o => JSON.stringify(o));
+                this.selectedChaidanNums = numArr;
                 break;
             case '清':
                 this.selectedChaidanNums = [];
@@ -605,13 +607,14 @@ class LotteryStore {
                 amount: { betMoney: this.betMoney, betCount: this.betCount },
                 win: '1',
             }];
+            this.orderData = [...this.orderData, ...result];
             this.inputedNums = [];
             return;
         }
         if (this.chaidanConfig.isChaidan) {
             const len = this.selectedChaidanNums.length;
             result = this.selectedChaidanNums.map((item, index) => {
-                const { en, cn } = JSON.parse(item);
+                const { en, cn } = item;
                 return {
                     key: index,
                     detail: {
@@ -626,6 +629,7 @@ class LotteryStore {
                     win: '1',
                 }
             });
+            this.orderData = [...this.orderData, ...result];
             this.selectedChaidanNums = [];
             return;
         }
@@ -696,7 +700,31 @@ class LotteryStore {
     }
 
     @computed get orderTotalCount() {
-        return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);;
+        return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);
+    }
+
+    @action
+    submitOrder = async () => {
+        const res = await submitOrder({
+            lottery: this.lotteryCode,
+            issue: this.currentIssue,
+            order: JSON.stringify(this.orderData.map(order => ({
+                method: order.detail.playWay,
+                code: order.detail.betContent,
+                nums: order.amount.betCount,
+                amount: order.amount.betMoney,
+                piece: order.piece,
+                price: order.price,
+                odds: 1,
+                point: 0,
+            }))),
+            betType: 2,
+            sourceType: 0
+        });
+        if (res.data.code === 1) {
+            this.orderData = [];
+        }
+        return res;
     }
 
     @action
@@ -709,6 +737,18 @@ class LotteryStore {
         const _index = this.orderData.findIndex(v => v.key === key);
         this.orderData.splice(_index, 1);
         this.orderData = [...this.orderData];
+    }
+
+    @observable recordData = []
+
+    @action
+    getRecord = async () => {//获取投注记录
+        const res = await getRecord({
+            lottery: this.lotteryCode.toLocaleUpperCase()
+        });
+        if (res.data.code === 1) {
+            this.recordData = res.data.result;
+        }
     }
 }
 

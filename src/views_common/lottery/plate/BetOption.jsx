@@ -4,16 +4,41 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Radio, Select } from 'antd';
+import { withRouter } from 'react-router-dom';
+import { Radio, Select, Modal, message } from 'antd';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 import './betOption.styl';
 
-@inject('lotteryStore')
+@withRouter
+@inject(stores => ({
+    refreshBalance: stores.globalStore.refreshBalance,
+    lotteryStore: stores.lotteryStore
+}))
 @observer
 class BetOption extends React.Component {
+    quickSubmitOrder = async () => {
+        const { quickSubmitOrder, getRecord } = this.props.lotteryStore;
+        const { refreshBalance, history } = this.props;
+        const res = await quickSubmitOrder();
+        if (res.data.code === 1) {//1 表是成功
+            message.success('订单提交成功！');
+            //更新投注记录，更新余额
+            refreshBalance(res.data.result.money.avail);
+            getRecord();
+        } else if (res.data.code === 4001) {//余额不足
+            Modal.confirm({
+                centered: true,
+                content: `余额不足，是否充值`,
+                okText: '立即充值',
+                onOk: () => history.push('/voucher/charge')
+            });
+        } else {
+            message.error(res.data.msg);
+        }
+    }
     render() {
-        const { betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, quickBet } = this.props.lotteryStore;
+        const { betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, quickSubmitOrder } = this.props.lotteryStore;
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
@@ -45,7 +70,7 @@ class BetOption extends React.Component {
                     </div>
                 </div>
                 <div className="fr right-wrapper">
-                    <div className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={quickBet}>快速投注</div>
+                    <div className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder}>快速投注</div>
                     <div className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={addOrder}>添加订单</div>
                 </div>
             </div>

@@ -590,7 +590,7 @@ class LotteryStore {
         event.target.value = '';
     }
 
-    @action addOrder = () => {//添加订单
+    @action genOrderData = () => {
         const { name } = this.plateConfig[this.lotteryCode][this.method];
         let result = [];
         if (this.plateType === 'input') {
@@ -607,9 +607,7 @@ class LotteryStore {
                 amount: { betMoney: this.betMoney, betCount: this.betCount },
                 win: '1',
             }];
-            this.orderData = [...this.orderData, ...result];
-            this.inputedNums = [];
-            return;
+            return result;
         }
         if (this.chaidanConfig.isChaidan) {
             const len = this.selectedChaidanNums.length;
@@ -629,9 +627,7 @@ class LotteryStore {
                     win: '1',
                 }
             });
-            this.orderData = [...this.orderData, ...result];
-            this.selectedChaidanNums = [];
-            return;
+            return result;
         }
         const { pos } = this.plateConfig[this.lotteryCode][this.method]['plate'];
         const arr = [];
@@ -656,7 +652,20 @@ class LotteryStore {
             amount: { betMoney: this.betMoney, betCount: this.betCount },
             win: '1',
         }];
+        return result;
+    }
+
+    @action addOrder = () => {//添加订单
+        const result = this.genOrderData();
         this.orderData = [...this.orderData, ...result];
+        if (this.plateType === 'input') {
+            this.inputedNums = [];
+            return;
+        }
+        if (this.chaidanConfig.isChaidan) {
+            this.selectedChaidanNums = [];
+            return;
+        }
         this.selectedNums = {};
     }
 
@@ -670,9 +679,6 @@ class LotteryStore {
         this.orderData = [...this.orderData];
     }
 
-    @action quickBet = () => {//快速投注
-
-    }
     //order订单栏部分
     @observable betModalShowed = false
 
@@ -723,6 +729,38 @@ class LotteryStore {
         });
         if (res.data.code === 1) {
             this.orderData = [];
+        }
+        return res;
+    }
+
+    @action quickSubmitOrder = async () => {
+        const orderData = this.genOrderData();
+        const res = await submitOrder({
+            lottery: this.lotteryCode.toLocaleUpperCase(),
+            issue: this.currentIssue,
+            order: JSON.stringify(orderData.map(order => ({
+                method: order.detail.playWay,
+                code: order.detail.betContent,
+                nums: order.amount.betCount,
+                amount: order.amount.betMoney,
+                piece: order.piece,
+                price: order.price,
+                odds: 1,
+                point: 0,
+            }))),
+            betType: 2,
+            sourceType: 0
+        });
+        if (res.data.code === 1) {
+            if (this.plateType === 'input') {
+                this.inputedNums = [];
+                return;
+            }
+            if (this.chaidanConfig.isChaidan) {
+                this.selectedChaidanNums = [];
+                return;
+            }
+            this.selectedNums = {};
         }
         return res;
     }

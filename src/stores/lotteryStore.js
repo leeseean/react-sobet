@@ -20,7 +20,7 @@ import {
 import timeSleep from '../utils/timeSleep';
 import formatTime from '../utils/formatTime';
 import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
-import { choose } from '../utils/algorithm';
+import { choose, computeByMargin, computeByTimes } from '../utils/algorithm';
 
 class LotteryStore {
 
@@ -884,64 +884,29 @@ class LotteryStore {
     }
 
     @computed get traceDataSource() {
-        //根据利润率计算当期需要的倍数[起始倍数，利润率，单倍购买金额，历史购买金额，单倍奖金],返回倍数
-        //利润率=（奖金模式-总投注金额）/ 总投注金额
-        function computeByMargin(s, m, b, o, p) {
-            s = s ? parseInt(s, 10) : 0;
-            m = m ? parseInt(m, 10) : 0; //利润率
-            b = b ? Number(b) : 0; //单倍购买金额
-            o = o ? Number(o) : 0; //历史购买金额
-            p = p ? Number(p) : 0; //单倍奖金
-            var t = 0;
-
-            if (b > 0) {
-                if (m > 0) {
-                    t = Math.ceil(((m / 100 + 1) * o) / (p - (b * (m / 100 + 1))));
-                } else { //无利润率
-                    t = 1;
-                }
-                if (t < s) { //如果最小倍数小于起始倍数，则使用起始倍数
-                    t = s;
-                }
-            }
-
-            return t;
-        }
-        /**
-         * 
-         * 翻倍倍数
-         * @param {number} s 幂数 即4^2中的2
-         * @param {number} k 序号 
-         * @param {number} d 每隔g期翻倍倍数
-         * @param {number} g 隔期gap
-         * @param {number} t 起始倍数
-         * @returns 
-         */
-        function computeByTimes(s, k, d, g, t) {
-            if (k % g === 0) {
-                s = s + 1;
-            }
-            return [s * t, Math.pow(d, (s - 1)) * t];
-        }
         if (this.nextApp.length > 0) {
-            let iStart = 0;
-            return this.nextApp.reduce((a, b, c, d) => {
-                const { issue, total, sellStart, durationTime } = b;
+            const todayTrace = this.nextApp[0];
+            const tomorrowTrace = this.nextApp[1];//隔天期
+            const todayTotal = todayTrace.total;
+            const genData = (start, obj, isTomorrow) => {
+                const { total, issue, sellStart, durationTime } = obj;
+                const result = [];
                 const issueArr = issue.split('-');
-                const startIssue = Number(issueArr.pop());
-                let sumAmount = 0;
-                if (c > 0) {
-                    iStart += d[c - 1].total;
-                }
-                for (let i = iStart; i < total; i++) {
+                const _issue = issueArr.pop();
+                const _issueLength = _issue.length;
+                const startIssue = Number(_issue);//'001' => 1
+                for (let i = start; i < total; i++) {
+                    const duduceLen = _issueLength - String(startIssue).length;
+                    const _startIssue = Array(duduceLen).fill('0').join('') + (startIssue + i);//2 => '002'
+                    let sumAmount = 0;
                     let piece;
-                    if (this.activeTab === '3') {
-                        piece = computeByTimes(0, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece)
+                    if (this.activeTraceType === '3') {
+                        piece = computeByTimes(0, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece)[1];
                     }
-                    if (this.activeTab === '2') {
+                    if (this.activeTraceType === '2') {
                         piece = this.tracePiece || this.defaultTracePiece;
                     }
-                    if (this.activeTab === '1') {
+                    if (this.activeTraceType === '1') {
                         const oldAmount = sumAmount;
                         piece = computeByMargin(this.startPiece || this.defaultStartPiece, this.traceMinRate || this.defaultTraceMinRate, this.orderTotalMoney, sumAmount, this.odds || 1);
                         if (piece < 1) {
@@ -950,17 +915,30 @@ class LotteryStore {
                             sumAmount = piece * this.orderTotalMoney + oldAmount;
                         }
                     }
-                    a.push({
+                    result.push({
                         piece,
-                        issue: issueArr.join('-') + '-' + (startIssue + i),
+                        key: startIssue + i,
+                        index: `${i + 1}.`,
+                        issue: {
+                            isTomorrow,
+                            detail: issueArr.join('-') + '-' + _startIssue
+                        },
                         date: formatTime(new Date((sellStart + durationTime) * 1000), 'YYYY-MM-DD hh:mm:ss'),
                         money: this.orderTotalMoney
                     });
                 }
-                return a;
-            }, []);
+                return result;
+            }
+            return genData(0, todayTrace, false).concat(genData(todayTotal, tomorrowTrace, true));
         }
         return [];
+    }
+
+    @observable showTraceFlag = false
+
+    @action
+    toggleTracePanl = (bool) => {
+        this.showTraceFlag = bool;
     }
 }
 

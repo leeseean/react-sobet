@@ -11,7 +11,7 @@ import BetModal from '../BetModal';
 @observer
 class LotteryOrder extends React.Component {
     render() {
-        const { countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode } = this.props.lotteryStore;
+        const { countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl } = this.props.lotteryStore;
         const orderColumns = [
             {
                 key: 'detail',
@@ -120,7 +120,7 @@ class LotteryOrder extends React.Component {
                             <BetModal />
                         </div>
                         <div className="order-trace">
-                            <Checkbox onChange={() => { }} name="switch-trace-button" />
+                            <Checkbox disabled={orderData.length <= 0} onChange={(e) => toggleTracePanl(e.target.checked)} name="switch-trace-button" />
                             <span className="order-trace-info">我要追号</span>
                             <span className="order-trace-icon">可提高中奖率</span>
                         </div>

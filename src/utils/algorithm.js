@@ -364,3 +364,47 @@ export function cacl3xZutai(arr) {
     const deduplicationArr = [...new Set(arr)]; //去重
     return obj[deduplicationArr.length];
 }
+//根据利润率计算当期需要的倍数[起始倍数，利润率，单倍购买金额，历史购买金额，单倍奖金],返回倍数
+//利润率=（奖金模式-总投注金额）/ 总投注金额
+export function computeByMargin(s, m, b, o, p) {
+    s = s ? parseInt(s, 10) : 0;
+    m = m ? parseInt(m, 10) : 0; //利润率
+    b = b ? Number(b) : 0; //单倍购买金额
+    o = o ? Number(o) : 0; //历史购买金额
+    p = p ? Number(p) : 0; //单倍奖金
+    var t = 0;
+
+    if (b > 0) {
+        if (m > 0) {
+            t = Math.ceil(((m / 100 + 1) * o) / (p - (b * (m / 100 + 1))));
+        } else { //无利润率
+            t = 1;
+        }
+        if (t < s) { //如果最小倍数小于起始倍数，则使用起始倍数
+            t = s;
+        }
+    }
+
+    return t;
+}
+/**
+ * 
+ * 翻倍倍数
+ * @param {number} s 幂数 即4^2中的2
+ * @param {number} k 序号 
+ * @param {number} d 每隔g期翻倍倍数
+ * @param {number} g 隔期gap
+ * @param {number} t 起始倍数
+ * @returns 
+ */
+export function computeByTimes(s, k, d, g, t) {
+    s = Number(s);
+    k = Number(k);
+    d = Number(d);
+    g = Number(g);
+    t = Number(t);
+    if (k % g === 0) {
+        s = s + 1;
+    }
+    return [s * t, Math.pow(d, (s - 1)) * t];
+}

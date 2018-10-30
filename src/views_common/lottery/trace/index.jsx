@@ -4,7 +4,8 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Checkbox, Tabs, Table } from 'antd';
+import { Tabs, Table } from 'antd';
+import './trace.styl';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 
@@ -12,24 +13,49 @@ import '../inputNumberUpDown.styl';
 @observer
 class Trace extends React.Component {
     render() {
-        const { defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate } = this.props.lotteryStore;
+        const { currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate, traceDataSource } = this.props.lotteryStore;
         const columns = [{
+            title: '全选',
+            dataIndex: 'index',
+            width: 60
+        }, {
             title: '期数',
             dataIndex: 'issue',
-            render: text => <a href="#">{text}</a>,
+            render: text => {
+                if (text.detail === currentIssue) {
+                    return (
+                        <React.Fragment>
+                            {text.detail}<span className="trace-current-issue">当前期</span>
+                        </React.Fragment>
+                    );
+                }
+                if (text.isTomorrow) {
+                    return (
+                        <React.Fragment>
+                            {text.detail}<span className="trace-tomorrow-issue">隔天期</span>
+                        </React.Fragment>
+                    );
+                }
+                return text.detail;
+            },
+            width: 200,
         }, {
             title: '倍数',
             dataIndex: 'piece',
+            width: 120
         }, {
             title: '日期',
             dataIndex: 'date',
+            width: 150
         }, {
-            title: '追号金额',
+            title:  <div style={{width: '100px'}}>追号金额</div>,
             dataIndex: 'money',
+            width: 100,
+            render: text => <div style={{width: '100px'}} className="ellipsis">{text}</div>
         }];
-        const dataSource = [];
+        const dataSource = traceDataSource;
         const rowSelection = {
-            columnTitle: '全选',
+            width: 20,
             onChange: (selectedRowKeys, selectedRows) => { },
             onSelect: (record, selected, selectedRows, nativeEvent) => { },
             onSelectAll: (selected, selectedRows, changeRows) => { }
@@ -38,32 +64,68 @@ class Trace extends React.Component {
         return (
             <div className="trace-wrapper">
                 <Tabs hideAdd defaultActiveKey="3" type="editable-card" onChange={key => setActiveTraceType(key)} >
-                    <Tabs.TabPane tab="翻倍追号" key={defaultActiveTraceType} closable={false}>
-                        起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />&nbsp;
-                        隔&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceGap} size="small" onChange={(value) => changeTraceGap(value)} />&nbsp;期&nbsp;&nbsp;
-                        倍x&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTracePiece} size="small" onChange={(value) => changeTracePiece(value)} />&nbsp;&nbsp;
-                        追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
-                        <Table rowSelection={rowSelection}
+                    <Tabs.TabPane size="small" tab="翻倍追号" key={defaultActiveTraceType} closable={false}>
+                        <div className="clearfix trace-top">
+                            <span className="fl fl-item">
+                                起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />
+                            </span>
+                            <span className="fl fl-item">
+                                隔&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceGap} size="small" onChange={(value) => changeTraceGap(value)} />&nbsp;期
+                            </span>
+                            <span className="fl fl-item">
+                                倍x&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTracePiece} size="small" onChange={(value) => changeTracePiece(value)} />
+                            </span>
+                            <span className="fl fl-item">
+                                追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
+                            </span>
+                            <span className="fr gen-trace">生成追号计划</span>
+                        </div>
+                        <Table
+                            size="small"
+                            rowSelection={rowSelection}
                             columns={columns}
                             dataSource={dataSource}
-                            pagination={false} />
+                            pagination={false}
+                            scroll={{ y: 240 }} />
                     </Tabs.TabPane>
-                    <Tabs.TabPane tab="同倍追号" key="2" closable={false}>
-                        起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />&nbsp;&nbsp;
-                        追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
-                        <Table rowSelection={rowSelection}
+                    <Tabs.TabPane size="small" tab="同倍追号" key="2" closable={false}>
+                        <div className="clearfix trace-top">
+                            <span className="fl fl-item">
+                                起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />
+                            </span>
+                            <span className="fl fl-item">
+                                追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
+                            </span>
+                            <span className="fr gen-trace">生成追号计划</span>
+                        </div>
+                        <Table
+                            size="small"
+                            rowSelection={rowSelection}
                             columns={columns}
                             dataSource={dataSource}
-                            pagination={false} />
+                            pagination={false}
+                            scroll={{ y: 240 }} />
                     </Tabs.TabPane>
-                    <Tabs.TabPane tab="利润率追号" disabled key="1" closable={false}>
-                        最低收益率&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceMinRate} size="small" onChange={(value) => changeTraceMinRate(value)} />&nbsp;%&nbsp;
-                        起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />&nbsp;&nbsp;
-                        追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
-                        <Table rowSelection={rowSelection}
+                    <Tabs.TabPane size="small" tab="利润率追号" disabled key="1" closable={false}>
+                        <div className="clearfix trace-top">
+                            <span className="fl fl-item">
+                                最低收益率&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceMinRate} size="small" onChange={(value) => changeTraceMinRate(value)} />&nbsp;%
+                            </span>
+                            <span className="fl fl-item">
+                                起始倍数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultStartPiece} size="small" onChange={(value) => changeStartPiece(value)} />
+                            </span>
+                            <span className="fl fl-item">
+                                追号期数&nbsp;<InputNumber min="1" max="1000" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
+                            </span>
+                            <span className="fr gen-trace">生成追号计划</span>
+                        </div>
+                        <Table
+                            size="small"
+                            rowSelection={rowSelection}
                             columns={columns}
                             dataSource={dataSource}
-                            pagination={false} />
+                            pagination={false}
+                            scroll={{ y: 240 }} />
                     </Tabs.TabPane>
                 </Tabs>
             </div>

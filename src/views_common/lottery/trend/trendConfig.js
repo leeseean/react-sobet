@@ -15,10 +15,10 @@ export default {
                 const keys = Object.keys(obj);
                 const values = Object.values(obj);
                 const shapeConfig = {  //
-                    5: '<em class="shape-item shape--zu120">组120</em>',
-                    4: '<em class="shape-item shape--zu60">组60</em>',
-                    3: values.includes(3) ? '<em class="shape-item shape--zu20">组20</em>' : '<em class="shape-item shape--zu30">组30</em>',
-                    2: values.includes(4) ? '<em class="shape-item shape--zu5">组5</em>' : '<em class="shape-item shape--zu10">组10</em>',
+                    5: '<em class="shape-item"><i class="shape--zu120">组120</i></em>',
+                    4: '<em class="shape-item"><i class="shape--zu60">组60</i></em>',
+                    3: values.includes(3) ? '<em class="shape-item"><i class="shape--zu20">组20</i></em>' : '<em class="shape-item"><i class="shape--zu30">组30</i></em>',
+                    2: values.includes(4) ? '<em class="shape-item"><i class="shape--zu5">组5</i></em>' : '<em class="shape-item"><i class="shape--zu10">组10</i></em>',
                 }
                 return shapeConfig[keys.length];
             }

@@ -606,9 +606,10 @@ class LotteryStore {
             const minConfig = {
                 '11x5': 1,
                 'pk10': 1,
-                'kl12': 12
+                'kl12': 1
             }
-            if (valueArr.some(v => Number(v) > max)) {
+            //不能超过最大值最小值
+            if (valueArr.some(v => Number(v) > maxConfig[this.lotteryType] || Number(v) < minConfig[this.lotteryType])) {
                 return;
             }
         } else {

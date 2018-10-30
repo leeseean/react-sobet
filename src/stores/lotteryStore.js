@@ -18,6 +18,7 @@ import {
     getRecord
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
+import formatTime from '../utils/formatTime';
 import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
 import { choose } from '../utils/algorithm';
 
@@ -102,7 +103,8 @@ class LotteryStore {
             if (res.data.code === 1) {
                 const {
                     second,
-                    issue
+                    issue,
+                    nextApp
                 } = res.data.result;
                 if (second < 0) {
                     this.countdown = '等待开售';
@@ -110,6 +112,7 @@ class LotteryStore {
                     this.countdown = Date.now() + second * 1000;
                 }
                 this.currentIssue = issue;
+                this.nextApp = nextApp;
             }
         });
     }
@@ -787,6 +790,144 @@ class LotteryStore {
         if (res.data.code === 1) {
             this.recordData = res.data.result;
         }
+    }
+    //追号部分
+    defaultStartPiece = '1'
+
+    defaultTraceGap = '1'
+
+    defaultTracePiece = '1'
+
+    defaultTraceCount = '5'
+
+    defaultTraceMinRate = '1'
+
+    @observable startPiece = null
+
+    @action
+    changeStartPiece = value => {
+        this.startPiece = value;
+    }
+
+    @observable traceGap = null
+
+    @action
+    changeTraceGap = value => {
+        this.traceGap = value;
+    }
+
+    @observable tracePiece = null
+
+    @action
+    changeTracePiece = value => {
+        this.tracePiece = value;
+    }
+
+    @observable traceCount = null
+
+    @action
+    changeTraceCount = value => {
+        this.traceCount = value;
+    }
+
+    @observable traceMinRate = null
+
+    @action
+    changeTraceMinRate = value => {
+        this.traceMinRate = value;
+    }
+
+    @observable nextApp = []
+
+    defaultActiveTraceType = '3'
+
+    @observable activeTraceType = '3'
+
+    @action
+    setActiveTraceType = value => {
+        this.activeTraceType = value;
+    }
+
+    traceConfig = {
+        1: '利润率追号',
+        2: '同倍追号',
+        3: '翻倍追号'
+    }
+
+    @computed get traceDataSource() {
+        //根据利润率计算当期需要的倍数[起始倍数，利润率，单倍购买金额，历史购买金额，单倍奖金],返回倍数
+        //利润率=（奖金模式-总投注金额）/ 总投注金额
+        function computeByMargin(s, m, b, o, p) {
+            s = s ? parseInt(s, 10) : 0;
+            m = m ? parseInt(m, 10) : 0; //利润率
+            b = b ? Number(b) : 0; //单倍购买金额
+            o = o ? Number(o) : 0; //历史购买金额
+            p = p ? Number(p) : 0; //单倍奖金
+            var t = 0;
+
+            if (b > 0) {
+                if (m > 0) {
+                    t = Math.ceil(((m / 100 + 1) * o) / (p - (b * (m / 100 + 1))));
+                } else { //无利润率
+                    t = 1;
+                }
+                if (t < s) { //如果最小倍数小于起始倍数，则使用起始倍数
+                    t = s;
+                }
+            }
+
+            return t;
+        }
+        /**
+         * 
+         * 翻倍倍数
+         * @param {number} s 幂数 即4^2中的2
+         * @param {number} k 序号 
+         * @param {number} d 每隔g期翻倍倍数
+         * @param {number} g 隔期gap
+         * @param {number} t 起始倍数
+         * @returns 
+         */
+        function computeByTimes(s, k, d, g, t) {
+            if (k % g === 0) {
+                s = s + 1;
+            }
+            return [s * t, Math.pow(d, (s - 1)) * t];
+        }
+        if (this.nextApp.length > 0) {
+            return this.nextApp.reduce((a, b) => {
+                const { issue, total, sellStart, durationTime } = b;
+                const issueArr = issue.split('-');
+                const startIssue = Number(issueArr.pop());
+                let sumAmount = 0;
+                for (let i = 0; i < total; i++) {
+                    let piece;
+                    if (this.activeTab === '3') {
+                        piece = computeByTimes(0, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece)
+                    }
+                    if (this.activeTab === '2') {
+                        piece = this.tracePiece || this.defaultTracePiece;
+                    }
+                    if (this.activeTab === '1') {
+                        const oldAmount = sumAmount;
+                        piece = computeByMargin(this.startPiece || this.defaultStartPiece, this.traceMinRate || this.defaultTraceMinRate, this.orderTotalMoney, sumAmount, this.odds || 1);
+                        if (piece < 1) {
+                            sumAmount = i * this.orderTotalMoney;
+                        } else {
+                            sumAmount = piece * this.orderTotalMoney + oldAmount;
+                        }
+                    }
+                    a.push({
+                        piece,
+                        issue: issueArr.join('-') + '-' + (startIssue + i),
+                        date: formatTime(new Date((sellStart + durationTime) * 1000), 'YYYY-MM-DD hh:mm:ss'),
+                        money: this.orderTotalMoney
+                    });
+                }
+                return a;
+            }, []);
+        }
+        return [];
     }
 }
 

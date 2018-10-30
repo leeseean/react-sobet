@@ -113,12 +113,12 @@ export function calc2xDuizi(arr) {
 //计算龙湖和
 export function calcLhh(a, b) {
     if (a > b) {
-        return '<em class="margin-0-4px shape--long">龙</em>';
+        return '<em class="shape-item"><i class="shape--long">龙</i></em>';
     }
     if (a < b) {
-        return '<em class="margin-0-4px shape--hu">虎</em>';
+        return '<em class="shape-item"><i class="shape--hu">虎</i></em>';
     }
-    return '<em class="margin-0-4px shape--he">和</em>';
+    return '<em class="shape-item"><i class="shape--he">和</i></em>';
 }
 /* 
 牛牛：
@@ -148,13 +148,13 @@ export function calcNiuniu(arr) {
     let dxXt;
     let dsXt;
     if (!has10X) {
-        niuniuXt = '<em class="niuniu">无牛</em>';
-        dxXt = '---';
-        dsXt = '---';
+        niuniuXt = '<em class="shape-item"><i class="niuniu">无牛</i></em>';
+        dxXt = '<em class="shape-item">---</em>';
+        dsXt = '<em class="shape-item">---</em>';
     } else {
-        niuniuXt = YU === 0 ? '<em class="margin-0-4px shape--niuniu">牛牛</em>' : `<em class="margin-0-4px shape--niuniu">牛${YU}</em>`;
-        dxXt = [6, 7, 8, 9, 0].indexOf(YU) !== -1 ? '<em class="margin-0-4px shape--niuda">牛大</em>' : '<em class="margin-0-4px shape--niuxiao">牛小</em>';
-        dsXt = YU % 2 === 0 ? '<em class="margin-0-4px shape--niushuang">牛双</em>' : '<em class="margin-0-4px shape--niudan">牛单</em>';
+        niuniuXt = YU === 0 ? '<em class="shape-item"><i class="shape--niuniu">牛牛</i></em>' : `<em class="shape-item"><i class="shape--niuniu">牛${YU}</i></em>`;
+        dxXt = [6, 7, 8, 9, 0].indexOf(YU) !== -1 ? '<em class="shape-item"><i class="shape--niuda">牛大</i></em>' : '<em class="shape-item"><i class="shape--niuxiao">牛小</i></em>';
+        dsXt = YU % 2 === 0 ? '<em class="shape-item"><i class="shape--niushuang">牛双</i></em>' : '<em class="shape-item"><i class="shape--niudan">牛单</i></em>';
     }
     return {
         nn: niuniuXt,
@@ -296,14 +296,14 @@ export function calcDxds(num, flag) {
     let dx;
     let ds;
     if (num >= flag) {
-        dx = '<em class="margin-0-4px shape--da">大</em>';
+        dx = '<i class="shape--da">大</i>';
     } else {
-        dx = '<em class="margin-0-4px shape--xiao">小</em>';
+        dx = '<i class="shape--xiao">小</i>';
     }
     if (num % 2 === 0) {
-        ds = '<em class="margin-0-4px shape--dan">双</em>';
+        ds = '<i class="shape--dan">双</i>';
     } else {
-        ds = '<em class="margin-0-4px shape--dan">单</em>';
+        ds = '<i class="shape--dan">单</i>';
     }
     return {
         dx,
@@ -323,8 +323,8 @@ export function calcDxgs(arr, flag) {
         }
     }
     return {
-        da: `<em class="margin-0-4px>${da}</em>`,
-        xiao: `<em class="margin-0-4px>${xiao}</em>`
+        da: `<em class="shape-item">${da}</em>`,
+        xiao: `<em class="shape-item">${xiao}</em>`
     };
 }
 //danshuanggeshu
@@ -339,8 +339,8 @@ export function calcDsgs(arr) {
         }
     }
     return {
-        dan: `<em class="margin-0-4px>${dan}</em>`,
-        shuang: `<em class="margin-0-4px>${shuang}</em>`
+        dan: `<em class="shape-item">${dan}</em>`,
+        shuang: `<em class="shape-item">${shuang}</em>`
     };
 }
 /**
@@ -357,9 +357,9 @@ export function cacl3xZutai(arr) {
     }
     arr = arr.map(v => Number(v));
     const obj = {
-        1: '<em class="margin-0-4px shape--baozi">豹子</em>',
-        2: '<em class="margin-0-4px shape--duizi">对子</em>',
-        3: calcShunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--shunzi">顺子</em>' : calcBanshunzi(arr, 0, 9) ? '<em class="margin-0-4px shape--banshun">半顺</em>' : '<em class="margin-0-4px shape--za6">杂六</em>'
+        1: '<em class="shape-item"><i class="shape--baozi">豹子</i></em>',
+        2: '<em class="shape-item"><i class="shape--duizi">对子</i></em>',
+        3: calcShunzi(arr, 0, 9) ? '<em class="shape-item"><i class="shape--shunzi">顺子</i></em>' : calcBanshunzi(arr, 0, 9) ? '<em class="shape-item"><i class="shape--banshun">半顺</i></em>' : '<em class="shape-item"><i class="shape--za6">杂六</i></em>'
     };
     const deduplicationArr = [...new Set(arr)]; //去重
     return obj[deduplicationArr.length];

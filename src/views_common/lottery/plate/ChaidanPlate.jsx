@@ -34,19 +34,19 @@ class ChaidanPlate extends React.Component {
                                 const LonghuDots = ({ area }) => {
                                     return [...Array(5)].map((a, b) => {
                                         if (area.includes(b)) {
-                                            return <b className="longhu-pos active"></b>;
+                                            return <b key={b} className="longhu-pos active"></b>;
                                         }
-                                        return <b className="longhu-pos"></b>;
+                                        return <b key={b} className="longhu-pos"></b>;
                                     });
                                 };
                                 content = (<div className="num-longhu-inner"><div className="longhu-pos-wrapper"><LonghuDots area={area} /></div><div className="longhu-text" value={cn}></div><div className="longhu-odd">1中3.67</div></div>);
                                 className = 'plate-item-num-longhu';
-                                return <div key={en} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
+                                return <div key={cn} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                             } else {
                                 content = cn;
                                 className = 'plate-item-num';
                             }
-                            return <div key={en} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
+                            return <div key={cn} className={`fl ${className} ${selectedChaidanNums.some(o => o.cn === cn) ? 'active' : ''}`} m-method={en} onClick={() => selectChaidanNum({ en, cn })}>{content}</div>;
                         })}
                     </div>
                     <div className={`fr clearfix plate-item-filters ${extraClass}`}>

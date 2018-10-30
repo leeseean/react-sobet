@@ -585,8 +585,18 @@ class LotteryStore {
 
     @action inputNum = (numOfEach, event) => {
         const value = event.target.value;
-        if (!/^\d+$/.test(value) || value.length !== numOfEach) {
+        if (!/^\d+$/.test(value)) {
             return;
+        }
+
+        if (this.lotteryType === '11x5' || this.lotteryType === 'pk10' || this.lotteryType === 'kl12') {//这个选号有两位数
+            if (value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',').length !== numOfEach) {
+                return;
+            }
+        } else {
+            if (value.length !== numOfEach) {
+                return;
+            }
         }
         this.inputedNums.push(value);
         this.inputedNums = [...this.inputedNums];
@@ -895,12 +905,16 @@ class LotteryStore {
             return [s * t, Math.pow(d, (s - 1)) * t];
         }
         if (this.nextApp.length > 0) {
-            return this.nextApp.reduce((a, b) => {
+            let iStart = 0;
+            return this.nextApp.reduce((a, b, c, d) => {
                 const { issue, total, sellStart, durationTime } = b;
                 const issueArr = issue.split('-');
                 const startIssue = Number(issueArr.pop());
                 let sumAmount = 0;
-                for (let i = 0; i < total; i++) {
+                if (c > 0) {
+                    iStart += d[c - 1].total;
+                }
+                for (let i = iStart; i < total; i++) {
                     let piece;
                     if (this.activeTab === '3') {
                         piece = computeByTimes(0, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece)

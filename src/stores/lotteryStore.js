@@ -590,7 +590,25 @@ class LotteryStore {
         }
 
         if (this.lotteryType === '11x5' || this.lotteryType === 'pk10' || this.lotteryType === 'kl12') {//这个选号有两位数
-            if (value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',').length !== numOfEach) {
+            const valueArr = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',');
+            if (valueArr.length !== numOfEach) {
+                return;
+            }
+            //选号不能重复
+            if ([...new Set(valueArr)].length < numOfEach) {
+                return;
+            }
+            const maxConfig = {
+                '11x5': 11,
+                'pk10': 10,
+                'kl12': 12
+            }
+            const minConfig = {
+                '11x5': 1,
+                'pk10': 1,
+                'kl12': 12
+            }
+            if (valueArr.some(v => Number(v) > max)) {
                 return;
             }
         } else {

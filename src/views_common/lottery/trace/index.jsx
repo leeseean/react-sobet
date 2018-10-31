@@ -17,7 +17,7 @@ class Trace extends React.Component {
         initTraceData();
     }
     render() {
-        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece } = this.props.lotteryStore;
+        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, traceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb } = this.props.lotteryStore;
         const columns = [{
             title: '全选',
             dataIndex: 'index',
@@ -63,10 +63,11 @@ class Trace extends React.Component {
         const rowSelection = {
             selectedRowKeys: traceSelectedRowKeys.slice(),
             columnWidth: 20,
-            onChange: (selectedRowKeys, selectedRows) => { 
+            onChange: (selectedRowKeys, selectedRows) => {
                 setTraceSelectedRowKeys(selectedRowKeys);
+                genTraceData();
             },
-            onSelect: (record, selected, selectedRows, nativeEvent) => { 
+            onSelect: (record, selected, selectedRows, nativeEvent) => {
                 console.log(record, selected, selectedRows, nativeEvent)
             },
             onSelectAll: (selected, selectedRows, changeRows) => { }
@@ -88,7 +89,7 @@ class Trace extends React.Component {
                             <span className="fl fl-item">
                                 追号期数&nbsp;<InputNumber min="1" max="999" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
                             </span>
-                            <span className="fr gen-trace" onClick={genTraceData}>生成追号计划</span>
+                            <span className="fr gen-trace" onClick={genTraceClickCb}>生成追号计划</span>
                         </div>
                         <Table
                             size="small"
@@ -106,7 +107,7 @@ class Trace extends React.Component {
                             <span className="fl fl-item">
                                 追号期数&nbsp;<InputNumber min="1" max="999" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
                             </span>
-                            <span className="fr gen-trace" onClick={genTraceData}>生成追号计划</span>
+                            <span className="fr gen-trace" onClick={genTraceClickCb}>生成追号计划</span>
                         </div>
                         <Table
                             size="small"
@@ -127,7 +128,7 @@ class Trace extends React.Component {
                             <span className="fl fl-item">
                                 追号期数&nbsp;<InputNumber min="1" max="999" defaultValue={defaultTraceCount} size="small" onChange={(value) => changeTraceCount(value)} />
                             </span>
-                            <span className="fr gen-trace" onClick={genTraceData}>生成追号计划</span>
+                            <span className="fr gen-trace" onClick={genTraceClickCb}>生成追号计划</span>
                         </div>
                         <Table
                             size="small"

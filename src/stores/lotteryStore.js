@@ -20,7 +20,7 @@ import {
 import timeSleep from '../utils/timeSleep';
 import formatTime from '../utils/formatTime';
 import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
-import { choose, computeByMargin, computeByTimes } from '../utils/algorithm';
+import { choose, computeByMargin } from '../utils/algorithm';
 
 class LotteryStore {
 
@@ -36,6 +36,7 @@ class LotteryStore {
             this.getTabConfig();
             this.orderData = [];
             this.showTraceFlag = false;
+            this.setTraceSelectedRowKeys([]);
         }
     })
 
@@ -703,6 +704,7 @@ class LotteryStore {
         }
         this.selectedNums = {};
         this.showTraceFlag = false;
+        this.setTraceSelectedRowKeys([]);
     }
 
     @action changeOrderItemPiece = (orderItemObj, piece) => {
@@ -883,6 +885,8 @@ class LotteryStore {
     @action
     setActiveTraceType = value => {
         this.activeTraceType = value;
+        this.initTraceData();
+        this.setTraceSelectedRowKeys([]);
     }
 
     traceConfig = {
@@ -893,21 +897,26 @@ class LotteryStore {
 
     @observable traceData = []
 
+    @action genTraceClickCb = () => {
+        this.initTraceData();
+        this.setTraceSelectedRowKeys(this.traceData.slice(0, Number(this.traceCount || this.defaultTraceCount)).map(v => v.issue.detail));
+        this.genTraceData();
+    }
+
     @action genTraceData = () => {
-        this.traceSelectedRowKeys = this.traceData.slice(0, Number(this.traceCount || this.defaultTraceCount)).map(v => v.issue.detail);
         let sumAmount = 0;
-        let timeStart = 0;
+        const timeStart = Number(this.startPiece || this.defaultStartPiece);//起始倍数
+        const gap = Number(this.traceGap || this.defaultTraceGap);//隔期
+        const tracePiece = Number(this.tracePiece || this.defaultTracePiece);//倍x
         let piece;
         for (let i = 0; i < this.traceData.length; i++) {
             const issueDetail = this.traceData[i]['issue']['detail'];
             if (this.traceSelectedRowKeys.includes(issueDetail)) {
                 if (this.activeTraceType === '3') {
-                    const pieceArr = computeByTimes(timeStart, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece);
-                    piece = pieceArr[1] > 99999 ? 99999 : pieceArr[1];
-                    timeStart = pieceArr[0] / (this.startPiece || this.defaultStartPiece);
+                    piece = timeStart * Math.pow(tracePiece, Math.floor(i / gap));
                 }
                 if (this.activeTraceType === '2') {
-                    piece = this.tracePiece || this.defaultTracePiece;
+                    piece = timeStart;
                 }
                 if (this.activeTraceType === '1') {
                     const oldAmount = sumAmount;
@@ -920,9 +929,10 @@ class LotteryStore {
                     }
                 }
                 this.traceData[i]['piece'] = piece;
-                this.traceData[i]['money'] = this.orderTotalMoney;
+                this.traceData[i]['money'] = (piece * this.orderTotalMoney).toFixed(2);
             } else {
-                continue;
+                this.traceData[i]['piece'] = 0;
+                this.traceData[i]['money'] = '0.00';
             }
         }
         this.traceData = [...this.traceData];
@@ -981,10 +991,14 @@ class LotteryStore {
     @action
     toggleTracePanl = (bool) => {
         this.showTraceFlag = bool;
+        if (!this.showTraceFlag) {
+            this.setTraceSelectedRowKeys([]);
+        }
     }
 
     @action changeTraceItemPiece = (record, value) => {
         record.piece = value;
+        record.money = Number(record.piece * this.orderTotalMoney).toFixed(2);
         this.traceData = [...this.traceData];
     }
 

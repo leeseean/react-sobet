@@ -987,6 +987,20 @@ class LotteryStore {
         record.piece = value;
         this.traceData = [...this.traceData];
     }
+
+    @observable mainLeftRef = null
+
+    @action
+    setMainLeftRef = ref => {
+        this.mainLeftRef = ref;
+    }
+
+    @computed get trendListHeight() {
+        if (this.mainLeftRef) {
+            return this.mainLeftRef.offsetHeight;
+        }
+        return 800;
+    }
 }
 
 export default new LotteryStore();

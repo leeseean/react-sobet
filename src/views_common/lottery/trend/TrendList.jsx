@@ -5,7 +5,6 @@ import './trendList.styl';
 
 @inject(stores => ({
     lotteryStore: stores.lotteryStore,
-    method: stores.lotteryStore.method
 }))
 @observer
 class TrendList extends React.Component {
@@ -18,8 +17,8 @@ class TrendList extends React.Component {
                 </div>
             );
         };
-        const { className, mainLeftRef, method } = this.props;
-        const { trendData, lotteryType, trendConfig } = this.props.lotteryStore;
+        const { className } = this.props;
+        const { trendData, lotteryType, trendConfig, method, trendListHeight } = this.props.lotteryStore;
         if (!trendConfig[lotteryType][method]) {
             return null;
         }
@@ -72,7 +71,7 @@ class TrendList extends React.Component {
         });
         return (
             <div className={`trend-wrapper ${className ? className : ''}`}>
-                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: mainLeftRef.offsetHeight - 37 * 2 }} />
+                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: trendListHeight - 37 * 2 }} />
             </div>
         );
     }

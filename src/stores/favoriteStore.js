@@ -55,7 +55,7 @@ class FavoriteStore {
                 lottery: ltCode
             });
         }
-        await timeSleep(1000);
+        await timeSleep(600);
         this.getFavorites();
     }
 }

@@ -3,6 +3,7 @@ export default {
     tjssc: '天津时时彩',
     xjssc: '新疆时时彩',
     rdffc: '瑞典1分彩',
+    rd1fc: '瑞典1分彩',
     rdlfc: '瑞典2分彩',
     rbssm: '日本30秒',
     wbgmmc: 'WBG秒秒彩',

@@ -61,11 +61,22 @@ class LotteryFavorite extends React.Component {
             menuShowFlag: bool
         });
     }
+    getCountdowns = () => {
+        const { getCountdowns } = this.props.favoriteStore;
+        if (this._mounted) {
+            setTimeout(() => {
+                getCountdowns();
+            }, 1000);
+        }
+    }
     render() {
         const { codeToCn, linkToLottery, history } = this.props;
-        const { data, getCountdowns, countdownsObj, modalVisible, toggleModalVisible, switchFavorite } = this.props.favoriteStore;
+        const { data, countdownsObj, modalVisible, toggleModalVisible } = this.props.favoriteStore;
         const Item = ({ item }) => {
             const { lottery_code } = item;
+            if (!countdownsObj[lottery_code]) {
+                return null;
+            }
             return (
                 <div className="lottery-favorite-item" onClick={() => linkToLottery(lottery_code.toLocaleLowerCase(), history, '/lottery')}>
                     <div className="item-cn">
@@ -73,7 +84,7 @@ class LotteryFavorite extends React.Component {
                     </div>
                     <div className="item-countdown">
                         {
-                            [-1, -2].includes(countdownsObj[lottery_code]) ? '暂停销售' : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={getCountdowns} />
+                            [-1, -2].includes(countdownsObj[lottery_code]) ? '暂停销售' : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
                         }
                     </div>
                     <div className="item-recommend"></div>

@@ -35,6 +35,7 @@ class LotteryStore {
             this.getRecord();
             this.getTabConfig();
             this.orderData = [];
+            this.showTraceFlag = false;
         }
     })
 
@@ -113,6 +114,8 @@ class LotteryStore {
                 }
                 this.currentIssue = issue;
                 this.nextApp = nextApp;
+                this.showTraceFlag && this.initTraceData();//更新追号信息
+                this.traceSelectedRowKeys.length > 0 && this.genTraceData();
             }
         });
     }
@@ -699,6 +702,7 @@ class LotteryStore {
             return;
         }
         this.selectedNums = {};
+        this.showTraceFlag = false;
     }
 
     @action changeOrderItemPiece = (orderItemObj, piece) => {
@@ -800,12 +804,16 @@ class LotteryStore {
     @action
     deleteAllItem = () => {
         this.orderData = [];
+        this.showTraceFlag = false;//收起追号盘
     }
 
     @action
     deleteOrderItem = (key) => {
         const _index = this.orderData.findIndex(v => v.key === key);
         this.orderData.splice(_index, 1);
+        if (this.orderData.length === 0) {
+            this.showTraceFlag = false;//收起追号盘
+        }
         this.orderData = [...this.orderData];
     }
 
@@ -823,9 +831,9 @@ class LotteryStore {
     //追号部分
     defaultStartPiece = '1'
 
-    defaultTraceGap = '1'
+    defaultTraceGap = '2'
 
-    defaultTracePiece = '1'
+    defaultTracePiece = '2'
 
     defaultTraceCount = '5'
 
@@ -883,12 +891,53 @@ class LotteryStore {
         3: '翻倍追号'
     }
 
-    @computed get traceDataSource() {
+    @observable traceData = []
+
+    @action genTraceData = () => {
+        this.traceSelectedRowKeys = this.traceData.slice(0, Number(this.traceCount || this.defaultTraceCount)).map(v => v.issue.detail);
+        let sumAmount = 0;
+        let timeStart = 0;
+        let piece;
+        for (let i = 0; i < this.traceData.length; i++) {
+            const issueDetail = this.traceData[i]['issue']['detail'];
+            if (this.traceSelectedRowKeys.includes(issueDetail)) {
+                if (this.activeTraceType === '3') {
+                    const pieceArr = computeByTimes(timeStart, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece);
+                    piece = pieceArr[1] > 99999 ? 99999 : pieceArr[1];
+                    timeStart = pieceArr[0] / (this.startPiece || this.defaultStartPiece);
+                }
+                if (this.activeTraceType === '2') {
+                    piece = this.tracePiece || this.defaultTracePiece;
+                }
+                if (this.activeTraceType === '1') {
+                    const oldAmount = sumAmount;
+                    piece = computeByMargin(this.startPiece || this.defaultStartPiece, this.traceMinRate || this.defaultTraceMinRate, this.orderTotalMoney, sumAmount, this.odds || 1);
+                    piece = piece > 99999 ? 99999 : piece;
+                    if (piece < 1) {
+                        sumAmount = i * this.orderTotalMoney;
+                    } else {
+                        sumAmount = piece * this.orderTotalMoney + oldAmount;
+                    }
+                }
+                this.traceData[i]['piece'] = piece;
+                this.traceData[i]['money'] = this.orderTotalMoney;
+            } else {
+                continue;
+            }
+        }
+        this.traceData = [...this.traceData];
+    }
+
+    @action initTraceData = () => {
+        /* 
+            全部默认为0，点击每个item 的时候生成
+        */
         if (this.nextApp.length > 0) {
             const todayTrace = this.nextApp[0];
             const tomorrowTrace = this.nextApp[1];//隔天期
             const todayTotal = todayTrace.total;
             const genData = (start, obj, isTomorrow) => {
+                if (!obj) return [];
                 const { total, issue, sellStart, durationTime } = obj;
                 const result = [];
                 const issueArr = issue.split('-');
@@ -898,47 +947,45 @@ class LotteryStore {
                 for (let i = start; i < total; i++) {
                     const duduceLen = _issueLength - String(startIssue).length;
                     const _startIssue = Array(duduceLen).fill('0').join('') + (startIssue + i);//2 => '002'
-                    let sumAmount = 0;
-                    let piece;
-                    if (this.activeTraceType === '3') {
-                        piece = computeByTimes(0, i, this.tracePiece || this.defaultTracePiece, this.traceGap || this.defaultTraceGap, this.startPiece || this.defaultStartPiece)[1];
-                    }
-                    if (this.activeTraceType === '2') {
-                        piece = this.tracePiece || this.defaultTracePiece;
-                    }
-                    if (this.activeTraceType === '1') {
-                        const oldAmount = sumAmount;
-                        piece = computeByMargin(this.startPiece || this.defaultStartPiece, this.traceMinRate || this.defaultTraceMinRate, this.orderTotalMoney, sumAmount, this.odds || 1);
-                        if (piece < 1) {
-                            sumAmount = i * this.orderTotalMoney;
-                        } else {
-                            sumAmount = piece * this.orderTotalMoney + oldAmount;
-                        }
-                    }
+                    const issueDetail = issueArr.join('-') + '-' + _startIssue;
                     result.push({
-                        piece,
-                        key: startIssue + i,
+                        piece: 0,
+                        money: '0.00',
+                        key: issueDetail,
                         index: `${i + 1}.`,
                         issue: {
                             isTomorrow,
-                            detail: issueArr.join('-') + '-' + _startIssue
+                            detail: issueDetail
                         },
                         date: formatTime(new Date((sellStart + durationTime) * 1000), 'YYYY-MM-DD hh:mm:ss'),
-                        money: this.orderTotalMoney
                     });
                 }
                 return result;
             }
-            return genData(0, todayTrace, false).concat(genData(todayTotal, tomorrowTrace, true));
+            this.traceData = genData(0, todayTrace, false).concat(genData(todayTotal, tomorrowTrace, true));
         }
-        return [];
+    }
+
+    @action setTraceSelectedRowKeys = (value) => {
+        this.traceSelectedRowKeys = value;
     }
 
     @observable showTraceFlag = false
 
+    @observable traceSelectedRowKeys = []
+
+    @computed get rateTraceFlag() {
+        return this.orderData.length !== 1;
+    }
+
     @action
     toggleTracePanl = (bool) => {
         this.showTraceFlag = bool;
+    }
+
+    @action changeTraceItemPiece = (record, value) => {
+        record.piece = value;
+        this.traceData = [...this.traceData];
     }
 }
 

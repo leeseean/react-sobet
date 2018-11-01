@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Tabs, Table } from 'antd';
+import { Tabs, Table, Checkbox } from 'antd';
 import './trace.styl';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
@@ -17,7 +17,7 @@ class Trace extends React.Component {
         initTraceData();
     }
     render() {
-        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, traceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb } = this.props.lotteryStore;
+        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, traceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb, winStopflag, totalTraceMoney, totalTraceCount, toggleTraceWinStop } = this.props.lotteryStore;
         const columns = [{
             title: '全选',
             dataIndex: 'index',
@@ -67,9 +67,7 @@ class Trace extends React.Component {
                 setTraceSelectedRowKeys(selectedRowKeys);
                 genTraceData();
             },
-            onSelect: (record, selected, selectedRows, nativeEvent) => {
-                console.log(record, selected, selectedRows, nativeEvent)
-            },
+            onSelect: (record, selected, selectedRows, nativeEvent) => { },
             onSelectAll: (selected, selectedRows, changeRows) => { }
         };
         return (
@@ -98,6 +96,15 @@ class Trace extends React.Component {
                             dataSource={traceData.slice()}
                             pagination={false}
                             scroll={{ y: 240 }} />
+                        <div className="clearfix trace-bottom">
+                            <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
+                            <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className="fr trace-win-stop">
+                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <span className="stop-info">追中即停</span>
+                            </span>
+                        </div>
                     </Tabs.TabPane>
                     <Tabs.TabPane size="small" tab="同倍追号" key="2" closable={false}>
                         <div className="clearfix trace-top">
@@ -116,6 +123,15 @@ class Trace extends React.Component {
                             dataSource={traceData.slice()}
                             pagination={false}
                             scroll={{ y: 240 }} />
+                        <div className="clearfix trace-bottom">
+                            <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
+                            <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className="fr trace-win-stop">
+                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <span className="stop-info">追中即停</span>
+                            </span>
+                        </div>
                     </Tabs.TabPane>
                     <Tabs.TabPane size="small" tab="利润率追号" disabled={rateTraceFlag} key="1" closable={false}>
                         <div className="clearfix trace-top">
@@ -137,6 +153,15 @@ class Trace extends React.Component {
                             dataSource={traceData.slice()}
                             pagination={false}
                             scroll={{ y: 240 }} />
+                        <div className="clearfix trace-bottom">
+                            <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
+                            <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className="fr trace-win-stop">
+                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <span className="stop-info">追中即停</span>
+                            </span>
+                        </div>
                     </Tabs.TabPane>
                 </Tabs>
             </div>

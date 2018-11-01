@@ -97,7 +97,7 @@ class LotteryStore {
     @observable countdown = Date.now() //倒计时秒数
 
     @action updateIssue = async () => {
-        await timeSleep(3000);
+        await timeSleep(2000);
         const res = await updateIssue({
             lottery: this.lotteryCode.toLocaleUpperCase()
         });
@@ -115,8 +115,13 @@ class LotteryStore {
                 }
                 this.currentIssue = issue;
                 this.nextApp = nextApp;
-                this.showTraceFlag && this.initTraceData();//更新追号信息
-                this.traceSelectedRowKeys.length > 0 && this.genTraceData();
+                if (this.showTraceFlag) {
+                    this.initTraceData();//更新追号信息
+                    if (this.traceSelectedRowKeys.length > 0) {
+                        this.setTraceSelectedRowKeys(this.traceData.slice(0, Number(this.traceCount || this.defaultTraceCount)).map(v => v.issue.detail));
+                        this.genTraceData();
+                    }
+                }
             }
         });
     }
@@ -1014,6 +1019,27 @@ class LotteryStore {
             return this.mainLeftRef.offsetHeight;
         }
         return 800;
+    }
+
+    @computed get totalTraceCount() {
+        return this.traceSelectedRowKeys.length;
+    }
+
+
+    @computed get totalTraceMoney() {
+        let result = 0;
+        for (let item of this.traceData) {
+            if (this.traceSelectedRowKeys.includes(item.issue.detail) && item.money > 0) {
+                result += Number(item.money);
+            }
+        }
+        return result.toFixed(2);
+    }
+
+    @observable winStopflag = false
+
+    @action toggleTraceWinStop = (bool) => {
+        this.winStopflag = bool;
     }
 }
 

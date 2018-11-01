@@ -1,11 +1,11 @@
 /**
- * Created by Orange on 2018-10-29 10:55:32.
+ * Created by Orange on 2018-11-01 14:00:35.
  **/
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
-import { Modal, Checkbox, message } from 'antd';
+import { Modal, Checkbox, message, Divider } from 'antd';
 import './betModal.styl';
 
 @withRouter
@@ -14,9 +14,9 @@ import './betModal.styl';
     lotteryStore: stores.lotteryStore
 }))
 @observer
-class BetModal extends React.Component {
+class TraceModal extends React.Component {
     submitOrder = async () => {
-        const { submitOrder, getRecord, toggleBetModal } = this.props.lotteryStore;
+        const { submitOrder, getRecord, switchTraceModal } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
         const res = await submitOrder();
         if (res.data.code === 1) {//1 表是成功
@@ -34,7 +34,7 @@ class BetModal extends React.Component {
         } else {
             message.error(res.data.msg);
         }
-        toggleBetModal(false);
+        switchTraceModal(false)
     }
     render() {
         const modeConfig = {
@@ -45,9 +45,15 @@ class BetModal extends React.Component {
             '0.02': '2分',
             '0.002': '2厘'
         };
-        const { lotteryCn, currentIssue, orderData, toggleBetModal, betModalShowed, printOrderFlag, setPrintOrderFlag, orderTotalMoney } = this.props.lotteryStore;
+        const { lotteryCn, orderData, switchTraceModal, traceModalFlag, printOrderFlag, setPrintOrderFlag, orderTotalMoney, traceSelectedRowKeys } = this.props.lotteryStore;
         return (
-            <Modal onCancel={() => toggleBetModal(false)} onOk={this.submitOrder} wrapClassName="bet-modal-wrapper" visible={betModalShowed} okText="确定" cancelText="取消" centered={true} title={`请确认投注${lotteryCn}`}>
+            <Modal onCancel={() => switchTraceModal(false)} onOk={this.submitOrder} wrapClassName="bet-modal-wrapper" visible={traceModalFlag} okText="确定" cancelText="取消" centered={true} title={`您确认要追号${lotteryCn}   ${traceSelectedRowKeys.length}期吗？`}>
+                <div className="top">
+                    <div className="top-info">
+                        温馨提示:追号单生成的投注单，在当期封单前5分钟内不允许撤单。
+                    </div>
+                    <Divider dashed style={{ margin: '5px 0 0 0' }} />
+                </div>
                 <div className="list">
                     {
                         orderData.map((order, index, arr) => {
@@ -56,7 +62,7 @@ class BetModal extends React.Component {
                                     {
                                         (index === 0 || (order.price !== arr[index - 1].price)) ? (
                                             <div className="clearfix item-top">
-                                                <div className="fl">期号{currentIssue}</div>
+                                                <div className="fl">期号/</div>
                                                 <div className="fr">模式：{modeConfig[String(order.price)]}</div>
                                             </div>
                                         ) : null
@@ -81,4 +87,4 @@ class BetModal extends React.Component {
     }
 }
 
-export default BetModal;
+export default TraceModal;

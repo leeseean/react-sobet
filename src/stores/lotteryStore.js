@@ -574,9 +574,40 @@ class LotteryStore {
         const fileReader = new FileReader();
         fileReader.onload = () => {
             const result = fileReader.result.split(reg).filter(v => v !== '');
-            if (result.some(v => v.length !== numOfEach)) {
+
+            if (result.some(value => {
+                if (this.lotteryType === '11x5' || this.lotteryType === 'pk10' || this.lotteryType === 'kl12') {//这个选号有两位数
+                    const valueArr = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',');
+                    if (valueArr.length !== numOfEach) {
+                        return true;
+                    }
+                    //选号不能重复
+                    if ([...new Set(valueArr)].length < numOfEach) {
+                        return true;
+                    }
+                    const maxConfig = {
+                        '11x5': 11,
+                        'pk10': 10,
+                        'kl12': 12
+                    }
+                    const minConfig = {
+                        '11x5': 1,
+                        'pk10': 1,
+                        'kl12': 1
+                    }
+                    //不能超过最大值最小值
+                    if (valueArr.some(v => Number(v) > maxConfig[this.lotteryType] || Number(v) < minConfig[this.lotteryType])) {
+                        return true;
+                    }
+                } else {
+                    if (value.length !== numOfEach) {
+                        return true;
+                    }
+                }
+            })) {
                 return;
             }
+
 
             this.inputedNums = result;
         };
@@ -754,7 +785,7 @@ class LotteryStore {
 
     @action
     submitOrder = async () => {
-        const res = await submitOrder({
+        let orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
             issue: this.currentIssue,
             order: JSON.stringify(this.orderData.map(order => ({
@@ -769,7 +800,30 @@ class LotteryStore {
             }))),
             betType: 2,
             sourceType: 0
-        });
+        };
+        if (this.showTraceFlag) {//追号
+            const counts = {};
+            for (let item of this.traceData) {
+                const issueDetail = item['issue']['detail'];
+                if (item.piece > 0 && this.traceSelectedRowKeys.includes(issueDetail)) {
+                    counts[issueDetail] = item.piece;
+                }
+            }
+            orderObj = {
+                ...orderObj,
+                istrace: true,
+                betType: 4,
+                trace: JSON.stringify({
+                    counts,
+                    start: this.nextApp[0]['issue'],
+                    totalMoney: this.totalTraceMoney,
+                    totalCount: this.totalTraceCount,
+                    mode: this.activeTraceType || this.defaultActiveTraceType,
+                    winStop: this.winStopFlag,
+                })
+            };
+        }
+        const res = await submitOrder(orderObj);
         if (res.data.code === 1) {
             this.orderData = [];
         }
@@ -1036,10 +1090,16 @@ class LotteryStore {
         return result.toFixed(2);
     }
 
-    @observable winStopflag = false
+    @observable winStopFlag = false
 
     @action toggleTraceWinStop = (bool) => {
-        this.winStopflag = bool;
+        this.winStopFlag = bool;
+    }
+
+    @observable traceModalFlag = false
+
+    @action switchTraceModal = (bool) => {
+        this.traceModalFlag = bool;
     }
 }
 

@@ -8,6 +8,7 @@ import { Tabs, Table, Checkbox } from 'antd';
 import './trace.styl';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
+import TraceModal from '../TraceModal';
 
 @inject('lotteryStore')
 @observer
@@ -17,7 +18,7 @@ class Trace extends React.Component {
         initTraceData();
     }
     render() {
-        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, traceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb, winStopflag, totalTraceMoney, totalTraceCount, toggleTraceWinStop } = this.props.lotteryStore;
+        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb, winStopFlag, totalTraceMoney, totalTraceCount, toggleTraceWinStop, switchTraceModal } = this.props.lotteryStore;
         const columns = [{
             title: '全选',
             dataIndex: 'index',
@@ -99,9 +100,9 @@ class Trace extends React.Component {
                         <div className="clearfix trace-bottom">
                             <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
                             <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
-                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`} onClick={() => switchTraceModal(true)}>立即追号</span>
                             <span className="fr trace-win-stop">
-                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <Checkbox checked={winStopFlag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
                                 <span className="stop-info">追中即停</span>
                             </span>
                         </div>
@@ -126,9 +127,9 @@ class Trace extends React.Component {
                         <div className="clearfix trace-bottom">
                             <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
                             <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
-                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`} onClick={() => switchTraceModal(true)}>立即追号</span>
                             <span className="fr trace-win-stop">
-                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <Checkbox checked={winStopFlag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
                                 <span className="stop-info">追中即停</span>
                             </span>
                         </div>
@@ -156,14 +157,15 @@ class Trace extends React.Component {
                         <div className="clearfix trace-bottom">
                             <span className="fl fl-item">共追<em className="total-trace-count">{totalTraceCount}</em>期</span>
                             <span className="fl fl-item">共计<em className="total-trace-money">{totalTraceMoney}</em>元</span>
-                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`}>立即追号</span>
+                            <span className={`fr submit-trace ${Number(totalTraceMoney) <= 0 ? 'disabled' : ''}`} onClick={() => switchTraceModal(true)}>立即追号</span>
                             <span className="fr trace-win-stop">
-                                <Checkbox checked={winStopflag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
+                                <Checkbox checked={winStopFlag} onChange={(e) => toggleTraceWinStop(e.target.checked)} />
                                 <span className="stop-info">追中即停</span>
                             </span>
                         </div>
                     </Tabs.TabPane>
                 </Tabs>
+                <TraceModal />
             </div>
         );
     }

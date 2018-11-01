@@ -5,11 +5,11 @@ import {
     runInAction,
     computed
 } from 'mobx';
-import lotteryTypeConfig from '../views_common/lottery/lotteryTypeConfig';
-import lotteryCodeToCn from '../views_common/lottery/lotteryCodeToCn';
-import trendConfig from '../views_common/lottery/trend/trendConfig';
-import playWayToCn from '../views_common/lottery/playWayToCn';
-import plateConfig from '../views_common/lottery/plate/plateConfig';
+import lotteryTypeConfig from '../views/common/lottery/lotteryTypeConfig';
+import lotteryCodeToCn from '../views/common/lottery/lotteryCodeToCn';
+import trendConfig from '../views/common/lottery/trend/trendConfig';
+import playWayToCn from '../views/common/lottery/playWayToCn';
+import plateConfig from '../views/common/lottery/plate/plateConfig';
 import {
     queryTrendData,
     updateIssue,
@@ -1078,7 +1078,6 @@ class LotteryStore {
     @computed get totalTraceCount() {
         return this.traceSelectedRowKeys.length;
     }
-
 
     @computed get totalTraceMoney() {
         let result = 0;

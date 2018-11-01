@@ -1,0 +1,59 @@
+.list-marquee-wrapper {
+    width: 100%;
+    background: #191919;
+    height: 40px;
+    font-size: 12px;
+    color: #fff;
+    z-index: 9999;
+
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    .list-marquee-outter {
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+
+        .marquee-close {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url('../../../images/lottery/winResultClose.png') no-repeat;
+            height: 11px;
+            width: 11px;
+            background-color: #191919;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #faebd7;
+            }
+        }
+    }
+
+    .list-marquee {
+        width: 1200px;
+        margin: 0 auto;
+        height: 40px;
+        line-height: 40px;
+
+        .good-news-item {
+            margin: 0 15px;
+            color: #fff;
+        }
+
+        .good-news-lottery {
+            color: #ffa900;
+        }
+
+        .good-news-money {
+            color: #ffa900;
+        }
+    }
+}

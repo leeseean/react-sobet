@@ -3,6 +3,7 @@
 
 body, #root {
     background-color: $body-background-color;
+    font-family: $font-family;
 }
 
 .center {
@@ -31,35 +32,5 @@ body, #root {
     width: 500px;
 }
 
-@keyframes rotate360 {
-    0% {
-        transform: rotate(0);
-    }
-
-    25% {
-        transform: rotate(90deg);
-    }
-
-    50% {
-        transform: rotate(180deg);
-    }
-
-    75% {
-        transform: rotate(270deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        opacity: 0;
-        transform: scale3d(.3,.3,.3)
-    }
-
-    50% {
-        opacity: 1
-    }
-}
+.pd-l-25 {  padding-left: 25px; }
+.pd-r-25 {  padding-right: 25px; }

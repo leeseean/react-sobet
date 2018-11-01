@@ -3,19 +3,21 @@ import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom'
 import Loadable from 'react-loadable'
 
-const platComponet = ['', 'views_mc1', 'views_mc2'];
-
+const platComponet = ['', 'mc1', 'mc2'];
 @withRouter
 @inject('globalStore')
 @observer
+
 class Nav extends React.Component {
+
     render() {
-        const NavComponet = Loadable({
-            loader: () => import('../' + platComponet[this.props.globalStore.platformId] + '/nav'),
+        let NavComponet = Loadable({
+            loader: () => import('../views/' + platComponet[this.props.globalStore.platformId] + '/nav'),
             loading: () => ''
-        });
+        })
         const { history } = this.props;
-        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer)\/{0,1})/;//不显示导航栏的地址
+        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer|agent|voucher)\/{0,1})/;//不显示导航栏的地址
+
         if (noNavReg.test(history.location.pathname)) {
             return null;
         }

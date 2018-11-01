@@ -83,7 +83,7 @@ module.exports = function(proxy, allowedHost) {
 
     proxy:{
       '/dev':{
-        target:"http://www.mc188.com",
+        target:"http://www.mochen111.net",
         secure:false,
         pathRewrite:{'^/dev':''},
         changeOrigin:true

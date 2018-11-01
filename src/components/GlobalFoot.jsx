@@ -48,9 +48,6 @@ class GlobalFoot extends React.PureComponent {
         return (
             <div className="global-foot">
                 <footer>
-                    <div className="footer-img-wrap">
-                        <div className="footer-img"></div>
-                    </div>
                     {
                         this.state.isLoginPage ? null : (
                             <div className="footer-about-wrap">

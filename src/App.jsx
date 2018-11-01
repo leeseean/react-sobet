@@ -7,6 +7,7 @@ import GlobalHead from './components/GlobalHead';
 import GlobalFoot from './components/GlobalFoot';
 import GlobalNav from './components/GlobalNav';
 
+
 class App extends React.Component {
     render() {
         return (

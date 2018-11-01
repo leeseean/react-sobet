@@ -13,37 +13,27 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 class AgentRouter extends React.Component {
     constructor(props) {
         super(props);
-        // 没有super(props), 后面使用回报错 定义state bind方法 其他初始化工作
         this.props.routerStore.history = this.props.history;
-       
-    }
-
-    componentWillMount() {
-        // 服务器渲染的唯一hook
-    }
-
-    componentDidMount() {
-        // 可以调用setState， render Component
     }
     render() {
         const platformId = this.props.globalStore.platformId;
-        const platComponet = ['','views_mc1','views_mc2'];
+        const platComponet = ['','mc1','mc2'];
         const match = this.props.match;
         const RouteConfig = [
             {
                 name: '团队报表',
-                path: `${match.url}/teamReport`,
+                path: `${match.url}/teamReport/:type`,
                 component: Loadable({
-                    loader: () => import('../views_common/agent/teamReport'),
+                    loader: () => import('../views/common/agent/teamReport'),
                     loading: GlobalLoading,
                     delay: 500
                 }),
                 routes:[
                     {
                         name:'彩票',
-                        path:`${match.url}/teamReport/lotteryReport`,
+                        path:`${match.url}/teamReport/lottery`,
                         component:Loadable({
-                            loader: () => import('../views_common/agent/teamReport/lotteryReport'),
+                            loader: () => import('../views/common/agent/teamReport/Lottery'),
                             loading: GlobalLoading,
                             delay: 500
                         })
@@ -52,7 +42,7 @@ class AgentRouter extends React.Component {
                         name:'AG游戏',
                         path:`${match.url}/teamReport/agGame`,
                         component:Loadable({
-                            loader: () => import('../views_common/agent/teamReport/agGame'),
+                            loader: () => import('../views/common/agent/teamReport/AgGame'),
                             loading: GlobalLoading,
                             delay: 500
                         })
@@ -61,28 +51,56 @@ class AgentRouter extends React.Component {
                         name:'PT游戏',
                         path:`${match.url}/teamReport/ptGame`,
                         component:Loadable({
-                            loader: () => import('../views_common/agent/teamReport/ptGame'),
+                            loader: () => import('../views/common/agent/teamReport/PtGame'),
                             loading: GlobalLoading,
                             delay: 500
                         })
                     }
                 ],
-                
             },
             {
                 name: '日度报表',
-                path: `${match.url}/dayReport`,
+                path: `${match.url}/dailyReport`,
                 component: Loadable({
-                    loader: () => import('../views_common/agent/dayReport'),
+                    loader: () => import('../views/common/agent/dailyReport'),
                     loading: GlobalLoading,
                     delay: 500
-                })
+                }),
+                routes:[
+                    {
+                        name:'彩票',
+                        path:`${match.url}/dailyReport/lottery`,
+                        component:Loadable({
+                            loader: () => import('../views/common/agent/dailyReport/Lottery'),
+                            loading: GlobalLoading,
+                            delay: 500
+                        })
+                    },
+                    {
+                        name:'AG游戏',
+                        path:`${match.url}/dailyReport/agGame`,
+                        component:Loadable({
+                            loader: () => import('../views/common/agent/dailyReport/AgGame'),
+                            loading: GlobalLoading,
+                            delay: 500
+                        })
+                    },
+                    {
+                        name:'PT游戏',
+                        path:`${match.url}/dailyReport/ptGame`,
+                        component:Loadable({
+                            loader: () => import('../views/common/agent/dailyReport/PtGame'),
+                            loading: GlobalLoading,
+                            delay: 500
+                        })
+                    }
+                ],
             },
             {
                 name: '游戏记录',
                 path: `${match.url}/gameRecord`,
                 component: Loadable({
-                    loader: () => import('../views_common/agent/gameRecord'),
+                    loader: () => import('../views/common/agent/gameRecord'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -91,7 +109,7 @@ class AgentRouter extends React.Component {
                 name: '彩票分红',
                 path: `${match.url}/bouns`,
                 component: Loadable({
-                    loader: () => import('../'+platComponet[platformId]+'/agent/bouns'),
+                    loader: () => import('../views/'+platComponet[platformId]+'/agent/bouns'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -100,7 +118,7 @@ class AgentRouter extends React.Component {
                 name: '私返协议',
                 path: `${match.url}/private`,
                 component: Loadable({
-                    loader: () => import('../'+platComponet[platformId]+'/agent/private'),
+                    loader: () => import('../views/'+platComponet[platformId]+'/agent/private'),
                     loading: GlobalLoading,
                     delay: 500
                 })

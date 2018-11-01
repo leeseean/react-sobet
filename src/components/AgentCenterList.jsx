@@ -9,7 +9,7 @@ import './agentCenterList.styl';
 class AgentCenterList extends React.Component {
     listData = [
         {
-            path: '/agent/teamReport/lotteryReport',
+            path: '/agent/teamReport/lottery',
             title: '团队报表'
         },
         {

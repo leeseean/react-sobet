@@ -55,11 +55,11 @@ class Index extends React.Component {
             document.title = '摩臣 - 注册';
         } else if (/^(\/forget)/.test(path)) {
             document.title = '摩臣 - 找回密码';
-        } else {
+        } else if (/^(\/voucher)/.test(path)) {
+            document.title = '摩臣 - 资金交易';
+        }  else {
             document.title = '摩臣';
         }
-        return false;
-
     }
 
     componentWillMount() {
@@ -72,13 +72,13 @@ class Index extends React.Component {
 
     render() {
         let platformId = this.props.globalStore.platformId;
-        let platComponet = ['', 'views_mc1', 'views_mc2'];
+        let platComponet = ['', 'mc1', 'mc2'];
         const RouteConfig = [
             {
                 name: '登陆',
                 path: '/',
                 component: Loadable({
-                    loader: () => import('../login'),
+                    loader: () => import('../views/login'),
                     loading: GlobalLoading,
                     delay: 500
                 }),
@@ -88,7 +88,7 @@ class Index extends React.Component {
                 name: '登陆',
                 path: '/login',
                 component: Loadable({
-                    loader: () => import('../login'),
+                    loader: () => import('../views/login'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -97,7 +97,7 @@ class Index extends React.Component {
                 name: '注册',
                 path: '/register',
                 component: Loadable({
-                    loader: () => import('../views_common/register'),
+                    loader: () => import('../views/common/register'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -106,7 +106,7 @@ class Index extends React.Component {
                 name: '忘记密码',
                 path: '/forget',
                 component: Loadable({
-                    loader: () => import('../login/forget'),
+                    loader: () => import('../views/login/forget'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -115,7 +115,7 @@ class Index extends React.Component {
                 name: '首页',
                 path: '/index',
                 component: Loadable({
-                    loader: () => import('../' + platComponet[platformId] + '/index'),
+                    loader: () => import('../views/' + platComponet[platformId] + '/index'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -124,7 +124,7 @@ class Index extends React.Component {
                 name: '彩票',
                 path: '/lottery',
                 component: Loadable({
-                    loader: () => import('../' + platComponet[platformId] + '/lottery'),
+                    loader: () => import('../views/' + platComponet[platformId] + '/lottery'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -133,7 +133,7 @@ class Index extends React.Component {
                 name: '代理中心',
                 path: '/agent',
                 component: Loadable({
-                    loader: () => import('../' + platComponet[platformId] + '/agent'),
+                    loader: () => import('../views/' + platComponet[platformId] + '/agent'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -142,7 +142,7 @@ class Index extends React.Component {
                 name: 'Vip招待',
                 path: '/vipEvent',
                 component: Loadable({
-                    loader: () => import('../views_common/vipEvent'),
+                    loader: () => import('../views/common/vipEvent'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -151,7 +151,7 @@ class Index extends React.Component {
                 name: '活动页',
                 path: '/activity',
                 component: Loadable({
-                    loader: () => import('../views_common/activity'),
+                    loader: () => import('../views/common/activity'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -160,7 +160,7 @@ class Index extends React.Component {
                 name: '捕鱼王',
                 path: '/fish',
                 component: Loadable({
-                    loader: () => import('../views_common/fish'),
+                    loader: () => import('../views/common/fish'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -169,7 +169,7 @@ class Index extends React.Component {
                 name: '老虎机',
                 path: '/slot',
                 component: Loadable({
-                    loader: () => import('../views_common/slot'),
+                    loader: () => import('../views/common/slot'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -178,7 +178,7 @@ class Index extends React.Component {
                 name: '六合彩',
                 path: '/lhc',
                 component: Loadable({
-                    loader: () => import('../views_common/lhc'),
+                    loader: () => import('../views/common/lhc'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -187,7 +187,7 @@ class Index extends React.Component {
                 name: '真人娱乐',
                 path: '/live',
                 component: Loadable({
-                    loader: () => import('../views_common/live'),
+                    loader: () => import('../views/common/live'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -196,7 +196,7 @@ class Index extends React.Component {
                 name: '个人中心',
                 path: '/personal',
                 component: Loadable({
-                    loader: () => import('../views_common/personal'),
+                    loader: () => import('../views/common/personal'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -205,7 +205,7 @@ class Index extends React.Component {
                 name: '棋牌',
                 path: '/poker',
                 component: Loadable({
-                    loader: () => import('../views_common/poker'),
+                    loader: () => import('../views/common/poker'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -214,7 +214,7 @@ class Index extends React.Component {
                 name: '体育',
                 path: '/sport',
                 component: Loadable({
-                    loader: () => import('../views_common/sport'),
+                    loader: () => import('../views/common/sport'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -223,7 +223,7 @@ class Index extends React.Component {
                 name: '充值',
                 path: '/voucher',
                 component: Loadable({
-                    loader: () => import('../views_common/voucher'),
+                    loader: () => import('../views/common/voucher'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -245,11 +245,7 @@ class Index extends React.Component {
             });
         };
         return (
-            <div
-                className="home-wrapper"
-                style={{
-                    minHeight: '800px'
-                }}>
+            <div className="home-wrapper" style={{ minHeight: '755px' }}>
                 <Switch>
                     <Routes />
                     <Redirect to={"/"} />

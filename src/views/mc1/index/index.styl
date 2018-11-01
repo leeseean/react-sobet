@@ -1,0 +1,493 @@
+.index-wrapper {
+    background-color: #140a2e;
+    .index-main {
+        position: relative;
+        margin-top: -230px;
+        z-index: 100;
+    }
+
+    .index-activity {
+        margin-bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .index-top {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .index-main .activity {
+        width: 945px;
+    }
+
+    .index-main .qr-code {
+        width: 255px;
+        height: 230px;
+        background: url('../../../images/index/app_QR.png') center no-repeat;
+    }
+
+    .index-main .index-main-announcement {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        background-image: linear-gradient(to bottom, #2b2b2b, #1c1c1c);
+        font-size: 12px;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .index-main .index-main-announcement .main-announcement-title {
+        display: inline-block;
+        width: 60px;
+        height: 18px;
+        margin: 0 18px 0 15px;
+        background: url('../../../images/all-icon.png') 0 -155px no-repeat;
+        vertical-align: text-top;
+    }
+
+    .index-main .index-main-announcement .main-announcement-more {
+        margin-right: 16px;
+        position: absolute;
+        right: 6px;
+        color: #868686;
+    }
+
+    .index-main .index-main-announcement .main-announcement-more:hover {
+        color: #fde685;
+    }
+
+    .index-main .index-main-announcement .main-announcement-wrap .main-announcement-item {
+        display: inline-block;
+        height: 16px;
+        line-height: 16px;
+        padding-right: 30px;
+        margin-right: 30px;
+        border-right: 1px solid #6b617f;
+    }
+
+    .index-main .index-main-announcement .main-announcement-wrap .main-announcement-item:last-child {
+        border-right: none;
+    }
+
+    .index-main .index-main-announcement .main-announcement-wrap .main-announcement-item:hover {
+        color: #fde685;
+    }
+
+    .index-main .index-main-announcement span:not(:first-child) {
+        cursor: pointer;
+    }
+
+    .index-main .index-main-slide-wrap {
+        position: relative;
+        height: 190px;
+    }
+
+    .index-main .index-main-slide {
+        height: 190px;
+        overflow: hidden;
+    }
+
+    .index-main .swiper-button-prev {
+        left: 0;
+        width: 25px;
+        height: 35px;
+        background: url('../../../images/all-icon.png') 7px -174px no-repeat rgba(35, 15, 84, 0.9);
+        outline: 0;
+    }
+
+    .index-main .swiper-button-prev:hover {
+        background-color: #6a3bde;
+    }
+
+    .index-main .swiper-button-next {
+        right: 0;
+        width: 25px;
+        height: 35px;
+        background: url('../../../images/all-icon.png') -12px -174px no-repeat rgba(35, 15, 84, 0.9);
+        outline: 0;
+    }
+
+    .index-main .swiper-button-next:hover {
+        background-color: #6a3bde;
+    }
+
+    .index-main .index-main-slide ul>li.slide-li {
+        width: 315px;
+        height: 190px;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .index-main .index-main-slide ul>li.slide-li img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        -webkit-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
+    }
+
+    .index-main .index-main-slide ul>li.slide-li:hover img {
+        -webkit-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .index-main .index-lottery {
+        width: 1200px;
+        margin: 0 auto 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .index-lottery .lottery-hot {
+        width: 945px;
+    }
+
+    .lottery-hot .hot {
+        height: 40px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#2b2b2b), to(#1c1c1c));
+        background-image: linear-gradient(to bottom, #2b2b2b, #1c1c1c);
+    }
+
+    .lottery-hot .title {
+        display: inline-block;
+        width: 130px;
+        height: 40px;
+        padding: 5px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#4f495e), to(#3a324b));
+        background-image: linear-gradient(to bottom, #4f495e, #3a324b);
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+    }
+
+    .lottery-hot .title .icon-hot {
+        display: inline-block;
+        width: 20px;
+        height: 30px;
+        margin-left: 10px;
+        background: url('../../../images/all-icon.png') 0 -272px no-repeat;
+    }
+
+    .lottery-hot .title .txt-hot {
+        display: inline-block;
+        width: 66px;
+        height: 30px;
+        margin-left: 10px;
+        background: url('../../../images/all-icon.png') 0 -300px no-repeat;
+    }
+
+    .lottery-hot .bonus {
+        display: inline-block;
+        width: 814px;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        font-size: 12px;
+        overflow: hidden;
+    }
+
+    .lottery-hot .lottery li {
+        width: 189px;
+        height: 55px;
+        line-height: 54px;
+        background-color: #39314a;
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .lottery-hot .lottery li:hover {
+        background-color: #4f495e;
+    }
+
+    .lottery-hot .lottery li a {
+        display: block;
+    }
+
+    .lottery li .lottery-logo {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin: 0 18px 0 25px;
+        background-image: url('../../../images/all-icon.png');
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+
+    .logo-cqssc {
+        background-position: 0 -453px;
+    }
+
+    .logo-3dfc {
+        background-position: -44px -453px;
+    }
+
+    .logo-shssl {
+        background-position: -88px -453px;
+    }
+
+    .logo-wbgmmc {
+        background-position: -134px -453px;
+    }
+
+    .logo-sckl12 {
+        background-position: -178px -453px;
+    }
+
+    .logo-bjpk10 {
+        background-position: -223px -453px;
+    }
+
+    .logo-mck3 {
+        background-position: -267px -453px;
+    }
+
+    .logo-mc11y {
+        background-position: -311px -453px;
+    }
+
+    .logo-txffc {
+        background-position: -356px -453px;
+    }
+
+    .logo-xglhc {
+        background-position: -401px -453px;
+    }
+
+    .logo-rbssm {
+        background-position: -446px -453px;
+    }
+
+    .logo-rdffc {
+        background-position: -491px -453px;
+    }
+
+    .logo-rdlfc {
+        background-position: -536px -453px;
+    }
+
+    .logo-mcpk10 {
+        background-position: -581px -453px;
+    }
+
+    .logo-hnky481 {
+        background-position: -626px -453px;
+    }
+
+    .lottery li .lottery-txt {
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .index-lottery .download {
+        width: 254px;
+    }
+
+    .index-lottery .download li {
+        height: 67px;
+        background: url('../../../images/index/down_soft_bg.png') center no-repeat;
+        background-size: cover;
+        border-bottom: 1px solid;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    .index-lottery .download li:last-child {
+        height: 67px;
+        border-bottom: none;
+    }
+
+    .index-lottery .download li:hover {
+        background: url('../../../images/index/down_soft_hover_bg.png') center no-repeat;
+    }
+
+    .index-lottery .download a {
+        display: block;
+        height: 100%;
+    }
+
+    .index-lottery .download a .down-logo {
+        width: 120px;
+        height: 100%;
+    }
+
+    .guaji .down-logo {
+        background: url('../../../images/index/guaji_icon.png') 30px 12px no-repeat;
+    }
+
+    .weixin .down-logo {
+        background: url('../../../images/index/wxtz_icon.png') 30px 12px no-repeat;
+    }
+
+    .ksdlq .down-logo {
+        background: url('../../../images/index/ksdlq_icon.png') 30px 2px no-repeat;
+    }
+
+    .index-lottery .download .text-icon {
+        height: 30px;
+        margin-top: 5px;
+        background-image: url('../../../images/all-icon.png');
+        background-repeat: no-repeat;
+    }
+
+    .guaji .text-icon {
+        width: 80px;
+        background-position: 0 -326px;
+    }
+
+    .weixin .text-icon {
+        width: 80px;
+        background-position: -81px -326px;
+    }
+
+    .ksdlq .text-icon {
+        width: 90px;
+        background-position: -164px -326px;
+    }
+
+    .index-lottery .download .down-icon {
+        width: 80px;
+        display: inline-block;
+        height: 20px;
+        line-height: 18px;
+        padding-left: 25px;
+        background: url('../../../images/all-icon.png') -25px -65px no-repeat #1a1526;
+        font-size: 12px;
+        border-radius: 10px;
+        color: #645f70;
+    }
+
+    .index-game {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .index-game li {
+        display: inline-block;
+        width: 238px;
+        height: 300px;
+        line-height: 300px;
+        font-size: 0;
+        vertical-align: top;
+    }
+
+    .index-game li:first-child {
+        margin-right: 3px;
+    }
+
+    .index-game li:nth-child(2), .index-game li:nth-child(3) {
+        margin-right: 2px;
+    }
+
+    .index-game li:last-child {
+        margin-left: 3px;
+    }
+
+    .index-game li.game-by {
+        background: url('../../../images/index/byw_bg.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .index-game li.game-zryl {
+        background: url('../../../images/index/zryl_bg.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .index-game li.game-ty {
+        background: url('../../../images/index/ty_bg.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .index-game li.game-lhj {
+        background: url('../../../images/index/lhj_bg.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .index-game li.game-lhc {
+        background: url('../../../images/index/lhc_bg.png') center no-repeat;
+        background-size: cover;
+    }
+
+    .index-game li a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .index-game li a img {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        vertical-align: middle;
+    }
+
+    .index-game li.game-zryl img {
+        margin-top: -20px;
+    }
+
+    .index-game li:hover a img {
+        margin-top: -20px;
+    }
+
+    .index-game li.game-zryl:hover a img {
+        margin-top: -40px;
+    }
+
+    .index-main .index-games .index-games-right .games-right-chess .games-hover-opacity, .index-main .index-games .index-games-right .games-right-fish .games-hover-opacity, .index-main .index-games .index-games-right .games-right-live .games-hover-opacity, .index-main .index-games .index-games-right .games-right-slots .games-hover-opacity, .index-main .index-games .index-games-right .games-right-sport .games-hover-opacity {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        opacity: 0;
+        position: absolute;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .index-main .index-games .index-games-right .games-right-chess:hover .games-hover-opacity, .index-main .index-games .index-games-right .games-right-fish:hover .games-hover-opacity, .index-main .index-games .index-games-right .games-right-live:hover .games-hover-opacity, .index-main .index-games .index-games-right .games-right-slots:hover .games-hover-opacity, .index-main .index-games .index-games-right .games-right-sport:hover .games-hover-opacity {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        display: block;
+        opacity: 0.15;
+        background-color: #fff;
+    }
+
+    .index-main .index-games .index-games-right .games-right-fish img {
+        position: absolute;
+        left: 36px;
+        bottom: 64px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        z-index: 9;
+    }
+
+    .index-main .index-games .index-games-right .games-right-fish:hover img {
+        bottom: 68px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .index-main .index-games .index-games-right .games-right-chess img, .index-main .index-games .index-games-right .games-right-live img, .index-main .index-games .index-games-right .games-right-slots img, .index-main .index-games .index-games-right .games-right-sport img {
+        position: absolute;
+        right: 51px;
+        bottom: -4px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        z-index: 9;
+    }
+
+    .index-main .index-games .index-games-right .games-right-slots img {
+        right: 36px;
+    }
+
+    .index-main .index-games .index-games-right .games-right-chess:hover img, .index-main .index-games .index-games-right .games-right-live:hover img, .index-main .index-games .index-games-right .games-right-slots:hover img, .index-main .index-games .index-games-right .games-right-sport:hover img {
+        bottom: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+}

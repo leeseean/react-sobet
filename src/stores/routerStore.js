@@ -5,7 +5,7 @@ class RouterStore {
 
     @observable history = null
 
-    @action
+    @observable
     setHistory(history) {
         this.history = history;
     }

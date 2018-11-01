@@ -1,0 +1,38 @@
+@import '../../../_variables.styl'
+
+.agent-view {
+    min-height: $center-min-height;
+    background: $center-bg;
+    margin: 0 auto;    
+    .content-wp {
+        width: 1200px;
+        margin: 0 auto;
+        min-height: $center-min-height; 
+        overflow-y: hidden;
+    }
+    .agent-sider-nav {
+        width: 140px;
+        min-height: 800px;
+        float: left;
+        padding: 0 0 100000px;
+        margin: 0 0 -100000px;
+        .title {
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #383941;
+        }
+        .ant-menu-item:first-child {
+            margin-top: 0;
+        }
+    }
+    .main-panel {
+        width: 1060px;
+        min-height: 800px;
+        background: #f0f1f5;    
+        margin-left: 140px;
+    }
+}

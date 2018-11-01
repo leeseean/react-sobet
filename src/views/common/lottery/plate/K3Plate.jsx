@@ -16,6 +16,7 @@ class K3Plate extends React.Component {
         if (chaidanConfig.isChaidan) {
             const { pos, plate } = chaidanConfig;
             const num = plate;
+            console.log(chaidanConfig.slice)
             const { isChip, filter } = plateConfig[lotteryCode][method]['plate'];
             const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {
@@ -33,10 +34,10 @@ class K3Plate extends React.Component {
                         return <div key={cn} className={`fl clearfix plate-item-num ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m_method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{chipTpl}</div>;
                     });
                 };
-                if (Array.isArray(num)) {
+                if (typeof num.slice === 'function') {
                     return <ItemNumPick _num={num} />;
                 }
-                if (typeof num === 'object' && !Array.isArray(num)) {
+                if (typeof num === 'object' && !typeof num.slice === 'function') {
                     return <ItemNumPick _num={num[posVal]} />;
                 }
             };
@@ -66,9 +67,9 @@ class K3Plate extends React.Component {
                                 return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
                             };
                             chipTpl = chipArr.map(chip => <div key={chip} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
-                            return <div key={v} className={`fl clearfix k3-plate-item-num ${selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
+                            return <div key={v} className={`fl clearfix k3-plate-item-num ${selectedNums[posIndex] && selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
                         }
-                        return <div key={v} className={`fl clearfix plate-item-num ${selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
+                        return <div key={v} className={`fl clearfix plate-item-num ${selectedNums[posIndex] && selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
                     });
                 };
                 if (Array.isArray(num)) {

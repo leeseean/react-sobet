@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Redirect, Link } from 'react-router-dom';
 import { Spin } from 'antd';
 import './globalHead.styl';
 import AllGameList from './AllGameList';
@@ -77,7 +77,7 @@ class GlobalHead extends React.Component {
                 return (
                     <div className="fl head--height head__to-index">
                         <i className="head__to-index-icon"></i>
-                        <a className="head__to-index-text" href="/index">返回首页</a>
+                        <Link className="head__to-index-text" to="/index">返回首页</Link>
                     </div>
                 );
             } else {

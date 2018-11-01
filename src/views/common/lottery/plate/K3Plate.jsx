@@ -16,7 +16,6 @@ class K3Plate extends React.Component {
         if (chaidanConfig.isChaidan) {
             const { pos, plate } = chaidanConfig;
             const num = plate;
-            console.log(chaidanConfig.slice)
             const { isChip, filter } = plateConfig[lotteryCode][method]['plate'];
             const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {

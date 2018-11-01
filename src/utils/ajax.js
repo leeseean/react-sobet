@@ -1,70 +1,10 @@
 
-import axios from 'axios';
-
-// 添加请求拦截器
-axios
-    .interceptors
-    .request
-    .use(config => {
-        // 在发送请求之前做些什么
-        return config;
-    }, error => {
-        // 对请求错误做些什么
-        return Promise.reject(error);
-    });
-
-// 添加响应拦截器
-axios
-    .interceptors
-    .response
-    .use(response => {
-        // 对响应数据做点什么
-        return response;
-    }, error => {
-        // 对响应错误做点什么
-        if (error.response) {
-            switch (error.response.status) {
-                case 401:
-                    // 返回 401 清除token信息并跳转到登录页面
-                    /*  store.commit(types.LOGOUT);
-                        router.replace({
-                        path: 'login',
-                        query: {
-                            redirect: router.currentRoute.fullPath
-                        }
-                        }) */
-                    break;
-                default:
-                    break;
-            }
-        }
-        return Promise.reject(error);
-    });
-
-const $http = (config) => {
-    if (process.env.NODE_ENV === 'development') {
-        if (!/\.json/.test(config.url)) {
-            config.url = '/dev' + config.url;
-        }
-    }
-    config = Object.assign(config, {
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            'Access-Control-Allow-Origin': '*'
-        }
-    });
-    return axios(config);
-};
-
-export default $http;
-
-const proxyPrefix = '';
+import $http from './axios';
 
 //中奖喜报
 export function getLotteryWinTop10() {
     return $http({
-        url: proxyPrefix + '/lottery/api/call/v1/lottery/getLotteryWinTop10',
-        // url: '/win-list.json',
+        url: '/lottery/api/call/v1/lottery/getLotteryWinTop10',
         method: 'GET'
     });
 }
@@ -72,36 +12,35 @@ export function getLotteryWinTop10() {
 export function getNoticeList(params) {
     return $http({
         params,
-        url: proxyPrefix + '/sobet/adminCommon/getAdminNotice.do',
-        // url: '/notice.json',
+        url: '/sobet/adminCommon/getAdminNotice.do',
         method: 'GET'
     })
 }
 //获取捕鱼王游戏链接
 export function getAGHURUrl() {
     return $http({
-        url: proxyPrefix + '/sobet/ag/getAGHURUrl',
+        url: '/sobet/ag/getAGHURUrl',
         method: 'GET'
     });
 }
 //获取IDN棋牌游戏链接
 export function getIdnUrl() {
     return $http({
-        url: proxyPrefix + '/sobet/idn/getIdnUrl',
+        url: '/sobet/idn/getIdnUrl',
         method: 'GET'
     });
 }
 //获取kgame棋牌accesstoken
 export function getKGAccessToken() {
     return $http({
-        url: proxyPrefix + '/sobet/KG/getKGAccessToken',
+        url: '/sobet/KG/getKGAccessToken',
         method: 'GET'
     });
 }
 //获取kgame棋牌游戏链接
 export function getKGGameUrl(dataOrParams) {
     return $http({
-        url: proxyPrefix + '/sobet/KG/getKGGameUrl',
+        url: '/sobet/KG/getKGGameUrl',
         method: 'GET',
         params: dataOrParams
     });
@@ -109,7 +48,7 @@ export function getKGGameUrl(dataOrParams) {
 //真人娱乐页面中间滚动数据
 export function queryTopBetData(dataOrParams) {
     return $http({
-        url: proxyPrefix + '/lottery/api/u/v1/ag/queryTopBetData',
+        url: '/lottery/api/u/v1/ag/queryTopBetData',
         method: 'GET',
         params: dataOrParams
     });
@@ -117,7 +56,7 @@ export function queryTopBetData(dataOrParams) {
 //获取沙巴体育cookie
 export function getSportCookie() {
     return $http({
-        url: proxyPrefix + '/sobet/userInfo/getIbcLoginSessionToken',
+        url: '/sobet/userInfo/getIbcLoginSessionToken',
         method: 'GET'
     });
 }
@@ -127,8 +66,7 @@ export function getHotSlotGamesData({
     pageSize = 6,
 }) {
     return $http({
-        url: proxyPrefix + '/sport/api/pt/recommend_games',
-        // url: '/hot-game.json',
+        url: '/sport/api/pt/recommend_games',
         method: 'GET',
         params: {
             currPage,
@@ -147,8 +85,7 @@ export function getSlotGamesData({
     payLine = ''
 }) {
     return $http({
-        url: proxyPrefix + '/sport/api/pt/games',
-        // url: '/slot-game.json',
+        url: '/sport/api/pt/games',
         method: 'GET',
         params: {
             currPage,
@@ -164,8 +101,7 @@ export function getSlotGamesData({
 //老虎机中奖喜报
 export function getSlotReward() {
     return $http({
-        url: proxyPrefix + '/sport/api/pt/reward_rankings',
-        // url: '/slot-reward.json',
+        url: '/sport/api/pt/reward_rankings',
         method: 'GET'
     });
 }
@@ -173,7 +109,7 @@ export function getSlotReward() {
 export function queryCurrentActivity(params) {
     return $http({
         params,
-        url: proxyPrefix + '/sobet/api/i/anon/activity/queryCurrentActivity',
+        url: '/sobet/api/i/anon/activity/queryCurrentActivity',
         method: 'GET'
     });
 }
@@ -181,7 +117,7 @@ export function queryCurrentActivity(params) {
 export function queryActivityById(params) {
     return $http({
         params,
-        url: proxyPrefix + '/sobet/api/i/anon/activity/queryActivityById',
+        url: '/sobet/api/i/anon/activity/queryActivityById',
         method: 'GET'
     });
 }
@@ -190,7 +126,7 @@ export function queryTrendData(params) {
     return $http({
         params,
         // url: '/trend.json',
-        url: proxyPrefix + '/lottery/api/anon/v1/lottery/simpleLast',
+        url: '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
 }
@@ -198,38 +134,35 @@ export function queryTrendData(params) {
 export function updateIssue(params) {
     return $http({
         params,
-        // url: '/issue.json',
-        url: proxyPrefix + '/lottery/api/m/v1/lottery/issue_info_app',
+        url: '/lottery/api/m/v1/lottery/issue_info_app',
         method: 'GET'
     });
 }
 //获取常玩彩种列表　/lottery/api/u/v1/lottery/getLotteryFavorite
 export function getLotteryFavorite() {
     return $http({
-        // url: '/favorite.json',
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/getLotteryFavorite',
+        url: '/lottery/api/u/v1/lottery/getLotteryFavorite',
     });
 }
 // 选中删除常玩       /lottery/api/u/v1/lottery/delLotteryFavorite?lottery=hlj11y
 export function delLotteryFavorite(params) {
     return $http({
         params,
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/delLotteryFavorite',
+        url: '/lottery/api/u/v1/lottery/delLotteryFavorite',
         method: 'GET'
     });
 }
 export function addLotteryFavorite(params) {
     return $http({
         params,
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/addLotteryFavorite',
+        url: '/lottery/api/u/v1/lottery/addLotteryFavorite',
         method: 'GET'
     });
 }
 //获取倒计时列表 /lottery/api/call/v1/lottery/times
 export function getCountdowns() {
     return $http({
-        // url: '/times.json',
-        url: proxyPrefix + '/lottery/api/call/v1/lottery/times',
+        url: '/lottery/api/call/v1/lottery/times',
         method: 'GET'
     });
 }
@@ -237,8 +170,7 @@ export function getCountdowns() {
 export function getRecord(params) {
     return $http({
         params,
-        // url: '/record.json',
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_order',
+        url: '/lottery/api/u/v1/lottery/recent_order',
         method: 'GET'
     });
 }
@@ -246,8 +178,7 @@ export function getRecord(params) {
 export function getRecordDetail(params) {
     return $http({
         params,
-        // url: '/recordDetail.json',
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        url: '/lottery/api/u/v1/lottery/recent_detail',
         method: 'GET'
     });
 }
@@ -255,8 +186,7 @@ export function getRecordDetail(params) {
 export function getTraceDetail(params) {
     return $http({
         params,
-        // url: '/traceDetail.json',
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/recent_detail',
+        url: '/lottery/api/u/v1/lottery/recent_detail',
         method: 'GET'
     });
 }
@@ -264,7 +194,7 @@ export function getTraceDetail(params) {
 export function cancelOrder(data) {
     return $http({
         data,
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/trace_cancel',
+        url: '/lottery/api/u/v1/lottery/trace_cancel',
         method: 'POST'
     });
 }
@@ -272,7 +202,7 @@ export function cancelOrder(data) {
 export function cancelTrace(params) {
     return $http({
         params,
-        url: proxyPrefix + '/lottery/api/u/v1/lottery/trace_cancel',
+        url: '/lottery/api/u/v1/lottery/trace_cancel',
         method: 'GET'
     });
 }

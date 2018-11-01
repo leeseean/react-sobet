@@ -1,5 +1,5 @@
 import React from 'react'
-import $http from '../../../../utils/ajax';
+import $http from '../../../../utils/axios';
 import { 
     Tabs, 
     Icon, 

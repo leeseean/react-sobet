@@ -4,7 +4,7 @@ import {
     runInAction,
     computed
 } from 'mobx';
-import $http from '../utils/ajax';
+import $http from '../utils/axios';
 import {
     calcSxFilterConfig
 } from '../utils/algorithm';

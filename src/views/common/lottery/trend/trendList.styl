@@ -33,10 +33,19 @@
         display: block;
         height: 36px;
         line-height: 36px;
+
+        &[lottery-type='pk10'] {
+            height: auto;
+            width: 130px;
+        }
     }
 
     .trend-head-col {
         color: #a6a6a6;
+
+        &.col2[lottery-type='pk10'] {
+            width: 130px;
+        }
     }
 
     .trend-codes .trend-code {
@@ -64,6 +73,12 @@
             margin-right: 4px;
             background: url('../../../../images/lottery/new_lottery_common.png') -32px -14px no-repeat;
             vertical-align: text-bottom;
+        }
+    }
+
+    .trend-shape[lottery-type='pk10'] {
+        .shape-item {
+            width: 24px;
         }
     }
 

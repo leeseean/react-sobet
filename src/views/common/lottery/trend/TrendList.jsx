@@ -25,7 +25,7 @@ class TrendList extends React.Component {
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
-                <div className="trend-codes">
+                <div className="trend-codes" lottery-type={lotteryType}>
                     {
                         codeArr.map((val, idx) => {
                             return <span key={idx} className={trendConfig[lotteryType][method]['area'].includes(idx) ? 'trend-code active' : 'trend-code'}>{val}</span>;
@@ -35,14 +35,14 @@ class TrendList extends React.Component {
             );
         };
         const Shape = ({ value }) => {
-            return <div className="trend-shape" dangerouslySetInnerHTML={{ __html: value }}></div>;
+            return <div className="trend-shape" lottery-type={lotteryType} dangerouslySetInnerHTML={{ __html: value }}></div>;
         };
         let columns = [{
             title: <span className="trend-head-col">期号</span>,
             dataIndex: 'issue',
             width: trendConfig[lotteryType][method]['widthConfig']['col1']
         }, {
-            title: <span className="trend-head-col">开奖号码</span>,
+            title: <span className="trend-head-col col2" lottery-type={lotteryType}>开奖号码</span>,
             dataIndex: 'openCode',
             width: trendConfig[lotteryType][method]['widthConfig']['col2']
         }];

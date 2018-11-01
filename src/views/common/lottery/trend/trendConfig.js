@@ -1255,7 +1255,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const hz = calcHezhi(codeArr);
                 const { dx, ds } = calcDxds(hz, 11);
-                return `<em class="shape-item">${hz}</em>` + dx + ds;
+                return `<em class="shape-item">${hz}</em>` + `<em class="shape-item">${dx}</em>` + `<em class="shape-item">${ds}</em>`;
             }
         },
         get hz_hz_hz() {
@@ -1398,7 +1398,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const gj = codeArr[0];
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         dx_dx_d2: {
@@ -1410,9 +1410,9 @@ export default {
             shapeName: '亚军',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[1];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         dx_dx_d3: {
@@ -1424,9 +1424,9 @@ export default {
             shapeName: '第三名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[2];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         dx_dx_d4: {
@@ -1438,9 +1438,9 @@ export default {
             shapeName: '第四名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[3];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         dx_dx_d5: {
@@ -1452,9 +1452,9 @@ export default {
             shapeName: '第五名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[4];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         dx_dx_q2: {
@@ -1468,7 +1468,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const hz = calcHezhi(codeArr);
                 const dx = calcDxds(codeArr).dx;
-                return `<em class="shape-item"><i class="shape--hz">${hz}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--hz">${hz}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         hz_hz_q2: {
@@ -1508,7 +1508,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const gj = codeArr[0];
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         ds_ds_d2: {
@@ -1520,9 +1520,9 @@ export default {
             shapeName: '亚军',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[1];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         ds_ds_d3: {
@@ -1534,9 +1534,9 @@ export default {
             shapeName: '第三名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[2];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         ds_ds_d4: {
@@ -1548,9 +1548,9 @@ export default {
             shapeName: '第四名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[3];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         ds_ds_d5: {
@@ -1562,9 +1562,9 @@ export default {
             shapeName: '第五名',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                const gj = codeArr[4];
+                const gj = codeArr[0];
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--num">${gj}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         ds_ds_q2: {
@@ -1578,7 +1578,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const hz = calcHezhi(codeArr);
                 const dx = calcDxds(codeArr).ds;
-                return `<em class="shape-item"><i class="shape--hz">${hz}</i></em>` + dx;
+                return `<em class="shape-item"><i class="shape--hz">${hz}</i></em>` + `<em class="shape-item">${dx}</em>`;
             }
         },
         lh_lh_1v10: {

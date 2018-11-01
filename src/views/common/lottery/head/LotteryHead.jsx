@@ -35,7 +35,7 @@ class LotteryHead extends React.Component {
                     </div>
                 </div>
                 <div className="fr clearfix head-right">
-                    <div className="fr head-right-opencode">
+                    <div className="fr head-right-opencode" lottery-type={lotteryType}>
                         <Opencode />
                     </div>
                     <div className="fr head-right-issue">

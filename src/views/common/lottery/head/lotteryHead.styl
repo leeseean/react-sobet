@@ -274,6 +274,12 @@
             height: 46px;
             margin-left: 20px;
             text-align: right;
+            &[lottery-type="pk10"] {
+                width: 312px;
+                .opencode {
+                    margin-bottom: 5px;
+                }
+            }
 
             .opencode {
                 display: inline-block;
@@ -292,7 +298,8 @@
 
             @import '../special.styl';
 
-            .opencode[lottery-code=bjpk10] {
+            .opencode[lottery-code=bjpk10],
+            .opencode[lottery-code=mcpk10] {
                 width: 54px;
                 height: 21px;
                 border-radius: 0;
@@ -303,51 +310,51 @@
             .opencode[lottery-code=xgpk10] {
                 width: 30px;
                 height: 24px;
-                margin: 5px 20px 0 10px;
+                margin: 0px 20px 5px 10px;
                 background: url('../../../../images/lottery/horse.png') no-repeat;
                 border-radius: 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='01'] {
+            .opencode[lottery-code=xgpk10][code='01'] {
             }
 
-            .opencode[lottery-code=mcpk10][code='01'] {
+            .opencode[lottery-code=xgpk10][code='01'] {
                 background-position: 0 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='02'] {
+            .opencode[lottery-code=xgpk10][code='02'] {
                 background-position: -44px 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='03'] {
+            .opencode[lottery-code=xgpk10][code='03'] {
                 background-position: -86px 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='04'] {
+            .opencode[lottery-code=xgpk10][code='04'] {
                 background-position: -128px 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='05'] {
+            .opencode[lottery-code=xgpk10][code='05'] {
                 background-position: -168px 0;
             }
 
-            .opencode[lottery-code=mcpk10][code='06'] {
+            .opencode[lottery-code=xgpk10][code='06'] {
                 background-position: 0 -43px;
             }
 
-            .opencode[lottery-code=mcpk10][code='07'] {
+            .opencode[lottery-code=xgpk10][code='07'] {
                 background-position: -44px -43px;
             }
 
-            .opencode[lottery-code=mcpk10][code='08'] {
+            .opencode[lottery-code=xgpk10][code='08'] {
                 background-position: -86px -43px;
             }
 
-            .opencode[lottery-code=mcpk10][code='09'] {
+            .opencode[lottery-code=xgpk10][code='09'] {
                 background-position: -128px -43px;
             }
 
-            .opencode[lottery-code=mcpk10][code='10'] {
+            .opencode[lottery-code=xgpk10][code='10'] {
                 background-position: -168px -43px;
             }
 

@@ -301,7 +301,7 @@ export function calcDxds(num, flag) {
         dx = '<i class="shape--xiao">小</i>';
     }
     if (num % 2 === 0) {
-        ds = '<i class="shape--dan">双</i>';
+        ds = '<i class="shape--shuang">双</i>';
     } else {
         ds = '<i class="shape--dan">单</i>';
     }

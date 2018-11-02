@@ -4,7 +4,7 @@ import { Table } from 'antd';
 import './trendList.styl';
 
 @inject(stores => (
-    {trendListHeight: stores.lotteryStore.trendListHeight}
+    { trendListHeight: stores.lotteryStore.trendListHeight }
 ))
 @observer
 class TrendList extends React.Component {

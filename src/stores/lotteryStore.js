@@ -1025,7 +1025,12 @@ class LotteryStore {
                 for (let i = start; i < total; i++) {
                     const duduceLen = _issueLength - String(startIssue).length;
                     const _startIssue = Array(duduceLen).fill('0').join('') + (startIssue + i);//2 => '002'
-                    const issueDetail = issueArr.join('-') + '-' + _startIssue;
+                    let issueDetail;
+                    if (issueArr.length > 0) {
+                        issueDetail = issueArr.join('-') + '-' + _startIssue;
+                    } else {
+                        issueDetail = _startIssue;
+                    }
                     result.push({
                         piece: 0,
                         money: '0.00',

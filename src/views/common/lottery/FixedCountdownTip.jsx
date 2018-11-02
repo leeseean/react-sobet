@@ -32,6 +32,9 @@ class FixedCountdownTip extends React.Component {
     }
     render() {
         const { lotteryType, lotteryCode, lotteryCn, currentIssue, countdown, opencodeArr, openIssue } = this.props.lotteryStore;
+        if (lotteryCode === 'wbgmmc') {
+            return null;
+        }
         return (
             <div className={`info-mini ${this.state.showFlag ? 'show' : ''} clearfix`}>
                 <div className="info-mini-wrap">

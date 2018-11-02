@@ -29,7 +29,7 @@ class MainContent extends React.Component {
                         <LotteryRecord />
                     </div>
                     <div className="fr main-content-right">
-                        <TrendList {...{trendData, lotteryType, trendConfig, method }} />
+                        <TrendList {...{ trendData, lotteryType, trendConfig, method }} />
                     </div>
                 </div>
             </React.Fragment>

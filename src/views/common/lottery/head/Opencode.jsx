@@ -12,6 +12,9 @@ class Opencode extends React.Component {
         return false;
     }
     render() {
+        if (lotteryCode === 'wbgmmx') {
+            return null;
+        }
         const { opencodeArr, lotteryType, lotteryCode } = this.props;
         return opencodeArr.map((v, i) => {
             switch (lotteryType) {

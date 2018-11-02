@@ -10,9 +10,6 @@ import LotteryTrace from './trace';
 @inject('lotteryStore')
 @observer
 class MainContent extends React.Component {
-    state = {
-        trendShowFlag: false
-    }
     componentDidMount() {
         const { queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
         updateIssue();
@@ -20,21 +17,19 @@ class MainContent extends React.Component {
         getTabConfig();
     }
     render() {
-        const { lotteryCode, playWayToCn, lotteryCodeToCn, recordData, showTraceFlag, setMainLeftRef } = this.props.lotteryStore;
+        const { setMainLeftRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead />
                 <div className="clearfix main-content">
-                    <div className="fl main-content-left" ref={ref => setMainLeftRef(ref)}>
+                    <div className="fl main-content-left" id="mainLeftRef" ref={ref => setMainLeftRef(ref)}>
                         <LotteryPlate />
                         <LotteryOrder />
-                        {
-                            showTraceFlag ? <LotteryTrace /> : null
-                        }
-                        <LotteryRecord lotteryCode={lotteryCode} recordData={recordData} playWayToCn={playWayToCn} codeToCn={lotteryCodeToCn} />
+                        <LotteryTrace />
+                        <LotteryRecord />
                     </div>
                     <div className="fr main-content-right">
-                        <TrendList />
+                        <TrendList {...{trendData, lotteryType, trendConfig, method }} />
                     </div>
                 </div>
             </React.Fragment>

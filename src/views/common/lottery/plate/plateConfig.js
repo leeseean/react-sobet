@@ -19180,7 +19180,7 @@ export default {
             mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位'],
+                pos: ['百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19376,7 +19376,7 @@ export default {
             mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位'],
+                pos: ['百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19572,7 +19572,7 @@ export default {
             mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位'],
+                pos: ['百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19768,7 +19768,7 @@ export default {
             mathConfig: { type: 'jiecheng', posCount: 3 },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位'],
+                pos: ['百位', '十位', '个位'],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }

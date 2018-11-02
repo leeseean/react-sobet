@@ -106,7 +106,9 @@ class LotteryOrder extends React.Component {
                         <div className="order-countdown">
                             离投注截止还有
                             <span className="order-countdown-inner">
-                                <Countdown count={countdown} />
+                                {
+                                    countdown === '等待开售' ? '等待开售' : <Countdown count={countdown} />
+                                }
                             </span>
                         </div>
                         <div className="order-bet">

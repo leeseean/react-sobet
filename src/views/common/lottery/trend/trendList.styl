@@ -76,8 +76,12 @@
         }
     }
 
-    .trend-shape[lottery-type='pk10'] {
-        .shape-item {
+    .trend-shape {
+        &[lottery-type='pk10'] .shape-item {
+            width: 24px;
+        }
+
+        &[lottery-type='k3'] .shape-item[method='dxds_dxds_dxds'] {
             width: 24px;
         }
     }

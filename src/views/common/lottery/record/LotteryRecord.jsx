@@ -1,9 +1,14 @@
 import React from 'react';
+import { inject, observer } from 'mobx-react';
 import { Table, Modal, message, Pagination, Checkbox } from 'antd';
 import { getRecord, getRecordDetail, getTraceDetail, cancelTrace, cancelOrder } from '../../../../utils/ajax';
 import formatTime from '../../../../utils/formatTime';
 import './lotteryRecord.styl';
 
+@inject(stores => ({
+    lotteryStore: stores.lotteryStore,
+}))
+@observer
 class LotteryRecord extends React.Component {
     state = {
         recordShowFlag: true,
@@ -27,7 +32,7 @@ class LotteryRecord extends React.Component {
         }));
     }
     getDataSource() {
-        const { recordData, playWayToCn } = this.props;
+        const { recordData, playWayToCn } = this.props.lotteryStore;
 
         const dataSource = recordData.map(item => {
             const { orderId, orderTime, issue, method, code, amount, status } = item;
@@ -48,7 +53,7 @@ class LotteryRecord extends React.Component {
         });
     }
     genColums() {
-        const { lotteryCode } = this.props;
+        const { lotteryCode } = this.props.lotteryStore;
         let columns = [{
             title: '参与时间',
             dataIndex: 'orderTime',
@@ -81,11 +86,11 @@ class LotteryRecord extends React.Component {
     componentDidMount() {
         this.getDataSource();
     }
-    componentDidUpdate(prevProps) {
+    /* componentDidUpdate(prevProps) {
         if (JSON.stringify(prevProps.recordData) !== JSON.stringify(this.props.recordData)) {
             this.getDataSource();
         }
-    }
+    } */
     viewOrderDetail = async (orderId) => {
         const res = await getRecordDetail({ orderId });
         if (res.data.code === 1) {
@@ -194,7 +199,7 @@ class LotteryRecord extends React.Component {
         }
     }
     render() {
-        const { playWayToCn, codeToCn } = this.props;
+        const { playWayToCn, lotteryCodeToCn } = this.props.lotteryStore;
 
         const TableTitle = () => {
             return (
@@ -235,7 +240,7 @@ class LotteryRecord extends React.Component {
                             </tr>
                             <tr>
                                 <th>彩种：</th>
-                                <td>{codeToCn[this.state.recordDetail.lottery]}</td>
+                                <td>{lotteryCodeToCn[this.state.recordDetail.lottery]}</td>
                             </tr>
                             <tr>
                                 <th>玩法：</th>
@@ -349,7 +354,7 @@ class LotteryRecord extends React.Component {
                             </tr>
                             <tr>
                                 <th>彩种：</th>
-                                <td>{codeToCn[this.state.traceDetail.lottery]}</td>
+                                <td>{lotteryCodeToCn[this.state.traceDetail.lottery]}</td>
                             </tr>
                             <tr>
                                 <th>追号内容：</th>

@@ -63,7 +63,7 @@ class NoticeList extends React.Component {
     }
 
     firstLoginAlert = () => {//首次登陆是否弹窗
-        this.setState({ showModalFlag: true, modalWidth: 630, defaultActiveKey: this.alertId });
+        this.setState({ showModalFlag: true, modalWidth: 630, defaultActiveKey: String(this.alertId) });
         setTimeout(() => {
             addClass(document.querySelector('.ant-tabs-bar'), 'hide');
         }, 250);

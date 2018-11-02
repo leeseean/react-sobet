@@ -1255,7 +1255,7 @@ export default {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
                 const hz = calcHezhi(codeArr);
                 const { dx, ds } = calcDxds(hz, 11);
-                return `<em class="shape-item">${hz}</em>` + `<em class="shape-item">${dx}</em>` + `<em class="shape-item">${ds}</em>`;
+                return `<em class="shape-item" method="dxds_dxds_dxds">${hz}</em>` + `<em class="shape-item" method="dxds_dxds_dxds">${dx}</em>` + `<em class="shape-item" method="dxds_dxds_dxds">${ds}</em>`;
             }
         },
         get hz_hz_hz() {

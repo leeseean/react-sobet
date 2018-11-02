@@ -13,12 +13,11 @@ import TraceModal from '../TraceModal';
 @inject('lotteryStore')
 @observer
 class Trace extends React.Component {
-    componentDidMount() {
-        const { initTraceData } = this.props.lotteryStore;
-        initTraceData();
-    }
     render() {
-        const { rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb, winStopFlag, totalTraceMoney, totalTraceCount, toggleTraceWinStop, switchTraceModal } = this.props.lotteryStore;
+        const { showTraceFlag, rateTraceFlag, traceSelectedRowKeys, setTraceSelectedRowKeys, currentIssue, defaultActiveTraceType, setActiveTraceType, defaultStartPiece, defaultTraceGap, defaultTracePiece, defaultTraceCount, defaultTraceMinRate, changeStartPiece, changeTraceGap, changeTracePiece, changeTraceCount, changeTraceMinRate, genTraceData, traceData, changeTraceItemPiece, genTraceClickCb, winStopFlag, totalTraceMoney, totalTraceCount, toggleTraceWinStop, switchTraceModal } = this.props.lotteryStore;
+        if (!showTraceFlag) {
+            return null;
+        }
         const columns = [{
             title: '全选',
             dataIndex: 'index',

@@ -31,6 +31,7 @@ class LotteryStore {
         } = change;
         if (newValue !== oldValue) {
             this.updateIssue();
+            this.emptyOpencode = true;//开奖号码处空白
             this.queryTrendData();
             this.getRecord();
             this.getTabConfig();
@@ -39,6 +40,8 @@ class LotteryStore {
             this.setTraceSelectedRowKeys([]);
         }
     })
+
+    @observable emptyOpencode = true
 
     playWayToCn = playWayToCn
 
@@ -145,6 +148,7 @@ class LotteryStore {
         });
 
         if (res.data.code === 1) {
+            this.emptyOpencode = false;//显示开奖号码
             this.trendData = res.data.result.issue;
             this.hitFrequency = res.data.result.hitFrequency;
             this.skipFrequency = res.data.result.skipFrequency;
@@ -222,6 +226,7 @@ class LotteryStore {
         this.method = value;
         localStorage.setItem(`${this.lotteryCode}-${this.activeTab.tab}-method`, value);
         this.resetPlate();
+        this.setTrendListHeight();
     }
 
     @action resetPlate = () => {
@@ -406,6 +411,9 @@ class LotteryStore {
     }
 
     @computed get betCount() {
+        if (!this.mathConfig) {
+            return 0;
+        }
         if (this.chaidanConfig['isChaidan']) {
             if (this.mathConfig['type'] === 'leijia') {
                 return this.selectedChaidanNums.length;
@@ -544,6 +552,7 @@ class LotteryStore {
             }
             return this.inputedNums.length;
         }
+        return 0;
     }
 
     defaultBetPiece = 1
@@ -1050,9 +1059,13 @@ class LotteryStore {
     @action
     toggleTracePanl = (bool) => {
         this.showTraceFlag = bool;
-        if (!this.showTraceFlag) {
+        if (bool) {
+            this.initTraceData();
+        }
+        if (!bool) {
             this.setTraceSelectedRowKeys([]);
         }
+        this.setTrendListHeight();
     }
 
     @action changeTraceItemPiece = (record, value) => {
@@ -1068,11 +1081,12 @@ class LotteryStore {
         this.mainLeftRef = ref;
     }
 
-    @computed get trendListHeight() {
-        if (this.mainLeftRef) {
-            return this.mainLeftRef.offsetHeight;
-        }
-        return 800;
+    @observable trendListHeight = 800
+
+    @action
+    setTrendListHeight = async () => {
+        await timeSleep(500);
+        this.trendListHeight = this.mainLeftRef.offsetHeight;
     }
 
     @computed get totalTraceCount() {

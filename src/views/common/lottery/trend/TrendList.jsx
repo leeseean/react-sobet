@@ -3,11 +3,31 @@ import { inject, observer } from 'mobx-react';
 import { Table } from 'antd';
 import './trendList.styl';
 
-@inject(stores => ({
-    lotteryStore: stores.lotteryStore,
-}))
+@inject(stores => (
+    {trendListHeight: stores.lotteryStore.trendListHeight}
+))
 @observer
 class TrendList extends React.Component {
+    state = {
+        trendData: this.props.trendData,
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(prevState.trendData.slice())) {
+            return {
+                trendData: nextProps.trendData
+            };
+        }
+        return null;
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        if (JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) {//只更新奖号时更新
+            return true;
+        }
+        if (nextProps.trendListHeight !== this.props.trendListHeight) {
+            return true;
+        }
+        return false;
+    }
     render() {
         const TableTitle = () => {
             return (
@@ -18,10 +38,8 @@ class TrendList extends React.Component {
             );
         };
         const { className } = this.props;
-        const { trendData, lotteryType, trendConfig, method, trendListHeight } = this.props.lotteryStore;
-        if (!trendConfig[lotteryType][method]) {
-            return null;
-        }
+        const trendData = this.state.trendData;
+        const { lotteryType, trendConfig, method, trendListHeight } = this.props;
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (
@@ -67,11 +85,10 @@ class TrendList extends React.Component {
                 };
             }
             return obj;
-
         });
         return (
             <div className={`trend-wrapper ${className ? className : ''}`}>
-                <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: trendListHeight - 37 * 2 }} />
+                <Table columns={columns} dataSource={dataSource.slice()} title={TableTitle} pagination={false} rowClassName="trend-item" locale={{ emptyText: '尚无开奖结果' }} scroll={{ y: trendListHeight && trendListHeight - 37 * 2 }} />
             </div>
         );
     }

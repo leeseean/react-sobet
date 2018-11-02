@@ -25,7 +25,7 @@ class K3Plate extends React.Component {
                             const chipArr = cn.split('|');//'111|222' => [111,222]
                             const SubChip = ({ chip }) => {
                                 const _arr = chip.split('');//'111' => ['1','1','1']
-                                return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
+                                return _arr.map((a, i) => <div key={i} className="fl k3-chip" value={a}></div>);
                             };
                             chipTpl = chipArr.map(chip => <div key={chip} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
                             return <div key={cn} className={`fl clearfix k3-plate-item-num ${selectedChaidanNums.includes(JSON.stringify({ en, cn })) ? 'active' : ''}`} m_method={en} value={cn} onClick={() => selectChaidanNum({ en, cn })}>{chipTpl}</div>;
@@ -63,9 +63,9 @@ class K3Plate extends React.Component {
                             const chipArr = v.split('|');//'111|222' => [111,222]
                             const SubChip = ({ chip }) => {
                                 const _arr = chip.split('');//'111' => ['1','1','1']
-                                return _arr.map(a => <div key={a} className="fl k3-chip" value={a}></div>);
+                                return _arr.map((a, i) => <div key={i} className="fl k3-chip" value={a}></div>);
                             };
-                            chipTpl = chipArr.map(chip => <div key={chip} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
+                            chipTpl = chipArr.map((chip, index) => <div key={index} className="fl clearfix k3-chips" value={chip}><SubChip chip={chip} /></div>);
                             return <div key={v} className={`fl clearfix k3-plate-item-num ${selectedNums[posIndex] && selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;
                         }
                         return <div key={v} className={`fl clearfix plate-item-num ${selectedNums[posIndex] && selectedNums[posIndex].includes(v) ? 'active' : ''}`} value={v} onClick={() => selectNum(posVal, posIndex, v, pos)}>{chipTpl}</div>;

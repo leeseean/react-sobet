@@ -13,7 +13,7 @@ import Opencode from './Opencode';
 @observer
 class LotteryHead extends React.Component {
     render() {
-        const { lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props.lotteryStore;
+        const { emptyOpencode, lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props.lotteryStore;
 
         return (
             <div className="clearfix lottery-head-wrapper">
@@ -35,15 +35,22 @@ class LotteryHead extends React.Component {
                     </div>
                 </div>
                 <div className="fr clearfix head-right">
-                    <div className="fr head-right-opencode" lottery-type={lotteryType}>
-                        <Opencode />
-                    </div>
-                    <div className="fr head-right-issue">
-                        <div className="head-right-issue-top">
-                            第<em className="open-issue">{openIssue}</em>期
-                        </div>
-                        <div className="head-right-issue-bottom">开奖号码</div>
-                    </div>
+                    {
+                        emptyOpencode ? null : (
+                            <React.Fragment>
+                                <div className="fr head-right-opencode" lottery-type={lotteryType}>
+                                    <Opencode {...{ opencodeArr, lotteryType, lotteryCode }} />
+                                </div>
+                                <div className="fr head-right-issue">
+                                    <div className="head-right-issue-top">
+                                        第<em className="open-issue">{openIssue}</em>期
+                                    </div>
+                                    <div className="head-right-issue-bottom">开奖号码</div>
+                                </div>
+                            </React.Fragment>
+                        )
+                    }
+
                 </div>
             </div>
         );

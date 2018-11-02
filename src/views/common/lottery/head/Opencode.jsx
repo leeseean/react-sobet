@@ -9,9 +9,8 @@ import { inject, observer } from 'mobx-react';
 @observer
 class Opencode extends React.Component {
     render() {
-        console.log(this.props)
-        const { codeArr, lotteryType, lotteryCode } = this.props.lotteryStore;
-        return codeArr.map((v, i) => {
+        const { opencodeArr, lotteryType, lotteryCode } = this.props.lotteryStore;
+        return opencodeArr.map((v, i) => {
             switch (lotteryType) {
                 case 'ssc':
                 case '3d':
@@ -21,7 +20,7 @@ class Opencode extends React.Component {
                 case 'pk10':
                     return <span key={i} className="opencode bounceInRight" code={v} lottery-type={lotteryType}></span>;
                 case 'lhc':
-                    return <span key={i} className={`opencode bounceInRight ${i === codeArr.length - 1 ? 'tm' : ''}`} code={v} lottery-type={lotteryType}></span>;
+                    return <span key={i} className={`opencode bounceInRight ${i === opencodeArr.length - 1 ? 'tm' : ''}`} code={v} lottery-type={lotteryType}></span>;
                 default:
                     return <span key={i} className="opencode bounceInDown" lottery-type={lotteryType} lottery-code={lotteryCode}>{v}</span>;
             }

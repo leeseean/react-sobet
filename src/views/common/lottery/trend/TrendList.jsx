@@ -40,6 +40,9 @@ class TrendList extends React.Component {
         const { className } = this.props;
         const trendData = this.state.trendData;
         const { lotteryType, trendConfig, method, trendListHeight } = this.props;
+        if (!trendConfig[lotteryType][method]) {
+            return null;
+        }
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (

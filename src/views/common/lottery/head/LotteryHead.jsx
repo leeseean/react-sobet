@@ -8,6 +8,7 @@ import './lotteryHead.styl';
 import Countdown from '../../../../components/Countdown';
 import FixedCountdownTip from '../FixedCountdownTip';
 import Opencode from './Opencode';
+import MmcLoop from './MmcLoop';
 
 @inject('lotteryStore')
 @observer
@@ -19,24 +20,28 @@ class LotteryHead extends React.Component {
             <div className="clearfix lottery-head-wrapper">
                 <FixedCountdownTip />
                 <div className="fl head-left">
-                    <i className="lottery-logo" lt={lotteryCode.toLowerCase()}></i>
+                    <i className="lottery-logo" lt={lotteryCode}></i>
                 </div>
                 <div className="fl clearfix head-center">
-                    <div className="fl head-center-issue">
-                        <div className="head-center-issue-top">
-                            第<em className="current-issue">{currentIssue}</em>期
-                        </div>
-                        <div className="head-center-issue-bottom">投注截止还有</div>
-                    </div>
-                    <div className="fr head-center-clock">
-                        {
-                            countdown === '等待开售' ? <span className="wait-to-sell">等待开售</span> : <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
-                        }
-                    </div>
+                    {lotteryCode === 'wbgmmc' ? <MmcLoop opencode={opencodeArr} /> : (
+                        <React.Fragment>
+                            <div className="fl head-center-issue">
+                                <div className="head-center-issue-top">
+                                    第<em className="current-issue">{currentIssue}</em>期
+                                </div>
+                                <div className="head-center-issue-bottom">投注截止还有</div>
+                            </div>
+                            <div className="fr head-center-clock">
+                                {
+                                    countdown === '等待开售' ? <span className="wait-to-sell">等待开售</span> : <Countdown className="issue-countdown" count={countdown} callback={updateIssue} />
+                                }
+                            </div>
+                        </React.Fragment>
+                    )}
                 </div>
                 <div className="fr clearfix head-right">
                     {
-                        emptyOpencode ? null : (
+                        (emptyOpencode || lotteryCode === 'wbgmmc') ? null : (
                             <React.Fragment>
                                 <div className="fr head-right-opencode" lottery-type={lotteryType}>
                                     <Opencode {...{ opencodeArr, lotteryType, lotteryCode }} />

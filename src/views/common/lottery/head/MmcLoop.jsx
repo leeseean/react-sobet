@@ -80,7 +80,6 @@ class MmcLoop extends React.Component {
         return (
             <div className="clearfix mmc-loop-wrapper">
                 <LoopList opencode={this.props.opencode} />
-                <button onClick={this.flip}>333333</button>
             </div>
         );
     }

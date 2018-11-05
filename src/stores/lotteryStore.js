@@ -1110,14 +1110,34 @@ class LotteryStore {
 
     @observable winStopFlag = false
 
-    @action toggleTraceWinStop = (bool) => {
+    @action toggleTraceWinStop = bool => {
         this.winStopFlag = bool;
     }
 
     @observable traceModalFlag = false
 
-    @action switchTraceModal = (bool) => {
+    @action switchTraceModal = bool => {
         this.traceModalFlag = bool;
+    }
+
+    @observable mmcWinStopFlag = false
+
+    @action
+    toggleMmcWinStop = bool => {
+        this.mmcWinStopFlag = bool;
+    }
+
+    @observable continuousCount = '5';
+
+    @action 
+    setContinuousCount = value => {
+        this.continuousCount = value;
+    }
+
+    @observable mmcModalFlag = false;
+
+    @action toggleMmcModal = bool => {
+        this.mmcModalFlag = bool;
     }
 }
 

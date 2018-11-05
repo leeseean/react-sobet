@@ -11,7 +11,7 @@ import BetModal from '../BetModal';
 @observer
 class LotteryOrder extends React.Component {
     render() {
-        const { countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag } = this.props.lotteryStore;
+        const { lotteryCode, countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag, toggleMmcModal, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount } = this.props.lotteryStore;
         const orderColumns = [
             {
                 key: 'detail',
@@ -103,29 +103,74 @@ class LotteryOrder extends React.Component {
                             <div className="total-money-title">投注总金额</div>
                             <div className="total-money">{orderTotalMoney}</div>
                         </div>
-                        <div className="order-countdown">
-                            离投注截止还有
-                            <span className="order-countdown-inner">
-                                {
-                                    countdown === '等待开售' ? '等待开售' : <Countdown count={countdown} />
-                                }
-                            </span>
-                        </div>
+                        {
+                            lotteryCode === 'wbgmmc' ? null : (
+                                <div className="order-countdown">
+                                    离投注截止还有
+                                    <span className="order-countdown-inner">
+                                        {
+                                            countdown === '等待开售' ? '等待开售' : <Countdown count={countdown} />
+                                        }
+                                    </span>
+                                </div>
+                            )
+                        }
+
                         <div className="order-bet">
-                            <Button
-                                disabled={orderTotalMoney <= 0 || showTraceFlag}
-                                block
-                                size="large"
-                                onClick={() => toggleBetModal(true)}
-                                type="primary"
-                            >立即投注</Button>
-                            <BetModal />
+                            {
+                                lotteryCode === 'wbgmmc' ? (
+                                    <React.Fragment>
+                                        <div style={{margin: '11px 0 0 0'}}>
+                                            连续开奖
+                                            <Select style={{ margin: '0 4px' }} size="small" value={continuousCount} onChange={(value) => setContinuousCount(value)}>
+                                                <Select.Option value="1">1</Select.Option>
+                                                <Select.Option value="5">5</Select.Option>
+                                                <Select.Option value="10">10</Select.Option>
+                                                <Select.Option value="50">50</Select.Option>
+                                                <Select.Option value="100">100</Select.Option>
+                                                <Select.Option value="200">200</Select.Option>
+                                                <Select.Option value="500">500</Select.Option>
+                                                <Select.Option value="1000">1000</Select.Option>
+                                            </Select>
+                                            次
+                                        </div>
+                                        <div style={{margin: '11px 0'}}>
+                                            <Button
+                                                disabled={orderTotalMoney <= 0}
+                                                block
+                                                size="large"
+                                                onClick={() => toggleMmcModal(true)}
+                                                type="primary">马上开奖</Button>
+                                        </div>
+                                        <div>
+                                        <Checkbox style={{margin:'0 4px 0 0'}} checked={mmcWinStopFlag} onChange={(e) => toggleMmcWinStop(e.target.checked)} />
+                                        中奖即停
+                                        </div>
+                                    </React.Fragment>
+                                ) : (
+                                        <React.Fragment>
+                                            <Button
+                                                disabled={orderTotalMoney <= 0 || showTraceFlag}
+                                                block
+                                                size="large"
+                                                onClick={() => toggleBetModal(true)}
+                                                type="primary"
+                                            >立即投注</Button>
+                                            <BetModal />
+                                        </React.Fragment>
+                                    )
+                            }
+
                         </div>
-                        <div className="order-trace">
-                            <Checkbox disabled={orderData.length <= 0} checked={showTraceFlag} onChange={(e) => toggleTracePanl(e.target.checked)} name="switch-trace-button" />
-                            <span className="order-trace-info">我要追号</span>
-                            <span className="order-trace-icon">可提高中奖率</span>
-                        </div>
+                        {
+                            lotteryCode === 'wbgmmc' ? null : (
+                                <div className="order-trace">
+                                    <Checkbox disabled={orderData.length <= 0} checked={showTraceFlag} onChange={(e) => toggleTracePanl(e.target.checked)} name="switch-trace-button" />
+                                    <span className="order-trace-info">我要追号</span>
+                                    <span className="order-trace-icon">可提高中奖率</span>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>

@@ -237,3 +237,30 @@ export function getUserInfo() {
         method: 'GET'
     });
 }
+//获取彩种tab配置
+export function getLotteryTabConfig(params) {
+    return $http({
+        params,
+        url: `/lottery_config/${params.lottery}.json`,
+        method: 'GET'
+    });
+}
+//获取彩种赔率 /lottery/api/anon/v1/lottery/odds_app
+export function getOddsByLt(params) {
+    return $http({
+        params,
+        // url: '/lottery/api/anon/v1/lottery/odds_app',
+        url: `/odds/${params.lottery}.json`,
+        method: 'GET'
+    });
+}
+/* 
+http://new.mochen111.net/
+获取odds接口:/v2/api/anon/lottery/odds_app
+获取用户前10彩种:/v2/api/u/lottery/getLotteryFavorite
+去掉lastFive:/v2/api/u/lottery/issue_info_app
+获取彩种分类:/v2/api/u/lottery/method_classify
+首页接口（sobet）
+获取用户信息:/v2/userinfo/userInfoAjax
+轮播图:/v2/userinfo/adminNotice
+*/

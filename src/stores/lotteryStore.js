@@ -15,7 +15,8 @@ import {
     updateIssue,
     getLotteryTabConfig,
     submitOrder,
-    getRecord
+    getRecord,
+    getOddsByLt
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
 import formatTime from '../utils/formatTime';
@@ -82,6 +83,16 @@ class LotteryStore {
             return;
         }
         history.push(path);
+    }
+
+    @observable oddsData = {}
+
+    @action
+    getOddsData = async () => {
+        const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase });
+        if (res.data.code === 1) {
+            this.oddsData = res.data.result;
+        }
     }
 
     @observable currentIssue = ''
@@ -1129,7 +1140,7 @@ class LotteryStore {
 
     @observable continuousCount = '5';
 
-    @action 
+    @action
     setContinuousCount = value => {
         this.continuousCount = value;
     }

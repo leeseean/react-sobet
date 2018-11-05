@@ -5,7 +5,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
-import { Radio, Select, Modal, message } from 'antd';
+import { Radio, Select, Modal, message, Checkbox } from 'antd';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 import './betOption.styl';
@@ -38,7 +38,7 @@ class BetOption extends React.Component {
         }
     }
     render() {
-        const { betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, quickSubmitOrder } = this.props.lotteryStore;
+        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData } = this.props.lotteryStore;
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
@@ -59,14 +59,38 @@ class BetOption extends React.Component {
                         </div>
                         <div className="fl odd-select">
                             <span className="text">奖金</span>
-                            <Select size="small" defaultValue="9000 ~ 6.4%" onChange={() => { }}>
-                                <Select.Option value="9640 ~ 0%">9640 ~ 0%</Select.Option>
-                                <Select.Option value="9000 ~ 6.4%">9000 ~ 6.4%</Select.Option>
-                            </Select>
+                            {
+                                chaidanConfig.isChaidan ? 0 : (
+                                    <Select size="small" defaultValue={`${oddsData[method]['bonusA']}~${oddsData[method]['rateA']}`} onChange={() => { }}>
+                                        <Select.Option value={`${oddsData[method]['bonusA']}~${oddsData[method]['rateA']}`}>{oddsData[method]['bonusA']} ~ ${oddsData[method]['rateA']}%</Select.Option>
+                                        <Select.Option value={`${oddsData[method]['bonusB']}~${oddsData[method]['rateB']}`}>{oddsData[method]['bonusB']} ~ ${oddsData[method]['rateB']}%</Select.Option>
+                                    </Select>
+                                )
+                            }
                         </div>
                     </div>
                     <div className="clearfix left-bottom-wrapper">
                         您选择了<span className="count">{betCount}</span>注，共<span className="piece">{betPiece}</span>倍，共计<span className="money">{betMoney}</span>元
+                        {
+                            lotteryCode === 'wbgmmc' ? (
+                                <span className="mmc-option">
+                                    连续开奖
+                                    <Select style={{ margin: '0 4px' }} size="small" value={continuousCount} onChange={(value) => setContinuousCount(value)}>
+                                        <Select.Option value="1">1</Select.Option>
+                                        <Select.Option value="5">5</Select.Option>
+                                        <Select.Option value="10">10</Select.Option>
+                                        <Select.Option value="50">50</Select.Option>
+                                        <Select.Option value="100">100</Select.Option>
+                                        <Select.Option value="200">200</Select.Option>
+                                        <Select.Option value="500">500</Select.Option>
+                                        <Select.Option value="1000">1000</Select.Option>
+                                    </Select>
+                                    次，
+                                    <Checkbox style={{ margin: '0 4px' }} checked={mmcWinStopFlag} onChange={(e) => toggleMmcWinStop(e.target.checked)} />
+                                    中奖即停
+                                </span>
+                            ) : null
+                        }
                     </div>
                 </div>
                 <div className="fr right-wrapper">

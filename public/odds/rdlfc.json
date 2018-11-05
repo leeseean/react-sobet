@@ -1,0 +1,3813 @@
+{
+    "result": {
+        "dbonusBds_dsgs_qs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24_2345": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wq_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_bonusBt_z3_bs": {
+            "bonusA": 5.0,
+            "bonusB": 5.5556,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_hbd": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_z3_bz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_ndan": {
+            "bonusA": 5.643,
+            "bonusB": 6.27,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_wbonusB_41_14": {
+            "bonusA": 11.52,
+            "bonusB": 12.8,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs_1345": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qsm_zbonusB_fs": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_qg_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_hl": {
+            "bonusA": 200.0,
+            "bonusB": 222.2222,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_h3_zl": {
+            "bonusA": 6.0,
+            "bonusB": 6.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd_hs2": {
+            "bonusA": 33.3333,
+            "bonusB": 37.037,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd_hs1": {
+            "bonusA": 6.6421,
+            "bonusB": 7.3801,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_ld": {
+            "bonusA": 16.6667,
+            "bonusB": 18.5185,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_125": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_234": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_123": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_235": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qb_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_124": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_wq_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_245": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds_1234": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds_1235": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wq_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qb_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_15": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "bdd_bdd_z31": {
+            "bonusA": 6.6421,
+            "bonusB": 7.3801,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd_z32": {
+            "bonusA": 33.3333,
+            "bonusB": 37.037,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_wq_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_13": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_14": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_134": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_12": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_134": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_13": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_135": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_135": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z5": {
+            "bonusA": 36000.0,
+            "bonusB": 40000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_14": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_15": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_12": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds_1345": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_ts_sjfc": {
+            "bonusA": 3913.0435,
+            "bonusB": 4347.8261,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds_1245": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_wb_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_345": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_235": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_sbonusB_31_13": {
+            "bonusA": 7.2,
+            "bonusB": 8.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qb_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_234": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBds_h3": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBds_h2": {
+            "bonusA": 7.2,
+            "bonusB": 8.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_bonusBian": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qsm_zbonusB_hz": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_123": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_23": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_24": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_25": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_145": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_125": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_24": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_124": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_25": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_23": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_12": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_14": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_13": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_zhuangdui": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_15": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_ts_yffs": {
+            "bonusA": 4.3955,
+            "bonusB": 4.8839,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wb_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_zhuang": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_qs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_hl": {
+            "bonusA": 200.0,
+            "bonusB": 222.2222,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_hfs": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zubonusB_z3": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_24": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_25": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lhh_ws_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_23": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lhh_wb_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zubonusB_z6": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_h3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_wb_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_ws_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_sbonusB_qd_qbonusB": {
+            "bonusA": 28.8,
+            "bonusB": 32.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zubonusB_z24": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lh_ws_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_q3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_ld": {
+            "bonusA": 16.6667,
+            "bonusB": 18.5185,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_hs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_34": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lhh_wq_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 9999,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_35": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_sitiao": {
+            "bonusA": 400.0,
+            "bonusB": 444.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_zs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs_1245": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qb_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zbonusB_zh": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz_45": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_wbonusB_32_23": {
+            "bonusA": 5.76,
+            "bonusB": 6.4,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_hds": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs_1234": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs_1235": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_245": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz_zh": {
+            "bonusA": 0.9,
+            "bonusB": 1.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_z3_dz": {
+            "bonusA": 6.6667,
+            "bonusB": 7.4074,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_13": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_12": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lhh_qs_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_q3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_14": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_15": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_sbonusB_2d2bonusB": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_qg_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qsm_zbonusB_ds": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zubonusB_z12": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qs_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_bonusBt_q3_bs": {
+            "bonusA": 5.0,
+            "bonusB": 5.5556,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_qs_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_24": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_23": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_bonusBt_q3_bz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 4000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_134": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_34": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_135": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_35": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lhh_wb_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "em_zbonusB_hds": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zbonusB_zh": {
+            "bonusA": 180000.0,
+            "bonusB": 200000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 100,
+            "m": 500.0
+        },
+        "qw_lhh_ws_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wb_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zubonusB_bd": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_dp": {
+            "bonusA": 6.1983,
+            "bonusB": 6.887,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_25": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_z3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_125": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_q3_dz": {
+            "bonusA": 6.6667,
+            "bonusB": 7.4074,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_123": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs_45": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_124": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_qfs": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zubonusB_z6": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zubonusB_z4": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_sg_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "qsm_zubonusB_hz": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_zs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd4_4bonusB2": {
+            "bonusA": 18.4805,
+            "bonusB": 20.5339,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd4_4bonusB3": {
+            "bonusA": 88.2353,
+            "bonusB": 98.0392,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd4_4bonusB1": {
+            "bonusA": 5.2341,
+            "bonusB": 5.8156,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6_1345": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_ts_sbonusBbbonusB": {
+            "bonusA": 210.2804,
+            "bonusB": 233.6449,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_sz": {
+            "bonusA": 149.9999,
+            "bonusB": 166.6666,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_santiao": {
+            "bonusA": 24.9999,
+            "bonusB": 27.7777,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBds_q2": {
+            "bonusA": 7.2,
+            "bonusB": 8.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wq_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_hz_145": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBds_q3": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_ws_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z60": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_super6": {
+            "bonusA": 30.0,
+            "bonusB": 33.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zubonusB_hh": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_12": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_13": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_14": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_15": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "em_zubonusB_qds": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_qkd": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_bs_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "qsm_zubonusB_hh": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_wbonusB_qd_qbonusB": {
+            "bonusA": 57.6,
+            "bonusB": 64.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_bs_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z30": {
+            "bonusA": 6000.0,
+            "bonusB": 6666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zbonusB_kd": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_34": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_ws_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_35": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "bdd_bdd5_5bonusB1": {
+            "bonusA": 4.3955,
+            "bonusB": 4.8839,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_bonusBiandui": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_25": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_24": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_23": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_qs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zbonusB_fs": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_wn": {
+            "bonusA": 5.049,
+            "bonusB": 5.61,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12_1345": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_145": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs_45": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_345": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24_1245": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6_1235": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_yd": {
+            "bonusA": 3.5714,
+            "bonusB": 3.9682,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6_1234": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_35": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_34": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24_1345": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qs_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "qsm_zbonusB_kd": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zubonusB_bd": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_qbd": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_qhz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z10": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_5bonusBhz_bonusBs": {
+            "bonusA": 6.7903,
+            "bonusB": 7.5448,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24_1234": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z24_1235": {
+            "bonusA": 750.0,
+            "bonusB": 833.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz_dd": {
+            "bonusA": 6.7903,
+            "bonusB": 7.5448,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_super6": {
+            "bonusA": 30.0,
+            "bonusB": 33.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz_45": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz_ds": {
+            "bonusA": 7.6622,
+            "bonusB": 8.5135,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_sitiao": {
+            "bonusA": 400.0,
+            "bonusB": 444.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_5bonusBhz_bonusBd": {
+            "bonusA": 7.6622,
+            "bonusB": 8.5135,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zbonusB_ds": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd5_5bonusB3": {
+            "bonusA": 41.3793,
+            "bonusB": 45.977,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_ts_hscs": {
+            "bonusA": 22.0967,
+            "bonusB": 24.5519,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z20": {
+            "bonusA": 9000.0,
+            "bonusB": 10000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd5_5bonusB2": {
+            "bonusA": 12.2699,
+            "bonusB": 13.6333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_sbonusB_2d2bonusB": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_wbonusB_41_14": {
+            "bonusA": 11.52,
+            "bonusB": 12.8,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_124": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_125": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_123": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_12": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_13": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_14": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_15": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4_1234": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_h3_dz": {
+            "bonusA": 6.6667,
+            "bonusB": 7.4074,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_z3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4_1235": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zubonusB_z120": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "zsm_zbonusB_kd": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6_2345": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_125": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd_2": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd_3": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_124": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_santiao": {
+            "bonusA": 24.9999,
+            "bonusB": 27.7777,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd_4": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd_5": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_25": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_bonusBiandui": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_23": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_123": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_24": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dwd_dwd_dwd_1": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_qb_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_bs_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qw_lh_bg_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qw_lh_wg_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_135": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_zhuang": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wg_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_145": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_245": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qg_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_134": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_235": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_234": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qsm_zubonusB_bd": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_235": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_234": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zbonusB_hz": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_wbonusB_qd_qbonusB": {
+            "bonusA": 57.6,
+            "bonusB": 64.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_hkd": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_134": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12_2345": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_hs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zubonusB_hh": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_135": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_234": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4_1245": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hz_235": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z6_1245": {
+            "bonusA": 3000.0,
+            "bonusB": 3333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_245": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_145": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_zs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_245": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zsm_zubonusB_hz": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_5bonusBhz_dd": {
+            "bonusA": 6.7903,
+            "bonusB": 7.5448,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qg_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_bonusBt_q3_sz": {
+            "bonusA": 30.0,
+            "bonusB": 33.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_wbonusB_32_23": {
+            "bonusA": 5.76,
+            "bonusB": 6.4,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_nbonusB": {
+            "bonusA": 5.598,
+            "bonusB": 6.22,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_ns": {
+            "bonusA": 5.535,
+            "bonusB": 6.15,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_fs": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lh_wg_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qw_lhh_bg_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_zs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bjl_bjl_bjl_zhuangdui": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zubonusB_hz": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wg_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_125": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_hhz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_124": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_123": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_qds": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_qs_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qw_bonusBt_h3_bs": {
+            "bonusA": 5.0,
+            "bonusB": 5.5556,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zubonusB_qhz": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qg_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_sbonusB_qd_qbonusB": {
+            "bonusA": 28.8,
+            "bonusB": 32.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_h3_bz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 40000,
+            "m": 500.0
+        },
+        "hz_hz_q3": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_hz": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "hz_hz_q2": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_134": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_34": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_35": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_135": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_ds_2345": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zbonusB_fs": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 1,
+            "n": 200,
+            "m": 500.0
+        },
+        "qw_bonusBt_z3_sz": {
+            "bonusA": 30.0,
+            "bonusB": 33.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wg_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "em_zubonusB_hhz": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_145": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_qfs": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_yd": {
+            "bonusA": 3.5714,
+            "bonusB": 3.9682,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zubonusB_ds_45": {
+            "bonusA": 90.0,
+            "bonusB": 100.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dbonusBgs_qs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4_2345": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_wg_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "em_zbonusB_hfs": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z4_1345": {
+            "bonusA": 4500.0,
+            "bonusB": 5000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_nda": {
+            "bonusA": 5.58,
+            "bonusB": 6.2,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bjl_bjl_bonusBian": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_sg_hu": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_hs_qd_qbonusB": {
+            "bonusA": 14.4,
+            "bonusB": 16.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_bs_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_lhh_bg_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sbonusB_zbonusB_ds": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_345": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zbonusB_ds": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "qw_lh_sg_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "qw_lhh_bg_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_lhh_sg_hu": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 3,
+            "m": 500.0
+        },
+        "qw_lh_qb_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz_bonusBd": {
+            "bonusA": 7.6622,
+            "bonusB": 8.5135,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_sg_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_hz": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_245": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_5bonusBhz_bonusBs": {
+            "bonusA": 6.7903,
+            "bonusB": 7.5448,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_fs_345": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qsm_zubonusB_z3": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_h3_sz": {
+            "bonusA": 30.0,
+            "bonusB": 33.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zubonusB_z6": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n1": {
+            "bonusA": 28.233,
+            "bonusB": 31.37,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n2": {
+            "bonusA": 27.666,
+            "bonusB": 30.74,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zubonusB_z3": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n5": {
+            "bonusA": 28.233,
+            "bonusB": 31.37,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n6": {
+            "bonusA": 27.666,
+            "bonusB": 30.74,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n3": {
+            "bonusA": 28.233,
+            "bonusB": 31.37,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_fs": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "nn_nn_nn_n4": {
+            "bonusA": 27.666,
+            "bonusB": 30.74,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "sh_sh_wbonusB_sz": {
+            "bonusA": 149.9999,
+            "bonusB": 166.6666,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n9": {
+            "bonusA": 28.233,
+            "bonusB": 31.37,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n7": {
+            "bonusA": 28.233,
+            "bonusB": 31.37,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qsm_zubonusB_z6": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_n8": {
+            "bonusA": 27.666,
+            "bonusB": 30.74,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zbonusB_ds": {
+            "bonusA": 180000.0,
+            "bonusB": 200000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 1,
+            "n": 100,
+            "m": 500.0
+        },
+        "qw_lhh_qs_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lh_bg_long": {
+            "bonusA": 4.0,
+            "bonusB": 4.4444,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 0,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_5bonusBhz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_hh_345": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "nn_nn_nn_nn": {
+            "bonusA": 27.873,
+            "bonusB": 30.97,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_qg_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "qw_lhh_bs_he": {
+            "bonusA": 18.0,
+            "bonusB": 20.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_z3_zl": {
+            "bonusA": 6.0,
+            "bonusB": 6.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zbonusB_hz": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_245": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "wbonusB_zbonusB_fs": {
+            "bonusA": 180000.0,
+            "bonusB": 200000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 1,
+            "n": 100,
+            "m": 500.0
+        },
+        "bdd_bdd_qs1": {
+            "bonusA": 6.6421,
+            "bonusB": 7.3801,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "bdd_bdd_qs2": {
+            "bonusA": 33.3333,
+            "bonusB": 37.037,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "zh_hzdbonusBds_5bonusBhz_ds": {
+            "bonusA": 7.6622,
+            "bonusB": 8.5135,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_hs_21_12": {
+            "bonusA": 4.8,
+            "bonusB": 5.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_wbonusB_dp": {
+            "bonusA": 6.1983,
+            "bonusB": 6.887,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_sg_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_145": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_235": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z3_234": {
+            "bonusA": 600.0,
+            "bonusB": 666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_bg_long": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 5,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_345": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12_1234": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12_1235": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_hzdbonusBds_h3hz": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "hsm_zbonusB_fs": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_45": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_135": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_134": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_234": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_235": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zubonusB_z12_1245": {
+            "bonusA": 1500.0,
+            "bonusB": 1666.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_35": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB2_zbonusB_ds_34": {
+            "bonusA": 180.0,
+            "bonusB": 200.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zubonusB_z6_345": {
+            "bonusA": 300.0,
+            "bonusB": 333.3333,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_123": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_125": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB3_zbonusB_ds_124": {
+            "bonusA": 1800.0,
+            "bonusB": 2000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 2,
+            "m": 500.0
+        },
+        "rbonusB4_zbonusB_fs_2345": {
+            "bonusA": 18000.0,
+            "bonusB": 20000.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_bonusBt_q3_zl": {
+            "bonusA": 6.0,
+            "bonusB": 6.6667,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "qw_lhh_bs_lh": {
+            "bonusA": 3.6,
+            "bonusB": 4.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        },
+        "dbonusBds_dsgs_sbonusB_31_13": {
+            "bonusA": 7.2,
+            "bonusB": 8.0,
+            "rateB": 0,
+            "rateA": 0.0650,
+            "s": 0,
+            "n": 1000000,
+            "m": 500.0
+        }
+    },
+    "code": 1,
+    "msg": "ok"
+}

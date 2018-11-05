@@ -2,6 +2,7 @@
     width: 1100px;
     background-color: #fff;
     height: 78px;
+    position: relative;
 
     .head-left {
         width: 300px;
@@ -274,8 +275,10 @@
             height: 46px;
             margin-left: 20px;
             text-align: right;
-            &[lottery-type="pk10"] {
+
+            &[lottery-type='pk10'] {
                 width: 312px;
+
                 .opencode {
                     margin-bottom: 5px;
                 }
@@ -298,8 +301,7 @@
 
             @import '../special.styl';
 
-            .opencode[lottery-code=bjpk10],
-            .opencode[lottery-code=mcpk10] {
+            .opencode[lottery-code=bjpk10], .opencode[lottery-code=mcpk10] {
                 width: 54px;
                 height: 21px;
                 border-radius: 0;
@@ -469,4 +471,3 @@
     animation-duration: 0.5s;
     animation-fill-mode: both;
 }
-

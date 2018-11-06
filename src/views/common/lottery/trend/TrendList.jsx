@@ -4,7 +4,10 @@ import { Table } from 'antd';
 import './trendList.styl';
 
 @inject(stores => (
-    { trendListHeight: stores.lotteryStore.trendListHeight }
+    {
+        trendListHeight: stores.lotteryStore.trendListHeight,
+        method: stores.lotteryStore.method,
+    }
 ))
 @observer
 class TrendList extends React.Component {
@@ -20,7 +23,7 @@ class TrendList extends React.Component {
         return null;
     }
     shouldComponentUpdate(nextProps, nextState) {
-        if (JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) {//只更新奖号时更新
+        if ((JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) && (nextProps.method !== this.props.method)) {//只更新奖号时更新
             return true;
         }
         if (nextProps.trendListHeight !== this.props.trendListHeight) {
@@ -37,9 +40,9 @@ class TrendList extends React.Component {
                 </div>
             );
         };
-        const { className } = this.props;
+        const { className, method } = this.props;
         const trendData = this.state.trendData;
-        const { lotteryType, trendConfig, method, trendListHeight } = this.props;
+        const { lotteryType, trendConfig, trendListHeight } = this.props;
         if (!trendConfig[lotteryType][method]) {
             return null;
         }
@@ -78,7 +81,7 @@ class TrendList extends React.Component {
             const { issueNo, code } = item;
             let obj = {
                 key: index,
-                issue: <div className="trend-issue">{issueNo.split('-').slice(-1)}</div>,
+                issue: <div className="trend-issue">{issueNo.split('-').pop() ? issueNo.split('-').pop() : '-'}</div>,
                 openCode: <Colorcode code={code} method={method} />,
             };
             if (trendConfig[lotteryType][method]['shapeName']) {

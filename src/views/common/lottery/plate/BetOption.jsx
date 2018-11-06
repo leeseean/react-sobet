@@ -5,7 +5,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
-import { Radio, Select, Modal, message, Checkbox } from 'antd';
+import { Radio, Select, Modal, message, Checkbox, Button } from 'antd';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 import './betOption.styl';
@@ -38,7 +38,7 @@ class BetOption extends React.Component {
         }
     }
     render() {
-        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOdd, changeCurrentChaidanOdd, currentChaidanOddArrMinMax } = this.props.lotteryStore;
+        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
 
         return (
             <div className="clearfix bet-option-wrapper">
@@ -62,13 +62,13 @@ class BetOption extends React.Component {
                             <span className="text">奖金</span>
                             {
                                 chaidanConfig.chaidan ? (
-                                        currentChaidanOddArrMinMax.length === 0 ? <em style={{ color: '#d24454', marginLeft: '5px' }}>0</em> : (
-                                            <Select size="small" value={currentChaidanOdd} onChange={(value) => changeCurrentChaidanOdd(value)}>
-                                                {
-                                                    currentChaidanOddArrMinMax.map((item, i) => <Select.Option key={i} value={item.type}>{item.val}</Select.Option>)
-                                                }
-                                            </Select>
-                                        )
+                                    currentChaidanOddArrMinMax.length === 0 ? <em style={{ color: '#d24454', marginLeft: '5px' }}>0</em> : (
+                                        <Select size="small" value={currentChaidanOddType} onChange={(value) => changeCurrentChaidanOddType(value)}>
+                                            {
+                                                currentChaidanOddArrMinMax.map((item, i) => <Select.Option key={i} value={item.type}>{item.val}</Select.Option>)
+                                            }
+                                        </Select>
+                                    )
                                 ) : (
                                         <Select size="small" value={currentOdd} onChange={(value) => changeCurrentOdd(value)}>
                                             <Select.Option value={`${oddsData[method] && oddsData[method]['bonusA']}~${oddsData[method] && oddsData[method]['rateA']}`}>{oddsData[method] && oddsData[method]['bonusA']} ~ {oddsData[method] && oddsData[method]['rateA'] * 100}%</Select.Option>
@@ -103,8 +103,8 @@ class BetOption extends React.Component {
                     </div>
                 </div>
                 <div className="fr right-wrapper">
-                    <div className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder}>快速投注</div>
-                    <div className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={addOrder}>添加订单</div>
+                    <Button disabled={betCount <= 0} className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder}>快速投注</Button>
+                    <Button disabled={betCount <= 0} className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={addOrder}>添加订单</Button>
                 </div>
             </div>
         );

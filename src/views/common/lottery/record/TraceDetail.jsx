@@ -100,7 +100,7 @@ class TraceDetail extends React.Component {
     }
 
     render() {
-        const {lotteryCodeToCn,playWayToCn} = this.props;
+        const { lotteryCodeToCn, playWayToCn } = this.props;
         return (
             <Modal width="1060px" title={[<span key="A">追号详情</span>, <span key="B" className="back-bet-modal" onClick={this.backToBetModal}>(返回)</span>]} wrapClassName="trace-detail-wrapper" rowClassName="trace-row" centered footer={null} visible={this.state.traceModalFlag} onCancel={this.closeTraceModal}>
                 <table className="traceTable traceHTable">

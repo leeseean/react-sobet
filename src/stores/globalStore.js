@@ -51,7 +51,7 @@ class GlobalStore {
     }
 
     @action setLoginTime = (time) => {
-        this.loginTime = time;
+        this.loginTime = new Date(time).toLocaleString();
         localStorage.setItem('loginTime', time);
     }
 

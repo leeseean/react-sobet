@@ -47,7 +47,6 @@ class NormalLoginForm extends React.Component {
             .validateFields((err, formData) => {
                 if (!err && this._mounted) {
                     ssoLogin(formData.userName, md5(formData.password), formData.capchaCode).then(res => {
-                        //console.log(res)
                         if (res.needCapchaCode) {//验证码
                             this.setState({
                                 verifycodeFlag: true
@@ -63,14 +62,9 @@ class NormalLoginForm extends React.Component {
                         }
                         if (res.code === 0) {
                             globalStore.login();
-                             // globalStore.getUserInfo(); //等接口好了恢复这句话把下面的注释
-                            globalStore.setUserName(res.user.cn);
-                            globalStore.setUserType(res.user.userType);
-                            globalStore.setRoleType(res.user.roleType);
-                            globalStore.setLoginTime(new Date(Number(res.user.createTimeStr)).toLocaleString());
-                            globalStore.setPlatformId(res.user.platformId);
+                            globalStore.getUserInfo(); //等接口好了恢复这句话把下面的注释
+                            globalStore.getPlayerBalance();
                             this.jumpByUserType(res.user.userType);
-                            //window.location.reload();
                         } else {
                             if (res.code === 2) {
                                 if (res.loginFailCount === 1) {

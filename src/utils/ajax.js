@@ -125,7 +125,6 @@ export function queryActivityById(params) {
 export function queryTrendData(params) {
     return $http({
         params,
-        // url: '/trend.json',
         url: '/lottery/api/anon/v1/lottery/simpleLast',
         method: 'GET'
     });
@@ -134,14 +133,16 @@ export function queryTrendData(params) {
 export function updateIssue(params) {
     return $http({
         params,
-        url: '/lottery/api/m/v1/lottery/issue_info_app',
+        // url: '/lottery/api/m/v1/lottery/issue_info_app',
+        url: '/lottery/v2/api/u/lottery/issue_info_app',
         method: 'GET'
     });
 }
 //获取常玩彩种列表　/lottery/api/u/v1/lottery/getLotteryFavorite
 export function getLotteryFavorite() {
     return $http({
-        url: '/lottery/api/u/v1/lottery/getLotteryFavorite',
+        // url: '/lottery/api/u/v1/lottery/getLotteryFavorite',
+        url: '/lottery/v2/api/u/lottery/getLotteryFavorite',
     });
 }
 // 选中删除常玩       /lottery/api/u/v1/lottery/delLotteryFavorite?lottery=hlj11y
@@ -211,6 +212,7 @@ export function getLotteryTabConfig(params) {
     return $http({
         params,
         url: `/lottery_config/${params.lottery}.json`,
+        // url: '/lottery/v2/api/u/lottery/method_classify',
         method: 'GET'
     });
 }
@@ -233,15 +235,8 @@ export function getPlayerBalance(params) {
 //获取用户信息 /sobet/userInfo/userInfoAjax?
 export function getUserInfo() {
     return $http({
-        url: '/sobet/userInfo/userInfoAjax',
-        method: 'GET'
-    });
-}
-//获取彩种tab配置
-export function getLotteryTabConfig(params) {
-    return $http({
-        params,
-        url: `/lottery_config/${params.lottery}.json`,
+        // url: '/sobet/userInfo/userInfoAjax',
+        url: '/sobet/v2/userinfo/userInfoAjax',
         method: 'GET'
     });
 }
@@ -249,8 +244,15 @@ export function getLotteryTabConfig(params) {
 export function getOddsByLt(params) {
     return $http({
         params,
-        // url: '/lottery/api/anon/v1/lottery/odds_app',
+        // url: '/lottery/v2/api/anon/lottery/odds_app',
         url: `/odds/${params.lottery}.json`,
+        method: 'GET'
+    });
+}
+//首页轮播图接口 /v2/userinfo/adminNotice
+export function getBannerConfig() {
+    return $http({
+        url: '/sobet/v2/userinfo/adminNotice',
         method: 'GET'
     });
 }

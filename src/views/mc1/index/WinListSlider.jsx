@@ -50,15 +50,21 @@ const WinItem = ({ item }) => {
 };
 
 class WinListSlider extends React.Component {
+    _mounted = false
     state = {
         list: []
     }
     componentDidMount() {
+        this._mounted = true
         getLotteryWinTop10().then(res => {
             if (res.data.code === 1) {
+                if (!this._mounted) return;
                 this.setState({ list: res.data.result });
             }
         }).catch(error => { });
+    }
+    componentWillUnmount() {
+        this._mounted = false;
     }
     render() {
         const Items = ({ list }) => list.map((item, index) => <WinItem key={index} item={item} />);

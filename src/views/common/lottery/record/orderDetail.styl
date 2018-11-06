@@ -1,0 +1,55 @@
+.record-detail-wrapper {
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        .record-row {
+            cursor: pointer;
+        }
+
+        th {
+            background: #ededed;
+            width: 122px;
+            line-height: 30px;
+            padding: 0 5px 0 5px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        td {
+            border: 1px solid #ededed;
+            position: relative;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        .order-cancel {
+            width: 46px;
+            margin-left: 6px;
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 6px;
+            text-align: center;
+            background: url('../../../../images/lottery/button.png') no-repeat;
+            color: #fff;
+            cursor: pointer;
+            background-position: 0 -630px;
+
+            &:hover {
+                background-position: -74px -630px;
+            }
+
+            &:active {
+                background-position: -148px -630px;
+            }
+        }
+
+        .trace-view {
+            color: #ff5243;
+            text-decoration: underline;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+}

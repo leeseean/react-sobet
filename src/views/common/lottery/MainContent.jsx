@@ -11,7 +11,8 @@ import LotteryTrace from './trace';
 @observer
 class MainContent extends React.Component {
     componentDidMount() {
-        const { queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
+        const { getOddsData, queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
+        getOddsData();
         updateIssue();
         queryTrendData();
         getTabConfig();

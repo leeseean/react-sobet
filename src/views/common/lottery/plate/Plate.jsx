@@ -20,7 +20,7 @@ class Plate extends React.Component {
         if (lotteryType === 'k3') {
             plate = <K3Plate />;
         } else {
-            if (chaidanConfig.isChaidan) {
+            if (chaidanConfig.chaidan) {
                 plate = <ChaidanPlate />;
             } else {
                 plate = <UsualPlate />;

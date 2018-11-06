@@ -998,7 +998,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -1007,7 +1007,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -2211,7 +2211,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -2220,7 +2220,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -3424,7 +3424,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -3433,7 +3433,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -4637,7 +4637,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -4646,7 +4646,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -5850,7 +5850,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -5859,7 +5859,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -7063,7 +7063,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -7072,7 +7072,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -8276,7 +8276,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -8285,7 +8285,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -9489,7 +9489,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -9498,7 +9498,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -10702,7 +10702,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -10711,7 +10711,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -11915,7 +11915,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -11924,7 +11924,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -13128,7 +13128,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -13137,7 +13137,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -14341,7 +14341,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -14350,7 +14350,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -15554,7 +15554,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -15563,7 +15563,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -16767,7 +16767,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -16776,7 +16776,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -17980,7 +17980,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        sh_sh_wx: {
+        qw_xt_wx: {
             name: '梭哈',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
@@ -17989,7 +17989,7 @@ export default {
                 filter: ['全', '清'].reverse(),
             },
         },
-        bjl_bjl_bjl: {
+        qw_bjl_bjl: {
             name: '百家乐',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {

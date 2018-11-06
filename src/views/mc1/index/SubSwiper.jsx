@@ -10,17 +10,22 @@ import './subSwiper.styl';
 }))
 @observer
 class SubSwiper extends React.Component {
+    _mounted = false
     state = {
         data: []
     }
     componentDidMount() {
+        this._mounted = true;
         this.getData();
+    }
+    componentWillUnmount() {
+        this._mounted = false;
     }
     async getData() {
         const { platformId } = this.props;
         const res = await queryCurrentActivity({ platformId });
         if (res.data.code === 0) {
-            this.setState({
+            this._mounted && this.setState({
                 data: res.data.result.entities
             });
         }

@@ -89,11 +89,90 @@ class LotteryStore {
 
     @action
     getOddsData = async () => {
-        const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase });
+        const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase() });
         if (res.data.code === 1) {
-            this.oddsData = res.data.result;
+            this.oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
+            if (this.chaidanConfig.chaidan) {
+                this.changeCurrentChaidanOdd('');
+            } else {
+                this.changeCurrentOdd(`${this.oddsData[this.method]['bonusA']}~${this.oddsData[this.method]['rateA']}`);
+            }
         }
     }
+
+    @observable currentOdd = '';
+
+    @observable currentChaidanOdd = '';
+
+    @observable currentChaidanOddArr = [];
+
+    @action
+    changeCurrentOdd = (value) => {
+        this.currentOdd = value;
+    }
+
+    @action
+    changeCurrentChaidanOdd = (value) => {
+        this.currentChaidanOdd = value;
+    }
+
+    @computed get currentChaidanOddArrMinMax() {
+        const result = [];
+        const arr = this.currentChaidanOddArr;
+        if (arr.length === 0) {
+            return [];
+        }
+        const rateA = arr[0]['rateA'];
+        if (typeof rateA !== undefined && typeof rateA !== null) {
+            const As = arr.map(({ bonusA }) => bonusA);
+            const maxBonusA = Math.max(...As);
+            const minBonusA = Math.min(...As);
+            result.push({
+                type: 'A',
+                arr: arr.map(({ key, bonusA, rateA }) => ({
+                    key,
+                    odds: bonusA,
+                    point: rateA
+                })),
+                val: `${minBonusA}-${maxBonusA}~${rateA * 100}%`
+            });
+        }
+        const rateB = arr[0]['rateB'];
+        if (typeof rateB !== undefined && typeof rateB !== null) {
+            const Bs = arr.map(({ bonusB }) => bonusB);
+            const maxBonusB = Math.max(...Bs);
+            const minBonusB = Math.min(...Bs);
+            result.push({
+                type: 'B',
+                arr: arr.map(({ key, bonusB, rateB }) => ({
+                    key,
+                    odds: bonusB,
+                    point: rateB
+                })),
+                val: `${minBonusB}-${maxBonusB}~${rateB * 100}%`
+            });
+        }
+        return result;
+    }
+
+    /* @action setCurrentChaidanOddArrMinMax(arr) {
+        const result = [];
+        const rateA = arr[0]['rateA'];
+        if (rateA) {
+            const As = arr.map(({ bonusA }) => bonusA);
+            const maxBonusA = Math.max(...As);
+            const minBonusA = Math.min(...As);
+            result.push(`${minBonusA}-${maxBonusA}-${rateA * 100}%`);
+        }
+        const rateB = arr[0]['rateB'];
+        if (rateB) {
+            const Bs = arr.map(({ bonusB }) => bonusB);
+            const maxBonusB = Math.max(...Bs);
+            const minBonusB = Math.min(...Bs);
+            result.push(`${minBonusB}-${maxBonusB}-${rateB * 100}%`);
+        }
+        return result;
+    } */
 
     @observable currentIssue = ''
 
@@ -170,8 +249,10 @@ class LotteryStore {
 
     @action getTabConfig = async () => {
         const res = await getLotteryTabConfig({ lottery: this.lotteryCode });
-        this.tabConfig = res.data;
-        this.setActiveTab(JSON.parse(localStorage.getItem(`${this.lotteryCode}-${this.tabType}-activeTab`)) || this.currentTabConfig[0]);
+        if (res.data.code === 1) {
+            this.tabConfig = res.data.result;
+            this.setActiveTab(JSON.parse(localStorage.getItem(`${this.lotteryCode}-${this.tabType}-activeTab`)) || this.currentTabConfig[0]);
+        }
     }
 
     @computed get normalTabConfig() {
@@ -397,9 +478,19 @@ class LotteryStore {
         const INDEX = this.selectedChaidanNums.findIndex(v => v.cn === cn);
         if (INDEX === -1) {
             this.selectedChaidanNums.push({ en, cn });
+            this.currentChaidanOddArr.push({
+                key: en,
+                bonusA: this.oddsData[en]['bonusA'],
+                rateA: this.oddsData[en]['rateA'],
+                bonusB: this.oddsData[en]['bonusB'],
+                rateB: this.oddsData[en]['rateB'],
+            });
         } else {
             this.selectedChaidanNums.splice(INDEX, 1);
+            this.currentChaidanOddArr.splice(INDEX, 1);
         }
+        console.log(this.currentChaidanOddArr)
+        this.changeCurrentChaidanOdd(this.currentChaidanOdd || 'A');
     }
 
     @action filterChaidanNum = (value, numArr) => {
@@ -425,7 +516,7 @@ class LotteryStore {
         if (!this.mathConfig) {
             return 0;
         }
-        if (this.chaidanConfig['isChaidan']) {
+        if (this.chaidanConfig['chaidan']) {
             if (this.mathConfig['type'] === 'leijia') {
                 return this.selectedChaidanNums.length;
             }
@@ -692,7 +783,9 @@ class LotteryStore {
                     name,
                     rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
                     betContent: this.inputedNums.toString(),
-                    playWay: this.method
+                    playWay: this.method,
+                    odds: this.currentOdd.split('~')[0],
+                    point: this.currentOdd.split('~')[1],
                 },
                 piece: this.betPiece,
                 price: this.betMode,
@@ -701,7 +794,7 @@ class LotteryStore {
             }];
             return result;
         }
-        if (this.chaidanConfig.isChaidan) {
+        if (this.chaidanConfig.chaidan) {
             const len = this.selectedChaidanNums.length;
             result = this.selectedChaidanNums.map((item, index) => {
                 const { en, cn } = item;
@@ -711,7 +804,9 @@ class LotteryStore {
                         name,
                         rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
                         betContent: cn,
-                        playWay: en
+                        playWay: en,
+                        odds: this.oddsData[en]['bonusA'],
+                        point: this.oddsData[en]['rateA'],
                     },
                     piece: this.betPiece,
                     price: this.betMode,
@@ -737,7 +832,9 @@ class LotteryStore {
                 name,
                 rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
                 betContent: arr.toString(),
-                playWay: this.method
+                playWay: this.method,
+                odds: this.currentOdd.split('~')[0],
+                point: this.currentOdd.split('~')[1],
             },
             piece: this.betPiece,
             price: this.betMode,
@@ -754,7 +851,7 @@ class LotteryStore {
             this.inputedNums = [];
             return;
         }
-        if (this.chaidanConfig.isChaidan) {
+        if (this.chaidanConfig.chaidan) {
             this.selectedChaidanNums = [];
             return;
         }
@@ -815,8 +912,8 @@ class LotteryStore {
                 amount: order.amount.betMoney,
                 piece: order.piece,
                 price: order.price,
-                odds: 1,
-                point: 0,
+                odds: order.detail.odds,
+                point: order.detail.point,
             }))),
             betType: 2,
             sourceType: 0
@@ -873,7 +970,7 @@ class LotteryStore {
                 this.inputedNums = [];
                 return;
             }
-            if (this.chaidanConfig.isChaidan) {
+            if (this.chaidanConfig.chaidan) {
                 this.selectedChaidanNums = [];
                 return;
             }

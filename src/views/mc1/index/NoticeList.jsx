@@ -18,11 +18,16 @@ class NoticeList extends React.Component {
         defaultActiveKey: '',
         modalWidth: 950
     }
+    _mounted = false
     perPageTabsCount = 8 //弹窗每页显示的tab数量
     listRef = null
     alertId = null
     componentDidMount() {
+        this._mounted = true;
         this.getData();
+    }
+    componentWillUnmount() {
+        this._mounted = false;
     }
     async getData() {
         const res = await getNoticeList({
@@ -32,7 +37,7 @@ class NoticeList extends React.Component {
         });
         const items = res.data.items;
         const endNum = items.length > this.perPageTabsCount ? this.perPageTabsCount : items.length;
-        this.setState({
+        this._mounted && this.setState({
             data: items,
             pageData: items.slice(0, this.perPageTabsCount),
             defaultActiveKey: String(items[0].id),
@@ -46,20 +51,23 @@ class NoticeList extends React.Component {
             this.firstLoginAlert();
         }
 
-        const arr = [];
-        for (let item of items) {
-            if (this.listRef.offsetWidth > 850) {//限制显示条目
-                arr.pop();
+        setTimeout(() => {
+            if (!this._mounted) return;
+            const arr = [];
+            for (let item of items) {
+                if (this.listRef.offsetWidth > 850) {//限制显示条目
+                    arr.pop();
+                    this.setState({
+                        showedData: arr
+                    });
+                    break;
+                }
+                arr.push(item);
                 this.setState({
                     showedData: arr
                 });
-                break;
             }
-            arr.push(item);
-            this.setState({
-                showedData: arr
-            });
-        }
+        }, 800);
     }
 
     firstLoginAlert = () => {//首次登陆是否弹窗

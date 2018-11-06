@@ -38,7 +38,8 @@ class BetOption extends React.Component {
         }
     }
     render() {
-        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData } = this.props.lotteryStore;
+        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOdd, changeCurrentChaidanOdd, currentChaidanOddArrMinMax } = this.props.lotteryStore;
+
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
@@ -60,12 +61,20 @@ class BetOption extends React.Component {
                         <div className="fl odd-select">
                             <span className="text">奖金</span>
                             {
-                                chaidanConfig.isChaidan ? 0 : (
-                                    <Select size="small" defaultValue={`${oddsData[method]['bonusA']}~${oddsData[method]['rateA']}`} onChange={() => { }}>
-                                        <Select.Option value={`${oddsData[method]['bonusA']}~${oddsData[method]['rateA']}`}>{oddsData[method]['bonusA']} ~ ${oddsData[method]['rateA']}%</Select.Option>
-                                        <Select.Option value={`${oddsData[method]['bonusB']}~${oddsData[method]['rateB']}`}>{oddsData[method]['bonusB']} ~ ${oddsData[method]['rateB']}%</Select.Option>
-                                    </Select>
-                                )
+                                chaidanConfig.chaidan ? (
+                                        currentChaidanOddArrMinMax.length === 0 ? <em style={{ color: '#d24454', marginLeft: '5px' }}>0</em> : (
+                                            <Select size="small" value={currentChaidanOdd} onChange={(value) => changeCurrentChaidanOdd(value)}>
+                                                {
+                                                    currentChaidanOddArrMinMax.map((item, i) => <Select.Option key={i} value={item.type}>{item.val}</Select.Option>)
+                                                }
+                                            </Select>
+                                        )
+                                ) : (
+                                        <Select size="small" value={currentOdd} onChange={(value) => changeCurrentOdd(value)}>
+                                            <Select.Option value={`${oddsData[method] && oddsData[method]['bonusA']}~${oddsData[method] && oddsData[method]['rateA']}`}>{oddsData[method] && oddsData[method]['bonusA']} ~ {oddsData[method] && oddsData[method]['rateA'] * 100}%</Select.Option>
+                                            <Select.Option value={`${oddsData[method] && oddsData[method]['bonusB']}~${oddsData[method] && oddsData[method]['rateB']}`}>{oddsData[method] && oddsData[method]['bonusB']} ~ {oddsData[method] && oddsData[method]['rateB'] * 100}%</Select.Option>
+                                        </Select>
+                                    )
                             }
                         </div>
                     </div>

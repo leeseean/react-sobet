@@ -7,7 +7,6 @@ class ChaidanPlate extends React.Component {
     render() {
         const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
         const { pos, plate } = chaidanConfig;
-        console.log(selectedChaidanNums.includes('{"cn":"牛大","en":"nn_nn_nn_nda"}'))
         const num = plate;
         if (!plateConfig[lotteryCode][method]) {
             return null;

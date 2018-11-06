@@ -211,8 +211,8 @@ export function cancelTrace(params) {
 export function getLotteryTabConfig(params) {
     return $http({
         params,
-        url: `/lottery_config/${params.lottery}.json`,
-        // url: '/lottery/v2/api/u/lottery/method_classify',
+        // url: `/lottery_config/${params.lottery}.json`,
+        url: '/lottery/v2/api/u/lottery/method_classify',
         method: 'GET'
     });
 }
@@ -244,8 +244,8 @@ export function getUserInfo() {
 export function getOddsByLt(params) {
     return $http({
         params,
-        // url: '/lottery/v2/api/anon/lottery/odds_app',
-        url: `/odds/${params.lottery}.json`,
+        url: '/lottery/v2/api/anon/lottery/odds_app',
+        // url: `/odds/${params.lottery}.json`,
         method: 'GET'
     });
 }

@@ -20,7 +20,8 @@ class UsualPlate extends React.Component {
         } else if (isLonghu) {
             extraClass = 'longhu';
         }
-        const ClickPlate = ({ pos, num, filter, hitFrequency, skipFrequency }) => {
+        const ClickPlate = ({ pos = [], num, filter, hitFrequency, skipFrequency }) => {
+            // const pos = pos ? pos : [];
             const hitToPos = pos.length - hitFrequency.length;
             const skipToPos = pos.length - skipFrequency.length;
             const HitSkipNums = ({ arr, type }) => {

@@ -73,7 +73,7 @@ class LotteryFavorite extends React.Component {
         const { codeToCn, linkToLottery, history } = this.props;
         const { data, countdownsObj, modalVisible, toggleModalVisible } = this.props.favoriteStore;
         const Item = ({ item }) => {
-            const { lottery_code } = item;
+            const { lottery_code, recommend } = item;
             if (!countdownsObj[lottery_code]) {
                 return null;
             }
@@ -87,7 +87,9 @@ class LotteryFavorite extends React.Component {
                             [-1, -2].includes(countdownsObj[lottery_code]) ? '暂停销售' : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
                         }
                     </div>
-                    <div className="item-recommend"></div>
+                    {
+                        recommend ? <div className="item-recommend"></div> : null
+                    }
                 </div>
             );
         };

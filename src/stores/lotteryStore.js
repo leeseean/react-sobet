@@ -669,6 +669,9 @@ class LotteryStore {
 
             if (result.some(value => {
                 if (this.lotteryType === '11x5' || this.lotteryType === 'pk10' || this.lotteryType === 'kl12') {//这个选号有两位数
+                    if (value.length % 2 !== 0) {
+                        return;
+                    }
                     const valueArr = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',');
                     if (valueArr.length !== numOfEach) {
                         return true;
@@ -722,6 +725,9 @@ class LotteryStore {
         }
 
         if (this.lotteryType === '11x5' || this.lotteryType === 'pk10' || this.lotteryType === 'kl12') {//这个选号有两位数
+            if (value.length % 2 !== 0) {
+                return;
+            }
             const valueArr = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,').split(',');
             if (valueArr.length !== numOfEach) {
                 return;
@@ -758,19 +764,34 @@ class LotteryStore {
         const { name } = this.plateConfig[this.lotteryCode][this.method];
         let result = [];
         if (this.plateType === 'input') {
+            const odds = this.currentOdd.split('~')[0];
+            const point = this.currentOdd.split('~')[1];
+            const price = this.betMode;
+            const piece = this.betPiece;
+            const singlePickFlag = this.oddsData[this.method]['s'] === 1 && this.betCount < this.oddsData[this.method]['n'];
+            const singlePickMaxBonus = this.oddsData[this.method]['m'];
             result = [{
                 detail: {
                     name,
+                    odds,
+                    point,
                     rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
-                    betContent: this.inputedNums.toString(),
+                    betContent: this.inputedNums.map(value => {
+                        if (this.lotteryType === '11x5' || this.lotteryType === 'kl12' || this.lotteryType === 'pk10') {
+                            value = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,');
+                        } else {
+                            value = value.split('').join(',');
+                        }
+                        return value;
+                    }).join('|'),
                     playWay: this.method,
-                    odds: this.currentOdd.split('~')[0],
-                    point: this.currentOdd.split('~')[1],
                 },
-                piece: this.betPiece,
-                price: this.betMode,
+                piece,
+                price,
+                singlePickFlag,
+                singlePickMaxBonus,
                 amount: { betMoney: this.betMoney, betCount: this.betCount },
-                win: '1',
+                win: (odds / 2) * price - price,
             }];
             return result;
         }
@@ -778,19 +799,27 @@ class LotteryStore {
             const len = this.selectedChaidanNums.length;
             result = this.selectedChaidanNums.map((item, index) => {
                 const { en, cn } = item;
+                const odds = this.oddsData[en][`bonus${this.currentChaidanOddType}`];
+                const point = this.oddsData[en][`rate${this.currentChaidanOddType}`];
+                const price = this.betMode;
+                const piece = this.betPiece;
+                const singlePickFlag = this.oddsData[en]['s'] === 1 && 1 < this.oddsData[en]['n'];
+                const singlePickMaxBonus = this.oddsData[en]['m'];
                 return {
                     detail: {
                         name,
                         rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
                         betContent: cn,
                         playWay: en,
-                        odds: this.oddsData[en][`bonus${this.currentChaidanOddType}`],
-                        point: this.oddsData[en][`rate${this.currentChaidanOddType}`],
+                        odds,
+                        point,
                     },
-                    piece: this.betPiece,
-                    price: this.betMode,
+                    piece,
+                    price,
+                    singlePickFlag,
+                    singlePickMaxBonus,
                     amount: { betMoney: this.betMoney / len, betCount: 1 },
-                    win: '1',
+                    win: (odds / 2) * price - price,
                 }
             });
             return result;
@@ -800,24 +829,32 @@ class LotteryStore {
         //转成想要的格式，如123,,1,1,
         for (let i = 0; i < pos.length; i++) {
             if (this.selectedNums[i]) {
-                arr.push(this.selectedNums[i].join(''));
+                arr.push(this.selectedNums[i].join(','));
             } else {
                 arr.push('');
             }
         }
+        const odds = this.currentOdd.split('~')[0];
+        const point = this.currentOdd.split('~')[1];
+        const price = this.betMode;
+        const piece = this.betPiece;
+        const singlePickFlag = this.oddsData[this.method]['s'] === 1 && this.betCount < this.oddsData[this.method]['n'];
+        const singlePickMaxBonus = this.oddsData[this.method]['m'];
         result = [{
             detail: {
                 name,
                 rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
-                betContent: arr.toString(),
+                betContent: arr.join('|'),
                 playWay: this.method,
-                odds: this.currentOdd.split('~')[0],
-                point: this.currentOdd.split('~')[1],
+                odds,
+                point,
             },
-            piece: this.betPiece,
-            price: this.betMode,
+            piece,
+            price,
+            singlePickFlag,
+            singlePickMaxBonus,
             amount: { betMoney: this.betMoney, betCount: this.betCount },
-            win: '1',
+            win: (odds / 2) * price - price,
         }];
         return result;
     }
@@ -896,6 +933,7 @@ class LotteryStore {
                 price: order.price,
                 odds: order.detail.odds,
                 point: order.detail.point,
+                position: order.detail.rxPos
             }))),
             betType: 2,
             sourceType: 0

@@ -9,6 +9,8 @@ import { Radio, Select, Modal, message, Checkbox, Button } from 'antd';
 import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 import './betOption.styl';
+import { choose } from '../../../../utils/algorithm';
+import { combination } from '../../../../utils/calcBetCount';
 
 @withRouter
 @inject(stores => ({
@@ -18,7 +20,7 @@ import './betOption.styl';
 @observer
 class BetOption extends React.Component {
     quickSubmitOrder = async () => {
-        const { quickSubmitOrder, getRecord } = this.props.lotteryStore;
+        const { addOrder, quickSubmitOrder, getRecord } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
         const res = await quickSubmitOrder();
         if (res.data.code === 1) {//1 表是成功
@@ -37,8 +39,166 @@ class BetOption extends React.Component {
             message.error(res.data.msg);
         }
     }
+    addOrder = () => {//计算单挑
+        const { rxPosValues, addOrder, genOrderData, chaidanConfig, method, oddsData, lotteryType } = this.props.lotteryStore;
+        const result = genOrderData();
+        if (/^rx/.test(method) && ['ssc', 'ky481'].includes(lotteryType)) {//任选玩法计算单挑
+            let singlePickPoss = [];
+            const orderObj = result[0];
+            if (rxPosValues.length > 0) {
+                let posArr;
+                const singlePickMaxBonus = orderObj[method]['m'];
+                if (lotteryType === 'ky481') {
+                    posArr = rxPosValues.map(v => {
+                        v.replace(/自由泳/, 1).replace(/仰泳/, 2).replace(/蛙泳/, 3).replace(/蝶泳/, 4);
+                        return v;
+                    });
+                } else {
+                    posArr = rxPosValues.map(v => {
+                        v.replace(/万/, 1).replace(/千/, 2).replace(/百/, 3).replace(/十/, 4).replace(/个/, 5);
+                        return v;
+                    });
+                }
+                if (/^rx2/.test(method)) {
+                    posArr = choose(posArr, 2);
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;
+                        const _n = orderObj.amount.betCount / combination(rxPosValues.length, 2);//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                if (/^rx3/.test(method)) {
+                    posArr = choose(posArr, 3);
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;
+                        const _n = orderObj.amount.betCount / combination(rxPosValues.length, 3);//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                if (/^rx4/.test(method)) {
+                    posArr = choose(posArr, 4);
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;
+                        const _n = orderObj.amount.betCount / combination(rxPosValues.length, 4);//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                singlePickPoss = singlePickPoss.map(v => {
+                    if (lotteryType === 'ky481') {
+                        v.replace(/1/, '自由泳').replace(/2/, '仰泳').replace(/3/, '蛙泳').replace(/4/, '蝶泳');
+                    } else {
+                        v.replace(/1/, '万').replace(/2/, '千').replace(/3/, '百').replace(/4/, '十').replace(/5/, '个');
+                    }
+                    return v;
+                });
+                if (singlePickPoss.length > 0) {
+                    Modal.confirm({
+                        content: `您的注单${singlePickPoss.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
+                        onOk: addOrder,
+                        okText: '确认',
+                        cancelText: '取消',
+                    });
+                    return;
+                }
+            } else {//直选复式
+                const betArr = orderObj.detail.betContent.split('|');
+                const singlePickMaxBonus = orderObj[method]['m'];
+                if (/^rx2/.test(method)) {
+                    const posArr = choose([1, 2, 3, 4, 5], 2);//[[1,2],[1,3],[1,4]...]
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;//快赢481 5没有
+                        const _n = betArr[item[0] - 1].length * betArr[item[1] - 1].length;//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                if (/^rx3/.test(method)) {
+                    const posArr = choose([1, 2, 3, 4, 5], 3);//[[1,2],[1,3],[1,4]...]
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;
+                        const _n = betArr[item[0] - 1].length * betArr[item[1] - 1].length * betArr[item[2] - 1].length;//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                if (/^rx4/.test(method)) {
+                    const posArr = choose([1, 2, 3, 4, 5], 4);//[[1,2],[1,3],[1,4]...]
+                    for (let item of posArr) {
+                        const oddObj = oddsData[method + '_' + item.join('')];
+                        if (!oddObj) continue;
+                        const _n = betArr[item[0] - 1].length * betArr[item[1] - 1].length * betArr[item[2] - 1].length * betArr[item[3] - 1].length;//注数
+                        if (oddObj['s'] === 1 && _n > 0 && _n < oddObj['n']) {
+                            singlePickPoss.push(item.join(''));
+                        }
+                    }
+                }
+                singlePickPoss = singlePickPoss.map(v => {
+                    if (lotteryType === 'ky481') {
+                        v.replace(/1/, '自由泳').replace(/2/, '仰泳').replace(/3/, '蛙泳').replace(/4/, '蝶泳');
+                    } else {
+                        v.replace(/1/, '万').replace(/2/, '千').replace(/3/, '百').replace(/4/, '十').replace(/5/, '个');
+                    }
+                    return v;
+                });
+                if (singlePickPoss.length > 0) {
+                    Modal.confirm({
+                        content: `您的注单${singlePickPoss.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
+                        onOk: addOrder,
+                        okText: '确认',
+                        cancelText: '取消',
+                    });
+                    return;
+                }
+            }
+            addOrder();
+            return;
+        }
+        if (chaidanConfig.chaidan) {
+            const singlePickNums = [];
+            let singlePickMaxBonus;
+            result.forEach(elem => {
+                if (elem.singlePickFlag) {
+                    singlePickNums.push(elem.detail.betContent);
+                    singlePickMaxBonus = elem.singlePickMaxBonus;
+                }
+            });
+            if (singlePickNums.length > 0) {
+                Modal.confirm({
+                    content: `您的注单${singlePickNums.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
+                    onOk: addOrder,
+                    okText: '确认',
+                    cancelText: '取消',
+                });
+                return;
+            }
+        } else {
+            if (result[0]['singlePickFlag']) {
+                Modal.confirm({
+                    content: `您的注单是单挑,将有当期单挑最高奖金${result[0]['singlePickMaxBonus']}元的限制，您确定要继续吗？`,
+                    onOk: addOrder,
+                    okText: '确认',
+                    cancelText: '取消',
+                });
+                return;
+            }
+        }
+        addOrder();
+    }
     render() {
-        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, addOrder, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
+        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
 
         return (
             <div className="clearfix bet-option-wrapper">
@@ -104,7 +264,7 @@ class BetOption extends React.Component {
                 </div>
                 <div className="fr right-wrapper">
                     <Button disabled={betCount <= 0} className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder}>快速投注</Button>
-                    <Button disabled={betCount <= 0} className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={addOrder}>添加订单</Button>
+                    <Button disabled={betCount <= 0} className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={this.addOrder}>添加订单</Button>
                 </div>
             </div>
         );

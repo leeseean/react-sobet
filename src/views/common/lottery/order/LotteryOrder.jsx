@@ -57,7 +57,7 @@ class LotteryOrder extends React.Component {
                 title: '盈利金额',
                 dataIndex: 'win',
                 width: 80,
-                render: text => <div className="ellipsis" title={text}>{text}</div>
+                render: (text, record) => <div className="ellipsis" title={text}>{text * record.price * record.piece}</div>
             }, {
                 key: 'delete',
                 title: <Icon
@@ -120,7 +120,7 @@ class LotteryOrder extends React.Component {
                             {
                                 lotteryCode === 'wbgmmc' ? (
                                     <React.Fragment>
-                                        <div style={{margin: '11px 0 0 0'}}>
+                                        <div style={{ margin: '11px 0 0 0' }}>
                                             连续开奖
                                             <Select style={{ margin: '0 4px' }} size="small" value={continuousCount} onChange={(value) => setContinuousCount(value)}>
                                                 <Select.Option value="1">1</Select.Option>
@@ -134,7 +134,7 @@ class LotteryOrder extends React.Component {
                                             </Select>
                                             次
                                         </div>
-                                        <div style={{margin: '11px 0'}}>
+                                        <div style={{ margin: '11px 0' }}>
                                             <Button
                                                 disabled={orderTotalMoney <= 0}
                                                 block
@@ -143,8 +143,8 @@ class LotteryOrder extends React.Component {
                                                 type="primary">马上开奖</Button>
                                         </div>
                                         <div>
-                                        <Checkbox style={{margin:'0 4px 0 0'}} checked={mmcWinStopFlag} onChange={(e) => toggleMmcWinStop(e.target.checked)} />
-                                        中奖即停
+                                            <Checkbox style={{ margin: '0 4px 0 0' }} checked={mmcWinStopFlag} onChange={(e) => toggleMmcWinStop(e.target.checked)} />
+                                            中奖即停
                                         </div>
                                     </React.Fragment>
                                 ) : (

@@ -34,8 +34,8 @@ class GlobalStore {
     @observable username = localStorage.getItem('username') || '----'
 
     @action setPlatformId = (id) => {
-        this.platformId = 1||id;
-        localStorage.setItem('platformId', 1||id);
+        this.platformId = id;
+        localStorage.setItem('platformId', id);
     }
 
     @action setUserName = (name) => {

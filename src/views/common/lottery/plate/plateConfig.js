@@ -19190,6 +19190,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_zx_hz: {
@@ -19254,6 +19255,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zx_qfs: {
@@ -19271,6 +19273,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_hfs: {
@@ -19288,6 +19291,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_qfs: {
@@ -19305,6 +19309,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         dwd_dwd_dwd: {
@@ -19386,6 +19391,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_zx_hz: {
@@ -19450,6 +19456,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zx_qfs: {
@@ -19467,6 +19474,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_hfs: {
@@ -19484,6 +19492,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_qfs: {
@@ -19501,6 +19510,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         dwd_dwd_dwd: {
@@ -19582,6 +19592,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_zx_hz: {
@@ -19646,6 +19657,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zx_qfs: {
@@ -19663,6 +19675,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_hfs: {
@@ -19680,6 +19693,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_qfs: {
@@ -19697,6 +19711,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         dwd_dwd_dwd: {
@@ -19778,6 +19793,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_zx_hz: {
@@ -19842,6 +19858,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zx_qfs: {
@@ -19859,6 +19876,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_hfs: {
@@ -19876,6 +19894,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_zux_qfs: {
@@ -19893,6 +19912,7 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         dwd_dwd_dwd: {
@@ -19975,6 +19995,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -19993,6 +20014,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -20011,6 +20033,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -20029,6 +20052,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -20137,6 +20161,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -20145,6 +20170,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -20153,6 +20179,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -20161,6 +20188,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -20169,6 +20197,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -20177,6 +20206,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -20185,6 +20215,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -20193,6 +20224,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -20299,6 +20331,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -20317,6 +20350,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -20335,6 +20369,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -20353,6 +20388,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -20461,6 +20497,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -20469,6 +20506,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -20477,6 +20515,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -20485,6 +20524,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -20493,6 +20533,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -20501,6 +20542,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -20509,6 +20551,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -20517,6 +20560,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -20623,6 +20667,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -20641,6 +20686,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -20659,6 +20705,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -20677,6 +20724,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -20785,6 +20833,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -20793,6 +20842,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -20801,6 +20851,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -20809,6 +20860,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -20817,6 +20869,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -20825,6 +20878,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -20833,6 +20887,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -20841,6 +20896,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -20947,6 +21003,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -20965,6 +21022,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -20983,6 +21041,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -21001,6 +21060,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -21109,6 +21169,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -21117,6 +21178,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -21125,6 +21187,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -21133,6 +21196,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -21141,6 +21205,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -21149,6 +21214,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -21157,6 +21223,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -21165,6 +21232,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -21271,6 +21339,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -21289,6 +21358,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -21307,6 +21377,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -21325,6 +21396,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -21433,6 +21505,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -21441,6 +21514,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -21449,6 +21523,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -21457,6 +21532,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -21465,6 +21541,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -21473,6 +21550,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -21481,6 +21559,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -21489,6 +21568,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -21595,6 +21675,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -21613,6 +21694,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -21631,6 +21713,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -21649,6 +21732,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -21757,6 +21841,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -21765,6 +21850,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -21773,6 +21859,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -21781,6 +21868,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -21789,6 +21877,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -21797,6 +21886,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -21805,6 +21895,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -21813,6 +21904,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -21919,6 +22011,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -21937,6 +22030,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -21955,6 +22049,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -21973,6 +22068,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -22081,6 +22177,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -22089,6 +22186,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -22097,6 +22195,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -22105,6 +22204,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -22113,6 +22213,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -22121,6 +22222,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -22129,6 +22231,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -22137,6 +22240,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -22243,6 +22347,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -22261,6 +22366,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -22279,6 +22385,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -22297,6 +22404,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -22405,6 +22513,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -22413,6 +22522,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -22421,6 +22531,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -22429,6 +22540,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -22437,6 +22549,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -22445,6 +22558,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -22453,6 +22567,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -22461,6 +22576,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -22567,6 +22683,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -22585,6 +22702,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -22603,6 +22721,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -22621,6 +22740,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_bdd11y: {
@@ -22729,6 +22849,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 1
             }
         },
         rxds_rxds_2z2: {
@@ -22737,6 +22858,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -22745,6 +22867,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -22753,6 +22876,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -22761,6 +22885,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -22769,6 +22894,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -22777,6 +22903,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -22785,6 +22912,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxdt_rxdt_2z2: {
@@ -22891,6 +23019,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         sm_sm_zuxfs: {
@@ -22909,6 +23038,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         em_em_zxfs: {
@@ -22927,6 +23057,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         em_em_zuxfs: {
@@ -22945,6 +23076,7 @@ export default {
             isRandom: true,//是否机选
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         bdd_bdd_3x1m: {
@@ -23063,6 +23195,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rxds_rxds_3z3: {
@@ -23071,6 +23204,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rxds_rxds_4z4: {
@@ -23079,6 +23213,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 4
             }
         },
         rxds_rxds_5z5: {
@@ -23087,6 +23222,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_6z5: {
@@ -23095,6 +23231,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_7z5: {
@@ -23103,6 +23240,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
         rxds_rxds_8z5: {
@@ -23111,6 +23249,7 @@ export default {
             isRandom: true,
             plate: {
                 type: 'input',
+                numOfEach: 5
             }
         },
     },
@@ -23139,7 +23278,8 @@ export default {
             name: '猜前二单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 2
             }
         },
         cq3_cq3_cq3: {
@@ -23156,7 +23296,8 @@ export default {
             name: '猜前三单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 3
             }
         },
         cq4_cq4_cq4: {
@@ -23173,7 +23314,8 @@ export default {
             name: '猜前四单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 4
             }
         },
         cq5_cq5_cq5: {
@@ -23190,7 +23332,8 @@ export default {
             name: '猜前五单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 5
             }
         },
         dwd_dwd_q5: {
@@ -23411,7 +23554,8 @@ export default {
             name: '猜前二单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 2
             }
         },
         cq3_cq3_cq3: {
@@ -23428,7 +23572,8 @@ export default {
             name: '猜前三单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 3
             }
         },
         cq4_cq4_cq4: {
@@ -23445,7 +23590,8 @@ export default {
             name: '猜前四单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 4
             }
         },
         cq5_cq5_cq5: {
@@ -23462,7 +23608,8 @@ export default {
             name: '猜前五单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 5
             }
         },
         dwd_dwd_q5: {
@@ -23683,7 +23830,8 @@ export default {
             name: '猜前二单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 2
             }
         },
         cq3_cq3_cq3: {
@@ -23700,7 +23848,8 @@ export default {
             name: '猜前三单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 3
             }
         },
         cq4_cq4_cq4: {
@@ -23717,7 +23866,8 @@ export default {
             name: '猜前四单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 4
             }
         },
         cq5_cq5_cq5: {
@@ -23734,7 +23884,8 @@ export default {
             name: '猜前五单式',
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
-                type: 'input'
+                type: 'input',
+                numOfEach: 5
             }
         },
         dwd_dwd_q5: {
@@ -23947,6 +24098,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
+                numOfEach: 4
             }
         },
         sx_zux_z24: {
@@ -24005,6 +24157,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳'],
+                numOfEach: 3
             }
         },
         qsm_zx_hz: {
@@ -24042,7 +24195,8 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
-                pos: ['自由泳', '仰泳', '蛙泳']
+                pos: ['自由泳', '仰泳', '蛙泳'],
+                numOfEach: 3
             }
         },
         qsm_zux_hz: {
@@ -24071,6 +24225,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳', '蛙泳'],
+                numOfEach: 3
             }
         },
         hsm_zx_hz: {
@@ -24108,7 +24263,8 @@ export default {
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'input',
-                pos: ['自由泳', '仰泳', '蛙泳']
+                pos: ['自由泳', '仰泳', '蛙泳'],
+                numOfEach: 3
             }
         },
         hsm_zux_hz: {
@@ -24137,6 +24293,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
+                numOfEach: 2
             }
         },
         em_zx_qhz: {
@@ -24165,6 +24322,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
+                numOfEach: 2
             }
         },
         em_zux_qhz: {
@@ -24193,6 +24351,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
+                numOfEach: 2
             }
         },
         em_zx_hhz: {
@@ -24221,6 +24380,7 @@ export default {
             plate: {
                 type: 'input',
                 pos: ['自由泳', '仰泳'],
+                numOfEach: 2
             }
         },
         em_zux_hhz: {
@@ -24259,6 +24419,7 @@ export default {
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rx2_zx_hz: {
@@ -24289,6 +24450,7 @@ export default {
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
+                numOfEach: 2
             }
         },
         rx2_zux_hz: {
@@ -24318,6 +24480,7 @@ export default {
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'input',
+                numOfEach: 3
             }
         },
         rx3_zx_hz: {

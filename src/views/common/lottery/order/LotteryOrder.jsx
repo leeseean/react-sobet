@@ -57,7 +57,7 @@ class LotteryOrder extends React.Component {
                 title: '盈利金额',
                 dataIndex: 'win',
                 width: 80,
-                render: (text, record) => <div className="ellipsis" title={text}>{text * record.price * record.piece}</div>
+                render: (text, record) => <div className="ellipsis" title={text}>{(text * record.price * record.piece).toFixed(2)}</div>
             }, {
                 key: 'delete',
                 title: <Icon

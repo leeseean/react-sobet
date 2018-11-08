@@ -6,16 +6,18 @@ import LotteryRecord from './record/LotteryRecord';
 import LotteryPlate from './plate/LotteryPlate';
 import LotteryOrder from './order/LotteryOrder';
 import LotteryTrace from './trace';
+import ComponentToPrint from './ComponentToPrint';
 
 @inject('lotteryStore')
 @observer
 class MainContent extends React.Component {
     componentDidMount() {
-        const { getOddsData, queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
+        const { getOddsData, getRecord, queryTrendData, updateIssue, getTabConfig } = this.props.lotteryStore;
         getOddsData();
         updateIssue();
         queryTrendData();
         getTabConfig();
+        getRecord();
     }
     render() {
         const { setMainLeftRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
@@ -28,6 +30,7 @@ class MainContent extends React.Component {
                         <LotteryOrder />
                         <LotteryTrace />
                         <LotteryRecord />
+                        <ComponentToPrint />
                     </div>
                     <div className="fr main-content-right">
                         <TrendList {...{ trendData, lotteryType, trendConfig, method }} />

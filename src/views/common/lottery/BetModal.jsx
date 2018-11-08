@@ -65,7 +65,7 @@ class BetModal extends React.Component {
                                     <div className="item-content">
                                         <div className="play-way">{order.detail.name}</div>
                                         <div className="bet-code ellipsis">{order.detail.betContent}</div>
-                                        <div className="win-wrapper">盈利金额：<em className="win">{order.win}</em></div>
+                                        <div className="win-wrapper">盈利金额：<em className="win">{(order.win * order.price * order.piece).toFixed(2)}</em></div>
                                     </div>
                                 </div>
                             );

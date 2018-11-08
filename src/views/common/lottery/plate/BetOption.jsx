@@ -12,6 +12,10 @@ import './betOption.styl';
 import { choose } from '../../../../utils/algorithm';
 import { combination } from '../../../../utils/calcBetCount';
 
+message.config({
+    top: 100,
+});
+
 @withRouter
 @inject(stores => ({
     refreshBalance: stores.globalStore.refreshBalance,
@@ -23,6 +27,7 @@ class BetOption extends React.Component {
         const { addOrder, quickSubmitOrder, getRecord } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
         const res = await quickSubmitOrder();
+        console.log(res)
         if (res.data.code === 1) {//1 表是成功
             message.success('订单提交成功！');
             //更新投注记录，更新余额
@@ -45,9 +50,10 @@ class BetOption extends React.Component {
         if (/^rx/.test(method) && ['ssc', 'ky481'].includes(lotteryType)) {//任选玩法计算单挑
             let singlePickPoss = [];
             const orderObj = result[0];
+
             if (rxPosValues.length > 0) {
                 let posArr;
-                const singlePickMaxBonus = orderObj[method]['m'];
+                const singlePickMaxBonus = oddsData[method]['m'];
                 if (lotteryType === 'ky481') {
                     posArr = rxPosValues.map(v => {
                         v.replace(/自由泳/, 1).replace(/仰泳/, 2).replace(/蛙泳/, 3).replace(/蝶泳/, 4);
@@ -111,7 +117,7 @@ class BetOption extends React.Component {
                 }
             } else {//直选复式
                 const betArr = orderObj.detail.betContent.split('|');
-                const singlePickMaxBonus = orderObj[method]['m'];
+                const singlePickMaxBonus = oddsData[method]['m'];
                 if (/^rx2/.test(method)) {
                     const posArr = choose([1, 2, 3, 4, 5], 2);//[[1,2],[1,3],[1,4]...]
                     for (let item of posArr) {

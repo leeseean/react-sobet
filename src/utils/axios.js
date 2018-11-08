@@ -46,12 +46,12 @@ const $http = (config) => {
             config.url = '/dev' + config.url;
         }
     }
-    config = Object.assign(config, {
+    config = Object.assign({
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             'Access-Control-Allow-Origin': '*'
         }
-    });
+    }, config);
     return axios(config);
 };
 

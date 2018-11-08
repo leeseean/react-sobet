@@ -1,0 +1,3 @@
+/api/u/v1/lottery/add_order_now,
+/api/u/v1/lottery/add_order,
+/api/u/v1/lottery/cancel_order,

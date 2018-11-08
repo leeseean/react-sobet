@@ -31,6 +31,7 @@ class LotteryStore {
             oldValue
         } = change;
         if (newValue !== oldValue) {
+            this.getOddsData();
             this.updateIssue();
             this.emptyOpencode = true;//开奖号码处空白
             this.queryTrendData();
@@ -85,13 +86,14 @@ class LotteryStore {
         history.push(path);
     }
 
-    @observable oddsData = {}
+    @observable oddsData = JSON.parse(localStorage.getItem(`${this.lotteryCode}-odd`)) || {}
 
     @action
     getOddsData = async () => {
         const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase() });
         if (res.data.code === 1) {
             this.oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
+            localStorage.setItem(`${this.lotteryCode}-odd`, JSON.stringify(this.oddsData));
             if (this.chaidanConfig.chaidan) {
                 this.changeCurrentChaidanOddType('');
             } else {
@@ -470,7 +472,6 @@ class LotteryStore {
             this.selectedChaidanNums.splice(INDEX, 1);
             this.currentChaidanOddArr.splice(INDEX, 1);
         }
-        console.log(this.currentChaidanOddArr)
         this.changeCurrentChaidanOddType(this.currentChaidanOddType || 'A');
     }
 
@@ -791,7 +792,7 @@ class LotteryStore {
                 singlePickFlag,
                 singlePickMaxBonus,
                 amount: { betMoney: this.betMoney, betCount: this.betCount },
-                win: (odds / 2) * price - price,
+                win: odds / 2 - 1,
             }];
             return result;
         }
@@ -819,7 +820,7 @@ class LotteryStore {
                     singlePickFlag,
                     singlePickMaxBonus,
                     amount: { betMoney: this.betMoney / len, betCount: 1 },
-                    win: (odds / 2) * price - price,
+                    win: odds / 2 - 1,
                 }
             });
             return result;
@@ -854,7 +855,7 @@ class LotteryStore {
             singlePickFlag,
             singlePickMaxBonus,
             amount: { betMoney: this.betMoney, betCount: this.betCount },
-            win: (odds / 2) * price - price,
+            win: odds / 2 - 1,
         }];
         return result;
     }
@@ -892,7 +893,15 @@ class LotteryStore {
     //order订单栏部分
     @observable betModalShowed = false
 
+    @observable printRef = null
+
+    @action setPrintRef = value => {
+        this.printRef = value;
+    }
+
     @observable printOrderFlag = Boolean(localStorage.getItem('printOrderFlag')) || false
+
+    @observable printData = null
 
     @observable orderData = []
 
@@ -924,17 +933,22 @@ class LotteryStore {
         let orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
             issue: this.currentIssue,
-            order: JSON.stringify(this.orderData.map(order => ({
-                method: order.detail.playWay,
-                code: order.detail.betContent,
-                nums: order.amount.betCount,
-                amount: order.amount.betMoney,
-                piece: order.piece,
-                price: order.price,
-                odds: order.detail.odds,
-                point: order.detail.point,
-                position: order.detail.rxPos
-            }))),
+            order: JSON.stringify(this.orderData.map(order => {
+                const obj = {
+                    method: order.detail.playWay,
+                    code: String(order.detail.betContent),
+                    nums: String(order.amount.betCount),
+                    amount: String(order.amount.betMoney),
+                    piece: String(order.piece),
+                    price: String(order.price),
+                    odds: String(order.detail.odds),
+                    point: String(order.detail.point),
+                };
+                if (order.detail.rxPos) {
+                    obj.position = order.detail.rxPos
+                }
+                return obj;
+            })),
             betType: 2,
             sourceType: 0
         };
@@ -953,15 +967,22 @@ class LotteryStore {
                 trace: JSON.stringify({
                     counts,
                     start: this.nextApp[0]['issue'],
-                    totalMoney: this.totalTraceMoney,
-                    totalCount: this.totalTraceCount,
-                    mode: this.activeTraceType || this.defaultActiveTraceType,
+                    totalMoney: String(this.totalTraceMoney),
+                    totalCount: String(this.totalTraceCount),
+                    mode: String(this.activeTraceType || this.defaultActiveTraceType),
                     winStop: this.winStopFlag,
                 })
             };
         }
         const res = await submitOrder(orderObj);
         if (res.data.code === 1) {
+            this.getRecord().then(() => {
+                if (this.printOrderFlag) {
+                    this.printData = orderObj;
+                    this.printRef.handlePrint();
+                    this.printData = null;
+                }
+            });
             this.orderData = [];
         }
         return res;
@@ -969,32 +990,43 @@ class LotteryStore {
 
     @action quickSubmitOrder = async () => {
         const orderData = this.genOrderData();
-        const res = await submitOrder({
+        const orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
             issue: this.currentIssue,
-            order: JSON.stringify(orderData.map(order => ({
-                method: order.detail.playWay,
-                code: order.detail.betContent,
-                nums: order.amount.betCount,
-                amount: order.amount.betMoney,
-                piece: order.piece,
-                price: order.price,
-                odds: 1,
-                point: 0,
-            }))),
-            betType: 2,
+            order: JSON.stringify(orderData.map(order => {
+                const obj = {
+                    method: order.detail.playWay,
+                    code: String(order.detail.betContent),
+                    nums: String(order.amount.betCount),
+                    amount: String(order.amount.betMoney),
+                    piece: String(order.piece),
+                    price: String(order.price),
+                    odds: String(order.detail.odds),
+                    point: String(order.detail.point),
+                };
+                if (order.detail.rxPos) {
+                    obj.position = order.detail.rxPos
+                }
+                return obj;
+            })),
+            betType: 1,
             sourceType: 0
-        });
+        };
+        const res = await submitOrder(orderObj);
         if (res.data.code === 1) {
+            this.getRecord();
             if (this.plateType === 'input') {
                 this.inputedNums = [];
-                return;
             }
             if (this.chaidanConfig.chaidan) {
                 this.selectedChaidanNums = [];
-                return;
             }
             this.selectedNums = {};
+            if (this.printOrderFlag) {
+                this.printData = orderObj
+                this.printRef.handlePrint();
+                this.printData = null;
+            }
         }
         return res;
     }

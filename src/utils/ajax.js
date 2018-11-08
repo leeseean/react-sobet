@@ -196,7 +196,18 @@ export function cancelOrder(data) {
     return $http({
         data,
         url: '/lottery/api/u/v1/lottery/trace_cancel',
-        method: 'POST'
+        method: 'POST',
+        transformRequest: [data => {
+            // Do whatever you want to transform the data
+            let ret = ''
+            for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+        }],
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
     });
 }
 //追号终止  /lottery/api/u/v1/lottery/trace_cancel?traceId=''&issues=[]
@@ -221,7 +232,37 @@ export function submitOrder(data) {
     return $http({
         data,
         url: '/lottery/api/u/v1/lottery/add_order',
-        method: 'POST'
+        method: 'POST',
+        transformRequest: [data => {
+            // Do whatever you want to transform the data
+            let ret = ''
+            for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+        }],
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    });
+}
+//渺渺彩投注/lottery/api/u/v1/lottery/add_order_now
+export function submitOrderMmc(data) {
+    return $http({
+        data,
+        url: '/lottery/api/u/v1/lottery/add_order_now',
+        method: 'POST',
+        transformRequest: [data => {
+            // Do whatever you want to transform the data
+            let ret = ''
+            for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+        }],
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
     });
 }
 // 获取余额 /sobet/pay/getPlayerBalance?cbId=sobet_01

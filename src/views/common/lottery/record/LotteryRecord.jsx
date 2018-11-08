@@ -37,12 +37,10 @@ class LotteryRecord extends React.Component {
                 method: playWayToCn[method.split('_').slice(0, 3).join('_')],
                 code: <div className="ellipsis record-item-code" title={code}>{code}</div>,
                 key: orderId,
-                mani: status === '未开奖' ? [<span className="order-again" value="再次投注">再次投注</span>, <span className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>
+                mani: status === '未开奖' ? [<span key="1" className="order-again" value="再次投注">再次投注</span>, <span key="2" className="order-cancel" value="撤单">撤单</span>] : <span className="order-again" value="再次投注">再次投注</span>
             };
         });
-        this.setState({
-            dataSource
-        });
+        return dataSource;
     }
     genColums() {
         const { lotteryCode } = this.props.lotteryStore;
@@ -132,10 +130,11 @@ class LotteryRecord extends React.Component {
             );
         };
         const columns = this.genColums();
+        const dataSource = this.getDataSource();
         return (
             <div className="record-wrapper">
                 <div className={`record-table-wrapper ${this.state.recordShowFlag ? '' : 'hide'}`}>
-                    <Table columns={columns} dataSource={this.state.dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} />
+                    <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} scroll={{y:360}} />
                 </div>
                 <OrderDetail {...{ playWayToCn, lotteryCodeToCn }} recordDetail={this.state.recordDetail} betModalFlag={this.state.betModalFlag} />
             </div>

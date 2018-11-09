@@ -8,6 +8,10 @@ import { withRouter } from 'react-router-dom';
 import { Modal, Checkbox, message, Divider } from 'antd';
 import './betModal.styl';
 
+message.config({
+    top: 100,
+});
+
 @withRouter
 @inject(stores => ({
     refreshBalance: stores.globalStore.refreshBalance,
@@ -18,12 +22,12 @@ class TraceModal extends React.Component {
     submitOrder = async () => {
         const { submitOrder, getRecord, switchTraceModal } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
+        switchTraceModal(false);
         const res = await submitOrder();
         if (res.data.code === 1) {//1 表是成功
             message.success('订单提交成功！');
             //更新投注记录，更新余额
             refreshBalance(res.data.result.money.avail);
-            getRecord();
         } else if (res.data.code === 4001) {//余额不足
             Modal.confirm({
                 centered: true,
@@ -34,7 +38,6 @@ class TraceModal extends React.Component {
         } else {
             message.error(res.data.msg);
         }
-        switchTraceModal(false);
     }
     render() {
         const modeConfig = {

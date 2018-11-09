@@ -6,6 +6,7 @@ import React from 'react';
 import { List, Divider, Table } from 'antd';
 import ReactToPrint from "react-to-print";
 import { inject, observer } from 'mobx-react';
+import { findDOMNode } from 'react-dom';
 
 @inject(stores => ({
     lotteryStore: stores.lotteryStore,
@@ -23,6 +24,7 @@ class Content extends React.Component {
         let Content;
         if (printData.istrace) {
             title = '彩票追号投注单';
+            const traceOrder = JSON.parse(printData.trace);
             const topListData = [{
                 description: `下单时间：${new Date(recordData[0]['orderTime']).toLocaleDateString()}`,
             }, {
@@ -30,9 +32,9 @@ class Content extends React.Component {
             }, {
                 description: `开始期号：${recordData[0]['issue']}`
             }, {
-                description: `追号期数：${printData.trace['totalCount']}`
+                description: `追号期数：${traceOrder['totalCount']}`
             }, {
-                description: `追号模式：${traceConfig[printData.trace['mode']]}`
+                description: `追号模式：${traceConfig[traceOrder['mode']]}`
             }];
             Content = () => {
                 return (
@@ -60,6 +62,8 @@ class Content extends React.Component {
                                     description: `追号金额：${recordData[i]['amount']}元`
                                 }, {
                                     description: <Table
+                                        size="small"
+                                        pagination={false}
                                         columns={[{
                                             title: '奖期',
                                             dataIndex: 'issue',
@@ -70,14 +74,14 @@ class Content extends React.Component {
                                             key: 'amount'
                                         }]}
                                         dataSource={
-                                            Object.keys(printData.trace).map(o => ({
+                                            Object.keys(traceOrder.counts).map(o => ({
                                                 issue: o,
-                                                amount: printData.trace[o]
+                                                amount: traceOrder.counts[o]
                                             }))
                                         } />
                                 }];
                                 return (
-                                    <React.Fragment>
+                                    <React.Fragment key={recordData[i]['traceId']}>
                                         <List itemLayout="horizontal"
                                             dataSource={listData}
                                             renderItem={item => (
@@ -134,7 +138,7 @@ class Content extends React.Component {
                                     description: `投注金额：${recordData[i]['amount']}元`
                                 }];
                                 return (
-                                    <React.Fragment>
+                                    <React.Fragment key={recordData[i]['orderId']}>
                                         <List itemLayout="horizontal"
                                             dataSource={listData}
                                             renderItem={item => (
@@ -169,12 +173,12 @@ class ComponentToPrint extends React.Component {
         const { setPrintRef } = this.props
         return (
             <React.Fragment>
+                <Content ref={ref => this.contentRef = ref} />
                 <ReactToPrint
                     ref={ref => setPrintRef(ref)}
                     trigger={() => <span></span>}
                     content={() => this.contentRef}
                 />
-                <Content ref={ref => this.contentRef = ref} />
             </React.Fragment>
         );
     }

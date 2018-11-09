@@ -32,16 +32,15 @@ class TraceDetail extends React.Component {
     }
     backToBetModal = () => {
         const { getStateFromTraceModal } = this.props;
-        this.setState({
-            traceModalFlag: false,
-        });
         getStateFromTraceModal({
+            traceModalFlag: false,
             betModalFlag: true,
         });
     }
     closeTraceModal = () => {
-        this.setState({
-            traceModalFlag: false
+        const { getStateFromTraceModal } = this.props;
+        getStateFromTraceModal({
+            traceModalFlag: false,
         });
     }
     checkAll = (e) => {
@@ -74,22 +73,21 @@ class TraceDetail extends React.Component {
         const res = await getRecordDetail({ orderId });
         const { getStateFromTraceModal } = this.props;
         if (res.data.code === 1) {
-            this.setState({
-                traceModalFlag: false
-            });
             getStateFromTraceModal({
+                traceModalFlag: false,
                 recordDetail: res.data.result,
                 betModalFlag: true,
             });
         }
     }
     cancelTrace = async () => {
+        const { viewTraceDetail } = this.props;
         const res = await cancelTrace({ traceId: this.state.traceDetail.traceId, issues: this.state.checkList });
         if (res.data.code === 1) {
             this.setState({
                 checkList: []
             });
-            this.viewTraceDetail();
+            viewTraceDetail();
         }
     }
     turnPage = (e) => {
@@ -133,7 +131,9 @@ class TraceDetail extends React.Component {
                                                         <label>{status === 1 ? '已完成' : '进行中'}</label>
                                                     </em>
                                                     <em>
-                                                        <a className="hand traceDetails" onClick={() => this.viewOrderDetail(orderId)}>{status === 1 ? '详情' : ''}</a>
+                                                        {
+                                                            status === 1 ? <a className="hand traceDetails" onClick={() => this.viewOrderDetail(orderId)}>详情</a> :  <a className="hand traceDetails"></a>
+                                                        }
                                                     </em>
                                                 </li>
                                             );
@@ -156,7 +156,7 @@ class TraceDetail extends React.Component {
                         </tr>
                         <tr>
                             <th>彩种：</th>
-                            <td>{lotteryCodeToCn[this.state.traceDetail.lottery]}</td>
+                            <td>{lotteryCodeToCn[this.state.traceDetail.lottery && this.state.traceDetail.lottery.toLocaleLowerCase()]}</td>
                         </tr>
                         <tr>
                             <th>追号内容：</th>

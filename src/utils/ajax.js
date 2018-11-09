@@ -187,7 +187,7 @@ export function getRecordDetail(params) {
 export function getTraceDetail(params) {
     return $http({
         params,
-        url: '/lottery/api/u/v1/lottery/recent_detail',
+        url: '/lottery/api/u/v1/lottery/trace',
         method: 'GET'
     });
 }
@@ -195,7 +195,7 @@ export function getTraceDetail(params) {
 export function cancelOrder(data) {
     return $http({
         data,
-        url: '/lottery/api/u/v1/lottery/trace_cancel',
+        url: '/lottery/api/u/v1/lottery/cancel_order',
         method: 'POST',
         transformRequest: [data => {
             // Do whatever you want to transform the data

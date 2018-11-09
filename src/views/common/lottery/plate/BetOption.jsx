@@ -23,16 +23,20 @@ message.config({
 }))
 @observer
 class BetOption extends React.Component {
-    quickSubmitOrder = async () => {
-        const { addOrder, quickSubmitOrder, getRecord } = this.props.lotteryStore;
+    quickSubmitOrder = () => {
+        if (this.singlePick(this.handleQuickSubmit)) {
+            return;
+        }
+        this.handleQuickSubmit();
+    }
+    handleQuickSubmit = async () => {
+        const { quickSubmitOrder } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
         const res = await quickSubmitOrder();
-        console.log(res)
         if (res.data.code === 1) {//1 表是成功
             message.success('订单提交成功！');
             //更新投注记录，更新余额
             refreshBalance(res.data.result.money.avail);
-            getRecord();
         } else if (res.data.code === 4001) {//余额不足
             Modal.confirm({
                 centered: true,
@@ -44,8 +48,8 @@ class BetOption extends React.Component {
             message.error(res.data.msg);
         }
     }
-    addOrder = () => {//计算单挑
-        const { rxPosValues, addOrder, genOrderData, chaidanConfig, method, oddsData, lotteryType } = this.props.lotteryStore;
+    singlePick = (callback) => {
+        const { rxPosValues, genOrderData, chaidanConfig, method, oddsData, lotteryType } = this.props.lotteryStore;
         const result = genOrderData();
         if (/^rx/.test(method) && ['ssc', 'ky481'].includes(lotteryType)) {//任选玩法计算单挑
             let singlePickPoss = [];
@@ -109,11 +113,11 @@ class BetOption extends React.Component {
                 if (singlePickPoss.length > 0) {
                     Modal.confirm({
                         content: `您的注单${singlePickPoss.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
-                        onOk: addOrder,
+                        onOk: callback,
                         okText: '确认',
                         cancelText: '取消',
                     });
-                    return;
+                    return true;
                 }
             } else {//直选复式
                 const betArr = orderObj.detail.betContent.split('|');
@@ -162,15 +166,13 @@ class BetOption extends React.Component {
                 if (singlePickPoss.length > 0) {
                     Modal.confirm({
                         content: `您的注单${singlePickPoss.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
-                        onOk: addOrder,
+                        onOk: callback,
                         okText: '确认',
                         cancelText: '取消',
                     });
-                    return;
+                    return true;
                 }
             }
-            addOrder();
-            return;
         }
         if (chaidanConfig.chaidan) {
             const singlePickNums = [];
@@ -184,22 +186,28 @@ class BetOption extends React.Component {
             if (singlePickNums.length > 0) {
                 Modal.confirm({
                     content: `您的注单${singlePickNums.map(v => `【${v}】`)}是单挑,将有当期单挑最高奖金${singlePickMaxBonus}元的限制，您确定要继续吗？`,
-                    onOk: addOrder,
+                    onOk: callback,
                     okText: '确认',
                     cancelText: '取消',
                 });
-                return;
+                return true;
             }
         } else {
             if (result[0]['singlePickFlag']) {
                 Modal.confirm({
                     content: `您的注单是单挑,将有当期单挑最高奖金${result[0]['singlePickMaxBonus']}元的限制，您确定要继续吗？`,
-                    onOk: addOrder,
+                    onOk: callback,
                     okText: '确认',
                     cancelText: '取消',
                 });
-                return;
+                return true;
             }
+        }
+    }
+    addOrder = () => {//计算单挑
+        const { addOrder } = this.props.lotteryStore;
+        if (this.singlePick(addOrder)) {
+            return;
         }
         addOrder();
     }

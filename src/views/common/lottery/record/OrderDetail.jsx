@@ -26,22 +26,6 @@ class OrderDetail extends React.Component {
         }
         return null;
     }
-    closeBetModal = () => {
-        this.setState({
-            betModalFlag: false
-        });
-    }
-    cancelOrder = (orderId, issue) => {
-        Modal.confirm({
-            title: `您确定要撤销${issue}期的这一注单吗？`,
-            onOk: async () => {
-                const res = await cancelOrder({ orderId });
-                if (res.data.code === 0) {
-                    message.success('撤单成功！');
-                }
-            }
-        });
-    }
     viewTraceDetail = async () => {
         const res = await getTraceDetail({ orderId: this.state.recordDetail.orderId });
         if (res.data.code === 1) {
@@ -52,14 +36,14 @@ class OrderDetail extends React.Component {
             });
         }
     }
-    getStateFromTraceModal(state) {
+    getStateFromTraceModal = state => {
         this.setState(state);
     }
     render() {
-        const { lotteryCodeToCn, playWayToCn } = this.props;
+        const { lotteryCodeToCn, playWayToCn, closeBetModal, cancelOrder } = this.props;
         return (
             <React.Fragment>
-                <Modal width="650px" title="投注详情" wrapClassName="record-detail-wrapper" rowClassName="record-row" centered footer={null} visible={this.state.betModalFlag} onCancel={this.closeBetModal}>
+                <Modal width="650px" title="投注详情" wrapClassName="record-detail-wrapper" rowClassName="record-row" centered footer={null} visible={this.state.betModalFlag} onCancel={closeBetModal}>
                     <table>
                         <tbody>
                             <tr>
@@ -67,7 +51,7 @@ class OrderDetail extends React.Component {
                                 <td>
                                     <em>{this.state.recordDetail.orderId}</em>
                                     {
-                                        this.state.recordDetail.isCurrentIssue === 1 ? <span className="order-cancel" onClick={() => this.cancelOrder(this.state.recordDetail.orderId)}>撤单</span> : null
+                                        this.state.recordDetail.isCurrentIssue === 1 ? <span className="order-cancel" onClick={() => cancelOrder(this.state.recordDetail.orderId, this.state.recordDetail.issue)}>撤单</span> : null
                                     }
                                 </td>
                             </tr>
@@ -81,7 +65,7 @@ class OrderDetail extends React.Component {
                             </tr>
                             <tr>
                                 <th>彩种：</th>
-                                <td>{lotteryCodeToCn[this.state.recordDetail.lottery]}</td>
+                                <td>{lotteryCodeToCn[this.state.recordDetail.lottery && this.state.recordDetail.lottery.toLocaleLowerCase()]}</td>
                             </tr>
                             <tr>
                                 <th>玩法：</th>
@@ -141,7 +125,7 @@ class OrderDetail extends React.Component {
                         </tbody>
                     </table>
                 </Modal>
-                <TraceDetail {...{ lotteryCodeToCn, playWayToCn }} getStateFromTraceModal={this.getStateFromTraceModal} traceModalFlag={this.state.traceModalFlag} traceDetail={this.state.traceDetail} tracePageData={this.state.tracePageData} />
+                <TraceDetail {...{ lotteryCodeToCn, playWayToCn }} getStateFromTraceModal={this.getStateFromTraceModal} traceModalFlag={this.state.traceModalFlag} traceDetail={this.state.traceDetail} tracePageData={this.state.tracePageData} viewTraceDetail={this.viewTraceDetail} />
             </React.Fragment>
         );
     }

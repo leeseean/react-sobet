@@ -776,7 +776,7 @@ class LotteryStore {
                     name,
                     odds,
                     point,
-                    rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                    rxPos: this.rxPosValues ? this.rxPosValues.toString().replace(/万|自由泳/g, '1').replace(/千|仰泳/g, '2').replace(/百|蛙泳/g, '3').replace(/十|蝶泳/g, '4').replace(/个/, '5') : '',
                     betContent: this.inputedNums.map(value => {
                         if (this.lotteryType === '11x5' || this.lotteryType === 'kl12' || this.lotteryType === 'pk10') {
                             value = value.replace(/(\d)(?=(\d{2})+$)/g, '$1,');
@@ -809,7 +809,7 @@ class LotteryStore {
                 return {
                     detail: {
                         name,
-                        rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                        rxPos: this.rxPosValues ? this.rxPosValues.toString().replace(/万|自由泳/g, '1').replace(/千|仰泳/g, '2').replace(/百|蛙泳/g, '3').replace(/十|蝶泳/g, '4').replace(/个/, '5') : '',
                         betContent: cn,
                         playWay: en,
                         odds,
@@ -844,7 +844,7 @@ class LotteryStore {
         result = [{
             detail: {
                 name,
-                rxPos: this.rxPosValues ? this.rxPosValues.toString() : '',
+                rxPos: this.rxPosValues ? this.rxPosValues.toString().replace(/万|自由泳/g, '1').replace(/千|仰泳/g, '2').replace(/百|蛙泳/g, '3').replace(/十|蝶泳/g, '4').replace(/个/, '5') : '',
                 betContent: arr.join('|'),
                 playWay: this.method,
                 odds,
@@ -893,6 +893,20 @@ class LotteryStore {
     //order订单栏部分
     @observable betModalShowed = false
 
+    @observable betAgainModalShowed = false
+
+    @observable betAgainPiece = '1'
+
+    @observable betAgainMode = 2
+
+    @action changeBetAgainMode = value => {
+        this.betAgainMode = value;
+    }
+
+    @action changeBetAgainPiece = value => {
+        this.betAgainPiece = value;
+    }
+
     @observable printRef = null
 
     @action setPrintRef = value => {
@@ -908,6 +922,11 @@ class LotteryStore {
     @action
     toggleBetModal = (bool) => {
         this.betModalShowed = bool;
+    }
+
+    @action
+    toggleBetAgainModal = (bool) => {
+        this.betAgainModalShowed = bool;
     }
 
     @action
@@ -945,7 +964,7 @@ class LotteryStore {
                     point: String(order.detail.point),
                 };
                 if (order.detail.rxPos) {
-                    obj.position = order.detail.rxPos
+                    obj.position = order.detail.rxPos;
                 }
                 return obj;
             })),
@@ -976,16 +995,23 @@ class LotteryStore {
         }
         const res = await submitOrder(orderObj);
         if (res.data.code === 1) {
-            this.getRecord().then(() => {
-                if (this.printOrderFlag) {
-                    this.printData = orderObj;
-                    this.printRef.handlePrint();
-                    this.printData = null;
-                }
-            });
+            this.getRecord().then(() => this.handlePrint(orderObj));
             this.orderData = [];
+            if(this.showTraceFlag) {
+                this.toggleTracePanl(false);
+                this.initTraceData();
+            }
         }
         return res;
+    }
+
+    @action handlePrint = async (orderObj) => {
+        if (this.printOrderFlag) {
+            this.printData = orderObj;
+            await timeSleep(250);
+            this.printRef.handlePrint();
+            this.printData = null;
+        }
     }
 
     @action quickSubmitOrder = async () => {
@@ -1005,7 +1031,7 @@ class LotteryStore {
                     point: String(order.detail.point),
                 };
                 if (order.detail.rxPos) {
-                    obj.position = order.detail.rxPos
+                    obj.position = order.detail.rxPos;
                 }
                 return obj;
             })),
@@ -1014,7 +1040,7 @@ class LotteryStore {
         };
         const res = await submitOrder(orderObj);
         if (res.data.code === 1) {
-            this.getRecord();
+            this.getRecord().then(() => this.handlePrint(orderObj));
             if (this.plateType === 'input') {
                 this.inputedNums = [];
             }
@@ -1022,11 +1048,6 @@ class LotteryStore {
                 this.selectedChaidanNums = [];
             }
             this.selectedNums = {};
-            if (this.printOrderFlag) {
-                this.printData = orderObj
-                this.printRef.handlePrint();
-                this.printData = null;
-            }
         }
         return res;
     }

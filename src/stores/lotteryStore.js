@@ -997,7 +997,7 @@ class LotteryStore {
         if (res.data.code === 1) {
             this.getRecord().then(() => this.handlePrint(orderObj));
             this.orderData = [];
-            if(this.showTraceFlag) {
+            if (this.showTraceFlag) {
                 this.toggleTracePanl(false);
                 this.initTraceData();
             }
@@ -1157,7 +1157,8 @@ class LotteryStore {
         const timeStart = Number(this.startPiece || this.defaultStartPiece);//起始倍数
         const gap = Number(this.traceGap || this.defaultTraceGap);//隔期
         const tracePiece = Number(this.tracePiece || this.defaultTracePiece);//倍x
-        let piece;
+        const traceMinRate = Number(this.traceMinRate || this.defaultTraceMinRate) / 100;
+        let piece = 0;
         for (let i = 0; i < this.traceData.length; i++) {
             const issueDetail = this.traceData[i]['issue']['detail'];
             if (this.traceSelectedRowKeys.includes(issueDetail)) {
@@ -1168,15 +1169,13 @@ class LotteryStore {
                     piece = timeStart;
                 }
                 if (this.activeTraceType === '1') {
-                    const oldAmount = sumAmount;
-                    piece = computeByMargin(this.startPiece || this.defaultStartPiece, this.traceMinRate || this.defaultTraceMinRate, this.orderTotalMoney, sumAmount, this.odds || 1);
-                    piece = piece > 99999 ? 99999 : piece;
-                    if (piece < 1) {
-                        sumAmount = i * this.orderTotalMoney;
-                    } else {
-                        sumAmount = piece * this.orderTotalMoney + oldAmount;
-                    }
+                    //旧的投注总额*(1 + 收益率)/(单倍赔率-单倍投注金额*(1 + 收益率))
+                    const odd = this.oddsData[this.method]['bonusA'];
+                    const bbbb = this.betMode * odd - (this.orderData[0]['amount']['betMoney'] / this.orderData[0]['piece']) * (1 + traceMinRate);
+                    piece = Math.ceil(sumAmount * (1 + traceMinRate) / bbbb);
+                    sumAmount = piece * this.orderTotalMoney + sumAmount;
                 }
+                piece = piece > 99999 ? 99999 : piece;
                 this.traceData[i]['piece'] = piece;
                 this.traceData[i]['money'] = (piece * this.orderTotalMoney).toFixed(2);
             } else {

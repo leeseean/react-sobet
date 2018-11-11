@@ -1005,6 +1005,44 @@ class LotteryStore {
         return res;
     }
 
+    @action mmcSubmitOrder = async () => {
+        this.submitOrderType = 'normal';
+        const orderObj = {
+            lottery: this.lotteryCode.toLocaleUpperCase(),
+            order: JSON.stringify(this.orderData.map(order => {
+                const obj = {
+                    method: order.detail.playWay,
+                    code: String(order.detail.betContent),
+                    nums: String(order.amount.betCount),
+                    amount: String(order.amount.betMoney),
+                    piece: String(order.piece),
+                    price: String(order.price),
+                    odds: String(order.detail.odds),
+                    point: String(order.detail.point),
+                };
+                if (order.detail.rxPos) {
+                    obj.position = order.detail.rxPos;
+                }
+                return obj;
+            })),
+            betType: 2,
+            sourceType: 0
+        };
+        const res = await submitOrder(orderObj);
+        if (res.data.code === 1) {
+            const resOfRecord = await this.getRecord();
+            if (Number(this.continuousCount) > 1) {
+                this.mmcModalRecordData = this.recordData.slice(0, this.orderData.length);
+                this.mmcModalOpenData.push({
+                    opencode: res.data.result.code,
+                    bonus:  res.data.result.bonus,
+                });
+                this.mmcOpencodeArr = res.data.result.code.split(',');
+            }
+        }
+        return res;
+    }
+
     @action handlePrint = async (orderObj) => {
         if (this.printOrderFlag) {
             this.printData = orderObj;
@@ -1013,6 +1051,8 @@ class LotteryStore {
             this.printData = null;
         }
     }
+
+    @observable submitOrderType = ''
 
     @action quickSubmitOrder = async () => {
         const orderData = this.genOrderData();
@@ -1048,6 +1088,45 @@ class LotteryStore {
                 this.selectedChaidanNums = [];
             }
             this.selectedNums = {};
+        }
+        return res;
+    }
+
+    @action mmcQuickSubmitOrder = async () => {
+        this.submitOrderType = 'quick';
+        const orderData = this.genOrderData();
+        const orderObj = {
+            lottery: this.lotteryCode.toLocaleUpperCase(),
+            order: JSON.stringify(orderData.map(order => {
+                const obj = {
+                    method: order.detail.playWay,
+                    code: String(order.detail.betContent),
+                    nums: String(order.amount.betCount),
+                    amount: String(order.amount.betMoney),
+                    piece: String(order.piece),
+                    price: String(order.price),
+                    odds: String(order.detail.odds),
+                    point: String(order.detail.point),
+                };
+                if (order.detail.rxPos) {
+                    obj.position = order.detail.rxPos;
+                }
+                return obj;
+            })),
+            betType: 1,
+            sourceType: 0
+        };
+        const res = await submitOrder(orderObj);
+        if (res.data.code === 1) {
+            const resOfRecord = await this.getRecord();
+            if (Number(this.continuousCount) > 1) {
+                this.mmcModalRecordData = this.recordData.slice(0, this.orderData.length);
+                this.mmcModalOpenData.push({
+                    opencode: res.data.result.code,
+                    bonus:  res.data.result.bonus,
+                });
+                this.mmcOpencodeArr = res.data.result.code.split(',');
+            }
         }
         return res;
     }
@@ -1173,6 +1252,9 @@ class LotteryStore {
                     const odd = this.oddsData[this.method]['bonusA'];
                     const bbbb = this.betMode * odd - (this.orderData[0]['amount']['betMoney'] / this.orderData[0]['piece']) * (1 + traceMinRate);
                     piece = Math.ceil(sumAmount * (1 + traceMinRate) / bbbb);
+                    if (piece < 1) {
+                        piece = 1;
+                    }
                     sumAmount = piece * this.orderTotalMoney + sumAmount;
                 }
                 piece = piece > 99999 ? 99999 : piece;
@@ -1307,7 +1389,13 @@ class LotteryStore {
         this.mmcWinStopFlag = bool;
     }
 
+    @observable mmcOpencodeArr = [];
+
     @observable continuousCount = '5';
+
+    @observable mmcModalRecordData = [];
+
+    @observable mmcModalOpenData = [];
 
     @action
     setContinuousCount = value => {
@@ -1318,6 +1406,41 @@ class LotteryStore {
 
     @action toggleMmcModal = bool => {
         this.mmcModalFlag = bool;
+        if (!bool) {//关闭了就清空
+            if (this.submitOrderType === 'quick') {
+                if (this.plateType === 'input') {
+                    this.inputedNums = [];
+                }
+                if (this.chaidanConfig.chaidan) {
+                    this.selectedChaidanNums = [];
+                }
+                this.selectedNums = {};
+            } else if (this.submitOrderType === 'normal') {
+                this.orderData = [];
+            }
+            this.queryTrendData();
+            this.mmcModalRecordData = [];
+            this.mmcModalOpenData = [];
+            this.setOpenfinished(false);
+        }
+    }
+
+    @observable openfinished = false
+
+    @action setOpenfinished = bool => {
+        this.openfinished = bool;
+    }
+
+    @observable betOptionRef = null
+
+    @observable lotteryOrderRef = null
+
+    @action setBetOptionRef = ref => {
+        this.betOptionRef = ref;
+    }
+
+    @action setLotteryOrderRef = ref => {
+        this.LotteryOrderRef = ref;
     }
 }
 

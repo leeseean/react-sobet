@@ -4,8 +4,7 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { withRouter } from 'react-router-dom';
-import { Table, Icon, Button, Checkbox, message } from 'antd';
+import { Table, Icon, Button} from 'antd';
 import './mmcModal.styl';
 import IconDetail from '../../../images/lottery/mmc-1.svg';
 import IconPiece from '../../../images/lottery/mmc-2.svg';
@@ -13,13 +12,21 @@ import IconPrice from '../../../images/lottery/mmc-3.svg';
 import IconAmount from '../../../images/lottery/mmc-4.svg';
 
 @inject(stores => ({
-    refreshBalance: stores.globalStore.refreshBalance,
     lotteryStore: stores.lotteryStore
 }))
 @observer
 class MmcModal extends React.Component {
+    playAgain = () => {
+        const { submitOrderType, betOptionRef, lotteryOrderRef } = this.props.lotteryStore;
+        if (submitOrderType === 'quick') {
+            betOptionRef.quickSubmitOrder();
+        }
+        if (submitOrderType === 'normal') {
+            lotteryOrderRef.submitOrder();
+        }
+    }
     render() {
-        const { mmcModalFlag } = this.props.lotteryStore;
+        const { plateConfig, continuousCount, openfinished, setOpenfinished, mmcModalFlag, mmcModalRecordData, mmcModalOpenData } = this.props.lotteryStore;
         const recordColumns = [{
             key: 'detail',
             title: <div style={{ width: '255px' }}><Icon component={() => <IconDetail width="30" height="20" />} />玩法及投注内容</div>,
@@ -49,13 +56,16 @@ class MmcModal extends React.Component {
             width: 130,
             render: text => <div>{text}</div>
         }];
-        const recordData = [{
-            key: 1,
-            detail: '后二直选复式 ssss',
-            piece: 1,
-            price: 2,
-            amount: 130
-        }];
+        const recordData = mmcModalRecordData.map(o => {
+            const { orderId, method, code, piece, mode, amount } = o;
+            return {
+                amount,
+                piece,
+                key: orderId,
+                detail: `${plateConfig['wbgmmc'][method]['name']} ${code}`,
+                price: mode,
+            };
+        });
         const openColumns = [{
             key: 'index',
             title: <div>连投次序</div>,
@@ -79,12 +89,15 @@ class MmcModal extends React.Component {
                 return <div><em style={{ fontWeight: 700, color: '#d24454' }}>{text}</em></div>;
             }
         }];
-        const openData = [{
-            key: 1,
-            index: 1,
-            opencode: '1,2,3,4,5',
-            bonus: '100.22'
-        }]
+        const openData = mmcModalOpenData.map((o, i) => {
+            const { opencode, bonus } = o;
+            return {
+                key: i,
+                index: i,
+                opencode,
+                bonus
+            };
+        });
         return mmcModalFlag ? (
             <React.Fragment>
                 <div className="ant-modal-mask"></div>
@@ -119,42 +132,56 @@ class MmcModal extends React.Component {
                             />
                         </div>
                         <div className="fr modal-bottom-right">
-                            <p className="total-title">第1次开奖</p>
-                            <ul className="total-list">
-                                <li className="clearfix">
-                                    <span className="fl">累计开奖次数：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>5</em>次</span>
-                                </li>
-                                <li className="clearfix">
-                                    <span className="fl">累计开奖次数：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>5</em>次</span>
-                                </li>
-                                <li className="clearfix">
-                                    <span className="fl">累计中奖金额：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>2</em>元</span>
-                                </li>
-                            </ul>
-                            <div className="total-buttons">
-                                <Button style={{ width: '88px', margin: '0 6px' }} type="primary">再玩一次</Button>
-                                <Button style={{ width: '88px', margin: '0 6px' }}>取消</Button>
-                            </div>
-                            <ul className="total-list" style={{ display: 'none' }}>
-                                <li className="clearfix">
-                                    <span className="fl">计划开奖次数：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>5</em>次</span>
-                                </li>
-                                <li className="clearfix">
-                                    <span className="fl">已开奖次数：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>5</em>次</span>
-                                </li>
-                                <li className="clearfix">
-                                    <span className="fl">已中奖金额：</span>
-                                    <span className="fr"><em style={{ color: '#d24454' }}>2</em>元</span>
-                                </li>
-                            </ul>
-                            <div className="total-buttons" style={{ display: 'none' }}>
-                                <Button style={{ width: '100px' }} type="primary">停止开奖</Button>
-                            </div>
+                            {
+                                openfinished ? (
+                                    <React.Fragment>
+                                        <p className="total-title">开奖结束</p>
+                                        <ul className="total-list">
+                                            <li className="clearfix">
+                                                <span className="fl">累计开奖次数：</span>
+                                                <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.length}</em>次</span>
+                                            </li>
+                                            <li className="clearfix">
+                                                <span className="fl">累计中奖次数：</span>
+                                                <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.map(v => v.bonus > 0).length}</em>次</span>
+                                            </li>
+                                            <li className="clearfix">
+                                                <span className="fl">累计中奖金额：</span>
+                                                <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.reduce((a, b) => {
+                                                    return a + Number(b.bonus);
+                                                }, 0)}</em>元</span>
+                                            </li>
+                                        </ul>
+                                        <div className="total-buttons">
+                                            <Button style={{ width: '88px', margin: '0 6px' }} type="primary" onClick={this.playAgain}>再玩一次</Button>
+                                            <Button style={{ width: '88px', margin: '0 6px' }} onClick={() => toggleMmcModal(false)}>取消</Button>
+                                        </div>
+                                    </React.Fragment>
+                                ) : (
+                                        <React.Fragment>
+                                            <p className="total-title">第{mmcModalOpenData.length}次开奖</p>
+                                            <ul className="total-list" style={{ display: 'none' }}>
+                                                <li className="clearfix">
+                                                    <span className="fl">计划开奖次数：</span>
+                                                    <span className="fr"><em style={{ color: '#d24454' }}>{continuousCount}</em>次</span>
+                                                </li>
+                                                <li className="clearfix">
+                                                    <span className="fl">已开奖次数：</span>
+                                                    <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.length % 5}</em>次</span>
+                                                </li>
+                                                <li className="clearfix">
+                                                    <span className="fl">已中奖金额：</span>
+                                                    <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.slice(-mmcModalOpenData.length % 5).reduce((a, b) => {
+                                                        return a + Number(b.bonus);
+                                                    }, 0)}</em>元</span>
+                                                </li>
+                                            </ul>
+                                            <div className="total-buttons" style={{ display: 'none' }}>
+                                                <Button style={{ width: '100px' }} type="primary" onClick={() => setOpenfinished(false)}>停止开奖</Button>
+                                            </div>
+                                        </React.Fragment>
+                                    )
+                            }
                         </div>
                     </div>
                 </div >

@@ -8,37 +8,13 @@ import { withRouter } from 'react-router-dom';
 import { Modal, Checkbox, message } from 'antd';
 import './betModal.styl';
 
-message.config({
-    top: 100,
-});
 
 @withRouter
 @inject(stores => ({
-    refreshBalance: stores.globalStore.refreshBalance,
     lotteryStore: stores.lotteryStore
 }))
 @observer
 class BetModal extends React.Component {
-    submitOrder = async () => {
-        const { submitOrder, toggleBetModal } = this.props.lotteryStore;
-        const { refreshBalance, history } = this.props;
-        toggleBetModal(false);
-        const res = await submitOrder();
-        if (res.data.code === 1) {//1 表是成功
-            message.success('订单提交成功！');
-            //更新投注记录，更新余额
-            refreshBalance(res.data.result.money.avail);
-        } else if (res.data.code === 4001) {//余额不足
-            Modal.confirm({
-                centered: true,
-                content: `余额不足，是否充值`,
-                okText: '立即充值',
-                onOk: () => history.push('/voucher/charge')
-            });
-        } else {
-            message.error(res.data.msg);
-        }
-    }
     render() {
         const modeConfig = {
             '2': '2元',
@@ -48,9 +24,10 @@ class BetModal extends React.Component {
             '0.02': '2分',
             '0.002': '2厘'
         };
+        const { submitOrder } = this.props;
         const { lotteryCn, currentIssue, orderData, toggleBetModal, betModalShowed, printOrderFlag, setPrintOrderFlag, orderTotalMoney } = this.props.lotteryStore;
         return (
-            <Modal onCancel={() => toggleBetModal(false)} onOk={this.submitOrder} wrapClassName="bet-modal-wrapper" visible={betModalShowed} okText="确定" cancelText="取消" centered={true} title={`请确认投注${lotteryCn}`}>
+            <Modal onCancel={() => toggleBetModal(false)} onOk={submitOrder} wrapClassName="bet-modal-wrapper" visible={betModalShowed} okText="确定" cancelText="取消" centered={true} title={`请确认投注${lotteryCn}`}>
                 <div className="list">
                     {
                         orderData.map((order, index, arr) => {

@@ -15,7 +15,7 @@ import MmcModal from '../MmcModal';
 @observer
 class LotteryHead extends React.Component {
     render() {
-        const { mmcModalFlag, emptyOpencode, lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props.lotteryStore;
+        const { mmcModalFlag, mmcOpencodeArr, emptyOpencode, lotteryType, lotteryCode, currentIssue, countdown, updateIssue, opencodeArr, openIssue } = this.props.lotteryStore;
 
         return (
             <React.Fragment>
@@ -25,7 +25,7 @@ class LotteryHead extends React.Component {
                         <i className="lottery-logo" lt={lotteryCode}></i>
                     </div>
                     <div className="fl clearfix head-center">
-                        {lotteryCode === 'wbgmmc' ? <MmcLoop opencode={opencodeArr} /> : (
+                        {lotteryCode === 'wbgmmc' ? <MmcLoop opencode={mmcOpencodeArr} /> : (
                             <React.Fragment>
                                 <div className="fl head-center-issue">
                                     <div className="head-center-issue-top">

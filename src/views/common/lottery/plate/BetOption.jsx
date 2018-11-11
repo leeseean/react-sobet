@@ -24,10 +24,77 @@ message.config({
 @observer
 class BetOption extends React.Component {
     quickSubmitOrder = () => {
-        if (this.singlePick(this.handleQuickSubmit)) {
+        const { lotteryCode } = this.props.lotteryStore;
+        if (lotteryCode === 'wbgmmc') {
+            if (this.singlePick(this.handleQuickSubmitOfMmc)) {
+                return;
+            }
+            this.handleQuickSubmitOfMmc();
+        } else {
+            if (this.singlePick(this.handleQuickSubmit)) {
+                return;
+            }
+            this.handleQuickSubmit();
+        }
+    }
+    handleQuickSubmitOfMmc = async () => {
+        const { setOpenfinished, openfinished, mmcQuickSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
+        const { refreshBalance, history } = this.props;
+
+        if (Number(continuousCount) > 1) {
+            toggleMmcModal(true);
+            let timer;
+            let count = Number(continuousCount);
+            const fn = () => {
+                if (openfinished === false) {
+                    clearTimeout(timer);
+                }
+                if (count === 0) {
+                    clearTimeout(timer);
+                }
+                const res = await mmcQuickSubmitOrder();
+                if (res.data.code === 1) {//1 表是成功
+                    if (mmcWinStopFlag && res.data.result.bonus > 0) {//中奖急停
+                        clearTimeout(timer);
+                        setOpenfinished(true);
+                    }
+                    //更新投注记录，更新余额
+                    refreshBalance(res.data.result.money.avail);
+                } else if (res.data.code === 4001) {//余额不足
+                    clearTimeout(timer);
+                    setOpenfinished(true);
+                    Modal.confirm({
+                        centered: true,
+                        content: `余额不足，是否充值`,
+                        okText: '立即充值',
+                        onOk: () => history.push('/voucher/charge')
+                    });
+                } else {
+                    clearTimeout(timer);
+                    setOpenfinished(true);
+                    message.error(res.data.msg);
+                }
+                count--;
+                timer = setTimeout(fn, 360);
+            };
+            timer = setTimeout(fn, 360);
             return;
         }
-        this.handleQuickSubmit();
+        const res = await mmcQuickSubmitOrder();
+        if (res.data.code === 1) {//1 表是成功
+            message.success('订单提交成功！');
+            //更新投注记录，更新余额
+            refreshBalance(res.data.result.money.avail);
+        } else if (res.data.code === 4001) {//余额不足
+            Modal.confirm({
+                centered: true,
+                content: `余额不足，是否充值`,
+                okText: '立即充值',
+                onOk: () => history.push('/voucher/charge')
+            });
+        } else {
+            message.error(res.data.msg);
+        }
     }
     handleQuickSubmit = async () => {
         const { quickSubmitOrder } = this.props.lotteryStore;

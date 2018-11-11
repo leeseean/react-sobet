@@ -20,14 +20,14 @@ class MainContent extends React.Component {
         getRecord();
     }
     render() {
-        const { setMainLeftRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
+        const { setMainLeftRef, setLotteryOrderRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead />
                 <div className="clearfix main-content">
                     <div className="fl main-content-left" id="mainLeftRef" ref={ref => setMainLeftRef(ref)}>
                         <LotteryPlate />
-                        <LotteryOrder />
+                        <LotteryOrder ref={ref => setLotteryOrderRef(ref)} />
                         <LotteryTrace />
                         <LotteryRecord />
                         <ComponentToPrint />

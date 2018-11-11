@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
 import { Table, Icon, Button, Checkbox, Select } from 'antd';
 import Countdown from '../../../../components/Countdown';
 import './lotteryOrder.styl';
@@ -7,11 +8,106 @@ import InputNumber from '../InputNumberUpDown';
 import '../inputNumberUpDown.styl';
 import BetModal from '../BetModal';
 
-@inject('lotteryStore')
+message.config({
+    top: 100,
+});
+
+@withRouter
+@inject(stores => ({
+    refreshBalance: stores.globalStore.refreshBalance,
+    lotteryStore: stores.lotteryStore
+}))
 @observer
 class LotteryOrder extends React.Component {
+    submitOrder = async () => {
+        const { lotteryCode } = this.props.lotteryStore;
+        if (lotteryCode === 'wbgmmc') {
+            this.handleSubmitOfMmc();
+        } else {
+            this.handleSubmit();
+        }
+    }
+    handleSubmit = () => {
+        const { submitOrder, toggleBetModal } = this.props.lotteryStore;
+        const { refreshBalance, history } = this.props;
+        toggleBetModal(false);
+        const res = await submitOrder();
+        if (res.data.code === 1) {//1 表是成功
+            message.success('订单提交成功！');
+            //更新投注记录，更新余额
+            refreshBalance(res.data.result.money.avail);
+        } else if (res.data.code === 4001) {//余额不足
+            Modal.confirm({
+                centered: true,
+                content: `余额不足，是否充值`,
+                okText: '立即充值',
+                onOk: () => history.push('/voucher/charge')
+            });
+        } else {
+            message.error(res.data.msg);
+        }
+    }
+    handleSubmitOfMmc = () => {
+        const { setOpenfinished, openfinished, mmcSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
+        const { refreshBalance, history } = this.props;
+
+        if (Number(continuousCount) > 1) {
+            toggleMmcModal(true);
+            let timer;
+            let count = Number(continuousCount);
+            const fn = () => {
+                if (openfinished === false) {
+                    clearTimeout(timer);
+                }
+                if (count === 0) {
+                    clearTimeout(timer);
+                }
+                const res = await mmcSubmitOrder();
+                if (res.data.code === 1) {//1 表是成功
+                    if (mmcWinStopFlag && res.data.result.bonus > 0) {//中奖急停
+                        clearTimeout(timer);
+                        setOpenfinished(true);
+                    }
+                    //更新投注记录，更新余额
+                    refreshBalance(res.data.result.money.avail);
+                } else if (res.data.code === 4001) {//余额不足
+                    clearTimeout(timer);
+                    setOpenfinished(true);
+                    Modal.confirm({
+                        centered: true,
+                        content: `余额不足，是否充值`,
+                        okText: '立即充值',
+                        onOk: () => history.push('/voucher/charge')
+                    });
+                } else {
+                    clearTimeout(timer);
+                    setOpenfinished(true);
+                    message.error(res.data.msg);
+                }
+                count--;
+                timer = setTimeout(fn, 360);
+            };
+            timer = setTimeout(fn, 360);
+            return;
+        }
+        const res = await mmcSubmitOrder();
+        if (res.data.code === 1) {//1 表是成功
+            message.success('订单提交成功！');
+            //更新投注记录，更新余额
+            refreshBalance(res.data.result.money.avail);
+        } else if (res.data.code === 4001) {//余额不足
+            Modal.confirm({
+                centered: true,
+                content: `余额不足，是否充值`,
+                okText: '立即充值',
+                onOk: () => history.push('/voucher/charge')
+            });
+        } else {
+            message.error(res.data.msg);
+        }
+    }
     render() {
-        const { lotteryCode, countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag, toggleMmcModal, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount } = this.props.lotteryStore;
+        const { lotteryCode, countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount } = this.props.lotteryStore;
         const orderColumns = [
             {
                 key: 'detail',
@@ -139,7 +235,7 @@ class LotteryOrder extends React.Component {
                                                 disabled={orderTotalMoney <= 0}
                                                 block
                                                 size="large"
-                                                onClick={() => toggleMmcModal(true)}
+                                                onClick={this.submitOrder}
                                                 type="primary">马上开奖</Button>
                                         </div>
                                         <div>
@@ -156,7 +252,7 @@ class LotteryOrder extends React.Component {
                                                 onClick={() => toggleBetModal(true)}
                                                 type="primary"
                                             >立即投注</Button>
-                                            <BetModal />
+                                            <BetModal submitOrder={this.submitOrder} />
                                         </React.Fragment>
                                     )
                             }

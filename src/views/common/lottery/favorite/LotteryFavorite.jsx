@@ -84,7 +84,7 @@ class LotteryFavorite extends React.Component {
                     </div>
                     <div className="item-countdown">
                         {
-                            [-1, -2].includes(countdownsObj[lottery_code]) ? '暂停销售' : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
+                            [-1, -2].includes(countdownsObj[lottery_code]) ? (lottery_code === 'WBGMMC' ? '即开' : '暂停销售') : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
                         }
                     </div>
                     {

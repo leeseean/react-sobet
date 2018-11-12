@@ -1,7 +1,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
-import { Table, Icon, Button, Checkbox, Select } from 'antd';
+import { Table, Icon, Button, Checkbox, Select, message, Modal } from 'antd';
 import Countdown from '../../../../components/Countdown';
 import './lotteryOrder.styl';
 import InputNumber from '../InputNumberUpDown';
@@ -19,15 +19,20 @@ message.config({
 }))
 @observer
 class LotteryOrder extends React.Component {
-    submitOrder = async () => {
+    componentDidMount() {
+        const { setLotteryOrderRef } = this.props.lotteryStore;
+        setLotteryOrderRef(this);
+    }
+    submitOrder = () => {
         const { lotteryCode } = this.props.lotteryStore;
         if (lotteryCode === 'wbgmmc') {
+            window.scrollTo(0,0);
             this.handleSubmitOfMmc();
         } else {
             this.handleSubmit();
         }
     }
-    handleSubmit = () => {
+    handleSubmit = async () => {
         const { submitOrder, toggleBetModal } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
         toggleBetModal(false);
@@ -47,20 +52,27 @@ class LotteryOrder extends React.Component {
             message.error(res.data.msg);
         }
     }
-    handleSubmitOfMmc = () => {
-        const { setOpenfinished, openfinished, mmcSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
+    handleSubmitOfMmc = async () => {
+        const { lotteryCode, setOpenfinished, openfinished, mmcSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
 
         if (Number(continuousCount) > 1) {
             toggleMmcModal(true);
             let timer;
             let count = Number(continuousCount);
-            const fn = () => {
-                if (openfinished === false) {
+            const fn = async () => {
+                if (lotteryCode !== 'wbgmmc') {
                     clearTimeout(timer);
+                    return;
+                }
+                if (openfinished) {
+                    clearTimeout(timer);
+                    return;
                 }
                 if (count === 0) {
                     clearTimeout(timer);
+                    setOpenfinished(true);
+                    return;
                 }
                 const res = await mmcSubmitOrder();
                 if (res.data.code === 1) {//1 表是成功
@@ -79,15 +91,17 @@ class LotteryOrder extends React.Component {
                         okText: '立即充值',
                         onOk: () => history.push('/voucher/charge')
                     });
+                    return;
                 } else {
                     clearTimeout(timer);
                     setOpenfinished(true);
                     message.error(res.data.msg);
+                    return;
                 }
                 count--;
                 timer = setTimeout(fn, 360);
             };
-            timer = setTimeout(fn, 360);
+            fn();
             return;
         }
         const res = await mmcSubmitOrder();
@@ -107,7 +121,7 @@ class LotteryOrder extends React.Component {
         }
     }
     render() {
-        const { lotteryCode, countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount } = this.props.lotteryStore;
+        const { submitLoading, lotteryCode, countdown, orderData, orderTotalMoney, orderTotalCount, toggleBetModal, deleteAllItem, deleteOrderItem, changeOrderItemPiece, changeOrderItemMode, toggleTracePanl, showTraceFlag, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount } = this.props.lotteryStore;
         const orderColumns = [
             {
                 key: 'detail',
@@ -233,6 +247,7 @@ class LotteryOrder extends React.Component {
                                         <div style={{ margin: '11px 0' }}>
                                             <Button
                                                 disabled={orderTotalMoney <= 0}
+                                                loading = {submitLoading}
                                                 block
                                                 size="large"
                                                 onClick={this.submitOrder}
@@ -247,6 +262,7 @@ class LotteryOrder extends React.Component {
                                         <React.Fragment>
                                             <Button
                                                 disabled={orderTotalMoney <= 0 || showTraceFlag}
+                                                loading = {submitLoading}
                                                 block
                                                 size="large"
                                                 onClick={() => toggleBetModal(true)}

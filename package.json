@@ -101,10 +101,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "postcss-preset-env": "^6.2.0",
-    "postcss-safe-parser": "^4.0.1",
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.1.5",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
@@ -127,6 +124,7 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
@@ -139,6 +137,8 @@
     "pnp-webpack-plugin": "^1.1.0",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.2.0",
+    "postcss-safe-parser": "^4.0.1",
     "react-app-rewire-less": "^2.1.2",
     "react-app-rewired": "^1.5.2",
     "react-dev-utils": "^6.0.5",

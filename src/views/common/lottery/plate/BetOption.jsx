@@ -23,6 +23,10 @@ message.config({
 }))
 @observer
 class BetOption extends React.Component {
+    componentDidMount() {
+        const { setBetOptionRef } = this.props.lotteryStore;
+        setBetOptionRef(this);
+    }
     quickSubmitOrder = () => {
         const { lotteryCode } = this.props.lotteryStore;
         if (lotteryCode === 'wbgmmc') {
@@ -38,25 +42,33 @@ class BetOption extends React.Component {
         }
     }
     handleQuickSubmitOfMmc = async () => {
-        const { setOpenfinished, openfinished, mmcQuickSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
+        const { lotteryCode, setOpenfinished, openfinished, mmcQuickSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
         const { refreshBalance, history } = this.props;
 
         if (Number(continuousCount) > 1) {
             toggleMmcModal(true);
             let timer;
             let count = Number(continuousCount);
-            const fn = () => {
-                if (openfinished === false) {
+            const fn = async () => {
+                if (lotteryCode !== 'wbgmmc') {
                     clearTimeout(timer);
+                    return;
+                }
+                if (openfinished) {
+                    clearTimeout(timer);
+                    return;
                 }
                 if (count === 0) {
                     clearTimeout(timer);
+                    setOpenfinished(true);
+                    return;
                 }
                 const res = await mmcQuickSubmitOrder();
                 if (res.data.code === 1) {//1 表是成功
                     if (mmcWinStopFlag && res.data.result.bonus > 0) {//中奖急停
                         clearTimeout(timer);
                         setOpenfinished(true);
+                        return;
                     }
                     //更新投注记录，更新余额
                     refreshBalance(res.data.result.money.avail);
@@ -69,15 +81,17 @@ class BetOption extends React.Component {
                         okText: '立即充值',
                         onOk: () => history.push('/voucher/charge')
                     });
+                    return;
                 } else {
                     clearTimeout(timer);
                     setOpenfinished(true);
                     message.error(res.data.msg);
+                    return;
                 }
                 count--;
                 timer = setTimeout(fn, 360);
             };
-            timer = setTimeout(fn, 360);
+            fn();
             return;
         }
         const res = await mmcQuickSubmitOrder();
@@ -279,8 +293,8 @@ class BetOption extends React.Component {
         addOrder();
     }
     render() {
-        const { chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
-
+        const { quickSubmitLoading, chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
+          
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
@@ -344,7 +358,7 @@ class BetOption extends React.Component {
                     </div>
                 </div>
                 <div className="fr right-wrapper">
-                    <Button disabled={betCount <= 0} className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder}>快速投注</Button>
+                    <Button disabled={betCount <= 0} className={`quick-bet ${betCount > 0 ? '' : 'disabled'}`} onClick={this.quickSubmitOrder} loading={quickSubmitLoading}>快速投注</Button>
                     <Button disabled={betCount <= 0} className={`add-order ${betCount > 0 ? '' : 'disabled'}`} onClick={this.addOrder}>添加订单</Button>
                 </div>
             </div>

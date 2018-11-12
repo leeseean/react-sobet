@@ -10,7 +10,7 @@ import BetOption from './BetOption';
 @observer
 class LotteryPlate extends React.Component {
     render() {
-        const { activeTab, setBetOptionRef } = this.props.lotteryStore;
+        const { activeTab } = this.props.lotteryStore;
         if (!activeTab) {
             return null;
         }
@@ -19,7 +19,7 @@ class LotteryPlate extends React.Component {
                 <PlayTabs />
                 <TipAndHot />
                 <Plate />
-                <BetOption ref={ref => setBetOptionRef(ref)} />
+                <BetOption />
             </div>
         );
     }

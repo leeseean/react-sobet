@@ -27,11 +27,11 @@ class MmcLoop extends React.Component {
         9: -450
     }
     timeConfig = {//每个位置号码滚动的时间
-        0: 1200,
-        1: 1250,
-        2: 1280,
-        3: 1300,
-        4: 1350
+        0: 1000,
+        1: 1050,
+        2: 1080,
+        3: 1100,
+        4: 1150
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.opencode !== this.props.opencode) {

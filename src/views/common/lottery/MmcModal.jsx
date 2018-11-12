@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Table, Icon, Button} from 'antd';
+import { Table, Icon, Button } from 'antd';
 import './mmcModal.styl';
 import IconDetail from '../../../images/lottery/mmc-1.svg';
 import IconPiece from '../../../images/lottery/mmc-2.svg';
@@ -17,7 +17,8 @@ import IconAmount from '../../../images/lottery/mmc-4.svg';
 @observer
 class MmcModal extends React.Component {
     playAgain = () => {
-        const { submitOrderType, betOptionRef, lotteryOrderRef } = this.props.lotteryStore;
+        const { submitOrderType, betOptionRef, lotteryOrderRef, setOpenfinished } = this.props.lotteryStore;
+        setOpenfinished(false);
         if (submitOrderType === 'quick') {
             betOptionRef.quickSubmitOrder();
         }
@@ -26,7 +27,10 @@ class MmcModal extends React.Component {
         }
     }
     render() {
-        const { plateConfig, continuousCount, openfinished, setOpenfinished, mmcModalFlag, mmcModalRecordData, mmcModalOpenData } = this.props.lotteryStore;
+        const { plateConfig, lotteryCode, continuousCount, openfinished, setOpenfinished, mmcModalFlag, toggleMmcModal, mmcModalRecordData, mmcModalOpenData } = this.props.lotteryStore;
+        if (lotteryCode !== 'wbgmmc') {
+            return null;
+        }
         const recordColumns = [{
             key: 'detail',
             title: <div style={{ width: '255px' }}><Icon component={() => <IconDetail width="30" height="20" />} />玩法及投注内容</div>,
@@ -93,7 +97,7 @@ class MmcModal extends React.Component {
             const { opencode, bonus } = o;
             return {
                 key: i,
-                index: i,
+                index: i + 1,
                 opencode,
                 bonus
             };
@@ -143,7 +147,7 @@ class MmcModal extends React.Component {
                                             </li>
                                             <li className="clearfix">
                                                 <span className="fl">累计中奖次数：</span>
-                                                <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.map(v => v.bonus > 0).length}</em>次</span>
+                                                <span className="fr"><em style={{ color: '#d24454' }}>{mmcModalOpenData.filter(v => v.bonus > 0).length}</em>次</span>
                                             </li>
                                             <li className="clearfix">
                                                 <span className="fl">累计中奖金额：</span>
@@ -160,7 +164,7 @@ class MmcModal extends React.Component {
                                 ) : (
                                         <React.Fragment>
                                             <p className="total-title">第{mmcModalOpenData.length}次开奖</p>
-                                            <ul className="total-list" style={{ display: 'none' }}>
+                                            <ul className="total-list">
                                                 <li className="clearfix">
                                                     <span className="fl">计划开奖次数：</span>
                                                     <span className="fr"><em style={{ color: '#d24454' }}>{continuousCount}</em>次</span>
@@ -176,7 +180,7 @@ class MmcModal extends React.Component {
                                                     }, 0)}</em>元</span>
                                                 </li>
                                             </ul>
-                                            <div className="total-buttons" style={{ display: 'none' }}>
+                                            <div className="total-buttons">
                                                 <Button style={{ width: '100px' }} type="primary" onClick={() => setOpenfinished(false)}>停止开奖</Button>
                                             </div>
                                         </React.Fragment>

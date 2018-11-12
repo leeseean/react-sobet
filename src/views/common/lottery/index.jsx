@@ -15,7 +15,7 @@ class Lottery extends React.Component {
     socket = null
     mainRef = null
     initSocket = () => {
-        const { lotteryCode, queryTrendData, getRecord } = this.props.lotteryStore;
+        const { lotteryCode, lotteryType, queryTrendData, getRecord } = this.props.lotteryStore;
         const locationOrigin = window.location.origin || (window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : ''));
         this.socket = io('http://www.mc188.com');
         // this.socket = io(locationOrigin);
@@ -25,6 +25,15 @@ class Lottery extends React.Component {
             if (data.lottery === lotteryCode.toLocaleUpperCase()) {
                 queryTrendData();
                 getRecord();
+            }
+            if (lotteryType === 'pk10') {
+                if (data.lottery.toLocaleLowerCase() === lotteryCode) {
+                    document.getElementById('raceFrame').contentWindow.postMessage({
+                        data,
+                        lottery: lotteryCode,
+                        type: 'socket'
+                    }, '*');
+                }
             }
         });
         this.socket.on('disconnect', () => { });

@@ -23,9 +23,13 @@ class TrendList extends React.Component {
         return null;
     }
     shouldComponentUpdate(nextProps, nextState) {
-        if ((JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) && (nextProps.method !== this.props.method)) {//只更新奖号时更新
+        const { lotteryType, trendConfig, method } = nextProps;
+        if (trendConfig[lotteryType][method]) {
             return true;
         }
+       /*  if ((JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) && (nextProps.method !== this.props.method)) {//只更新奖号时更新
+            return true;
+        } */
         if (nextProps.trendListHeight !== this.props.trendListHeight) {
             return true;
         }

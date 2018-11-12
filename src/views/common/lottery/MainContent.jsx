@@ -7,6 +7,7 @@ import LotteryPlate from './plate/LotteryPlate';
 import LotteryOrder from './order/LotteryOrder';
 import LotteryTrace from './trace';
 import ComponentToPrint from './ComponentToPrint';
+import Race from './Race';
 
 @inject('lotteryStore')
 @observer
@@ -20,14 +21,15 @@ class MainContent extends React.Component {
         getRecord();
     }
     render() {
-        const { setMainLeftRef, setLotteryOrderRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
+        const { setMainLeftRef, trendData, lotteryType, trendConfig, method } = this.props.lotteryStore;
         return (
             <React.Fragment>
                 <LotteryHead />
                 <div className="clearfix main-content">
                     <div className="fl main-content-left" id="mainLeftRef" ref={ref => setMainLeftRef(ref)}>
+                        <Race />
                         <LotteryPlate />
-                        <LotteryOrder ref={ref => setLotteryOrderRef(ref)} />
+                        <LotteryOrder />
                         <LotteryTrace />
                         <LotteryRecord />
                         <ComponentToPrint />

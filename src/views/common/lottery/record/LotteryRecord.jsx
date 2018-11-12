@@ -25,9 +25,11 @@ class LotteryRecord extends React.Component {
         });
     }
     toggleRecord = () => {
+        const { setTrendListHeight } = this.props.lotteryStore;
         this.setState(prevState => ({
             recordShowFlag: !prevState.recordShowFlag,
         }));
+        setTrendListHeight();
     }
     getDataSource() {
         const { recordData, playWayToCn } = this.props.lotteryStore;
@@ -51,21 +53,23 @@ class LotteryRecord extends React.Component {
     genColums() {
         const { lotteryCode } = this.props.lotteryStore;
         let columns = [{
-            title: <div style={{width: '120px'}}>参与时间</div>,
+            title: <div style={{width: '100px'}}>参与时间</div>,
             dataIndex: 'orderTime',
-            render: text => <div style={{width: '120px'}}>{text}</div>
+            render: text => <div style={{width: '100px'}}>{text}</div>,
+            width: 100
         }, {
-            title: <div style={{width: '120px'}}>奖期</div>,
+            title: <div style={{width: '100px'}}>奖期</div>,
             dataIndex: 'issue',
-            render: text => <div style={{width: '120px'}}>{text}</div>
+            render: text => <div style={{width: '100px'}}>{text}</div>,
+            width: 100
         }, {
-            title: '玩法',
+            title: <div style={{width: '100px'}}>玩法</div>,
             dataIndex: 'method',
-            width: 80
+            render: text => <div style={{width: '100px'}}>{text}</div>,
+            width: 100
         }, {
-            title: '投注内容',
+            title: <div style={{width: '80px'}}>投注内容</div>,
             dataIndex: 'code',
-            width: 120,
         }, {
             title: '投注金额',
             dataIndex: 'amount',
@@ -84,7 +88,7 @@ class LotteryRecord extends React.Component {
             dataIndex: 'mani',
             width: 160,
         }];
-        if (lotteryCode === 'WBGMMC') {
+        if (lotteryCode === 'wbgmmc') {
             columns.pop();
         }
         return columns;
@@ -161,7 +165,7 @@ class LotteryRecord extends React.Component {
         return (
             <div className="record-wrapper">
                 <div className={`record-table-wrapper ${this.state.recordShowFlag ? '' : 'hide'}`}>
-                    <Table columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} scroll={{ y: 360 }} />
+                    <Table size="small" columns={columns} dataSource={dataSource} title={TableTitle} pagination={false} rowClassName="record-item" locale={{ emptyText: '' }} onRow={this.maniRowCallback} scroll={{ y: 360 }} />
                 </div>
                 <OrderDetail {...{ playWayToCn, lotteryCodeToCn }} recordDetail={this.state.recordDetail} betModalFlag={this.state.betModalFlag} closeBetModal={this.closeBetModal} cancelOrder={this.cancelOrder} />
                 <BetAgainModal recordDetail={this.state.recordDetail} />

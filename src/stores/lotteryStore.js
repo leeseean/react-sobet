@@ -15,13 +15,14 @@ import {
     updateIssue,
     getLotteryTabConfig,
     submitOrder,
+    submitOrderMmc,
     getRecord,
     getOddsByLt
 } from '../utils/ajax';
 import timeSleep from '../utils/timeSleep';
 import formatTime from '../utils/formatTime';
 import { combination, intersection, difference, calcHzCount, calcZuxHzCount, calcKuaduCount, noRepeatMul } from '../utils/calcBetCount';
-import { choose, computeByMargin } from '../utils/algorithm';
+import { choose } from '../utils/algorithm';
 
 class LotteryStore {
 
@@ -92,6 +93,10 @@ class LotteryStore {
     getOddsData = async () => {
         const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase() });
         if (res.data.code === 1) {
+            const oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
+            if (!oddsData || !oddsData[this.method]) {//快速切换的时候报错
+                return;
+            }
             this.oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
             localStorage.setItem(`${this.lotteryCode}-odd`, JSON.stringify(this.oddsData));
             if (this.chaidanConfig.chaidan) {
@@ -225,6 +230,7 @@ class LotteryStore {
             this.trendData = res.data.result.issue;
             this.hitFrequency = res.data.result.hitFrequency;
             this.skipFrequency = res.data.result.skipFrequency;
+            return res;
         }
     }
 
@@ -947,8 +953,14 @@ class LotteryStore {
         return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);
     }
 
+    
+    @observable quickSubmitLoading = false
+
+    @observable submitLoading = false
+
     @action
     submitOrder = async () => {
+        this.submitLoading = true;
         let orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
             issue: this.currentIssue,
@@ -994,6 +1006,7 @@ class LotteryStore {
             };
         }
         const res = await submitOrder(orderObj);
+        this.submitLoading = false;
         if (res.data.code === 1) {
             this.getRecord().then(() => this.handlePrint(orderObj));
             this.orderData = [];
@@ -1007,6 +1020,7 @@ class LotteryStore {
 
     @action mmcSubmitOrder = async () => {
         this.submitOrderType = 'normal';
+        this.submitLoading = true;
         const orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
             order: JSON.stringify(this.orderData.map(order => {
@@ -1028,17 +1042,24 @@ class LotteryStore {
             betType: 2,
             sourceType: 0
         };
-        const res = await submitOrder(orderObj);
+        const res = await submitOrderMmc(orderObj);
+        this.submitLoading = false;
         if (res.data.code === 1) {
             const resOfRecord = await this.getRecord();
             if (Number(this.continuousCount) > 1) {
                 this.mmcModalRecordData = this.recordData.slice(0, this.orderData.length);
-                this.mmcModalOpenData.push({
-                    opencode: res.data.result.code,
-                    bonus:  res.data.result.bonus,
-                });
-                this.mmcOpencodeArr = res.data.result.code.split(',');
+                const timer = setTimeout(() => {//滚动完了再显示开奖结国
+                    this.mmcModalOpenData.push({
+                        opencode: res.data.result.code,
+                        bonus:  res.data.result.bonus,
+                    });
+                    this.mmcModalOpenData = [...this.mmcModalOpenData];
+                    clearTimeout(timer);
+                }, 2000);
+            } else {
+                this.queryTrendData();
             }
+            this.mmcOpencodeArr = res.data.result.code.split(',');
         }
         return res;
     }
@@ -1055,6 +1076,7 @@ class LotteryStore {
     @observable submitOrderType = ''
 
     @action quickSubmitOrder = async () => {
+        this.quickSubmitLoading = true;
         const orderData = this.genOrderData();
         const orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
@@ -1079,6 +1101,7 @@ class LotteryStore {
             sourceType: 0
         };
         const res = await submitOrder(orderObj);
+        this.quickSubmitLoading = false;
         if (res.data.code === 1) {
             this.getRecord().then(() => this.handlePrint(orderObj));
             if (this.plateType === 'input') {
@@ -1094,6 +1117,7 @@ class LotteryStore {
 
     @action mmcQuickSubmitOrder = async () => {
         this.submitOrderType = 'quick';
+        this.quickSubmitLoading = true;
         const orderData = this.genOrderData();
         const orderObj = {
             lottery: this.lotteryCode.toLocaleUpperCase(),
@@ -1116,17 +1140,24 @@ class LotteryStore {
             betType: 1,
             sourceType: 0
         };
-        const res = await submitOrder(orderObj);
+        const res = await submitOrderMmc(orderObj);
+        this.quickSubmitLoading = false;
         if (res.data.code === 1) {
             const resOfRecord = await this.getRecord();
             if (Number(this.continuousCount) > 1) {
-                this.mmcModalRecordData = this.recordData.slice(0, this.orderData.length);
-                this.mmcModalOpenData.push({
-                    opencode: res.data.result.code,
-                    bonus:  res.data.result.bonus,
-                });
-                this.mmcOpencodeArr = res.data.result.code.split(',');
+                this.mmcModalRecordData = this.recordData.slice(0, 1);
+                const timer = setTimeout(() => {//滚动完了再显示开奖结国
+                    this.mmcModalOpenData.push({
+                        opencode: res.data.result.code,
+                        bonus:  res.data.result.bonus,
+                    });
+                    this.mmcModalOpenData = [...this.mmcModalOpenData];
+                    clearTimeout(timer);
+                }, 2000);
+            } else {
+                this.queryTrendData();
             }
+            this.mmcOpencodeArr = res.data.result.code.split(',');
         }
         return res;
     }

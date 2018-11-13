@@ -32,6 +32,9 @@
             >ul {
                 background-color: $center-left-down-bg;
             }
+            >ul li.ant-menu-item-selected{
+                background-image:$center-left-down-li-bg
+            }
         }
 
         .voucher-section {
@@ -47,7 +50,7 @@
     background: $center-right-bg;
     overflow: hidden;
 
-    >h2 {
+    h2.title {
         height: $center-right-up-height;
         line-height: $center-right-up-height;
         margin-bottom: 0;
@@ -132,7 +135,10 @@
 
         .min-max {
             margin-top: 12px;
-        }       
+        }
+        i.red {
+            color: rgba(245,34,45,0.65)
+        }   
     } 
     
     .bankList {
@@ -239,4 +245,122 @@
         }
     }
 }
+.no-bank {
+    width: 1040px;
+    height: 100%;
+    margin:10px auto;
+    text-align: center;
+    background-color: #fff;
 
+    img {
+        display: inline-block;
+        margin: 72px auto 40px;
+    }
+    p {
+        color:rgba(0,0,0,.25);
+
+        button {
+            margin-left: 13px;
+        }
+    }
+}
+// 转账
+.transfer-conent {
+    background-color: #fff;
+    margin:6px 10px 0; 
+    height: 690px;
+
+    .selects{
+        padding: 43px 0 0 275px;
+        .transfer-select,
+        .transfer-input {
+            width: 174px;
+            height: 32px;
+            margin:0 11px 30px 6px;
+        }
+    }
+
+    .trasnfer-in,
+    .transfer-out {
+        color:rgba(0,0,0,0.85);
+        .money-span{
+            font-size: 20px;
+            vertical-align: top;
+            margin-left: 4px;
+            color:rgba(0,0,0,0.65);
+        }    
+    }
+
+    .opt {
+        padding-left: 118px;
+        margin-bottom: 40px;
+        button {
+            margin-right: 14px;
+        }
+    }
+}
+.transfer-tip {
+    width: 958px;
+    border-top:1px solid #e9e9e9;
+    margin: 0 auto;
+    padding: 24px;
+    color: rgba(0,0,0,0.45);
+    h2{
+        font-size: 16px;
+        font-weight: bold;
+        color:@color;
+    }
+    div {
+        span {
+            float: left;
+        }
+    }
+}
+//提现
+.withdraw-main {
+    background-color: #fff;
+    margin:6px 10px 0; 
+    height: 690px;
+}
+.withdraw-input {
+    width: 430px;
+    margin: 0 auto ;
+    padding: 41px 0 33px;
+
+    .w_li {
+        margin-bottom: 30px;
+        overflow: hidden;
+        
+        .w_lf {
+            float: left;
+            width: 98px;
+            text-align: right;
+            line-height: 32px;
+            color: rgba(0,0,0,.85)
+        }
+        .w_ba {
+            line-height: 32px;
+            color: rgba(0,0,0,.65);
+
+            span:first-child {
+                font-size: 20px
+            }
+            span:last-child {
+                font-size: 14px
+                float: right;
+            }
+        }
+        .w_lr {
+            float: left;
+            width :332px;
+            padding-left: 10px;
+            .withdraw-select,
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .w_btn {
+        padding-left: 108px;
+    }
+}

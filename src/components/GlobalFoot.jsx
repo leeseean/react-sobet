@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './globalFoot.styl';
+import {Link} from 'react-router-dom'
 import RightFixed from './RightFixed';
 import offsetDis from '../utils/offsetDis';
 import setStyle from '../utils/setStyle';
@@ -45,8 +46,9 @@ class GlobalFoot extends React.PureComponent {
         }
     }
     render() {
+        let login_global_foot=this.state.isLoginPage ? 'login_global_foot':'';
         return (
-            <div className="global-foot">
+            <div className={"global-foot "+ login_global_foot}>
                 <footer>
                     {
                         this.state.isLoginPage ? null : (
@@ -73,10 +75,7 @@ class GlobalFoot extends React.PureComponent {
                                     </ul>
                                     <ul className="footer-link-ul clearfix fr">
                                         <li className="fl">
-                                            <a
-                                                href="/static/sobet/helper-center.html?type=about"
-                                                target="_blank"
-                                                rel="noopener noreferrer">关于摩臣</a>
+                                            <Link to="/helpercenter#Agent">关于摩臣</Link>
                                         </li>
                                         <li className="fl">
                                             <a

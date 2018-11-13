@@ -67,7 +67,7 @@ class Login extends React.Component {
     render() {
         const { forgetStore } = this.props;
         return (
-            <div>
+            <div className="login-bg">
                 <div className="login-wrap">
                     <header>
                         <div className="wrap clearfix">
@@ -154,7 +154,7 @@ class Login extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <GlobalFootLogo />
+                <GlobalFootLogo page={'login'}/>
             </div>
         );
     }

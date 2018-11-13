@@ -1,0 +1,243 @@
+@import '../../../_variables.styl'
+.voucher-wapper {
+    min-height: $center-min-height;
+    background: $center-bg;
+    overflow: hidden;
+
+    .voucher-content {
+        width: 1200px;
+        margin:0 auto;
+        overflow: hidden; 
+        min-height: $center-min-height;
+        display:flex;
+        flex-direction:row;
+
+        .voucher-aside {
+            position:relative;
+            width: $center-left-width;
+            background-color: $center-left-down-bg;
+            box-shadow: 2px 0 6px 0 rgba(0,21,41,0.35);
+
+            .title {
+                background-color: $center-left-up-bg;
+                color:$center-left-color;
+                font-size: $center-left-font-size;
+                height: $center-left-height;
+                line-height: $center-left-height;
+                text-align: $center-left-align;
+                margin-bottom:$center-left-mb;
+                //font-weight: $center-left-weight;
+            }
+
+            >ul {
+                background-color: $center-left-down-bg;
+            }
+            >ul li.ant-menu-item-selected{
+                background-image:$center-left-down-li-bg
+            }
+        }
+
+        .voucher-section {
+            width:$center-right-width;
+            background-color: $center-right-bg;
+        }
+    }
+}
+
+
+.right-header {
+    height: $center-min-height;
+    background: $center-right-bg;
+    overflow: hidden;
+
+    >h2 {
+        height: $center-right-up-height;
+        line-height: $center-right-up-height;
+        margin-bottom: 0;
+        background-color: $center-right-div-bg;
+        border-bottom: 1px solid $center-border-color;
+        font-size: $center-right-up-font-size;
+        font-weight: $center-right-up-font-weight;
+        color: $center-right-up-color;
+        padding-left: $center-right-up-padding-left;
+    }
+
+    .spin-center {
+        text-align: center;
+        margin-top: 160px;
+    }
+}
+
+// 充值 
+.charge {
+    .pay-way {
+        color: $center-right-up-color;
+        width: 80px;
+        font-weight: $center-right-up-font-weight;
+        padding-top: 5px;
+        float: left;
+    }
+    .charge-section {
+        width: 1040px;
+        margin:10px auto;
+        overflow: hidden;
+        background-color: $center-right-div-bg;
+        padding:24px 22px 8px 32px;
+        font-size: 14px;
+
+        .pay-channel {
+            float: left;
+            width: 900px;
+            >button {
+                 margin: 0 10px 16px 0;
+            }
+            >span,{
+                display:inline-block;
+                height: 22px;
+                line-height: 22px;
+                padding: 0 8px;
+                color: rgba(0,0,0,0.65);
+                margin: 0 10px 16px 0;
+                border-radius: 4px;
+                &:hover {
+                    cursor: pointer;
+                    color: #fff;
+                    background-color: $center-color
+                }
+            } 
+            
+            >span.pay-channel-active {
+                color: #fff;
+                background-color: $center-color
+            }  
+        }
+    }
+
+    .pay-input {
+        width:1040px;
+        background-color:$center-right-div-bg;
+        margin:0 auto;
+        height: 560px;
+
+        .pay-input-content {
+            overflow: hidden;
+            padding:24px 22px 24px 32px;
+        }
+    } 
+    .pay-input-info{
+        float: left;
+        width: 900px;
+
+        >input {
+            width:468px;
+            margin-right: 12px 
+        }
+
+        .min-max {
+            margin-top: 12px;
+        }       
+    } 
+    
+    .bankList {
+        padding:24px 22px 0 32px;
+        button{
+            border: 1px solid #d9d9d9;
+            border-radius: 0;
+            margin: 0 10px 10px 0;
+            width: 135px;
+            height: 36px;
+            line-height: 36px;
+            background-color: #fff;
+            text-align: left;
+            padding: 0;
+            &:hover{
+                border:1px solid rgba(245,166,35,0.65); 
+                // width: 135px;
+                // height: 34px;
+                // line-height: 34px;
+
+                span {
+                    border: 1px solid rgba(245,166,35,0.65);
+                }
+            }
+            span {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #fff;
+                color: rgba(0,0,0,0.65)
+            }
+            i{
+                background: url('../../../images/banks_logo.png') no-repeat;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                vertical-align: top;
+                margin: 4px 16px 0 5px;
+            }
+
+            i.pc_CMB{
+                background-position: 0 -425px;
+            }
+            i.pc_ICBC{
+                background-position: 0 -150px;
+            }
+            i.pc_CCB{
+                background-position: 0 -225px;
+            }
+            i.pc_CMBC{
+                background-position: 0 -550px;
+            }
+            i.pc_ABC{
+                background-position: 0 -275px;
+            }
+            i.pc_CIB{
+                background-position: 0 -100px;
+            }
+            i.pc_BCM{
+                background-position: 0 -250px;
+            }
+            i.pc_CEB{
+                background-position: 0 -25px;
+            }
+            i.pc_BOC{
+                background-position: 0 -450px;
+            }
+            i.pc_PAB{
+                background-position: 0 -75px;
+            }
+            i.pc_PSBC{
+                background-position: 0 -475px;
+            }
+            i.pc_GDB{
+                background-position: 0 -525px;
+            }
+            i.pc_SPDB{
+                background-position: 0 -300px;
+            }
+        }
+        button.active {
+            border:1px solid rgba(245,166,35,0.65);
+            span {
+                border: 1px solid rgba(245,166,35,0.65);
+            }
+        }
+    }
+    .warm-tip {
+        padding:0 22px 0 32px;
+
+        .warm-border {
+            width: 958px
+            margin: 0 auto 24px;
+            border-top: 1px solid #e9e9e9; 
+        }
+        h2 {
+            font-size: 16px;
+            color: rgba(0,0,0,0.45);
+        }
+        .tips {
+            font-size: 14px;
+            color: rgba(0,0,0,0.45);    
+        }
+    }
+}

@@ -13,6 +13,9 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 class Index extends React.Component {
     constructor(props) {
         super(props);
+        this.state={
+            isLoginPage:false
+        }
         // 没有super(props), 后面使用回报错 定义state bind方法 其他初始化工作
         this.props.routerStore.history = this.props.history;
         this.initTitle(this.props.history.location.pathname);
@@ -67,7 +70,15 @@ class Index extends React.Component {
     }
 
     componentDidMount() {
-        // 可以调用setState， render Component
+        if (['/login', '/'].indexOf(this.props.history.location.pathname) !== -1) {
+            this.setState({
+                isLoginPage: true
+            });
+        } else {
+            this.setState({
+                isLoginPage: false
+            });
+        }
     }
 
     render() {
@@ -228,6 +239,15 @@ class Index extends React.Component {
                     delay: 500
                 })
             },
+            {
+                name: '帮助中心',
+                path: '/helpercenter',
+                component: Loadable({
+                    loader: () => import('../views/common/helper'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
         ];
 
         const Routes = () => {
@@ -244,8 +264,10 @@ class Index extends React.Component {
                     exact={route.exact} />)
             });
         };
+        const sty=this.state.isLoginPage?{}:{minHeight: '755px'};
         return (
-            <div className="home-wrapper" style={{ minHeight: '755px' }}>
+
+            <div className="home-wrapper" style={sty}>
                 <Switch>
                     <Routes />
                     <Redirect to={"/"} />

@@ -16,7 +16,7 @@ class Nav extends React.Component {
             loading: () => ''
         })
         const { history } = this.props;
-        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer|agent|voucher)\/{0,1})/;//不显示导航栏的地址
+        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer|agent|voucher|personal)\/{0,1})/;//不显示导航栏的地址
 
         if (noNavReg.test(history.location.pathname)) {
             return null;

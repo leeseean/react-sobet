@@ -134,9 +134,9 @@ class StepFn extends React.Component {
             {
                 current == 0 && (
                     <div className='tofind'>
-                        <Button onClick={() => this.props.fnx('mail', 2)}><Icon><Mail /></Icon>邮箱找回</Button>
-                        <Button onClick={this.next}><Icon><Pqshow /></Icon>密码问题找回</Button>
-                        <Button onClick={() => this.props.fnx('server', 2)}><Icon><Userserver /></Icon>人工服务找回</Button>
+                        <Button onClick={() => this.props.fnx('mail', 2)}><Icon component={Mail}></Icon>邮箱找回</Button>
+                        <Button onClick={this.next}><Icon component={Pqshow}></Icon>密码问题找回</Button>
+                        <Button onClick={() => this.props.fnx('server', 2)}><Icon component={Userserver}></Icon>人工服务找回</Button>
                         <div className="btn">
                             <Button onClick={() => this.props.prevt()}>上一步</Button>
                         </div>
@@ -235,9 +235,7 @@ class Stepdone extends React.Component {
             {
                 types === 'problem' && (
                     <div className='donefnproblem'>
-                        <Icon className='success'>
-                            <Success style={{ width: '3em', height: '3em' }} />
-                        </Icon>
+                        <Success className='success' width='3em' height='3em'></Success> 
                         您的新密码已经设置成功
                     </div>
                 )
@@ -271,13 +269,14 @@ class Stepdone extends React.Component {
         </div>;
     }
 }
-const WarpStepUser = Form.create()(StepUser);
-const WarpStepFn = Form.create()(StepFn);
+
 function GreetDom(props) {
     switch (props.current) {
         case 0:
+            const WarpStepUser = Form.create()(StepUser);
             return <WarpStepUser fnx={props.fnx} />
         case 1:
+            const WarpStepFn = Form.create()(StepFn);
             return <WarpStepFn prevt={props.fnp} fnx={props.fnx} />
         case 2:
             return <Stepdone types={props.types} />

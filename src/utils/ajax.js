@@ -307,3 +307,13 @@ http://new.mochen111.net/
 获取用户信息:/v2/userinfo/userInfoAjax
 轮播图:/v2/userinfo/adminNotice
 */
+
+/*  代理中心  */
+
+export function getTeamReportData(params) {
+    return $http({
+        params,
+        url: '/lottery/api/u/v1/agent/getTeamReport',
+        method: 'GET'
+    });
+}

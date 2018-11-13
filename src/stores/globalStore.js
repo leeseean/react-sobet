@@ -110,7 +110,7 @@ class GlobalStore {
         });
     }
 
-    @observable agentMenu = ['private']
+    @observable agentMenu = []
 }
 
 export default new GlobalStore();

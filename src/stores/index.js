@@ -4,6 +4,7 @@ import xglhcStore from './xglhcStore';
 import lotteryStore from './lotteryStore';
 import favoriteStore from './favoriteStore';
 import forgetStore from './forgetStore';
+import personalStore from './personalStore';
 
 export default {
   routerStore,
@@ -12,4 +13,5 @@ export default {
   lotteryStore,
   favoriteStore,
   forgetStore,
+  personalStore
 };

@@ -107,16 +107,25 @@ class AgentRouter extends React.Component {
             },
             {
                 name: '彩票分红',
-                path: `${match.url}/bouns`,
+                path: `${match.url}/lotteryBonus`,
                 component: Loadable({
-                    loader: () => import('../views/'+platComponet[platformId]+'/agent/bouns'),
+                    loader: () => import('../views/'+platComponet[platformId]+'/agent/lotteryBonus'),
                     loading: GlobalLoading,
                     delay: 500
                 })
             },
             {
-                name: '私返协议',
-                path: `${match.url}/private`,
+                name: '日工资管理',
+                path: `${match.url}/dailySalary`,
+                component: Loadable({
+                    loader: () => import('../views/'+platComponet[platformId]+'/agent/dailySalary'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '私返管理',
+                path: `${match.url}/privateMgr`,
                 component: Loadable({
                     loader: () => import('../views/'+platComponet[platformId]+'/agent/private'),
                     loading: GlobalLoading,

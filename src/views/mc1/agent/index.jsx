@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import {NavLink, withRouter} from 'react-router-dom'
+import { Menu, Icon } from 'antd';
+import { withRouter} from 'react-router-dom'
 import GlobalFootLogo from '../../../components/GlobalFootLogo'
 import './index.styl'
 import AgentRouter from '../../../routers/agent'
@@ -32,6 +32,21 @@ class Agent extends React.Component {
             name: '下级管理',
             path: '/agent/lowerManager',
             url: '/agent/lowerManager'
+        },
+        {
+            name: '彩票分红',
+            path: '/agent/lotteryBonus',
+            url: '/agent/lotteryBonus'
+        },
+        {
+            name: '日工资管理',
+            path: '/agent/dailySalary',
+            url: '/agent/dailySalary'
+        },
+        {
+            name: '私返管理',
+            path: '/agent/privateMgr',
+            url: '/agent/privateMgr'
         }
     ];
     constructor(props) {
@@ -71,7 +86,7 @@ class Agent extends React.Component {
                         <div className="title">代理中心</div>
                         <Menu 
                             onClick={this.handleMenu}
-                            style={{width:140}}
+                            style={{width:140,background:'#252525'}}
                             theme="dark"
                             defaultSelectedKeys={[this.state.curPath]}
                         >   

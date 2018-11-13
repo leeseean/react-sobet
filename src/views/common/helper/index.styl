@@ -1,0 +1,228 @@
+@import '../../../_variables.styl'
+/*父组件的样式*/
+.a{
+    color: #000;
+    font-size: 20px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei";
+    background:$center-bg;
+
+}
+.helper-content{
+    width: 1200px;
+    margin: 0px auto;
+    overflow: hidden;
+    background: #ffffff;
+    min-height: 703px;
+}
+.help-aside-nav{
+    width: 180px;
+    height: 100%;
+    background: $center-left-down-bg;
+    box-sizing: border-box;
+    border-right: 1px solid #d3dce6;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    float: left;
+}
+.help-aside-nav .iconfont{
+    font-size: 14px;
+    margin-right: 10px;
+    margin-left 30px;
+}
+.help-aside-nav .icon-baijiantou{
+    float: right;
+    font-size: 10px;
+    transition: all 0.5s;
+}
+.help-aside-nav .helper-nav-title{
+    width: 179px;
+    height: 50px;
+    line-height: 50px;
+    background: $center-left-up-bg;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding-left: 0;
+
+}
+.helper-nav-title span{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-family: "PingFang SC";
+    font-weight: $center-left-weight;
+    font-size: $center-left-font-size;
+    color:$center-left-color;
+}
+.help-aside-nav li{
+    padding-left: 0;
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    height: auto;
+    line-height: 50px;
+    cursor: pointer;
+}
+.help-aside-nav .helper-nav-quesition{
+    overflow: hidden;
+}
+.help-aside-nav .helper-nav-quesition-active{
+    height: 210px;
+    background: #131422;
+    .icon-baijiantou{
+        transform: rotate(180deg);
+    }
+}
+.help-aside-nav .helper-nav-rules-active{
+    height: 130px;
+    background: #131422;
+    .icon-baijiantou{
+        transform: rotate(180deg);
+    }
+}
+.help-aside-nav dl{
+    margin-bottom: 0;
+    height: 50px;
+    transition: all 0.5s;
+}
+.help-aside-nav dd{
+    padding-left: 44px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-bottom:0px;
+}
+.help-aside-nav .helper-nav-rule{
+    overflow: hidden;
+}
+.fr{
+    float: right;
+}
+.helper-content-content{
+    width: 1020px;
+    min-height: 662px;
+    background: #F0F1F5;
+}
+.help-aside-nav .helper-nav-active{
+    background-image: linear-gradient(to right,#84CAFF 0%,#737BF8 99%);
+    color: #ffffff;
+}
+/*个人中心的样式*/
+.helper-agent-box{
+    width: 100%;
+}
+.helper-agent-box h2{
+    height: 64px;
+    line-height: 64px;
+    color: rgba(0,0,0,0.85);
+    padding: 0 0 0 43px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+.helper-agent-box .helper-agent-content{
+    padding: 0;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background: #fff;
+}
+.helper-agent-content ul{
+    width: 100%;
+    margin: 0 auto 40px;
+}
+.helper-agent-content ul li{
+    border-bottom: 1px dashed #d6d6d6;
+    padding: 13px 0 13px 1px;
+    overflow: hidden;
+    width: 98%;
+    margin: 0 auto;
+}
+.a .helper-agent-content .helper-agent-contentTitle{
+    height: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    padding-right: 25px;
+    overflow: hidden;
+    width: 100%;
+    //transition: none;
+    font-size: 14px;
+    margin: 0;
+    color: rgba(0,0,0,0.85);
+    display: block;
+    cursor: pointer;
+    padding-left: 0;
+    a{
+        float: right;
+        color: #1890FF;
+        font-weight:normal;
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .helper-agent-open{
+        display: block;
+    }
+    .helper-agent-close{
+        display: none;
+        .icon-lanjiantou{
+            transform: rotate(180deg);
+        }
+    }
+}
+.helper-agent-content ul li i{
+    font-size: 10px;
+    color: #1890FF;
+    margin-left:5px;
+}
+.helper-agent-content ul li span{
+    float: left;
+    display: inline-block;
+    margin-left: 9px;
+}
+.helper-agent-content ul p{
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0;
+    font-size: 14px;
+    transition: all .5s linear;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:rgba(0,0,0,0.65);
+    display:none;
+}
+.helper-agent-content .helper-agent-content-ative{
+    .helper-agent-contentTitle{
+        .helper-agent-open{
+            display: none;
+        }
+        .helper-agent-close{
+            display: block;
+            //transform: rotate(180deg);
+            .iconfont{
+                display: inline-block;
+                vertical-align:baseline;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+}
+.helper-agent-content .helper-agent-content-ative p{
+    height: auto;
+    transition: all .5s linear;
+    margin: 8px auto 0;
+    display: block;
+    animation-name: slideInDown;
+}
+@keyframes slideInDown{
+    from{
+        transform:translate3d(0,-100%,0);
+        visibility: visible;
+    }
+    to{
+        transform: translate(0,0,0);
+    }
+}
+.helper-agent-content ul p b{
+    color: red;
+}

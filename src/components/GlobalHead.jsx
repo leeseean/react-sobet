@@ -70,7 +70,12 @@ class GlobalHead extends React.Component {
         const { logined } = this.props.globalStore;
         const { nickname, username, balance, getPlayerBalance } = this.props.globalStore;
         if (!logined) {
-            return <Redirect to={"/login"} />;
+            let {pathname} = this.props.location;
+            if(pathname!=='/' && pathname !=='/login'){
+                return <Redirect to={"/login"} />;
+            }else{
+                return false;
+            }
         }
         const BackToIndex = ({ show }) => {
             if (show) {

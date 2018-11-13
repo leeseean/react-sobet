@@ -9,40 +9,50 @@ import './race.styl';
 @inject('lotteryStore')
 @observer
 class Race extends React.Component {
+    xgpk10Posted = false
     init = async () => {
-        const { queryTrendData, lotteryType, lotteryCode } = this.props.lotteryStore;
-        if (lotteryType !== 'pk10') {
+        const { queryTrendData, lotteryCode } = this.props.lotteryStore;
+        if (lotteryCode !== 'xgpk10') {
             return;
         }
         const res = await queryTrendData();
         const data = res.data.result.issue[0];
-        document.getElementById('raceFrame').onload = function () {
-            this.contentWindow.postMessage({
-                data,
-                lottery: lotteryCode,
-                type: 'mounted',
-            }, '*');
+        const domRaceFrameOfXgpk10 = document.getElementById('xgpk10');
+        if (lotteryCode === 'xgpk10') {//特殊处理香港pk10，因为底下有期号栏
+            domRaceFrameOfXgpk10.onload = () => {
+                domRaceFrameOfXgpk10.contentWindow.postMessage({
+                    data,
+                    lottery: 'xgpk10',
+                    type: 'mounted',
+                }, '*');
+                this.xgpk10Posted = true;
+            }
+            if (!this.xgpk10Posted) {
+                domRaceFrameOfXgpk10.contentWindow.postMessage({
+                    data,
+                    lottery: 'xgpk10',
+                    type: 'mounted',
+                }, '*');
+                this.xgpk10Posted = true;
+            }
         }
-        document.getElementById('raceFrame').contentWindow.postMessage({
-            data,
-            lottery: lotteryCode,
-            type: 'mounted',
-        }, '*');
     }
     componentDidMount() {
         this.init();
     }
     componentDidUpdate(prevProps) {
-        // if (prevProps.lotteryStore.lotteryCode !== this.props.lotteryStore.lotteryCode) {
-        //     this.init();
-        // }
+        if (!this.xgpk10Posted) {
+            this.init();
+        }
     }
     render() {
-        const { lotteryCode, showRaceTabFlag, showRaceFlag } = this.props.lotteryStore;
+        const { lotteryCode, lotteryType, showRaceFlag } = this.props.lotteryStore;
 
         return (
-            <div className={`race-wrapper ${!showRaceTabFlag ? 'hide' : ''} ${!showRaceFlag ? 'hidden' : ''}`}>
-                <iframe id="raceFrame" scrolling="no" width="794" height="498" src={`/static/race/${lotteryCode}/index.html`}></iframe>
+            <div className={`race-wrapper ${lotteryType === 'pk10' ? '' : 'hide'} ${!showRaceFlag ? 'hidden' : ''}`} lottery={lotteryCode}>
+                <iframe id="xgpk10" style={{ display: lotteryCode !== 'xgpk10' ? 'none' : '' }} scrolling="no" width="794" height="498" src={`/static/race/xgpk10/index.html`}></iframe>
+                <iframe id="bjpk10" style={{ display: lotteryCode !== 'bjpk10' ? 'none' : '' }} scrolling="no" width="794" height="472" src={`/static/race/bjpk10/index.html`}></iframe>
+                <iframe id="mcpk10" style={{ display: lotteryCode !== 'mcpk10' ? 'none' : '' }} scrolling="no" width="794" height="472" src={`/static/race/mcpk10/index.html`}></iframe>
             </div>
         );
     }

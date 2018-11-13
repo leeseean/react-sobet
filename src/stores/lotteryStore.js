@@ -953,7 +953,7 @@ class LotteryStore {
         return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);
     }
 
-    
+
     @observable quickSubmitLoading = false
 
     @observable submitLoading = false
@@ -1051,7 +1051,7 @@ class LotteryStore {
                 const timer = setTimeout(() => {//滚动完了再显示开奖结国
                     this.mmcModalOpenData.push({
                         opencode: res.data.result.code,
-                        bonus:  res.data.result.bonus,
+                        bonus: res.data.result.bonus,
                     });
                     this.mmcModalOpenData = [...this.mmcModalOpenData];
                     clearTimeout(timer);
@@ -1149,7 +1149,7 @@ class LotteryStore {
                 const timer = setTimeout(() => {//滚动完了再显示开奖结国
                     this.mmcModalOpenData.push({
                         opencode: res.data.result.code,
-                        bonus:  res.data.result.bonus,
+                        bonus: res.data.result.bonus,
                     });
                     this.mmcModalOpenData = [...this.mmcModalOpenData];
                     clearTimeout(timer);
@@ -1472,6 +1472,17 @@ class LotteryStore {
 
     @action setLotteryOrderRef = ref => {
         this.LotteryOrderRef = ref;
+    }
+
+    @observable pk10RacingConfig = {
+        bjpk10: false,
+        mcpk10: false,
+        xgpk10: false,
+    }
+
+    @action setPk10Racing = (lottery, bool) => {
+        this.pk10RacingConfig[lottery] = bool;
+        this.pk10RacingConfig = { ...this.pk10RacingConfig };
     }
 }
 

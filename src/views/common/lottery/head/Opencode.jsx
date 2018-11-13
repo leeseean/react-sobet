@@ -6,13 +6,16 @@ import React from 'react';
 
 class Opencode extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.pk10RacingConfig !== this.props.pk10RacingConfig) {//只更新奖号时更新
+            return true;
+        }
         if (nextProps.opencodeArr !== this.props.opencodeArr) {//只更新奖号时更新
             return true;
         }
         return false;
     }
     render() {
-        const { opencodeArr, lotteryType, lotteryCode } = this.props;
+        const { opencodeArr, lotteryType, lotteryCode, pk10RacingConfig } = this.props;
         return opencodeArr.map((v, i) => {
             switch (lotteryType) {
                 case 'ssc':
@@ -22,6 +25,7 @@ class Opencode extends React.Component {
                 case 'k3':
                     return <span key={Date.now() + i} className="opencode bounceInDown" code={v} lottery-type={lotteryType} lottery-code={lotteryCode}></span>;
                 case 'pk10':
+                    if (pk10RacingConfig[lotteryCode]) return null;
                     return <span key={Date.now() + i} className="opencode bounceInRight" code={v} lottery-type={lotteryType} lottery-code={lotteryCode}></span>;
                 case 'lhc':
                     return <span key={Date.now() + i} className={`opencode bounceInRight ${i === opencodeArr.length - 1 ? 'tm' : ''}`} code={v} lottery-type={lotteryType}></span>;

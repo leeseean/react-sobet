@@ -1,12 +1,29 @@
 .race-wrapper {
     transition: all 0.5s ease;
-    height: 498px;
+    width: 794px;
+    overflow: hidden;
+
+    &[lottery='xgpk10'] {
+        height: 498px;
+    }
+
+    &[lottery='bjpk10'] {
+        height: 472px;
+    }
+
+    &[lottery='mcpk10'] {
+        height: 472px;
+    }
+
     &.hide {
         display: none;
     }
 
     &.hidden {
         height: 0;
-        overflow: hidden;
     }
+}
+
+body {
+    overflow-x: hidden;
 }

@@ -1,0 +1,350 @@
+
+body {
+    margin: 0;
+}
+ .pk10_ani .road_bg {
+    width: 100%;
+    height: 472px;
+    background: url(./images/road_bg.png) repeat-x;
+    position: relative;
+    overflow: hidden;
+    transition: all linear 0.1s;
+  }
+  
+  .pk10_ani.mcpk10_ani .road_bg {
+    background: url(./images/mcpk10/road_bg.jpg) repeat-x;
+  }
+  
+  .pk10_ani .cars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .pk10_ani .cars div {
+    width: 134px;
+    height: 35px;
+    position: absolute;
+    right: -42px;
+    text-align: center;
+    transition: all linear 1s;
+    background-size: auto 100%;
+    background-position: 40px 0;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars div {
+    right: -25px;
+    height: 42px;
+  }
+  
+  .pk10_ani .cars div.on {
+    right: 3px;
+  }
+  
+  .pk10_ani .cars .car_1 {
+    top: 132px;
+    background: url("./images/car01.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_2 {
+    top: 162px;
+    background: url("./images/car02.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_3 {
+    top: 197px;
+    background: url("./images/car03.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_4 {
+    top: 230px;
+    background: url("./images/car04.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_5 {
+    top: 262px;
+    background: url("./images/car05.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_6 {
+    top: 296px;
+    background: url("./images/car06.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_7 {
+    top: 330px;
+    background: url("./images/car07.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_8 {
+    top: 365px;
+    background: url("./images/car08.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_9 {
+    top: 399px;
+    background: url("./images/car09.png") no-repeat;
+  }
+  
+  .pk10_ani .cars .car_10 {
+    top: 430px;
+    background: url("./images/car10.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_1 {
+    top: 86px;
+    background: url("./images/mcpk10/car01.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_2 {
+    top: 122px;
+    background: url("./images/mcpk10/car02.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_3 {
+    top: 161px;
+    background: url("./images/mcpk10/car03.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_4 {
+    top: 200px;
+    background: url("./images/mcpk10/car04.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_5 {
+    top: 237px;
+    background: url("./images/mcpk10/car05.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_6 {
+    top: 272px;
+    background: url("./images/mcpk10/car06.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_7 {
+    top: 310px;
+    background: url("./images/mcpk10/car07.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_8 {
+    top: 347px;
+    background: url("./images/mcpk10/car08.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_9 {
+    top: 386px;
+    background: url("./images/mcpk10/car09.png") no-repeat;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .car_10 {
+    top: 422px;
+    background: url("./images/mcpk10/car10.png") no-repeat;
+  }
+  
+  .pk10_ani .cars i {
+    display: none;
+  }
+  
+  .pk10_ani .cars .fire i {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url(./images/fire.gif) no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    top: 0px;
+    left: 83px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .fire i {
+    top: 4px;
+    left: 110px;
+  }
+  
+  .pk10_ani .cars .fire2 i {
+    display: block;
+    width: 800px;
+    height: 40px;
+    background: url(./images/fire2.gif) no-repeat;
+    position: absolute;
+    left: 91px;
+    top: 0;
+    background-position: center left;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .fire2 i {
+    left: 97px;
+  }
+  
+  .pk10_ani .cars .num i {
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: url(./images/pkNum.png) no-repeat;
+    margin-top: 9px;
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .pk10_ani .cars .num.num1 i {
+    background-position: 0 -264px;
+    height: 40px;
+    margin-top: 0px;
+  }
+  
+  .pk10_ani .cars .num.num2 i {
+    background-position: 0 -225px;
+    height: 40px;
+    margin-top: 0px;
+  }
+  
+  .pk10_ani .cars .num.num3 i {
+    background-position: 0 -186px;
+    height: 40px;
+    margin-top: 0px;
+  }
+  
+  .pk10_ani .cars .num.num4 i {
+    background-position: 0 -154px;
+  }
+  
+  .pk10_ani .cars .num.num5 i {
+    background-position: 0 -115px;
+  }
+  
+  .pk10_ani .cars .num.num6 i {
+    background-position: 0 -77px;
+  }
+  
+  .pk10_ani .cars .num.num7 i {
+    background-position: 0 -307px;
+  }
+  
+  .pk10_ani .cars .num.num8 i {
+    background-position: 0 -347px;
+  }
+  
+  .pk10_ani .cars .num.num9 i {
+    background-position: 0 -0px;
+  }
+  
+  .pk10_ani .cars .num.num10 i {
+    background-position: 0 -37px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num i {
+    display: block;
+    width: 65px;
+    height: 27px;
+    background: url(./images/mcpk10/mcpkNum.png) no-repeat;
+    margin-top: 9px;
+    float: right;
+    margin-right: -40px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num1 i {
+    width: 71px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: -43px;
+    background-position: 0 0;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num2 i {
+    width: 71px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: -43px;
+    background-position: 0 -33px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num3 i {
+    width: 71px;
+    height: 30px;
+    margin-top: 7px;
+    margin-right: -43px;
+    background-position: 0 -66px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num4 i {
+    background-position: 0 -99px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num5 i {
+    background-position: 0 -126px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num6 i {
+    background-position: 0 -153px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num7 i {
+    background-position: 0 -180px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num8 i {
+    background-position: 0 -207px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num9 i {
+    background-position: 0 -234px;
+  }
+  
+  .pk10_ani.mcpk10_ani .cars .num.num10 i {
+    background-position: 0 -261px;
+  }
+  
+  .pk10_ani .ready {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+  }
+  
+  .pk10_ani .line {
+    position: absolute;
+    width: 50px;
+    height: 323px;
+    top: 136px;
+    right: 89px;
+    background: url(./images/line.png);
+    transition: all linear 0.2s;
+  }
+  
+  .pk10_ani.mcpk10_ani .line {
+    width: 16px;
+    height: 375px;
+    top: 91px;
+    right: 110px;
+    background: url(./images/mcpk10/line.png);
+  }
+  
+  .pk10_ani .startline {
+    right: -110px
+  }
+  
+  .pk10_ani.mcpk10_ani .startline {
+    right: -89px
+  }
+  
+  .pk10_ani .endline {
+    left: -110px
+  }
+  
+  .pk10_ani.mcpk10_ani .endline {
+    right: -110px
+  }
+  
+  .pk10_ani .finalline {
+    left: 125px
+  }
+  

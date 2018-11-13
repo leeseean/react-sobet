@@ -176,7 +176,10 @@ function horseMove(horses, total = totalDistance, timeMaps, duration, openData, 
                 v.style.backgroundPosition = rangeNumImg[openData[i + 3] - 1];
             });
             resultDialog.style.display = 'block';
-            window.parent.postMessage('gameOver', '*');
+            window.parent.postMessage({
+                lottery: 'xgpk10',
+                data: 'raceFinished'
+            }, '*');
             setTimeout(() => {
                 window.clearTimeout(timeout); //1秒后关闭动画
             }, 1000);
@@ -304,13 +307,4 @@ innerHorseWrap.addEventListener('touchmove', (e) => {
 });
 innerHorseWrap.addEventListener('mousemove', (e) => {
     e.preventDefault(); //防止滑動賽道
-});
-
-document.addEventListener('visibilitychange', function (e) { //頁面最小化或者切換標籤時動畫會停止，用這個作判斷
-    if (window.parent.window.document.querySelector('.lt-xgpk10 .clock_b0')) {
-        if ((+window.parent.window.document.querySelector('.lt-xgpk10 .clock_b0').innerText) * 60 + (+window.parent.window.document.querySelector('.lt-xgpk10 .clock_b1').innerText) < 220) {
-            horseInit(horses, horseOrders, horseNumElems, openData, rangeNumImg);
-            window.parent.postMessage('gameOver', '*');
-        }
-    }
 });

@@ -15,11 +15,11 @@ class Lottery extends React.Component {
     socket = null
     mainRef = null
     initSocket = () => {
-        const { lotteryCode, lotteryType, queryTrendData, getRecord } = this.props.lotteryStore;
+        const { lotteryCode, lotteryType, queryTrendData, getRecord, setPk10Racing } = this.props.lotteryStore;
         const locationOrigin = window.location.origin || (window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : ''));
         this.socket = io('http://www.mc188.com');
         // this.socket = io(locationOrigin);
-        this.socket.on('connect', () => {});
+        this.socket.on('connect', () => { });
         this.socket.on('message', (data) => {
             data = JSON.parse(data);
             if (data.lottery === lotteryCode.toLocaleUpperCase()) {
@@ -28,15 +28,21 @@ class Lottery extends React.Component {
             }
             if (lotteryType === 'pk10') {
                 if (data.lottery.toLocaleLowerCase() === lotteryCode) {
-                    document.getElementById('raceFrame').contentWindow.postMessage({
+                    document.getElementById(lotteryCode).contentWindow.postMessage({
                         data,
                         lottery: lotteryCode,
                         type: 'socket'
                     }, '*');
+                    setPk10Racing(lotteryCode, true);
                 }
             }
         });
         this.socket.on('disconnect', () => { });
+        window.addEventListener('message', msg => {
+            if (msg.data.lottery === lotteryCode && msg.data.data === 'raceFinished') {
+                setPk10Racing(lotteryCode, false);
+            }
+        });
     }
     componentDidMount() {
         this.setState({

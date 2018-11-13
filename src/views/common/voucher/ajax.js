@@ -41,3 +41,11 @@ export function drawCashIndexAjax(){
     })
 }
 
+//申请提现接口
+export function withdrawCashAjax(params){
+    return $http({
+        params,
+        url: 'sobet/pay/withdrawCashAjax',
+        method: 'POST',
+    })
+}

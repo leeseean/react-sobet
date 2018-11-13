@@ -150,8 +150,7 @@ class Transfer extends React.Component{
         let {turnOutId,turnInId,walletBalacneOut} = this.state,
             cashMinMax = cashConfig[turnOutId+'_'+turnInId],
             value = e.target.value,
-            regValue,
-            reg;
+            regValue;
         value = regBaseNum(value);
         if(!cashMinMax){
             message.error('请选择转出钱包');

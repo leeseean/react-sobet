@@ -66,8 +66,6 @@ class NormalLoginForm extends React.Component {
                         }
                         if (res.code === 0) {
                             globalStore.login();
-                            globalStore.getUserInfo(); //等接口好了恢复这句话把下面的注释
-                            globalStore.getPlayerBalance();
                             this.jumpByUserType(res.user.userType);
                         } else {
                             if (res.code === 2) {

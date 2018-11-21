@@ -100,6 +100,7 @@ class GlobalStore {
     @action login = () => {
         localStorage.setItem('logined', true);
         this.logined = true;
+        this.getUserInfo();
     }
 
     @action logout = () => {

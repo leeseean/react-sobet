@@ -23,9 +23,7 @@ const formItemLayout = {
     }
 }
 message.config({
-    maxCount:1,
-    top:350
-
+    maxCount:1
 })
 @inject('globalStore')
 @observer
@@ -144,25 +142,19 @@ class Transfer extends React.Component{
                     payPassword:''
 
                 }
-                withdrawCashAjax(obj).then(({data})=>{
-                    console.log(data)
+                withdrawCashAjax(obj).then(({data})=>{ //提现
                     this.setState({
-                        'withdrawLoading':false
+                        'withdrawLoading':false,
+                        'payPassword':'',
+                        'money':''
                     })
                     if(data.code==0){ //提现成功 更新余额
                         message.success(data.msg)
-                        this.setState({
-                            'payPassword':'',
-                            'money':''
-                        })
                         getPlayerBalance({cbId:'sobet_01'}).then(({data})=>{
                             this.props.globalStore.refreshBalance(data.cash)
-                            // this.setState({
-                            //     'walletBalacneOut':data.cash==0?'0.0000':data.cash,
-                            // })
                         })
                     }else{
-                        
+                        message.error(data.msg)
                     }
                 })
             }

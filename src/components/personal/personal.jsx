@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, DatePicker, Table } from 'antd';
+import { Radio, DatePicker, Table, Pagination } from 'antd';
 import moment from "moment";
 
 export class Radios extends React.Component {
@@ -79,9 +79,9 @@ export class Tables extends React.Component {
                 t = ['仅保留最近35天的数据']
                 datas = [{
                     title: '投注时间',
-                    dataIndex: 'time',
-                    sorter: true,
-                    width: '15%'
+                    dataIndex: 'orderTime',
+                    sorter: false,
+                    width: '14%'
                 }, {
                     title: '彩种',
                     dataIndex: 'lottery',
@@ -89,44 +89,45 @@ export class Tables extends React.Component {
                     width: '10%'
                 }, {
                     title: '玩法',
-                    dataIndex: 'game',
+                    dataIndex: 'method',
+                    sorter: false,
+                    width: '14%'
+                }, {
+                    title: '期号',
+                    dataIndex: 'issue',
+                    sorter: false,
+                    width: '14%'
+                }, {
+                    title: '投注内容',
+                    dataIndex: 'code',
                     sorter: false,
                     width: '10%'
                 }, {
-                    title: '期号',
-                    dataIndex: 'iussue',
-                    sorter: true,
-                    width: '12%'
-                }, {
-                    title: '投注内容',
-                    dataIndex: 'concent',
-                    sorter: true,
-                    width: '10%'
-                }, {
                     title: '投注金额',
-                    dataIndex: 'case',
-                    sorter: true,
+                    dataIndex: 'amount',
+                    sorter: false,
                     width: '10%'
                 }, {
                     title: '奖金',
-                    dataIndex: 'money',
-                    sorter: true,
+                    dataIndex: 'awardMoney',
+                    sorter: false,
                     width: '10%'
                 }, {
                     title: '状态',
                     dataIndex: 'state',
-                    sorter: true,
-                    width: '8%'
+                    sorter: false,
+                    width: '6%'
                 }, {
                     title: '追号',
-                    dataIndex: 'go',
-                    sorter: true,
-                    width: '8%'
+                    dataIndex: 'singleStatus',
+                    sorter: false,
+                    width: '6%'
                 }, {
                     title: '操作',
                     dataIndex: 'to',
-                    sorter: true,
-                    width: '8%'
+                    sorter: false,
+                    width: '6%',
+                    render: text => <a href="javascript:;">{text}</a>
                 }]
                 break
             case 'trace':
@@ -578,12 +579,27 @@ export class Tables extends React.Component {
         return datas
     }
     render() {
-        const { radioState , datas} = this.props;
+        let { radioState, d, onPagination,list ,loading} = this.props;
         const data = this.selectDate(radioState);
         const { tips } = this.state;
+        // if (d && d.totalItem > 0) {
+        //     console.log(list)
+        //     for (var i = 0; i < d[list].length; i++) {
+        //         d[list][i].to = '打印'
+        //     }
+        // }
         return (<div >
             <Table
                 columns={data}
+                dataSource={d[list]}
+                pagination={false}
+                loading={loading}
+                rowKey={data => data.orderItemId}
+                onRow={(record)=>{return{
+                    onClick :()=>{
+                        console.log(record)
+                    }
+                }}}
             />
             <div className='tips'>
                 <div>温馨提示：</div>
@@ -598,7 +614,13 @@ export class Tables extends React.Component {
                     }
                 </div>
             </div>
-
+            <div className='pagination'>
+                <Pagination
+                    showQuickJumper
+                    total={d.totalItem}
+                    onChange={onPagination}
+                />
+            </div>
         </div>)
     }
 }

@@ -4,7 +4,7 @@
  * @desc 转账
  */
 import React from 'react'
-import {Button,Input,InputNumber,message,Spin,Select} from 'antd'
+import {Button,Input,InputNumber,message,Spin,Select,Form} from 'antd'
 import {inject,observer} from 'mobx-react'
 import {getWallets,cbPointTransfer} from './ajax.js'
 import {getPlayerBalance} from '../../../utils/commonApi.js'
@@ -12,6 +12,15 @@ import {regFloat,regBaseNum,regInt,regFloatGtZero} from '../../../utils/regInput
 import './index.styl'
 
 const Option = Select.Option;
+const FormItem = Form.Item;
+const formItemLayout = {
+    labelCol:{
+        xs:{span:6},
+    },
+    wrapperCol:{
+        xs:{span:18}
+    }
+}
 const cashConfig={
             sobet_01_ag_01:[20,50000], //彩票钱包向AG/PT/Kgame钱包转账，最低20元，最高50000元；
             sobet_01_pt_01:[20,50000],
@@ -44,6 +53,11 @@ class Transfer extends React.Component{
         cash:'',                     //转账金额
         walletBalacneOut:'0.0000',   //转出钱包余额
         walletBalacneIn:'0.0000',    //转入钱包余额
+        outErr:'',
+        outErrText:'',
+        cashErr:'',
+        cashErrText:'',
+
         
     }
     componentWillMount(){
@@ -73,7 +87,9 @@ class Transfer extends React.Component{
             'turnOutCn':v.label,
             'outLoading':true,
             'inLoading':true,
-            'cash':''
+            'cash':'',
+            'outErr':'',
+            'outErrText':''
         })
         if(v.key==='请选择'){
             this.setState({
@@ -81,6 +97,7 @@ class Transfer extends React.Component{
                 'turnInId':v.key,
                 'turnInCn':v.label,
                 'walletBalacneOut':'0.0000',
+                'walletBalacneIn':'0.0000',
                 'outLoading':false,
                 'inLoading':false
             })
@@ -100,7 +117,7 @@ class Transfer extends React.Component{
             this.setState({
                 'inWallets':wArr,
                 'turnInId':wArr[0].cbId,
-                'turnInCn':wArr[0].cbName=='彩票钱包'?'彩票钱包（主钱包）':wArr[0].cbName
+                'turnInCn':wArr[0].cbName=='彩票钱包'?'彩票钱包（主钱包）':wArr[0].cbName,
             })
             getPlayerBalance({cbId:v.key}).then(({data})=>{ //查询转出钱包余额
                 setTimeout(()=>{ //延迟显示
@@ -153,18 +170,25 @@ class Transfer extends React.Component{
             regValue;
         value = regBaseNum(value);
         if(!cashMinMax){
-            message.error('请选择转出钱包');
+            this.setState({
+                'outErr':'error',
+                'outErrText':'请选择转出钱包'
+            })
             return false;
         }
         if(cashMinMax && parseFloat(value) > cashMinMax[1]){ //校验输入最大金额
             regValue = cashMinMax[1]
         }else if(parseFloat(value)>parseFloat(walletBalacneOut)){ //余额不足清空
-            regValue = '';
-            message.error('余额不足')
+            regValue = value;
+            //message.error('余额不足')
+            this.setState({
+                'cashErr':'error',
+                'cashErrText':'余额不足'
+            })
         }else{
             if(turnOutId === 'sobet_01'){
                 if(turnInId==='ag_01'){ //只支持正整数
-                    regValue = regInt(value,3);
+                    regValue = regInt(value);
                 } else { // 支持小数点后两位
                     regValue = regFloat(value,2);
                 }
@@ -185,12 +209,18 @@ class Transfer extends React.Component{
             cashMinMax = cashConfig[turnOutId+'_'+turnInId],
             regValue;
         if(!cashMinMax){
-            message.error('请选择转出钱包');
+            this.setState({
+                'outErr':'error',
+                'outErrText':'请选择转出钱包'
+            })
             return false;
         }
         if(parseFloat(walletBalacneOut)===0){
             regValue = '';
-            message.error('余额不足');
+            this.setState({
+                'outErr':'error',
+                'outErrText':'该钱包余额不足'
+            })
         }else{
             if(turnOutId === 'sobet_01'){
                 if(turnInId==='ag_01'){ //只支持正整数
@@ -230,21 +260,35 @@ class Transfer extends React.Component{
             cashMinMax = cashConfig[turnOutId+'_'+turnInId],
             {globalStore}=this.props;
         if(!cashMinMax){
-            message.error('请选择转出钱包');
+            this.setState({
+                'outErr':'error',
+                'outErrText':'请选择转出钱包'
+            })
+            //message.error('请选择转出钱包');
             return false;
         }
         if(cash==0 || cash==''){
-            message.error('请输入转账金额');
+            this.setState({
+                'cashErr':'error',
+                'cashErrText':'请输入转账金额'
+            })
+            //message.error('请输入转账金额');
             this.input.focus();
             return false;
         }
         if(cash<cashMinMax[0]){
-            message.error('输入转账金额最小为'+cashMinMax[0]+'元');
+            this.setState({
+                'cashErr':'error',
+                'cashErrText':'输入转账金额最小为'+cashMinMax[0]+'元'
+            })
             this.input.focus();
             return false;
         }
         if(cash>cashMinMax[1]){
-            message.error('输入转账金额最小为'+cashMinMax[1]+'元');
+            this.setState({
+                'cashErr':'error',
+                'cashErrText':'输入转账金额最大为'+cashMinMax[1]+'元'
+            })
             this.input.focus();
             return false;
         }
@@ -255,7 +299,13 @@ class Transfer extends React.Component{
                 turnIn:turnInId,
                 cash:cash
             }
-        this.setState({'turnLoading':true})
+        this.setState({
+            'turnLoading':true,
+            'outErr':'',
+            'outErrText':'',
+            'cashErr':'',
+            'cashErrText':''
+        })
         cbPointTransfer(obj).then(({data})=>{
             this.setState({'turnLoading':false})
             if(data.code==0){
@@ -326,18 +376,49 @@ class Transfer extends React.Component{
                     (
                         <section className="transfer-conent">
                             <div className="selects">
-                                <div className="trasnfer-in">请选择转出钱包：
+                                <Form>
+                                    <FormItem
+                                        {...formItemLayout}
+                                        label='请选择转出钱包'
+                                        validateStatus={this.state.outErr}
+                                        help={this.state.outErrText}
+                                    >
+                                        <WalletsOutOption/>
+                                        <span className="money-title">可用余额：</span><span className="money-span">{this.state.outLoading?<Spin/>:this.state.walletBalacneOut}</span>
+                                    </FormItem>
+                                </Form>
+                                <Form>
+                                    <FormItem
+                                        {...formItemLayout}
+                                        label='请选择转入钱包'
+                                    >
+                                         <WalletsInOption/>
+                                        <span className="money-title">可用余额：</span><span className="money-span">{this.state.inLoading?<Spin/>:this.state.walletBalacneIn}</span>
+                                    </FormItem>
+                                </Form>
+                                <Form>
+                                    <FormItem
+                                        {...formItemLayout}
+                                        label='请输入转账金额'
+                                        validateStatus={this.state.cashErr}
+                                        help={this.state.cashErrText}
+                                    >
+                                        <Input  placeholder="请输入转账金额" onChange={this.inputChange} className="transfer-input" value={this.state.cash} ref={(input)=>this.input=input} />
+                                        从{this.state.turnOutCn}&nbsp;转入{this.state.turnInCn}
+                                    </FormItem>
+                                </Form>
+                                {/* <div className="trasnfer-in">请选择转出钱包：
                                     <WalletsOutOption/>
                                     可用余额：<span className="money-span">{this.state.outLoading?<Spin/>:this.state.walletBalacneOut}</span>
-                                </div>
+                                </div> 
                                 <div className="transfer-out">请选择转入钱包：
                                     <WalletsInOption/>
                                     可用余额：<span className="money-span">{this.state.inLoading?<Spin/>:this.state.walletBalacneIn}</span>
                                 </div>
-                                <div className="transfer-out">请选择转入钱包：
+                                <div className="transfer-out">请输入转账金额：
                                     <Input  placeholder="请输入转账金额" onChange={this.inputChange} className="transfer-input" value={this.state.cash} ref={(input)=>this.input=input} />
                                     从{this.state.turnOutCn}&nbsp;转入{this.state.turnInCn}
-                                </div>
+                                </div>*/}
                                 <div className="opt">
                                     <Button type="primary" onClick={this.allIn} disabled={this.state.turnLoading}>全额转入</Button>
                                     <Button type="primary" loading={this.state.turnLoading} onClick={this.nowTransfer}>立即转入</Button>

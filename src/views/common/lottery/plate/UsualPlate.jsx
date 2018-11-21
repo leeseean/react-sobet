@@ -2,6 +2,7 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Input } from 'antd';
+import DwdAllPos from './DwdAllPos.jsx';
 
 const { TextArea } = Input;
 
@@ -13,6 +14,7 @@ class UsualPlate extends React.Component {
         if (!plateConfig[lotteryCode][method]) {
             return null;
         }
+        const { isDwdAllPosFlag } = plateConfig[lotteryCode][method];
         const { type, pos, num, isQw, isLonghu, area, numOfEach, filter = [] } = plateConfig[lotteryCode][method]['plate'];
         let extraClass = '';
         if (isQw) {
@@ -121,7 +123,10 @@ class UsualPlate extends React.Component {
             );
         };
         const reflectConfig = {
-            click: <ClickPlate key="click" {...{ pos, num, filter, hitFrequency, skipFrequency }} />,
+            click: <React.Fragment key="click">
+                <ClickPlate {...{ pos, num, filter, hitFrequency, skipFrequency }} />
+                {isDwdAllPosFlag ? <DwdAllPos {...{ pos, num, filter }} /> : null}
+            </React.Fragment>,
             input: <InputPlate key="input" />
         };
         return reflectConfig[type];

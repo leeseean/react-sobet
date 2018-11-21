@@ -4,6 +4,7 @@ import './lottery.styl';
 import LotteryFavourite from './favorite/LotteryFavorite';
 import MainContent from './MainContent';
 import WinListMarquee from './WinListMarquee';
+import GlobalFootLogo from '../../../components/GlobalFootLogo';
 import io from 'socket.io-client';
 
 @inject('lotteryStore')
@@ -24,7 +25,9 @@ class Lottery extends React.Component {
         this.socket.on('message', (data) => {
             data = JSON.parse(data);
             if (data.lottery === lotteryCode.toLocaleUpperCase()) {
-                queryTrendData();
+                if (lotteryType !== 'pk10') {
+                    queryTrendData();
+                }
                 getRecord();
             }
             if (lotteryType === 'pk10') {
@@ -41,6 +44,7 @@ class Lottery extends React.Component {
         this.socket.on('disconnect', () => { });
         window.addEventListener('message', msg => {
             if (msg.data.lottery === lotteryCode && msg.data.data === 'raceFinished') {
+                queryTrendData();
                 setPk10Racing(lotteryCode, false);
             }
         });
@@ -69,6 +73,7 @@ class Lottery extends React.Component {
                     }
                     <MainContent />
                 </div>
+                <GlobalFootLogo />
                 <WinListMarquee />
             </div>
         );

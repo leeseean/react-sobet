@@ -42,8 +42,8 @@ class BetOption extends React.Component {
         }
     }
     handleQuickSubmitOfMmc = async () => {
-        const { lotteryCode, setOpenfinished, openfinished, mmcQuickSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
-        const { refreshBalance, history } = this.props;
+        const { lotteryCode, setOpenfinished, mmcQuickSubmitOrder, continuousCount, toggleMmcModal, mmcWinStopFlag } = this.props.lotteryStore;
+        const { refreshBalance, history, lotteryStore } = this.props;
 
         if (Number(continuousCount) > 1) {
             toggleMmcModal(true);
@@ -54,7 +54,7 @@ class BetOption extends React.Component {
                     clearTimeout(timer);
                     return;
                 }
-                if (openfinished) {
+                if (lotteryStore.openfinished) {
                     clearTimeout(timer);
                     return;
                 }

@@ -20,7 +20,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -547,11 +547,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -1048,7 +1048,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1109,7 +1109,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1120,7 +1120,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1169,7 +1169,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1191,7 +1191,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -1233,7 +1233,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -1760,11 +1760,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -2261,7 +2261,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -2322,7 +2322,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -2333,7 +2333,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -2382,7 +2382,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -2404,7 +2404,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -2446,7 +2446,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -2973,11 +2973,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -3474,7 +3474,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -3535,7 +3535,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -3546,7 +3546,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -3595,7 +3595,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -3617,7 +3617,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -3659,7 +3659,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -4186,11 +4186,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -4687,7 +4687,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -4748,7 +4748,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -4759,7 +4759,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -4808,7 +4808,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -4830,7 +4830,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -4872,7 +4872,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -5399,11 +5399,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -5900,7 +5900,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -5961,7 +5961,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -5972,7 +5972,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -6021,7 +6021,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -6043,7 +6043,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -6085,7 +6085,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -6612,11 +6612,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -7113,7 +7113,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -7174,7 +7174,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -7185,7 +7185,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -7234,7 +7234,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -7256,7 +7256,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -7298,7 +7298,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -7825,11 +7825,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -8326,7 +8326,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -8387,7 +8387,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -8398,7 +8398,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -8447,7 +8447,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -8469,7 +8469,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -8511,7 +8511,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -9038,11 +9038,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -9539,7 +9539,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -9600,7 +9600,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -9611,7 +9611,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -9660,7 +9660,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -9682,7 +9682,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -9724,7 +9724,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -10251,11 +10251,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -10752,7 +10752,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -10813,7 +10813,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -10824,7 +10824,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -10873,7 +10873,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -10895,7 +10895,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -10937,7 +10937,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -11464,11 +11464,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -11965,7 +11965,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -12026,7 +12026,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -12037,7 +12037,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -12086,7 +12086,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -12108,7 +12108,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -12150,7 +12150,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -12677,11 +12677,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -13178,7 +13178,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -13239,7 +13239,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -13250,7 +13250,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -13299,7 +13299,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -13321,7 +13321,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -13363,7 +13363,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -13890,11 +13890,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -14391,7 +14391,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -14452,7 +14452,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -14463,7 +14463,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -14512,7 +14512,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -14534,7 +14534,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -14576,7 +14576,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -15103,11 +15103,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -15604,7 +15604,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -15665,7 +15665,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -15676,7 +15676,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -15725,7 +15725,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -15747,7 +15747,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -15789,7 +15789,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -16316,11 +16316,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -16817,7 +16817,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -16878,7 +16878,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -16889,7 +16889,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -16938,7 +16938,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -16960,7 +16960,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -17002,7 +17002,7 @@ export default {
         },
         wx_zux_z120: {
             name: '五星组选120',
-            mathConfig: { type: 'zuhe', per: 1,  n: 5 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 5 },//组合C95
             plate: {
                 type: 'click',
                 pos: ['组120'],
@@ -17529,11 +17529,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['万位', '千位', '百位', '十位', '个位', '所有位置'],
+                pos: ['万位', '千位', '百位', '十位', '个位',],
                 num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -18030,7 +18030,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -18091,7 +18091,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -18102,7 +18102,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -18151,7 +18151,7 @@ export default {
         },
         rx4_zux_z24: {
             name: '任四组选24',
-            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 4, r: 4, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -18173,7 +18173,7 @@ export default {
         },
         rx4_zux_z6: {
             name: '任四组选6',
-            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 4, n: 2, needMultiplyPos: true },
             posSelect: ['万', '千', '百', '十', '个'],
             plate: {
                 type: 'click',
@@ -18358,7 +18358,7 @@ export default {
         },
         bth2_bth2_fs: {
             name: '二不同号复选',
-            mathConfig: { type: 'zuhe', per: 1,  n: 2 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },//组合C95
             plate: {
                 isChip: true,
                 type: 'click',
@@ -18554,7 +18554,7 @@ export default {
         },
         bth2_bth2_fs: {
             name: '二不同号复选',
-            mathConfig: { type: 'zuhe', per: 1,  n: 2 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },//组合C95
             plate: {
                 isChip: true,
                 type: 'click',
@@ -18750,7 +18750,7 @@ export default {
         },
         bth2_bth2_fs: {
             name: '二不同号复选',
-            mathConfig: { type: 'zuhe', per: 1,  n: 2 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },//组合C95
             plate: {
                 isChip: true,
                 type: 'click',
@@ -18946,7 +18946,7 @@ export default {
         },
         bth2_bth2_fs: {
             name: '二不同号复选',
-            mathConfig: { type: 'zuhe', per: 1,  n: 2 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },//组合C95
             plate: {
                 isChip: true,
                 type: 'click',
@@ -19142,7 +19142,7 @@ export default {
         },
         bth2_bth2_fs: {
             name: '二不同号复选',
-            mathConfig: { type: 'zuhe', per: 1,  n: 2 },//组合C95
+            mathConfig: { type: 'zuhe', per: 1, n: 2 },//组合C95
             plate: {
                 isChip: true,
                 type: 'click',
@@ -19313,11 +19313,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位', '个位', '所有位置'],
+                pos: ['百位', '十位', '个位',],
                 num: [...Array(10)].map((v, i) => i),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19514,11 +19514,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位', '个位', '所有位置'],
+                pos: ['百位', '十位', '个位',],
                 num: [...Array(10)].map((v, i) => i),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19715,11 +19715,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位', '个位', '所有位置'],
+                pos: ['百位', '十位', '个位',],
                 num: [...Array(10)].map((v, i) => i),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -19916,11 +19916,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['百位', '十位', '个位', '所有位置'],
+                pos: ['百位', '十位', '个位',],
                 num: [...Array(10)].map((v, i) => i),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -20066,11 +20066,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -20402,11 +20402,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -20738,11 +20738,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -21074,11 +21074,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -21410,11 +21410,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -21746,11 +21746,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -22082,11 +22082,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -22418,11 +22418,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -22754,11 +22754,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位',],
                 num: [...Array(11)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -23110,11 +23110,11 @@ export default {
             }
         },
         dwd_dwd_dwd11y: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第一位', '第二位', '第三位', '第四位', '第五位', '所有位置'],
+                pos: ['第一位', '第二位', '第三位', '第四位', '第五位',],
                 num: [...Array(12)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -23337,21 +23337,21 @@ export default {
             }
         },
         dwd_dwd_q5: {
-            name: '前五定位胆',
+            name: '前五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
+                pos: ['冠军', '第二名', '第三名', '第四名', '第五名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         dwd_dwd_h5: {
-            name: '后五定位胆',
+            name: '后五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
+                pos: ['第六名', '第七名', '第八名', '第九名', '第十名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -23613,21 +23613,21 @@ export default {
             }
         },
         dwd_dwd_q5: {
-            name: '前五定位胆',
+            name: '前五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
+                pos: ['冠军', '第二名', '第三名', '第四名', '第五名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         dwd_dwd_h5: {
-            name: '后五定位胆',
+            name: '后五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
+                pos: ['第六名', '第七名', '第八名', '第九名', '第十名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -23889,21 +23889,21 @@ export default {
             }
         },
         dwd_dwd_q5: {
-            name: '前五定位胆',
+            name: '前五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['冠军', '第二名', '第三名', '第四名', '第五名', '所有位置'],
+                pos: ['冠军', '第二名', '第三名', '第四名', '第五名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
         },
         dwd_dwd_h5: {
-            name: '后五定位胆',
+            name: '后五定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['第六名', '第七名', '第八名', '第九名', '第十名', '所有位置'],
+                pos: ['第六名', '第七名', '第八名', '第九名', '第十名',],
                 num: [...Array(10)].map((v, i) => ('0' + String(i + 1)).slice(-2)),
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -24394,11 +24394,11 @@ export default {
             }
         },
         dwd_dwd_dwd: {
-            name: '定位胆',
+            name: '定位胆', isDwdAllPosFlag: true,
             mathConfig: { type: 'leijia', needMultiplyPos: false },
             plate: {
                 type: 'click',
-                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳', '所有位置'],
+                pos: ['自由泳', '仰泳', '蛙泳', '蝶泳',],
                 num: [1, 2, 3, 4, 5, 6, 7, 8],
                 filter: ['全', '大', '小', '奇', '偶', '清'].reverse()
             }
@@ -24435,7 +24435,7 @@ export default {
         },
         rx2_zux_fs: {
             name: '任二组选复式',
-            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, r: 2, n: 2, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24496,7 +24496,7 @@ export default {
         },
         rx3_zux_z3: {
             name: '任三组选3',
-            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 2, n: 2, r: 3, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',
@@ -24507,7 +24507,7 @@ export default {
         },
         rx3_zux_z6: {
             name: '任三组选6',
-            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true  },
+            mathConfig: { type: 'zuhe', per: 1, n: 3, r: 3, needMultiplyPos: true },
             posSelect: ['自由泳', '仰泳', '蛙泳', '蝶泳'],
             plate: {
                 type: 'click',

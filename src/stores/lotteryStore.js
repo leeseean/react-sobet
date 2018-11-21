@@ -315,6 +315,7 @@ class LotteryStore {
         this.selectedChaidanNums = [];
         this.inputedNums = [];
         this.rxPosValues = this.plateConfig[this.lotteryCode][this.method]['posSelect'];
+        this.selectedAllPosNums = [];
     }
 
     @computed get chaidanConfig() {
@@ -354,28 +355,6 @@ class LotteryStore {
     @observable selectedNums = {}
 
     @action selectNum = (pos, index, num, posArr) => {
-        if (pos === '所有位置') {//定位胆的所有位置
-            this.selectedNums[index] = this.selectedNums[index] || [];
-            const INDEX = this.selectedNums[index].findIndex(v => v === num);
-            if (INDEX === -1) {
-                this.selectedNums[index].push(num);
-                posArr.forEach((p, idx) => {
-                    this.selectedNums[idx] = this.selectedNums[idx] || [];
-                    !this.selectedNums[idx].includes(num) && this.selectedNums[idx].push(num);
-                });
-            } else {
-                this.selectedNums[index].splice(INDEX, 1);
-                posArr.forEach((p, idx) => {
-                    this.selectedNums[idx] = this.selectedNums[idx] || [];
-                    const IDX = this.selectedNums[idx].findIndex(v => v === num);
-                    if (IDX !== -1) {
-                        this.selectedNums[idx].splice(IDX, 1);
-                    }
-                });
-            }
-            this.selectedNums = { ...this.selectedNums };
-            return;
-        }
         if (this.mathConfig['type'] === '11x5rxdt') {//11选5的胆拖玩法，点击规则不一样
             const { z } = this.mathConfig;//z为胆码不能超过的个数
             this.selectedNums[0] = this.selectedNums[0] || [];
@@ -433,6 +412,63 @@ class LotteryStore {
         } else {
             this.selectedNums[index].splice(INDEX, 1);
         }
+        this.selectedNums = { ...this.selectedNums };
+    }
+
+    @observable selectedAllPosNums = []
+
+    @action selectAllPosNum = (num, posArr) => {//定位胆所有位置
+        const INDEX = this.selectedAllPosNums.findIndex(v => v === num);
+        if (INDEX === -1) {
+            this.selectedAllPosNums.push(num);
+            posArr.forEach((p, idx) => {
+                this.selectedNums[idx] = this.selectedNums[idx] || [];
+                !this.selectedNums[idx].includes(num) && this.selectedNums[idx].push(num);
+            });
+        } else {
+            this.selectedAllPosNums.splice(INDEX, 1);
+            posArr.forEach((p, idx) => {
+                this.selectedNums[idx] = this.selectedNums[idx] || [];
+                const IDX = this.selectedNums[idx].findIndex(v => v === num);
+                if (IDX !== -1) {
+                    this.selectedNums[idx].splice(IDX, 1);
+                }
+            });
+        }
+        this.selectedAllPosNums = [...this.selectedAllPosNums];
+        this.selectedNums = { ...this.selectedNums };
+    }
+
+    @action filterAllPosNum = (posArr, value, numArr) => {//定位胆所有位置顾虑
+        const DaxiaoFlag = (Number(numArr[0]) + Number(numArr[numArr.length - 1])) / 2;
+        this.selectedNums = {};
+        switch (value) {
+            case '全':
+                this.selectedAllPosNums = numArr;
+                break;
+            case '大':
+                this.selectedAllPosNums = numArr.filter(v => Number(v) > DaxiaoFlag);
+                break;
+            case '小':
+                this.selectedAllPosNums = numArr.filter(v => Number(v) <= DaxiaoFlag);
+                break;
+            case '奇':
+                this.selectedAllPosNums = numArr.filter(v => Number(v) % 2 !== 0);
+                break;
+            case '偶':
+                this.selectedAllPosNums = numArr.filter(v => Number(v) % 2 === 0);
+                break;
+            case '清':
+                this.selectedAllPosNums = [];
+                break;
+        }
+        this.selectedAllPosNums.forEach(num => {
+            posArr.forEach((p, idx) => {
+                this.selectedNums[idx] = this.selectedNums[idx] || [];
+                !this.selectedNums[idx].includes(num) && this.selectedNums[idx].push(num);
+            });
+        });
+        this.selectedAllPosNums = [...this.selectedAllPosNums];
         this.selectedNums = { ...this.selectedNums };
     }
 
@@ -832,7 +868,7 @@ class LotteryStore {
             return result;
         }
         const { pos } = this.plateConfig[this.lotteryCode][this.method]['plate'];
-        const arr = [];
+        let arr = [];
         //转成想要的格式，如123,,1,1,
         for (let i = 0; i < pos.length; i++) {
             if (this.selectedNums[i]) {
@@ -882,6 +918,7 @@ class LotteryStore {
             return;
         }
         this.selectedNums = {};
+        this.selectedAllPosNums = [];
         this.showTraceFlag = false;
         this.setTraceSelectedRowKeys([]);
     }
@@ -952,7 +989,6 @@ class LotteryStore {
     @computed get orderTotalCount() {
         return this.orderData.reduce((a, b) => a + b.amount.betCount, 0);
     }
-
 
     @observable quickSubmitLoading = false
 
@@ -1111,6 +1147,7 @@ class LotteryStore {
                 this.selectedChaidanNums = [];
             }
             this.selectedNums = {};
+            this.selectedAllPosNums = [];
         }
         return res;
     }
@@ -1446,6 +1483,7 @@ class LotteryStore {
                     this.selectedChaidanNums = [];
                 }
                 this.selectedNums = {};
+                this.selectedAllPosNums = [];
             } else if (this.submitOrderType === 'normal') {
                 this.orderData = [];
             }

@@ -20,7 +20,7 @@ class MmcModal extends React.Component {
         const { submitOrderType, betOptionRef, lotteryOrderRef, setOpenfinished } = this.props.lotteryStore;
         setOpenfinished(false);
         if (submitOrderType === 'quick') {
-            betOptionRef.quickSubmitOrder();
+            betOptionRef.handleQuickSubmitOfMmc();
         }
         if (submitOrderType === 'normal') {
             lotteryOrderRef.submitOrder();
@@ -181,7 +181,7 @@ class MmcModal extends React.Component {
                                                 </li>
                                             </ul>
                                             <div className="total-buttons">
-                                                <Button style={{ width: '100px' }} type="primary" onClick={() => setOpenfinished(false)}>停止开奖</Button>
+                                                <Button style={{ width: '100px' }} type="primary" onClick={() => setOpenfinished(true)}>停止开奖</Button>
                                             </div>
                                         </React.Fragment>
                                     )

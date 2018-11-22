@@ -1,75 +1,24 @@
 .win-notification-wrapper {
-    height: 500px;
-    overflow-y: scroll;
-    z-index: 99999;
+    position: relative;
+    z-index: 999999;
 
     .msg-item {
-        position: relative;
-        right: -15px;
-        width: 210px;
-        height: 96px;
-        margin-bottom: 10px;
         background-color: #FFF;
-        outline: 0;
         background-clip: padding-box;
         font-size: 12px;
-        line-height: 1.5;
-        border-radius: 7px;
     }
 
     .msg-item-title {
-        // position: absolute;
-        // top: 5px;
-        // left: 5px;
-        // width: 60px;
-        // height: 18px;
-        // line-height: 18px;
-        // border-radius: 10px;
-        // font-size: 12px;
-        // text-align: center;
-        background-color: #c5c5c5;
-        color: #fff;
-    }
-
-    .msg-item-close {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        padding: 0;
-        line-height: 16px;
-        border: none;
-        text-align: center;
-        font-size: 12px;
-        color: #fff;
-        background-color: #c5c5c5;
-        text-shadow: none;
-        opacity: 1;
-        filter: alpha(opacity = 100);
-        z-index: 110;
-        cursor: pointer;
-    }
-
-    .msg-item-close:hover {
-        background-color: #f24944;
+        background-color: #fff;
     }
 
     .msg-item-content {
-        position: absolute;
-        top: 27px;
-        left: 5px;
-        width: 200px;
-        word-break: break-all;
         color: gray;
+        line-height: 1.5;
+        margin: 10px auto;
     }
 
     .msg-item-detail {
-        position: absolute;
-        bottom: 5px;
-        left: 0;
-        right: 0;
         margin: auto;
         background-color: #f24944;
         width: 90px;

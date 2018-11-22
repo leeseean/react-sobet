@@ -4,6 +4,7 @@ import './lottery.styl';
 import LotteryFavourite from './favorite/LotteryFavorite';
 import MainContent from './MainContent';
 import WinListMarquee from './WinListMarquee';
+import WinNotification from './WinNotification';
 import GlobalFootLogo from '../../../components/GlobalFootLogo';
 import io from 'socket.io-client';
 
@@ -75,6 +76,7 @@ class Lottery extends React.Component {
                 </div>
                 <GlobalFootLogo />
                 <WinListMarquee />
+                <WinNotification />
             </div>
         );
     }

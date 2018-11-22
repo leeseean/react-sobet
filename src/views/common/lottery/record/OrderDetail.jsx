@@ -3,8 +3,8 @@
  **/
 
 import React from 'react';
-import { Modal, message } from 'antd';
-import { getTraceDetail, cancelOrder } from '../../../../utils/ajax';
+import { Modal } from 'antd';
+import { getTraceDetail } from '../../../../utils/ajax';
 import formatTime from '../../../../utils/formatTime';
 import './orderDetail.styl';
 import TraceDetail from './TraceDetail.jsx';

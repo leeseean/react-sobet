@@ -94,7 +94,7 @@ export function getPreAdminMessage(params){
     });
 }
 
-//更新已读未读消息
+//更新站内信已读未读消息
 export function updateMessageUserById(params){
     return $http({
         params,
@@ -103,7 +103,7 @@ export function updateMessageUserById(params){
     });
 }
 
-//删除站内信
+//删除站内信消息
 export function deletePreAdminMessageAjax(params){
     return $http({
         params,

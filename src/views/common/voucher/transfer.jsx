@@ -186,6 +186,10 @@ class Transfer extends React.Component{
                 'cashErrText':'余额不足'
             })
         }else{
+            this.setState({
+                'cashErr':'',
+                'cashErrText':''
+            })
             if(turnOutId === 'sobet_01'){
                 if(turnInId==='ag_01'){ //只支持正整数
                     regValue = regInt(value);

@@ -160,6 +160,10 @@ class Transfer extends React.Component{
             }
         })
     }
+
+    handleBindBank = ()=>{ //跳转至绑定银行卡页面
+        this.props.history.push('/personal/account/bankcard')
+    }
     render(){
         //姓名只保留姓，后面的用*替代
         const filterCN = (e)=>{
@@ -169,7 +173,7 @@ class Transfer extends React.Component{
         const Nobank = (
                 <div className="no-bank">
                     <img src={require('../../../images/no-tips.png')} alt=""/>
-                    <p>您还未绑定提款银行卡。请点击<Button type="primary">绑定银行卡</Button></p>
+                    <p>您还未绑定提款银行卡。请点击<Button type="primary" onClick={this.handleBindBank}>绑定银行卡</Button></p>
                 </div>
             )
         

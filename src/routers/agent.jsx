@@ -134,7 +134,7 @@ class AgentRouter extends React.Component {
             }
         ];
         const Routes = () => {
-            return RouteConfig.map((route, index) => {
+            let routePage = RouteConfig.map((route, index) => {
                 return (
                     <Route
                         key={index}
@@ -147,12 +147,15 @@ class AgentRouter extends React.Component {
                     />
                 )
             });
+            return (
+                <Switch>
+                    {routePage}
+                    <Redirect to="/page404" />
+                </Switch>
+            )
         };
         return (
-            <Switch>
-                <Routes />
-                <Redirect to={"/"} />
-            </Switch>
+            <Routes />
         );
     }
 }

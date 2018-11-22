@@ -477,7 +477,7 @@ class Game extends React.Component {
         }
 
         return (
-            <div className='games'>
+            <div className='com_personal games'>
                 <Tabs defaultActiveKey={selectTabs.location.pathname} animated={false} onChange={this.onChange}>
                     {listTabls.map((m, i) => {
                         return <TabPane tab={m.cn} key={m.path}>

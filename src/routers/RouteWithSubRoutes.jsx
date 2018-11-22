@@ -1,10 +1,10 @@
 import React from 'react';
-import {Switch,Route} from 'react-router-dom';
+import {Switch,Route,Redirect} from 'react-router-dom';
 
 class RouteWithSubRoutes extends React.Component{
     render() {
         const SubRoutes = () => {
-            return this.props.routes.map((route,index)=>{
+            let routePage = this.props.routes.map((route,index)=>{
                 return (
                     <Route
                         key={index}
@@ -13,12 +13,16 @@ class RouteWithSubRoutes extends React.Component{
                         exact={route.exact}
                     />
                 )
-            })  
+            })
+            return (
+                <Switch>
+                    {routePage}
+                    <Redirect to="/page404" />
+                </Switch>
+            )
         }
         return (
-            <Switch>
-                <SubRoutes />
-            </Switch>
+            <SubRoutes />
         )
     }
 }

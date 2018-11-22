@@ -124,6 +124,10 @@ class Charge extends React.Component{
 
         this.setState({'inputMoney':inputMoney})
     }
+
+    handleBindBank = ()=>{ //跳转至绑定银行卡页面
+        this.props.history.push('/personal/account/bankcard')
+    }
     render(){
         const ChannelList = ()=>{ // 渲染充值渠道
             return this.state.channel.map((item,i)=>{
@@ -148,7 +152,7 @@ class Charge extends React.Component{
         const Nobank = (
                 <div className="no-bank">
                     <img src={require('../../../images/no-tips.png')} alt=""/>
-                    <p>您还未绑定提款银行卡。请点击<Button type="primary">绑定银行卡</Button></p>
+                    <p>您还未绑定提款银行卡。请点击<Button type="primary" onClick={this.handleBindBank}>绑定银行卡</Button></p>
                 </div>
             )
         //充值手续费和随机扣减

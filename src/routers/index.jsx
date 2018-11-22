@@ -2,6 +2,9 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 import Loadable from 'react-loadable';
 import GlobalLoading from '../components/GlobalLoading';
+import GlobalHead from '../components/GlobalHead';
+import GlobalFoot from '../components/GlobalFoot';
+import GlobalNav from '../components/GlobalNav';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 @withRouter
@@ -85,6 +88,16 @@ class Index extends React.Component {
         let platformId = this.props.globalStore.platformId;
         let platComponet = ['', 'mc1', 'mc2'];
         const RouteConfig = [
+            {
+                name: '404',
+                path: '/page404',
+                component: Loadable({
+                    loader: () => import('../components/UndefinedPage'),
+                    loading: GlobalLoading,
+                    delay: 500
+                }),
+                exact: true
+            },
             {
                 name: '登陆',
                 path: '/',
@@ -249,30 +262,47 @@ class Index extends React.Component {
                 })
             },
         ];
-
+        const sty=this.state.isLoginPage?{}:{minHeight: '755px'};
         const Routes = () => {
             //路由权限拦截
             let { location, globalStore } = this.props;
             if (location.pathname.replace('/', ',').indexOf(globalStore.agentMenu.slice()[0]) !== -1) {
-                return <Redirect to={"/"} />
+                return <Redirect to="/page404" />
             }
-            return RouteConfig.map((route, index) => {
-                return (<Route
-                    key={index}
-                    path={route.path}
-                    component={route.component}
-                    exact={route.exact} />)
+            let routePage = RouteConfig.map((route, index) => {
+                return (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        component={route.component}
+                        exact={route.exact} 
+                    />
+                )
             });
+            return (
+                <div className="home-wrapper" style={sty}>
+                    <Switch>
+                        {routePage}
+                        <Redirect to="/page404" />
+                    </Switch>
+                </div>
+            )
         };
-        const sty=this.state.isLoginPage?{}:{minHeight: '755px'};
+        
         return (
-
-            <div className="home-wrapper" style={sty}>
-                <Switch>
-                    <Routes />
-                    <Redirect to={"/"} />
-                </Switch>
-            </div>
+            <React.Fragment>
+                {
+                    this.props.location.pathname.indexOf('page404')===-1?
+                    <React.Fragment>
+                        <GlobalHead/>
+                        <GlobalNav/>
+                    </React.Fragment>:''
+                }
+                <Routes />
+                {
+                   this.props.location.pathname.indexOf('page404')===-1?<GlobalFoot/>:'' 
+                }
+            </React.Fragment>
         );
     }
 }

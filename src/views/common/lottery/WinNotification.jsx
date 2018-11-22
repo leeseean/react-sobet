@@ -17,6 +17,10 @@ import './winNotification.styl';
 }))
 @observer
 class WinNotification extends React.Component {
+    state = {
+        recordDetail: {},
+        betModalFlag: false
+    }
     socker = null
     notificationRef = null
     viewOrderDetail = async orderId => {

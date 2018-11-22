@@ -6,23 +6,39 @@ import {
 } from 'mobx';
 import $http from '../utils/axios';
 import {
+    updateIssue,
+    queryTrendData
+} from '../utils/ajax';
+import {
     calcSxFilterConfig
 } from '../utils/algorithm';
+import timeSleep from '../utils/timeSleep';
 import config from '../views/common/lhc/lhcConfig';
 import methodToCnObj from '../views/common/lhc/methodToCnObj';
 import numToCnObj from '../views/common/lhc/numToCnObj';
 
-class XglhcStore {
+class lhcStore {
 
     config = config
 
-    methodToCnObj = methodToCnObj 
+    methodToCnObj = methodToCnObj
 
     numToCnObj = numToCnObj
 
     @observable lotteryType = 'lhc'
 
-    @observable lottery = 'XGLHC'
+    @observable lotteryCode = 'XGLHC'
+
+    @action setLottery = value => {
+        this.lotteryCode = value.toLocaleUpperCase();
+    }
+
+    @computed get lotteryCn() {
+        return {
+            'XGLHC': '香港六合彩',
+            'JSLHC': '极速六合彩'
+        }[this.lottery];
+    }
 
     @computed get plateType() {//选好盘类型，输入框型或者点击型
         switch (this.method) {
@@ -98,7 +114,7 @@ class XglhcStore {
             '虎': 'hu',
             '牛': 'niu',
             '鼠': 'shu'
-        } [this.cnBmnsx];
+        }[this.cnBmnsx];
     }
 
     @observable inputValuesObj = {}
@@ -156,15 +172,71 @@ class XglhcStore {
         return [...new Set(result)];
     }
 
+    @observable nextApp = []
+
+    @observable countdown = Date.now()
+
+    @observable currentIssue = ''
+
+    @observable trendData = []
+
+    @computed get openIssue() {
+        return this.trendData[0] && this.trendData[0]['issueNo'];
+    }
+
+    @computed get opencodeArr() {
+        if (this.trendData[0]) {
+            return this.trendData[0]['code'].split(',');
+        }
+        return [];
+    }
+
+    @action updateIssue = async () => {
+        await timeSleep(1000);
+        const res = await updateIssue({
+            lottery: this.lotteryCode.toLocaleUpperCase()
+        });
+        runInAction(() => {
+            if (res.data.code === 1) {
+                const {
+                    second,
+                    issue,
+                    nextApp
+                } = res.data.result;
+                if (second < 0) {
+                    this.countdown = '等待开售';
+                } else {
+                    this.countdown = Date.now() + second * 1000;
+                }
+                this.currentIssue = issue;
+                this.nextApp = nextApp;
+            }
+        });
+    }
+
+    @action queryTrendData = async () => {
+        const res = await queryTrendData({
+            size: 30,
+            lottery: this.lotteryCode.toLocaleUpperCase(),
+            method: this.method
+        });
+
+        if (res.data.code === 1) {
+            this.emptyOpencode = false;//显示开奖号码
+            this.trendData = res.data.result.issue;
+            return res;
+        }
+    }
+
     @action
     getOddsObj = async () => {
         const res = await $http({
-            url: '/xglhc-odd.json',
+            url: `/lottery/api/anon/v1/lottery/odds_lhc?lottery=${this.lotteryCode.toLocaleUpperCase()}`,
             method: 'GET'
         });
         runInAction("获取赔率数据", () => {
             if (res.data.code === 1) {
-                this.oddsObj = res.data.result['XGLHC'];
+                this.oddsObj = res.data.result[this.lotteryCode.toLocaleUpperCase()];
             }
         });
     }
@@ -318,8 +390,8 @@ class XglhcStore {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':
             case 'lm_lm_2z2':
-            case 'lm_lm_3z2': 
-            case 'lm_lm_3z3': 
+            case 'lm_lm_3z2':
+            case 'lm_lm_3z3':
                 return oddsObj[method] && oddsObj[method][`bonus${AorB}`];
             case 'tm_tm_sx':
                 if (en === this.bmnsx) {
@@ -442,7 +514,7 @@ class XglhcStore {
 
     @computed get orderTotalMoney() {
         const result = this.orderData.reduce((a, b) => a + Number(b.money), 0);
-        if(!Number.isInteger(result)) {
+        if (!Number.isInteger(result)) {
             return result.toFixed(2);
         }
         return result;
@@ -488,4 +560,4 @@ class XglhcStore {
     }
 }
 
-export default new XglhcStore();
+export default new lhcStore();

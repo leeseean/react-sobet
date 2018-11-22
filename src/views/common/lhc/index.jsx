@@ -1,8 +1,8 @@
 import React from 'react';
-import LhcTop from './LhcTop';
-import LhcOrder from './LhcOrder';
-import LhcPlate from './LhcPlate';
-import GlobalFootLogo from '../../../components/GlobalFootLogo'
+import LhcTop from './LhcTop.jsx';
+import LhcOrder from './LhcOrder.jsx';
+import LhcPlate from './LhcPlate.jsx';
+import GlobalFootLogo from '../../../components/GlobalFootLogo.jsx';
 import './index.styl';
 
 const Lhc = () => {

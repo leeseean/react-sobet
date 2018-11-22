@@ -16,8 +16,8 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 class Index extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            isLoginPage:false
+        this.state = {
+            isLoginPage: false
         }
         // 没有super(props), 后面使用回报错 定义state bind方法 其他初始化工作
         this.props.routerStore.history = this.props.history;
@@ -49,6 +49,8 @@ class Index extends React.Component {
             document.title = '摩臣 - 老虎机';
         } else if (/^(\/lhc)/.test(path)) {
             document.title = '摩臣 - 六合彩';
+        } else if (/^(\/jslhc)/.test(path)) {
+            document.title = '摩臣 - 极速六合彩';
         } else if (/^(\/live)/.test(path)) {
             document.title = '摩臣 - 真人娱乐';
         } else if (/^(\/personal)/.test(path)) {
@@ -63,7 +65,7 @@ class Index extends React.Component {
             document.title = '摩臣 - 找回密码';
         } else if (/^(\/voucher)/.test(path)) {
             document.title = '摩臣 - 资金交易';
-        }  else {
+        } else {
             document.title = '摩臣';
         }
     }
@@ -202,7 +204,16 @@ class Index extends React.Component {
                 name: '六合彩',
                 path: '/lhc',
                 component: Loadable({
-                    loader: () => import('../views/common/lhc'),
+                    loader: () => import('../views/' + platComponet[platformId] + '/lottery/xglhc'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '极速六合彩',
+                path: '/jslhc',
+                component: Loadable({
+                    loader: () => import('../views/' + platComponet[platformId] + '/lottery/jslhc'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -262,7 +273,7 @@ class Index extends React.Component {
                 })
             },
         ];
-        const sty=this.state.isLoginPage?{}:{minHeight: '755px'};
+        const sty = this.state.isLoginPage ? {} : { minHeight: '755px' };
         const Routes = () => {
             //路由权限拦截
             let { location, globalStore } = this.props;
@@ -275,7 +286,7 @@ class Index extends React.Component {
                         key={index}
                         path={route.path}
                         component={route.component}
-                        exact={route.exact} 
+                        exact={route.exact}
                     />
                 )
             });
@@ -288,19 +299,19 @@ class Index extends React.Component {
                 </div>
             )
         };
-        
+
         return (
             <React.Fragment>
                 {
-                    this.props.location.pathname.indexOf('page404')===-1?
-                    <React.Fragment>
-                        <GlobalHead/>
-                        <GlobalNav/>
-                    </React.Fragment>:''
+                    this.props.location.pathname.indexOf('page404') === -1 ?
+                        <React.Fragment>
+                            <GlobalHead />
+                            <GlobalNav />
+                        </React.Fragment> : ''
                 }
                 <Routes />
                 {
-                   this.props.location.pathname.indexOf('page404')===-1?<GlobalFoot/>:'' 
+                    this.props.location.pathname.indexOf('page404') === -1 ? <GlobalFoot /> : ''
                 }
             </React.Fragment>
         );

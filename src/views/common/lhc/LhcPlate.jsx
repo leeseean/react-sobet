@@ -1,12 +1,12 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import PlateTabs from './PlateTabs';
+import PlateTabs from './PlateTabs.jsx';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class LhcPlate extends React.Component {
     componentDidMount() {
-        const { getOddsObj } = this.props.xglhcStore;
+        const { getOddsObj } = this.props.lhcStore;
         getOddsObj();
     }
     render() {

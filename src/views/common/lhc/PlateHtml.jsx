@@ -2,11 +2,11 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { calcSxArr } from '../../../utils/algorithm';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class PlateHtml extends React.Component {
     render() {
-        const { oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd, clickToSelectNum, clickToSelectedObj } = this.props.xglhcStore;
+        const { oddsObj, method, AorB, filteredNums, fillPlateInput, inputValuesObj, cnBmnsx, calcOdd, clickToSelectNum, clickToSelectedObj } = this.props.lhcStore;
         const NumHtml = ({ numArr }) => {
             if (!numArr) return null;
             return numArr.map((num, index) => {

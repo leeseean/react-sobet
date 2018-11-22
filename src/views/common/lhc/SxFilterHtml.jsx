@@ -2,11 +2,11 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { calcSxArr } from '../../../utils/algorithm';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class SxFilterHtml extends React.Component {
     render() {
-        const { method, filterNum, filterArr, cnBmnsx } = this.props.xglhcStore;
+        const { method, filterNum, filterArr, cnBmnsx } = this.props.lhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':

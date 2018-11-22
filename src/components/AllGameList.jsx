@@ -306,7 +306,8 @@ class AllGameList extends React.Component {
                 {
                     en: 'jslhc',
                     cn: '极速六合彩',
-                    path: '/lottery',
+                    otherPage: true,
+                    path: '/jslhc',
                     isNew: true,
                     isHot: false
                 }

@@ -57,14 +57,13 @@ class GlobalHead extends React.Component {
         this.props.history.push('/voucher/' + p);
     }
     componentDidMount() {
-        const { history, globalStore } = this.props;
+        const { history } = this.props;
         history.listen(location => {
             this.initBackToIndex(location.pathname);
             this.initFixed(location.pathname);
         });
         this.initBackToIndex(history.location.pathname);
         this.initFixed(history.location.pathname);
-        globalStore.getPlayerBalance();
     }
     render() {
         const { logined } = this.props.globalStore;

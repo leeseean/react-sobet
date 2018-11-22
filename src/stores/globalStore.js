@@ -101,6 +101,7 @@ class GlobalStore {
         localStorage.setItem('logined', true);
         this.logined = true;
         this.getUserInfo();
+        this.getPlayerBalance();
     }
 
     @action logout = () => {

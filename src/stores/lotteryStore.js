@@ -178,7 +178,7 @@ class LotteryStore {
     @observable countdown = Date.now() //倒计时秒数
 
     @action updateIssue = async () => {
-        await timeSleep(2000);
+        await timeSleep(1000);
         const res = await updateIssue({
             lottery: this.lotteryCode.toLocaleUpperCase()
         });

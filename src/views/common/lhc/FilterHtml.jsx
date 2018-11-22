@@ -1,12 +1,12 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import SxFilterHtml from './SxFilterHtml';
+import SxFilterHtml from './SxFilterHtml.jsx';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class FilterHtml extends React.Component {
     render() {
-        const { method, filterNum, filterArr, filterInputValue, fillFilteredInput, resetPlate, resetButtonClicked } = this.props.xglhcStore;
+        const { method, filterNum, filterArr, filterInputValue, fillFilteredInput, resetPlate, resetButtonClicked } = this.props.lhcStore;
         switch (method) {
             case 'tm_tm_zx':
             case 'zt1m_zt1m_zt1m':

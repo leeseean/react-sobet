@@ -1,14 +1,14 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Icon, Radio } from 'antd';
-import tipConfig from './lhcTip';
-import SwitchOddDetail from './SwitchOddDetail';
+import tipConfig from './lhcTip.js';
+import SwitchOddDetail from './SwitchOddDetail.jsx';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class SwitchOdd extends React.Component {
     render() {
-        const { switchOddType, method, lotteryType } = this.props.xglhcStore;
+        const { switchOddType, method, lotteryType } = this.props.lhcStore;
         return (
             <div className="switch-odd-wrapper">
                 <Icon

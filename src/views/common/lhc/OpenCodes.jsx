@@ -5,11 +5,11 @@ class OpenCodes extends React.PureComponent {
         const Items = () => this.props.codes.map((code, index) => {
             if (index === this.props.codes.length - 1) {
                 return (
-                    <li className="fl opencode-item-tm" code={code} key={index}>{code}</li>
+                    <li className="fl opencode-item-tm bounceInDown" code={code} key={Date.now() + index}>{code}</li>
                 );
             }
             return (
-                <li className="fl opencode-item" code={code} key={index}>{code}</li>
+                <li className="fl opencode-item bounceInDown" code={code} key={Date.now() + index}>{code}</li>
             );
         });
         return (

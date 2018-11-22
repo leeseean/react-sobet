@@ -1,17 +1,17 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Tabs } from 'antd';
-import SwitchOdd from './SwitchOdd';
-import PlateContent from './PlateContent';
-import PlateBottom from './PlateBottom';
+import SwitchOdd from './SwitchOdd.jsx';
+import PlateContent from './PlateContent.jsx';
+import PlateBottom from './PlateBottom.jsx';
 
 const TabPane = Tabs.TabPane;
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class SubTabs extends React.Component {
     render() {
-        const { changeMethod } = this.props.xglhcStore;
+        const { changeMethod } = this.props.lhcStore;
         const subConfig = this.props.subConfig;
         return (
             <div className="sub-tabs">

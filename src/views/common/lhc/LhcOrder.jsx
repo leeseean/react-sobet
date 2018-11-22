@@ -1,10 +1,10 @@
 import React from 'react';
 import { Table, Icon, Button } from 'antd';
-import Countdown from '../../../components/Countdown';
-import BetModal from './BetModal';
+import Countdown from '../../../components/Countdown.jsx';
+import BetModal from './BetModal.jsx';
 import { inject, observer } from 'mobx-react';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class LhcOrder extends React.Component {
     render() {
@@ -18,8 +18,9 @@ class LhcOrder extends React.Component {
             bet,
             closeBetModal,
             setPrintOrderFlag,
-            printOrderFlag
-        } = this.props.xglhcStore;
+            printOrderFlag,
+            countdown
+        } = this.props.lhcStore;
         const orderColumns = [
             {
                 title: '玩法及投注内容',
@@ -52,7 +53,7 @@ class LhcOrder extends React.Component {
                 <div className="fl lhc-order-table">
                     <Table
                         columns={orderColumns}
-                        dataSource={orderData}
+                        dataSource={orderData.slice()}
                         pagination={false}
                         size="small"
                         locale={{
@@ -83,7 +84,7 @@ class LhcOrder extends React.Component {
                             style={{
                                 color: '#c52031',
                                 padding: '0 8px'
-                            }}><Countdown count="100000" /></span>
+                            }}><Countdown count={countdown} /></span>
                     </div>
                     <div className="lhc-order-bet">
                         <Button

@@ -1,11 +1,11 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class SwitchOddDetail extends React.Component {
     render() {
-        const { method, oddsObj, AorB, cnBmnsx, } = this.props.xglhcStore;
+        const { method, oddsObj, AorB, cnBmnsx, } = this.props.lhcStore;
         switch (method) {
             case 'tm_tm_sx':
             case 'zt1x_zt1x_zt1x':

@@ -1,13 +1,13 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Button } from 'antd';
-import BetModal from './BetModal';
+import BetModal from './BetModal.jsx';
 
-@inject('xglhcStore')
+@inject('lhcStore')
 @observer
 class PlateBottom extends React.Component {
     render() {
-        const { plateType, clickPerInputValue, fillClickPerInputValue, totalBetCount, totalBetMoney, addOrder, showQuickBetModal, closeQuickBetModal, quickBet, quickBetModalShowed, quickOrderData, printOrderFlag, setPrintOrderFlag } = this.props.xglhcStore;
+        const { lotteryCn, plateType, clickPerInputValue, fillClickPerInputValue, totalBetCount, totalBetMoney, addOrder, showQuickBetModal, closeQuickBetModal, quickBet, quickBetModalShowed, quickOrderData, printOrderFlag, setPrintOrderFlag } = this.props.lhcStore;
         return (
             <div className="clearfix plate-bottom-wrapper">
                 <div className="fl plate-bottom-text">
@@ -24,7 +24,7 @@ class PlateBottom extends React.Component {
                     <Button disabled={totalBetMoney <= 0} size="large" onClick={addOrder}>添加选号</Button>
                 </div>
                 <BetModal
-                    title="请确认投注香港六合彩"
+                    title={"请确认投注" + lotteryCn}
                     centered={true}
                     visible={quickBetModalShowed}
                     okText="确定"

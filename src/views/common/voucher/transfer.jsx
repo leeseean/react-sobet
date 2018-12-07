@@ -8,7 +8,7 @@ import {Button,Input,InputNumber,message,Spin,Select,Form} from 'antd'
 import {inject,observer} from 'mobx-react'
 import {getWallets,cbPointTransfer} from './ajax.js'
 import {getPlayerBalance} from '../../../utils/commonApi.js'
-import {regFloat,regBaseNum,regInt,regFloatGtZero} from '../../../utils/regInputNum.js'
+import {regFloat,regBaseNum,regInt,regFloatGtZero} from '../../../utils/regInputTxt.js'
 import './index.styl'
 
 const Option = Select.Option;

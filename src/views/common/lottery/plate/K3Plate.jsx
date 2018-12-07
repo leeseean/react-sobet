@@ -10,13 +10,13 @@ import { inject, observer } from 'mobx-react';
 class K3Plate extends React.Component {
     render() {
         const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedNums, selectNum, filterNum, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
-        if (!plateConfig[lotteryCode][method]) {
+        if (!plateConfig[lotteryType][method]) {
             return null;
         }
         if (chaidanConfig.chaidan) {
             const { pos = [], plate } = chaidanConfig;
             const num = plate;
-            const { isChip, filter } = plateConfig[lotteryCode][method]['plate'];
+            const { isChip, filter } = plateConfig[lotteryType][method]['plate'];
             const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {
                     return _num.map(({ en, cn }) => {
@@ -54,7 +54,7 @@ class K3Plate extends React.Component {
                 );
             });
         } else {
-            const { isChip, pos, num, filter = [] } = plateConfig[lotteryCode][method]['plate'];
+            const { isChip, pos, num, filter = [] } = plateConfig[lotteryType][method]['plate'];
             const ItemNum = ({ num, posVal, posIndex }) => {
                 const ItemNumPick = ({ _num }) => {
                     return _num.map(v => {

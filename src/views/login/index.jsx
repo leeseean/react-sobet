@@ -13,47 +13,7 @@ import './modol.styl';
 @observer
 class Login extends React.Component {
     state = {
-        sliderData: [{
-            "id": 109,
-            "activityTitle": "流水送金",
-            "activityTitleSecond": "三重豪礼，最高奖金388元",
-            "startTime": "2018-04-24 00:00:00",
-            "endTime": "2019-05-01 18:16:05",
-            "imagePath": "/static/image/preadmin/upload/405/1524478929631.jpg",
-            "activityType": 2,
-            "diffTime": "18172946015",
-            "frontImagePath": "/static/image/preadmin/upload/405/1524478922595.jpg",
-            "isjoined": null,
-            "limitRebate": 0,
-            "gamename": "全部",
-            "availableApply": 1,
-            "activityConfigs": null,
-            "applyBonusMaxTimes": 0,
-            "applyBonusInterVal": 0,
-            "isdel": null,
-            "toThumbnail": 0,
-            "thumbnailPath": ""
-        }, {
-            "id": 106,
-            "activityTitle": "投注送性吧VIP",
-            "activityTitleSecond": "流水兑换性吧VIP资格，名额有限先到先得",
-            "startTime": "2017-09-05 23:46:28",
-            "endTime": "2018-12-31 23:59:59",
-            "imagePath": "/static/image/preadmin/upload/362/1518728247548.jpg",
-            "activityType": 2,
-            "diffTime": "7739180015",
-            "frontImagePath": "/static/image/preadmin/upload/362/1518728361979.jpg",
-            "isjoined": null,
-            "limitRebate": 0,
-            "gamename": "彩票",
-            "availableApply": 1,
-            "activityConfigs": null,
-            "applyBonusMaxTimes": 0,
-            "applyBonusInterVal": 0,
-            "isdel": null,
-            "toThumbnail": 1,
-            "thumbnailPath": "/static/image/preadmin/upload/362/1504626329433.jpg"
-        }]
+        sliderData: []
     }
     componentDidMount() {
         queryCurrentActivity({ platformId: 1 }).then(res => {
@@ -101,7 +61,7 @@ class Login extends React.Component {
                                                 const { id, frontImagePath, activityTitle, gamename, activityTitleSecond } = item;
                                                 return (
                                                     <div key={id} className="slide-li swiper-slide">
-                                                        <div style={{ background: `url(${require('../../images/login/slide.jpg')}) no-repeat center` }} className="swiper-lazy"></div>
+                                                        <div style={{ background: `url(${frontImagePath}) no-repeat center` }} className="swiper-lazy"></div>
                                                         <div className="slide-title-type">
                                                             <span className="slide-title">{activityTitle}</span>
                                                             <span className="slide-type">{gamename}</span>

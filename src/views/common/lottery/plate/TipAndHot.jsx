@@ -12,10 +12,10 @@ import tipConfig from '../tipConfig';
 class TipAndHot extends React.Component {
     render() {
         const { method, plateConfig, lotteryType, lotteryCode, posSelectChange, hotShowFlag, missShowFlag, switchMiss, switchHot, hitFrequency } = this.props.lotteryStore;
-        if (!plateConfig[lotteryCode][method]) {
+        if (!plateConfig[lotteryType][method]) {
             return null;
         }
-        const { name, posSelect } = plateConfig[lotteryCode][method];
+        const { name, posSelect } = plateConfig[lotteryType][method];
         posSelectChange(posSelect);
         return (
             <React.Fragment>
@@ -45,7 +45,7 @@ class TipAndHot extends React.Component {
                 }
 
                 {
-                    posSelect ? (<div className="clearfix pos-select-wrapper">
+                    posSelect ? (<div className="clearfix pos-select-wrapper" lottery-type={lotteryType}>
                         <div className="fl pos-select-title">选择位置</div>
                         <div className="fl pos-select-list">
                             <Checkbox.Group options={posSelect} defaultValue={posSelect} onChange={posSelectChange} />

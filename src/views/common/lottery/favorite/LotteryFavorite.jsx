@@ -14,7 +14,6 @@ import FavoriteModal from './FavoriteModal';
 @withRouter
 @inject(stores => ({
     favoriteStore: stores.favoriteStore,
-    linkToLottery: stores.lotteryStore.linkToLottery,
     codeToCn: stores.lotteryStore.lotteryCodeToCn,
 }))
 @observer
@@ -70,7 +69,7 @@ class LotteryFavorite extends React.Component {
         }
     }
     render() {
-        const { codeToCn, linkToLottery, history } = this.props;
+        const { codeToCn, history } = this.props;
         const { data, countdownsObj, modalVisible, toggleModalVisible } = this.props.favoriteStore;
         const Item = ({ item }) => {
             const { lottery_code, recommend } = item;
@@ -78,19 +77,21 @@ class LotteryFavorite extends React.Component {
                 return null;
             }
             return (
-                <div className="lottery-favorite-item" onClick={() => linkToLottery(lottery_code.toLocaleLowerCase(), history, '/lottery')}>
-                    <div className="item-cn">
-                        <span>{codeToCn[lottery_code.toLocaleLowerCase()]}</span>
-                    </div>
-                    <div className="item-countdown">
+                <Link to={'/lottery/' + lottery_code.toLocaleLowerCase()}>
+                    <div className="lottery-favorite-item">
+                        <div className="item-cn">
+                            <span>{codeToCn[lottery_code.toLocaleLowerCase()]}</span>
+                        </div>
+                        <div className="item-countdown">
+                            {
+                                [-1, -2].includes(countdownsObj[lottery_code]) ? (lottery_code === 'WBGMMC' ? '即开' : '暂停销售') : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
+                            }
+                        </div>
                         {
-                            [-1, -2].includes(countdownsObj[lottery_code]) ? (lottery_code === 'WBGMMC' ? '即开' : '暂停销售') : <Countdown count={Date.now() + (countdownsObj[lottery_code] || 0) * 1000} callback={this.getCountdowns} />
+                            recommend ? <div className="item-recommend"></div> : null
                         }
                     </div>
-                    {
-                        recommend ? <div className="item-recommend"></div> : null
-                    }
-                </div>
+                </Link>
             );
         };
         const List = ({ data }) => {

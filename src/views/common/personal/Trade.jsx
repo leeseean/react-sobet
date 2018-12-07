@@ -18,7 +18,7 @@ class Trade extends React.Component{
             }
         }
         return (
-            <div>
+            <div style={{zIndex:900}}>
                 <Tabs defaultActiveKey='1' animated={false}>
                     {listTabls.map((m,i)=>{
                         return  <TabPane tab={m.cn} key={m.path}>

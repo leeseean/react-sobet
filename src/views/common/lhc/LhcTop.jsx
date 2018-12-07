@@ -46,7 +46,7 @@ class LhcTop extends React.Component {
                     </div>
                 </div>
                 <div className="fr lhc-top-trend">
-                    <a href="">
+                    <a href={`/static/lhc-trend/index.html?${lotteryCode}`}>
                         <img
                             src={require('../../../images/xglhc/chart-logo.png')}
                             alt=""

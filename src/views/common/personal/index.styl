@@ -17,7 +17,7 @@
             width: $center-left-width;
             background-color: $center-left-down-bg;
             box-shadow: 2px 0 6px 0 rgba(0,21,41,0.35);
-
+            z-index: 100;
             .title {
                 background-color: $center-left-up-bg;
                 color:$center-left-color;
@@ -35,11 +35,41 @@
             >ul li.ant-menu-item-selected{
                 background-image:$center-left-down-li-bg
             }
+            .menu_divider{
+                height: 1px;
+                padding:2px 15px 6px !important;
+                &:hover {
+                    cursor:default
+                }
+                p {
+                        margin:0;
+                        border-bottom: 1px dashed #979797
+                }
+            }
         }
 
         .voucher-section {
             width:$center-right-width;
             background-color: $center-right-bg;
+            // position:relative;
+            // &:after{
+            //     content:'';
+            //     width: 10px;
+            //     height: 100%;
+            //     position: absolute;
+            //     left: 0;
+            //     top:44px;
+            //     background-color: #F0F1F5;  
+            // }
+            // &:before{
+            //     content:'';
+            //     width: 10px;
+            //     height: 100%;
+            //     position: absolute;
+            //     right: 0;
+            //     top:44px;
+            //     background-color: #F0F1F5;  
+            // }
         }
     }
 }
@@ -66,7 +96,7 @@
         margin-top: 160px;
     }
 }
-
+//站内信
 .no-letter {
     width: 1040px;
     height: 100%;

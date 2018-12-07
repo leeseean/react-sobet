@@ -8,7 +8,7 @@ import {Button,Input,InputNumber,message,Spin,Select,Form} from 'antd'
 import {inject,observer} from 'mobx-react'
 import {drawCashIndexAjax,withdrawCashAjax} from './ajax.js'
 import {getPlayerBalance,validatePayPassword} from '../../../utils/commonApi.js'
-import {regFloat,regBaseNum} from '../../../utils/regInputNum.js'
+import {regFloat,regBaseNum} from '../../../utils/regInputTxt.js'
 import md5 from 'md5';
 import './index.styl'
 
@@ -98,7 +98,9 @@ class Transfer extends React.Component{
     }
     payPassword = (e)=>{ //资金密码校验
         this.setState({
-            'payPassword':e.target.value
+            'payPassword':e.target.value,
+            'pwdErr':'',
+            'pwdErrText':''
         })
     }
     handleSubmit = ()=>{ //申请提现
@@ -188,8 +190,7 @@ class Transfer extends React.Component{
                         >
                         <div className="w_ba"><span>{this.props.globalStore.balance}</span><span>当前主钱包余额</span></div>
                         </FormItem>
-                    </Form>
-                    <Form>
+
                         <FormItem
                             {...formItemLayout}
                             label='选择银行卡'
@@ -204,18 +205,14 @@ class Transfer extends React.Component{
                             }
                         </Select>
                         </FormItem>
-                    </Form>
-                       
-                    <Form>
+                        
                         <FormItem
                             {...formItemLayout}
                             label='收款人姓名'
                         >
                             <Input value={filterCN(this.state.sn)} disabled/>
                         </FormItem>
-                    </Form>
-                    
-                    <Form>
+                        
                         <FormItem
                             {...formItemLayout}
                             label='提现金额'
@@ -224,9 +221,7 @@ class Transfer extends React.Component{
                         >
                         <Input placeholder="请输入提现金额" onChange={this.withdrawMoney} value={this.state.money}/>
                         </FormItem>
-                    </Form>
-                       
-                    <Form>
+                        
                         <FormItem
                             {...formItemLayout}
                             label='输入资金密码'

@@ -20,6 +20,7 @@ class Personal extends React.Component{
         tablelist:[],
     }
     handleClick=(e)=>{
+        // if(e.key === 'divider')return false;
         this.props.history.push(e.key);
     }
     componentDidMount(){
@@ -38,6 +39,15 @@ class Personal extends React.Component{
         if(path.indexOf('account')!==-1){
             return '/personal/account/info'
         }
+        if(path.indexOf('voucher')!==-1){
+            return '/personal/voucher/charge'
+        }
+        if(path.indexOf('setbank')!==-1){
+            return '/personal/setbank'
+        }
+        if(path.indexOf('profit')!==-1){
+            return '/personal/profit'
+        }
     }
     render(){
        // const { personalNav }  = this.props.personalStore;
@@ -45,16 +55,24 @@ class Personal extends React.Component{
             <div className="voucher-wapper">
                 <div className="voucher-content">
                     <aside className="voucher-aside">
-                        <div className="title">个人中心</div>
+                        <div className="title">会员中心</div>
                         <Menu theme="dark" mode="inline" onClick={this.handleClick} defaultSelectedKeys={[this.state.current]}>
                             {
                                 this.props.personalStore.personalNav.map((m,i)=>{
-                                    return (
-                                         <Menu.Item key={m.path} >
-                                            <Icon type="user"/>
-                                            <span className="nav-text">{m.title}</span>
-                                        </Menu.Item> 
-                                    )
+                                    if(m.type==="divider"){
+                                        return (
+                                            <Menu.Item key="divider"  className="menu_divider" disabled>
+                                                <p></p>
+                                            </Menu.Item>
+                                        )
+                                    }else{
+                                        return (
+                                            <Menu.Item key={m.path}>
+                                                <Icon type="user"/>
+                                                <span className="nav-text">{m.title}</span>
+                                            </Menu.Item>
+                                        )
+                                    }
                                 })            
                             }
                         </Menu>

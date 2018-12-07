@@ -88,7 +88,7 @@ class BetAgainModal extends React.Component {
         if (!order['lottery']) {
             return null;
         }
-        const { plateConfig, lotteryCode, toggleBetAgainModal, betAgainModalShowed, changeBetAgainMode, changeBetAgainPiece, currentIssue, betAgainPiece, betAgainMode } = this.props.lotteryStore;
+        const { plateConfig, lotteryType, lotteryCode, toggleBetAgainModal, betAgainModalShowed, changeBetAgainMode, changeBetAgainPiece, currentIssue, betAgainPiece, betAgainMode } = this.props.lotteryStore;
         return (
             <Modal onCancel={() => toggleBetAgainModal(false)} onOk={this.submitOrder} wrapClassName="bet-modal-wrapper" visible={betAgainModalShowed} okText="确定" cancelText="取消" centered={true} title="再次投注">
                 <div className="list">
@@ -97,7 +97,7 @@ class BetAgainModal extends React.Component {
                             <div className="fl">期号{currentIssue}</div>
                         </div>
                         <div className="item-content">
-                            <div className="play-way">{plateConfig[lotteryCode][order.method.split('_').slice(0, 3).join('_')]['name']}</div>
+                            <div className="play-way">{plateConfig[lotteryType][order.method.split('_').slice(0, 3).join('_')]['name']}</div>
                             <div className="bet-code ellipsis">{order.code}</div>
                         </div>
                     </div>

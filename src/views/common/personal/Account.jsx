@@ -4,6 +4,7 @@ import {Tabs} from 'antd';
 import {withRouter} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import './comment.styl';
+import './account/index.styl';
 
 const TabPane =Tabs.TabPane;
 

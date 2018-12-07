@@ -1,8 +1,15 @@
 /**
  * @author conrad
- * @desc input输入框校验
  * @date 2018-11-08
+ * @desc input输入框校验 中文，整数，浮点数，已经整数，浮点数的输入位数控制
  */
+
+//校验中文名
+const regChinese = function ( p , s = 2 , e = 5 ) {
+    //   /^[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*$/
+    let reg = new RegExp("(^[\u4E00-\u9FA5]{"+s+","+e+"})(?:·[\u4E00-\u9FA5]{"+s+","+e+"})*$","g")
+    return  reg.test(p)?1:0;
+}
 
 //数字输入基本校验 整数/浮点数  eg:66/(66.66666/0.66666)
 const regBaseNum = function ( p ) {
@@ -48,5 +55,6 @@ export {
     regBaseNum,
     regFloat,
     regFloatGtZero,
-    regInt
+    regInt,
+    regChinese
 }

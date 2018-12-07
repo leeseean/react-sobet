@@ -23,7 +23,12 @@ axios
         // 对响应错误做点什么
         if (error.response) {
             switch (error.response.status) {
+                case 404:
                 case 401:
+                case 500:
+                    /* console.log(error.response.status)
+                    localStorage.removeItem('logined');                    
+                    window.location.href = '/'; */
                     // 返回 401 清除token信息并跳转到登录页面
                     /*  store.commit(types.LOGOUT);
                         router.replace({

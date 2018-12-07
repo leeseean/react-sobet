@@ -65,6 +65,8 @@ class Index extends React.Component {
             document.title = '摩臣 - 找回密码';
         } else if (/^(\/voucher)/.test(path)) {
             document.title = '摩臣 - 资金交易';
+        } else if (/^(\/diceGame)/.test(path)) {
+            document.title = '摩臣 - 骰宝';
         } else {
             document.title = '摩臣';
         }
@@ -89,6 +91,7 @@ class Index extends React.Component {
     render() {
         let platformId = this.props.globalStore.platformId;
         let platComponet = ['', 'mc1', 'mc2'];
+        let { location, globalStore } = this.props;
         const RouteConfig = [
             {
                 name: '404',
@@ -148,7 +151,7 @@ class Index extends React.Component {
             },
             {
                 name: '彩票',
-                path: '/lottery',
+                path: '/lottery/:lotteryCode',
                 component: Loadable({
                     loader: () => import('../views/' + platComponet[platformId] + '/lottery'),
                     loading: GlobalLoading,
@@ -272,11 +275,19 @@ class Index extends React.Component {
                     delay: 500
                 })
             },
+            {
+                name: '骰宝游戏',
+                path: '/diceGame',
+                component: Loadable({
+                    loader: () => import('../views/common/diceGame'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
         ];
-        const sty = this.state.isLoginPage ? {} : { minHeight: '755px' };
         const Routes = () => {
             //路由权限拦截
-            let { location, globalStore } = this.props;
+            
             if (location.pathname.replace('/', ',').indexOf(globalStore.agentMenu.slice()[0]) !== -1) {
                 return <Redirect to="/page404" />
             }
@@ -290,6 +301,7 @@ class Index extends React.Component {
                     />
                 )
             });
+            const sty = this.state.isLoginPage ? {} : { minHeight: '755px' };
             return (
                 <div className="home-wrapper" style={sty}>
                     <Switch>
@@ -300,19 +312,15 @@ class Index extends React.Component {
             )
         };
 
+        const noNavReg = /(^\/$)|(^\/(lottery|login|withdraw|charge|transfer|agent|voucher|personal|page404)\/{0,1})/;//登陆页及以上不显示导航栏的地址
+
+        const noHeadAndFoot = /(^\/$)|(^\/(login|page404)\/{0,1})/; //登陆页没有头部
         return (
             <React.Fragment>
-                {
-                    this.props.location.pathname.indexOf('page404') === -1 ?
-                        <React.Fragment>
-                            <GlobalHead />
-                            <GlobalNav />
-                        </React.Fragment> : ''
-                }
+                {!noHeadAndFoot.test(location.pathname)?<GlobalHead />:''}  
+                {!noNavReg.test(location.pathname)?<GlobalNav />:''} 
                 <Routes />
-                {
-                    this.props.location.pathname.indexOf('page404') === -1 ? <GlobalFoot /> : ''
-                }
+                {location.pathname.indexOf( 'page404' )===-1?<GlobalFoot />:''} 
             </React.Fragment>
         );
     }

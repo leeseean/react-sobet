@@ -22,10 +22,10 @@ class PersonalRouter extends React.Component {
         const match = this.props.match;
         const RouteConfig = [
             {
-                name: '游戏记录',
-                path: `${match.url}/game/:type`,
+                name: '资金管理',
+                path: `${match.url}/voucher/:type`,
                 component: Loadable({
-                    loader: () => import('../views/common/personal/Game'),
+                    loader: () => import('../views/common/personal/Voucher'),
                     loading: GlobalLoading,
                     delay: 500
                 })
@@ -40,7 +40,43 @@ class PersonalRouter extends React.Component {
                 })
             },
             {
-                name: '消息管理',
+                name: '投注记录',
+                path: `${match.url}/game/:type`,
+                component: Loadable({
+                    loader: () => import('../views/common/personal/Game'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '盈亏统计',
+                path: `${match.url}/profit`,
+                component: Loadable({
+                    loader: () => import('../views/common/personal/Profit'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '账号设置',
+                path: `${match.url}/account/:type`,
+                component: Loadable({
+                    loader: () => import('../views/common/personal/Account'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '银行卡管理',
+                path: `${match.url}/setbank`,
+                component: Loadable({
+                    loader: () => import('../views/common/personal/SetBank'),
+                    loading: GlobalLoading,
+                    delay: 500
+                })
+            },
+            {
+                name: '系统消息',
                 path: `${match.url}/letter`,
                 component: Loadable({
                     loader: () => import('../views/common/personal/Letter'),
@@ -48,15 +84,6 @@ class PersonalRouter extends React.Component {
                     delay: 500
                 })
             },
-            {
-                name: '账号管理',
-                path: `${match.url}/account/:type`,
-                component: Loadable({
-                    loader: () => import('../views/common/personal/Account'),
-                    loading: GlobalLoading,
-                    delay: 500
-                })
-            }
         ];
         const Routes = () => {
             let routePage = RouteConfig.map((route, index) => {

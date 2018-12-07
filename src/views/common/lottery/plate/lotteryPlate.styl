@@ -112,7 +112,7 @@
                 border-color: #c93231;
             }
 
-            &[method='dxds_dxds_h2'], &[method='dxds_dxds_q2'], &[method='dxds_dxds_h3'], &[method='dxds_dxds_q3'], &[method='qw_ts_yffs'], &[method='qw_ts_hscs'], &[method='zh_hzdxds_5xhz'], &[method='zh_hzdxds_q3hz'], &[method='zh_hzdxds_z3hz'], &[method='zh_hzdxds_h3hz'], &[method='dxds_dxgs_h2'], &[method='dxds_dxgs_q2'], &[method='dxds_dxgs_h3'], &[method='dxds_dxgs_q3'], &[method='dxds_dxgs_wx'], &[method='dxds_dxgs_sx'], &[method='dxds_dxgs_qs'], &[method='dxds_dxgs_zs'], &[method='dxds_dxgs_hs'], &[method='dxds_dsgs_wx'], &[method='dxds_dsgs_sx'], &[method='dxds_dsgs_qs'], &[method='dxds_dsgs_zs'], &[method='dxds_dsgs_hs'], &[method='bdd_bdd_qs1'], &[method='bdd_bdd_qs2'], &[method='bdd_bdd_z31'], &[method='bdd_bdd_z32'], &[method='bdd_bdd_zs1'], &[method='bdd_bdd_zs2'], &[method='bdd_bdd_hs1'], &[method='bdd_bdd_hs2'], &[method='bdd_bdd4_4x1'], &[method='bdd_bdd4_4x2'], &[method='bdd_bdd4_4x3'], &[method='bdd_bdd5_5x1'], &[method='bdd_bdd5_5x2'], &[method='bdd_bdd5_5x3'] {
+            &[method='dxds_dxds_h2'], &[method='dxds_dxds_q2'], &[method='dxds_dxds_h3'], &[method='dxds_dxds_q3'], &[method='qw_ts_yffs'], &[method='qw_ts_hscs'], &[method='qw_ts_sxbx'], &[method='qw_ts_sjfc'], &[method='zh_hzdxds_5xhz'], &[method='zh_hzdxds_q3hz'], &[method='zh_hzdxds_z3hz'], &[method='zh_hzdxds_h3hz'], &[method='dxds_dxgs_h2'], &[method='dxds_dxgs_q2'], &[method='dxds_dxgs_h3'], &[method='dxds_dxgs_q3'], &[method='dxds_dxgs_wx'], &[method='dxds_dxgs_sx'], &[method='dxds_dxgs_qs'], &[method='dxds_dxgs_zs'], &[method='dxds_dxgs_hs'], &[method='dxds_dsgs_wx'], &[method='dxds_dsgs_sx'], &[method='dxds_dsgs_qs'], &[method='dxds_dsgs_zs'], &[method='dxds_dsgs_hs'], &[method='bdd_bdd_qs1'], &[method='bdd_bdd_qs2'], &[method='bdd_bdd_z31'], &[method='bdd_bdd_z32'], &[method='bdd_bdd_zs1'], &[method='bdd_bdd_zs2'], &[method='bdd_bdd_hs1'], &[method='bdd_bdd_hs2'], &[method='bdd_bdd4_4x1'], &[method='bdd_bdd4_4x2'], &[method='bdd_bdd4_4x3'], &[method='bdd_bdd5_5x1'], &[method='bdd_bdd5_5x2'], &[method='bdd_bdd5_5x3'] {
                 width: 105px;
             }
 
@@ -177,6 +177,31 @@
         height: 60px;
         line-height: 60px;
 
+        &[lottery-type='pk10'] {
+            .pos-select-title {
+                margin-right: 15px;
+            }
+
+            .pos-select-list {
+                width: 670px;
+
+                .ant-checkbox-wrapper + span, .ant-checkbox + span {
+                    padding-left: 2px;
+                    padding-right: 2px;
+                }
+            }
+
+            .ant-checkbox-group-item {
+                margin-right: 0;
+            }
+
+            .pos-select-tip {
+                margin-left: 70px;
+                height: 20px;
+                line-height: 20px;
+            }
+        }
+
         .pos-select-title {
             margin-right: 35px;
         }
@@ -195,6 +220,7 @@
     .plate-wrapper {
         display: flex;
         align-items: center;
+        width: 793px;
         min-height: 140px;
         padding: 15px 10px;
         overflow: hidden;
@@ -1243,6 +1269,8 @@
         .hot-skip-item {
             .hot-skip-title {
                 width: 60px;
+                height: 16px;
+                line-height: 16px;
                 text-align: center;
 
                 .title {

@@ -19,6 +19,7 @@ export default {
                     4: '<em class="shape-item"><i class="shape--zu60">组60</i></em>',
                     3: values.includes(3) ? '<em class="shape-item"><i class="shape--zu20">组20</i></em>' : '<em class="shape-item"><i class="shape--zu30">组30</i></em>',
                     2: values.includes(4) ? '<em class="shape-item"><i class="shape--zu5">组5</i></em>' : '<em class="shape-item"><i class="shape--zu10">组10</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -60,6 +61,7 @@ export default {
                     4: '<em class="shape-item"><i class="shape--zu24">组24</i></em>',
                     3: '<em class="shape-item"><i class="shape--zu12">组12</i></em>',
                     2: values.includes(3) ? '<em class="shape-item"><i class="shape--zu4">组4</i></em>' : '<em class="shape-item"><i class="shape--zu6">组6</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -93,6 +95,7 @@ export default {
                 const shapeConfig = {  //
                     3: '<em class="shape-item"><i class="shape--zu6">组六</i></em>',
                     2: '<em class="shape-item"><i class="shape--zu3">组三</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -169,6 +172,7 @@ export default {
                 const shapeConfig = {  //
                     3: '<em class="shape-item"><i class="shape--zu6">组六</i></em>',
                     2: '<em class="shape-item"><i class="shape--zu3">组三</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -245,6 +249,7 @@ export default {
                 const shapeConfig = {  //
                     3: '<em class="shape-item"><i class="shape--zu6">组六</i></em>',
                     2: '<em class="shape-item"><i class="shape--zu3">组三</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -1590,7 +1595,7 @@ export default {
             shapeName: '1v10',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[0], calcLhh[9]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         lh_lh_2v9: {
@@ -1602,7 +1607,7 @@ export default {
             shapeName: '2v9',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[1], calcLhh[8]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         lh_lh_3v8: {
@@ -1614,7 +1619,7 @@ export default {
             shapeName: '3v8',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[2], calcLhh[7]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         lh_lh_4v7: {
@@ -1626,7 +1631,7 @@ export default {
             shapeName: '4v7',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[3], calcLhh[6]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         lh_lh_5v6: {
@@ -1638,9 +1643,25 @@ export default {
             shapeName: '5v6',
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[4], calcLhh[5]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
+        rx2_zx_fs: {
+            area: [],
+            widthConfig: {
+                col1: 140,
+                col2: 150
+            }
+        },
+        get rx2_zx_ds() {
+            return this['rx2_zx_fs'];
+        },
+        get rx3_zx_fs() {
+            return this['rx2_zx_fs'];
+        },
+        get rx3_zx_ds() {
+            return this['rx2_zx_fs'];
+        }
     },
     '3d': {
         sm_zx_fs: {
@@ -1773,7 +1794,7 @@ export default {
             },
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[0], codeArr[2]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         qw_lhh_sg: {
@@ -1785,7 +1806,7 @@ export default {
             },
             calcShape(code) {
                 const codeArr = this.area.map((v, i) => code.split(',')[v]);
-                return calcLhh(codeArr[1], codeArr[2]);
+                return calcLhh(codeArr[0], codeArr[1]);
             }
         },
         qw_xt_xt: {
@@ -1943,6 +1964,7 @@ export default {
                     4: '<em class="shape-item"><i class="shape--zu24">组24</i></em>',
                     3: '<em class="shape-item"><i class="shape--zu12">组12</i></em>',
                     2: values.includes(3) ? '<em class="shape-item"><i class="shape--zu4">组4</i></em>' : '<em class="shape-item"><i class="shape--zu6">组6</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -1976,6 +1998,7 @@ export default {
                 const shapeConfig = {  //
                     3: '<em class="shape-item"><i class="shape--zu6">组六</i></em>',
                     2: '<em class="shape-item"><i class="shape--zu3">组三</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }
@@ -2036,6 +2059,7 @@ export default {
                 const shapeConfig = {  //
                     3: '<em class="shape-item"><i class="shape--zu6">组六</i></em>',
                     2: '<em class="shape-item"><i class="shape--zu3">组三</i></em>',
+                    1: '<em class="shape-item"><i>---</i></em>',
                 }
                 return shapeConfig[keys.length];
             }

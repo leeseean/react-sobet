@@ -1,0 +1,78 @@
+.header_top{
+    display: flex;
+    padding:12px 10px 20px;
+    background-color: #f0f1f5;
+    .top-div {
+       
+        p {
+            margin-bottom: 0;
+            color: rgba(0,0,0,0.45)
+        } 
+        span.top-money {
+            vertical-align: top;
+            font-size: 24px;
+            color: rgba(0,0,0,0.85)
+        }
+        .ref-icon {
+            margin: 0 18px 0 8px; 
+            font-size: 20px;
+            font-weight: 700;
+            color: #aeaeae;
+            vertical-align: middle;
+            &:hover{
+                cursor: pointer    
+            }
+        }
+        button {
+            width: 96px;
+        }
+        button.top-recharge{
+            margin-right: 12px;
+        }
+        button.top-withdraw{
+            margin-left:16px
+        }
+    } 
+
+    .top-lf {
+        padding:0 70px 0 0;
+    } 
+}
+.top_wallet {
+    display: flex; 
+    background-color: #fff;
+    height: 88px;
+    >div {
+        flex-grow:1;
+        text-align: center;
+        padding: 20px 0 14px;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top:16px;
+            width: 1px;
+            height: 58px;
+            background-color: #e8e8e8;
+        }
+        &:last-child:after{
+            background-color: #fff;
+        }
+        p {
+            margin-bottom: 0;
+            line-height: 24px;
+            &:last-child {
+                font-size: 18px;
+                color: rgba(0,0,0,.85)    
+            }
+        }
+    }
+}
+.voucher_main {
+    background-color: #fff;
+    border-top: 10px solid #F0F1F5;
+    .ant-tabs-nav .ant-tabs-tab{
+        padding: 12px;
+    }
+}

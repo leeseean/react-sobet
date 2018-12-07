@@ -11,6 +11,7 @@ import PersonalCenterList from './PersonalCenterList';
 @inject('globalStore')
 @observer
 class GlobalHead extends React.Component {
+    _mounted = false
     state = {
         showBackToIndex: false,
         showBalanceFlag: true,
@@ -18,6 +19,9 @@ class GlobalHead extends React.Component {
         fixed: false
     }
     initFixed(path) {
+        if (!this._mounted) {
+            return;
+        }
         if (/^\/lottery/.test(path)) {
             this.setState({
                 fixed: true
@@ -29,6 +33,9 @@ class GlobalHead extends React.Component {
         }
     }
     initBackToIndex(path) {
+        if (!this._mounted) {
+            return;
+        }
         if (path === '/index') {
             this.setState({
                 showBackToIndex: false
@@ -57,22 +64,28 @@ class GlobalHead extends React.Component {
         this.props.history.push('/voucher/' + p);
     }
     componentDidMount() {
-        const { history } = this.props;
+        this._mounted = true;
+        const { history, globalStore } = this.props;
         history.listen(location => {
             this.initBackToIndex(location.pathname);
             this.initFixed(location.pathname);
         });
         this.initBackToIndex(history.location.pathname);
         this.initFixed(history.location.pathname);
+        globalStore.getPlayerBalance();
+        globalStore.getUserInfo();
+    }
+    componentWillUnmount() {
+        this._mounted = false;
     }
     render() {
         const { logined } = this.props.globalStore;
         const { nickname, username, balance, getPlayerBalance } = this.props.globalStore;
         if (!logined) {
-            let {pathname} = this.props.location;
-            if(pathname!=='/' && pathname !=='/login'){
+            let { pathname } = this.props.location;
+            if (pathname !== '/' && pathname !== '/login') {
                 return <Redirect to={"/login"} />;
-            }else{
+            } else {
                 return false;
             }
         }

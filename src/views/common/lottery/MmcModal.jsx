@@ -66,7 +66,7 @@ class MmcModal extends React.Component {
                 amount,
                 piece,
                 key: orderId,
-                detail: `${plateConfig['wbgmmc'][method]['name']} ${code}`,
+                detail: `${plateConfig['ssc'][method]['name']} ${code}`,
                 price: mode,
             };
         });

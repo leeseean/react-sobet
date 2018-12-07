@@ -47,7 +47,9 @@ class Race extends React.Component {
     }
     render() {
         const { lotteryCode, lotteryType, showRaceFlag } = this.props.lotteryStore;
-
+        if (lotteryType !== 'pk10') {
+            return null;
+        }
         return (
             <div className={`race-wrapper ${lotteryType === 'pk10' ? '' : 'hide'} ${!showRaceFlag ? 'hidden' : ''}`} lottery={lotteryCode}>
                 <iframe id="xgpk10" style={{ display: lotteryCode !== 'xgpk10' ? 'none' : '' }} scrolling="no" width="794" height="498" src={`/static/race/xgpk10/index.html`}></iframe>

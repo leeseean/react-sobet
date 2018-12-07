@@ -1,12 +1,39 @@
 import React from 'react';
-import { Table, Icon, Button } from 'antd';
+import { withRouter } from 'react-router-dom';
+import { Table, Icon, Button, message, Modal } from 'antd';
 import Countdown from '../../../components/Countdown.jsx';
 import BetModal from './BetModal.jsx';
 import { inject, observer } from 'mobx-react';
 
-@inject('lhcStore')
+message.config({
+    top: 100,
+});
+
+@withRouter
+@inject(stores => ({
+    refreshBalance: stores.globalStore.refreshBalance,
+    lhcStore: stores.lhcStore
+}))
 @observer
 class LhcOrder extends React.Component {
+    bet = async () => {
+        const { bet } = this.props.lhcStore;
+        const { history, refreshBalance } = this.props;
+        const res = await bet();
+        if (res.data.code === 1) {
+            message.success('订单提交成功！');
+            refreshBalance(res.data.result.money.avail);
+        } else if (res.data.code === 4001) {//余额不足
+            Modal.confirm({
+                centered: true,
+                content: `余额不足，是否充值`,
+                okText: '立即充值',
+                onOk: () => history.push('/voucher/charge')
+            });
+        } else {
+            message.error(res.data.msg);
+        }
+    }
     render() {
         const {
             orderData,
@@ -15,11 +42,11 @@ class LhcOrder extends React.Component {
             betModalShowed,
             orderTotalCount,
             orderTotalMoney,
-            bet,
             closeBetModal,
             setPrintOrderFlag,
             printOrderFlag,
-            countdown
+            countdown,
+            betting
         } = this.props.lhcStore;
         const orderColumns = [
             {
@@ -92,6 +119,7 @@ class LhcOrder extends React.Component {
                             block
                             size="large"
                             onClick={showBetModal}
+                            loading={betting}
                             style={{
                                 fontWeight: 'bold',
                                 color: '#999'
@@ -104,12 +132,12 @@ class LhcOrder extends React.Component {
                     visible={betModalShowed}
                     okText="确定"
                     cancelText="取消"
-                    onOk={bet}
+                    onOk={this.bet}
                     onCancel={closeBetModal}
                     orderData={orderData}
                     orderTotalMoney={orderTotalMoney}
                     printOrderFlag={printOrderFlag}
-                    setPrintOrderFlag={setPrintOrderFlag}        
+                    setPrintOrderFlag={setPrintOrderFlag}
                 />
             </div>
         );

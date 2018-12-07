@@ -144,6 +144,11 @@ class BetOption extends React.Component {
                         v.replace(/自由泳/, 1).replace(/仰泳/, 2).replace(/蛙泳/, 3).replace(/蝶泳/, 4);
                         return v;
                     });
+                } else if (lotteryType === 'pk10') {
+                    posArr = rxPosValues.map(v => {
+                        v.replace(/冠军/, 1).replace(/第二名/, 2).replace(/第三名/, 3).replace(/第四名/, 4).replace(/第五名/, 5).replace(/第六名/, 6).replace(/第七名/, 7).replace(/第八名/, 8).replace(/第九名/, 9).replace(/第十名/, 10);
+                        return v;
+                    });
                 } else {
                     posArr = rxPosValues.map(v => {
                         v.replace(/万/, 1).replace(/千/, 2).replace(/百/, 3).replace(/十/, 4).replace(/个/, 5);
@@ -186,6 +191,8 @@ class BetOption extends React.Component {
                 singlePickPoss = singlePickPoss.map(v => {
                     if (lotteryType === 'ky481') {
                         v.replace(/1/, '自由泳').replace(/2/, '仰泳').replace(/3/, '蛙泳').replace(/4/, '蝶泳');
+                    } else if (lotteryType === 'pk10') {
+                        v.replace(/冠军/, 1).replace(/第二名/, 2).replace(/第三名/, 3).replace(/第四名/, 4).replace(/第五名/, 5).replace(/第六名/, 6).replace(/第七名/, 7).replace(/第八名/, 8).replace(/第九名/, 9).replace(/第十名/, 10);
                     } else {
                         v.replace(/1/, '万').replace(/2/, '千').replace(/3/, '百').replace(/4/, '十').replace(/5/, '个');
                     }
@@ -239,6 +246,8 @@ class BetOption extends React.Component {
                 singlePickPoss = singlePickPoss.map(v => {
                     if (lotteryType === 'ky481') {
                         v.replace(/1/, '自由泳').replace(/2/, '仰泳').replace(/3/, '蛙泳').replace(/4/, '蝶泳');
+                    } else if (lotteryType === 'pk10') {
+                        v.replace(/冠军/, 1).replace(/第二名/, 2).replace(/第三名/, 3).replace(/第四名/, 4).replace(/第五名/, 5).replace(/第六名/, 6).replace(/第七名/, 7).replace(/第八名/, 8).replace(/第九名/, 9).replace(/第十名/, 10);
                     } else {
                         v.replace(/1/, '万').replace(/2/, '千').replace(/3/, '百').replace(/4/, '十').replace(/5/, '个');
                     }
@@ -293,8 +302,8 @@ class BetOption extends React.Component {
         addOrder();
     }
     render() {
-        const { quickSubmitLoading, chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentOdd, changeCurrentOdd, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
-          
+        const { quickSubmitLoading, chaidanConfig, lotteryCode, method, betCount, betPiece, betMoney, changePiece, changeMode, defaultBetPiece, defaultBetMode, mmcWinStopFlag, toggleMmcWinStop, setContinuousCount, continuousCount, oddsData, currentNormalOddType, changeCurrentNormalOddType, currentChaidanOddType, changeCurrentChaidanOddType, currentChaidanOddArrMinMax } = this.props.lotteryStore;
+
         return (
             <div className="clearfix bet-option-wrapper">
                 <div className="fl clearfix left-wrapper">
@@ -325,9 +334,9 @@ class BetOption extends React.Component {
                                         </Select>
                                     )
                                 ) : (
-                                        <Select size="small" value={currentOdd} onChange={(value) => changeCurrentOdd(value)}>
-                                            <Select.Option value={`${oddsData[method] && oddsData[method]['bonusA']}~${oddsData[method] && oddsData[method]['rateA']}`}>{oddsData[method] && oddsData[method]['bonusA']} ~ {oddsData[method] && oddsData[method]['rateA'] * 100}%</Select.Option>
-                                            <Select.Option value={`${oddsData[method] && oddsData[method]['bonusB']}~${oddsData[method] && oddsData[method]['rateB']}`}>{oddsData[method] && oddsData[method]['bonusB']} ~ {oddsData[method] && oddsData[method]['rateB'] * 100}%</Select.Option>
+                                        <Select size="small" value={currentNormalOddType} onChange={(value) => changeCurrentNormalOddType(value)}>
+                                            <Select.Option value="A">{oddsData[method] && oddsData[method]['bonusA'] + '~'}  {oddsData[method] && oddsData[method]['rateA'] * 100 + '%'}</Select.Option>
+                                            <Select.Option value="B">{oddsData[method] && oddsData[method]['bonusB'] + '~'}  {oddsData[method] && oddsData[method]['rateB'] * 100 + '%'}</Select.Option>
                                         </Select>
                                     )
                             }

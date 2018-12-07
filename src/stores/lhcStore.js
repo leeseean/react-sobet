@@ -7,7 +7,8 @@ import {
 import $http from '../utils/axios';
 import {
     updateIssue,
-    queryTrendData
+    queryTrendData,
+    submitOrder
 } from '../utils/ajax';
 import {
     calcSxFilterConfig
@@ -37,7 +38,7 @@ class lhcStore {
         return {
             'XGLHC': '香港六合彩',
             'JSLHC': '极速六合彩'
-        }[this.lottery];
+        }[this.lotteryCode];
     }
 
     @computed get plateType() {//选好盘类型，输入框型或者点击型
@@ -385,6 +386,79 @@ class lhcStore {
         return money;
     }
 
+    realMethod(en) {
+        const method = this.method;
+        switch (method) {
+            case 'tm_tm_zx':
+            case 'zt1m_zt1m_zt1m':
+            case 'lm_lm_2z2':
+            case 'lm_lm_3z2':
+            case 'lm_lm_3z3':
+                return method;
+            case 'tm_tm_sx':
+                if (en === this.bmnsx) {
+                    return method + '_bnsx';
+                }
+                return method + '_fbnsx';
+            case 'zt1x_zt1x_zt1x':
+            case 'lx_lx_2lx':
+            case 'lx_lx_3lx':
+            case 'lx_lx_4lx':
+                if (en === this.bmnsx) {
+                    return method + '_bnsx';
+                }
+                return method;
+            case 'tm_tm_sb':
+            case 'tm_tm_dxds':
+            case 'hzdxds_hzdxds_hzdxds':
+                return method + `_${en}`;
+            case 'tm_tm_ws':
+            case 'ztws_ztws_ztws':
+                if (en === '0w') {
+                    return method + '_0w';
+                }
+                return method + '_f0w';
+            default:
+                return method;
+        }
+    }
+
+    @action calcPoint = (oddsObj, method, en, AorB) => {
+        switch (method) {
+            case 'tm_tm_zx':
+            case 'zt1m_zt1m_zt1m':
+            case 'lm_lm_2z2':
+            case 'lm_lm_3z2':
+            case 'lm_lm_3z3':
+                return oddsObj[method] && oddsObj[method][`rate${AorB}`];
+            case 'tm_tm_sx':
+                if (en === this.bmnsx) {
+                    return oddsObj[method + '_bnsx'] && oddsObj[method + '_bnsx'][`rate${AorB}`];
+                }
+                return oddsObj[method + '_fbnsx'] && oddsObj[method + '_fbnsx'][`rate${AorB}`];
+            case 'zt1x_zt1x_zt1x':
+            case 'lx_lx_2lx':
+            case 'lx_lx_3lx':
+            case 'lx_lx_4lx':
+                if (en === this.bmnsx) {
+                    return oddsObj[method + '_bnsx'] && oddsObj[method + '_bnsx'][`rate${AorB}`];
+                }
+                return oddsObj[method] && oddsObj[method][`rate${AorB}`];
+            case 'tm_tm_sb':
+            case 'tm_tm_dxds':
+            case 'hzdxds_hzdxds_hzdxds':
+                return oddsObj[method + `_${en}`] && oddsObj[method + `_${en}`][`rate${AorB}`];
+            case 'tm_tm_ws':
+            case 'ztws_ztws_ztws':
+                if (en === '0w') {
+                    return oddsObj[method + '_0w'] && oddsObj[method + '_0w'][`rate${AorB}`];
+                }
+                return oddsObj[method + '_f0w'] && oddsObj[method + '_f0w'][`rate${AorB}`];
+            default:
+                return oddsObj[method] && oddsObj[method][`rate${AorB}`];
+        }
+    }
+
     @action calcOdd = (oddsObj, method, en, AorB) => {
         switch (method) {
             case 'tm_tm_zx':
@@ -429,11 +503,13 @@ class lhcStore {
                 if (!value) continue;
                 const cnNum = this.numToCnObj[key];
                 arr.push({
+                    realMethod: this.realMethod(key),
                     cnMethod: this.cnMethod,
                     num: key,
                     cnNum,
                     detail: `${this.cnMethod}    ${cnNum}`,
                     odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    point: this.calcPoint(this.oddsObj, this.method, key, this.AorB),
                     money: value
                 });
             }
@@ -443,11 +519,13 @@ class lhcStore {
                 if (!this.clickToSelectedObj[key]) continue;
                 const cnNum = this.numToCnObj[key];
                 arr.push({
+                    realMethod: this.realMethod(key),
                     cnMethod: this.cnMethod,
                     num: key,
                     cnNum,
                     detail: `${this.cnMethod}    ${cnNum}`,
                     odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    point: this.calcPoint(this.oddsObj, this.method, key, this.AorB),
                     money: value
                 });
             }
@@ -460,8 +538,66 @@ class lhcStore {
         this.resetPlate();
     }
 
-    @action quickBet = () => {
+    @observable quickBetting = false
 
+    @observable betting = false
+    
+    @action bet = async () => {
+        this.betting = true;
+        const orderObj = {
+            lottery: this.lotteryCode,
+            issue: this.currentIssue,
+            betType: 2,
+            sourceType: 0,
+            order: JSON.stringify(this.orderData.map(item => {
+                return {
+                    method: item.realMethod,
+                    code: item.cnNum,
+                    nums: 1,
+                    piece: 1,
+                    price: item.money,
+                    odds: item.odd,
+                    point: item.point,
+                    amount: item.money
+                };
+            }))
+        };
+        this.closeBetModal();
+        const res = await submitOrder(orderObj);
+        this.betting = false;
+        if (res.data.code === 1) {
+            this.orderData = [];
+        }
+        return res;
+    }
+
+    @action quickBet = async () => {
+        this.quickBetting = true;
+        const orderObj = {
+            lottery: this.lotteryCode,
+            issue: this.currentIssue,
+            betType: 2,
+            sourceType: 0,
+            order: JSON.stringify(this.quickOrderData.map(item => {
+                return {
+                    method: item.realMethod,
+                    code: item.cnNum,
+                    nums: 1,
+                    piece: 1,
+                    price: item.money,
+                    odds: item.odd,
+                    point: item.point,
+                    amount: item.money
+                };
+            }))
+        };
+        this.closeQuickBetModal();
+        const res = await submitOrder(orderObj);
+        this.quickBetting = false;
+        if (res.data.code === 1) {
+            this.resetPlate();
+        }
+        return res;
     }
 
     @action deleteOrderItem = (key) => {
@@ -478,11 +614,13 @@ class lhcStore {
                 if (!value) continue;
                 const cnNum = this.numToCnObj[key];
                 arr.push({
+                    realMethod: this.realMethod(key),
                     cnMethod: this.cnMethod,
                     num: key,
                     cnNum,
                     detail: `${this.cnMethod}    ${cnNum}`,
                     odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    point: this.calcPoint(this.oddsObj, this.method, key, this.AorB),
                     money: value
                 });
             }
@@ -497,6 +635,7 @@ class lhcStore {
                     cnNum,
                     detail: `${this.cnMethod}    ${cnNum}`,
                     odd: this.calcOdd(this.oddsObj, this.method, key, this.AorB),
+                    point: this.calcPoint(this.oddsObj, this.method, key, this.AorB),
                     money: value
                 });
             }
@@ -538,10 +677,6 @@ class lhcStore {
 
     @action closeQuickBetModal = () => {
         this.quickBetModalShowed = false;
-    }
-
-    @action bet = () => {
-
     }
 
     @observable betModalShowed = false

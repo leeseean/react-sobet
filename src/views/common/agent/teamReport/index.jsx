@@ -55,13 +55,13 @@ const TabsConfig = [
         name: 'IDN棋牌',
         code: 'idn',
         active: false,
-        show: false
+        show: true
     },
     {
         name: 'Kgame棋牌',
         code: 'kgame',
         active: false,
-        show: false
+        show: true
     },
     {
         name: '香港六合彩',
@@ -156,7 +156,7 @@ class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            curPath: this.matchPath(this.props.location.pathname),
+            //curPath: this.matchPath(this.props.location.pathname),
             defaultTab: this.props.match.params.type,
             breadcrumbData: [{name: 'brian001'},{name: 'brian002'},{name: 'brian003'}],
             tableProps: {
@@ -183,40 +183,44 @@ class Index extends React.Component {
             this.setState({breadcrumbData: breadcrumbData});
         }
     }
-    matchPath(path = '') {
-        let reg;
-        for (let i = 0; i < this.listUrl.length; i++) {
-            reg = new RegExp(this.listUrl[i].path)
-            if (path.match(reg)) {
-                return this.listUrl[i].path;
-            }
-        }
-        return '';
-    }
-    getUrlByPath(path = '') {
-        for (let i = 0; i < this.listUrl.length; i++) {
-            if (path == this.listUrl[i].path) {
-                return this.listUrl[i].url;
-            }
-        }
-        return '';
-    }
+    // matchPath(path = '') {
+    //     let reg;
+    //     for (let i = 0; i < this.listUrl.length; i++) {
+    //         reg = new RegExp(this.listUrl[i].path)
+    //         if (path.match(reg)) {
+    //             return this.listUrl[i].path;
+    //         }
+    //     }
+    //     return '';
+    // }
+    // getUrlByPath(path = '') {
+    //     for (let i = 0; i < this.listUrl.length; i++) {
+    //         if (path == this.listUrl[i].path) {
+    //             return this.listUrl[i].url;
+    //         }
+    //     }
+    //     return '';
+    // }
     render(){
         // const match = this.props.match;
-        console.log('info: render props=', this.props)
-        console.log('info: render =', this.props.match.path)
+        //console.log('info: render props=', this.props)
+        //console.log('info: render =', this.props.match.path)
         return(
-            <div className="team-report-view">
+            <div className="com_team team-report-view">
                 <Tabs defaultActiveKey={this.state.defaultTab} onChange={this.handleChangeTab}>
-                    {TabsConfig.map((tab) => {
-                        if (tab.show) {
-                            return (<TabPane tab={tab.name} key={tab.code}>
-                                <div className="search-wp"><SearchBar /></div>
-                                <div className="breadcrumb-wp"><Breadcrumb data={this.state.breadcrumbData} onHandleClick={this.handleBreadcrumb} /></div>
-                                <div className="table-wp"><Table {...this.state.tableProps} columns={this.columns} dataSource={this.state.reportList} /></div>
-                            </TabPane>)
-                        }     
-                    })}
+                    { 
+                        TabsConfig.map((tab) => {
+                            if (tab.show) {
+                                return (
+                                    <TabPane tab={tab.name} key={tab.code}>
+                                        <div className="search-wp"><SearchBar /></div>
+                                        <div className="breadcrumb-wp"><Breadcrumb data={this.state.breadcrumbData} onHandleClick={this.handleBreadcrumb} /></div>
+                                        <div className="table-wp"><Table {...this.state.tableProps} columns={this.columns} dataSource={this.state.reportList} /></div>
+                                    </TabPane>
+                                )
+                            }     
+                        })
+                    }
                 </Tabs>   
             </div>
         )

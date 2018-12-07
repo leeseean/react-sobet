@@ -7,6 +7,7 @@ import './trendList.styl';
     {
         trendListHeight: stores.lotteryStore.trendListHeight,
         method: stores.lotteryStore.method,
+        lotteryCode: stores.lotteryStore.lotteryCode,
     }
 ))
 @observer
@@ -27,29 +28,29 @@ class TrendList extends React.Component {
         if (trendConfig[lotteryType][method]) {
             return true;
         }
-       /*  if ((JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) && (nextProps.method !== this.props.method)) {//只更新奖号时更新
-            return true;
-        } */
+        /*  if ((JSON.stringify(nextProps.trendData.slice()) !== JSON.stringify(this.props.trendData.slice())) && (nextProps.method !== this.props.method)) {//只更新奖号时更新
+             return true;
+         } */
         if (nextProps.trendListHeight !== this.props.trendListHeight) {
             return true;
         }
         return false;
     }
     render() {
+        const { className, method } = this.props;
+        const trendData = this.state.trendData;
+        const { lotteryType, lotteryCode, trendConfig, trendListHeight } = this.props;
+        if (!trendConfig[lotteryType][method]) {
+            return null;
+        }
         const TableTitle = () => {
             return (
                 <div className="clearfix history-trend-title">
                     <span className="fl history-trend-title-left">近期开奖结果</span>
-                    <a className="fr history-trend-title-right"><i className="icon-trend"></i>走势图</a>
+                    <a href={`/static/trend/trend.html#${lotteryType}-${lotteryCode.toLocaleUpperCase()}`} className="fr history-trend-title-right"><i className="icon-trend"></i>走势图</a>
                 </div>
             );
         };
-        const { className, method } = this.props;
-        const trendData = this.state.trendData;
-        const { lotteryType, trendConfig, trendListHeight } = this.props;
-        if (!trendConfig[lotteryType][method]) {
-            return null;
-        }
         const Colorcode = ({ code, method }) => {
             const codeArr = code.split(',');
             return (

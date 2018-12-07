@@ -6,7 +6,6 @@ import React from 'react';
 import { List, Divider, Table } from 'antd';
 import ReactToPrint from "react-to-print";
 import { inject, observer } from 'mobx-react';
-import { findDOMNode } from 'react-dom';
 
 @inject(stores => ({
     lotteryStore: stores.lotteryStore,
@@ -14,7 +13,7 @@ import { findDOMNode } from 'react-dom';
 @observer
 class Content extends React.Component {
     render() {
-        const { plateConfig, lotteryCn, traceConfig, printData, recordData } = this.props.lotteryStore;
+        const { plateConfig, lotteryTypeConfig, lotteryCn, traceConfig, printData, recordData } = this.props.lotteryStore;
         if (!printData) {
             return null;
         }
@@ -55,7 +54,7 @@ class Content extends React.Component {
                                 const listData = [{
                                     description: `追号编号：${recordData[i]['traceId']}`
                                 }, {
-                                    description: `追号玩法：${plateConfig[recordData[i]['lottery'].toLocaleLowerCase()][recordData[i]['method'].split('_').slice(0, 3).join('_')]['name']}`
+                                    description: `追号玩法：${plateConfig[lotteryTypeConfig[recordData[i]['lottery'].toLocaleLowerCase()]][recordData[i]['method'].split('_').slice(0, 3).join('_')]['name']}`
                                 }, {
                                     description: `追号内容：${recordData[i]['code']}`
                                 }, {
@@ -129,7 +128,7 @@ class Content extends React.Component {
                                 const listData = [{
                                     description: `注单编号：${recordData[i]['orderId']}`
                                 }, {
-                                    description: `投注玩法：${plateConfig[recordData[i]['lottery'].toLocaleLowerCase()][recordData[i]['method'].split('_').slice(0, 3).join('_')]['name']}`
+                                    description: `投注玩法：${plateConfig[lotteryTypeConfig[recordData[i]['lottery'].toLocaleLowerCase()]][recordData[i]['method'].split('_').slice(0, 3).join('_')]['name']}`
                                 }, {
                                     description: `投注内容：${recordData[i]['code']}`
                                 }, {

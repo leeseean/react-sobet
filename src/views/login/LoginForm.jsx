@@ -28,15 +28,19 @@ class NormalLoginForm extends React.Component {
     }
     jumpByUserType = (type) => {
         const { history } = this.props;
+        let url = '/';
         switch (type) {
             case 0:
             case 1:
-                history.push('/index');
+                //history.push('/index');
+                url = '/index';
                 break;
             default:
-                history.push('/index');
+                //history.push('/index');
+                url = '/index';
                 break;
         }
+        window.location.href = url;
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -61,7 +65,7 @@ class NormalLoginForm extends React.Component {
                             return;
                         }
                         if (res.code === 0) {
-                            globalStore.login();
+                            globalStore.login(res.user);
                             this.jumpByUserType(res.user.userType);
                         } else {
                             if (res.code === 2) {

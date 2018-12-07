@@ -97,11 +97,13 @@ class GlobalStore {
         this.setLettersCount(lettersCount);
     }
 
-    @action login = () => {
+    @action login = (r) => {
+        this.setUserName(r.cn);
+        this.setUserType(r.userType);
+        this.setRoleType(r.roleType);
+        this.setPlatformId(r.platformId);
         localStorage.setItem('logined', true);
         this.logined = true;
-        this.getUserInfo();
-        this.getPlayerBalance();
     }
 
     @action logout = () => {

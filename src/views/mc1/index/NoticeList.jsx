@@ -43,49 +43,50 @@ class NoticeList extends React.Component {
             defaultActiveKey: String(items[0].id),
             endNum: endNum,
             showPageNext: endNum < items.length
-        });
-
-        this.alertId = items.some(v => v.isJumpView === "1") && items.filter(v => v.isJumpView === "1").sort((a, b) => new Date(b.createTime).getTime() - new Date(a.createTime).getTime())[0]['id'];
-        const firstLoginAlerted = localStorage.getItem(`firstLoginAlerted-${this.alertId}`);
-        if (this.alertId && firstLoginAlerted !== 'done') {
-            this.firstLoginAlert();
-        }
-
-        setTimeout(() => {
-            if (!this._mounted) return;
-            const arr = [];
-            for (let item of items) {
-                if (this.listRef.offsetWidth > 850) {//限制显示条目
-                    arr.pop();
+        }, () => {
+            setTimeout(() => {
+                const arr = [];
+                for (let item of items) {
+                    if (this.listRef.offsetWidth > 850) {//限制显示条目
+                        arr.pop();
+                        this.setState({
+                            showedData: arr
+                        });
+                        break;
+                    }
+                    arr.push(item);
                     this.setState({
                         showedData: arr
                     });
-                    break;
                 }
-                arr.push(item);
-                this.setState({
-                    showedData: arr
-                });
+            }, 800);
+
+            this.alertId = items.some(v => v.isJumpView === "1") && items.filter(v => v.isJumpView === "1").sort((a, b) => new Date(b.createTime).getTime() - new Date(a.createTime).getTime())[0]['id'];
+            const firstLoginAlerted = localStorage.getItem(`firstLoginAlerted-${this.alertId}`);
+            if (this.alertId && firstLoginAlerted !== 'done') {
+                this.firstLoginAlert();
             }
-        }, 800);
+        });
     }
 
     firstLoginAlert = () => {//首次登陆是否弹窗
-        this.setState({ showModalFlag: true, modalWidth: 630, defaultActiveKey: String(this.alertId) });
-        setTimeout(() => {
-            addClass(document.querySelector('.ant-tabs-bar'), 'hide');
-        }, 250);
-        localStorage.setItem(`firstLoginAlerted-${this.alertId}`, 'done');
+        this.setState({ showModalFlag: true, modalWidth: 630, defaultActiveKey: String(this.alertId) }, () => {
+            setTimeout(() => {
+                addClass(document.querySelector('.ant-tabs-bar'), 'hide');
+            }, 250);
+            localStorage.setItem(`firstLoginAlerted-${this.alertId}`, 'done');
+        });
     }
     showNoticeModal = id => {
         this.setState({
             defaultActiveKey: String(id || this.state.data[0].id),
             modalWidth: 950,
             showModalFlag: true
+        }, () => {
+            setTimeout(() => {
+                removeClass(document.querySelector('.ant-tabs-bar'), 'hide');
+            }, 250);
         });
-        setTimeout(() => {
-            removeClass(document.querySelector('.ant-tabs-bar'), 'hide');
-        }, 250);
     }
     closeModal = () => {
         this.setState({

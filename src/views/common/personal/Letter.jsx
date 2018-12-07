@@ -264,7 +264,7 @@ class Letter extends React.Component{
             )
         })
         return(
-            <div className="right-header charge">
+            <div className="right-header">
                 <h2 className="title">站内信</h2>
                 {
                     this.state.loading?

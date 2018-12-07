@@ -23,8 +23,46 @@ class PersonalCenterList extends React.Component {
         setTimeout(() => {
             let listData = [
                 {
+                    type: 'voucher',
+                    title: '资金管理',
+                    path: '/personal/voucher/charge',
+                    list: [
+                        {
+                            cn: '充值',
+                            path: '/personal/voucher/charge'
+                        }, {
+                            cn: '提现',
+                            path: '/personal/voucher/withdraw'
+                        }, {
+                            cn: '转账',
+                            path: '/personal/voucher/transfer'
+                        }
+                    ]
+                },
+                {
+                    type: 'trade',
+                    title: '交易记录',
+                    path: '/personal/trade/flow',
+                    list: [
+                        {
+                            cn: '交易流水',
+                            path: '/personal/trade/flow'
+                        },
+                        {
+                            cn: '充值记录',
+                            path: '/personal/trade/charge'
+                        }, {
+                            cn: '提现记录',
+                            path: '/personal/trade/withdraw'
+                        }, {
+                            cn: '钱包互转记录',
+                            path: '/personal/trade/transfer'
+                        }
+                    ]
+                },
+                {
                     type: 'game',
-                    title: '游戏记录',
+                    title: '投注记录',
                     path: '/personal/game/lottery',
                     list: [
                         {
@@ -69,34 +107,24 @@ class PersonalCenterList extends React.Component {
                     ]
                 },
                 {
-                    type: 'trade',
-                    title: '交易记录',
-                    path: '/personal/trade/flow',
+                    type: 'profit',
+                    title: '盈亏统计',
+                    path: '/personal/profit',
                     list: [
                         {
-                            cn: '交易流水',
-                            path: '/personal/trade/flow'
-                        },
-                        {
-                            cn: '充值记录',
-                            path: '/personal/trade/charge'
-                        }, {
-                            cn: '提现记录',
-                            path: '/personal/trade/withdraw'
-                        }, {
-                            cn: '钱包互转记录',
-                            path: '/personal/trade/transfer'
+                            cn: '盈亏统计',
+                            path: '/personal/profit'
                         }
                     ]
                 },
                 {
-                    type: 'letter',
-                    title: '消息管理',
-                    path: '/personal/letter',
+                    type: 'divider',
+                    title: '--',
+                    path: '',
                     list: [
                         {
-                            cn: '站内信',
-                            path: '/personal/letter'
+                            cn: '--',
+                            path: ''
                         }
                     ]
                 },
@@ -125,6 +153,28 @@ class PersonalCenterList extends React.Component {
                             cn: '银行卡管理',
                             path: '/personal/account/bankcard'
                         },
+                    ]
+                },
+                {
+                    type: 'setbank',
+                    title: '银行卡设置',
+                    path: '/personal/setbank',
+                    list: [
+                        {
+                            cn: '银行卡设置',
+                            path: '/personal/setbank'
+                        }
+                    ]
+                },
+                {
+                    type: 'letter',
+                    title: '系统消息',
+                    path: '/personal/letter',
+                    list: [
+                        {
+                            cn: '站内信',
+                            path: '/personal/letter'
+                        }
                     ]
                 }
             ]
@@ -172,7 +222,7 @@ class PersonalCenterList extends React.Component {
         };
         const Lists = ({ listData }) => {
             return listData.map((listDataItem, index) => {
-                return <List key={index} listObj={listDataItem} />
+                return listDataItem.type!=='divider' && <List key={index} listObj={listDataItem} />
             });
         };
         return (

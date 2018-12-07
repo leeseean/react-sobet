@@ -8,10 +8,10 @@ class ChaidanPlate extends React.Component {
         const { chaidanConfig, plateConfig, lotteryCode, lotteryType, method, selectedChaidanNums, selectChaidanNum, filterChaidanNum } = this.props.lotteryStore;
         const { pos, plate } = chaidanConfig;
         const num = plate;
-        if (!plateConfig[lotteryCode][method]) {
+        if (!plateConfig[lotteryType][method]) {
             return null;
         }
-        const { filter, isQw, isLonghu, area } = plateConfig[lotteryCode][method]['plate'];
+        const { filter, isQw, isLonghu, area } = plateConfig[lotteryType][method]['plate'];
         let extraClass = '';
         if (isQw) {
             extraClass = 'qw';

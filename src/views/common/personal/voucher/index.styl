@@ -1,0 +1,272 @@
+@import '../../../../_variables.styl'
+.child_body {
+    background-color: #fff     
+}
+.spin-center {
+    text-align: center;
+    margin-top: 160px;
+}
+// 充值 
+.charge {
+    .pay-way {
+        color: $center-right-up-color;
+        width: 80px;
+        font-weight: $center-right-up-font-weight;
+        padding-top: 5px;
+        float: left;
+        height: 1px;
+    }
+    .charge-section {
+        overflow: hidden;
+        background-color: $center-right-div-bg;
+        padding:0 22px 0 32px;
+        font-size: 14px;
+
+        .pay-channel {
+            float: left;
+            width: 900px;
+            >button {
+                 margin: 0 10px 16px 0;
+            } 
+        }
+    }
+
+    .pay-input {
+        background-color:$center-right-div-bg;
+
+        .pay-input-name {
+            padding:24px 22px 0 32px;
+        }
+    } 
+    .pay-input-content {
+        overflow: hidden;
+        padding:24px 0 24px;
+        width: 410px;
+        margin: 0 auto; 
+        .ant-form-item-label {
+            color: rgba(0,0,0,0.85);
+            width: 80px;
+            font-weight: bold;
+            text-align: left
+        }
+        .ant-form-item-control-wrapper {
+            width: 330px;
+        }
+    }
+    .pay-input-info{
+        float: left;
+
+        >input {
+            width:468px;
+            margin-right: 12px 
+        }
+
+        .min-max {
+            margin-top: 12px;
+        }
+        i.red {
+            color: rgba(245,34,45,0.65)
+        }   
+    } 
+    
+    .bankList {
+        padding:8px 0 0 0;
+
+        button{
+            border: 1px solid #d9d9d9;
+            border-radius: 0;
+            margin: 0 10px 10px 0;
+            width: 135px;
+            height: 36px;
+            line-height: 36px;
+            background-color: #fff;
+            text-align: left;
+            padding: 0;
+            &:hover{
+                border:1px solid rgba(245,166,35,0.65); 
+
+                span {
+                    border: 1px solid rgba(245,166,35,0.65);
+                }
+            }
+            span {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #fff;
+                color: rgba(0,0,0,0.65)
+            }
+            i{
+                background: url('../../../../images/banks_logo.png') no-repeat;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                vertical-align: top;
+                margin: 4px 16px 0 5px;
+            }
+
+            i.pc_CMB{
+                background-position: 0 -425px;
+            }
+            i.pc_ICBC{
+                background-position: 0 -150px;
+            }
+            i.pc_CCB{
+                background-position: 0 -225px;
+            }
+            i.pc_CMBC{
+                background-position: 0 -550px;
+            }
+            i.pc_ABC{
+                background-position: 0 -275px;
+            }
+            i.pc_CIB{
+                background-position: 0 -100px;
+            }
+            i.pc_BCM{
+                background-position: 0 -250px;
+            }
+            i.pc_CEB{
+                background-position: 0 -25px;
+            }
+            i.pc_BOC{
+                background-position: 0 -450px;
+            }
+            i.pc_PAB{
+                background-position: 0 -75px;
+            }
+            i.pc_PSBC{
+                background-position: 0 -475px;
+            }
+            i.pc_GDB{
+                background-position: 0 -525px;
+            }
+            i.pc_SPDB{
+                background-position: 0 -300px;
+            }
+        }
+        button.active {
+            border:1px solid rgba(245,166,35,0.65);
+            span {
+                border: 1px solid rgba(245,166,35,0.65);
+            }
+        }
+    }
+    .warm-tip {
+        padding:0 22px 0 32px;
+
+        .warm-border {
+            width: 958px
+            margin: 0 auto 24px;
+            border-top: 1px solid #e9e9e9; 
+        }
+        h2 {
+            font-size: 16px;
+            color: rgba(0,0,0,0.45);
+        }
+        .tips {
+            font-size: 14px;
+            color: rgba(0,0,0,0.45); 
+            line-height: 25px;
+        }
+    }
+}
+.no-bank {
+    height: 100%;
+    margin:10px auto;
+    text-align: center;
+    background-color: #fff;
+
+    >div{
+        margin: 36px 0 16px;
+    }
+    
+    p {
+        color:#000;
+        margin-bottom:24px
+    }
+}
+// 转账
+.transfer-conent {
+    background-color: #fff;
+    margin:6px 10px 0; 
+    height: 690px;
+
+    .selects{
+        padding: 43px 0 0 200px;
+
+        .transfer-select,
+        .transfer-input {
+            width: 174px;
+            height: 32px;
+            margin:0 11px 0 0;
+        }
+        .money-title {
+            color:rgba(0,0,0,0.85);
+        }
+
+        .money-span {
+            font-size: 20px;
+            vertical-align: top;
+            font-weight: bold;
+            margin-left: 4px;
+            color:rgba(0,0,0,0.65);
+        }   
+    }
+
+    .opt {
+        padding-left: 216px;
+        margin-bottom: 40px;
+        button {
+            margin-right: 14px;
+        }
+    }
+}
+.transfer-tip {
+    width: 958px;
+    border-top:1px solid #e9e9e9;
+    margin: 0 auto;
+    padding: 24px;
+    color: rgba(0,0,0,0.45);
+    h2{
+        font-size: 16px;
+        font-weight: bold;
+        color:@color;
+    }
+    div {
+        span {
+            float: left;
+        }
+    }
+}
+//提现
+.withdraw-main {
+    background-color: #fff;
+    margin:6px 10px 0; 
+    height: 690px;
+}
+.withdraw-input {
+    width: 430px;
+    margin: 0 auto ;
+    padding: 41px 0 33px;
+
+    .w_ba {
+        float: left;
+        width :100%;
+        padding-left: 10px;
+        line-height: 32px;
+        color: rgba(0,0,0,.65);
+
+        span:first-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        span:last-child {
+            font-size: 14px
+            float: right;
+        }
+    }
+    .w_btn {
+        padding-left: 108px;
+    }
+}

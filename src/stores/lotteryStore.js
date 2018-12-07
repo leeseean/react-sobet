@@ -32,12 +32,12 @@ class LotteryStore {
             oldValue
         } = change;
         if (newValue !== oldValue) {
-            this.getOddsData();
             this.updateIssue();
             this.emptyOpencode = true;//开奖号码处空白
             this.queryTrendData();
             this.getRecord();
             this.getTabConfig();
+            this.getOddsData();
             this.orderData = [];
             this.showTraceFlag = false;
             this.setTraceSelectedRowKeys([]);
@@ -79,14 +79,6 @@ class LotteryStore {
         localStorage.setItem('lotteryCode', value);
     }
 
-    @action linkToLottery = (lotteryCode, history, path) => {
-        this.setLotteryCode(lotteryCode);
-        if (history.location.pathname.startsWith(path)) {
-            return;
-        }
-        history.push(path);
-    }
-
     @observable oddsData = JSON.parse(localStorage.getItem(`${this.lotteryCode}-odd`)) || {}
 
     @action
@@ -94,28 +86,24 @@ class LotteryStore {
         const res = await getOddsByLt({ lottery: this.lotteryCode.toLocaleUpperCase() });
         if (res.data.code === 1) {
             const oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
-            if (!oddsData || !oddsData[this.method]) {//快速切换的时候报错
-                return;
-            }
-            this.oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
-            localStorage.setItem(`${this.lotteryCode}-odd`, JSON.stringify(this.oddsData));
-            if (this.chaidanConfig.chaidan) {
-                this.changeCurrentChaidanOddType('');
-            } else {
-                this.changeCurrentOdd(`${this.oddsData[this.method]['bonusA']}~${this.oddsData[this.method]['rateA']}`);
-            }
+                this.oddsData = res.data.result[this.lotteryCode.toLocaleUpperCase()];
+                localStorage.setItem(`${this.lotteryCode}-odd`, JSON.stringify(this.oddsData));
+                if (this.chaidanConfig.chaidan) {
+                    this.changeCurrentChaidanOddType('');
+                } 
         }
     }
 
-    @observable currentOdd = '';
+    @observable currentNormalOddType = localStorage.getItem('currentNormalOddType') || 'A'
 
-    @observable currentChaidanOddType = '';//A or B
+    @observable currentChaidanOddType = ''//A or B
 
-    @observable currentChaidanOddArr = [];
+    @observable currentChaidanOddArr = []
 
     @action
-    changeCurrentOdd = (value) => {
-        this.currentOdd = value;
+    changeCurrentNormalOddType = (value) => {
+        this.currentNormalOddType = value;
+        localStorage.setItem('currentNormalOddType', value);
     }
 
     @action
@@ -222,7 +210,7 @@ class LotteryStore {
         const res = await queryTrendData({
             size: 30,
             lottery: this.lotteryCode.toLocaleUpperCase(),
-            method: this.method
+            method: this.method || ' '
         });
 
         if (res.data.code === 1) {
@@ -314,7 +302,7 @@ class LotteryStore {
         this.selectedNums = {};
         this.selectedChaidanNums = [];
         this.inputedNums = [];
-        this.rxPosValues = this.plateConfig[this.lotteryCode][this.method]['posSelect'];
+        this.rxPosValues = this.plateConfig[this.lotteryType][this.method]['posSelect'];
         this.selectedAllPosNums = [];
     }
 
@@ -324,9 +312,9 @@ class LotteryStore {
         return result;
     }
 
-    @observable missShowFlag = localStorage.getItem('missShowFlag')
+    @observable missShowFlag = Boolean(localStorage.getItem('missShowFlag'))
 
-    @observable hotShowFlag = localStorage.getItem('hotShowFlag')
+    @observable hotShowFlag = Boolean(localStorage.getItem('hotShowFlag'))
 
     @action switchMiss = (bool) => {
         this.missShowFlag = bool;
@@ -529,11 +517,11 @@ class LotteryStore {
     }
 
     @computed get plateType() {
-        return this.plateConfig[this.lotteryCode][this.method] && this.plateConfig[this.lotteryCode][this.method]['plate']['type'];
+        return this.plateConfig[this.lotteryType][this.method] && this.plateConfig[this.lotteryType][this.method]['plate']['type'];
     }
 
     @computed get mathConfig() {
-        return this.plateConfig[this.lotteryCode][this.method] && this.plateConfig[this.lotteryCode][this.method]['mathConfig'];
+        return this.plateConfig[this.lotteryType][this.method] && this.plateConfig[this.lotteryType][this.method]['mathConfig'];
     }
 
     @computed get betCount() {
@@ -642,6 +630,61 @@ class LotteryStore {
 
                 if (r === 4) {
                     return wan * qian * bai * shi + wan * qian * bai * ge + wan * qian * shi * ge + wan * bai * shi * ge + qian * bai * shi * ge;
+                }
+            }
+            if (this.mathConfig['type'] === 'pk10rzxfs') {
+                const { r } = this.mathConfig;
+                const arr = Object.values(this.selectedNums);
+                if (r === 2) {
+                    if (arr.length < 2) return 0;
+                    let itemArr,
+                        item,
+                        c = 0;
+                    for (let i = 0; i < arr.length; i++) {
+                        itemArr = arr[i];
+                        for (let j = 0; j < itemArr.length; j++) {
+                            item = itemArr[j];
+                            for (let k = i + 1; k < arr.length; k++) {
+                                c += [...new Set([item, ...arr[k]])].length - 1;
+                            }
+                        }
+                    }
+                    return c;
+                }
+                if (r === 3) {
+                    if (arr.length < 3) return 0;
+                    let curRow,
+                        nextRow,
+                        item,
+                        item1,
+                        item2,
+                        c = 0;
+                    let calc = (preIdx, item, item2) => {
+                        for (let m = preIdx + 1; m < arr.length; m++) {
+                            for (let n = 0; n < arr[m].length; n++) {
+                                item2 = arr[m][n];
+                                if (item != item2 && item1 != item2) {
+                                    c++;
+                                }
+                            }
+                        }
+                    }
+                    for (let i = 0; i < arr.length; i++) {
+                        curRow = arr[i];
+                        for (let j = 0; j < curRow.length; j++) {
+                            item = curRow[j];
+                            for (let k = i + 1; k < arr.length; k++) {
+                                nextRow = arr[k];
+                                for (let l = 0; l < nextRow.length; l++) {
+                                    item1 = nextRow[l];
+                                    if (item != item1) {
+                                        calc(k, item, item1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    return c;
                 }
             }
             if (this.mathConfig['type'] === '11x5zxfs') {
@@ -804,7 +847,7 @@ class LotteryStore {
     }
 
     @action genOrderData = () => {
-        const { name } = this.plateConfig[this.lotteryCode][this.method];
+        const { name } = this.plateConfig[this.lotteryType][this.method];
         let result = [];
         if (this.plateType === 'input') {
             const odds = this.currentOdd.split('~')[0];
@@ -867,7 +910,7 @@ class LotteryStore {
             });
             return result;
         }
-        const { pos } = this.plateConfig[this.lotteryCode][this.method]['plate'];
+        const { pos } = this.plateConfig[this.lotteryType][this.method]['plate'];
         let arr = [];
         //转成想要的格式，如123,,1,1,
         for (let i = 0; i < pos.length; i++) {

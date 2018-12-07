@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './rightFixed.styl';
 import BackToTop from './BackToTop';
 
@@ -30,7 +30,7 @@ class RightFixed extends React.Component {
             <div className="right-fixed" ref={this.props.rightFixedRef}>
                 <div className="day-sign">
                     <a
-                        href="/static/activity/sign/sign.html"
+                        href="/static/sign/sign.html"
                         target="_blank"
                         rel="noopener noreferrer"></a>
                 </div>
@@ -56,7 +56,7 @@ class RightFixed extends React.Component {
                         </a>
                     </div>
                     <div className="line-switch">
-                        <a href="/static/sobet/speed.html" target="_blank">
+                        <a href="/static/speed/speed.html" target="_blank" rel="noopener noreferrer">
                             <div className="line-switch-icon"></div>
                             <div className="line-switch-title">
                                 线路
@@ -64,15 +64,15 @@ class RightFixed extends React.Component {
                         </a>
                     </div>
                     <div className="help-link">
-                        <a
-                            href="/static/sobet/helper-center.html"
+                        <Link
+                            to="/helpercenter"
                             target="_blank"
                             rel="noopener noreferrer">
                             <div className="help-link-icon"></div>
                             <div className="help-link-title">
                                 帮助
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <BackToTop />

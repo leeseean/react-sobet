@@ -17,7 +17,7 @@
             width: $center-left-width;
             background-color: $center-left-down-bg;
             box-shadow: 2px 0 6px 0 rgba(0,21,41,0.35);
-
+            z-index: 100;
             .title {
                 background-color: $center-left-up-bg;
                 color:$center-left-color;
@@ -119,9 +119,19 @@
         margin:0 auto;
         height: 560px;
 
+        .ant-form-item-label {
+            color: rgba(0,0,0,0.85);
+            width: 80px;
+            font-weight: bold;
+            text-align: left
+        }
+
         .pay-input-content {
             overflow: hidden;
             padding:24px 22px 24px 32px;
+        }
+        .pay-input-name {
+            padding:24px 22px 0 32px;
         }
     } 
     .pay-input-info{
@@ -241,7 +251,8 @@
         }
         .tips {
             font-size: 14px;
-            color: rgba(0,0,0,0.45);    
+            color: rgba(0,0,0,0.45); 
+            line-height: 25px;
         }
     }
 }

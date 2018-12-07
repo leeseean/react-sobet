@@ -3,6 +3,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Input } from 'antd';
 import DwdAllPos from './DwdAllPos.jsx';
+import SkipAndHotPlate from './SkipAndHotPlate.jsx';
 
 const { TextArea } = Input;
 
@@ -10,35 +11,20 @@ const { TextArea } = Input;
 @observer
 class UsualPlate extends React.Component {
     render() {
-        const { plateConfig, method, lotteryCode, lotteryType, hotShowFlag, missShowFlag, hitFrequency, skipFrequency, selectNum, selectedNums, filterNum, inputedNums, deleteInputItem, clearInputNums, uploadFile, inputNum } = this.props.lotteryStore;
-        if (!plateConfig[lotteryCode][method]) {
+        const { plateConfig, method, lotteryCode, lotteryType, selectNum, selectedNums, filterNum, inputedNums, deleteInputItem, clearInputNums, uploadFile, inputNum } = this.props.lotteryStore;
+        if (!plateConfig[lotteryType][method]) {
             return null;
         }
-        const { isDwdAllPosFlag } = plateConfig[lotteryCode][method];
-        const { type, pos, num, isQw, isLonghu, area, numOfEach, filter = [] } = plateConfig[lotteryCode][method]['plate'];
+        const { isDwdAllPosFlag } = plateConfig[lotteryType][method];
+        const { type, pos, num, isQw, isLonghu, area, numOfEach, filter = [] } = plateConfig[lotteryType][method]['plate'];
         let extraClass = '';
         if (isQw) {
             extraClass = 'qw';
         } else if (isLonghu) {
             extraClass = 'longhu';
         }
-        const ClickPlate = ({ pos = [], num, filter, hitFrequency, skipFrequency }) => {
+        const ClickPlate = ({ pos = [], num, filter }) => {
             // const pos = pos ? pos : [];
-            const hitToPos = pos.length - hitFrequency.length;
-            const skipToPos = pos.length - skipFrequency.length;
-            const HitSkipNums = ({ arr, type }) => {
-                return arr.map(n => {
-                    const max = Math.max(...arr);
-                    const min = Math.min(...arr);
-                    if (n === max) {
-                        return <div key={n} className="fl hot-skip-num max" type={type}>{n}</div>;
-                    }
-                    if (n === min) {
-                        return <div key={n} className="fl hot-skip-num min" type={type}>{n}</div>;
-                    }
-                    return <div key={n} className="fl hot-skip-num" type={type}>{n}</div>;
-                });
-            };
             return pos.map((val, idx) => {
                 return (
                     <React.Fragment key={val}>
@@ -74,24 +60,7 @@ class UsualPlate extends React.Component {
                                 {filter.map(v => <div key={v} className={`fr plate-item-filter`} onClick={() => filterNum(val, idx, v, num)}>{v}</div>)}
                             </div>
                         </div>
-                        {
-                            (missShowFlag && skipFrequency && skipFrequency.length > 0) ? (<div className="clearfix hot-skip-item">
-                                <div className="fl hot-skip-title"><span className="title">遗漏</span></div>
-                                <div className="fl clearfix hot-skip-nums">
-                                    <HitSkipNums arr={skipFrequency[skipToPos + idx]} type="skip" />
-                                </div>
-                            </div>) : null
-                        }
-                        {
-                            (hotShowFlag && hitFrequency && hitFrequency.length > 0) ? (
-                                <div className="clearfix hot-skip-item">
-                                    <div className="fl hot-skip-title"><span className="title">冷热</span></div>
-                                    <div className="fl clearfix hot-skip-nums">
-                                        <HitSkipNums arr={hitFrequency[hitToPos + idx]} type="skip" />
-                                    </div>
-                                </div>
-                            ) : null
-                        }
+                        <SkipAndHotPlate pos={pos} idx={idx} />
                     </React.Fragment>
                 );
             });
@@ -124,7 +93,7 @@ class UsualPlate extends React.Component {
         };
         const reflectConfig = {
             click: <React.Fragment key="click">
-                <ClickPlate {...{ pos, num, filter, hitFrequency, skipFrequency }} />
+                <ClickPlate {...{ pos, num, filter }} />
                 {isDwdAllPosFlag ? <DwdAllPos {...{ pos, num, filter }} /> : null}
             </React.Fragment>,
             input: <InputPlate key="input" />

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>摩臣娱乐 - 线路检测</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="description" content="摩臣娱乐|摩臣188 北美最大的线上娱乐！">
+  <meta name="keywords" content="摩臣娱乐|摩臣188 北美最大的线上娱乐！">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href="./speed.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../vender/vue.min.js"></script>
+</head>
+ <body>
+  <div class="container speed-container" id="vue-speed">
+    <form name="autof" class="speed-form">
+      <div class="speed-top-title-wrap">
+          <img class="logo speed-logo" src="./mc-speed-logo.png" alt="" width="319" height="66" />
+          <div class="speed-info">线路检测</div>
+      </div>
+      <div class="speed-form-list-wrap">
+        <div class="speed-form-top-wrap clearfix">
+            <div class="speed-tip fl">温馨提示：我们从众多线路中，优选最流畅线路提供给您！</div>
+            <div class="speed-repeat-button fr"></div>
+            <div class="speed-repeat-text fr" @click="testSpeed">重新测速</div>
+        </div>
+        <ul>
+          <li class="speed-form-item" v-for="(item, index) in itemsData">
+              <span class="speed-time" :class="{'speed-time-fast':item.time&&index<5,'speed-time-normal':item.time&&index===5}" v-cloak>{{item.time?item.time:'测试中...'}}</span>
+              <input type="text" class="speed-url" readonly :value="item.url || ''" @click="selectThis">
+              <a :href="getSpeedLink(item.url)" class="speed-link-button" :class="{'speed-link-button-fast':index<5,'speed-link-button-normal':index===5}" :style="{display: item.url ? 'inline-block' : 'none'}" target="_blank">访问摩臣</a>
+          </li>
+        </ul>
+        <div class="save-desktop">
+          <a class="save-desktop-button" href="http://download.volocn.com/static/client/linepublisher/摩臣登录器.exe">点击下载快速登录器</a>
+        </div>
+      </div>
+    </form> 
+  </div>
+  <script type="text/javascript" src="./speed.js"></script>
+ </body>
+</html>

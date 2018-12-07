@@ -1,9 +1,5 @@
 import React from 'react';
-import { 
-    DatePicker, 
-    Input, 
-    Button
-} from 'antd';
+import { DatePicker, Input, Button} from 'antd';
 import "./searchBar.styl";
 
 class SearchBar extends React.Component {
@@ -41,8 +37,8 @@ class SearchBar extends React.Component {
                 </span>
                 }
                 <span className="search-date-wp">
-                    日期: <DatePicker onChange={this.handleDate} className="width-190" placeholder={this.state.startDatePlaceHolder} /> 
-                    <span className="pd-l-25 pd-r-25">至</span> 
+                    日期：<DatePicker onChange={this.handleDate} className="width-190" placeholder={this.state.startDatePlaceHolder} /> 
+                    <span className="pd-l-25">至：</span> 
                     <DatePicker onChange={this.handleDate} className="width-190" placeholder={this.state.endDatePlaceHolder} /> 
                 </span>
                 <span className="search-name-wp">用户名：<Input className="ipt-name" /> </span>
